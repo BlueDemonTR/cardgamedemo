@@ -1,0 +1,11 @@
+i=0
+field_card_zone_x[i] = 670;
+field_card_zone_y[i++] = 330;
+field_card_zone_x[i] = 814;
+field_card_zone_y[i++] = 330;
+field_card_zone_x[i] = 960;
+field_card_zone_y[i++] = 330;
+field_card_zone_x[i] = 1105;
+field_card_zone_y[i++] = 330;
+field_card_zone_x[i] = 890;
+field_card_zone_y[i++] = 536;

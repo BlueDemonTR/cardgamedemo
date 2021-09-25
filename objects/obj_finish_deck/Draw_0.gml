@@ -1,0 +1,10 @@
+draw_self();
+draw_set_color(c_black);
+draw_set_font(fnt_upheaval_big);
+draw_text_ext(x+85,y-35,warning,22,200)
+if(enterDeckName){
+	draw_set_color(c_black)
+	draw_set_font(fnt_default)
+	draw_sprite(spr_enter_box,-1,x+80,y-30);
+	draw_text(x+83,y-53,deckName);
+}

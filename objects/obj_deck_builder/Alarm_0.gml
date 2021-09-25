@@ -1,0 +1,1 @@
+show_debug_message("Lentus actually has a squeaky noise. But he tries to talk with a deep voice to seem intimitating")

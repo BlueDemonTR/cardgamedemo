@@ -1,0 +1,1 @@
+if (obj_player.test_mode) {with(player){scr_draw(1, true);}}
