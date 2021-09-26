@@ -1,5 +1,4 @@
-function scr_mill_from_top(argument0) {
-	var millCount = argument0;
+function scr_mill_from_top(millCount){
 	if(deckCount < millCount){
 		return;
 	}

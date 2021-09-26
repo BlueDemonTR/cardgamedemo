@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Advanced Functions",
-    "path": "folders/Scripts/Effects/Advanced Functions.yy",
+    "name": "Essential Functions",
+    "path": "folders/Scripts/Effects/Essential Functions.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_draw",
+  "name": "scr_add_to_hand",
   "tags": [],
   "resourceType": "GMScript",
 }

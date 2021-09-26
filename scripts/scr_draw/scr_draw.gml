@@ -15,26 +15,15 @@ function scr_draw(cardsToDraw, actualDrawing) {
 	}
 
 	for (i = 0; i< cardsToDraw; i++){
-		hand[handCount,0] = deck[--deckCount,0];
-		hand[handCount,1] = deck[deckCount,1];
-	
-		deck[deckCount,0] = 0;
-		deck[deckCount,1] = 0;
 
-		handCard[handCount] = instance_create_depth(deck_x, deck_y, -handCount-2, obj_card);
-		with(handCard[handCount]){
-		
-			card_drawn = true;
-			hand_position = player.handCount;
-			cardNum = player.hand[hand_position,0];
-			artNum = player.hand[hand_position,1];
-		}
+		scr_add_to_hand(player, deck[--deckCount,0], deck[deckCount,1])
+		scr_remove_from_deck(deckCount)
 		if(actualDrawing){
 			for(var i = 0; i < 5; i++){
 				scr_card_is_drawn(i, obj_player.hand[handCount,0])
 			}		
 		}
-		handCount++;
+		
 	}
 
 	scr_message_hand_change();

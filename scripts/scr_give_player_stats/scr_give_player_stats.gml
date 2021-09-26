@@ -3,7 +3,7 @@
 function scr_give_player_stats(player, playerMaxHP, playerHP, mana, momentum){
 	with(player){
 		self.playerMaxHP += playerMaxHP;
-		self.playerHP += playerHP;
+		self.playerHP = min(self.playerHP + playerHP, 60);
 		self.mana += mana;
 		self.momentum += momentum;
 	}

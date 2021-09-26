@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"ce0b3ba5-033a-43a4-9cd4-5f48df80ac51","path":"sprites/spr_potoffunny/spr_potoffunny.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"ce0b3ba5-033a-43a4-9cd4-5f48df80ac51","path":"sprites/spr_potoffunny/spr_potoffunny.yy",},"LayerId":{"name":"dcd2a459-a09d-446e-8584-f81df4b1a14f","path":"sprites/spr_potoffunny/spr_potoffunny.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_potoffunny","path":"sprites/spr_potoffunny/spr_potoffunny.yy",},"resourceVersion":"1.0","name":"ce0b3ba5-033a-43a4-9cd4-5f48df80ac51","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"7d447cfb-3286-423c-8f33-23d883343bb6","path":"sprites/spr_spell_default/spr_spell_default.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"7d447cfb-3286-423c-8f33-23d883343bb6","path":"sprites/spr_spell_default/spr_spell_default.yy",},"LayerId":{"name":"e25e54e7-24e3-4d65-9c02-090c4da6352f","path":"sprites/spr_spell_default/spr_spell_default.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_spell_default","path":"sprites/spr_spell_default/spr_spell_default.yy",},"resourceVersion":"1.0","name":"7d447cfb-3286-423c-8f33-23d883343bb6","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_potoffunny","path":"sprites/spr_potoffunny/spr_potoffunny.yy",},
+    "spriteId": {"name":"spr_spell_default","path":"sprites/spr_spell_default/spr_spell_default.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 15.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"f9c6ee42-193b-4594-9e92-c09f8b0e0802","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"ce0b3ba5-033a-43a4-9cd4-5f48df80ac51","path":"sprites/spr_potoffunny/spr_potoffunny.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"09a59543-5fdd-4e45-9520-f002248de683","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"7d447cfb-3286-423c-8f33-23d883343bb6","path":"sprites/spr_spell_default/spr_spell_default.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,14 +58,14 @@
     "yorigin": 400,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_potoffunny","path":"sprites/spr_potoffunny/spr_potoffunny.yy",},
+    "parent": {"name":"spr_spell_default","path":"sprites/spr_spell_default/spr_spell_default.yy",},
     "resourceVersion": "1.3",
-    "name": "",
+    "name": "spr_spell_default",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"dcd2a459-a09d-446e-8584-f81df4b1a14f","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"e25e54e7-24e3-4d65-9c02-090c4da6352f","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
@@ -73,7 +73,7 @@
     "path": "folders/Sprites/Card Sprites.yy",
   },
   "resourceVersion": "1.0",
-  "name": "spr_potoffunny",
+  "name": "spr_spell_default",
   "tags": [],
   "resourceType": "GMSprite",
 }

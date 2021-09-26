@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Advanced Functions",
-    "path": "folders/Scripts/Effects/Advanced Functions.yy",
+    "name": "Game Functions",
+    "path": "folders/Scripts/Game Functions.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_draw",
+  "name": "array_count_variable",
   "tags": [],
   "resourceType": "GMScript",
 }

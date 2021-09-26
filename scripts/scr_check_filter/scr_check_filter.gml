@@ -58,7 +58,7 @@ function scr_check_filter(cardNum, filterNum){
 		case 8: //Blizzard Card		
 			return scr_check_archetype(cardNum, 6)
 		break
-		case 9: //Monster That Has A Level Higher Than The Monster With The Lowest Level On The Field
+		case 9: //Monster That Has A Level Higher Than The Monster With The Lowest Level On The Field That is also targetable
 			if(macros.card_type[cardNum] == 0 || macros.card_type[cardNum] == 1){
 				for(i = 0; i < 5; i++){
 					if((!obj_player.fieldCard[i].cardStatus[6] && obj_player.fieldCard[i].cardStat[0] < macros.origStat[cardNum, 0]) || (!obj_opponent.fieldCard[i].cardStatus[6] && obj_opponent.fieldCard[i].cardStat[0] < macros.origStat[cardNum, 0])){
@@ -76,14 +76,31 @@ function scr_check_filter(cardNum, filterNum){
 		break;
 		case 11: //non-Momentum Monster
 			return (macros.card_type[cardNum] == 0)
-		break;	
+		break;
+		case 12: //Level 4 or Lower Monster
+			return (macros.origStat[0] <= 4)
+		break;
 		case 13: //Specifically "Igloo"
 			if(filterNum == 13.1){//If it can be summoned
 				if (!scr_limited_summon(cardNum)){ return false; }
 			}
 			return cardNum == 32
 		break;
-
+		case 14: //Monster That Has A Lower Level Than or Equal to the Players' Momentum
+			if(filterNum == 14.1){//If it can be summoned
+				if (!scr_limited_summon(cardNum)){ return false; }
+			}
+			return macros.origStat[cardNum ,0] <= obj_player.momentum
+		break;
+		case 15: //Level 2 or lower Monster
+			return macros.origStat[cardNum, 0] <= 2
+		break;
+		case 16: //Level 5 or higher Monster
+			return macros.origStat[cardNum, 0] >= 5
+		break;
+		case 17: //Sacrifice Monster
+			return (scr_check_archetype(cardNum, 7))
+		break;
 	}
 	return false;
 }

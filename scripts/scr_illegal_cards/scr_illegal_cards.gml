@@ -6,6 +6,7 @@ function scr_illegal_cards() {
 	illegal_card[i++] = 63;
 	illegal_card[i++] = 84;
 	illegal_card[i++] = 86;
+	illegal_card[i++] = 116;
 	illegal_card[i++] = 42069;
 
 	illegal_card_count = i;

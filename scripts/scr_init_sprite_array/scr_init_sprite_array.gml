@@ -585,11 +585,13 @@ function scr_init_sprite_array() {
 		
 	i++;
 	j=0;
-	sprite_array[42069] = spr_potoffunny;
+	sprite_array[i, j++] = spr_reflection;
 	sprite_count[i] = j;
 		
 	i++;
 	j=0;
+	
+	
 	total_sprite_count = i;
 	sprite_count[i] = j;
 	

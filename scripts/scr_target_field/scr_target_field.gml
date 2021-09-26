@@ -3,6 +3,7 @@ function scr_target_field(targetController, targetTypes, targetMinLevel, targetM
 	//targetTypes = main,momentum,all
 	//targetMinLevel int64 0-12
 	//targetMaxLevel int64 1-13
+	//targetSpirit, enter "any" or an array
 	//targetArchetype write "any" if no archetypes
 	//ignoreTarget ignore a target on the field(maybe itself?)
 

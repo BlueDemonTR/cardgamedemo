@@ -1,40 +1,35 @@
-function scr_spin(position) {
+function scr_spin(player, position) {
+	var cardNum = player.field[position,0],
+	artNum = player.field[position,1];
 	
-	var player = self.player;
-	with(player){
-		var shuffled_cardNum = field[field_location,0];
-		var shuffled_artNum = field[field_location,1];
-		scr_message_last_action(macros.name[shuffled_cardNum] + " gets sent to the deck");
-		scr_last_action(macros.name[shuffled_cardNum]+" gets sent to the deck");
-		if(card_type[shuffled_cardNum] != "momentum"){
-			fieldCard[field_location].animationType = "spin"
-			deck[deckCount++,0] = shuffled_cardNum;
-			deck[deckCount++,1] = shuffled_artNum;
-			scr_shuffle_deck();
-			if(player=obj_player){
-				scr_message_deck_change();
-			}
-			else{
-				scr_message_opponent_deck_change()
-			}
+	if(macros.card_type[cardNum] != 1){
+		deck[deckCount,0] = cardNum;
+		deck[deckCount++,1] = artNum;
+		scr_shuffle_deck();
+		if(player=obj_player){
+			scr_message_deck_change();
+		}else{
+			scr_message_opponent_deck_change()
 		}
-		else{
-			momentum_deck[momentumDeckCount++,0] = shuffled_cardNum;
-			momentum_deck[momentumDeckCount++,1] = shuffled_artNum;
-			if(player=obj_player){
-				scr_message_momentum_deck();
-			}else{
-				scr_message_opponent_momentum_deck();
-			}
+	}
+	else{
+		momentum_deck[momentumDeckCount,0] = cardNum;
+		momentum_deck[momentumDeckCount++,1] = artNum;
+		if(player == obj_player){
+			scr_message_momentum_deck();
+		}else{
+			scr_message_opponent_momentum_deck();
 		}
-		with(fieldCard[field_location]){
-			instance_destroy();
-		}
+	}
+	with(player.fieldCard[position]){
 		if(player=obj_opponent){
 			scr_message_opponent_field(field_location,0,0,"spin")
 		}
-
+		instance_destroy();
 	}
+
+
+	
 
 
 
