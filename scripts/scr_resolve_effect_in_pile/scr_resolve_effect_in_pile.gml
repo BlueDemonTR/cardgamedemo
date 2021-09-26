@@ -532,7 +532,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 		case 24://Cries of the Underworld Effect
 			switch(effectNum){
 				case 0:			
-					if(!effectSilenced && scr_count_infirmary_filter(obj_player, 4) >= 4){
+					if(!effectSilenced && scr_count_infirmary_filter(obj_player, 4, "any") >= 4){
 						switch(resolutionStep){
 							case 1:
 								resolutionPile[positionInOrder, 5] = 0
@@ -676,10 +676,8 @@ function scr_resolve_effect_in_pile(positionInOrder){
 		case 29://Visclades Bargaining Effect
 			switch(effectNum){
 				case 0:
-					if(!fieldCard[position].cardStatus[11] && !effectSilenced){				
-						var temp1 = obj_player.mana
-						obj_player.mana = 0
-						scr_give_player_stats(player, 0, temp1*3, 0, 0)
+					if(!fieldCard[position].cardStatus[11] && !effectSilenced){
+						scr_give_player_stats(player, 0, mana*3, -mana, 0)
 					}
 					resolutionPile[positionInOrder,2] = 99
 				break;
@@ -1567,13 +1565,13 @@ function scr_resolve_effect_in_pile(positionInOrder){
 			switch(effectNum){
 				case 0:
 					if(!effectSilenced){				
-						scr_draw(1);
+						scr_draw(1, true);
 					}
 					resolutionPile[positionInOrder,2] = 99
 				break;
 			}		
 		break;
-		case 76://Ruthless Sacrifice Effect TODO: Complete
+		case 76://Ruthless Sacrifice Effect
 			switch(effectNum){
 				case 0:
 					if(!effectSilenced){
@@ -1627,7 +1625,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				break;
 			}
 		break;
-		case 78://Genesis Notebook Effect TODO: Complete, add Filter
+		case 78://Genesis Notebook Effect
 			switch(effectNum){
 				case 0:
 					if(!effectSilenced){
@@ -1658,7 +1656,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				break;
 			}
 		break;
-		case 79://Gathering of the Accursed Effect TODO: Choice
+		case 79://Gathering of the Accursed Effect
 			switch(effectNum){
 				case 0:
 					if(!effectSilenced){				
@@ -1721,7 +1719,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								scr_choose_field_zones(true, false, false, true, false, 9)
 								resolutionPile[positionInOrder,2]++
 							break;
-							case 3:
+							case 5:
 								with(scr_recruit(116, 0, resolutionPile[positionInOrder,9])){
 									cardStat[1] = resolutionPile[positionInOrder,7]
 									cardStat[2] = resolutionPile[positionInOrder,8]
@@ -1784,6 +1782,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					if(!fieldCard[position].cardStatus[11] && !effectSilenced){
 						switch(resolutionStep){
 							case 1:
+								resolutionPile[positionInOrder,5] = irandom(100)
 								resolutionPile[positionInOrder,2]++
 							break;
 							case 3:

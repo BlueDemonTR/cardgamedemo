@@ -60,4 +60,17 @@ switch(animationInfo[0]){
 			runAnimation = true;
 		}
 	break;
+	case 3:
+		chanceOutcome = (animationInfo[1]/100)*360;
+		slowdownStart = chanceOutcome + irandom(2)*360
+		reelAngle = slowdownStart + random(8)*360
+		reelSpeed = 7
+		chanceCount = 0;
+		for(var i = 0; i < animationCount-3; i = i + 2){
+			chanceInfo[chanceCount,0] = animationInfo[i+2]
+			chanceInfo[chanceCount++,1] = animationInfo[i+3]
+		}
+		obj_test_button.test_mode = string(chanceInfo)
+		runAnimation = true
+	break;
 }

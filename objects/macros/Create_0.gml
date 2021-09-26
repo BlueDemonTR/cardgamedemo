@@ -16,7 +16,7 @@ scr_initialize_statuses()
 scr_initialize_shared_effects();
 scr_initialize_archetypes();
 scr_initialize_momentum_wheel();
-
+randomize()
 show_debug_message(GM_version)
 //don't set it to true in online
 test_mode=true;

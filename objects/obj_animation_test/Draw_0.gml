@@ -45,5 +45,26 @@ switch(animationInfo[0]){
 		draw_sprite_ext(macros.sprite_array[summonedCardNum,summonedArtNum],-1,room_width/2,room_height/2,big_card_width/550,big_card_height/800,0,c_white,summonedCardAlpha)
 		timer++
 	break;
+	case 3:
+		var chanceLeft = 100,
+		reelLeft = reelAngle-chanceOutcome;
+		for(var i = 0; i < chanceCount; i++){
+			draw_pie(room_width/2, room_height/2, chanceLeft, 100, chanceInfo[i,1], 300, 1)	
+			chanceLeft -= chanceInfo[i,0]
+		}
+		draw_sprite_ext(spr_reel,-1,room_width/2, room_height/2,1,1, reelAngle,c_white,1)
+		if(reelLeft < 1){
+			draw_text(room_width/2, room_height/2, "POYOPOYOPOYOPOYO")
+		}else{		
+			reelAngle -= reelSpeed*.01*reelLeft
+			if(reelAngle < slowdownStart){
+				test()
+				reelSpeed -= .05
+			}
+		}
+
+
+		obj_test_button.test_mode = string(reelLeft) + " " + string(reelSpeed) + " " + string(reelAngle) + " " + string(slowdownStart)
+	break;
 }
 

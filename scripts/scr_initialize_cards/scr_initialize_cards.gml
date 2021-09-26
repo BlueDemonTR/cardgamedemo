@@ -14,8 +14,6 @@ function scr_initialize_cards(){
 	spiritName[5] = "Kind"
 	spiritName[6] = "Passionate"
 	
-	
-	
 	var i=-1;
 	var j=0;
 	
@@ -2883,7 +2881,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,j++] = "Once per turn: 10% Do Nothing, 80% Recruit a ''Fish'', 9% Recruit two ''Fish'', 1% Recruit ''Goldfish''";
+		origText[i,j++] = "Once per turn: 10% Do Nothing, 80% Recruit a ''Fish'', 8% Recruit two ''Fish'', 2% Recruit ''Goldfish''";
 		origText[i,j++] = "He has been fishing for his entire life with his net technique, yet he has only catched the Goldfish a few times in his life";
 		j=0
 		//Card Status'
@@ -3083,7 +3081,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,j++] = "10% Do Nothing, 80% Recruit a ''Fish'', 9% Recruit two ''Fish'', 1% Recruit ''Goldfish''";
+		origText[i,j++] = "10% Do Nothing, 80% Recruit a ''Fish'', 8% Recruit two ''Fish'', 2% Recruit ''Goldfish''";
 		origText[i,j++] = "This rod appears once every year. It has a fair chance to catch a fish for free";
 		j=0
 		//Card Status'
