@@ -108,17 +108,17 @@ function scr_end_phase_effect(argument0){
 			
 		break;
 		case 34:
-			if !fieldCard[endPhaseChains[endPhaseChainCount-1,2]].cardStatus[11] scr_burn(opponent,3,34)
+			if !fieldCard[endPhaseChains[endPhaseChainCount-1,2]].cardStatus[StatusSilenced] scr_burn(opponent,3,34)
 			endPhaseChainCount--
 			return;			
 		break;
 		case 36:
-			if !fieldCard[endPhaseChains[endPhaseChainCount-1,2]].cardStatus[11] scr_burn(opponent,2,36)		
+			if !fieldCard[endPhaseChains[endPhaseChainCount-1,2]].cardStatus[StatusSilenced] scr_burn(opponent,2,36)		
 			endPhaseChainCount--
 			return;				
 		break;
 		case 38:
-			if !fieldCard[endPhaseChains[endPhaseChainCount-1,2]].cardStatus[11] scr_burn(opponent,1,38)	
+			if !fieldCard[endPhaseChains[endPhaseChainCount-1,2]].cardStatus[StatusSilenced] scr_burn(opponent,1,38)	
 			endPhaseChainCount--
 			return;				
 		break;
@@ -141,9 +141,9 @@ function scr_end_phase_effect(argument0){
 			return;
 		break;		
 		case 72:
-			if (!fieldCard[endPhaseChains[endPhaseChainCount-1,2]].cardStatus[11]){
+			if (!fieldCard[endPhaseChains[endPhaseChainCount-1,2]].cardStatus[StatusSilenced]){
 				scr_mill_from_top(3)
-				fieldCard[endPhaseChains[endPhaseChainCount-1,2]].cardStat[1] += 3;
+				fieldCard[endPhaseChains[endPhaseChainCount-1,2]].cardStat[StatATK] += 3;
 				scr_message_field_card_stats(endPhaseChains[endPhaseChainCount-1,2])	
 			}
 			endPhaseChainCount--;

@@ -24,12 +24,12 @@ function scr_appropiate_targets(targetController, targetTypes, targetMinLevel, t
 		for (var i=0; i < 5; i++){
 			if(i=ignoreTarget){continue;}
 			if(obj_player.fieldCard[i] != noone){
-				if(obj_player.fieldCard[i].cardStat[0] > targetMinLevel && obj_player.fieldCard[i].cardStat[0] < targetMaxLevel){
+				if(obj_player.fieldCard[i].cardStat[StatLevel] > targetMinLevel && obj_player.fieldCard[i].cardStat[StatLevel] < targetMaxLevel){
 					if(targetArchetype == "any" || scr_check_archetype(obj_player.field[i,0], targetArchetype)){
-						if(targetSpirit == "any" || array_count_variable(targetSpirit, obj_player.fieldCard[i].cardStat[7])){
-							if (!obj_player.fieldCard[i].cardStatus[6] || !doesThisEffectTarget){
-								if(canTargetMain && macros.card_type[obj_player.field[i,0]] == 0){global.appropiate_targets[j++, 0] = i;}
-								if(canTargetMomentum &&macros.card_type[obj_player.field[i,0]] == 1){global.appropiate_targets[j++, 0] = i;}
+						if(targetSpirit == "any" || array_count_variable(targetSpirit, obj_player.fieldCard[i].cardStat[StatSpirit])){
+							if (!obj_player.fieldCard[i].cardStatus[StatusSneaky] || !doesThisEffectTarget){
+								if(canTargetMain && macros.card_type[obj_player.field[i,0]] == TypeMonster){global.appropiate_targets[j++, 0] = i;}
+								if(canTargetMomentum &&macros.card_type[obj_player.field[i,0]] == TypeMomentum){global.appropiate_targets[j++, 0] = i;}
 							}
 						}
 					}
@@ -42,12 +42,12 @@ function scr_appropiate_targets(targetController, targetTypes, targetMinLevel, t
 	if(canTargetOpponents){
 		for (var i=0; i < 5; i++){
 			if(obj_opponent.fieldCard[i] != noone){
-				if(obj_opponent.fieldCard[i].cardStat[0] > targetMinLevel && obj_opponent.fieldCard[i].cardStat[0] < targetMaxLevel){
+				if(obj_opponent.fieldCard[i].cardStat[StatLevel] > targetMinLevel && obj_opponent.fieldCard[i].cardStat[StatLevel] < targetMaxLevel){
 					if(targetArchetype == "any" || scr_check_archetype(obj_opponent.field[i,0], targetArchetype)){
-						if(targetSpirit == "any" || obj_player.fieldCard[i].cardStat[7] == targetSpirit){
-							if (!obj_opponent.fieldCard[i].cardStatus[6] || !doesThisEffectTarget){
-								if(canTargetMain &&  macros.card_type[obj_opponent.field[i,0]] == 0){global.appropiate_targets[j++, 1] = i;}
-								if(canTargetMomentum &&  macros.card_type[obj_player.field[i,0]] == 1){global.appropiate_targets[j++, 1] = i;}
+						if(targetSpirit == "any" || obj_player.fieldCard[i].cardStat[StatSpirit] == targetSpirit){
+							if (!obj_opponent.fieldCard[i].cardStatus[StatusSneaky] || !doesThisEffectTarget){
+								if(canTargetMain && macros.card_type[obj_opponent.field[i,0]] == TypeMonster){global.appropiate_targets[j++, 1] = i;}
+								if(canTargetMomentum && macros.card_type[obj_player.field[i,0]] == TypeMomentum){global.appropiate_targets[j++, 1] = i;}
 							}
 						}
 					}

@@ -4,7 +4,7 @@ function scr_sacrifice(argument0) {
 		var cardNum = self.cardNum,
 		var artNum = self.artNum;
 		scr_on_sacrificed(cardNum);
-		player.mana += cardStat[0];
+		player.mana += cardStat[StatLevel];
 		scr_message_stats();
 		animationType = "destroy"
 		obj_player.infirmary[obj_player.infirmaryCount,0] = cardNum;

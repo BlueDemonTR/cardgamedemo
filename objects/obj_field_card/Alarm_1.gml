@@ -1,10 +1,8 @@
-scr_message_last_action("Opponent "+ summoning_method +" summons "+ macros.name[cardNum]);
-scr_last_action("You "+ summoning_method +" summoned "+ macros.name[cardNum]);
-if(scr_check_shared(cardNum,5)){
+if(scr_check_shared(cardNum, ArcIgloo)){
 	for(i=0;i<5;i++){
 		if(obj_player.field[i,0] > 0)
-			if(i!=position && scr_check_shared(obj_player.field[i,0], 5)){
-				if(obj_player.fieldCard[i].cardStat[2] <= cardStat[2]){
+			if(i!=position && scr_check_shared(obj_player.field[i,0], ArcIgloo)){
+				if(obj_player.fieldCard[i].cardStat[StatMaxHP] <= cardStat[StatMaxHP]){
 					scr_bounce(i)
 				}else{
 					scr_bounce(position)

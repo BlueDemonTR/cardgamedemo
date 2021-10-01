@@ -6,22 +6,22 @@ function scr_check_filter(cardNum, filterNum){
 			return true
 		break;
 		case 0: //Motorbiker Card
-			return (scr_check_archetype(cardNum, 0))
+			return (scr_check_archetype(cardNum, ArcMotorbiker))
 		break;
 		case 1: //Level 2 or Lower Motorbiker Monster
-			if(variable_array_exists(macros.origStat, cardNum, 0)){
+			if(variable_array_exists(macros.origStat, cardNum, StatLevel)){
 				if(filterNum == 1.1){//If it can be summoned
-					if (!scr_limited_summon(cardNum)){ return false; }
+					if (!scr_limited_summon(cardNum)){return false;}
 				}
-				return (scr_check_archetype(cardNum, 0) && macros.origStat[cardNum,0] <= 2)	
+				return (scr_check_archetype(cardNum, ArcMotorbiker) && macros.origStat[cardNum,StatLevel] <= 2)	
 			}
 		break;
 		case 2: //Motorbiker Leader Monster That Has A The Same Level As A Motorbiker Leader Monster In The Momentum Deck That is Legal To Summon
-			if(variable_array_exists(macros.origStat, cardNum, 0)){
-				if (scr_check_archetype(cardNum, 1)){
-					var levelTemp = macros.origStat[cardNum,0];
+			if(variable_array_exists(macros.origStat, cardNum, StatLevel)){
+				if(scr_check_archetype(cardNum, ArcMotorbiker)){
+					var levelTemp = macros.origStat[cardNum, StatLevel];
 					for (var i = 0; i < obj_player.momentumDeckCount; i++){
-						if(macros.origStat[obj_player.momentumDeck[i,0],0] == levelTemp && scr_limited_summon(obj_player.momentumDeck[i,0])){
+						if(macros.origStat[obj_player.momentumDeck[i,0], StatLevel] == levelTemp && scr_limited_summon(obj_player.momentumDeck[i,0])){
 							return true
 						}
 					}
@@ -30,10 +30,10 @@ function scr_check_filter(cardNum, filterNum){
 			
 		break;
 		case 3: //Motorbiker Leader Monster That Has A Motorbiker Leader Monster With The Same Level In The Target
-			if(variable_array_exists(macros.origStat, cardNum, 0)){
-				if (scr_check_archetype(cardNum, 1)){
-					var levelTemp = macros.origStat[cardNum,0];
-					return (macros.origStat[obj_player.infirmary[obj_player.resolutionPile[obj_player.resolutionPileCount-1,5],0],0] == levelTemp)
+			if(variable_array_exists(macros.origStat, cardNum, StatLevel)){
+				if (scr_check_archetype(cardNum, ArcMotorbikerLeader)){
+					var levelTemp = macros.origStat[cardNum, StatLevel];
+					return (macros.origStat[obj_player.infirmary[obj_player.resolutionPile[obj_player.resolutionPileCount-1,5],0],StatLevel] == levelTemp)
 				}
 			}		
 		break;
@@ -41,27 +41,27 @@ function scr_check_filter(cardNum, filterNum){
 			if(filterNum == 4.1){//If it can be summoned
 				if (!scr_limited_summon(cardNum)){ return false; }
 			}		
-			return (scr_check_archetype(cardNum, 3))
+			return (scr_check_archetype(cardNum, ArcVisclades))
 		break;
 		case 5: //non-Momentum Visclades Monster
-			return (scr_check_archetype(cardNum, 3) && !(macros.card_type[cardNum] == 1) && scr_limited_summon(cardNum))
+			return (scr_check_archetype(cardNum, ArcVisclades) && !(macros.card_type[cardNum] == TypeMomentum) && scr_limited_summon(cardNum))
 		break;
 		case 6: //Igloo Card
-			return scr_check_archetype(cardNum, 5)
+			return scr_check_archetype(cardNum, ArcIgloo)
 		break;
 		case 7: //Pole Clan Card
 			if(filterNum == 7.1){//If it can be summoned
 				if (!scr_limited_summon(cardNum)){ return false; }
 			}		
-			return scr_check_archetype(cardNum, 4)
+			return scr_check_archetype(cardNum, ArcPoleClan)
 		break
 		case 8: //Blizzard Card		
-			return scr_check_archetype(cardNum, 6)
+			return scr_check_archetype(cardNum, ArcBlizzard)
 		break
 		case 9: //Monster That Has A Level Higher Than The Monster With The Lowest Level On The Field That is also targetable
-			if(macros.card_type[cardNum] == 0 || macros.card_type[cardNum] == 1){
+			if(macros.card_type[cardNum] != TypeSpell){
 				for(i = 0; i < 5; i++){
-					if((!obj_player.fieldCard[i].cardStatus[6] && obj_player.fieldCard[i].cardStat[0] < macros.origStat[cardNum, 0]) || (!obj_opponent.fieldCard[i].cardStatus[6] && obj_opponent.fieldCard[i].cardStat[0] < macros.origStat[cardNum, 0])){
+					if((!obj_player.fieldCard[i].cardStatus[StatusSneaky] && obj_player.fieldCard[i].cardStat[StatLevel] < macros.origStat[cardNum, StatLevel]) || (!obj_opponent.fieldCard[i].cardStatus[StatusSneaky] && obj_opponent.fieldCard[i].cardStat[StatLevel] < macros.origStat[cardNum, StatLevel])){
 						return true
 					}
 				}	
@@ -71,14 +71,14 @@ function scr_check_filter(cardNum, filterNum){
 			if(filterNum == 10.1){//If it can be summoned
 				if (!scr_limited_summon(cardNum)){ return false; }
 			}			
-			return scr_check_archetype(cardNum,1)
+			return scr_check_archetype(cardNum, ArcMotorbikerLeader)
 			
 		break;
 		case 11: //non-Momentum Monster
-			return (macros.card_type[cardNum] == 0)
+			return (macros.card_type[cardNum] == TypeMonster)
 		break;
 		case 12: //Level 4 or Lower Monster
-			return (macros.origStat[0] <= 4)
+			return (macros.origStat[cardNum, StatLevel] <= 4)
 		break;
 		case 13: //Specifically "Igloo"
 			if(filterNum == 13.1){//If it can be summoned
@@ -90,16 +90,34 @@ function scr_check_filter(cardNum, filterNum){
 			if(filterNum == 14.1){//If it can be summoned
 				if (!scr_limited_summon(cardNum)){ return false; }
 			}
-			return macros.origStat[cardNum ,0] <= obj_player.momentum
+			return macros.origStat[cardNum, StatLevel] <= obj_player.momentum
 		break;
 		case 15: //Level 2 or lower Monster
-			return macros.origStat[cardNum, 0] <= 2
+			return macros.origStat[cardNum, StatLevel] <= 2
 		break;
 		case 16: //Level 5 or higher Monster
-			return macros.origStat[cardNum, 0] >= 5
+			return macros.origStat[cardNum, StatLevel] >= 5
 		break;
 		case 17: //Sacrifice Monster
-			return (scr_check_archetype(cardNum, 7))
+			return (scr_check_archetype(cardNum, ArcSacrifice))
+		break;
+		case 18: //Monster
+			return (macros.card_type != TypeSpell)
+		break;
+		case 19: //X-Makine Monster
+			if(filterNum == 19.1){//If it can be summoned
+				if (!scr_limited_summon(cardNum)){ return false; }
+			}		
+			return (scr_check_archetype(cardNum, ArcXMakine))
+		break;
+		case 20: //Momentum 
+			return macros.card_type[cardNum] == TypeMomentum
+		break;
+		case 21: //Fisherman Monster
+			if(filterNum == 21.1){//If it can be summoned
+				if (!scr_limited_summon(cardNum)){ return false; }
+			}		
+			return (scr_check_archetype(cardNum, ArcFisherman))		
 		break;
 	}
 	return false;

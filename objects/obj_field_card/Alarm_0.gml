@@ -2,7 +2,7 @@
 if(!player.mid_effect && player.main_phase){
 	var position = self.position,
 	i=0;
-	if(cardcan_attack && !cardStatus[7] && !cardStatus[9] && player.turn_count != 1){
+	if(cardcan_attack && !cardStatus[StatusUnarmed] && !cardStatus[StatusParalyzed] && player.turn_count != 1){
 		activation[i] = instance_create_depth(x,y,depth-1,obj_activation_box);
 		with(activation[i]){
 			activation_mode="Attack";
@@ -12,7 +12,7 @@ if(!player.mid_effect && player.main_phase){
 		}
 		i++
 	}
-	if(!cardStatus[11] && !opt_used && scr_legal_activation(cardNum) && scr_card_hopt(cardNum)){
+	if(!cardStatus[StatusSilenced] && !opt_used && scr_legal_activation(cardNum) && scr_card_hopt(cardNum)){
 		activation[i] = instance_create_depth(x,y,depth-1,obj_activation_box);
 		with(activation[i]){
 			activation_mode="Effect";

@@ -367,7 +367,7 @@ function scr_spell_effects(cardNum) {
 			with(obj_player){
 				for(i=0; i < 5; i++){
 					if(scr_check_archetype(field[i,0],11)){
-						if(!fieldCard[i].cardStatus[6]){
+						if(!fieldCard[i].cardStatus[StatusSneaky]){
 							temp1 = true
 							break;
 						}
@@ -397,7 +397,7 @@ function scr_spell_effects(cardNum) {
 					if(scr_check_archetype(field[i,0], 11)){
 						x_makine++
 					}
-					if(macros.card_type[opponent.field[i,0]] = 1){
+					if(macros.card_type[opponent.field[i,0]] == TypeMomentum){
 						temp1=true;
 					}
 				}

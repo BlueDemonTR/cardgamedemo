@@ -99,7 +99,7 @@ function scr_wheel_effects(argument0, argument1) {
 									for(i=0; i < 5; i++){
 										if(obj_opponent.field[i,0] > 0){
 											with(obj_opponent.fieldCard[i]){
-												if(cardStat[0] <= 4){
+												if(cardStat[StatLevel] <= 4){
 													scr_destroy(i);
 												}
 											}	
@@ -119,7 +119,7 @@ function scr_wheel_effects(argument0, argument1) {
 						
 									for(i=0; i < 5; i++){
 										if(scr_check_archetype(field[i,0],5)){
-											fieldCard[i].cardStat[3] += 3;
+											fieldCard[i].cardStat[StatHP] += 3;
 											momentum -= 3
 											scr_message_stats();
 											return;
@@ -316,9 +316,9 @@ function scr_wheel_effects(argument0, argument1) {
 									for(var i=0; i < 5; i++){
 										if(field[i,0]> 0){
 											if(scr_check_archetype(field[i,0], 11)){
-												fieldCard[i].cardStat[1] +=1;
-												fieldCard[i].cardStat[2] +=1;
-												fieldCard[i].cardStat[3] +=1;
+												fieldCard[i].cardStat[StatATK] +=1;
+												fieldCard[i].cardStat[StatMaxHP] +=1;
+												fieldCard[i].cardStat[StatHP] +=1;
 												scr_message_field_card_stats(i);
 												global.effect_successful = true;
 											}

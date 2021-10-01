@@ -1,5 +1,5 @@
 function scr_destroys_by_battle(cardNum, destroyedMonster) {
-	if(cardStatus[11]){return;}
+	if(cardStatus[StatusSilenced]){return;}
 	switch(cardNum){
 		case 18://Riti Ava Activation
 			if(!scr_legal_activation(cardNum, 0, position)){break;}

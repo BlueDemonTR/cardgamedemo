@@ -1,28 +1,28 @@
 function scr_on_summon(argument0){
 	var cardNum = argument0;
-	if(scr_check_shared(cardNum, 2)){
+	if(scr_check_shared(cardNum, SharedMotorbikerLeader)){
 		scr_limit_summoning_card(cardNum);
 	}
-	if(scr_check_archetype(cardNum, 10)){
-		if(!scr_check_archetype(cardNum,11)){
+	if(scr_check_archetype(cardNum, ArcFish)){
+		if(!scr_check_archetype(cardNum, ArcFisherman)){
 			if (obj_player.selected_wheel = 5 && !obj_player.wheel_locked){
-				obj_player.momentum += obj_player.fieldCard[position].cardStat[0]
+				obj_player.momentum += obj_player.fieldCard[position].cardStat[StatLevel]
 				scr_message_stats();
 			}
 			for(var i = 0; i < 5; i++){
 				if(obj_player.field[i,0] = 90){
-					if(!obj_player.fieldCard[i].cardStatus[11]){
-						obj_player.fieldCard[i].cardStat[1] += obj_player.fieldCard[position].cardStat[1];
-						obj_player.fieldCard[i].cardStat[2] += obj_player.fieldCard[position].cardStat[2];
-						obj_player.fieldCard[i].cardStat[3] += obj_player.fieldCard[position].cardStat[3];
+					if(!obj_player.fieldCard[i].cardStatus[StatusSilenced]){
+						obj_player.fieldCard[i].cardStat[StatATK] += obj_player.fieldCard[position].cardStat[StatATK];
+						obj_player.fieldCard[i].cardStat[StatMaxHP] += obj_player.fieldCard[position].cardStat[StatMaxHP];
+						obj_player.fieldCard[i].cardStat[StatHP] += obj_player.fieldCard[position].cardStat[StatHP];
 						scr_message_field_card_stats(i);
 					}
 				}
 			}
 			for(var i = 0; i < 5; i++){
 				if(obj_player.field[i,0] = 88){
-					if(!obj_player.fieldCard[i].cardStatus[11]){
-						obj_player.fieldCard[i].cardStat[1] += 1;
+					if(!obj_player.fieldCard[i].cardStatus[StatusSilenced]){
+						obj_player.fieldCard[i].cardStat[StatATK] += 1;
 						scr_message_field_card_stats(i);
 					}
 				}
@@ -64,7 +64,7 @@ function scr_on_summon(argument0){
 		case 61://Bodyguard
 			for(i=0;i<5;i++){
 				if(player.field[i,0]==60){
-					player.fieldCard[i].cardStatus[4] = true;
+					player.fieldCard[i].cardStatus[StatusIndestructable] = true;
 					scr_message_field_card_stats(i);			
 				}
 			}
@@ -75,8 +75,8 @@ function scr_on_summon(argument0){
 			with(player){
 				for(i=0;i<5;i++){
 					if(field[i,0]==62){
-						fieldCard[i].cardStat[2] += 2;
-						fieldCard[i].cardStat[3] += 2;
+						fieldCard[i].cardStat[StatMaxHP] += 2;
+						fieldCard[i].cardStat[StatHP] += 2;
 						scr_message_field_card_stats(i);
 					}
 				}
@@ -87,7 +87,7 @@ function scr_on_summon(argument0){
 		case 68://Machine Gun Soldiers
 			for (var i=0;i<5;i++){
 				if(opponent.field[i,0]>0){
-					opponent.fieldCard[i].cardStat[3]--;
+					opponent.fieldCard[i].cardStat[StatHP]--;
 					scr_message_opponent_field_card_stats(i)
 				}
 			}
@@ -100,7 +100,7 @@ function scr_on_summon(argument0){
 	
 	
 		case 70://Mad Cyborg
-			cardStatus[9] = true;
+			cardStatus[StatusParalyzed] = true;
 		break;
 	
 	
@@ -109,10 +109,10 @@ function scr_on_summon(argument0){
 		break;
 		case 86://Goldfish
 			for(var i = 0; i < 5; i++){
-				if(scr_check_archetype(obj_player.field[i,0],9)){
-					obj_player.fieldCard[i].cardStat[1] += 2
-					obj_player.fieldCard[i].cardStat[2] += 2
-					obj_player.fieldCard[i].cardStat[3] += 2
+				if(scr_check_archetype(obj_player.field[i,0], 9)){
+					obj_player.fieldCard[i].cardStat[StatATK] += 2
+					obj_player.fieldCard[i].cardStat[StatMaxHP] += 2
+					obj_player.fieldCard[i].cardStat[StatHP] += 2
 					scr_message_field_card_stats(i);
 				}
 			}

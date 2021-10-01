@@ -18,7 +18,7 @@ if(legal_targets_open){
 	draw_sprite_ext(spr_legaltargetsBG,-1,room_width/2,room_height/2,1,1,0,c_white,0.8);
 }
 if(impactSummoning){
-	draw_text(625,490,string(currentLevel)+"/"+string(macros.origStat[momentum_deck[cardToSummon,0],0]));
+	draw_text(625,490,string(currentLevel)+"/"+string(macros.origStat[momentum_deck[cardToSummon,0], StatLevel]));
 }
 if(!instance_exists(obj_opponent)){
 	draw_set_color(c_black)

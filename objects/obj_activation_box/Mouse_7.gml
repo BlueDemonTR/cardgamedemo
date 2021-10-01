@@ -5,13 +5,9 @@ switch(activation_mode){
 		scr_attack(origin_card_location);
 	break;
 	case "Sacrifice":
-		scr_message_last_action("Opponent sacrifices " +macros.name[obj_player.field[origin_card_location,0]]);
-		scr_last_action("You sacrificed " + macros.name[obj_player.field[origin_card_location,0]]);
 		scr_sacrifice(origin_card_location);	
 	break;
 	case "Effect":
-		scr_message_last_action("Opponent activates" + macros.name[obj_player.field[origin_card_location,0]]+"'s effect");
-		scr_last_action("You activated" + macros.name[obj_player.field[origin_card_location,0]]+"'s effect");
 		switch(obj_player.field[origin_card_location,0]){
 			case 14://Motorbiker Leader Cleo Activation
 			case 29://Visclades of Denial Activation
@@ -142,7 +138,7 @@ switch(activation_mode){
 					if(temp1 < 10){
 						for(i = 0; i < 5; i++){
 							if(scr_check_archetype(field[i,0],10)){
-								fieldCard[i].cardStatus[7] = true;
+								fieldCard[i].cardStatus[StatusUnarmed] = true;
 							}
 						}
 						global.effect_successful = true
@@ -198,7 +194,7 @@ switch(activation_mode){
 						if(i = origin_card_location){continue}
 						if(field[i,0]> 0){
 							if(scr_check_archetype(field[i,0], 11)){
-								fieldCard[i].cardStat[1]+=1;
+								fieldCard[i].cardStat[StatATK]+=1;
 								scr_message_field_card_stats(i);
 							}
 						}
@@ -216,8 +212,8 @@ switch(activation_mode){
 						if(i = origin_card_location){continue}
 						if(field[i,0]> 0){
 							if(scr_check_archetype(field[i], 11)){
-								fieldCard[i].cardStat[2] +=1;
-								fieldCard[i].cardStat[3] +=1;
+								fieldCard[i].cardStat[StatMaxHP] +=1;
+								fieldCard[i].cardStat[StatHP] +=1;
 								scr_message_field_card_stats(i);
 							}
 						}
@@ -281,8 +277,8 @@ switch(activation_mode){
 		}
 	break;
 	case "Hand Effect":
-		if(scr_check_shared(obj_player.hand[origin_card_location,0],3)){
-			obj_player.resolutionPile[obj_player.resolutionPileCount,0] = "Shared3"
+		if(scr_check_shared(obj_player.hand[origin_card_location,0], ArcVisclades)){
+			obj_player.resolutionPile[obj_player.resolutionPileCount,0] = "SharedVisclades"
 			obj_player.resolutionPile[obj_player.resolutionPileCount,1] = 0
 			obj_player.resolutionPile[obj_player.resolutionPileCount,2] = 0
 			obj_player.resolutionPile[obj_player.resolutionPileCount,3] = origin_card_location
@@ -303,10 +299,10 @@ switch(activation_mode){
 		}
 	break;
 	case "Multiple Choices":
-		obj_player.resolutionPile[obj_player.resolutionPileCount-1,arrayPos] = bar_number;
+		obj_player.resolutionPile[obj_player.resolutionPileCount-1,arrayPos] = choiceNum;
 		obj_player.resolutionPile[obj_player.resolutionPileCount-1,2]++
 		with(obj_activation_box){
-			if(global.effect_successful &&activation_mode == "Multiple Choices"){
+			if(global.effect_successful && activation_mode == "Multiple Choices"){
 				instance_destroy();
 			}
 		}	

@@ -20,14 +20,14 @@ switch (current_function){
 		
 		attacker.cardcan_attack = false;
 		attacker.cardis_sacrificable = false;
-		if(attacked.cardStat[6] = 0){
+		if(attacked.cardStat[StatDodge] = 0){
 			with (attacker){scr_on_attack(attacker.cardNum, attacker, attacked);}
 			with (attacked){
-				var excessDamage = (attacker.cardStat[1] - cardStat[4]) - cardStat[3];
-				cardStat[3] -= attacker.cardStat[1] - cardStat[4];
-				var counterAttack = cardStat[1];
+				var excessDamage = (attacker.cardStat[StatATK] - cardStat[StatArmor]) - cardStat[StatHP];
+				cardStat[StatHP] -= attacker.cardStat[StatATK] - cardStat[StatArmor];
+				var counterAttack = cardStat[StatATK];
 		
-				if (attacker.cardStatus[1] && excessDamage > 0){
+				if (attacker.cardStatus[StatusPierce] && excessDamage > 0){
 					obj_opponent.playerHP -= excessDamage
 					scr_message_opponent_stats();	
 					with(attacker){scr_on_pierce(attacker.cardNum);}
@@ -41,9 +41,9 @@ switch (current_function){
 			
 			}
 			with (attacker){
-				if(cardNum != 14){cardStat[3] -= counterAttack - cardStat[4];}
+				if(cardNum != 14){cardStat[StatHP] -= counterAttack - cardStat[StatArmor];}
 		
-				if (attacked.cardStatus[2] && excessDamage > 0){
+				if (attacked.cardStatus[StatusRebellious] && excessDamage > 0){
 					obj_player.playerHP -= excessDamage
 					scr_message_stats();
 					with(attacked){scr_on_pierce(attacked.cardNum);}
@@ -51,7 +51,7 @@ switch (current_function){
 				if(cardHP > 0){scr_after_attack(cardNum)}
 			}
 		}else{
-			attacked.cardStat[6]--;
+			attacked.cardStat[StatDodge]--;
 		}
 		scr_message_last_action(macros.name[attacker.cardNum] +" attacks " +macros.name[attacked.cardNum]);
 		scr_last_action(macros.name[attacker.cardNum] +" attacks " +macros.name[attacked.cardNum]);
@@ -81,12 +81,12 @@ switch (current_function){
 			scr_on_direct_attack(cardNum);
 		}
 		with(player){
-			playerHP -= attacker.cardStat[1];
+			playerHP -= attacker.cardStat[StatATK];
 			
 		}
 		
 		with(attacker){
-			damageToPlayer = attacker.cardStat[1];
+			damageToPlayer = attacker.cardStat[StatATK];
 			scr_after_direct_attack(cardNum);
 			scr_after_attack(cardNum);
 			scr_message_field_card_stats(position)
@@ -109,7 +109,7 @@ switch (current_function){
 		if (!force_select){
 			if(selected){
 				selected = false;
-				obj_player.currentLevel -= obj_player.fieldCard[self.field_location].cardStat[0];
+				obj_player.currentLevel -= obj_player.fieldCard[self.field_location].cardStat[StatLevel];
 				if (obj_player.momentum_deck[cardToSummon,0] > 10 && obj_player.momentum_deck[cardToSummon,0] < 17){
 					obj_player.motorbikers--;
 					if(obj_player.momentum_deck[cardToSummon,0] == 16 && scr_check_archetype(player.field[self.field_location,0], 2)){
@@ -137,7 +137,7 @@ switch (current_function){
 			}
 			else if(!selected){
 				selected = true;
-				obj_player.currentLevel += obj_player.fieldCard[self.field_location].cardStat[0];
+				obj_player.currentLevel += obj_player.fieldCard[self.field_location].cardStat[StatLevel];
 				if (obj_player.momentum_deck[cardToSummon,0] > 10 && obj_player.momentum_deck[cardToSummon,0] < 17){
 					obj_player.motorbikers++;
 					if(obj_player.momentum_deck[cardToSummon,0] == 16 && scr_check_archetype(player.field[self.field_location,0], 2)){

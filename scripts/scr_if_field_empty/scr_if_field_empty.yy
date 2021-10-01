@@ -6,7 +6,7 @@
     "path": "folders/Scripts/Game Functions.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_get_card_info",
+  "name": "scr_if_field_empty",
   "tags": [],
   "resourceType": "GMScript",
 }

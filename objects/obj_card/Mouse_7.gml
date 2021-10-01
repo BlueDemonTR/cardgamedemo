@@ -4,8 +4,8 @@ if (player.main_phase && !player.mid_effect && player.own_turn){
 	for (i = 0; i< 4; i++){
 		if (x > player.field_card_zone_x[i] - card_width/2 && x < player.field_card_zone_x[i] + card_width/2){
 			if (y > player.field_card_zone_y[i] - card_height/2 && y < player.field_card_zone_y[i] + card_height/2){
-				if (scr_limited_summon(self.cardNum) && macros.card_type[self.cardNum]!=2 && player.field[i,0]==0 && macros.origStat[self.cardNum,0] <= player.mana){
-			
+				if (scr_limited_summon(self.cardNum) && macros.card_type[self.cardNum] != TypeSpell && player.field[i,0] == 0 && macros.origStat[self.cardNum,StatLevel] <= player.mana){
+		
 					player.fieldCard[i] = instance_create_depth(player.field_card_zone_x[i], player.field_card_zone_y[i], 1, obj_field_card);
 					var
 					sprite = sprite_index,
@@ -39,7 +39,7 @@ if (player.main_phase && !player.mid_effect && player.own_turn){
 //spell
 
 	var cardNum = self.cardNum;
-	if(macros.card_type[cardNum] == 2){
+	if(macros.card_type[cardNum] == TypeSpell){
 		if(scr_activation_area_check()){
 			scr_spell_effects(cardNum);
 		

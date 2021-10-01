@@ -9,19 +9,19 @@ function scr_summoning_requirements(argument0) {
 	
 		for(var i=0; i < 4; i++){
 			if (field[i,0] > 0){
-				if (fieldCard[i].cardStat[0]< macros.origStat[cardNum,0] && scr_check_archetype(field[i,0],1)){
+				if (fieldCard[i].cardStat[StatLevel]< macros.origStat[cardNum, StatLevel] && scr_check_archetype(field[i,0],1)){
 					motorbikers++;
-					levelSum += fieldCard[i].cardStat[0];
+					levelSum += fieldCard[i].cardStat[StatLevel];
 				}
 			}
 		}
 		if (field[4,0] > 0){
-			if (fieldCard[4].cardStat[0] < macros.origStat[cardNum,0] && scr_check_archetype(field[4,0],1)){
+			if (fieldCard[4].cardStat[StatLevel] < macros.origStat[cardNum, StatLevel] && scr_check_archetype(field[4,0],1)){
 				motorbikers++;
-				levelSum += fieldCard[4].cardStat[0];
+				levelSum += fieldCard[4].cardStat[StatLevel];
 			}else{mmzOccupied = true;}
 		}
-		if(!mmzOccupied && motorbikers >= 2 && levelSum >= macros.origStat[cardNum,0] && scr_limited_summon(cardNum)){
+		if(!mmzOccupied && motorbikers >= 2 && levelSum >= macros.origStat[cardNum, StatLevel] && scr_limited_summon(cardNum)){
 			global.filtered_cards[filtered_card_count++] = placeInMomentumDeck;
 		}
 	}
@@ -31,9 +31,9 @@ function scr_summoning_requirements(argument0) {
 		motorbiker_leader=false;
 		for(var i=0; i < 4; i++){
 			if (field[i,0] > 0){
-				if (fieldCard[i].cardStat[0]< macros.origStat[cardNum,0] && scr_check_archetype(field[i,0],11)){
+				if (fieldCard[i].cardStat[StatLevel]< macros.origStat[cardNum, StatLevel] && scr_check_archetype(field[i,0],11)){
 					motorbikers++;
-					levelSum += fieldCard[i].cardStat[0];
+					levelSum += fieldCard[i].cardStat[StatLevel];
 					if (scr_check_archetype(field[i,0], 2)){
 						motorbiker_leader= true;
 					}
@@ -41,15 +41,15 @@ function scr_summoning_requirements(argument0) {
 			}
 		}
 		if (field[4,0] > 0){
-			if (fieldCard[4].cardStat[0]< macros.origStat[cardNum,0] && scr_check_archetype(field[4,0],11)){
+			if (fieldCard[4].cardStat[StatLevel]< macros.origStat[cardNum, StatLevel] && scr_check_archetype(field[4,0],11)){
 				motorbikers++;
-				levelSum += fieldCard[4].cardStat[0];
+				levelSum += fieldCard[4].cardStat[StatLevel];
 				if (scr_check_archetype(field[4,0], 2)){
 					motorbiker_leader= true;
 				}
 			}else{mmzOccupied = true;}
 		}
-		if(!mmzOccupied && motorbikers >= 2 && levelSum >= macros.origStat[cardNum,0] && motorbiker_leader && scr_limited_summon(cardNum)){
+		if(!mmzOccupied && motorbikers >= 2 && levelSum >= macros.origStat[cardNum, StatLevel] && motorbiker_leader && scr_limited_summon(cardNum)){
 			global.filtered_cards[filtered_card_count++] = placeInMomentumDeck;
 		}
 	}
@@ -58,20 +58,20 @@ function scr_summoning_requirements(argument0) {
 		visclades = 0;
 		for(var i=0; i < 4; i++){
 			if (field[i,0] > 0){
-				if (fieldCard[i].cardStat[0] < macros.origStat[cardNum,0] && scr_check_archetype(field[i,0], 3)){
+				if (fieldCard[i].cardStat[StatLevel] < macros.origStat[cardNum, StatLevel] && scr_check_archetype(field[i,0], 3)){
 					
 					visclades++;
-					levelSum += fieldCard[i].cardStat[0];
+					levelSum += fieldCard[i].cardStat[StatLevel];
 				}
 			}
 		}
 		if (field[4,0] > 0){
-			if (fieldCard[4].cardStat[0] < macros.origStat[cardNum,0] && scr_check_archetype(field[4,0], 3)){
-				visclades++;
-				levelSum += fieldCard[4].cardStat[0];
+			if (fieldCard[4].cardStat[StatLevel] < macros.origStat[cardNum, StatLevel] && scr_check_archetype(field[4,0], 3)){
+				visclades++
+				levelSum += fieldCard[4].cardStat[StatLevel];
 			}else{mmzOccupied = true;}
 		}
-		if(!mmzOccupied && visclades >= 2 && levelSum >= macros.origStat[cardNum,0] && scr_limited_summon(cardNum)){
+		if(!mmzOccupied && visclades >= 2 && levelSum >= macros.origStat[cardNum, StatLevel] && scr_limited_summon(cardNum)){
 			global.filtered_cards[filtered_card_count++] = placeInMomentumDeck;
 		}
 	}
@@ -81,7 +81,7 @@ function scr_summoning_requirements(argument0) {
 		igloo_present = false;
 		for(var i=0; i < 4; i++){
 			if (field[i,0] > 0){
-				if(fieldCard[i].cardStat[0] < macros.origStat[cardNum,0]){
+				if(fieldCard[i].cardStat[StatLevel] < macros.origStat[cardNum, StatLevel]){
 					if (scr_check_archetype(field[i,0], 4)){
 						poleclan++;
 					}
@@ -89,13 +89,13 @@ function scr_summoning_requirements(argument0) {
 						igloo_present=true;
 					}
 					if (macros.name[field[i,0]] == "Igloo" || scr_check_archetype(field[i,0], 4)){
-						levelSum += fieldCard[i].cardStat[0];
+						levelSum += fieldCard[i].cardStat[StatLevel];
 					}
 				}
 			}
 		}
 		if (field[4,0] > 0){
-			if(fieldCard[i].cardStat[0] < macros.origStat[cardNum,0]){
+			if(fieldCard[i].cardStat[StatLevel] < macros.origStat[cardNum, StatLevel]){
 				if (scr_check_archetype(field[4,0], 4)){
 					poleclan++;
 				}
@@ -103,11 +103,11 @@ function scr_summoning_requirements(argument0) {
 					igloo_present=true;
 				}
 				if (macros.name[field[4,0]] == "Igloo" || scr_check_archetype(field[4,0], 4)){
-					levelSum += fieldCard[i].cardStat[0];
+					levelSum += fieldCard[i].cardStat[StatLevel];
 				}else{mmzOccupied = true;}
 			}else{mmzOccupied = true;}
 		}
-		if(!mmzOccupied && poleclan >= 1 && igloo_present && levelSum >= macros.origStat[cardNum,0] && scr_limited_summon(cardNum)){
+		if(!mmzOccupied && poleclan >= 1 && igloo_present && levelSum >= macros.origStat[cardNum, StatLevel] && scr_limited_summon(cardNum)){
 			global.filtered_cards[filtered_card_count++] = placeInMomentumDeck;
 		}
 	}
@@ -117,7 +117,7 @@ function scr_summoning_requirements(argument0) {
 		igloo_present = false;
 		for(var i=0; i < 4; i++){
 			if (field[i,0] > 0){
-				if(fieldCard[i].cardStat[0] < macros.origStat[cardNum,0]){
+				if(fieldCard[i].cardStat[StatLevel] < macros.origStat[cardNum, StatLevel]){
 					if (scr_check_archetype(field[i,0], 4)){
 						poleclan++;
 					}
@@ -125,25 +125,25 @@ function scr_summoning_requirements(argument0) {
 						igloo_present=true;
 					}
 					if (macros.name[field[i,0]] == "Igloo Castle" || scr_check_archetype(field[i,0], 4)){
-						levelSum += fieldCard[i].cardStat[0];
+						levelSum += fieldCard[i].cardStat[StatLevel];
 					}
 				}
 			}
 		}
 		if (field[4,0] > 0){
-			if(fieldCard[i].cardStat[0] < macros.origStat[cardNum,0]){
-				if (scr_check_archetype(field[4,0], "Pole Clan")){
+			if(fieldCard[i].cardStat[StatLevel] < macros.origStat[cardNum, StatLevel]){
+				if (scr_check_archetype(field[4,0], ArcPoleClan)){
 					poleclan++;
 				}
 				if (name[field[4,0]] == "Igloo Castle"){
 					igloo_present=true;
 				}
 				if (name[field[4,0]] == "Igloo Castle" || scr_check_archetype(field[4,0], "Pole Clan")){
-					levelSum += fieldCard[i].cardStat[0];
+					levelSum += fieldCard[i].cardStat[StatLevel];
 				}else{mmzOccupied = true;}
 			}else{mmzOccupied = true;}
 		}
-		if(!mmzOccupied && poleclan >= 1 && igloo_present && levelSum >= macros.origStat[cardNum,0] && scr_limited_summon(cardNum)){
+		if(!mmzOccupied && poleclan >= 1 && igloo_present && levelSum >= macros.origStat[cardNum, StatLevel] && scr_limited_summon(cardNum)){
 			global.filtered_cards[filtered_card_count++] = placeInMomentumDeck;
 		}
 	}
@@ -154,7 +154,7 @@ function scr_summoning_requirements(argument0) {
 		igloo_present = false;
 		for(var i=0; i < 4; i++){
 			if (field[i,0] > 0){
-				if(fieldCard[i].cardStat[0] < macros.origStat[cardNum,0]){
+				if(fieldCard[i].cardStat[StatLevel] < macros.origStat[cardNum, StatLevel]){
 					if (scr_check_archetype(field[i,0], "Pole Clan")){
 						poleclan++;
 					}
@@ -162,13 +162,13 @@ function scr_summoning_requirements(argument0) {
 						igloo_present=true;
 					}
 					if (name[field[i,0]] == "Igloo Citadel" || scr_check_archetype(field[i,0], "Pole Clan")){
-						levelSum += fieldCard[i].cardStat[0];
+						levelSum += fieldCard[i].cardStat[StatLevel];
 					}
 				}
 			}
 		}
 		if (field[4,0] > 0){
-			if(fieldCard[i].cardStat[0] < macros.origStat[cardNum,0]){
+			if(fieldCard[i].cardStat[StatLevel] < macros.origStat[cardNum,StatLevel]){
 				if (scr_check_archetype(field[4,0], "Pole Clan")){
 					poleclan++;
 				}
@@ -176,11 +176,11 @@ function scr_summoning_requirements(argument0) {
 					igloo_present=true;
 				}
 				if (name[field[4,0]] == "Igloo Citadel" || scr_check_archetype(field[4,0], "Pole Clan")){
-					levelSum += fieldCard[i].cardStat[0];
+					levelSum += fieldCard[i].cardStat[StatLevel];
 				}else{mmzOccupied = true;}
 			}else{mmzOccupied = true;}
 		}
-		if(!mmzOccupied && poleclan >= 1 && igloo_present && levelSum >= macros.origStat[cardNum,0] && scr_limited_summon(cardNum)){
+		if(!mmzOccupied && poleclan >= 1 && igloo_present && levelSum >= macros.origStat[cardNum, StatLevel] && scr_limited_summon(cardNum)){
 			global.filtered_cards[filtered_card_count++] = placeInMomentumDeck;
 		}
 	}
@@ -188,17 +188,17 @@ function scr_summoning_requirements(argument0) {
 		var levelSum = 0;
 		for(var i=0; i < 4; i++){
 			if (field[i,0] > 0){
-				if(fieldCard[i].cardStat[0] < macros.origStat[cardNum,0]){
-					levelSum += fieldCard[i].cardStat[0]
+				if(fieldCard[i].cardStat[StatLevel] < macros.origStat[cardNum,StatLevel]){
+					levelSum += fieldCard[i].cardStat[StatLevel]
 				}
 			}
 		}
 		if (field[4,0] > 0){
-			if(fieldCard[i].cardStat[0] < macros.origStat[cardNum,0]){
-					levelSum += fieldCard[i].cardStat[0]
+			if(fieldCard[i].cardStat[StatLevel] < macros.origStat[cardNum,StatLevel]){
+					levelSum += fieldCard[i].cardStat[StatLevel]
 			}else{mmzOccupied = true;}
 		}
-		if(!mmzOccupied && levelSum >= macros.origStat[cardNum,0] && scr_limited_summon(cardNum)){
+		if(!mmzOccupied && levelSum >= macros.origStat[cardNum, StatLevel] && scr_limited_summon(cardNum)){
 			global.filtered_cards[filtered_card_count++] = placeInMomentumDeck;
 		}
 	}
@@ -207,19 +207,19 @@ function scr_summoning_requirements(argument0) {
 		sacrifices = 0;
 		for(var i=0; i < 4; i++){
 			if (field[i,0] > 0){
-				if(fieldCard[i].cardStat[0] < macros.origStat[cardNum,0] && scr_check_archetype(field[i,0],"Sacrifice")){
-					levelSum += fieldCard[i].cardStat[0]
+				if(fieldCard[i].cardStat[StatLevel] < macros.origStat[cardNum, StatLevel] && scr_check_archetype(field[i,0],"Sacrifice")){
+					levelSum += fieldCard[i].cardStat[StatLevel]
 					sacrifices++
 				}
 			}
 		}
 		if (field[4,0] > 0){
-			if(fieldCard[i].cardStat[0] < macros.origStat[cardNum,0] && scr_check_archetype(field[i,0],"Sacrifice")){
-					levelSum += fieldCard[i].cardStat[0]
+			if(fieldCard[i].cardStat[StatLevel] < macros.origStat[cardNum, StatLevel] && scr_check_archetype(field[i,0],"Sacrifice")){
+					levelSum += fieldCard[i].cardStat[StatLevel]
 					sacrifices++
 			}else{mmzOccupied = true;}
 		}
-		if(!mmzOccupied && levelSum >= macros.origStat[cardNum,0] && sacrifices >= 2 && scr_limited_summon(cardNum)){
+		if(!mmzOccupied && levelSum >= macros.origStat[cardNum, StatLevel] && sacrifices >= 2 && scr_limited_summon(cardNum)){
 			global.filtered_cards[filtered_card_count++] = placeInMomentumDeck;
 		}		
 	}
@@ -229,9 +229,9 @@ function scr_summoning_requirements(argument0) {
 		fisherman =false;
 		for(var i=0; i < 4; i++){
 			if (field[i,0] > 0){
-				if (fieldCard[i].cardStat[0] < macros.origStat[cardNum,0] && scr_check_archetype(field[i,0],"Fish")){
+				if (fieldCard[i].cardStat[StatLevel] < macros.origStat[cardNum, StatLevel] && scr_check_archetype(field[i,0],"Fish")){
 					fishes++;
-					levelSum += fieldCard[i].cardStat[0];
+					levelSum += fieldCard[i].cardStat[StatLevel];
 					if (scr_check_archetype(field[i,0], 9)){
 						fisherman= true;
 					}
@@ -239,15 +239,15 @@ function scr_summoning_requirements(argument0) {
 			}
 		}
 		if (field[4,0] > 0){
-			if (fieldCard[4].cardStat[0] < macros.origStat[cardNum,0] && scr_check_archetype(field[4,0],"Fish")){
+			if (fieldCard[4].cardStat[StatLevel] < macros.origStat[cardNum, StatLevel] && scr_check_archetype(field[4,0],"Fish")){
 				fishes++;
-				levelSum += fieldCard[4].cardStat[0];
+				levelSum += fieldCard[4].cardStat[StatLevel];
 				if (scr_check_archetype(field[4,0],9)){
 					fisherman= true;
 				}
 			}else{mmzOccupied = true;}
 		}
-		if(!mmzOccupied && fishes >= 2 && levelSum >= macros.origStat[cardNum,0] && fisherman && scr_limited_summon(cardNum)){
+		if(!mmzOccupied && fishes >= 2 && levelSum >= macros.origStat[cardNum, StatLevel] && fisherman && scr_limited_summon(cardNum)){
 			global.filtered_cards[filtered_card_count++] = placeInMomentumDeck;
 		}		
 	
@@ -258,19 +258,19 @@ function scr_summoning_requirements(argument0) {
 		
 		for(var i=0; i < 4; i++){
 			if (field[i,0] > 0){
-				if (fieldCard[i].cardStat[0] < macros.origStat[cardNum,0] && scr_check_archetype(field[i,0],11)){
+				if (fieldCard[i].cardStat[StatLevel] < macros.origStat[cardNum,StatLevel] && scr_check_archetype(field[i,0],11)){
 					x_makines++;
-					levelSum += fieldCard[i].cardStat[0];
+					levelSum += fieldCard[i].cardStat[StatLevel];
 				}
 			}
 		}
 		if (field[4,0] > 0){
-			if (fieldCard[4].cardStat[0] < macros.origStat[cardNum,0] && scr_check_archetype(field[4,0],11)){
+			if (fieldCard[4].cardStat[StatLevel] < macros.origStat[cardNum,StatLevel] && scr_check_archetype(field[4,0],11)){
 				x_makines++;
-				levelSum += fieldCard[4].cardStat[0];
+				levelSum += fieldCard[4].cardStat[StatLevel];
 			}else{mmzOccupied = true;}
 		}
-		if(!mmzOccupied && x_makines >= 2 && levelSum >= macros.origStat[cardNum,0] && scr_limited_summon(cardNum)){
+		if(!mmzOccupied && x_makines >= 2 && levelSum >= macros.origStat[cardNum,StatLevel] && scr_limited_summon(cardNum)){
 			global.filtered_cards[filtered_card_count++] = placeInMomentumDeck;
 		}		
 	

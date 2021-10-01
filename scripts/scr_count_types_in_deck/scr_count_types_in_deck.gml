@@ -5,9 +5,9 @@ function scr_count_types_in_deck(){
 		monsterCount = 0
 		spellCount = 0
 		for(var i = 0; i < deckCount; i++){
-			if(macros.card_type[deck[i,0]] = 0){
+			if(macros.card_type[deck[i,0]] == TypeMonster){
 				monsterCount++
-			}else if(macros.card_type[deck[i,0]] = 2){
+			}else{
 				spellCount++
 			}
 		}

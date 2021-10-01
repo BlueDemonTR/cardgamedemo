@@ -22,7 +22,7 @@ switch(animationInfo[0]){
 					summonedCardLevel++
 				}
 			}
-			if(summonedCardLevel != macros.origStat[summonedCardNum,0]){
+			if(summonedCardLevel != macros.origStat[summonedCardNum, StatLevel]){
 				timer = 0
 			}
 		}if(timer > 45){
@@ -58,8 +58,8 @@ switch(animationInfo[0]){
 		}else{		
 			reelAngle -= reelSpeed*.01*reelLeft
 			if(reelAngle < slowdownStart){
-				test()
-				reelSpeed -= .05
+				
+				reelSpeed /= 1.03
 			}
 		}
 

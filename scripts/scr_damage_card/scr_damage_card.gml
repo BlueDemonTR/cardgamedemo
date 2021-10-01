@@ -1,6 +1,6 @@
 function scr_damage_card(controller, position, damage) {
 	with (player.fieldCard[position]){
-		cardStat[3] -= damage;
+		cardStat[StatHP] -= damage;
 	}
 	if(player == obj_player){
 		scr_message_field_card_stats(position);

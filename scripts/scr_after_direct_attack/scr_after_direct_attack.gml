@@ -1,11 +1,11 @@
 function scr_after_direct_attack(cardNum) {
 	
 	if (obj_player.selected_wheel = 1 && !obj_player.wheel_locked){
-		if(scr_check_archetype(cardNum,1)){
+		if(scr_check_archetype(cardNum, ArcMotorbiker)){
 			scr_give_player_stats(player, 0, 0, 0, resolutionPile[damageToPlayer,5]);
 		}
 	}
-	if(cardStatus[11]){return;}
+	if(cardStatus[StatusSilenced]){return;}
 	switch(cardNum){
 		case 11: //Motorbiker Leader Khan Effect Activation
 		case 12: //Motorbiker Leaden Luther Effect Activation

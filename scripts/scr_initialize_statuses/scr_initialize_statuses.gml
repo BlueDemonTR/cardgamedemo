@@ -67,12 +67,12 @@ function scr_initialize_statuses(){
 
 	statusName[i] = "This card can't attack directly"
 	statusDesc[i] = "This card can't attack your opponent"
-	statusSymbol[i] = noone //add later
+	statusSymbol[i] = noone //TODO: add later
 	i++
 	
 	statusName[i] = "End of Turn: Destroy This Card"
 	statusDesc[i] = "At the End of this Turn: Destroy This Card"
-	statusSymbol[i] = noone //add later
+	statusSymbol[i] = noone //TODO: add later
 	i++	
 
 	status_count = i

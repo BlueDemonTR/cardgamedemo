@@ -1,17 +1,17 @@
 
-if(cardStat[3]>cardStat[2]){
-	cardStat[3]=cardStat[2];
+if(cardStat[StatHP]>cardStat[StatMaxHP]){
+	cardStat[StatHP]=cardStat[StatMaxHP];
 	scr_message_field_card_stats(position)
 }
-if(cardStat[1]<0){
-	cardStat[1]=0;
+if(cardStat[StatATK]<0){
+	cardStat[StatATK]=0;
 	scr_message_field_card_stats(position)
 }
-if(cardStat[3] <= 0 && alarm[2]==-1){
+if(cardStat[StatHP] <= 0 && alarm[2]==-1){
 	alarm[2]=10;	
 }
 if(cardNum==65){
-	if(cardStat[3] = 1){
+	if(cardStat[StatHP] = 1){
 		scr_spin(position)
 	}
 }
@@ -40,26 +40,26 @@ if(obj_player.field[position,0] > 0 && cardNum != obj_player.field[position,0]){
 }
 
 
-if(!cardStatus[11]){
+if(!cardStatus[StatusSilenced]){
 	if(global.drawing_card){
 		if(cardNum ==20){scr_spin(position);}
 	}
 }
 
-if(cardStatus[11] && !silence_reset){
+if(cardStatus[StatusSilenced] && !silence_reset){
 	
-	cardStat[2] = macros.origStat[cardNum,2];
-	cardStat[1] = macros.origStat[cardNum,1];
-	cardStat[0] = macros.origStat[cardNum,0];
+	cardStat[StatMaxHP] = macros.origStat[cardNum,StatMaxHP];
+	cardStat[StatATK] = macros.origStat[cardNum,StatATK];
+	cardStat[StatLevel] = macros.origStat[cardNum,StatLevel];
 
-	cardStat[4] = macros.origStat[cardNum,4]
-	cardStat[5] = macros.origStat[cardNum,5]
-	cardStat[6] = macros.origStat[cardNum,6]
+	cardStat[StatArmor] = macros.origStat[cardNum,StatArmor]
+	cardStat[StatRegeneration] = macros.origStat[cardNum,StatRegeneration]
+	cardStat[StatDodge] = macros.origStat[cardNum,StatDodge]
 
 	for(var i = 0; i < macros.status_count; i++){
 		cardStatus[i] = false;
 	}
-	cardStatus[11] = true
+	cardStatus[StatusSilenced] = true
 	silence_reset = true;
 	scr_message_field_card_stats(position)
 }
@@ -89,7 +89,7 @@ if(player.end_phase && !end_phase_effects_resolved){
 		break;
 	}	
 	
-	if(scr_check_shared(cardNum,11)){
+	if(scr_check_shared(cardNum, ArcXMakine)){
 		obj_player.endPhaseChains[obj_player.endPhaseChainCount,0] = "X-Makine Shared Effect"
 		obj_player.endPhaseChains[obj_player.endPhaseChainCount,1] = false
 		obj_player.endPhaseChains[obj_player.endPhaseChainCount++,2] = position

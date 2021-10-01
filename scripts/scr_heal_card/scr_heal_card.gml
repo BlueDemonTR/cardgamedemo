@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_heal_card(controller, position, hpBuff){
 	var affectedCard = controller.fieldCard[position];
-	if(affectedCard.cardStatus[3]){return}
+	if(affectedCard.cardStatus[StatusImmune]){return}
 	scr_buff_card(controller, position, 0, 0, 0, hpBuff, 0, 0, 0)
 	if(controller = obj_player){
 		scr_message_field_card_stats(position)

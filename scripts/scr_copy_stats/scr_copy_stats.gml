@@ -1,24 +1,24 @@
 function scr_copy_stats(copyMonster, pasteMonster, copyLevel, copyAttack, copyMaxHP, copyHP, copyArmor, copyRegen, copyDodge){
 	if(copyLevel){
-		pasteMonster.cardStat[0] = copyMonster.cardStat[0]
+		pasteMonster.cardStat[StatLevel] = copyMonster.cardStat[StatLevel]
 	}
 	if(copyAttack){
-		pasteMonster.cardStat[1] = copyMonster.cardStat[1]
+		pasteMonster.cardStat[StatATK] = copyMonster.cardStat[StatATK]
 	}
 	if(copyMaxHP){
-		pasteMonster.cardStat[2] = copyMonster.cardStat[2]
+		pasteMonster.cardStat[StatMaxHP] = copyMonster.cardStat[StatMaxHP]
 	}
 	if(copyHP){
-		pasteMonster.cardStat[3] = copyMonster.cardStat[3]
+		pasteMonster.cardStat[StatHP] = copyMonster.cardStat[StatHP]
 	}
 	if(copyArmor){
-		pasteMonster.cardStat[4] = copyMonster.cardStat[4]
+		pasteMonster.cardStat[StatArmor] = copyMonster.cardStat[StatArmor]
 	}
 	if(copyRegen){
-		pasteMonster.cardStat[5] = copyMonster.cardStat[5]
+		pasteMonster.cardStat[StatRegeneration] = copyMonster.cardStat[StatRegeneration]
 	}
 	if(copyDodge){
-		pasteMonster.cardStat[6] = copyMonster.cardStat[6]
+		pasteMonster.cardStat[StatDodge] = copyMonster.cardStat[StatDodge]
 	}
 	scr_message_last_action(macros.name[cardNum]+" copies "+macros.name[copyMonster.cardNum] +" stats");
 	scr_last_action(macros.name[cardNum]+" copies "+macros.name[copyMonster.cardNum] +" stats");

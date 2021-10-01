@@ -1,6 +1,15 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_target_deck(filterNum, arrayPos){
+	/*
+	Max Level
+	Min Level
+	Archetype Array
+	Spirit Array
+	Check Summonable
+	filterNum
+	arrayPos
+	*/
 	var j = 0,
 	filtered_cards;
 	with(obj_player){

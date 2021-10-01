@@ -9,6 +9,3 @@ if(activation_mode == "Hand Effect"){
 		}
 	}
 }
-if(activation_mode == "Multiple Choices"){
-	obj_player.mid_effect=true
-}

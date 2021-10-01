@@ -1,14 +1,13 @@
-function scr_on_destroyed(argument0) {
-	var cardNum = argument0;
-	if(scr_check_shared(cardNum, 4)){
-		obj_player.resolutionPile[obj_player.resolutionPileCount,0] = "Shared4"
+function scr_on_destroyed(cardNum, destroyType){
+	if(scr_check_shared(cardNum, SharedUnderworldVisclades)){
+		obj_player.resolutionPile[obj_player.resolutionPileCount,0] = "SharedUnderworldVisclades"
 		obj_player.resolutionPile[obj_player.resolutionPileCount,1] = 0
 		obj_player.resolutionPile[obj_player.resolutionPileCount,2] = 0
 		obj_player.resolutionPile[obj_player.resolutionPileCount,3] = position
 		obj_player.resolutionPile[obj_player.resolutionPileCount,4] = false
 		obj_player.resolutionPileCount++
 	}
-	if(scr_check_shared(cardNum, 5)){
+	if(scr_check_shared(cardNum, SharedSacrifice)){
 		for(var i=0; i < 3; i++){scr_recruit(74,0,cardNum)}
 	}
 	switch(cardNum){
@@ -34,7 +33,7 @@ function scr_on_destroyed(argument0) {
 			}
 			for (var i=0;i<5;i++){
 				if(player.field[i,0]==60){
-					player.fieldCard[i].cardStatus[4] = false;
+					player.fieldCard[i].cardStatus[StatusIndestructable] = false;
 					scr_message_field_card_stats(i);
 				}
 			}
@@ -45,7 +44,7 @@ function scr_on_destroyed(argument0) {
 			with(player){
 				for(i=0;i<5;i++){
 					if(field[i,0]==62){
-						fieldCard[i,0].cardStat[1] += 2;
+						fieldCard[i,0].cardStat[StatATK] += 2;
 						scr_message_field_card_stats(i);
 					}
 				}

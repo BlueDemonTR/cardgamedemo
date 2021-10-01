@@ -16,10 +16,10 @@ function scr_appropiate_hand(argument0,argument1, argument2, argument3, argument
 			if(hand_position == i){continue;}
 			if (filterArchetype=="any"|| scr_check_archetype(hand[i],filterArchetype)){
 				if(!checkLimitedSummon || scr_limited_summon(hand[i])){
-					if(macros.origStat[hand[i,0],0] < filterMaxLevel && macros.origStat[hand[i,0],0] > filterMinLevel){
-						if((filterTypes = "monster" || filterTypes = "all") && macros.card_type[hand[i,0]] = 0){global.filtered_cards[j++] = i;}
+					if(macros.origStat[hand[i,0], StatLevel] < filterMaxLevel && macros.origStat[hand[i,0], StatLevel] > filterMinLevel){
+						if((filterTypes = "monster" || filterTypes = "all") && macros.card_type[hand[i,0]] == TypeMonster){global.filtered_cards[j++] = i;}
 					}
-					if((filterTypes = "spell" || filterTypes = "all") && macros.card_type[hand[i,0]] = 1){global.filtered_cards[j++] = i;}
+					if((filterTypes = "spell" || filterTypes = "all") && macros.card_type[hand[i,0]] == TypeSpell){global.filtered_cards[j++] = i;}
 				}
 			}
 		}

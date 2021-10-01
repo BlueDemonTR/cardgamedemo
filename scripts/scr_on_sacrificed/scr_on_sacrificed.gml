@@ -2,7 +2,7 @@ function scr_on_sacrificed(argument0) {
 	var cardNum = argument0;
 	
 	if(obj_player.selected_wheel = 4 && !obj_player.wheel_locked){
-		obj_player.momentum += cardStat[0]
+		obj_player.momentum += cardStat[StatLevel]
 	}
 	switch(cardNum){
 		case 74://useless sacrifice

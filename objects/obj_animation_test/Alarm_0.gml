@@ -45,7 +45,7 @@ switch(animationInfo[0]){
 				materialInfo[i-3,1] = player.field[materialInfo[i-3,0],0] //cardNum
 				materialInfo[i-3,2] = player.field[materialInfo[i-3,0],1] //artNum
 				//materialInfo[i-2,2] = player.fieldCard[materialInfo[i-3,0]] //Card Level
-				materialInfo[i-3,3] = macros.origStat[i-3,0] //Card Level
+				materialInfo[i-3,3] = macros.origStat[i-3, StatLevel] //Card Level
 			}
 			for(var i = 0; i < materialCount; i += 2){
 				materialInfo[i,4] = ((i+1)*(405/(materialCount/2 + 1))) + 75

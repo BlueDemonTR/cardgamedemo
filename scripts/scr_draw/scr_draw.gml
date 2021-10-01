@@ -3,11 +3,11 @@ function scr_draw(cardsToDraw, actualDrawing) {
 
 	if(deckCount - cardsToDraw < 0) {return;}
 	if(handCount >= handSizeLimit){
-		if (macros.card_type[deck[deckCount-1,0]]= 2){
+		if(macros.card_type[deck[deckCount-1,0]] == TypeSpell){
 			momentum += 2
 		}
-		else if (macros.card_type[deck[deckCount-1,0]]= 0){
-			mana += macros.origStat[deck[deckCount-1],0]
+		else{
+			mana += macros.origStat[deck[deckCount-1], StatLevel]
 		}
 		scr_message_stats();
 		scr_mill_from_top(cardsToDraw);

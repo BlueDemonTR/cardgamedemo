@@ -6,4 +6,5 @@ function scr_pay_momentum(amount){
 		return;
 	}
 	player.momentum -= amount
+	return amount;
 }

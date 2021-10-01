@@ -1,14 +1,13 @@
-function scr_give_choice(/*arrayNum, choice1, choice2, choice3...*/) {
-	var choice,
-	arrayNum = argument[0]
-	for(var i = 0; i < argument_count-1; i++){
-		choice[i] = argument[i+1];
+function scr_give_choice(arrayNum, choicesArray){
+	//Choice Array Must Be 2D
+	//[choiceNum, choiceText]
+	for(var i = 0; i < array_length(choicesArray); i++){
 		choiceObject[i] = instance_create_layer(room_width/2,room_height/2+(40*i),"UpperInstances",obj_activation_box);
 		with(choiceObject[i]){
 			depth = -1000
-			self.effectBelongsTo = effectBelongsTo;
 			activation_mode = "Multiple Choices";
-			self.choice = choice[i,0];
+			choiceNum = choicesArray[i,0];
+			choiceText = choicesArray[i,1];
 			self.arrayNum = arrayNum;
 			bar_number = i;
 		}

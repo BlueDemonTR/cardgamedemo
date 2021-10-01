@@ -13,7 +13,7 @@ function scr_filter_archetype_infirmary(argument0, argument1, argument2, argumen
 			
 				if(!checkLimitedSummon || scr_limited_summon(infirmary[i,0])){
 				
-					if(macros.origStat[infirmary[i,0],0] < filterMaxLevel && macros.origStat[infirmary[i,0],0] > filterMinLevel){
+					if(macros.origStat[infirmary[i,0], StatLevel] < filterMaxLevel && macros.origStat[infirmary[i,0], StatLevel] > filterMinLevel){
 					
 						if((filterTypes = "main" || filterTypes = "all") && macros.card_type[infirmary[i,0]]= 0){
 							

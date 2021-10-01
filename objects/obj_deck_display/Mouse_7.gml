@@ -1,4 +1,4 @@
-if(macros.card_type[cardNum] != 1){
+if(macros.card_type[cardNum] != TypeMomentum){
 
 	for (var i = deckPos; i < main.deckCount-1; i++){
 		main.deckList[i].cardNum = main.deckList[i+1].cardNum;

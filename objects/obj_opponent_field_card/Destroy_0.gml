@@ -14,7 +14,7 @@ switch(animationType){
 		}
 	break;
 	case "spin":
-		if(macros.card_type==1){
+		if(macros.card_type[tempCardNum] == TypeMomentum){
 			cardsenttoInfirmary[1] = instance_create_depth(x,y,1,card_animations)
 			with(cardsenttoInfirmary[1]){
 				angle=180

@@ -4,8 +4,8 @@ function scr_filter_archetype(filter_archetype1, filter_archetype2, targetMinLev
 	j = 0;
 	with(obj_player){
 		for (var i = 0; i < deckCount; i++){
-			if (filter_archetype1 = "any"||scr_check_archetype(deck[i,0],filter_archetype1) || scr_check_archetype(deck[i,0],filter_archetype2)){
-				if (macros.origStat[deck[i,0],0] > targetMinLevel && macros.origStat[deck[i,0],0] < targetMaxLevel){	
+			if (filter_archetype1 = "any" || scr_check_archetype(deck[i,0],filter_archetype1) || scr_check_archetype(deck[i,0],filter_archetype2)){
+				if (macros.origStat[deck[i,0], StatLevel] > targetMinLevel && macros.origStat[deck[i,0], StatLevel] < targetMaxLevel){	
 					if(!checkLimitedSummon || scr_limited_summon(deck[i,0])){
 						global.filtered_cards[j++] = i;
 					}

@@ -1,52 +1,52 @@
 draw_sprite_stretched(macros.sprite_array[cardNum,artNum],-1,x-card_width/2,y-card_height/2,card_width,card_height);
 
 draw_set_color(c_black)
-if(cardStat[3] < cardStat[2]){
-	draw_text_color(x+50,y+14,string(cardStat[3]),c_yellow,c_yellow,c_yellow,c_yellow,1);
+if(cardStat[StatHP] < cardStat[StatMaxHP]){
+	draw_text_color(x+50,y+14,string(cardStat[StatHP]),c_yellow,c_yellow,c_yellow,c_yellow,1);
 }else{
-	draw_text_color(x+50,y+14,string(cardStat[3]),c_green,c_green,c_green,c_green,1);
+	draw_text_color(x+50,y+14,string(cardStat[StatHP]),c_green,c_green,c_green,c_green,1);
 }
-draw_text_color(x-60,y+14,string(cardStat[1]),c_red,c_red,c_red,c_red,1);
-draw_text(x+45,y-100,string(cardStat[0]));
-if(cardStatus[11]){
+draw_text_color(x-60,y+14,string(cardStat[StatATK]),c_red,c_red,c_red,c_red,1);
+draw_text(x+45,y-100,string(cardStat[StatLevel]));
+if(cardStatus[StatusSilenced]){
 	draw_sprite_stretched(spr_silenced,-1,x-card_width/2,y-card_height/2,card_width,card_height);
 }
 
-if(cardcan_attack && !cardStatus[7] && !cardStatus[9] && player.turn_count != 1){
+if(cardcan_attack && !cardStatus[StatusUnarmed] && !cardStatus[StatusParalyzed] && player.turn_count != 1){
 	draw_sprite_stretched(spr_attack,-1,x-card_width/2,y-card_height/2,card_width,card_height);
 }
 i=0
-if(cardStatus[0]){
+if(cardStatus[StatusTAUNT]){
 	stateList[i++] = spr_taunt;
 }
-if(cardStatus[1]){
+if(cardStatus[StatusPierce]){
 	stateList[i++] = spr_pierce;
 }
-if(cardStatus[2]){
+if(cardStatus[StatusRebellious]){
 	stateList[i++] = spr_rebellious;
 }
-if(cardStatus[3]){
+if(cardStatus[StatusImmune]){
 	stateList[i++] = spr_unaffected;
 }
-if(cardStatus[4]){
+if(cardStatus[StatusIndestructable]){
 	stateList[i++] = spr_indestructable;
 }
-if(cardStatus[5]){
+if(cardStatus[StatusLifesteal]){
 	stateList[i++] = spr_lifesteal;
 }
-if(cardStatus[6]){
+if(cardStatus[StatusSneaky]){
 	stateList[i++] = spr_sneaky;
 }
-if(cardStatus[7]){
+if(cardStatus[StatusUnarmed]){
 	stateList[i++] = spr_unarmed;
 }
-if(cardStatus[8]){
+if(cardStatus[StatusRanged]){
 	stateList[i++] = spr_ranged;
 }
-if(cardStatus[9]){
+if(cardStatus[StatusParalyzed]){
 	stateList[i++] = spr_paralzyed;
 }
-if(cardStatus[10]){
+if(cardStatus[StatusPoison]){
 	stateList[i++] = spr_poison;
 }
 
@@ -57,18 +57,18 @@ for(j=0;j < i; j++){
 }
 stateList = noone
 i=0
-if(cardStat[6] > 0){
+if(cardStat[StatDodge] > 0){
 	stateList[i,0] = spr_dodge
-	stateList[i++,1] = cardStat[6]
+	stateList[i++,1] = cardStat[StatDodge]
 }
-if(cardStat[5] > 0){
+if(cardStat[StatRegeneration] > 0){
 	stateList[i,0] = spr_regerenation
-	stateList[i++,1] = cardStat[5]
+	stateList[i++,1] = cardStat[StatRegeneration]
 	
 }
-if(cardStat[4] > 0){
+if(cardStat[StatArmor] > 0){
 	stateList[i,0] = spr_armor
-	stateList[i++,1] = cardStat[4]
+	stateList[i++,1] = cardStat[StatArmor]
 }
 draw_set_color(c_blue)
 for(j=0; j < i; j++){

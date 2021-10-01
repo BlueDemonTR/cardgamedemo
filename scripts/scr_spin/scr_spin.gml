@@ -2,7 +2,7 @@ function scr_spin(player, position) {
 	var cardNum = player.field[position,0],
 	artNum = player.field[position,1];
 	
-	if(macros.card_type[cardNum] != 1){
+	if(macros.card_type[cardNum] != TypeMomentum){
 		deck[deckCount,0] = cardNum;
 		deck[deckCount++,1] = artNum;
 		scr_shuffle_deck();

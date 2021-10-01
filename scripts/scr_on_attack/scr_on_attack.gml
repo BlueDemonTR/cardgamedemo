@@ -4,7 +4,7 @@ function scr_on_attack(argument0,argument1,argument2) {
 	attacked = argument2;
 
 
-	if(cardStatus[11]){return;}
+	if(cardStatus[StatusSilenced]){return;}
 	switch(cardNum){
 
 	

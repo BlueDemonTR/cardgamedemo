@@ -1,6 +1,6 @@
 function scr_on_impact_summon(argument0) {
 	var cardNum =argument0;
-	if(cardStatus[11]){return;}
+	if(cardStatus[StatusSilenced]){return;}
 	switch(cardNum){
 		case 16://EoS Activation
 			if(!scr_legal_activation(cardNum, 0, position)){break;}

@@ -1,8 +1,8 @@
 function scr_on_mana_summon(cardNum) {
-	if (scr_check_shared(cardNum, 3) && obj_player.selected_wheel = 2 && !obj_player.wheel_locked){
-		scr_give_player_stats(player, 0, 0, 0, cardStat[0]);
+	if (scr_check_archetype(cardNum, ArcVisclades) && obj_player.selected_wheel == 2 && !obj_player.wheel_locked){
+		scr_give_player_stats(player, 0, 0, 0, cardStat[StatLevel]);
 	}
-	if(cardStatus[11]){return;}
+	if(cardStatus[StatusSilenced]){return;}
 	switch(cardNum){
 		case 2://Doppel
 		case 21://Luvies Ing

@@ -15,7 +15,7 @@ switch(animationType){
 		scr_card_sent_to_infirmary(cardNum);
 	break;
 	case "spin":
-		if(macros.card_type[cardNum]==1){
+		if(macros.card_type[cardNum] == TypeMomentum){
 			cardsenttoInfirmary[1] = instance_create_depth(x,y,1,card_animations)
 			with(cardsenttoInfirmary[1]){
 				angle=0

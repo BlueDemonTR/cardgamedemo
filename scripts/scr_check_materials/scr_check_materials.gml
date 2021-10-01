@@ -1,6 +1,6 @@
 function scr_check_materials(argument0) {
 	var cardNum= argument0
-	if (obj_player.currentLevel >= macros.origStat[cardNum,0]){
+	if (obj_player.currentLevel >= macros.origStat[cardNum, StatLevel]){
 		if (cardNum > 10 && cardNum < 16){
 			if(obj_player.motorbikers >= 2){
 				return true;

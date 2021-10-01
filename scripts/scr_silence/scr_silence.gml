@@ -1,19 +1,19 @@
 function scr_silence(player, position) {
 	var affectedCard = player.fieldCard[position];
-	if(affectedCard.cardStatus[2]){return;}
+	if(affectedCard.cardStatus[StatusRebellious]){return;}
 	with (affectedCard){
-		cardStat[2] = macros.origStat[cardNum,2];
-		cardStat[1] = macros.origStat[cardNum,1];
-		cardStat[0] = macros.origStat[cardNum,0];
+		cardStat[StatMaxHP] = macros.origStat[cardNum, StatMaxHP];
+		cardStat[StatATK] = macros.origStat[cardNum, StatATK];
+		cardStat[StatLevel] = macros.origStat[cardNum,StatLevel];
 
-		cardStat[4] = 0
-		cardStat[5] = 0
-		cardStat[6] = 0
+		cardStat[StatArmor] = 0
+		cardStat[StatRegeneration] = 0
+		cardStat[StatDodge] = 0
 
 		for(var i = 0; i < macros.status_count; i++){
 			cardStatus[i] = false;
 		}
-		cardStatus[11] = true		
+		cardStatus[StatusSilenced] = true		
 	}
 	if(player == obj_player){
 		scr_message_field_card_stats(position);
