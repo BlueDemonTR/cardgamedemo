@@ -1,6 +1,7 @@
 {
   "resources": [
     {"id":{"name":"spr_monster_default","path":"sprites/spr_monster_default/spr_monster_default.yy",},"order":0,},
+    {"id":{"name":"scr_count_infirmary_name","path":"scripts/scr_count_infirmary_name/scr_count_infirmary_name.yy",},"order":15,},
     {"id":{"name":"spr_spell_default","path":"sprites/spr_spell_default/spr_spell_default.yy",},"order":1,},
     {"id":{"name":"spr_momentum_default","path":"sprites/spr_momentum_default/spr_momentum_default.yy",},"order":2,},
     {"id":{"name":"spr_search_box","path":"sprites/spr_search_box/spr_search_box.yy",},"order":47,},
@@ -164,7 +165,7 @@
     {"id":{"name":"spr_wheel_1","path":"sprites/spr_wheel_1/spr_wheel_1.yy",},"order":1,},
     {"id":{"name":"spr_wheel_2","path":"sprites/spr_wheel_2/spr_wheel_2.yy",},"order":2,},
     {"id":{"name":"spr_wheel_3","path":"sprites/spr_wheel_3/spr_wheel_3.yy",},"order":3,},
-    {"id":{"name":"scr_count_infirmary_filter","path":"scripts/scr_count_infirmary_filter/scr_count_infirmary_filter.yy",},"order":12,},
+    {"id":{"name":"scr_count_infirmary_filter","path":"scripts/scr_count_infirmary_filter/scr_count_infirmary_filter.yy",},"order":14,},
     {"id":{"name":"spr_small_arrow","path":"sprites/spr_small_arrow/spr_small_arrow.yy",},"order":39,},
     {"id":{"name":"spr_systemBG","path":"sprites/spr_systemBG/spr_systemBG.yy",},"order":6,},
     {"id":{"name":"spr_wheel_4","path":"sprites/spr_wheel_4/spr_wheel_4.yy",},"order":4,},
@@ -188,6 +189,7 @@
     {"id":{"name":"spr_fullteammedics","path":"sprites/spr_fullteammedics/spr_fullteammedics.yy",},"order":26,},
     {"id":{"name":"spr_collision_box","path":"sprites/spr_collision_box/spr_collision_box.yy",},"order":0,},
     {"id":{"name":"spr_collision_box_half","path":"sprites/spr_collision_box_half/spr_collision_box_half.yy",},"order":1,},
+    {"id":{"name":"scr_target_infirmary_name","path":"scripts/scr_target_infirmary_name/scr_target_infirmary_name.yy",},"order":5,},
     {"id":{"name":"spr_deckbase","path":"sprites/spr_deckbase/spr_deckbase.yy",},"order":6,},
     {"id":{"name":"spr_gybase","path":"sprites/spr_gybase/spr_gybase.yy",},"order":7,},
     {"id":{"name":"spr_field","path":"sprites/spr_field/spr_field.yy",},"order":8,},

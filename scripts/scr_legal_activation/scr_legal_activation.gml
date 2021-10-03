@@ -19,19 +19,23 @@ function scr_legal_activation(cardNum, effectNum, position){
 		break;
 		case "SharedEffects":
 			switch(effectNum){
-				case 3:
-				case 6:
+				case SharedMotorbikerLeader:
+				case SharedVisclades:
 					return true;
 				break;
-				case 7:
+				case SharedIgloo:
+					if(scr_count_field_filter(player, 6, false) < 2){return false}
+					return true;
+				break;
+				case SharedXMakine:
 					if(obj_player.momentum == 0){return false}
 					return true;
 				break;
-				case 4:
-					if(scr_count_infirmary_filter(player, 5, "any") == 0){return false;}
+				case SharedUnderworldVisclades:
+					if(scr_count_infirmary_filter(player, ArcVisclades, "any") == 0){return false;}
 					return true;
 				break;
-				case 5:
+				case SharedSacrifice:
 					if(scr_if_field_full(player) && !scr_limited_summon(74)){return false}
 					return true;
 				break;	
@@ -51,8 +55,6 @@ function scr_legal_activation(cardNum, effectNum, position){
 		case 3://Motorbiker Wild Rider Legal Activation
 			return true;
 		break;
-		
-
 		
 		case 4://Motorbiker V-Rider Legal Activation
 		case 5://Motorbiker D-Rider Legal Activation
@@ -165,7 +167,7 @@ function scr_legal_activation(cardNum, effectNum, position){
 		break;
 		
 		case 26://The Bloody Sacrifice Legal Activation
-			if(scr_count_deck_filter(4) == 0){return false}
+			if(scr_count_deck_filter(4)){return false}
 			return true;
 		break;
 		

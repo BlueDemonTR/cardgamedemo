@@ -6,9 +6,9 @@ function scr_resolve_effect_in_pile(positionInOrder){
 	effectSilenced = resolutionPile[positionInOrder,4];
 	
 	switch(cardNum){
-		case "WheelGain2"://Visclades Wheel Gain
+		case "WheelGain"://Visclades Wheel Gain
 			switch(effectNum){
-				case 0:
+				case 2:
 					if(!effectSilenced){
 						scr_give_player_stats(player, 0, 0, 0, resolutionPile[positionInOrder, 5])
 					}
@@ -16,9 +16,9 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				break;
 			}			
 		break;
-		case "SharedVisclades"://Visclades Shared Effect
+		case "SharedEffects":
 			switch(effectNum){
-				case 0:
+				case SharedVisclades:
 					if(!effectSilenced){
 						scr_give_player_stats(player, 0, 0, 1, 0)
 						wheel_locked = true;
@@ -26,11 +26,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					scr_discard(position);
 					resolutionPile[positionInOrder,2] = 99
 				break;
-			}
-		break;
-		case "Shared4"://Underground Visclades Shared Effect
-			switch(effectNum){
-				case 0:
+				case SharedUnderworldVisclades:
 					if(!effectSilenced){
 						switch(resolutionStep){
 							case 1:
@@ -52,10 +48,9 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						FinishResolving
 					}
 					if(resolutionStep = 98){
-						scr_discard(position);
 						resolutionPile[positionInOrder,2] = 99
 					}
-				break;
+				break;			
 			}
 		break;
 		case 1://Motorbiker Showman Effect
@@ -984,7 +979,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								array_push(choiceArray, [1, "To Opponent"])
 								resolutionPile[positionInOrder, 5] = 0
 								scr_give_choice(5, choiceArray)
-								resolutionPile[positionInOrder, 2]++
+								NextStep
 							break;
 							case 5:
 								switch(resolutionPile[positionInOrder, 5]){
@@ -1790,7 +1785,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				break;
 			}
 		break;
-		case 85://Wise Fisherman Effect TODO: RNG Output
+		case 85://Wise Fisherman Effect 
 			switch(effectNum){
 				case 0:
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){
@@ -1843,7 +1838,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				break;
 			}
 		break;
-		case 87://Lucky Fisherman Effect TODO: Rng Output
+		case 87://Lucky Fisherman Effect 
 			switch(effectNum){
 				case 0:
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){
@@ -1897,7 +1892,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				break;
 			}
 		break;
-		case 88://Strong Fisherman Effect TODO: Rng Output
+		case 88://Strong Fisherman Effect 
 			switch(effectNum){
 				case 0://Recruit Fish
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){
@@ -1956,7 +1951,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				break;
 			}
 		break;
-		case 89://Naive Fisherman Effect TODO:
+		case 89://Naive Fisherman Effect
 			switch(effectNum){
 				case 0:
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){
@@ -2022,7 +2017,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				break;
 			}
 		break;
-		case 90://Fisherman of the Oceans Effect TODO: Rng Output
+		case 90://Fisherman of the Oceans Effect 
 			switch(effectNum){
 				case 0://Recruit Fish
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){
@@ -2101,15 +2096,156 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				break;
 			}
 		break;
-		case 91://Lucky Reel Effect TODO:
+		case 91://Lucky Reel Effect
 			switch(effectNum){
 				case 0:
 					if(!effectSilenced){
 						switch(resolutionStep){
 							case 1:
+								resolutionPile[positionInOrder,5] = irandom(100)
+								NextStep
+								NextStep//Delete this one after the animation is added
+							break;
+							case 3:
+								var randomResult = resolutionPile[resolutionStep,5]
+								resolutionPile[resolutionStep,6] = 84 //Fish to Summon
+								resolutionPile[resolutionStep,7] = 0
+																
+								if(randomResult < 10){
+									FinishResolving
+									break;
+								}
+								if(randomResult < 90){
+									scr_choose_field_zones(true, false, false, true, false, 7);
+									NextStep
+									break;
+								}
+								if(randomResult < 98){
+									scr_choose_field_zones(true, false, false, true, false, 7);
+									resolutionPile[resolutionStep,2] = 6;
+									break;
+								}
+								resolutionPile[resolutionStep,6] = 86 //Goldfish
+								scr_choose_field_zones(true, false, false, true, false, 7);
+								NextStep
+							break;
+							case 5:
+								scr_recruit(resolutionPile[resolutionStep,6], 0, resolutionPile[resolutionStep,7])
+								FinishResolving
+							break;
+							case 7:
+								scr_recruit(resolutionPile[resolutionStep,6], 0, resolutionPile[resolutionStep,7])
+								resolutionPile[resolutionStep,5] = 10
+								resolutionPile[resolutionStep,2] = 3
+							break;
+						}
+					}else{
+						FinishResolving
+					}
+					if(resolutionStep = 98){
+						scr_discard(position);
+						resolutionPile[positionInOrder,2] = 99
+					}
+				break;
+			}
+		break;
+		case 92://Cursed Reel Effect 
+			switch(effectNum){
+				case 0:
+					if(!effectSilenced){
+						switch(resolutionStep){
+							case 1:
+								resolutionPile[positionInOrder,5] = scr_pay_momentum(obj_player.momentum);
+								NextStep
+							break;
+							case 2:
+								if(!resolutionPile[positionInOrder,5]){
+									FinishResolving
+									break;
+								}
+								resolutionPile[positionInOrder,6] = irandom(100)
+								NextStep
+								NextStep//Add this to the animation
+							break;
+							case 4:
+								var randomResult = resolutionPile[resolutionStep,6]
+								resolutionPile[resolutionStep,7] = 84 //Fish to Summon
+								resolutionPile[resolutionStep,8] = 0
+																
+								if(randomResult < 80){
+									FinishResolving
+									break;
+								}
+								if(randomResult < 95){
+									scr_choose_field_zones(true, false, false, true, false, 8);
+									NextStep
+									break;
+								}
+								resolutionPile[resolutionStep,7] = 86 //Goldfish
+								scr_choose_field_zones(true, false, false, true, false, 8);
+								NextStep
+							break;
+							case 6:
+								scr_recruit(resolutionPile[resolutionStep,7], 0, resolutionPile[resolutionStep,8])
+								resolutionPile[resolutionStep,2] = 2
+							break;
+						}
+					}else{
+						FinishResolving
+					}
+					if(resolutionStep = 98){
+						scr_discard(position);
+						resolutionPile[positionInOrder,2] = 99
+					}
+				break;
+			}
+		break;
+		case 93://Marketplace of Seas Effect
+			switch(effectNum){
+				case 0:
+					if(!effectSilenced){
+						switch(resolutionStep){
+							case 1:
+								var choiceArray = []
+								if(scr_count_infirmary_name(84, cardNum, "any") >= 5){
+									array_push(choiceArray, [0, "Voidfy Fishes"])
+								}
+								if(scr_count_infirmary_name(86, cardNum, "any") != 0){
+									array_push(choiceArray, [1, "Voidfy Goldfish"])
+								}
+								resolutionPile[positionInOrder, 5] = 0
+								scr_give_choice(5, choiceArray)
 								NextStep
 							break;
 							case 3:
+								var choice = resolutionPile[positionInOrder, 5];
+								resolutionPile[positionInOrder, 6] = 0; //Voidfy Count
+								resolutionPile[positionInOrder, 7] = 0;
+								
+								if(choice){
+									if(resolutionPile[positionInOrder, 6]){
+										resolutionPile[positionInOrder, 2] = 6
+										break;
+									}
+									scr_target_infirmary_name(player, 86, 7)
+									NextStep
+									break;
+								}
+								if(resolutionPile[positionInOrder, 6] == 5){
+									resolutionPile[positionInOrder, 2] = 6									
+									break;	
+								}
+								scr_target_infirmary_name(player, 84, 7)
+								NextStep
+							break;
+							case 5:
+								scr_voidfy_infirmary(player, resolutionPile[positionInOrder, 7])
+								resolutionPile[positionInOrder, 6]++
+								resolutionPile[positionInOrder, 2] = 3
+							break;
+							case 6:
+								scr_give_player_stats(player, 0, 0, 3, 0);
+								scr_draw(1, true);
 								FinishResolving
 							break;
 						}
@@ -2123,59 +2259,25 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				break;
 			}
 		break;
-		case 92://Cursed Reel Effect TODO:
+		case 94://Highest Bidder Effect
 			switch(effectNum){
 				case 0:
 					if(!effectSilenced){
 						switch(resolutionStep){
 							case 1:
+								resolutionPile[positionInOrder,5] = 0;
+								scr_target_infirmary_name(player, 86, 5)
 								NextStep
 							break;
 							case 3:
-								FinishResolving
-							break;
-						}
-					}else{
-						FinishResolving
-					}
-					if(resolutionStep = 98){
-						scr_discard(position);
-						resolutionPile[positionInOrder,2] = 99
-					}
-				break;
-			}
-		break;
-		case 93://Marketplace of Seas Effect TODO: Decision?
-			switch(effectNum){
-				case 0:
-					if(!effectSilenced){
-						switch(resolutionStep){
-							case 1:
+								scr_voidfy_infirmary(player, resolutionPile[positionInOrder,5]);
+								scr_draw(2, true);
+								resolutionPile[positionInOrder,6] = 0
+								scr_target_deck(21, 6);
 								NextStep
 							break;
-							case 3:
-								FinishResolving
-							break;
-						}
-					}else{
-						FinishResolving
-					}
-					if(resolutionStep = 98){
-						scr_discard(position);
-						resolutionPile[positionInOrder,2] = 99
-					}
-				break;
-			}
-		break;
-		case 94://Highest Bidder Effect TODO: Decision
-			switch(effectNum){
-				case 0:
-					if(!effectSilenced){
-						switch(resolutionStep){
-							case 1:
-								NextStep
-							break;
-							case 3:
+							case 5:
+								scr_search(resolutionPile[positionInOrder,6])
 								FinishResolving
 							break;
 						}
