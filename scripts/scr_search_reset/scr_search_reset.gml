@@ -8,5 +8,6 @@ function scr_search_reset(){
 			cardNum = main.filtered_cards[listPos]
 			artNum = 0
 		}
+		searchedText = filterText
 	}
 }

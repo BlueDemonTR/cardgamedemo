@@ -1,10 +1,7 @@
-function scr_remove_from_deck(deckPos) {
-	for (var i=deckPos; i < deckCount; i++){
-		deck[i,0] = deck[i+1,0];
-		deck[i,1] = deck[i+1,1];
+function scr_remove_from_deck(player, deckPos) {
+	for (var i = deckPos; i < player.deckCount; i++){
+		deck[i] = deck[i+1];
 	}
-	deckCount--;
-	scr_message_deck_change();
-
-
+	player.deckCount--;
+	scr_decide_deck_change(player);
 }

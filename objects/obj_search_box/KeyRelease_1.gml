@@ -1,2 +1,3 @@
-if(global.selectedTextBox != "cardFilter"){return;}
+if(!selected || main.searchedText == main.filterText){return;}
+
 scr_search_reset()

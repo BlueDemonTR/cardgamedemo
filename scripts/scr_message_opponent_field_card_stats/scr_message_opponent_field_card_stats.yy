@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Message",
-    "path": "folders/Scripts/Message.yy",
+    "name": "Field Card Stat",
+    "path": "folders/Scripts/Message/Field Card Stat.yy",
   },
   "resourceVersion": "1.0",
   "name": "scr_message_opponent_field_card_stats",

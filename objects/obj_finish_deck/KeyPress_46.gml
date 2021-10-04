@@ -1,2 +1,2 @@
-if(global.selectedTextBox != "deckName" || !enterDeckName){return;}
+if(!selected || !enterDeckName){return;}
 deckName = ""

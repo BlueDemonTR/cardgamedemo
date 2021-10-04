@@ -22,7 +22,7 @@ if(instance_exists(obj_opponent)){
 		draw_sprite_ext(wheelSprite[12],-1,1300,400,1,1,180,c_white,1)	
 	}
 }
-if(chosen_wheel > 0){
+if(chosen_wheel > 0){//TODO: Replace mouse functions with mouse_between
 	if(mouse_x >= 613 && mouse_y >= 673 && mouse_x < 676 && mouse_y < 850){
 		depth=-5
 		if (mouse_x >= 630 && mouse_y >= 673 && mouse_x < 676 && mouse_y < 717){

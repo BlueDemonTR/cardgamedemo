@@ -1,26 +1,26 @@
-function scr_draw(cardsToDraw, actualDrawing) {
+function scr_draw(player, cardsToDraw, actualDrawing) {
 
 
-	if(deckCount - cardsToDraw < 0) {return;}
-	if(handCount >= handSizeLimit){
-		if(macros.card_type[deck[deckCount-1,0]] == TypeSpell){
-			momentum += 2
+	if(player.deckCount - cardsToDraw < 0) {return;}
+	if(player.handCount >= handSizeLimit){
+		if(macros.card_type[player.deck[player.deckCount-1,0]] == TypeSpell){
+			scr_give_player_stats(player, 0, 0, 0, 2)
 		}
 		else{
-			mana += macros.origStat[deck[deckCount-1], StatLevel]
+			scr_give_player_stats(player, 0, 0, macros.origStat[player.deck[player.deckCount-1], StatLevel], 2)
 		}
-		scr_message_stats();
-		scr_mill_from_top(cardsToDraw);
+		scr_decide_stats(player);
+		scr_mill_from_top(player, cardsToDraw);
 		return;
 	}
 
 	for (i = 0; i< cardsToDraw; i++){
 
-		scr_add_to_hand(player, deck[--deckCount,0], deck[deckCount,1])
-		scr_remove_from_deck(deckCount)
+		scr_add_to_hand(player, player.deck[--player.deckCount])
+		scr_remove_from_deck(player, player.deckCount)
 		if(actualDrawing){
-			for(var i = 0; i < 5; i++){
-				scr_card_is_drawn(i, obj_player.hand[handCount,0])
+			for(var i = 0; i < player.field_zone_count; i++){
+				scr_card_is_drawn(i, player.hand[player.handCount,0])
 			}		
 		}
 		

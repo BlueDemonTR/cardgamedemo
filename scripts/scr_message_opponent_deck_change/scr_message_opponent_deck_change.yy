@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Message",
-    "path": "folders/Scripts/Message.yy",
+    "name": "Deck Change",
+    "path": "folders/Scripts/Message/Deck Change.yy",
   },
   "resourceVersion": "1.0",
   "name": "scr_message_opponent_deck_change",

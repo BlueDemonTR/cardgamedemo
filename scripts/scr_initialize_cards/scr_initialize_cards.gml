@@ -1111,8 +1111,8 @@ function scr_initialize_cards(){
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
 		origText[i,TextEffect] = "Summoned: Gain +1/+1 for each ''Visclades'' in the Infirmary. Start of Turn: Lose Indestructable";
 		origText[i,TextFlavor] = "But when it lost it shackles, nobody and no one could stop it anymore. As it was the new king of its Underworld"
-		origText[TextMaterials] = "2+ Visclades";
-		origText[TextChant] = "And now, not even I can bring myself down."
+		origText[i,TextMaterials] = "2+ Visclades";
+		origText[i,TextChant] = "And now, not even I can bring myself down."
 		j=0
 		//Card Status'
 		//0 = Taunt, 1 = Pierce, 2 = Rebellious, 3 = Immune, 4 = Indestructable, 5 = Lifesteal, 6 = Sneaky

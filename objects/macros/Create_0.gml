@@ -2,7 +2,6 @@
 randomize();
 persistent = true;
 test_mode=true;
-global.selectedTextBox = ""
 show_debug_message(GM_version)
 
 //Sprite Properties

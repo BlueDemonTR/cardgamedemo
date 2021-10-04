@@ -6,17 +6,10 @@ function scr_burn(target, damage, cardNum) {
 		}
 	}
 
-
-	target.playerHP -= damage;
+	scr_give_player_stats(target, 0, -damage, 0, 0)
+	
 	if(obj_player.selected_wheel=3 && target=obj_opponent){
 		scr_give_player_stats(obj_player, 0, 0, 0, damage)
-		obj_player.momentum += damage;
-	}
-	global.effect_successful = true
-	if(target = obj_player){
-		scr_message_stats();
-	}else if(target = obj_opponent){
-		scr_message_opponent_stats()
 	}
 
 }

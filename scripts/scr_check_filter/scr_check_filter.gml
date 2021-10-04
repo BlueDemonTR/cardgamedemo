@@ -5,26 +5,11 @@ function scr_check_filter(cardNum, filterNum){
 		case -1: //any
 			return true
 		break;
-		case 0: //Motorbiker Card
-			return (scr_check_archetype(cardNum, ArcMotorbiker))
-		break;
-		case 1: //Level 2 or Lower Motorbiker Monster
-			if(variable_array_exists(macros.origStat, cardNum, StatLevel)){
-				if(filterNum == 1.1){//If it can be summoned
-					if (!scr_limited_summon(cardNum)){return false;}
-				}
-				return (scr_check_archetype(cardNum, ArcMotorbiker) && macros.origStat[cardNum,StatLevel] <= 2)	
-			}
-		break;
-		case 2: //Motorbiker Leader Monster That Has A The Same Level As A Motorbiker Leader Monster In The Momentum Deck That is Legal To Summon
-			if(variable_array_exists(macros.origStat, cardNum, StatLevel)){
-				if(scr_check_archetype(cardNum, ArcMotorbiker)){
-					var levelTemp = macros.origStat[cardNum, StatLevel];
-					for (var i = 0; i < obj_player.momentumDeckCount; i++){
-						if(macros.origStat[obj_player.momentumDeck[i,0], StatLevel] == levelTemp && scr_limited_summon(obj_player.momentumDeck[i,0])){
-							return true
-						}
-					}
+		case 0: //Motorbiker Leader Monster That Has A The Same Level As A Motorbiker Leader Monster In The Momentum Deck That is Legal To Summon
+			var levelTemp = macros.origStat[cardNum, StatLevel];
+			for (var i = 0; i < obj_player.momentumDeckCount; i++){
+				if(macros.origStat[obj_player.momentumDeck[i,0], StatLevel] == levelTemp && scr_limited_summon(obj_player.momentumDeck[i,0])){
+					return true
 				}
 			}
 			

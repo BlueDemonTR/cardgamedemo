@@ -48,7 +48,7 @@ if (selected_card[0] != 0 && !(selected_card[0] ==45 || selected_card[0] == 46))
 	}
 
 	j=0;
-	if(keyboard_check_direct(vk_lcontrol) || (mouse_x > 19 && mouse_x < 344 && mouse_y > start && mouse_y < 1850)){
+	if(keyboard_check_direct(vk_lcontrol) || mouse_between(19, 344, start, 1850){
 		
 		for(i = 0; i < macros.status_count; i++){
 			if(variable_array_exists(macros.origStatus,cardNum,i)){
@@ -83,7 +83,7 @@ if (selected_card[0] != 0 && !(selected_card[0] ==45 || selected_card[0] == 46))
 		effectlist = string_replace_all(effectlist,", ",",");
 		effectlist = string_replace_all(effectlist,",",", ");
 		
-		if(start + string_height_ext(effectlist,16,widthCap) > 1080 && mouse_x > 19 && mouse_x < 344 && mouse_y > start && mouse_y < 1850){
+		if(start + string_height_ext(effectlist,16,widthCap) > 1080 && mouse_between(19, 344, start, 1850)){
 			draw_text_ext(14,800,effectlist,16,widthCap);
 		}
 		else{
@@ -95,7 +95,7 @@ if (macros.origSharedEffectsCount[cardNum] > 0){
 	draw_sprite(macros.shared_effect_symbol[macros.origSharedEffects[cardNum,sharedListSelector]],-1,5,655)
 	if(sharedListSelector > 0){draw_sprite_ext(spr_small_arrow,-1,35,653,1,1,0,c_white,1)}
 	if(sharedListSelector < sharedListMax-1 ){draw_sprite_ext(spr_small_arrow,-1,51,729,1,1,180,c_white,1)}
-	if(keyboard_check_direct(vk_lcontrol) || (mouse_x > 5 && mouse_x < 77 && mouse_y > 655 && mouse_y < 727)){
+	if(keyboard_check_direct(vk_lcontrol) || mouse_between(5, 77, 655, 727){
 		draw_sprite_ext(spr_shared_effect_box,-1,5,712,1,1,0,c_white,.85)
 		draw_text_ext(15,722,macros.shared_effect_name[macros.origSharedEffects[cardNum,sharedListSelector]]+":",18,380)
 		draw_text_ext(15,742,macros.shared_effect[macros.origSharedEffects[cardNum,sharedListSelector]],18,380)

@@ -10,7 +10,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 			switch(effectNum){
 				case 2:
 					if(!effectSilenced){
-						scr_give_player_stats(player, 0, 0, 0, resolutionPile[positionInOrder, 5])
+						scr_give_player_stats(player, 0, 0, 0, resolutionPile[positionInOrder,5])
 					}
 					resolutionPile[positionInOrder,2] = 99;
 				break;
@@ -21,9 +21,9 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				case SharedVisclades:
 					if(!effectSilenced){
 						scr_give_player_stats(player, 0, 0, 1, 0)
-						wheel_locked = true;
+						scr_lock_wheel(player)
 					}
-					scr_discard(position);
+					scr_discard(player, position);
 					resolutionPile[positionInOrder,2] = 99
 				break;
 				case SharedUnderworldVisclades:
@@ -31,7 +31,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolutionPile[positionInOrder,5] = 0
-								scr_target_infirmary(player, 5, 5);
+								scr_target_infirmary([player], [TypeMonster], 1, 12, [ArcVisclades], [], true, -1, -1, 5);
 								NextStep
 							break;
 							case 3:
@@ -69,7 +69,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){
 						switch(resolutionStep){
 							case 1:
-								resolutionPile[positionInOrder,5] = -1
+								resolutionPile[positionInOrder,5] = 0
 								scr_choose_field_zones(true, false, false, true, false, 5);
 								NextStep
 							break;
@@ -92,7 +92,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				case 0:
 					if(!effectSilenced){
 						scr_burn(opponent,2,cardNum)
-						scr_give_player_stats(player,0,0,0,1)
+						scr_give_player_stats(player, 0, 0, 0, 1)
 					}
 					resolutionPile[positionInOrder,2] = 99
 				break;
@@ -102,11 +102,9 @@ function scr_resolve_effect_in_pile(positionInOrder){
 			switch(effectNum){
 				case 0:
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){
-						for(var i=0; i < 5; i++){
-							if(field[i,0]> 0){
-								if(scr_check_archetype(field[i,0], ArcMotorbiker)){
+						for(var i=0; i < player.field_zone_count; i++){
+							if(scr_check_archetype(field[i,0], ArcMotorbiker)){
 									scr_buff_card(player, i, 0, 1, 0, 0, 0, 0, 0);
-								}
 							}
 						}
 					}
@@ -118,7 +116,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 			switch(effectNum){
 				case 0:
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){
-						for(var i=0; i < 5; i++){
+						for(var i = 0; i < 5; i++){
 							if(field[i,0]> 0){
 								if(scr_check_archetype(field[i,0], ArcMotorbiker)){
 									scr_buff_card(player, i, 0, 0, 1, 1, 0, 0, 0);
@@ -135,10 +133,10 @@ function scr_resolve_effect_in_pile(positionInOrder){
 			switch(effectNum){
 				case 0:
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){
-						cardcan_attack = true;
-						cardStatus[StatusCantAttackDirect] = false;			
+						if(scr_change_card_status(player, position, StatusCantAttackDirect, true)){
+							player.fieldCard[position].cardcan_attack = true;
+						}
 					}
-					scr_message_field_card_stats(position)	
 					resolutionPile[positionInOrder,2] = 99
 				break;
 			}		
@@ -148,11 +146,9 @@ function scr_resolve_effect_in_pile(positionInOrder){
 			switch(effectNum){
 				case 0:
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){
-						for(var i=0; i < 5; i++){
-							if(field[i,0]> 0){
-								if(scr_check_archetype(field[i,0], ArcMotorbiker)){
-									scr_buff_card(player, i, 0, 0, 0, 0, 1, 0, 0);
-								}
+						for(var i = 0; i < player.field_zone_count; i++){
+							if(scr_check_archetype(field[i,0], ArcMotorbiker)){
+								scr_buff_card(player, i, 0, 0, 0, 0, 1, 0, 0);
 							}
 						}
 					}
@@ -167,13 +163,13 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolutionPile[positionInOrder,5] = 0;
-								scr_target_deck(1,5);
+								scr_target_deck([player], [TypeMonster], 1, 12, [ArcMotorbiker], [], false, -1, 5);
 								NextStep
 							break;
 							case 3:
 								scr_search(resolutionPile[positionInOrder,5])
 								scr_give_player_stats(player, 0, 0, 0, 3)
-								wheel_locked = true;
+								scr_lock_wheel(player)
 								NextStep
 							break;
 						}
@@ -194,7 +190,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolutionPile[positionInOrder,5] = 0
-								scr_target_infirmary(player,2,5);
+								scr_target_infirmary([player],[TypeMomentum],1,12,[ArcMotorbikerLeader], [], true, 0, 0, 5);
 								NextStep
 							break;
 							case 3:
@@ -228,9 +224,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				case 0:
 					scr_burn(obj_opponent,5,cardNum);
 					for (i = 0; i < 5 ;i++){
-						if(obj_opponent.fieldCard[i] != noone) {
-							scr_damage_card(obj_opponent, i, 5);
-						}
+						scr_damage_card(obj_opponent, i, 5);
 					}
 					scr_discard(position)				
 				break;

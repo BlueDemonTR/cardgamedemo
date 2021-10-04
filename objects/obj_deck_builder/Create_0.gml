@@ -4,6 +4,7 @@ scr_illegal_cards();
 
 main = obj_deck_builder
 filterText = ""
+searchedText = ""
 scr_filter_words(filterText)
 maxLineCount = 0
 maxLineSize = 0

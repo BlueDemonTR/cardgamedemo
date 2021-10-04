@@ -1,23 +1,28 @@
-function scr_discard(position) {
-	var cardNum=obj_player.hand[position,0],
-	artNum = obj_player.hand[position,1],
-	removedCard = obj_player.handCard[position];
+function scr_discard(player, position) {
+	if(!player.hand[position]){
+		return false;
+	}
+	
+	var cardNum = player.hand[position,0],
+	artNum = player.hand[position,1],
+	removedCard = player.handCard[position];
 
-
-	scr_remove_from_hand(position);
+	scr_remove_from_hand(player, position);
 
 	with(instance_create_depth(x,y,-1,card_animations)){
 		angle=0
-		targetX = obj_player.infirmary_x
-		targetY = obj_player.infirmary_y
+		targetX = player.infirmary_x
+		targetY = player.infirmary_y
 		activation_mode = "fieldToPlayerInfirmary"
 		self.cardNum =cardNum;
 		self.artNum =artNum;
 	}
+	
 	scr_card_sent_to_infirmary(cardNum);
-	obj_player.infirmary[obj_player.infirmaryCount,0] = cardNum;
-	obj_player.infirmary[obj_player.infirmaryCount++,1] = artNum;
-	scr_message_infirmary()
+	player.infirmary[player.infirmaryCount,0] = cardNum;
+	player.infirmary[player.infirmaryCount++,1] = artNum;
+	scr_decide_infirmary(player)
+	
 	with(removedCard){
 		instance_destroy();
 	}

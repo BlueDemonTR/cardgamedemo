@@ -1,12 +1,3 @@
 function scr_damage_card(controller, position, damage) {
-	with (player.fieldCard[position]){
-		cardStat[StatHP] -= damage;
-	}
-	if(player == obj_player){
-		scr_message_field_card_stats(position);
-	}else if(player == obj_opponent){
-		scr_message_opponent_field_card_stats(position);
-	}
-
-
+	scr_buff_card(controller, position, 0, 0, 0, -damage, 0, 0, 0)
 }

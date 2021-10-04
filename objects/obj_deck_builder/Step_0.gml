@@ -1,5 +1,3 @@
-
-
 var temp1 = scr_mouse_deck_position(mouse_x,mouse_y)
 if(temp1 = -1){
 	return

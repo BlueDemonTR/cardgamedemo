@@ -1,17 +1,8 @@
-if(mouse_check_button_released(mb_left) && mouse_x > infirmary_x-card_width/2 && mouse_x < infirmary_x+card_width/2 && mouse_y > infirmary_y-card_height/2 && mouse_y < infirmary_y+card_height/2){
+if(mouse_check_button_released(mb_left) && mouse_between(infirmary_x-card_width/2, infirmary_x+card_width/2, infirmary_y-card_height/2, infirmary_y+card_height/2)){
 	if(!obj_infirmary.infirmaryListOpened && infirmaryCount > 0){alarm [0] = 1;}
 	else if(obj_infirmary.infirmaryListOpened){alarm [1]=1;}
 }
 
-if(playerHP<0){playerHP=0;
-	scr_message_opponent_stats();}
-
-//if (sentplayerHP != playerHP || sentmana != mana|| sentmomentum != momentum){
-//	scr_message_opponent_stats();
-//	sentplayerHP = playerHP;
-//	sentmana = mana;
-//	sentmomentum = momentum;
-//}
 for(i = 0; i < obj_player.field_zone_count; i++){
 	if(field[i,0] > 0 && fieldCard[i] == noone){
 		fieldCard[i] = instance_create_depth(field_card_zone_x[i],field_card_zone_y[i],1,obj_opponent_field_card);

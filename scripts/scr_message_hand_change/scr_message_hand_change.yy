@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Message",
-    "path": "folders/Scripts/Message.yy",
+    "name": "Hand Change",
+    "path": "folders/Scripts/Message/Hand Change.yy",
   },
   "resourceVersion": "1.0",
   "name": "scr_message_hand_change",

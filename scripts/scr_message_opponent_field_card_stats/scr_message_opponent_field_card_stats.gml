@@ -1,13 +1,6 @@
-function scr_message_opponent_field_card_stats(argument0) {
+function scr_message_opponent_field_card_stats(position) {
 	if (!instance_exists(obj_client)){return;}
 	
-	var field_location = argument0;
-	if (obj_opponent.fieldCard[field_location] == noone){return;}
-	//hp_change = obj_opponent.fieldCard[field_location].cardHP,
-	//max_hp_change = obj_opponent.fieldCard[field_location].cardmaxHP,
-	//atk_change =obj_opponent.fieldCard[field_location].cardatk,
-	//level_change =obj_opponent.fieldCard[field_location].cardlevel;
-
 	buffer_seek(obj_client.send_buffer, buffer_seek_start, 0);
 	buffer_write(obj_client.send_buffer, buffer_u8, MESSAGE_OPPONENT_FIELD_CARD_STATS);
 	buffer_write(obj_client.send_buffer, buffer_u8, field_location);

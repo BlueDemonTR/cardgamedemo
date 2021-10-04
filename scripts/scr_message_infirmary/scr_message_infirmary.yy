@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Message",
-    "path": "folders/Scripts/Message.yy",
+    "name": "Infirmary",
+    "path": "folders/Scripts/Message/Infirmary.yy",
   },
   "resourceVersion": "1.0",
   "name": "scr_message_infirmary",

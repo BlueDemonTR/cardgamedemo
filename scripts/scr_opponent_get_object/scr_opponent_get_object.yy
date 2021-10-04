@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Message",
-    "path": "folders/Scripts/Message.yy",
+    "name": "Client & Handling",
+    "path": "folders/Scripts/Message/Client & Handling.yy",
   },
   "resourceVersion": "1.0",
   "name": "scr_opponent_get_object",
