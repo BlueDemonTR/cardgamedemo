@@ -1,9 +1,45 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_count_deck_filter(filterNum){
-	var cardCount = 0;
-	for (var i=0;i < deckCount;i++){
-		if(scr_check_filter(obj_player.deck[i,0], filterNum)){cardCount++;}
+function scr_count_deck_filter(players, typeArray, minLevel, maxLevel, archetypeArray, spiritArray, checkSummonable, filterNum){
+	/*
+	players (enter all player objects that are affected in an array)
+	typeArray
+	Max Level (between 1-12)
+	Min Level (between 1-12)
+	Archetype Array (Checks if the card is a part of ANY of the archetypes in the array)
+	Spirit Array
+	Check Summonable
+	filterNum
+	*/
+	var	filteredCardCount = 0;
+
+	for(var i = 0; i < array_length(players); i++){
+		var player = players[i]
+		
+		for(var j = 0; j < player.deckCount; j++){
+			var cardNum = player.deck[i,0],
+			cardStat = macros.origStat[cardNum];
+			
+			if(macros.card_type[cardNum] != TypeSpell && (cardStat[StatLevel] > maxLevel || cardStat[StatLevel] < minLevel)){
+				continue;
+			}
+			if(typeArray != [] && !array_includes(typeArray, macros.card_type[cardNum])){
+				continue;
+			}
+			if(archetypeArray != [] && !array_includes_array(archetypeArray, macros.origArchetype[cardNum])){
+				continue;
+			}
+			if(spiritArray != [] && !array_includes(spiritArray, cardStat[StatSpirit])){
+				continue;
+			}
+			if(checkSummonable && !scr_limited_summon(cardNum)){
+				continue;
+			}
+			if(!scr_check_filter(cardNum, filterNum)){
+				continue;
+			}
+			filteredCardCount++
+		}
 	}
-	return cardCount;
+	return filteredCardCount
 }

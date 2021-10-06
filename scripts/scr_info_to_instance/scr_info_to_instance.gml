@@ -4,8 +4,15 @@ function scr_info_to_instance(cardNum) {
 		if(variable_array_exists(macros.origStat,cardNum,i)){
 			cardStat[i] = macros.origStat[cardNum,i]
 		}else{
-			cardStat[i] = false;
-			if (i = StatHP){cardStat[i] = cardStat[StatMaxHP]}
+			cardStat[i] = 0;
+			switch(i){
+				case StatHP:
+					cardStat[i] = cardStat[StatMaxHP];
+				break;
+				case StatXPerTurn:
+					cardStat[i] = 1;
+				break;
+			}
 		}
 	}
 	

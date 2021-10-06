@@ -93,14 +93,8 @@ function scr_client_handle_message(argument0) {
 					for(var i = 0; i < macros.status_count/*buffer_read(buffer, buffer_u8)*/; i++){//Statuses
 						fieldCard[field_location].cardStatus[i] = buffer_read(buffer, buffer_bool)
 					}
-					//for(var i = 0; i < buffer_read(buffer, buffer_u8); i++){//Archetypes
-					//	fieldCard[field_location].cardArchetype[i] = buffer_read(buffer, buffer_u16)
-					//}
-					//for(var i = 0; i < buffer_read(buffer, buffer_u8); i++){//Shared Effects
-					//	fieldCard[field_location].cardSharedEffects[i] = buffer_read(buffer, buffer_u16)
-					//}
-					
-					fieldCard[field_location].cardcan_attack = buffer_read(buffer, buffer_bool );//Can it attack?
+					//TODO: Change Bool to u8
+					fieldCard[field_location].attacksLeft = buffer_read(buffer, buffer_bool );//Can it attack?
 				}
 			break;
 			case MESSAGE_DECK_CHANGE:
@@ -142,8 +136,8 @@ function scr_client_handle_message(argument0) {
 					for(var i = 0; i < buffer_read(buffer, buffer_u8); i++){//Shared Effects
 						fieldCard[field_location].cardSharedEffects[i] = buffer_read(buffer, buffer_u16)
 					}
-					
-					fieldCard[field_location].cardcan_attack = buffer_read(buffer, buffer_bool );//Can it attack?
+					//TODO: Change Bool to u8
+					fieldCard[field_location].attacksLeft = buffer_read(buffer, buffer_bool );//Can it attack?
 				}
 			break;
 			case MESSAGE_OPPONENT_DECK_CHANGE:

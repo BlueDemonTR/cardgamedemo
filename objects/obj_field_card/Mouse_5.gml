@@ -14,7 +14,7 @@ if(obj_player.test_mode){
 	//cardStat[StatArmor] = 9; 
 	//cardStat[StatRegeneration] = 9;
 	//cardStat[StatDodge] = 9;
-	//cardcan_attack = 1;
+	//attacksLeft++;
 	//cardis_sacrificable = 1;
 	//scr_message_field_card_stats(position)
 	//animationType = "destroy"

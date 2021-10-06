@@ -49,7 +49,7 @@ function scr_wheel_effects(argument0, argument1) {
 									for(var i = 0; i < 5; i++){
 										if(field[i,0] > 0){
 											with(fieldCard[i]){
-												cardcan_attack = true;
+												attacksLeft++;
 												scr_message_field_card_stats(position)
 											}
 										}

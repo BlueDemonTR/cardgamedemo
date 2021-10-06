@@ -24,7 +24,7 @@ function scr_legal_activation(cardNum, effectNum, position){
 					return true;
 				break;
 				case SharedIgloo:
-					if(scr_count_field_filter(player, 6, false) < 2){return false}
+					if(!scr_count_field_filter([player], [], [1, 12], [0, infinity], [0, infinity], [ArcIgloo], [], position, -1)){return false}
 					return true;
 				break;
 				case SharedXMakine:
@@ -32,7 +32,7 @@ function scr_legal_activation(cardNum, effectNum, position){
 					return true;
 				break;
 				case SharedUnderworldVisclades:
-					if(scr_count_infirmary_filter(player, ArcVisclades, "any") == 0){return false;}
+					if(!scr_count_infirmary_filter([player], [TypeMonster], 1, 12, [ArcVisclades], [], true, -1, -1, -1)){return false;}
 					return true;
 				break;
 				case SharedSacrifice:
@@ -42,28 +42,6 @@ function scr_legal_activation(cardNum, effectNum, position){
 			}
 		break;
 		case 1: //Motorbiker Showman Legal Activation
-			if (cardStatus[StatusSilenced]){return false;}
-			return true;
-		break;
-		
-		case 2://Motorbiker Doppelganger Legal Activation
-			if (cardStatus[StatusSilenced]){return false;}
-			if (!scr_find_deck(2)){return false;}
-			return true;
-		break;
-		
-		case 3://Motorbiker Wild Rider Legal Activation
-			return true;
-		break;
-		
-		case 4://Motorbiker V-Rider Legal Activation
-		case 5://Motorbiker D-Rider Legal Activation
-		case 7://Motorbiker Protector Legal Activation
-			if (cardStatus[StatusSilenced]){return false;}
-			if(scr_count_field_filter(player, 0, false) == 0){return false}
-			return true;
-		break;
-
 		case 6://Motorbiker Violent Wheeler Legal Activation
 		case 13://Motorbiker Leader Toku Legal Activation
 		case 15://Motorbiker Leader Ceasar Legal Activation
@@ -74,44 +52,72 @@ function scr_legal_activation(cardNum, effectNum, position){
 		case 28://Anger Visclades Legal Activation
 		case 34://Pole Clan Archer Legal Activation		
 		case 38://Pole Clan Torch Legal Activation
+		case 55://Garbage Collector Legal Activation
+		case 64://Lunar Tank Legal Activation
+		case 65://Homesick Soldier Legal Activation
+		case 69://Speed Soldier Legal Activation
+		case 70://Vengeful Cyborg Legal Activation
+		case 74://Useless Sacrifice Legal Activation
+		case 85://Wise Fisherman Legal Activation
+		case 87://Lucky Fisherman Legal Activation
+		case 88://Naive Fisherman Legal Activation
+		case 89://Strong Fisherman Legal Activation
+		case 99://Single Shot Master Legal Activation
 			if (cardStatus[StatusSilenced]){return false;}
+		case 3://Motorbiker Wild Rider Legal Activation
+		case 75://Wealthy Sacrifice Legal Activation
+		case 91://Lucky Reel Legal Activation
+			return true;
+		break;
+		
+		case 2://Motorbiker Doppelganger Legal Activation
+			if (cardStatus[StatusSilenced]){return false;}
+			if (!scr_find_deck(2)){return false;}
+			return true;
+		break;
+				
+		case 4://Motorbiker V-Rider Legal Activation
+		case 5://Motorbiker D-Rider Legal Activation
+		case 7://Motorbiker Protector Legal Activation
+			if(cardStatus[StatusSilenced]){return false;}
+			if(!scr_count_field_filter([player], [], [1, 12], [0, infinity], [0, infinity], [ArcMotorbiker], [], -1, -1)){return false}
 			return true;
 		break;
 
 		case 8://Rev up the Engines Legal Activation
-			if (scr_count_deck_filter(0) == 0){return false;}
+			if (scr_count_deck_filter([player], [TypeMonster], 1, 12, [ArcMotorbiker], [], false, -1)){return false;}
 			return true;
 		break;
 		
 		case 9://Leader Takeover Legal Activation
-			if (scr_count_infirmary_filter(player, 2, 0) == 0){return false;}
-			if (field[4] != 0){return false;}
+			if (!scr_count_infirmary_filter([player], [TypeMomentum], 1, 12, [ArcMotorbiker], [], false, 1, -1, 0)){return false;}
+			if (player.field[4,0] != 0){return false;}
 			return true;
 		break;
 		
 		case 10://The Hunt Is On Boys!! Activation
-			if (!scr_if_you_control_filter(10)){return false}
-			if (scr_count_field_filter(player, 0, false) < 3) {return false}
+			if (!scr_count_field_filter([player], [], [1, 12], [0, infinity], [0, infinity], [ArcMotorbikerLeader], [], -1, -1)){return false}
+			if (scr_count_field_filter([player], [], [1, 12], [0, infinity], [0, infinity], [ArcMotorbiker], [], -1, -1) < 3) {return false}
 			return true;
 		break;
 		
 		case 11://Motorbiker Leader Khan Legal Activation
 			if (cardStatus[StatusSilenced]){return false;}
 			if (scr_if_field_full(player)){return false;}
-			if (scr_count_deck_filter(1.1) == 0){return false;}
+			if (!scr_count_deck_filter([player], [TypeMonster], 1, 2, [ArcMotorbiker], [], true, -1)){return false;}
 			return true;
 		break;
 		
 		case 12://Motorbiker Leader Luther Legal Activation
 			if (cardStatus[StatusSilenced]){return false;}
-			if (scr_count_field_filter(opponent, 11, true) == 0){return false;}
+			if (!scr_count_field_filter([opponent], [], [1, 4], [0, infinity], [0, infinity], [], [], -1, -1)){return false;}
 			if (cardStat[StatATK] == 0){return false;}
 			return true;
 		break;
 		
 		case 14://Motorbiker Leader Cleo Legal Activation
 			if (cardStatus[StatusSilenced]){return false;}
-			if (scr_count_field_filter(opponent, 11, true) == 0){return false;}
+			if (!scr_count_field_filter([opponent], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1)){return false;}
 			return true;
 		break;
 		
@@ -119,7 +125,7 @@ function scr_legal_activation(cardNum, effectNum, position){
 			switch(effectNum){
 				case 0:
 					if (cardStatus[StatusSilenced]){return false;}
-					if (scr_count_field_filter(opponent, 11, true) == 0){return false;}				
+					if (!scr_count_field_filter([opponent], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1)){return false;}				
 					return true;
 				break;
 				case 1:
@@ -142,38 +148,38 @@ function scr_legal_activation(cardNum, effectNum, position){
 					return true;
 				break;
 				case 1:
-					if (scr_count_field_filter(player, 4, true) == 0){return false;}
+					if (!scr_count_field_filter([player], [], [1, 12], [0, infinity], [0, infinity], [ArcVisclades], [], -1, -1)){return false;}
 					return true;
 				break;
 			}			
 		break;
 		
 		case 22://Visclades Tia Invaden Lib Legal Activation
-			if(scr_count_field_filter(player, 11, true) + scr_count_field_filter(opponent, 11, true) == 0){return false}
+			if(!scr_count_field_filter([player, opponent], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1)){return false}
 			return true
 		break;
 		
 		case 24://Cries from the Underworld Legal Activation
-			if(scr_count_momentum_deck_filter(4.1) == 0){return false}
+			if(!scr_count_momentum_deck_filter([player], 1, 12, [ArcVisclades], [], true, -1)){return false}
 			if(scr_if_field_full(player)){return false;}
-			if(scr_count_infirmary_filter(player, 4, "any") < 4){return false}
+			if(!scr_count_infirmary_filter([player], [], 1, 12, [ArcVisclades], [], false, -1, -1, -1) < 4){return false}
 			return true
 		break;
 		
 		case 25://Second Coming Legal Activation
 			if(scr_if_field_full(player)){return false;}
-			if(scr_count_infirmary_filter(player, 5, "any") == 0){return false}	
+			if(!scr_count_infirmary_filter([player], [TypeMonster], 1, 12, [ArcVisclades], [], true, -1, -1, -1)){return false}	
 			return true;
 		break;
 		
 		case 26://The Bloody Sacrifice Legal Activation
-			if(scr_count_deck_filter(4)){return false}
+			if(!scr_count_deck_filter([player], [TypeMonster], 1, 12, [ArcVisclades], [], false, -1)){return false}
 			return true;
 		break;
 		
 		case 27://Denial Visclades Legal Activation
 			if (cardStatus[StatusSilenced]){return false;}
-			if(scr_count_field_filter(opponent, -1, true)){return false}
+			if(!scr_count_field_filter([opponent], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1)){return false}
 			return true;
 		break;
 		
@@ -185,25 +191,25 @@ function scr_legal_activation(cardNum, effectNum, position){
 		
 		case 30://Depression Visclades Legal Activation
 			if (cardStatus[StatusSilenced]){return false;}
-			if(scr_count_field(opponent) == 0){return false}
+			if (!scr_count_field(opponent)){return false}
 			return true;
 		break;
 		
 		case 31://Acceptance Visclades Legal Activation
 			if (cardStatus[StatusSilenced]){return false;}
-			if(scr_count_infirmary_filter(player, 4, "any") == 0){return false}
+			if (!scr_count_infirmary_filter([player], [], 1, 12, [ArcVisclades], [], false, -1, -1, -1)){return false}
 			return true;
 		break;
 		
 		case 33://Pole Clan Builder Legal Activation
 			if (cardStatus[StatusSilenced]){return false;}
-			if(scr_count_deck_filter(13))
+			if (scr_count_deck_filter([player], [], 1, 12, [ArcIgloo], [], true, -1))
 		break;
 		
 		case 35://Pole Clan Mage Legal Activation
 			if (cardStatus[StatusSilenced]){return false;}
-			if(scr_count_field_filter(player, 13, false) == 0){return false}
-			if(scr_count_deck_filter(8) == 0){return false}
+			if(!scr_count_field_filter([player], [], [1, 12], [0, infinity], [0, infinity], [ArcIgloo], [], -1, -1)){return false}
+			if(scr_count_deck_filter([player], [TypeSpell], 1, 12, [ArcBlizzard], [], false, -1)){return false}
 			return true;
 		break;
 		
@@ -213,25 +219,25 @@ function scr_legal_activation(cardNum, effectNum, position){
 				case 0:
 				case 1:
 					if (cardStatus[StatusSilenced]){return false;}
-					if(scr_count_field_filter(player, 6, false) == 0){return false}
+					if(!scr_count_field_filter([player], [], [1, 12], [0, infinity], [0, infinity], [ArcIgloo], [], -1, -1)){return false}
 					return true
 				break;
 			}
 		
 		case 39://Blizzard Icewall Legal Activation
 			if(player.momentum < 1){return false}
-			if(scr_count_field_filter(player, 6, true) + (scr_count_field_filter(opponent, 6, true) == 0)){return false}
+			if(!scr_count_field_filter([player, opponent], [], [1, 12], [0, infinity], [0, infinity], [ArcIgloo], [], -1, -1)){return false}
 			return true;
 		break;
 		
 		case 40://Blizzard Icicle Storm Legal Activation
 			if(player.momentum < 3){return false}
-			if(scr_count_field_filter(player, 6, true) + (scr_count_field_filter(opponent, 6, true) == 0)){return false}
+			if(!scr_count_field_filter([player, opponent], [], [1, 12], [0, infinity], [0, infinity], [ArcIgloo], [], -1, -1)){return false}
 			return true;
 		break;
 		
 		case 41://Blizzard Recruitment Legal Activation
-			if(scr_count_deck_filter(7) == 0){return false}
+			if(!scr_count_deck_filter([player], [TypeMonster], 1, 12, [ArcPoleClan], [], false, -1)){return false}
 			return true;
 		break;
 		
@@ -241,138 +247,281 @@ function scr_legal_activation(cardNum, effectNum, position){
 		break;
 		
 		case 43://Blizzard Lockdown Legal Activation
-			if(scr_count_hand_filter(9, hand_position) == 0){return false}
+			if(!scr_count_hand_filter([player], [TypeMonster], 1, 12, [], [], false, position, -1)){return false}
 			return true;
 		break;
 		
 		case 44://Blizzard Frost Beam Legal Activation
-			if(!scr_if_you_control(35)){return false}
+			if(player.momentum < 3){return false}
+			if(!scr_count_field_filter([player], [], [1, 12], [0, infinity], [0, infinity], [ArcIgloo], [], -1, -1)){return false}
 			return true;
 		break;
 		
 		case 47://Igloo Castle Legal Activation
 			if (cardStatus[StatusSilenced]){return false;}
 			if(scr_if_field_full(player)){return false;}
-			if(scr_count_infirmary_filter(player, 7.1, "any") == 0){return false;}
+			if(!scr_count_infirmary_filter([player], [], 1, 12, [ArcPoleClan], [], true, -1, -1, -1)){return false;}
 			return true
 		break;
 		
 		case 48://Igloo Citadel Legal Activation
 			if (cardStatus[StatusSilenced]){return false;}
-			if (scr_count_field_filter(player, 7, false) == 0){return false;}
+			if (!scr_count_field_filter([player], [], [1, 12], [0, infinity], [0, infinity], [ArcPoleClan], [], -1, -1)){return false;}
 			return true
 		break;
 		
 		case 49://Igloo Kingdom Legal Activation
-			if(scr_if_field_full() && !scr_limited_summon(34)){return false}
+			if (cardStatus[StatusSilenced]){return false;}
+			if(scr_if_field_full(player) && !scr_limited_summon(34)){return false}
+			return true;
+		break;
+
+		case 51://At Long Last... Legal Activation
+			if (obj_player.handCount < 1){return false}
+			return true
+		break;
+
+		case 52://Centrifugal Reborn Legal Activation
+			if(!scr_count_infirmary_filter([player], [TypeMonster, TypeMomentum], 1, player.momentum, [], [], true, -1, -1, -1)){return false}
+			return true	
+		break;
+		
+		case 53://Healing Lullaby Legal Activation
+			if (cardStatus[StatusSilenced]){return false;}
+			if(player.playerHP == player.playerMaxHP || !(player.momentum)){return false;}
+			return true
+		break;
+		
+		case 54://Battle Medic Legal Activation
+			if (cardStatus[StatusSilenced]){return false;}
+			if(scr_count_infirmary_filter([player], [TypeMonster, TypeMomentum], 1, 2, [], [], false, -1, -1, -1)){return false;}
+			return true
+		break;
+
+		case 56://Earthquake Legal Activation
+			if(scr_count_field(player) <= scr_count_field(opponent)){return false}
+			return true
+		break;
+		
+		case 57://Power Discharge Legal Activation
+			if(player.handCount < 1){return false}
+			if(!scr_count_field_filter([player, opponent], [], [1,4], [0, infinity], [0, infinity], [], [], -1, -1)){return false}
+			return true
+		break;
+		
+		case 58://Man With A Shield Legal Activation
+			if(scr_if_field_full(player)){ return false }
+			return true
+		break;
+		
+		case 60://Great Leader Legal Activation
+			if (cardStatus[StatusSilenced]){return false;}
+			if(scr_if_field_full(player) || obj_player.handCount < 1 || !scr_limited_summon(61)){return false}	
+			return true
+		break;		
+
+		case 61://Bodyguard Legal Activation
+			switch(effectNum){
+				case 0:
+					if (cardStatus[StatusSilenced]){return false;}
+					if (!scr_if_you_control(60)){return false}
+					return true
+				break;
+				case 1:
+					if (!scr_if_you_control(60)){return false}					
+					return true;
+				break;
+			}
+		break
+
+		case 62://Awoken Civillian
+			if (cardStatus[StatusSilenced]){return false;}
+			if(scr_if_field_full(player) || !scr_limited_summon(63)){return false}	
+			return true
+		break;
+		
+		case 63://Rebellion Ally Legal Activation
+			switch(effectNum){
+				case 0:
+					if (cardStatus[StatusSilenced]){return false;}
+					if (!scr_if_you_control(62)){return false}
+					return true
+				break;
+				case 1:
+					if (!scr_if_you_control(62)){return false}					
+					return true;
+				break;
+			}
+		break;
+		
+		case 66://Bloodthirst Legal Activation
+			if(!scr_count_field_filter([player, opponent], [], [1, 12], [0, infinity], [0, infinity], [], [SpiritAggressive, SpiritMalicious], -1, -1)){return false}
+			return true
+		break;
+		
+		case 96://Fullteam Medics Legal Activation
+			if (cardStatus[StatusSilenced]){return false;}
+		case 67://Pan Soldier Legal Activation
+			if(player.playerHP == player.playerMaxHP){return false;}
+			return true
+		break;
+		
+		case 68://Machine Gun Soldiers Legal Activation
+			if (cardStatus[StatusSilenced]){return false;}
+			if (!scr_count_field(opponent)){return false}
+			return true
+		break;
+		
+		case 71://Armed Civillian Legal Activation
+			if (cardStatus[StatusSilenced]){return false;}
+			if (scr_count_field_filter([player, opponent], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1)){return false}
+			return true
+		break;
+		
+		case 72://Torch Carrier Legal Actiavation
+			if (cardStatus[StatusSilenced]){return false;}
+			if (player.deckCount < 3){return false;}
+			return true
+		break;
+		
+		case 73://Baby Phoenix Legal Activation
+			if (scr_if_field_full(player)){return false;}
+			if (player.mana < 2){return false;}
+			return true
+		break;
+		
+		case 76://Ruthless Sacrifice Legal Activation
+			if(!scr_count_field_filter([opponent], [], [1,4], [0, infinity], [0, infinity], [], [], -1, -1)){return false}
+			return true
+		break;
+		
+		case 77://Cursed Sacrifice Legal Activation
+			if(!scr_count_infirmary_filter([player], [TypeMonster, TypeMomentum], 5, 12, [], [], true, -1, -1, -1)){return false}
+			return true
+		break;
+		
+		case 78://Genesis Notebook Legal Activation
+			if(!scr_count_field_filter([player], [], [1, 12], [0, infinity], [0, infinity], [ArcSacrifice], [], -1, -1)){return false}
+			if(!scr_count_deck_filter([player], [TypeMonster], 5, 12, [], [], false, -1)){return false}
+			return true
+		break;		
+		
+		case 79://Gatherings of the Accursed Legal Activation
+			if(scr_count_field_filter([player], [], [1, 12], [0, infinity], [0, infinity], [ArcSacrifice], [], -1, -1) < 2){return false}
+			return true
+		break;
+		
+		case 80://Silent Courage Legal Activation
+			if(!scr_count_field_filter([player, opponent], [], [1, 12], [0, infinity], [0, infinity], [ArcSacrifice], [], -1, -1)){return false}
+			return true
+		break;
+		
+		case 81://Nightmare Beast Crystal Echo Legal Activation
+		case 82://Nightmare Beast Conductrons Legal Activation
+			if (cardStatus[StatusSilenced]){return false;}
+			if(!scr_count_field_filter([opponent], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1)){return false}
+			return true
+		break;
+		
+		case 83://Fisherman Rookie Legal Activation
+			if (cardStatus[StatusSilenced]){return false;}
+			if(scr_if_field_full(player)){return false}
+			if(!scr_limited_summon(85)){return false}
 			return true;
 		break;
 		
-		case 60:
-			if(!scr_if_field_full() && obj_player.handCount > 0 && scr_limited_summon(61)){
-				return true
-			}	
-			return false		
+		case 86://Goldfish Legal Activation
+			if (cardStatus[StatusSilenced]){return false;}
+			if(scr_count_field_filter([player], [], [1,12], [0, infinity], [0, infinity], [ArcFisherman], [], -1, -1)){return false}
+			return true
 		break;
-		case 62:
-			if(!scr_if_field_full() && scr_limited_summon(63)){
-				return true
-			}	
-			return false		
-		break;		
-		case 79:
-			if(obj_opponent.handCount > 0 && obj_player.handCount > 0){
-				return true
-			}
-			return false
+		
+		case 90://Fisherman of the Oceans Legal Activation
+			if (cardStatus[StatusSilenced]){return false;}			
+			if(scr_if_field_full(player)){return false}
+			return true
 		break;
-		case 80:
-			if(obj_player.handCount > 0){
-				for(i = 0; i < 5; i++){
-					if(obj_player.field[i] > 0){
-						if(!obj_player.fieldCard[i].cardStatus[StatusSneaky]){ 
-							return true
-						}
-					}
-					if(obj_opponent.field[i] > 0){
-						if(!obj_opponent.fieldCard[i].cardStatus[StatusSneaky]){
-							return true
-						}
-					}
-				}
-			}
-			return false
+		
+		case 92://Cursed Reel Legal Activation
+			if(player.momentum < 1){return false}
+			return true
 		break;
-		case 81:
-			if(obj_opponent.momentum > 0){
-				return true;
-			}
-			return false;
-		break;	
-		case 82:
-			if(obj_opponent.deckCount > 0){
-				return true;
-			}
-			return false
+		
+		case 93://Marketplace of the Oceans Legal Activation
+			if(scr_count_infirmary_name(player, 84, -1) < 5 && !scr_count_infirmary_name(player, 86, -1)){return false}
+			return true
 		break;
-		case 83:		
-		case 85:		
-		case 87:
-		case 88:
-		case 89:
-		case 90:
-			if(!scr_if_field_full() && scr_limited_summon(85)){
-				return true
-			}	
-			return false
+		
+		case 94://Highest Bidder Legal Activation
+			if(!scr_count_infirmary_name(player, 86, -1)){return false}
+			if(!scr_count_deck_filter([player], [TypeMonster], 1, 12, [ArcFisherman], [], false, -1)){return false}
+			return true
 		break;
-		case 107://X-makine casey, theo and dom
-		case 108:
-		case 111:
-			if(obj_player.momentum <= 3){
-				for(i = 0; i < 5; i++){
-					if(i = position){continue}
-					if(scr_check_archetype(obj_player.field[i,0], ArcXMakine)){
-						return true
-					}
-				}
-			return false;
-			}
+		
+		case 100://Desperate Power Measures Legal Activation
+			if(!scr_count_hand_filter([player], [TypeMonster], 1, 12, [], [], false, position, -1)){return false}
+			return true
 		break;
-		case 109://x-makine lily
-			if(obj_player.momentum <= 0){
-				for(var i = 0; i < obj_player.deckCount; i++){
-					if(scr_check_archetype(obj_player.deck[i,0], ArcXMakine)){
-						return true;
-					}
-				}
-			}
-			return false;
+		
+		case 101://Rogue Soldier Legal Activation
+			if (cardStatus[StatusSilenced]){return false;}
+			if(!scr_count_hand_filter([player], [], 1, 12, [], [], false, position, -1)){return false}
+			return true
 		break;
-		case 110://X-makine robert
-			if(obj_player.momentum <= 3){
-				for(var i = 0; i < obj_player.infirmaryCount; i++){
-					if(scr_check_archetype(obj_player.infirmary[i,0], ArcXMakine)){
-						return true;
-					}
-				}
-			}
-			return false;			
+		
+		case 107://X-Makine Casey Legal Activation
+		case 108://X-Makine Theo Legal Activation
+			if (cardStatus[StatusSilenced]){return false;}
+			if(obj_player.momentum > 3){return false}
+			if(!scr_count_field_filter([player], [], [1, 12], [0, infinity], [0, infinity], [ArcXMakine], [], position, -1)){return false}
+			return true;		
 		break;
-		case 112://DX-Makine Jason
-			if(obj_player.momentum <= 6){
-				for(i=0; i < 5; i++){
-					if(obj_opponent.field[i,0] != 0){
-						if(!obj_opponent.fieldCard[i].cardStatus[StatusSneaky]){
-							return true
-						}
-					}
-				}
-			}else{
-				return true
-			}
-			return false
+		
+		case 109://X-Makine Dom Legal Activation
+			if (cardStatus[StatusSilenced]){return false;}
+			if(obj_player.momentum > 3){return false}
+			if(!scr_count_field_filter([player], [], [1, 11], [0, infinity], [0, infinity], [ArcXMakine], [], position, -1)){return false}
+			return true;
+		break;
+		
+		case 109://X-Makine Lily Legal Activation
+			if (cardStatus[StatusSilenced]){return false;}
+			if(obj_player.momentum > 0){return false}
+			if(!scr_count_deck_filter([player], [TypeMonster], 1, 12, [ArcXMakine], [], false, -1)){return false}
+			return true;
+		break;
+		
+		case 110://X-Makine Robert Legal Activation
+			if (cardStatus[StatusSilenced]){return false;}
+			if(obj_player.momentum > 3){return false}
+			if(!scr_count_infirmary_filter([player], [TypeMonster, TypeMomentum], 1, 12, [ArcXMakine], [], false, -1, -1, -1)){return false}
+			return true;
+		break;
+
+		case 112://DX-Makine Jason Legal Activation
+			if (cardStatus[StatusSilenced]){return false;}
+			if(!scr_count_field_filter([player], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1)){ return false }
+			return true
+		break;
+		
+		case 113://Emergency Call Legal Activation
+			if(scr_count_field_filter([player], [], [1, 12], [0, infinity], [0, infinity], [ArcXMakine], [], -1, -1) != 1){return false}
+			if(!scr_count_field_filter([opponent], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1)){return false}
+			if(scr_if_field_full(player)){return false}
+			if(!scr_count_deck_filter([player], [TypeMonster], 1, 12, [ArcXMakine], [], true, -1)){return false}
+			return true;
+		break;
+		
+		case 114://Mighty Charging Fire Blades Legal Activation
+			if(!scr_count_field_filter([player], [], [1, 12], [0, infinity], [0, infinity], [ArcXMakine], [], -1, -1)){return false}
+			return true;
+		break;
+		
+		case 115://X-Makines Form Together Legal Activation
+			if(scr_count_field_filter([player], [], [1, 12], [0, infinity], [0, infinity], [ArcXMakine], [], -1, -1) < 2){return false}
+			if(!scr_count_field_filter([opponent], [TypeMomentum], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1)){return false}
+			if(scr_count_momentum_deck_filter([player], 1, 12, [ArcXMakine], [], true, -1)){return false}
+			return true;
 		break;
 	}
-	return false;
 }

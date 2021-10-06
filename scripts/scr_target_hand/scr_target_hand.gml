@@ -1,31 +1,69 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_target_hand(filterNum, arrayPos, ignoreTarget){
-	var j = 0,
-	filtered_cards;
-	with(obj_player){
-		for (var i = 0; i < handCount; i++){
-			if(scr_check_filter(hand[i,0],filterNum)){
-				if(i=ignoreTarget){continue;}
-				filtered_cards[j++] = i
+function scr_target_hand(players, typeArray, minLevel, maxLevel, archetypeArray, spiritArray, checkSummonable, ignoreTarget, filterNum, arrayPos){
+	/*
+	players (enter all player objects that are affected in an array)
+	typeArray
+	Max Level (between 1-12)
+	Min Level (between 1-12)
+	Archetype Array (Checks if the card is a part of ANY of the archetypes in the array)
+	Spirit Array
+	Check Summonable
+	ignoreTarget
+	filterNum
+	arrayPos
+	*/	
+	var filterCounter = 0,
+	filteredCards,
+	filteredCardCount = 0;
+
+	for(var i = 0; i < array_length(players); i++){
+		var player = players[i]
+		
+		for(var j = 0; j < player.handCount; j++){
+			var cardNum = player.hand[i,0],
+			cardStat = macros.origStat[cardNum];
+			
+			if(macros.card_type[cardNum] != TypeSpell && (cardStat[StatLevel] > maxLevel || cardStat[StatLevel] < minLevel)){
+				continue;
 			}
+			if(typeArray != [] && !array_includes(typeArray, macros.card_type[cardNum])){
+				continue;
+			}
+			if(archetypeArray != [] && !array_includes_array(archetypeArray, macros.origArchetype[cardNum])){
+				continue;
+			}
+			if(spiritArray != [] && !array_includes(spiritArray, cardStat[StatSpirit])){
+				continue;
+			}
+			if(checkSummonable && !scr_limited_summon(cardNum)){
+				continue;
+			}
+			if(ignoreTarget == [player, j]){
+				continue;
+			}			
+			if(!scr_check_filter(cardNum, filterNum)){
+				continue;
+			}
+			filteredCards[filteredCardCount++] = [player, i]
 		}
 	}
-	filtered_card_count = j;	
-	for (var i=0; i < filtered_card_count; i++){
-		target_select[i] = instance_create_layer(x,y,"UpperInstances",obj_appropiate_targets)
-		with(target_select[i]){
-			player=obj_player;
-			self.arrayPos = arrayPos			
-			position = filtered_cards[i];
+
+	for (var i=0; i < filteredCardCount; i++){
+		with(instance_create_layer(x,y,"UpperInstances",obj_appropiate_targets)){
+			self.player = filteredCards[i,0]
+			position = filteredCards[i,1];
+			self.arrayPos = arrayPos
+			self.cardNum = self.player.deck[position,0];
+			self.artNum = self.player.deck[position,1];
 			current_function = "hand";
-			x=player.handCard[i].x
-			y=player.handCard[i].y
+			x = player.handCard[i].x
+			y = player.handCard[i].y
 		}
 		
 	}
 
-	if(filtered_card_count==0){
+	if(filteredCardCount == 0){
 		resolutionPile[obj_player.resolutionPileCount-1,2] = 97
 	}
 }

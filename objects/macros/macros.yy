@@ -26,6 +26,10 @@
   ],
   "properties": [],
   "overriddenProperties": [],
+  "parent": {
+    "name": "cardgamedemo",
+    "path": "cardgamedemo.yyp",
+  },
   "resourceVersion": "1.0",
   "name": "macros",
   "tags": [],

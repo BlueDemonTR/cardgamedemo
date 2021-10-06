@@ -22,22 +22,22 @@ if(instance_exists(obj_opponent)){
 		draw_sprite_ext(wheelSprite[12],-1,1300,400,1,1,180,c_white,1)	
 	}
 }
-if(chosen_wheel > 0){//TODO: Replace mouse functions with mouse_between
-	if(mouse_x >= 613 && mouse_y >= 673 && mouse_x < 676 && mouse_y < 850){
+if(chosen_wheel > 0){
+	if(mouse_between(613, 673, 676, 850)){
 		depth=-5
-		if (mouse_x >= 630 && mouse_y >= 673 && mouse_x < 676 && mouse_y < 717){
+		if (mouse_between(630, 673, 676, 717)){
 			draw_text(mouse_x+20,mouse_y,wheel_ability_4[chosen_wheel])
 			if(mouse_check_button_released(mb_left)){scr_wheel_effects(chosen_wheel,4)}
 		}
-		else if (mouse_x >= 630 && mouse_y >= 717 && mouse_x < 676 && mouse_y < 760){
+		else if (mouse_between(630, 717, 676, 760)){
 			draw_text(mouse_x+20,mouse_y,wheel_ability_3[chosen_wheel])
 			if(mouse_check_button_released(mb_left)){scr_wheel_effects(chosen_wheel,3)}
 		}
-		else if (mouse_x >= 630 && mouse_y >= 760 && mouse_x < 676 && mouse_y < 804){
+		else if (mouse_between(630, 760, 676, 804)){
 			draw_text(mouse_x+20,mouse_y,wheel_ability_2[chosen_wheel])
 			if(mouse_check_button_released(mb_left)){scr_wheel_effects(chosen_wheel,2)}
 		}
-		else if (mouse_x >= 630 && mouse_y >= 804 && mouse_x < 676 && mouse_y < 850){
+		else if (mouse_between(630, 804, 676, 850)){
 			draw_text(mouse_x+20,mouse_y,wheel_ability_1[chosen_wheel])
 			if(mouse_check_button_released(mb_left)){scr_wheel_effects(chosen_wheel,1)}
 		}

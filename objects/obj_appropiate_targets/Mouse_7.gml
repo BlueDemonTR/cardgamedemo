@@ -18,7 +18,7 @@ switch (current_function){
 		attacker = obj_player.fieldCard[effectBelongsToLocation],
 		attacked = obj_opponent.fieldCard[field_location];
 		
-		attacker.cardcan_attack = false;
+		attacker.attacksLeft--
 		attacker.cardis_sacrificable = false;
 		if(attacked.cardStat[StatDodge] = 0){
 			with (attacker){scr_on_attack(attacker.cardNum, attacker, attacked);}
@@ -73,7 +73,7 @@ switch (current_function){
 		field_location = self.field_location,
 		attacker = obj_player.fieldCard[effectBelongsToLocation];
 		with(attacker){
-			cardcan_attack = false;
+			attacksLeft--
 			cardis_sacrificable = false;
 		}
 		with(attacker){

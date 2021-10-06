@@ -1,7 +1,7 @@
 selected=false;
 
 
-cardcan_attack = 1;
+attacksLeft = 1;
 cardis_sacrificable = 0;
 player = obj_opponent
 opponent = obj_player

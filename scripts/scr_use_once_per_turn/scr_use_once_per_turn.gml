@@ -6,7 +6,7 @@ function scr_use_once_per_turn(player, position){
 	}
 	var affectedCard = controller.fieldCard[position];
 	
-	affectedCard.effectUsesLeft = limit_between(affectedCard.effectUsesLeft -1, 0, 65535)
+	affectedCard.effectUsesLeft = limit_between(affectedCard.effectUsesLeft - 1, 0, 65535)
 	
 	scr_decide_field_card_stats(controller, position)	
 }

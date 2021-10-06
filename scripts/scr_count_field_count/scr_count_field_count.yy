@@ -6,7 +6,7 @@
     "path": "folders/Scripts/Effects/Filters and Limiters.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_count_field",
+  "name": "scr_count_field_count",
   "tags": [],
   "resourceType": "GMScript",
 }

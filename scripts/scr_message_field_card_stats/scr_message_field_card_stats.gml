@@ -24,19 +24,8 @@ function scr_message_field_card_stats(position) {
 			buffer_write(obj_client.send_buffer, buffer_bool, false);
 		}
 	}
-	
-	//buffer_write(obj_client.send_buffer, buffer_u8, obj_player.fieldCard[position].cardSharedEffectsCount);
-	//for(var i = 0; i < obj_player.fieldCard[position].cardSharedEffectsCount; i++){
-	//		buffer_write(obj_client.send_buffer, buffer_u16, obj_player.fieldCard[position].cardSharedEffects[i]);
-	//}
-	
-	//buffer_write(obj_client.send_buffer, buffer_u8, obj_player.fieldCard[position].cardArchetypeCount);
-	//for(var i = 0; i < obj_player.fieldCard[position].cardArchetypeCount; i++){
-	//		buffer_write(obj_client.send_buffer, buffer_u16, obj_player.fieldCard[position].cardArchetype[i]);
-	//}
-	
-	
-	buffer_write(obj_client.send_buffer, buffer_bool, obj_player.fieldCard[position].cardcan_attack);
+	//TODO: Change Bool to u8
+	buffer_write(obj_client.send_buffer, buffer_bool, obj_player.fieldCard[position].attacksLeft);
 	
 	network_send_raw(obj_client.socket, obj_client.send_buffer, buffer_tell(obj_client.send_buffer));
 

@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Essential Functions",
-    "path": "folders/Scripts/Effects/Essential Functions.yy",
+    "name": "Filters and Limiters",
+    "path": "folders/Scripts/Effects/Filters and Limiters.yy",
   },
   "resourceVersion": "1.0",
   "name": "scr_count_infirmary_filter",

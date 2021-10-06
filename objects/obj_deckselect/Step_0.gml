@@ -1,5 +1,5 @@
-if(mouse_check_button_released(mb_left) && list_open){//TODO: Replace with mouse_between
-	if(mouse_x > x && mouse_x < x+sprite_width && mouse_y > y && mouse_y < y+(selectorCap*22)){
+if(mouse_check_button_released(mb_left) && list_open){
+	if(mouse_between(x, x + sprite_width, y, y + selectorCap*22)){
 		macros.selectedDeck = fileList[int64((mouse_y-y)/22)];
 		list_open = false;
 		if(room=room_deck_builder){

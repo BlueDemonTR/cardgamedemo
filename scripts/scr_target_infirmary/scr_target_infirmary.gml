@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_target_infirmary(players, typeArray, minLevel, maxLevel, archetypeArray, spiritArray, checkSummonable, destroyType, filterNum, arrayPos){
+function scr_target_infirmary(players, typeArray, minLevel, maxLevel, archetypeArray, spiritArray, checkSummonable, destroyType, ignoreTarget, filterNum, arrayPos){
 	/*
 	players (enter all player objects that are affected in an array)
 	typeArray (enter Types)
@@ -10,6 +10,7 @@ function scr_target_infirmary(players, typeArray, minLevel, maxLevel, archetypeA
 	Spirit Array
 	Check Summonable
 	Destroy Type
+	ignoreTarget
 	filterNum
 	arrayPos
 	*/
@@ -42,6 +43,9 @@ function scr_target_infirmary(players, typeArray, minLevel, maxLevel, archetypeA
 			if(destroyType != -1 && player.infirmary[i,2] == destroyType){
 				continue;
 			}
+			if(j == ignoreTarget){
+				continue;
+			}
 			if(!scr_check_filter(cardNum, filterNum)){
 				continue;
 			}
@@ -51,11 +55,11 @@ function scr_target_infirmary(players, typeArray, minLevel, maxLevel, archetypeA
 	
 	for (i = 0; i < filteredCardCount; i++){
 		with(instance_create_layer(525+((card_width+30)*i), room_height/2, "UpperInstances",obj_legal_targets)){
-			self.player = player
-			position = filteredCards[i];
+			self.player = filteredCards[i,0]
+			position = filteredCards[i,1];
 			self.arrayPos = arrayPos
-			self.cardNum = obj_player.infirmary[position,0];
-			self.artNum = obj_player.infirmary[position,1];
+			self.cardNum = self.player.infirmary[position,0];
+			self.artNum = self.player.infirmary[position,1];
 			current_function = "infirmary";
 		}
 	}

@@ -1,7 +1,7 @@
 {
   "resources": [
     {"id":{"name":"spr_monster_default","path":"sprites/spr_monster_default/spr_monster_default.yy",},"order":0,},
-    {"id":{"name":"scr_count_infirmary_name","path":"scripts/scr_count_infirmary_name/scr_count_infirmary_name.yy",},"order":15,},
+    {"id":{"name":"scr_count_infirmary_name","path":"scripts/scr_count_infirmary_name/scr_count_infirmary_name.yy",},"order":14,},
     {"id":{"name":"spr_spell_default","path":"sprites/spr_spell_default/spr_spell_default.yy",},"order":1,},
     {"id":{"name":"spr_momentum_default","path":"sprites/spr_momentum_default/spr_momentum_default.yy",},"order":2,},
     {"id":{"name":"spr_search_box","path":"sprites/spr_search_box/spr_search_box.yy",},"order":47,},
@@ -155,7 +155,7 @@
     {"id":{"name":"spr_paralzyed","path":"sprites/spr_paralzyed/spr_paralzyed.yy",},"order":9,},
     {"id":{"name":"scr_voidfy_infirmary","path":"scripts/scr_voidfy_infirmary/scr_voidfy_infirmary.yy",},"order":5,},
     {"id":{"name":"obj_delete_button","path":"objects/obj_delete_button/obj_delete_button.yy",},"order":7,},
-    {"id":{"name":"scr_count_field","path":"scripts/scr_count_field/scr_count_field.yy",},"order":11,},
+    {"id":{"name":"scr_count_field_count","path":"scripts/scr_count_field_count/scr_count_field_count.yy",},"order":11,},
     {"id":{"name":"spr_poison","path":"sprites/spr_poison/spr_poison.yy",},"order":10,},
     {"id":{"name":"spr_frightenedppl","path":"sprites/spr_frightenedppl/spr_frightenedppl.yy",},"order":30,},
     {"id":{"name":"spr_armor","path":"sprites/spr_armor/spr_armor.yy",},"order":0,},
@@ -166,7 +166,7 @@
     {"id":{"name":"spr_wheel_1","path":"sprites/spr_wheel_1/spr_wheel_1.yy",},"order":1,},
     {"id":{"name":"spr_wheel_2","path":"sprites/spr_wheel_2/spr_wheel_2.yy",},"order":2,},
     {"id":{"name":"spr_wheel_3","path":"sprites/spr_wheel_3/spr_wheel_3.yy",},"order":3,},
-    {"id":{"name":"scr_count_infirmary_filter","path":"scripts/scr_count_infirmary_filter/scr_count_infirmary_filter.yy",},"order":14,},
+    {"id":{"name":"scr_count_infirmary_filter","path":"scripts/scr_count_infirmary_filter/scr_count_infirmary_filter.yy",},"order":15,},
     {"id":{"name":"spr_small_arrow","path":"sprites/spr_small_arrow/spr_small_arrow.yy",},"order":39,},
     {"id":{"name":"spr_systemBG","path":"sprites/spr_systemBG/spr_systemBG.yy",},"order":6,},
     {"id":{"name":"spr_wheel_4","path":"sprites/spr_wheel_4/spr_wheel_4.yy",},"order":4,},

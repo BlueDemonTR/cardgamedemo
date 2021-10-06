@@ -38,7 +38,7 @@ scr_illegal_cards();
 #macro StatRegeneration 5
 #macro StatDodge 6
 #macro StatSpirit 7
-#macro StatMtPt 8
+#macro StatXPerTurn 8
 
 //Archetype Properties
 #macro ArcMotorbiker 1

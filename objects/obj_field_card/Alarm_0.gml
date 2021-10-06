@@ -2,7 +2,7 @@
 if(!player.mid_effect && player.main_phase){
 	var position = self.position,
 	i=0;
-	if(cardcan_attack && !cardStatus[StatusUnarmed] && !cardStatus[StatusParalyzed] && player.turn_count != 1){
+	if(attacksLeft && !cardStatus[StatusUnarmed] && !cardStatus[StatusParalyzed] && player.turn_count != 1){
 		activation[i] = instance_create_depth(x,y,depth-1,obj_activation_box);
 		with(activation[i]){
 			activation_mode="Attack";

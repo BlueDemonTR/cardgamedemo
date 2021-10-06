@@ -79,7 +79,7 @@ if(player.end_phase && !end_phase_effects_resolved){
 		obj_player.endPhaseChains[obj_player.endPhaseChainCount++,2] = position
 	}
 	cardis_sacrificable = true;
-	cardcan_attack = true;
+	attacksLeft++;
 	cardis_paralyzed = false;
 	start_turn_effects_resolved = false;
 	opt_used = false;
