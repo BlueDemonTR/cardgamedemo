@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Filters and Limiters",
-    "path": "folders/Scripts/Effects/Filters and Limiters.yy",
+    "name": "Count",
+    "path": "folders/Scripts/Effects/Filters and Limiters/Count.yy",
   },
   "resourceVersion": "1.0",
   "name": "scr_count_infirmary_name",

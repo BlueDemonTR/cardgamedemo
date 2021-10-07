@@ -22,9 +22,6 @@ function scr_reset_limitations() {
 		endPhaseEffects[i] = 0;
 	}
 	hoptCount = 0
-	for (i = 0; i < macros.total_cards; i++){
-		hardOncePerTurn[i] = false
-	}
 
 	wheel_locked = false;
 

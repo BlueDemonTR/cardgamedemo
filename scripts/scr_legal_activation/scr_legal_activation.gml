@@ -1,7 +1,8 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_legal_activation(cardNum, effectNum, position){
-	var location = object_get_name(object_index)
+	if(effectNum == -1){return false}
+	
 	switch(cardNum){
 		case "WheelGain":
 			switch(effectNum){
@@ -60,13 +61,14 @@ function scr_legal_activation(cardNum, effectNum, position){
 		case 74://Useless Sacrifice Legal Activation
 		case 85://Wise Fisherman Legal Activation
 		case 87://Lucky Fisherman Legal Activation
-		case 88://Naive Fisherman Legal Activation
-		case 89://Strong Fisherman Legal Activation
+		case 88://Strong Fisherman Legal Activation
+		case 89://Naive Fisherman Legal Activation
 		case 99://Single Shot Master Legal Activation
 			if (cardStatus[StatusSilenced]){return false;}
 		case 3://Motorbiker Wild Rider Legal Activation
 		case 75://Wealthy Sacrifice Legal Activation
 		case 91://Lucky Reel Legal Activation
+		case 116://Reflection Legal Activation
 			return true;
 		break;
 		
@@ -477,13 +479,6 @@ function scr_legal_activation(cardNum, effectNum, position){
 			return true;		
 		break;
 		
-		case 109://X-Makine Dom Legal Activation
-			if (cardStatus[StatusSilenced]){return false;}
-			if(obj_player.momentum > 3){return false}
-			if(!scr_count_field_filter([player], [], [1, 11], [0, infinity], [0, infinity], [ArcXMakine], [], position, -1)){return false}
-			return true;
-		break;
-		
 		case 109://X-Makine Lily Legal Activation
 			if (cardStatus[StatusSilenced]){return false;}
 			if(obj_player.momentum > 0){return false}
@@ -495,6 +490,13 @@ function scr_legal_activation(cardNum, effectNum, position){
 			if (cardStatus[StatusSilenced]){return false;}
 			if(obj_player.momentum > 3){return false}
 			if(!scr_count_infirmary_filter([player], [TypeMonster, TypeMomentum], 1, 12, [ArcXMakine], [], false, -1, -1, -1)){return false}
+			return true;
+		break;
+		
+		case 111://X-Makine Dom Legal Activation
+			if (cardStatus[StatusSilenced]){return false;}
+			if(obj_player.momentum > 3){return false}
+			if(!scr_count_field_filter([player], [], [1, 11], [0, infinity], [0, infinity], [ArcXMakine], [], position, -1)){return false}
 			return true;
 		break;
 

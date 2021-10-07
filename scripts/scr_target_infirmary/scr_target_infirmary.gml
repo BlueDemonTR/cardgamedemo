@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_target_infirmary(players, typeArray, minLevel, maxLevel, archetypeArray, spiritArray, checkSummonable, destroyType, ignoreTarget, filterNum, arrayPos){
+function scr_target_infirmary(players, typeArray, minLevel, maxLevel, archetypeArray, spiritArray, checkSummonable, sendType, ignoreTarget, filterNum, arrayPos){
 	/*
 	players (enter all player objects that are affected in an array)
 	typeArray (enter Types)
@@ -14,15 +14,14 @@ function scr_target_infirmary(players, typeArray, minLevel, maxLevel, archetypeA
 	filterNum
 	arrayPos
 	*/
-	var filterCounter = 0,
-	filteredCards,
+	var filteredCards,
 	filteredCardCount = 0;
 	
 	for(var i = 0; i < array_length(players); i++){
 		var player = players[i]
 		
 		for(var j = 0; j < player.infirmaryCount; j++){
-			var cardNum = player.infirmary[i,0],
+			var cardNum = player.infirmary[i, CardNumber],
 			cardStat = macros.origStat[cardNum];
 			
 			if(typeArray != [] && !array_includes(typeArray, macros.card_type[cardNum])){
@@ -40,7 +39,7 @@ function scr_target_infirmary(players, typeArray, minLevel, maxLevel, archetypeA
 			if(checkSummonable && !scr_limited_summon(cardNum)){
 				continue;
 			}
-			if(destroyType != -1 && player.infirmary[i,2] == destroyType){
+			if(sendType != -1 && player.infirmary[i,2] == sendType){
 				continue;
 			}
 			if(j == ignoreTarget){
@@ -58,7 +57,7 @@ function scr_target_infirmary(players, typeArray, minLevel, maxLevel, archetypeA
 			self.player = filteredCards[i,0]
 			position = filteredCards[i,1];
 			self.arrayPos = arrayPos
-			self.cardNum = self.player.infirmary[position,0];
+			self.cardNum = self.player.infirmary[position, CardNumber];
 			self.artNum = self.player.infirmary[position,1];
 			current_function = "infirmary";
 		}

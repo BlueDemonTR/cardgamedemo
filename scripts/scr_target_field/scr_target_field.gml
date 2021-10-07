@@ -11,15 +11,14 @@ function scr_target_field(players, typeArray, level, atk, hp, archetypeArray, sp
 	filterNum
 	arrayPos
 	*/
-	var filterCounter = 0,
-	filteredCards,
+	var filteredCards,
 	filteredCardCount = 0;
 
 	for(var i = 0; i < array_length(players); i++){
 		var player = players[i]
 		
 		for(var j = 0; j < player.field_zone_count; j++){
-			var cardNum = player.field[i,0],
+			var cardNum = player.field[i, CardNumber],
 			card = player.fieldCard[j],
 			cardStat = card.cardStat;
 			
@@ -56,8 +55,8 @@ function scr_target_field(players, typeArray, level, atk, hp, archetypeArray, sp
 			self.player = filteredCards[i,0]
 			position = filteredCards[i,1];
 			self.arrayPos = arrayPos
-			self.cardNum = self.player.hand[position,0];
-			self.artNum = self.player.hand[position,1];
+			self.cardNum = self.player.field[position, CardNumber];
+			self.artNum = self.player.field[position, ArtNumber];
 			x = player.field_card_zone_x[position];
 			y = player.field_card_zone_y[position];
 		}		

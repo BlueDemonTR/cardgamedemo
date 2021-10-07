@@ -3,7 +3,7 @@ function scr_discard(player, position) {
 		return false;
 	}
 	
-	var cardNum = player.hand[position,0],
+	var cardNum = player.hand[position, CardNumber],
 	artNum = player.hand[position,1],
 	removedCard = player.handCard[position];
 
@@ -18,12 +18,9 @@ function scr_discard(player, position) {
 		self.artNum =artNum;
 	}
 	
-	scr_card_sent_to_infirmary(cardNum);
-	player.infirmary[player.infirmaryCount,0] = cardNum;
-	player.infirmary[player.infirmaryCount++,1] = artNum;
-	scr_decide_infirmary(player)
-	
 	with(removedCard){
 		instance_destroy();
 	}
+	
+	scr_send_infirmary(player, [cardNum, artNum], SendDiscard)
 }

@@ -1,10 +1,14 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_pay_momentum(amount){
+function scr_pay_momentum(player, amount){
+	//Makes player lose momentum equal to cost, if they can't the effect is tagged as Finished Resolving
+	//Syntax:
+	//player: either obj_player or obj_opponent, decides which player's card is affected
+	//amount: int
+	
 	if(player.momentum < amount){
 		resolutionPile[obj_player.resolutionPileCount-1,2] = 97
-		return;
+		return false;
 	}
-	player.momentum -= amount
+	
+	scr_give_player_stats(player, 0, 0, 0, -amount)
 	return amount;
 }

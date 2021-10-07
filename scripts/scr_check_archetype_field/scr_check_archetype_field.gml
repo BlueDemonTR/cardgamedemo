@@ -1,10 +1,8 @@
-function scr_check_archetype_field(controller,position,archetypeName){
+function scr_check_archetype_field(controller,position,archetypeNumber){
 	with(controller.fieldCard[position]){
-		for(var i = 0; i < cardArchetypeCount; i++){
-			if(cardArchetype[i] = archetypeName){
-				return true
-			}
+		if(array_includes(cardArchetype[cardNum], archetypeNumber)){
+			return true
 		}
 	}
-	return false;
+	return false
 }

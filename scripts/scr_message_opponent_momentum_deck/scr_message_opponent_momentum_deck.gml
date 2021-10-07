@@ -5,8 +5,8 @@ function scr_message_opponent_momentum_deck() {
 	buffer_write(obj_client.send_buffer, buffer_u8, MESSAGE_OPPONENT_MOMENTUM_DECK);
 	buffer_write(obj_client.send_buffer, buffer_u8, obj_opponent.momentumDeckCount);
 	for(var i = 0; i < obj_opponent.momentumDeckCount; i++){
-		buffer_write(obj_client.send_buffer, buffer_u32, obj_opponent.momentum_deck[i,0]);
-		buffer_write(obj_client.send_buffer, buffer_u32, obj_opponent.momentum_deck[i,1]);
+		buffer_write(obj_client.send_buffer, buffer_u32, obj_opponent.momentum_deck[i, CardNumber]);
+		buffer_write(obj_client.send_buffer, buffer_u32, obj_opponent.momentum_deck[i, ArtNumber]);
 	}
 	network_send_raw(obj_client.socket, obj_client.send_buffer, buffer_tell(obj_client.send_buffer));
 

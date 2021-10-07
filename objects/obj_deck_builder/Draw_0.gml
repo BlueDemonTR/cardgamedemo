@@ -15,11 +15,11 @@ for(var i = 0; i < deckCount; i++){
 	}else{maxLineSize = 10}
 		maxLineCount = 4;
 	if(deckCount > 40){
-		draw_sprite_ext(macros.sprite_array[deck[i,0],deck[i,1]],-1,475 + (i mod maxLineSize)*(small_card_width/1.55),250 + int64(i/maxLineSize)*small_card_height,small_card_width/550,small_card_height/800,0,c_white,1)
+		draw_sprite_ext(macros.sprite_array[deck[i, CardNumber],deck[i, ArtNumber]],-1,475 + (i mod maxLineSize)*(small_card_width/1.55),250 + int64(i/maxLineSize)*small_card_height,small_card_width/550,small_card_height/800,0,c_white,1)
 	}else{	
-		draw_sprite_ext(macros.sprite_array[deck[i,0],deck[i,1]],-1,475 + (i mod maxLineSize)*small_card_width,250 + int64(i/maxLineSize)*small_card_height,small_card_width/550,small_card_height/800,0,c_white,1)
+		draw_sprite_ext(macros.sprite_array[deck[i, CardNumber],deck[i, ArtNumber]],-1,475 + (i mod maxLineSize)*small_card_width,250 + int64(i/maxLineSize)*small_card_height,small_card_width/550,small_card_height/800,0,c_white,1)
 	}
 }
 for(var i = 0; i < momentumDeckCount; i++){
-	draw_sprite_ext(macros.sprite_array[momentumDeck[i,0],momentumDeck[i,1]],-1,475 + i*small_card_width,850+small_card_height/2,small_card_width/550,small_card_height/800,0,c_white,1)
+	draw_sprite_ext(macros.sprite_array[momentumDeck[i, CardNumber],momentumDeck[i, ArtNumber]],-1,475 + i*small_card_width,850+small_card_height/2,small_card_width/550,small_card_height/800,0,c_white,1)
 }

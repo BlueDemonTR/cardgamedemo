@@ -3,9 +3,9 @@ function scr_deck_build_done(deckName) {
 	file_text_write_real(file,main.deckCount);
 	for(i = 0; i < main.deckCount; i++){
 		file_text_writeln(file);
-		file_text_write_real(file,main.deck[i,0]);
+		file_text_write_real(file,main.deck[i, CardNumber]);
 		file_text_writeln(file);
-		file_text_write_real(file,main.deck[i,1]);
+		file_text_write_real(file,main.deck[i, ArtNumber]);
 	}
 	
 	file_text_writeln(file);
@@ -14,9 +14,9 @@ function scr_deck_build_done(deckName) {
 	file_text_write_real(file,main.momentumDeckCount);
 	for(i = 0; i < main.momentumDeckCount;i++){
 		file_text_writeln(file);
-		file_text_write_real(file,main.momentumDeck[i,0])
+		file_text_write_real(file,main.momentumDeck[i, CardNumber])
 		file_text_writeln(file);
-		file_text_write_real(file,main.momentumDeck[i,1])
+		file_text_write_real(file,main.momentumDeck[i, ArtNumber])
 	}
 	
 	file_text_writeln(file);

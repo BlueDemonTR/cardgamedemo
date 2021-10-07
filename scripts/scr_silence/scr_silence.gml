@@ -1,6 +1,11 @@
 function scr_silence(player, position) {
+	//Silences a card, meaning the card's stat's are reverted and it loses it's statuses and effects
+	if(!(player.field[position, 0])){return;}
+	
 	var affectedCard = player.fieldCard[position];
+	
 	if(affectedCard.cardStatus[StatusRebellious]){return;}
+	
 	with (affectedCard){
 		cardStat[StatMaxHP] = macros.origStat[cardNum, StatMaxHP];
 		cardStat[StatATK] = macros.origStat[cardNum, StatATK];
@@ -13,13 +18,11 @@ function scr_silence(player, position) {
 		for(var i = 0; i < macros.status_count; i++){
 			cardStatus[i] = false;
 		}
-		cardStatus[StatusSilenced] = true		
+		
+		scr_change_card_status(player, position, StatusSilenced, true)
 	}
-	if(player == obj_player){
-		scr_message_field_card_stats(position);
-	}else if(player == obj_opponent){
-		scr_message_opponent_field_card_stats(position);
-	}
+	
+	scr_decide_field_card_stats(player, position);
 
 
 }

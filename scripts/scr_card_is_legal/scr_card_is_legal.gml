@@ -5,7 +5,7 @@ function scr_card_is_legal(argument0) {
 	if (main.deckCount >= 3 ){
 	
 		for (var i=0; i < main.deckCount; i++){
-			if(main.deck[i,0] = temp){
+			if(main.deck[i, CardNumber] = temp){
 				cards_in_deck++
 			}
 		}
@@ -13,7 +13,7 @@ function scr_card_is_legal(argument0) {
 	if (main.momentumDeckCount>= 3 ){
 	
 		for (var i=0; i < main.momentumDeckCount; i++){
-			if(main.momentumDeck[i,0]=temp){
+			if(main.momentumDeck[i, CardNumber]=temp){
 				cards_in_deck++	
 			}
 		}

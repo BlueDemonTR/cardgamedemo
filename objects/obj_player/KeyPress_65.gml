@@ -1,4 +1,3 @@
 if (test_mode){
-	momentum--;
-	scr_message_stats();
+	scr_give_player_stats(player, 0, 0, 0, -1)
 }

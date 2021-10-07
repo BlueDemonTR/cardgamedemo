@@ -5,8 +5,8 @@ function scr_message_opponent_deck_change() {
 	buffer_write(obj_client.send_buffer, buffer_u8, MESSAGE_OPPONENT_DECK_CHANGE);
 	buffer_write(obj_client.send_buffer, buffer_u8, obj_opponent.deckCount);
 	for(var i = 0; i < obj_opponent.deckCount; i++){
-		buffer_write(obj_client.send_buffer, buffer_u32, obj_opponent.deck[i,0]);
-		buffer_write(obj_client.send_buffer, buffer_u8, obj_opponent.deck[i,1]);
+		buffer_write(obj_client.send_buffer, buffer_u32, obj_opponent.deck[i, CardNumber]);
+		buffer_write(obj_client.send_buffer, buffer_u8, obj_opponent.deck[i, ArtNumber]);
 	}
 	network_send_raw(obj_client.socket, obj_client.send_buffer, buffer_tell(obj_client.send_buffer));
 

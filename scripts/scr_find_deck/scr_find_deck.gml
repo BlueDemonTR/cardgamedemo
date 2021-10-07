@@ -3,7 +3,7 @@
 function scr_find_deck(cardNum){
 	with(player){
 		for(var i = 0; i < deckCount; i++){
-			if(deck[i,0] == cardNum){
+			if(deck[i, CardNumber] == cardNum){
 				return i;
 			}
 		}

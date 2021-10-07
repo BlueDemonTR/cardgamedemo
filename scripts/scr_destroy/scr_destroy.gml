@@ -1,30 +1,26 @@
-function scr_destroy(player, position, destroyType) {
-	//destroyType is either 0 (Injuries) or 1 (Effect)
-	var 
-	cardNum =player.fieldCard[position].cardNum,
-	artNum =player.fieldCard[position].artNum;
+function scr_destroy(player, position, sendType) {
+	//Destroys player.fieldCard[position]
+	//sendType is either 0 (Injuries) or 1 (Effect)
+	if(!player.field[position, 0]){  }
+	
+	var
+	affectedCard = player.fieldCard[position],
+	cardNum = affectedCard.cardNum,
+	artNum = affectedCard.artNum;
 
 	if(player.fieldCard[position].cardStat[StatHP] > 0 && player.fieldCard[position].cardStatus[StatusIndestructable]){
 		return;
 	}
-	with(player.fieldCard[position]){
-			animationType = "destroy"
-			instance_destroy();
-		}
 
-	if(player == obj_player){
-		obj_player.infirmary[obj_player.infirmaryCount,0] = cardNum;
-		obj_player.infirmary[obj_player.infirmaryCount,1] = artNum;
-		obj_player.infirmary[obj_player.infirmaryCount++,2] = destroyType;
-		scr_message_infirmary();
-	}else{
-		obj_opponent.infirmary[obj_opponent.infirmaryCount,0] = cardNum;
-		obj_opponent.infirmary[obj_opponent.infirmaryCount,1] = artNum;
-		obj_opponent.infirmary[obj_opponent.infirmaryCount++,2] = destroyType;
-		scr_message_opponent_field(position,0,0,"destroy")
-		scr_message_opponent_infirmary();
-	}
-	scr_on_destroyed(cardNum);
+	scr_send_infirmary(player, [cardNum, artNum], sendType)
+	
+	with(player.fieldCard[position]){
+		animationType = "destroy"
+		instance_destroy();
+	}	
+	scr_decide_field(player, position, cardNum, artNum, "destroy")
+	
+	scr_on_destroyed(cardNum, sendType);
 	return;
 
 

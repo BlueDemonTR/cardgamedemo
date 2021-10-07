@@ -41,26 +41,24 @@ deck_buffer_y = .2;
 
 deckCount = 0;
 for(i = 0; i < 65; i++){
-	deck[i,0] = 0;
-	deck[i,1] = 0;
+	deck[i, CardNumber] = 0;
+	deck[i, ArtNumber] = 0;
 }
 momentumDeckCount = 0;
 for(i = 0; i < 8; i++){
-	momentum_deck[i,0] = 0;
-	momentum_deck[i,1] = 0;
+	momentum_deck[i, CardNumber] = 0;
+	momentum_deck[i, ArtNumber] = 0;
 }
 i = 0;
 selected_wheel = 0;
 scr_construct_global_deck();
 scr_message_deck_change();
 scr_message_momentum_deck();
-scr_shuffle_deck();
+scr_shuffle_deck(player);
 
 obj_momentum_wheel.chosen_wheel = selected_wheel;
 
 //stack the deck here
-deck[deckCount,0] = 8
-deck[deckCount++,1] = 0
 
 
 //field stuff

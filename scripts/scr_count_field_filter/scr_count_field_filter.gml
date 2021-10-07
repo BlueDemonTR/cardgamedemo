@@ -17,7 +17,7 @@ function scr_count_field_filter(players, typeArray, level, atk, hp, archetypeArr
 		var player = players[i]
 		
 		for(var j = 0; j < player.field_zone_count; j++){
-			var cardNum = player.field[i,0],
+			var cardNum = player.field[i, CardNumber],
 			card = player.fieldCard[j],
 			cardStat = card.cardStat;
 			

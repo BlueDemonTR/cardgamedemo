@@ -13,10 +13,8 @@ if(obj_player.test_mode){
 		player.deck_x_2=deck_x
 	}
 	if (keyboard_check_released(vk_left)){
-		with(player){scr_shuffle_deck();}
-		
+		with(player){scr_shuffle_deck(player);}
 	}
-
 }
 
 if(player.face_up == 1){

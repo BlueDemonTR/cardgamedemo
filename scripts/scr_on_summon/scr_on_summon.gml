@@ -1,48 +1,74 @@
-function scr_on_summon(argument0){
-	var cardNum = argument0;
+function scr_on_summon(cardNum){
 	if(scr_check_shared(cardNum, SharedMotorbikerLeader)){
-		scr_limit_summoning_card(cardNum);
+		if(scr_legal_activation("SharedEffect", SharedMotorbikerLeader, "Wheel")){
+			obj_player.resolutionPile[obj_player.resolutionPileCount,0] = cardNum
+			obj_player.resolutionPile[obj_player.resolutionPileCount,1] = 0
+			obj_player.resolutionPile[obj_player.resolutionPileCount,2] = 0
+			obj_player.resolutionPile[obj_player.resolutionPileCount,3] = "Wheel"
+			obj_player.resolutionPile[obj_player.resolutionPileCount,4] = false
+			obj_player.resolutionPileCount++
+		}
 	}
 	if(scr_check_archetype(cardNum, ArcFish)){
 		if(!scr_check_archetype(cardNum, ArcFisherman)){
-			if (obj_player.selected_wheel = 5 && !obj_player.wheel_locked){
-				obj_player.momentum += obj_player.fieldCard[position].cardStat[StatLevel]
-				scr_message_stats();
-			}
-			for(var i = 0; i < 5; i++){
-				if(obj_player.field[i,0] = 90){
-					if(!obj_player.fieldCard[i].cardStatus[StatusSilenced]){
-						obj_player.fieldCard[i].cardStat[StatATK] += obj_player.fieldCard[position].cardStat[StatATK];
-						obj_player.fieldCard[i].cardStat[StatMaxHP] += obj_player.fieldCard[position].cardStat[StatMaxHP];
-						obj_player.fieldCard[i].cardStat[StatHP] += obj_player.fieldCard[position].cardStat[StatHP];
-						scr_message_field_card_stats(i);
-					}
+			if (obj_player.selected_wheel == 5 && !obj_player.wheel_locked){
+				if(!scr_legal_activation(cardNum, 0, position)){
+					obj_player.resolutionPile[obj_player.resolutionPileCount,0] = cardNum
+					obj_player.resolutionPile[obj_player.resolutionPileCount,1] = 0
+					obj_player.resolutionPile[obj_player.resolutionPileCount,2] = 0
+					obj_player.resolutionPile[obj_player.resolutionPileCount,3] = position
+					obj_player.resolutionPile[obj_player.resolutionPileCount,4] = false
+					obj_player.resolutionPile[obj_player.resolutionPileCount,5] = obj_player.fieldCard[position].cardStat[StatLevel]
+					obj_player.resolutionPileCount++
 				}
 			}
 			for(var i = 0; i < 5; i++){
-				if(obj_player.field[i,0] = 88){
-					if(!obj_player.fieldCard[i].cardStatus[StatusSilenced]){
-						obj_player.fieldCard[i].cardStat[StatATK] += 1;
-						scr_message_field_card_stats(i);
-					}
+				if(obj_player.field[i, CardNumber] == 90){
+					if(!scr_legal_activation(90, 0, i)){continue;}
+					obj_player.resolutionPile[obj_player.resolutionPileCount,0] = cardNum
+					obj_player.resolutionPile[obj_player.resolutionPileCount,1] = 0
+					obj_player.resolutionPile[obj_player.resolutionPileCount,2] = 0
+					obj_player.resolutionPile[obj_player.resolutionPileCount,3] = position
+					obj_player.resolutionPile[obj_player.resolutionPileCount,4] = false
+					obj_player.resolutionPileCount++
+				}
+				if(obj_player.field[i, CardNumber] == 88){
+					if(!scr_legal_activation(88, 0, i)){continue;}
+					obj_player.resolutionPile[obj_player.resolutionPileCount,0] = cardNum
+					obj_player.resolutionPile[obj_player.resolutionPileCount,1] = 0
+					obj_player.resolutionPile[obj_player.resolutionPileCount,2] = 0
+					obj_player.resolutionPile[obj_player.resolutionPileCount,3] = position
+					obj_player.resolutionPile[obj_player.resolutionPileCount,4] = false
+					obj_player.resolutionPileCount++
 				}
 			}
 		}
-
 	}
 	switch(cardNum){
-		case 4://Motorbiker V-Rider Activation
-		case 5://Motorbiker D-Rider Activation
-		case 7://Motorbiker Protector Activation
-		case 22://Envious Genocider Tia Invaden	Activation	
-		case 27://Genocider of Rejection Activation
-		case 28://Genocider of Anger Activation
-		case 30://Genocider of Depression Activation
-		case 31://Genocider of Acceptance Activation
-		case 33://Pole Clan Builder Activation
-		case 36://Pole Clan Defender Activation
-		case 37://Pole Clan Beast Activation
-		case 48://Igloo Citadel Activation
+		case 4://Motorbiker V-Rider Activation Trigger
+		case 5://Motorbiker D-Rider Activation Trigger
+		case 7://Motorbiker Protector Activation Trigger
+		case 22://Envious Genocider Tia Invaden	Activation Trigger	
+		case 27://Genocider of Rejection Activation Trigger
+		case 28://Genocider of Anger Activation Trigger
+		case 30://Genocider of Depression Activation Trigger
+		case 31://Genocider of Acceptance Activation Trigger
+		case 33://Pole Clan Builder Activation Trigger
+		case 36://Pole Clan Defender Activation Trigger
+		case 37://Pole Clan Beast Activation Trigger
+		case 48://Igloo Citadel Activation Trigger
+		case 54://Battle Medic Activation Trigger
+		case 61://Bodyguard Activation Trigger
+		case 63://Rebellion Ally Activation Trigger
+		case 68://Machine Gun Soldiers Activation Trigger
+		case 69://Speed Soldier Activation Trigger
+		case 70://Mad Cyborg Activation Trigger
+		case 71://Armed Civillian Activation Trigger
+		case 74://Useless Sacrifice Activation Trigger
+		case 86://Goldfish Activation Trigger
+		case 96://Medical General Activation Trigger
+		case 99://Single Shot Master Activation Trigger
+		case 101://Rogue Soldier Activation Trigger
 			if(!scr_legal_activation(cardNum, 0, position)){break;}
 			obj_player.resolutionPile[obj_player.resolutionPileCount,0] = cardNum
 			obj_player.resolutionPile[obj_player.resolutionPileCount,1] = 0
@@ -50,84 +76,6 @@ function scr_on_summon(argument0){
 			obj_player.resolutionPile[obj_player.resolutionPileCount,3] = position
 			obj_player.resolutionPile[obj_player.resolutionPileCount,4] = false
 			obj_player.resolutionPileCount++
-		break;
-	
-	
-	
-		case 54://Medic
-			with(player){
-				scr_recover_infirmary_archetype("all",0,3,"any",cardNum);
-			}
-		break;
-	
-	
-		case 61://Bodyguard
-			for(i=0;i<5;i++){
-				if(player.field[i,0]==60){
-					player.fieldCard[i].cardStatus[StatusIndestructable] = true;
-					scr_message_field_card_stats(i);			
-				}
-			}
-		break;
-	
-	
-		case 63://Rebellion Ally
-			with(player){
-				for(i=0;i<5;i++){
-					if(field[i,0]==62){
-						fieldCard[i].cardStat[StatMaxHP] += 2;
-						fieldCard[i].cardStat[StatHP] += 2;
-						scr_message_field_card_stats(i);
-					}
-				}
-			}
-		break;
-	
-	
-		case 68://Machine Gun Soldiers
-			for (var i=0;i<5;i++){
-				if(opponent.field[i,0]>0){
-					opponent.fieldCard[i].cardStat[StatHP]--;
-					scr_message_opponent_field_card_stats(i)
-				}
-			}
-		break;
-	
-	
-		case 69://Speed Soldier
-			with(player){scr_draw(1, true);}
-		break;
-	
-	
-		case 70://Mad Cyborg
-			cardStatus[StatusParalyzed] = true;
-		break;
-	
-	
-		case 71://Fool with a gun
-			scr_deal_damage_to_target("all","all",0,13,"any",1,cardNum,-1)
-		break;
-		case 86://Goldfish
-			for(var i = 0; i < 5; i++){
-				if(scr_check_archetype(obj_player.field[i,0], 9)){
-					obj_player.fieldCard[i].cardStat[StatATK] += 2
-					obj_player.fieldCard[i].cardStat[StatMaxHP] += 2
-					obj_player.fieldCard[i].cardStat[StatHP] += 2
-					scr_message_field_card_stats(i);
-				}
-			}
-		break;
-		case 96:
-			with(player){
-				playerHP += 6
-				scr_message_stats()
-			}
-		break;
-		case 99:
-			scr_destroy_target("opponent", "all", 0,13,"any",cardNum,-1)
-		break;
-		case 101:
-			scr_discard_cost("any", "all", 0,13,cardNum,false)
 		break;
 	}
 

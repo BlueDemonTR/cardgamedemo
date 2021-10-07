@@ -55,66 +55,11 @@ switch(activation_mode){
 				}
 			break;
 			case 82:
-				with(obj_opponent){
-					scr_mill_from_top(5)
-				}
-				if(global.effect_successful && obj_player.fieldCard[origin_card_location] != noone){
-					scr_hopt_used(obj_player.field[origin_card_location,0])
-				}	
+	
 			break;
 			case 83:
-				with(obj_player){
-					scr_recruit(84,0,83)
-				}
-				if(obj_player.fieldCard[origin_card_location] != noone){
-					obj_player.fieldCard[origin_card_location].opt_used = true;
-				}
 			break;	
 			case 85:
-				with(obj_player){
-					var temp1 = irandom_range(0,100)
-					if(temp1 < 10){
-						global.effect_successful = true
-					}else if(temp1 < 90){
-						scr_recruit(84,0,85)
-					}else if(temp1 < 99){
-						temp2=false
-						scr_recruit(84,0,85)
-						if(global.effect_successful){temp2 = true}
-						scr_recruit(84,0,85)
-						if(temp2){global.effect_successful = true}
-					}else if(temp1 <= 100){
-						scr_recruit(86,0,83)
-					}
-				}
-				if(obj_player.fieldCard[origin_card_location] != noone){
-					obj_player.fieldCard[origin_card_location].opt_used = true;
-				}
-			break;
-			case 87:
-				var temp1 = irandom_range(0,100)
-				if(temp1 < 40){
-					with(obj_player.fieldCard[origin_card_location]){
-						scr_destroy(position)
-					}
-					global.effect_successful = true
-				}else if(temp1 < 60){
-					with(obj_player){scr_recruit(84,0,87)}
-				}else if(temp1 < 95){
-					with(obj_player){
-						temp2 = false
-						scr_recruit(84,0,87)
-						if(global.effect_successful){temp2 = true}					
-						scr_recruit(84,0,87)
-						if(temp2){global.effect_successful = true}
-					}
-				}else if(temp1 <= 100){
-					with(obj_player){scr_recruit(86,0,83)}
-				}
-				
-				if(obj_player.fieldCard[origin_card_location] != noone){
-					obj_player.fieldCard[origin_card_location].opt_used = true;
-				}				
 			break;
 			case 88:
 				with(obj_player){
@@ -137,7 +82,7 @@ switch(activation_mode){
 					var temp1 = irandom_range(0,100)
 					if(temp1 < 10){
 						for(i = 0; i < 5; i++){
-							if(scr_check_archetype(field[i,0],10)){
+							if(scr_check_archetype(field[i, CardNumber],10)){
 								fieldCard[i].cardStatus[StatusUnarmed] = true;
 							}
 						}
@@ -192,8 +137,8 @@ switch(activation_mode){
 				with(obj_player){
 					for(var i=0; i < 5; i++){
 						if(i = origin_card_location){continue}
-						if(field[i,0]> 0){
-							if(scr_check_archetype(field[i,0], 11)){
+						if(field[i, CardNumber]> 0){
+							if(scr_check_archetype(field[i, CardNumber], 11)){
 								fieldCard[i].cardStat[StatATK]+=1;
 								scr_message_field_card_stats(i);
 							}
@@ -210,7 +155,7 @@ switch(activation_mode){
 				with(obj_player){
 					for(var i=0; i < 5; i++){
 						if(i = origin_card_location){continue}
-						if(field[i,0]> 0){
+						if(field[i, CardNumber]> 0){
 							if(scr_check_archetype(field[i], 11)){
 								fieldCard[i].cardStat[StatMaxHP] +=1;
 								fieldCard[i].cardStat[StatHP] +=1;
@@ -247,35 +192,10 @@ switch(activation_mode){
 				}				
 			break;
 			case 111:
-				with(obj_player){
-					scr_draw(1, true);
-					scr_miscellaneous_target("player","all",0,13,11,111,origin_card_location,origin_card_location)
-					momentum += 4;
-					scr_message_stats()
-				}
-				if(obj_player.fieldCard[origin_card_location] != noone){
-					obj_player.fieldCard[origin_card_location].opt_used = true;
-				}				
 			break;
 			case 112:
-				with(obj_player){
-					if(momentum <= 6){
-						scr_silence_target("opponent","all",0,13,"any",112,-1)
-						momentum += 6;
-						
-					}else{
-						scr_give_choice(112,"To Monster","To Player")
-						momentum -= 6;
-						
-					}
-					scr_message_stats()
-				}
-				if(obj_player.fieldCard[origin_card_location] != noone){
-					obj_player.fieldCard[origin_card_location].opt_used = true;
-				}				
 			break;
 		}
-	break;
 	case "Hand Effect":
 		if(scr_check_shared(obj_player.hand[origin_card_location,0], ArcVisclades)){
 			obj_player.resolutionPile[obj_player.resolutionPileCount,0] = "SharedVisclades"
@@ -306,9 +226,7 @@ switch(activation_mode){
 				instance_destroy();
 			}
 		}	
-	
-	break;
-	
+	break;	
 }
 with(obj_activation_box){
 	if(activation_mode != "Multiple Choices"){

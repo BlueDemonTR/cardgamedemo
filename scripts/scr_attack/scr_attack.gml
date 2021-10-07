@@ -1,5 +1,5 @@
 function scr_attack(argument0) {
-	
+	//TODO: COMPLETE REWRITE HOLY SHIT LMAOOOOO
 	var attackingCard = argument0,
 	taunt_exists=false;
 	scr_appropiate_targets("opponent", "all",0,13,"any", true,-1);

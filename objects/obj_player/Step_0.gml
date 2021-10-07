@@ -13,9 +13,20 @@ if(start_turn && turn_count==0){
 if(start_turn && own_turn){
 	mana = 4;
 	scr_message_stats();
-	alarm[4]=1
-
+	scr_draw(player, 1, true);
+	
+	//TODO: scr_start_turn_effects
+	
+	start_turn = false
+	main_phase = true;
+	end_phase_effects_resolved = false;
 }
+
+if(end_phase && !end_phase_effects_resolved){
+	scr_end_phase_effect()
+	scr_reset_limitations()
+}
+
 if(!own_turn|| !open_game_state || obj_action_list.open_list){
 	mid_effect = true;
 }
@@ -34,32 +45,13 @@ if(resolutionPileCount > 0 && open_game_state  && !opponent_response_left && !pl
 	}
 }
 
-for(i = 0; i < handCount; i++){
-	if(hand[i,0] > 0 && handCard[i] == noone){
-		handCard[i] = instance_create_depth(room_width/2,room_height/2,1,obj_card);
-		var 
-		cardNum = hand[i],
-		position = i;
-		with(handCard[i]){
-			self.cardNum = cardNum;
-			hand_position = position;
-			card_in_hand = true;
-		}
-	}
-	if(hand[i,0] = 0 && handCard[i] != noone){
-		with(handCard[i]){
-			scr_remove_from_hand(hand_position)
-			instance_destroy();
-		}
-	}
-}
 for(i = 0; i < obj_player.field_zone_count; i++){
-	if(field[i,0] > 0 && fieldCard[i] == noone){
-		scr_message_field(i, field[i,0], field[i,1], "none");
+	if(field[i, CardNumber] > 0 && fieldCard[i] == noone){
+		scr_message_field(i, field[i, CardNumber], field[i, ArtNumber], "none");
 		fieldCard[i] = instance_create_depth(field_card_zone_x[i],field_card_zone_y[i],1,obj_field_card);
 		var 
-		cardNum = field[i,0],
-		artNum = field[i,1],
+		cardNum = field[i, CardNumber],
+		artNum = field[i, ArtNumber],
 		sprite = macros.sprite_array[cardNum],
 		position = i;
 		with(fieldCard[i]){
@@ -79,27 +71,15 @@ for(i = 0; i < obj_player.field_zone_count; i++){
 	
 }
 
-	if(playerHP<=0 && victory_state==0){
-		playerHP=0;
-		scr_message_stats();
-		scr_message_game_lose();
-		}
-	if(playerHP>playerMaxHP){
-		playerHP = playerMaxHP;
-		scr_message_stats();
-	}
-	if(momentum>maxmomentum){
-		momentum = maxmomentum;
-		scr_message_stats();
-	}
-	if(mana>maxmana){
-		mana = maxmana;
-		scr_message_stats();
-	}
+if(playerHP<=0 && victory_state==0){
+	playerHP = 0;
+	scr_message_stats();
+	scr_message_game_lose();
+}
 
 
 for(i = 0; i < 5; i++){
-	if(field[i,0] == 0 && fieldCard[i] != noone){
+	if(field[i, CardNumber] == 0 && fieldCard[i] != noone){
 		with(fieldCard[i]){
 			instance_destroy();
 		}

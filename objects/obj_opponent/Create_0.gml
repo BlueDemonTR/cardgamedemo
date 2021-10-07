@@ -8,8 +8,8 @@ for(i=0;i < 7; i++){
 }
 deckCount = 0;
 for(i = 0; i < 65; i++){
-	deck[i,0] = 0;
-	deck[i,1] = 0;
+	deck[i, CardNumber] = 0;
+	deck[i, ArtNumber] = 0;
 }
 deck_buffer_x = obj_player.deck_buffer_x;
 deck_buffer_y = obj_player.deck_buffer_y;
@@ -52,8 +52,8 @@ momentum_deck_x = 1385;
 momentum_deck_y = 320;
 momentumDeckCount = 0;
 for(i = 0; i < 8; i++){
-	momentum_deck[i,0] = 0;
-	momentum_deck[i,1] = 0;
+	momentum_deck[i, CardNumber] = 0;
+	momentum_deck[i, ArtNumber] = 0;
 }
 
 //player stats

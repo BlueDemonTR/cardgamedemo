@@ -2,7 +2,7 @@ function scr_burn(target, damage, cardNum) {
 
 	if(scr_check_archetype(cardNum, ArcPoleClan)){
 		for (var i=0;i < 5;i++){
-			if(obj_player.field[i,0]==38){damage++;}
+			if(obj_player.field[i, CardNumber]==38){damage++;}
 		}
 	}
 

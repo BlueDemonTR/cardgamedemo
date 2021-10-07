@@ -1,1 +1,3 @@
-if (obj_player.test_mode) {with(player){scr_draw(1, true);}}
+if (obj_player.test_mode) {
+	scr_draw(player, 1, true);
+}

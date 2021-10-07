@@ -1,13 +1,15 @@
-function scr_card_sent_to_infirmary(argument0) {
-	var sentCard = argument0;
-	for(i=0;i<5;i++){
-		if(obj_player.field[i,0]==55){
-			if(macros.card_type[sentCard] != TypeSpell && !obj_player.fieldCard[i].cardStatus[StatusSilenced]){
-				obj_player.fieldCard[i].cardStat[StatATK]++;
-				scr_message_field_card_stats(i)
-			}
+function scr_card_sent_to_infirmary(cardNum, sendType) {
+	for(var i = 0; i < 5; i++){
+		switch(obj_player.field[i, CardNumber]){
+			case 55://Garbage Collector Activation Trigger
+				if(!scr_legal_activation(cardNum, 0, position)){break;}
+				obj_player.resolutionPile[obj_player.resolutionPileCount,0] = cardNum
+				obj_player.resolutionPile[obj_player.resolutionPileCount,1] = 0
+				obj_player.resolutionPile[obj_player.resolutionPileCount,2] = 0
+				obj_player.resolutionPile[obj_player.resolutionPileCount,3] = i
+				obj_player.resolutionPile[obj_player.resolutionPileCount,4] = false
+				obj_player.resolutionPileCount++
+			break;
 		}
 	}
-
-
 }

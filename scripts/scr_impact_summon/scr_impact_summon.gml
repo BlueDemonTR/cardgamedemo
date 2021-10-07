@@ -1,4 +1,5 @@
 function scr_impact_summon(argument0) {
+	//TODO redo this entire segment completely lmao
 	var momentumCost = argument0;
 	mid_effect = true;
 	filtered_card_count = 0;
@@ -18,7 +19,6 @@ function scr_impact_summon(argument0) {
 			}
 		}
 	}else{
-		mid_effect = false;
 		return;
 	}
 

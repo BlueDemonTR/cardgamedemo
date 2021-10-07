@@ -16,7 +16,7 @@ function scr_count_momentum_deck_filter(players, minLevel, maxLevel, archetypeAr
 		var player = players[i]
 		
 		for(var j = 0; j < player.momentumDeckCount; j++){
-			var cardNum = player.momentumDeck[i,0],
+			var cardNum = player.momentumDeck[i, CardNumber],
 			cardStat = macros.origStat[cardNum];
 			
 			if(macros.card_type[cardNum] != TypeSpell && (cardStat[StatLevel] > maxLevel || cardStat[StatLevel] < minLevel)){

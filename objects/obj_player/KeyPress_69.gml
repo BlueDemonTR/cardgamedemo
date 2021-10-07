@@ -1,3 +1,3 @@
-if (test_mode){playerHP += 3;
-	scr_message_stats();	
-	}
+if (test_mode){
+	scr_give_player_stats(player, 0, 3, 0, 0)	
+}

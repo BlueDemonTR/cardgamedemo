@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Game Functions",
-    "path": "folders/Scripts/Game Functions.yy",
+    "name": "Essential Functions",
+    "path": "folders/Scripts/Effects/Essential Functions.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_last_action",
+  "name": "scr_send_infirmary",
   "tags": [],
   "resourceType": "GMScript",
 }

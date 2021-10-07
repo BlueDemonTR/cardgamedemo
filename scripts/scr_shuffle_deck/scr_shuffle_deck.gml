@@ -3,21 +3,16 @@ function scr_shuffle_deck(player) {
 
 	//if no cards in deck
 	with(player){
-		if (deckCount == 0){
-			return;
-		}
+		if (deckCount == 0){return}
 
-		for (j = 0; j < numShuffle; j++){
+		for (var j = 0; j < numShuffle; j++){
 			//shuffle
 			for (i = 0; i < deckCount; i++){
 				var temp_1 = irandom_range(0, deckCount-1);
-				if(deck[i,0] > 0 && deck[temp_1,0] > 0){
-					var temp_cardNum = deck[i,0];
-					var temp_artNum = deck[i,1];
-					deck[i,0] = deck[temp_1,0];
-					deck[i,1] = deck[temp_1,1];
-					deck[temp_1,0] = temp_cardNum; 
-					deck[temp_1,1] = temp_artNum; 
+				if(deck[i, CardNumber] > 0 && deck[temp_1, CardNumber] > 0){
+					var temp_cardArray = deck[i];
+					deck[i] = deck[temp_1];
+					deck[temp_1] = temp_cardArray; 
 				}
 			}
 		}

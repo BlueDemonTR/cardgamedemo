@@ -5,18 +5,18 @@ function scr_target_infirmary_name(player, cardNum, arrayPos){
 	filtered_cards;
 	with(player){
 		for (var i = 0; i < infirmaryCount; i++){
-			if(infirmary[i,0] == cardNum){
+			if(infirmary[i, CardNumber] == cardNum){
 				filtered_cards[j++] = i
 			}
 		}
 	}
-	filtered_card_count = j;	
+	var filtered_card_count = j;	
 	for (i = 0; i < filtered_card_count; i++){
 		legal_targets[i] = instance_create_layer(525+((card_width+30)*i), room_height/2, "UpperInstances",obj_legal_targets);
 		with(legal_targets[i]){
 			position = filtered_cards[i];
 			self.arrayPos = arrayPos
-			cardNum = obj_player.infirmary[position,0];
+			cardNum = obj_player.infirmary[position, CardNumber];
 			artNum = obj_player.infirmary[position,1];
 			current_function = "infirmary";
 		}

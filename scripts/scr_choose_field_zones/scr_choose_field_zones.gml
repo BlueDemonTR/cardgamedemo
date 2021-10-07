@@ -1,7 +1,10 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_choose_field_zones(selectPlayer, selectOpponent, selectFilled, selectNMZ, selectMMZ, arrayPos){
+	//rewrite with an array for the plyer
+	
 	var effectSuccessful = false;
+	
 	for(var i = (!selectNMZ * 4); i < obj_player.field_zone_count - (!selectMMZ); i++){
 		if(selectPlayer && (selectFilled || obj_player.field[i] == 0)){
 			effectSuccessful = true;
@@ -26,6 +29,7 @@ function scr_choose_field_zones(selectPlayer, selectOpponent, selectFilled, sele
 			}
 		}
 	}
+	
 	if(!effectSuccessful){
 		resolutionPile[obj_player.resolutionPileCount-1,2] = 97;
 	}

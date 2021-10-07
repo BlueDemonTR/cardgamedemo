@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_count_infirmary_filter(players, typeArray, minLevel, maxLevel, archetypeArray, spiritArray, checkSummonable, destroyType, ignoreTarget, filterNum){
+function scr_count_infirmary_filter(players, typeArray, minLevel, maxLevel, archetypeArray, spiritArray, checkSummonable, sendType, ignoreTarget, filterNum){
 	/*
 	players (enter all player objects that are affected in an array)
 	typeArray (enter Types)
@@ -37,7 +37,7 @@ function scr_count_infirmary_filter(players, typeArray, minLevel, maxLevel, arch
 			if(checkSummonable && !scr_limited_summon(cardNum)){
 				continue;
 			}
-			if(destroyType != -1 && player.infirmary[i,2] == destroyType){
+			if(sendType != -1 && player.infirmary[i,2] == sendType){
 				continue;
 			}
 			if(j == ignoreTarget){

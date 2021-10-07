@@ -16,11 +16,11 @@ field_card_zone_y[i++] = 540;
 field_zone_count = i;
 
 i=0
-field[i,0] = 1;
+field[i, CardNumber] = 1;
 field[i++,1] = 0;
-field[i,0] = 2;
+field[i, CardNumber] = 2;
 field[i++,1] = 0;
-field[i,0] = 2;
+field[i, CardNumber] = 2;
 field[i++,1] = 0;
-field[i,0] = 1;
+field[i, CardNumber] = 1;
 field[i++,1] = 0;

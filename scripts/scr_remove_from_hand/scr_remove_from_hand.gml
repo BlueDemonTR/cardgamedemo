@@ -1,5 +1,5 @@
 function scr_remove_from_hand(player, position){
-	if(!player.hand[position]){
+	if(!player.hand[position, CardNumber]){
 		return false;
 	}
 	
@@ -19,8 +19,9 @@ function scr_remove_from_hand(player, position){
 	if (player == obj_player){
 		player.handCard[player.handCount] = noone
 	}
+	
 	player.hand[player.handCount] = [0, 0]
 	
-	scr_decide_hand_change();	
+	scr_decide_hand_change(player);	
 	return;
 }

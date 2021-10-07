@@ -17,17 +17,17 @@ if(legal_targets_open){
 	depth = -50
 	draw_sprite_ext(spr_legaltargetsBG,-1,room_width/2,room_height/2,1,1,0,c_white,0.8);
 }
-if(impactSummoning){
-	draw_text(625,490,string(currentLevel)+"/"+string(macros.origStat[momentum_deck[cardToSummon,0], StatLevel]));
-}
+
 if(!instance_exists(obj_opponent)){
 	draw_set_color(c_black)
 	draw_text(room_width/2 - 100, 100, "Waiting for an opponent...");
 }
+
 if(obj_infirmary.infirmaryListOpened){
 	depth = -50
 	draw_sprite_ext(spr_infirmaryListBG,-1,room_width/2,room_height/2,1,1,0,c_white,0.8)
 }
+
 draw_set_font(fnt_big)
 if(victory_state == 1){
 	depth = -1000
@@ -42,6 +42,7 @@ if(victory_state == -1){
 	draw_set_color(c_black)
 	draw_text(x-string_width("YOU LOST"),room_height/2-15,"YOU LOST")
 }
+
 if(test_mode){
 	draw_set_color(c_purple)
 	if(instance_exists(obj_opponent)){

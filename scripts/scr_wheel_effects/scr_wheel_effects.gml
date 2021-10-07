@@ -47,7 +47,7 @@ function scr_wheel_effects(argument0, argument1) {
 									momentum -= 12
 									scr_message_stats();
 									for(var i = 0; i < 5; i++){
-										if(field[i,0] > 0){
+										if(field[i, CardNumber] > 0){
 											with(fieldCard[i]){
 												attacksLeft++;
 												scr_message_field_card_stats(position)
@@ -97,7 +97,7 @@ function scr_wheel_effects(argument0, argument1) {
 									momentum -= 12;
 									scr_message_stats();
 									for(i=0; i < 5; i++){
-										if(obj_opponent.field[i,0] > 0){
+										if(obj_opponent.field[i, CardNumber] > 0){
 											with(obj_opponent.fieldCard[i]){
 												if(cardStat[StatLevel] <= 4){
 													scr_destroy(i);
@@ -118,7 +118,7 @@ function scr_wheel_effects(argument0, argument1) {
 								if(momentum >= 3){
 						
 									for(i=0; i < 5; i++){
-										if(scr_check_archetype(field[i,0],5)){
+										if(scr_check_archetype(field[i, CardNumber],5)){
 											fieldCard[i].cardStat[StatHP] += 3;
 											momentum -= 3
 											scr_message_stats();
@@ -314,8 +314,8 @@ function scr_wheel_effects(argument0, argument1) {
 							with(obj_player){
 								if(momentum = 3){
 									for(var i=0; i < 5; i++){
-										if(field[i,0]> 0){
-											if(scr_check_archetype(field[i,0], 11)){
+										if(field[i, CardNumber]> 0){
+											if(scr_check_archetype(field[i, CardNumber], 11)){
 												fieldCard[i].cardStat[StatATK] +=1;
 												fieldCard[i].cardStat[StatMaxHP] +=1;
 												fieldCard[i].cardStat[StatHP] +=1;

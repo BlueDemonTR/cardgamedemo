@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Old",
-    "path": "folders/Scripts/Old.yy",
+    "name": "Target Finders",
+    "path": "folders/Scripts/Effects/Target Finders.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_recover_infirmary_archetype",
+  "name": "scr_target_deck_name",
   "tags": [],
   "resourceType": "GMScript",
 }

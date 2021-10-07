@@ -159,7 +159,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements
-		origText[i,TextEffect] = "Destoyed: Deal 2 Damage to your opponent and gain 1 Momentum.";
+		origText[i,TextEffect] = "Destroyed: Deal 2 Damage to your opponent and gain 1 Momentum.";
 		origText[i,TextFlavor] = "Absolutely crazy, she has destroyed countless Motorbikes before getting a Momentum powered one";
 		
 		j=0
@@ -1992,7 +1992,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,TextEffect] = "Destoyed: Recruit a Defenseless Man";
+		origText[i,TextEffect] = "Destroyed: Recruit a Defenseless Man";
 		origText[i,TextFlavor] = "The Man with everything to defend and too much to lose.";
 		j=0
 		//Card Status'
@@ -2094,7 +2094,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,TextEffect] = "Summoned: Ally ''The Great Leader''s get Indestructable. Destoyed: If you don't control another Ally ''Body Guard''; Ally ''The Great Leader''s lose Indestructable";
+		origText[i,TextEffect] = "Summoned: Ally ''The Great Leader''s get Indestructable. Destroyed: If you don't control another Ally ''Body Guard''; Ally ''The Great Leader''s lose Indestructable";
 		origText[i,TextFlavor] = "The Great Leaders' henchman. Disposeable.";
 		j=0
 		//Card Status'
@@ -2162,7 +2162,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,TextEffect] = "Summoned: Ally ''Awoken Civilian'' get +2 HP. Destoyed: Ally ''Awoken Civilian'' get +2 ATK";
+		origText[i,TextEffect] = "Summoned: Ally ''Awoken Civilian'' get +2 HP. Destroyed: Ally ''Awoken Civilian'' get +2 ATK";
 		origText[i,TextFlavor] = "Their inclusion fuels their power, their leave fuels their rage. All of them matter as they are together strong.";
 		j=0
 		//Card Status'
@@ -2291,7 +2291,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,TextEffect] = "Destoyed: You recover 3 HP";
+		origText[i,TextEffect] = "Destroyed: You recover 3 HP";
 		origText[i,TextFlavor] = "A Local Hero that fights with reflective metals shaped as pans";
 		j=0
 		//Card Status'
@@ -2390,7 +2390,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,TextEffect] = "Summoned: Paralyze this card. When this card deals damage: Gain Momentum equal to the damage done";
+		origText[i,TextEffect] = "Summoned: Paralyze this card. When this card attacks: Gain Momentum equal to this card's ATK";
 		origText[i,TextFlavor] = "An Unfinished Cyborg that wants to take revenge on people who led her on that path. Sadly the government that put her on that path has already fallen";
 		origText[i,TextMaterials] = "2+ Monsters"
 		origText[i,TextChant] = "Take revenge from the ones that put you through the pain. Don't let your blood dry on the ground."

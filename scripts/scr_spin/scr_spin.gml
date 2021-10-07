@@ -1,36 +1,19 @@
 function scr_spin(player, position) {
-	var cardNum = player.field[position,0],
+	var cardNum = player.field[position, CardNumber],
 	artNum = player.field[position,1];
 	
 	if(macros.card_type[cardNum] != TypeMomentum){
-		deck[deckCount,0] = cardNum;
-		deck[deckCount++,1] = artNum;
-		scr_shuffle_deck();
-		if(player=obj_player){
-			scr_message_deck_change();
-		}else{
-			scr_message_opponent_deck_change()
-		}
+		player.deck[player.deckCount++] = [cardNum, artNum];
+		
+		scr_shuffle_deck(player);
+	}else{
+		player.momentum_deck[player.momentumDeckCount++] = [cardNum, artNum];
+		scr_decide_momentum_deck(player);
 	}
-	else{
-		momentum_deck[momentumDeckCount,0] = cardNum;
-		momentum_deck[momentumDeckCount++,1] = artNum;
-		if(player == obj_player){
-			scr_message_momentum_deck();
-		}else{
-			scr_message_opponent_momentum_deck();
-		}
-	}
+	
 	with(player.fieldCard[position]){
-		if(player=obj_opponent){
-			scr_message_opponent_field(field_location,0,0,"spin")
-		}
 		instance_destroy();
 	}
-
-
-	
-
-
+	scr_decide_field(player, position, 0, 0, "spin")
 
 }

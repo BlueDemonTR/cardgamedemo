@@ -1,4 +1,6 @@
 function scr_impact_summon_materials(argument0, argument1, argument2, argument3) {
+	//TODO Complete Redo
+	
 	var placeInMomentumDeck = argument0,
 	targetTypes= argument1, //main,momentum,all
 	targetMinLevel =argument2, //int64 0-12
@@ -13,7 +15,7 @@ function scr_impact_summon_materials(argument0, argument1, argument2, argument3)
 	}else if(momentum_deck[placeInMomentumDeck,0] >= 47 && momentum_deck[placeInMomentumDeck,0] <= 49){
 		scr_appropiate_targets("player", targetTypes, targetMinLevel, targetMaxLevel, 4, false,-1);
 		for (i=0;i<5;i++){
-			if(scr_check_archetype(field[i,0], 5)){global.appropiate_targets[appropiate_target_count_player++, 0] = i;}
+			if(scr_check_archetype(field[i, CardNumber], 5)){global.appropiate_targets[appropiate_target_count_player++, 0] = i;}
 		}
 		show_debug_message("Igloo")
 	}else if(momentum_deck[placeInMomentumDeck,0] == 70){

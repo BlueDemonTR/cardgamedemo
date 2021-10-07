@@ -8,7 +8,7 @@ function scr_check_filter(cardNum, filterNum){
 		case 0: //Monster That Has A The Same Level As A Motorbiker Leader Monster In The Momentum Deck
 			var levelTemp = macros.origStat[cardNum, StatLevel];
 			for (var i = 0; i < obj_player.momentumDeckCount; i++){
-				if(macros.origStat[obj_player.momentumDeck[i,0], StatLevel] == levelTemp ){
+				if(macros.origStat[obj_player.momentumDeck[i, CardNumber], StatLevel] == levelTemp ){
 					return true
 				}
 			}

@@ -1,16 +1,18 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_summon(cardNum, artNum, player, summonType, animationType, summonZone){
+function scr_summon(cardArray, player, summonType, animationType, summonZone){
+	var cardNum = cardArray[CardNumber],
+	artNum = cardArray[ArtNumber]
+	
 	if(scr_limited_summon(cardNum)){return;}
+	
 	with(player){
-		if(field[summonZone,0] == 0){
+		if(!field[summonZone,0]){
 			fieldCard[summonZone] = instance_create_depth(field_card_zone_x[summonZone],field_card_zone_y[summonZone], 1, obj_field_card);
-			var
-			sprite = macros.sprite_array[cardNum,artNum];
 			with(fieldCard[summonZone]){
 				summoning_method = summonType
-				player = obj_player;
-				opponent = obj_opponent
+				self.player = player;
+				self.opponent = player.opponent
 				
 				self.cardNum = cardNum;
 				self.artNum = artNum;
@@ -24,7 +26,7 @@ function scr_summon(cardNum, artNum, player, summonType, animationType, summonZo
 				
 				recruit=false;				
 			}
-			scr_message_field(summonZone, cardNum, artNum,"none");
+			scr_decide_field(player, summonZone, cardNum, artNum,"none");
 			field[summonZone]= [cardNum, artNum];
 			return fieldCard[summonZone];
 		}

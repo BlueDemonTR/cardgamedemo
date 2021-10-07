@@ -12,7 +12,6 @@ function scr_add_to_hand(player, cardArray){
 			cardNum = player.hand[hand_position,0];
 			artNum = player.hand[hand_position,1];
 		}
-		return hand[handCount-1];
 	}
 	handCount++
 	scr_decide_hand_change(player);

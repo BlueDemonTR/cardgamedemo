@@ -1,20 +1,24 @@
 function scr_recover_infirmary(player, infirmaryPos) {
+	//Adds the card in player's infirmary with the position infirmaryPos to player's hand
+	//Syntax:
+	//player: either obj_player or obj_opponent, decides which player's card is affected
+	//infirmaryPos: int
+	//Rulings
+	//If the hand is full the card is shuffled into the deck instead
+	
 	with(player){	
 		var cardNum = infirmary[infirmaryPos,0];
 		var artNum = infirmary[infirmaryPos,1];
 
-		scr_remove_from_infirmary(infirmaryPos);
+		scr_remove_from_infirmary(player, infirmaryPos);
+		
 		if(player.handCount < handSizeLimit){
-			scr_add_to_hand(player, cardNum, artNum);
+			scr_add_to_hand(player, [cardNum, artNum]);
 		}else{
 			with(player){
-				deck[deckCount,0] = cardNum
-				deck[deckCount++,1] = artNum
-				if(player = obj_player){
-					scr_message_deck_change()
-				}else{
-					scr_message_opponent_deck_change()
-				}
+				deck[deckCount++] = [cardNum, artNum]
+				scr_shuffle_deck(player)
+				scr_decide_deck_change(player)
 			}
 		}
 		
