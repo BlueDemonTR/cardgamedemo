@@ -15,20 +15,20 @@ if(chosen_wheel=0){
 	if(point_distance(mouse_x,mouse_y,1760,90) < 80){
 		if (mouse_x < 1760 && mouse_y < 90){
 			draw_sprite(spr_shared_effect_box,-1,mouse_x-400,mouse_y)
-			draw_text_ext(mouse_x-390,mouse_y+10,macros.wheel_ability_1[chosen_wheel],16,380)
+			draw_text_ext(mouse_x-390,mouse_y+10,macros.wheel_ability[chosen_wheel, 0],16,380)
 		}
 		else if (mouse_x > 1760 && mouse_y < 90){
 			draw_sprite(spr_shared_effect_box,-1,mouse_x-400,mouse_y)
-			draw_text_ext(mouse_x-390,mouse_y+10,macros.wheel_ability_2[chosen_wheel],16,380)
+			draw_text_ext(mouse_x-390,mouse_y+10,macros.wheel_ability[chosen_wheel, 1],16,380)
 		}
 
 		else if (mouse_x < 1760 && mouse_y > 90){
 			draw_sprite(spr_shared_effect_box,-1,mouse_x-400,mouse_y)
-			draw_text_ext(mouse_x-390,mouse_y+10,macros.wheel_ability_4[chosen_wheel],16,380)
+			draw_text_ext(mouse_x-390,mouse_y+10,macros.wheel_ability[chosen_wheel, 3],16,380)
 		}
 		else{
 			draw_sprite(spr_shared_effect_box,-1,mouse_x-400,mouse_y)
-			draw_text_ext(mouse_x-390,mouse_y+10,macros.wheel_ability_3[chosen_wheel],16,380)
+			draw_text_ext(mouse_x-390,mouse_y+10,macros.wheel_ability[chosen_wheel, 2],16,380)
 		}		
 		
 	}

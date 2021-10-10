@@ -111,11 +111,16 @@ player_response_left = false
 opponent_response_left = false
 
 resolutionPileCount=0
-
-
 for(i=0;i<10;i++){
 	for(j=0;j<6;j++){
 		resolutionPile[i,j]=0
+	}
+}
+
+resolvingPileCount=0
+for(i=0;i<10;i++){
+	for(j=0;j<6;j++){
+		resolvingPile[i,j]=0
 	}
 }
 
@@ -127,8 +132,11 @@ for j values
 2 = 0 Means Effect Hasn't Resolved Yet, 1-98 Effect Has Started Resolving, 99 Effect Successfully Resolved
 3 = if the card that has a relevant position, what is it?
 4 = is the effect negated
-5 = if the card has a target what is it?
-6+= if it has another target OR other information to remember what are those?
+5 = if the card has a target what is it? (optional)
+6+= if it has another target OR other information to remember what are those? (optional)
+
+How the resolution pile works
+
 */
 
 

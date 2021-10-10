@@ -2551,7 +2551,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Groups
 		//In the case that a card doesn't have that feature the value is -1
-		origSharedEffects[i,j++] = SharedIgloo;
+		origSharedEffects[i,j++] = SharedSacrifice;
 		origSharedEffectsCount[i] = j;
 		j=0
 		origArchetype[i,j++] = ArcSacrifice;
@@ -2585,7 +2585,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Groups
 		//In the case that a card doesn't have that feature the value is -1
-		origSharedEffects[i,j++] = SharedIgloo;
+		origSharedEffects[i,j++] = SharedSacrifice;
 		origSharedEffectsCount[i] = j;
 		j=0
 		origArchetype[i,j++] = ArcSacrifice;
@@ -2619,7 +2619,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Groups
 		//In the case that a card doesn't have that feature the value is -1
-		origSharedEffects[i,j++] = SharedIgloo;
+		origSharedEffects[i,j++] = SharedXMakine;
 		origSharedEffectsCount[i] = j;
 		j=0
 		origArchetype[i,j++] = ArcSacrifice;
@@ -3732,7 +3732,7 @@ function scr_initialize_cards(){
 		//7 = Unarmed, 8 = Ranged, 9 = Paralyzed, 10 = Poisoned, 11 = Silenced, 12 = Can Attack Directly
 		//Cards where that stat is empty don't need to be have the stat initialized
 		
-	name[++i] ="Jason, DX-Makine Thundermech";
+	name[++i] ="Jason, DX-Makine Thunder Dragon";
 		//write -1 = invalid, 0 = monster, 1 = momentum or 2 = spell
 		card_type[i] = TypeMomentum;
 

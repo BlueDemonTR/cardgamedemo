@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_choose_field_zones(selectPlayer, selectOpponent, selectFilled, selectNMZ, selectMMZ, arrayPos){
-	//rewrite with an array for the plyer
+	//TODO: rewrite with an array for the plyer
 	
 	var effectSuccessful = false;
 	

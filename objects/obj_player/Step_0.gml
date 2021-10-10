@@ -32,18 +32,24 @@ if(!own_turn|| !open_game_state || obj_action_list.open_list){
 }
 else{mid_effect = false;}
 
-if(resolutionPileCount > 0 && open_game_state  && !opponent_response_left && !player_response_left){
-	if(resolutionPile[resolutionPileCount-1,2] != 99){
-		if(resolutionPile[resolutionPileCount-1,2] = 0){
-			resolutionPile[resolutionPileCount-1,2] = 1
+if(resolvingPileCount){
+	if(resolvingPile[resolvingPileCount-1,2] != 99){
+		if(resolvingPile[resolvingPileCount-1,2] = 0){
+			resolvingPile[resolvingPileCount-1,2] = 1
 			open_game_state = false;
 		}
-		scr_resolve_effect_in_pile(resolutionPileCount-1)
+		scr_resolve_effect_in_pile(resolvingPileCount-1)
 	}else{
 		open_game_state = true
-		resolutionPileCount--
-	}
+		resolvingPileCount--
+	}	
+}else if(resolutionPileCount > 0 && open_game_state  && !opponent_response_left && !player_response_left){
+	resolvingPile = resolutionPile;
+	resolvingPileCount = resolvingPileCount;
+	resolutionPileCount = 0
 }
+
+
 
 for(i = 0; i < obj_player.field_zone_count; i++){
 	if(field[i, CardNumber] > 0 && fieldCard[i] == noone){

@@ -1,7 +1,4 @@
-function scr_wheel_effects(argument0, argument1) {
-	var wheelNum = argument0,
-	wheelEffect = argument1;
-	global.effect_successful = false;
+function scr_wheel_effects(wheelNum, wheelEffect) {
 	if(!obj_player.mid_effect && !obj_player.wheel_locked && obj_player.own_turn){
 		if (scr_wheel_opt(wheelEffect)){
 			switch(wheelNum){

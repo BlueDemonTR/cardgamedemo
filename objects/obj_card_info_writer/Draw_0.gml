@@ -3,7 +3,7 @@ if (selected_card[0] != 0 && !(selected_card[0] ==45 || selected_card[0] == 46))
 	
 	var cardNum = selected_card[0],
 	artNum = selected_card[1],
-	showOriginal = selected_card[2],
+	//showOriginal = selected_card[2],
 	i=1,
 	j=0,
 	start = 755,

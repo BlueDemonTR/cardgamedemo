@@ -26,19 +26,19 @@ if(chosen_wheel > 0){
 	if(mouse_between(613, 673, 676, 850)){
 		depth=-5
 		if (mouse_between(630, 673, 676, 717)){
-			draw_text(mouse_x+20,mouse_y,wheel_ability_4[chosen_wheel])
+			draw_text(mouse_x+20,mouse_y,wheel_ability[chosen_wheel, 3])
 			if(mouse_check_button_released(mb_left)){scr_wheel_effects(chosen_wheel,4)}
 		}
 		else if (mouse_between(630, 717, 676, 760)){
-			draw_text(mouse_x+20,mouse_y,wheel_ability_3[chosen_wheel])
+			draw_text(mouse_x+20,mouse_y,wheel_ability[chosen_wheel, 2])
 			if(mouse_check_button_released(mb_left)){scr_wheel_effects(chosen_wheel,3)}
 		}
 		else if (mouse_between(630, 760, 676, 804)){
-			draw_text(mouse_x+20,mouse_y,wheel_ability_2[chosen_wheel])
+			draw_text(mouse_x+20,mouse_y,wheel_ability[chosen_wheel, 1])
 			if(mouse_check_button_released(mb_left)){scr_wheel_effects(chosen_wheel,2)}
 		}
 		else if (mouse_between(630, 804, 676, 850)){
-			draw_text(mouse_x+20,mouse_y,wheel_ability_1[chosen_wheel])
+			draw_text(mouse_x+20,mouse_y,wheel_ability[chosen_wheel, 0])
 			if(mouse_check_button_released(mb_left)){scr_wheel_effects(chosen_wheel,1)}
 		}
 		draw_text(mouse_x+20,mouse_y+20,momentum_gain[chosen_wheel])
