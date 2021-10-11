@@ -1,5 +1,5 @@
-function scr_on_direct_attack(cardNum){
-	if(cardStatus[StatusSilenced]){return;}
+function scr_on_direct_attack(attackingCard){
+	var cardNum = attackingCard.cardNum
 	switch(cardNum){
 		case true:
 		break;

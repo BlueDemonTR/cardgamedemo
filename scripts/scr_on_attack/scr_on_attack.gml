@@ -1,5 +1,5 @@
-function scr_on_attack(cardNum , attacker, attacked) {
-
+function scr_on_attack(attacker, attacked) {
+	cardNum = attacker.cardNum;
 
 	if(cardStatus[StatusSilenced]){return;}
 	switch(cardNum){

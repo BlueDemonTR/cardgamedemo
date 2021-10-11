@@ -6,13 +6,61 @@ function scr_resolve_effect_in_pile(positionInOrder){
 	effectSilenced = resolvingPile[positionInOrder,4];
 	
 	switch(cardNum){
+		case "Attack":
+			var attacker = position,
+			attacked = resolvingPile[positionInOrder,5];
+			if(!(instance_exists(attacker) && instance_exists(attacked))){
+				resolvingPile[positionInOrder,2] = 99
+				break;
+			}
+			if(attacked.cardStat[StatDodge] > 0){
+				scr_buff_card(attacked.player, attacked.position, 0, 0, 0, 0, 0, 0, -1);
+				resolvingPile[positionInOrder,2] = 99
+				break;
+			}
+			var damage = attacker.cardStat[StatATK] - attacked.cardStat[StatArmor],
+			excessDamage = damage - attacked.cardStat[StatHP],
+			counterAttack = attacked.cardStat[StatATK] - attacker.cardStat[StatArmor];
+			
+			scr_damage_card(attacked.player, attacked.position, damage)
+			
+			if(!attacked.cardStatus[StatusRanged]){
+				scr_damage_card(attacker.player, attacker.position, counterAttack)
+			}
+			
+			if(attacker.cardStatus[StatusPierce] && excessDamage > 0){
+				scr_give_player_stats(opponent, 0, -excessDamage, 0, 0)
+				scr_on_pierce(attacker, attacked, damage)
+			}
+			
+			scr_after_attack(attacker, damage)
+			resolvingPile[positionInOrder,2] = 99
+		break;
+		case "DirectAttack":
+			var attacker = position;
+			if(!instance_exists(attacker)){
+				resolvingPile[positionInOrder,2] = 99
+				break;
+			}
+			var damage = attacker.cardStat[StatATK];
+			
+			scr_give_player_stats(opponent, 0, -damage, 0, 0)
+			
+			scr_after_attack(attacker, damage)
+			scr_after_direct_attack(attacker, damage)
+			
+			resolvingPile[positionInOrder,2] = 99
+		break;
 		case "SelfDestruct"://Status Self Destruct Effect
+			if(effectSilenced){break;}
 			scr_destroy(player, position, 1);
 		break;
 		case "Regeneration"://Stat Regeneration Effect
+			if(effectSilenced){break;}
 			scr_heal_card(player, position, 3);
 		break;
 		case "Poison"://Status Poison Effect
+			if(effectSilenced){break;}
 			scr_damage_card(player, position, 1);
 		break;
 		case "WheelGain":

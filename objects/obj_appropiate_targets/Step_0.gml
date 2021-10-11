@@ -7,7 +7,7 @@ if(current_function = "discard" && instance_exists(obj_player.handCard[field_loc
 	depth = obj_player.handCard[field_location].depth -1
 
 }
-if (current_function == "direct_attack" && sprite_index != spr_select_player_selected){
+if (current_function == "DirectAttack" && sprite_index != spr_select_player_selected){
 	sprite_index = spr_select_player_unselected;
 	mask_index = spr_select_player_collision;
 }

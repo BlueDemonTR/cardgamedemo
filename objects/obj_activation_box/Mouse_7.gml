@@ -2,7 +2,7 @@ var position = self.position,
 activation_mode = self.activation_mode;
 switch(activation_mode){
 	case "Attack":
-		scr_attack(position);
+		scr_attack(player.fieldCard[position]);
 	break;
 	case "Sacrifice":
 		scr_sacrifice(position);	

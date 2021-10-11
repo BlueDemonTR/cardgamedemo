@@ -103,7 +103,7 @@ opponent_response_left = false
 /*
 HOW TO WRITE AN EFFECT
 
-scr_add_resolution_pile(arguments)
+scr_add_resolution_pile(argumentsArray)
 
 0 = cardNum
 1 = if the card has multiple effects, which one is trying to resolve

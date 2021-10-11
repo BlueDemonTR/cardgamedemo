@@ -7,96 +7,49 @@ switch (current_function){
 		obj_player.resolutionPile[obj_player.resolutionPileCount-1,2]++
 		with(obj_appropiate_targets){
 			if(function_check == current_function){
-				alarm[0] = 1;
+				instance_destroy();
 			}
 		}
 	break;
 
-	case "attack":
-		var effectBelongsToLocation = self.effectBelongsToLocation,
-		field_location = self.field_location,
-		attacker = obj_player.fieldCard[effectBelongsToLocation],
-		attacked = obj_opponent.fieldCard[field_location];
+	case "Attack":
+		var attackingCard = self.attackingCard,
+		position = self.position,
+		attackedCard = obj_opponent.fieldCard[position];
+
+		attackingCard.attacksLeft--
+		attackingCard.sacrificable = false;
 		
-		attacker.attacksLeft--
-		attacker.cardis_sacrificable = false;
-		if(attacked.cardStat[StatDodge] = 0){
-			with (attacker){scr_on_attack(attacker.cardNum, attacker, attacked);}
-			with (attacked){
-				var excessDamage = (attacker.cardStat[StatATK] - cardStat[StatArmor]) - cardStat[StatHP];
-				cardStat[StatHP] -= attacker.cardStat[StatATK] - cardStat[StatArmor];
-				var counterAttack = cardStat[StatATK];
+		scr_add_to_resolution_pile(["Attack", 0, 0, attackingCard, false, attackedCard])
 		
-				if (attacker.cardStatus[StatusPierce] && excessDamage > 0){
-					obj_opponent.playerHP -= excessDamage
-					scr_message_opponent_stats();	
-					with(attacker){scr_on_pierce(attacker.cardNum);}
-				}
-				if(cardStat[StatHP] <= 0){
-					with(attacker){
-						destroyedMonster = attacked.cardNum;
-						scr_destroys_by_battle(cardNum, destroyedMonster);
-					}
-				}
-			
-			}
-			with (attacker){
-				if(cardNum != 14){cardStat[StatHP] -= counterAttack - cardStat[StatArmor];}
+		scr_on_attack(attackingCard, attackedCard)
 		
-				if (attacked.cardStatus[StatusRebellious] && excessDamage > 0){
-					obj_player.playerHP -= excessDamage
-					scr_message_stats();
-					with(attacked){scr_on_pierce(attacked.cardNum);}
-				}
-				if(cardStat[StatHP] > 0){scr_after_attack(cardNum)}
-			}
-		}else{
-			attacked.cardStat[StatDodge]--;
-		}
-		scr_message_field_card_stats(effectBelongsToLocation);
-		scr_message_opponent_field_card_stats(field_location);	
+		scr_card_on_attacked(attackedCard, attackingCard)
+
 		with(obj_appropiate_targets){
 			if(function_check == current_function || current_function == "direct_attack"){
-				alarm[0] = 1;
+				instance_destroy();
 			}
 		}
-
 	break;
 
+	case "DirectAttack":
+		var attackingCard = self.attackingCard,
+		position = self.position;
 
-
-
-	case "direct_attack":
-		var effectBelongsToLocation = self.effectBelongsToLocation,
-		field_location = self.field_location,
-		attacker = obj_player.fieldCard[effectBelongsToLocation];
-		with(attacker){
-			attacksLeft--
-			cardis_sacrificable = false;
-		}
-		with(attacker){
-			scr_on_attack(cardNum, attacker, "opponent");
-			scr_on_direct_attack(cardNum);
-		}
-		with(player){
-			playerHP -= attacker.cardStat[StatATK];
-			
-		}
+		attackingCard.attacksLeft--
+		attackingCard.sacrificable = false;
 		
-		with(attacker){
-			damageToPlayer = attacker.cardStat[StatATK];
-			scr_after_direct_attack(cardNum);
-			scr_after_attack(cardNum);
-			scr_message_field_card_stats(position)
-		}
-		scr_message_stats();
-		scr_message_opponent_stats();
+		scr_add_to_resolution_pile(["DirectAttack", 0, 0, attackingCard, -1])
+		
+		scr_on_attack(attackingCard, attackedCard)
+		scr_on_direct_attack(attackingCard)
+		
 		with(obj_appropiate_targets){
 			if(function_check == current_function || current_function == "attack"){
-				alarm[0] = 1;
+				instance_destroy();
 			}
 		}
-
 	break; 
 	
 	
@@ -169,7 +122,7 @@ switch (current_function){
 	
 	case  "discard":
 		discardedCard = player.hand[position];
-		
+		//TODO: Fix problems this will create with player saving discard functions
 		obj_player.resolutionPile[obj_player.resolutionPileCount-1,arrayPos] = position;
 		obj_player.resolutionPile[obj_player.resolutionPileCount-1,arrayPos+1] = discardedCard;
 		obj_player.resolutionPile[obj_player.resolutionPileCount-1,2]++

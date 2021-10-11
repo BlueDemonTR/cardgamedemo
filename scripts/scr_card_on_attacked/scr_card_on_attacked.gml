@@ -1,5 +1,5 @@
-function scr_card_on_attacked(argument0) {
-	var cardNum = argument0;
+function scr_card_on_attacked(attacked, attacker) {
+	var cardNum = attacked.cardNum;
 
 	switch(cardNum){
 		case true:

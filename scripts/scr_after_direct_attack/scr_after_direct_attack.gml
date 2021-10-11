@@ -1,4 +1,4 @@
-function scr_after_direct_attack(cardNum) {
+function scr_after_direct_attack(cardNum, damage) {
 	
 	switch(obj_player.selected_wheel){
 		case 1://Motorbiker Wheel Gain Activation Trigger
@@ -9,6 +9,7 @@ function scr_after_direct_attack(cardNum) {
 			obj_player.resolutionPile[obj_player.resolutionPileCount,2] = 0
 			obj_player.resolutionPile[obj_player.resolutionPileCount,3] = selected_wheel
 			obj_player.resolutionPile[obj_player.resolutionPileCount,4] = false
+			obj_player.resolutionPile[obj_player.resolutionPileCount,5] = damage
 			obj_player.resolutionPileCount++
 		break;
 	}

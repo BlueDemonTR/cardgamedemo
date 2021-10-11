@@ -9,5 +9,3 @@ if(current_function == "impact"){
 	obj_player.impactSummoning = false;
 	obj_player.cardToSummon = 0;
 }
-obj_player.mid_effect=0;
-instance_destroy();
