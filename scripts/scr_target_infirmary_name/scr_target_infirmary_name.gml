@@ -5,7 +5,7 @@ function scr_target_infirmary_name(player, cardNum, arrayPos){
 	filtered_cards;
 	with(player){
 		for (var i = 0; i < infirmaryCount; i++){
-			if(infirmary[i, CardNumber] == cardNum){
+			if(infirmary[i, 0] == cardNum){
 				filtered_cards[j++] = i
 			}
 		}
@@ -16,7 +16,7 @@ function scr_target_infirmary_name(player, cardNum, arrayPos){
 		with(legal_targets[i]){
 			position = filtered_cards[i];
 			self.arrayPos = arrayPos
-			cardNum = obj_player.infirmary[position, CardNumber];
+			cardNum = obj_player.infirmary[position, 0];
 			artNum = obj_player.infirmary[position,1];
 			current_function = "infirmary";
 		}

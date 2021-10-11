@@ -39,7 +39,7 @@ switch(animationType){
 	
 }
 obj_opponent.fieldCard[position]=noone;
-obj_opponent.field[position, CardNumber]=0;
+obj_opponent.field[position, 0]=0;
 obj_opponent.field[position,1]=0;
 
 

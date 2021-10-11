@@ -20,7 +20,7 @@ function scr_target_hand(players, typeArray, minLevel, maxLevel, archetypeArray,
 		var player = players[i]
 		
 		for(var j = 0; j < player.handCount; j++){
-			var cardNum = player.hand[i, CardNumber],
+			var cardNum = player.hand[i, 0],
 			cardStat = macros.origStat[cardNum];
 			
 			if(macros.card_type[cardNum] != TypeSpell && (cardStat[StatLevel] > maxLevel || cardStat[StatLevel] < minLevel)){
@@ -53,8 +53,8 @@ function scr_target_hand(players, typeArray, minLevel, maxLevel, archetypeArray,
 			self.player = filteredCards[i,0]
 			position = filteredCards[i,1];
 			self.arrayPos = arrayPos
-			self.cardNum = self.player.deck[position, CardNumber];
-			self.artNum = self.player.deck[position, ArtNumber];
+			self.cardNum = self.player.deck[position, 0];
+			self.artNum = self.player.deck[position, 1];
 			current_function = "hand";
 			x = player.handCard[i].x
 			y = player.handCard[i].y

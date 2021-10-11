@@ -9,7 +9,7 @@ function scr_shuffle_deck(player) {
 			//shuffle
 			for (i = 0; i < deckCount; i++){
 				var temp_1 = irandom_range(0, deckCount-1);
-				if(deck[i, CardNumber] > 0 && deck[temp_1, CardNumber] > 0){
+				if(deck[i, 0] > 0 && deck[temp_1, 0] > 0){
 					var temp_cardArray = deck[i];
 					deck[i] = deck[temp_1];
 					deck[temp_1] = temp_cardArray; 

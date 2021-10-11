@@ -14,5 +14,7 @@ function scr_buff_card(controller, position, levelBuff, atkBuff, maxHpBuff, hpBu
 	affectedCard.cardStat[StatRegeneration] = limit_between(affectedCard.cardStat[StatRegeneration] + regenerationBuff, 0, 65535)
 	affectedCard.cardStat[StatDodge] = limit_between(affectedCard.cardStat[StatDodge] + dodgeBuff, 0, 65535)
 	
+	scr_on_stat_change(affectedCard)
+	
 	scr_decide_field_card_stats(controller, position)
 }

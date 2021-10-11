@@ -1,4 +1,4 @@
-if(instance_exists(obj_activation_box)){//TODO: replace with mouse_between
+if(instance_exists(obj_activation_box)){
 	if(!mouse_between(x - card_width/2, y - 25, x + card_width/2, y+25)){
 		selected=true;
 	}

@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_card_is_drawn(position, drawnCard){
+function scr_card_is_drawn(position, drawnCardNum){
 	var cardNum = obj_player.field[i, 0];
 	switch(cardNum){
 		case 20://Satio Ces Activation

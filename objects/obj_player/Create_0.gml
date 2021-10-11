@@ -2,9 +2,12 @@
 draw_set_font(fnt_default);
 depth=0;
 randomize()
+
 //don't set it to true in online
 test_mode = macros.test_mode;
+
 face_up = 0;
+
 //hand location
 hand_x = 550;
 hand_y = 1000;
@@ -16,20 +19,17 @@ for(i=0;i < 7; i++){
 	handCard[i] = noone;
 }
 
-
-i = 0;
-
-
-handCount = i;
-
-//
+//Player Objects
 player = obj_player
 opponent = obj_opponent
-//deck coordinates
+
+//Deck Locations
 deck_x = 1490;
 deck_y = 935;
 momentum_deck_x = obj_momentum_deck.momentum_deck_x
 momentum_deck_y = obj_momentum_deck.momentum_deck_y
+
+//Activation Area Locations
 activation_area_x1= 600;
 activation_area_y1= 225;
 activation_area_x2 = 1320;
@@ -38,32 +38,27 @@ deck_buffer_x = .2;
 deck_buffer_y = .2;
 
 
-
+//Deck Initialization
 deckCount = 0;
 for(i = 0; i < 65; i++){
-	deck[i, CardNumber] = 0;
-	deck[i, ArtNumber] = 0;
+	deck[i, 0] = 0;
+	deck[i, 1] = 0;
 }
 momentumDeckCount = 0;
 for(i = 0; i < 8; i++){
-	momentum_deck[i, CardNumber] = 0;
-	momentum_deck[i, ArtNumber] = 0;
+	momentum_deck[i, 0] = 0;
+	momentum_deck[i, 1] = 0;
 }
-i = 0;
 selected_wheel = 0;
+
+//Contructing Decks
 scr_construct_global_deck();
-scr_message_deck_change();
-scr_message_momentum_deck();
 scr_shuffle_deck(player);
 
-obj_momentum_wheel.chosen_wheel = selected_wheel;
+//Stacking the deck for debug purposes here
 
-//stack the deck here
-
-
-//field stuff
+//Field Card Zone Locations and initializations
 i = 0;
-
 field_card_zone_x[i] = 815;
 field_card_zone_y[i++] = 747;
 field_card_zone_x[i] = 962;
@@ -75,58 +70,41 @@ field_card_zone_y[i++] = 747;
 field_card_zone_x[i] = 1033;
 field_card_zone_y[i++] = 540;
 field_zone_count = i;
-for (j=0; j < field_zone_count; j++){
- 	field[j,0] = 0;
- 	field[j,1] = 0;
+for (j = 0; j < field_zone_count; j++){
+ 	field[j] = [0, 0];
 	fieldCard[j] = noone;
 }
 
-//expanded deck coords
 
+
+//expanded deck coords (TODO: Remove)
 expandx = 0;
 expandy = deck_y;
 deck_x_2 = deck_x;
 
 
-//phases and turn counts
+//Phases and Turn Related Stuff
 own_turn = false;
+
 turn_count = 0;
-initialization_done = false
+
+initialization_done = false;
+
 start_turn = true;
 main_phase = false;
 end_phase = false;
 
-endPhaseChainCount=0
-for(i=0;i<10;i++){
-	for(j=0;j<5;j++){
-		endPhaseChains[i,j]=0
-	}
-}
-
-//Effect Resolution Stuff
-
-mid_effect = false;
+//Game State and Response
 open_game_state = true;
 player_response_left = false
 opponent_response_left = false
 
-resolutionPileCount=0
-for(i=0;i<10;i++){
-	for(j=0;j<6;j++){
-		resolutionPile[i,j]=0
-	}
-}
-
-resolvingPileCount=0
-for(i=0;i<10;i++){
-	for(j=0;j<6;j++){
-		resolvingPile[i,j]=0
-	}
-}
-
+//Effect Resolution Initialization
 /*
 HOW TO WRITE AN EFFECT
-for j values
+
+scr_add_resolution_pile(arguments)
+
 0 = cardNum
 1 = if the card has multiple effects, which one is trying to resolve
 2 = 0 Means Effect Hasn't Resolved Yet, 1-98 Effect Has Started Resolving, 99 Effect Successfully Resolved
@@ -136,12 +114,24 @@ for j values
 6+= if it has another target OR other information to remember what are those? (optional)
 
 How the resolution pile works
-
+When effects stop triggering and neither player have responses, the resolutionPile will be copied to the
+resolvingPile and it will start resolving from there.
+The Effect at the top tries to resolve, it if's, Resolution Step is at 99 resolving pile count goes down
+and the next effect starts resolving
 */
 
+resolutionPileCount=0
+resolvingPileCount=0
 
-//Infirmary
-for (i = 0; i<999; i++){
+for(i = 0; i < 10 ; i++){
+	for(j = 0; j < 6; j++){
+		resolutionPile[i,j]=0
+		resolvingPile[i,j]=0
+	}
+}
+
+//Infirmary Initialization
+for (i = 0; i < 10; i++){
 	infirmary[i,0] = 0;
 	infirmary[i,1] = 0;
 	infirmary[i,2] = 0;
@@ -152,30 +142,27 @@ infirmary_y=deck_y-(card_height+5);
 instance_create_layer(infirmary_x,infirmary_y,"Instances",obj_infirmary);
 
 
-//player stats
+//Player Stats Initialization
 mana = 0;
-maxmana = 8;
+maxMana = 8;
 momentum = 0;
-maxmomentum =12;
+maxMomentum =12;
 playerMaxHP = 60;
-playerHP = 60;
-
-legal_targets_open=false;
-multiple_effects = 0;
+playerHP = playerMaxHP;
 wheel_locked=false;
-player = obj_player;
-opponent = obj_opponent;
 
-
-//limit summons
+//Summon Limitations Initialization
 scr_reset_limitations()
 
-//impact
+//Impact Summon Stuff (TODO: Remove please)
 obj_player.currentLevel = 0;
 obj_player.leader = false;
 obj_player.visclades = 0;
 obj_player.impactSummoning = false;
 obj_player.cardToSummon = 0;
 
-//game loss(-1)-win(1)
+//Game State
+//Win 1
+//Lose -1
+//Game Still Going on 3
 victory_state = 0;

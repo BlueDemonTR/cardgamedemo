@@ -21,16 +21,16 @@ function scr_legal_deck_check(argument0) {
 		return false;
 	}
 	for(var i=0; i < deckCount; i++){
-		deck[i, CardNumber] = file_text_read_real(file);
-		if (deck[i, CardNumber] >= macros.total_cards || macros.card_type[deck[i, CardNumber]] == TypeMomentum){
-			show_debug_message("cardNum "+string(deck[i, CardNumber])+" invalid or is not made for the main deck")
+		deck[i, 0] = file_text_read_real(file);
+		if (deck[i, 0] >= macros.total_cards || macros.card_type[deck[i, 0]] == TypeMomentum){
+			show_debug_message("cardNum "+string(deck[i, 0])+" invalid or is not made for the main deck")
 			return false;
 		}
-		cardCounter[deck[i, CardNumber]]++
+		cardCounter[deck[i, 0]]++
 		file_text_readln(file);
-		deck[i, ArtNumber] = file_text_read_real(file);
-		if (deck[i, ArtNumber] >= macros.sprite_count[deck[i, CardNumber]]){
-			show_debug_message("Sprite number "+string(deck[i, ArtNumber])+" for "+ string(deck[i, CardNumber])+" is invalid")
+		deck[i, 1] = file_text_read_real(file);
+		if (deck[i, 1] >= macros.sprite_count[deck[i, 0]]){
+			show_debug_message("Sprite number "+string(deck[i, 1])+" for "+ string(deck[i, 0])+" is invalid")
 			return false;
 		}
 		file_text_readln(file);		
@@ -42,16 +42,16 @@ function scr_legal_deck_check(argument0) {
 	}
 	file_text_readln(file);
 	for(i=0; i < min(momentumDeckCount, 60); i++){
-		momentumDeck[i, CardNumber] = file_text_read_real(file);
-		if (momentumDeck[i, CardNumber] >= macros.total_cards || macros.card_type[momentumDeck[i, CardNumber]] != TypeMomentum){
-			show_debug_message("cardNum "+string(momentumDeck[i, CardNumber])+" invalid or is not made for the momentum deck")
+		momentumDeck[i, 0] = file_text_read_real(file);
+		if (momentumDeck[i, 0] >= macros.total_cards || macros.card_type[momentumDeck[i, 0]] != TypeMomentum){
+			show_debug_message("cardNum "+string(momentumDeck[i, 0])+" invalid or is not made for the momentum deck")
 			return false;
 		}
-		cardCounter[momentumDeck[i, CardNumber]]++		
+		cardCounter[momentumDeck[i, 0]]++		
 		file_text_readln(file);
-		momentumDeck[i, ArtNumber] = file_text_read_real(file);
-		if (momentumDeck[i, ArtNumber] >= macros.sprite_count[momentumDeck[i, CardNumber]]){
-			show_debug_message("Sprite number "+string(momentumDeck[i, ArtNumber])+" for "+ string(momentumDeck[i, CardNumber])+" is invalid")
+		momentumDeck[i, 1] = file_text_read_real(file);
+		if (momentumDeck[i, 1] >= macros.sprite_count[momentumDeck[i, 0]]){
+			show_debug_message("Sprite number "+string(momentumDeck[i, 1])+" for "+ string(momentumDeck[i, 0])+" is invalid")
 			return false;
 		}		
 		file_text_readln(file);		

@@ -1,16 +1,17 @@
 function scr_on_mana_summon(cardNum) {
-	if (scr_check_archetype(cardNum, ArcVisclades) && obj_player.selected_wheel == 2 && !obj_player.wheel_locked){
-		if(scr_legal_activation("WheelGain", 2, "Wheel")){
-			obj_player.resolutionPile[obj_player.resolutionPileCount,0] = cardNum
+	switch(obj_player.selected_wheel){
+		case 2://Visclades Wheel Gain Activation Trigger
+			if(!scr_check_archetype(cardNum, ArcVisclades)){return false}
+			if(!scr_legal_activation("WheelGain", 0, obj_player.selected_wheel)){return false}
+			obj_player.resolutionPile[obj_player.resolutionPileCount,0] = "WheelGain"
 			obj_player.resolutionPile[obj_player.resolutionPileCount,1] = 0
 			obj_player.resolutionPile[obj_player.resolutionPileCount,2] = 0
-			obj_player.resolutionPile[obj_player.resolutionPileCount,3] = "Wheel"
+			obj_player.resolutionPile[obj_player.resolutionPileCount,3] = obj_player.selected_wheel
 			obj_player.resolutionPile[obj_player.resolutionPileCount,4] = false
 			obj_player.resolutionPile[obj_player.resolutionPileCount,5] = cardStat[StatLevel]
-			obj_player.resolutionPileCount++
-		}
+			obj_player.resolutionPileCount++		
+		break;
 	}
-	if(cardStatus[StatusSilenced]){return;}
 	switch(cardNum){
 		case 2://Motorbiker Doppelganger Activation Trigger
 		case 21://Luvies Ing Field Effect Activation Trigger

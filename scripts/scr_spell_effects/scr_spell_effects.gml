@@ -37,17 +37,4 @@ function scr_spell_effects(cardNum) {
 			}
 		break;
 	}
-
-
-
-
-
-
-	if(global.effect_successful){
-		scr_message_last_action("Opponent activates "+macros.name[cardNum]);
-		scr_last_action("You activated "+macros.name[cardNum]);
-	}
-
-
-
 }

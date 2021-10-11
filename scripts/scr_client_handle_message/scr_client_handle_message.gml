@@ -38,7 +38,7 @@ function scr_client_handle_message(argument0) {
 					if(fieldCard[position] != noone){
 						fieldCard[position].animationType = animationType
 					}					
-					field[position, CardNumber] = cardNum;
+					field[position, 0] = cardNum;
 					field[position,1] = artNum;
 				}
 			break;
@@ -61,12 +61,12 @@ function scr_client_handle_message(argument0) {
 				with(opponentObject){
 					momentumDeckCount = buffer_read(buffer,buffer_u8);
 					for(var i = 0; i < momentumDeckCount; i++){
-						momentum_deck[i, CardNumber] = buffer_read(buffer, buffer_u32);
-						momentum_deck[i, ArtNumber] = buffer_read(buffer, buffer_u8);
+						momentum_deck[i, 0] = buffer_read(buffer, buffer_u32);
+						momentum_deck[i, 1] = buffer_read(buffer, buffer_u8);
 					}
 					for(var i = momentumDeckCount; i < 15; i++){
-						momentum_deck[i, CardNumber] = 0;
-						momentum_deck[i, ArtNumber] = 0;
+						momentum_deck[i, 0] = 0;
+						momentum_deck[i, 1] = 0;
 					}
 				}
 			break;		
@@ -93,7 +93,7 @@ function scr_client_handle_message(argument0) {
 					for(var i = 0; i < macros.status_count/*buffer_read(buffer, buffer_u8)*/; i++){//Statuses
 						fieldCard[field_location].cardStatus[i] = buffer_read(buffer, buffer_bool)
 					}
-					//TODO: Change Bool to u8
+					//TODO: Change Bool to u8 in the server
 					fieldCard[field_location].attacksLeft = buffer_read(buffer, buffer_bool );//Can it attack?
 				}
 			break;
@@ -101,12 +101,12 @@ function scr_client_handle_message(argument0) {
 				with(opponentObject){
 					deckCount = buffer_read(buffer,buffer_u8);
 					for(var i = 0; i < deckCount; i++){
-						deck[i, CardNumber] = buffer_read(buffer, buffer_u32);
-						deck[i, ArtNumber] = buffer_read(buffer, buffer_u8);
+						deck[i, 0] = buffer_read(buffer, buffer_u32);
+						deck[i, 1] = buffer_read(buffer, buffer_u8);
 					}
 					for(var i = deckCount; i < 100; i++){
-						deck[i, CardNumber] = 0;
-						deck[i, ArtNumber] = 0;
+						deck[i, 0] = 0;
+						deck[i, 1] = 0;
 					}
 				}		
 			break;
@@ -144,12 +144,12 @@ function scr_client_handle_message(argument0) {
 				with(obj_player){
 					deckCount = buffer_read(buffer,buffer_u8);
 					for(var i = 0; i < deckCount; i++){
-						deck[i, CardNumber] = buffer_read(buffer, buffer_u32);
-						deck[i, ArtNumber] = buffer_read(buffer, buffer_u8);
+						deck[i, 0] = buffer_read(buffer, buffer_u32);
+						deck[i, 1] = buffer_read(buffer, buffer_u8);
 					}
 					for(var i = deckCount; i < 100; i++){
-						deck[i, CardNumber] = 0;
-						deck[i, ArtNumber] = 0;
+						deck[i, 0] = 0;
+						deck[i, 1] = 0;
 					}
 				}
 			break;
@@ -185,7 +185,7 @@ function scr_client_handle_message(argument0) {
 					if(fieldCard[position] != noone){
 						fieldCard[position].animationType = animationType
 					}					
-					field[position, CardNumber] = cardNum;
+					field[position, 0] = cardNum;
 					field[position,1] = artNum;
 				}
 			break;
@@ -193,12 +193,12 @@ function scr_client_handle_message(argument0) {
 				with(obj_player){
 					momentumDeckCount = buffer_read(buffer,buffer_u8);
 					for(var i = 0; i < momentumDeckCount; i++){
-						momentum_deck[i, CardNumber] = buffer_read(buffer, buffer_u32);
-						momentum_deck[i, ArtNumber] = buffer_read(buffer, buffer_u8);
+						momentum_deck[i, 0] = buffer_read(buffer, buffer_u32);
+						momentum_deck[i, 1] = buffer_read(buffer, buffer_u8);
 					}
 					for(var i = momentumDeckCount; i < 15; i++){
-						momentum_deck[i, CardNumber] = 0;
-						momentum_deck[i, ArtNumber] = 0;
+						momentum_deck[i, 0] = 0;
+						momentum_deck[i, 1] = 0;
 					}
 				}
 			break;

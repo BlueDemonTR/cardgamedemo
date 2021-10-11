@@ -32,7 +32,7 @@ switch (current_function){
 					scr_message_opponent_stats();	
 					with(attacker){scr_on_pierce(attacker.cardNum);}
 				}
-				if(cardHP <= 0){
+				if(cardStat[StatHP] <= 0){
 					with(attacker){
 						destroyedMonster = attacked.cardNum;
 						scr_destroys_by_battle(cardNum, destroyedMonster);
@@ -48,13 +48,11 @@ switch (current_function){
 					scr_message_stats();
 					with(attacked){scr_on_pierce(attacked.cardNum);}
 				}
-				if(cardHP > 0){scr_after_attack(cardNum)}
+				if(cardStat[StatHP] > 0){scr_after_attack(cardNum)}
 			}
 		}else{
 			attacked.cardStat[StatDodge]--;
 		}
-		scr_message_last_action(macros.name[attacker.cardNum] +" attacks " +macros.name[attacked.cardNum]);
-		scr_last_action(macros.name[attacker.cardNum] +" attacks " +macros.name[attacked.cardNum]);
 		scr_message_field_card_stats(effectBelongsToLocation);
 		scr_message_opponent_field_card_stats(field_location);	
 		with(obj_appropiate_targets){
@@ -91,8 +89,6 @@ switch (current_function){
 			scr_after_attack(cardNum);
 			scr_message_field_card_stats(position)
 		}
-		scr_message_last_action(macros.name[attacker.cardNum] +" attacks directly");
-		scr_last_action(macros.name[attacker.cardNum] +" attacks directly");
 		scr_message_stats();
 		scr_message_opponent_stats();
 		with(obj_appropiate_targets){

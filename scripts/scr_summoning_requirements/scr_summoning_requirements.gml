@@ -8,8 +8,8 @@ function scr_summoning_requirements(argument0) {
 		motorbikers = 0;
 	
 		for(var i=0; i < 4; i++){
-			if (field[i, CardNumber] > 0){
-				if (fieldCard[i].cardStat[StatLevel]< macros.origStat[cardNum, StatLevel] && scr_check_archetype(field[i, CardNumber],1)){
+			if (field[i, 0] > 0){
+				if (fieldCard[i].cardStat[StatLevel]< macros.origStat[cardNum, StatLevel] && scr_check_archetype(field[i, 0],1)){
 					motorbikers++;
 					levelSum += fieldCard[i].cardStat[StatLevel];
 				}
@@ -30,11 +30,11 @@ function scr_summoning_requirements(argument0) {
 		motorbikers = 0,
 		motorbiker_leader=false;
 		for(var i=0; i < 4; i++){
-			if (field[i, CardNumber] > 0){
-				if (fieldCard[i].cardStat[StatLevel]< macros.origStat[cardNum, StatLevel] && scr_check_archetype(field[i, CardNumber],11)){
+			if (field[i, 0] > 0){
+				if (fieldCard[i].cardStat[StatLevel]< macros.origStat[cardNum, StatLevel] && scr_check_archetype(field[i, 0],11)){
 					motorbikers++;
 					levelSum += fieldCard[i].cardStat[StatLevel];
-					if (scr_check_archetype(field[i, CardNumber], 2)){
+					if (scr_check_archetype(field[i, 0], 2)){
 						motorbiker_leader= true;
 					}
 				}
@@ -57,8 +57,8 @@ function scr_summoning_requirements(argument0) {
 		var levelSum = 0,
 		visclades = 0;
 		for(var i=0; i < 4; i++){
-			if (field[i, CardNumber] > 0){
-				if (fieldCard[i].cardStat[StatLevel] < macros.origStat[cardNum, StatLevel] && scr_check_archetype(field[i, CardNumber], 3)){
+			if (field[i, 0] > 0){
+				if (fieldCard[i].cardStat[StatLevel] < macros.origStat[cardNum, StatLevel] && scr_check_archetype(field[i, 0], 3)){
 					
 					visclades++;
 					levelSum += fieldCard[i].cardStat[StatLevel];
@@ -80,15 +80,15 @@ function scr_summoning_requirements(argument0) {
 		poleclan = 0,
 		igloo_present = false;
 		for(var i=0; i < 4; i++){
-			if (field[i, CardNumber] > 0){
+			if (field[i, 0] > 0){
 				if(fieldCard[i].cardStat[StatLevel] < macros.origStat[cardNum, StatLevel]){
-					if (scr_check_archetype(field[i, CardNumber], 4)){
+					if (scr_check_archetype(field[i, 0], 4)){
 						poleclan++;
 					}
-					if (macros.name[field[i, CardNumber]] == "Igloo"){
+					if (macros.name[field[i, 0]] == "Igloo"){
 						igloo_present=true;
 					}
-					if (macros.name[field[i, CardNumber]] == "Igloo" || scr_check_archetype(field[i, CardNumber], 4)){
+					if (macros.name[field[i, 0]] == "Igloo" || scr_check_archetype(field[i, 0], 4)){
 						levelSum += fieldCard[i].cardStat[StatLevel];
 					}
 				}
@@ -116,15 +116,15 @@ function scr_summoning_requirements(argument0) {
 		poleclan = 0,
 		igloo_present = false;
 		for(var i=0; i < 4; i++){
-			if (field[i, CardNumber] > 0){
+			if (field[i, 0] > 0){
 				if(fieldCard[i].cardStat[StatLevel] < macros.origStat[cardNum, StatLevel]){
-					if (scr_check_archetype(field[i, CardNumber], 4)){
+					if (scr_check_archetype(field[i, 0], 4)){
 						poleclan++;
 					}
-					if (macros.name[field[i, CardNumber]] == "Igloo Castle"){
+					if (macros.name[field[i, 0]] == "Igloo Castle"){
 						igloo_present=true;
 					}
-					if (macros.name[field[i, CardNumber]] == "Igloo Castle" || scr_check_archetype(field[i, CardNumber], 4)){
+					if (macros.name[field[i, 0]] == "Igloo Castle" || scr_check_archetype(field[i, 0], 4)){
 						levelSum += fieldCard[i].cardStat[StatLevel];
 					}
 				}
@@ -153,15 +153,15 @@ function scr_summoning_requirements(argument0) {
 		poleclan = 0,
 		igloo_present = false;
 		for(var i=0; i < 4; i++){
-			if (field[i, CardNumber] > 0){
+			if (field[i, 0] > 0){
 				if(fieldCard[i].cardStat[StatLevel] < macros.origStat[cardNum, StatLevel]){
-					if (scr_check_archetype(field[i, CardNumber], "Pole Clan")){
+					if (scr_check_archetype(field[i, 0], "Pole Clan")){
 						poleclan++;
 					}
-					if (name[field[i, CardNumber]] == "Igloo Citadel"){
+					if (name[field[i, 0]] == "Igloo Citadel"){
 						igloo_present=true;
 					}
-					if (name[field[i, CardNumber]] == "Igloo Citadel" || scr_check_archetype(field[i, CardNumber], "Pole Clan")){
+					if (name[field[i, 0]] == "Igloo Citadel" || scr_check_archetype(field[i, 0], "Pole Clan")){
 						levelSum += fieldCard[i].cardStat[StatLevel];
 					}
 				}
@@ -187,7 +187,7 @@ function scr_summoning_requirements(argument0) {
 	else if(cardNum == 70){
 		var levelSum = 0;
 		for(var i=0; i < 4; i++){
-			if (field[i, CardNumber] > 0){
+			if (field[i, 0] > 0){
 				if(fieldCard[i].cardStat[StatLevel] < macros.origStat[cardNum,StatLevel]){
 					levelSum += fieldCard[i].cardStat[StatLevel]
 				}
@@ -206,15 +206,15 @@ function scr_summoning_requirements(argument0) {
 		var levelSum = 0,
 		sacrifices = 0;
 		for(var i=0; i < 4; i++){
-			if (field[i, CardNumber] > 0){
-				if(fieldCard[i].cardStat[StatLevel] < macros.origStat[cardNum, StatLevel] && scr_check_archetype(field[i, CardNumber],"Sacrifice")){
+			if (field[i, 0] > 0){
+				if(fieldCard[i].cardStat[StatLevel] < macros.origStat[cardNum, StatLevel] && scr_check_archetype(field[i, 0],"Sacrifice")){
 					levelSum += fieldCard[i].cardStat[StatLevel]
 					sacrifices++
 				}
 			}
 		}
 		if (field[4,0] > 0){
-			if(fieldCard[i].cardStat[StatLevel] < macros.origStat[cardNum, StatLevel] && scr_check_archetype(field[i, CardNumber],"Sacrifice")){
+			if(fieldCard[i].cardStat[StatLevel] < macros.origStat[cardNum, StatLevel] && scr_check_archetype(field[i, 0],"Sacrifice")){
 					levelSum += fieldCard[i].cardStat[StatLevel]
 					sacrifices++
 			}else{mmzOccupied = true;}
@@ -228,11 +228,11 @@ function scr_summoning_requirements(argument0) {
 		fishes = 0,
 		fisherman =false;
 		for(var i=0; i < 4; i++){
-			if (field[i, CardNumber] > 0){
-				if (fieldCard[i].cardStat[StatLevel] < macros.origStat[cardNum, StatLevel] && scr_check_archetype(field[i, CardNumber],"Fish")){
+			if (field[i, 0] > 0){
+				if (fieldCard[i].cardStat[StatLevel] < macros.origStat[cardNum, StatLevel] && scr_check_archetype(field[i, 0],"Fish")){
 					fishes++;
 					levelSum += fieldCard[i].cardStat[StatLevel];
-					if (scr_check_archetype(field[i, CardNumber], 9)){
+					if (scr_check_archetype(field[i, 0], 9)){
 						fisherman= true;
 					}
 				}
@@ -257,8 +257,8 @@ function scr_summoning_requirements(argument0) {
 		x_makines = 0;
 		
 		for(var i=0; i < 4; i++){
-			if (field[i, CardNumber] > 0){
-				if (fieldCard[i].cardStat[StatLevel] < macros.origStat[cardNum,StatLevel] && scr_check_archetype(field[i, CardNumber],11)){
+			if (field[i, 0] > 0){
+				if (fieldCard[i].cardStat[StatLevel] < macros.origStat[cardNum,StatLevel] && scr_check_archetype(field[i, 0],11)){
 					x_makines++;
 					levelSum += fieldCard[i].cardStat[StatLevel];
 				}

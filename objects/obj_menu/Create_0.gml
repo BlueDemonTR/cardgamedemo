@@ -1,5 +1,4 @@
 menuselect = 0;
-global.came_from_editor=false;
 x= 750;
 
 menu_button[0] = spr_menu_button_off

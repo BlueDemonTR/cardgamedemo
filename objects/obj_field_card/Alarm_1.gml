@@ -7,8 +7,3 @@ switch(summoning_method){
 		scr_on_impact_summon(cardNum)
 	break;
 }
-switch(cardNum){
-	case 90:
-		mtpt = 3
-	break;
-}

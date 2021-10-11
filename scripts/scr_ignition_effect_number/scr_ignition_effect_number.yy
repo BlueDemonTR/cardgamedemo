@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Activation Triggers",
-    "path": "folders/Scripts/Effects/Activation Triggers.yy",
+    "name": "Filters and Limiters",
+    "path": "folders/Scripts/Effects/Filters and Limiters.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_end_phase_effect",
+  "name": "scr_ignition_effect_number",
   "tags": [],
   "resourceType": "GMScript",
 }

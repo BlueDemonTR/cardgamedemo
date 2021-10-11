@@ -1,7 +1,7 @@
 function scr_summon_from_deck(deckPos, summonZone){
 	var
-	cardNum = deck[deckPos, CardNumber],
-	artNum = deck[deckPos, ArtNumber];
+	cardNum = deck[deckPos, 0],
+	artNum = deck[deckPos, 1];
 	
 	scr_shuffle_deck(player)
 	

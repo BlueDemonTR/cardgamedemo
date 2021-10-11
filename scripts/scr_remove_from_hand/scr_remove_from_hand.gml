@@ -1,5 +1,5 @@
 function scr_remove_from_hand(player, position){
-	if(!player.hand[position, CardNumber]){
+	if(!player.hand[position, 0]){
 		return false;
 	}
 	

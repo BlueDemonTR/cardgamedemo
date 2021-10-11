@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Initialization",
-    "path": "folders/Scripts/Initialization.yy",
+    "name": "Activation Triggers",
+    "path": "folders/Scripts/Effects/Activation Triggers.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_monster_has_activatable_effects",
+  "name": "scr_on_stat_change",
   "tags": [],
   "resourceType": "GMScript",
 }

@@ -5,7 +5,7 @@ if (x > 435 && x < 1460){
 			activation[0] = instance_create_depth(x,y,depth-1,obj_activation_box);
 			with(activation[0]){
 				activation_mode="Hand Effect";
-				origin_card_location=hand_position;
+				position = hand_position;
 			}
 		}
 	}

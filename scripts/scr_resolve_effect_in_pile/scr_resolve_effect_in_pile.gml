@@ -6,6 +6,15 @@ function scr_resolve_effect_in_pile(positionInOrder){
 	effectSilenced = resolvingPile[positionInOrder,4];
 	
 	switch(cardNum){
+		case "SelfDestruct"://Status Self Destruct Effect
+			scr_destroy(player, position, 1);
+		break;
+		case "Regeneration"://Stat Regeneration Effect
+			scr_heal_card(player, position, 3);
+		break;
+		case "Poison"://Status Poison Effect
+			scr_damage_card(player, position, 1);
+		break;
 		case "WheelGain":
 			switch(position){
 				case 1://Motorbiker Wheel Gain Effect
@@ -41,7 +50,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 			switch(position){
 				case 1://Motorbiker Wheel
 					switch(effectNum){
-						case 1:
+						case 0:
 							if(!effectSilenced){
 								switch(resolutionStep){
 									case 1:
@@ -62,11 +71,12 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								FinishResolving
 							}
 							if(resolutionStep = 98){
+								wheel_opt[effectNum] = true
 								//TODO: Wheel Once per turn
 								resolvingPile[positionInOrder,2] = 99
 							}
 						break;
-						case 2:
+						case 1:
 							if(!effectSilenced){
 								switch(resolutionStep){
 									case 1:
@@ -88,7 +98,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								resolvingPile[positionInOrder,2] = 99
 							}
 						break;
-						case 3:
+						case 2:
 							if(!effectSilenced){
 								switch(resolutionStep){
 									case 1:
@@ -111,7 +121,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								resolvingPile[positionInOrder,2] = 99
 							}
 						break;
-						case 4:
+						case 3:
 							if(!effectSilenced){
 								switch(resolutionStep){
 									case 1:
@@ -139,7 +149,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				break;
 				case 2://Visclades Wheel
 					switch(effectNum){
-						case 1:
+						case 0:
 							if(!effectSilenced){
 								switch(resolutionStep){
 									case 1:
@@ -158,7 +168,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								resolvingPile[positionInOrder,2] = 99
 							}
 						break;
-						case 2:
+						case 1:
 							if(!effectSilenced){
 								switch(resolutionStep){
 									case 1:
@@ -181,7 +191,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								resolvingPile[positionInOrder,2] = 99
 							}
 						break;
-						case 3:
+						case 2:
 							if(!effectSilenced){
 								switch(resolutionStep){
 									case 1:
@@ -203,7 +213,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								resolvingPile[positionInOrder,2] = 99
 							}
 						break;
-						case 4:
+						case 3:
 							if(!effectSilenced){
 								switch(resolutionStep){
 									case 1:
@@ -216,7 +226,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 									case 4:
 										resolvingPile[positionInOrder, 7] = 0
-										scr_choose_field_zones(true, false, false, true, false, 7)
+										scr_choose_field_zones([player], false, true, false, 7)
 									break;
 									case 6:
 										scr_summon_from_infirmary(resolvingPile[positionInOrder, 6], resolvingPile[positionInOrder, 5], resolvingPile[positionInOrder, 7])
@@ -234,7 +244,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				break;
 				case 3://Pole Clan Wheel
 					switch(effectNum){
-						case 1:
+						case 0:
 							if(!effectSilenced){
 								switch(resolutionStep){
 									case 1:
@@ -255,7 +265,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 									case 5:
 										resolvingPile[positionInOrder, 7] = 0
-										scr_choose_field_zones(true, false, false, true, false, 7)
+										scr_choose_field_zones([player], false, true, false, 7)
 										NextStep
 									break;
 									case 7:
@@ -274,7 +284,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								resolvingPile[positionInOrder,2] = 99
 							}
 						break;
-						case 2:
+						case 1:
 							if(!effectSilenced){
 								switch(resolutionStep){
 									case 1:
@@ -287,7 +297,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 									case 4:
 										resolvingPile[positionInOrder, 6] = 0
-										scr_choose_field_zones(true, false, false, true, false, 6)
+										scr_choose_field_zones([player], false, true, false, 6)
 										NextStep
 									break;
 									case 6:
@@ -302,7 +312,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								resolvingPile[positionInOrder,2] = 99
 							}
 						break;
-						case 3:
+						case 2:
 							if(!effectSilenced){
 								switch(resolutionStep){
 									case 1:
@@ -324,7 +334,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								resolvingPile[positionInOrder,2] = 99
 							}
 						break;
-						case 4:
+						case 3:
 							if(!effectSilenced){
 								switch(resolutionStep){
 									case 1:
@@ -352,9 +362,9 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						break;
 					}
 				break;
-				case 4://Sacrifice Wheel
+				case 4://Sacrifice Wheel Effects
 					switch(effectNum){
-						case 1:
+						case 0:
 							if(!effectSilenced){
 								switch(resolutionStep){
 									case 1:
@@ -378,7 +388,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								resolvingPile[positionInOrder,2] = 99
 							}
 						break;
-						case 2:
+						case 1:
 							if(!effectSilenced){
 								switch(resolutionStep){
 									case 1:
@@ -402,7 +412,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								resolvingPile[positionInOrder,2] = 99
 							}
 						break;
-						case 3:
+						case 2:
 							if(!effectSilenced){
 								switch(resolutionStep){
 									case 1:
@@ -424,7 +434,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								resolvingPile[positionInOrder,2] = 99
 							}
 						break;
-						case 4:
+						case 3:
 							if(!effectSilenced){
 								switch(resolutionStep){
 									case 1:
@@ -432,7 +442,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 										NextStep
 									break;
 									case 2:
-										scr_give_player_stats(player, 0, 0, maxmana, 0)
+										scr_give_player_stats(player, 0, 0, maxMana, 0)
 										FinishResolving
 									break;
 									
@@ -448,7 +458,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				break;
 				case 5://Fisherman Wheel
 					switch(effectNum){
-						case 1:
+						case 0:
 							if(!effectSilenced){
 								switch(resolutionStep){
 									case 1:
@@ -472,7 +482,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								resolvingPile[positionInOrder,2] = 99
 							}
 						break;
-						case 2:
+						case 1:
 							if(!effectSilenced && player.handCount < 5){
 								switch(resolutionStep){
 									case 1:
@@ -491,7 +501,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								resolvingPile[positionInOrder,2] = 99
 							}
 						break;
-						case 3:
+						case 2:
 							if(!effectSilenced){
 								switch(resolutionStep){
 									case 1:
@@ -513,7 +523,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								resolvingPile[positionInOrder,2] = 99
 							}
 						break;
-						case 4:
+						case 3:
 							if(!effectSilenced){
 								switch(resolutionStep){
 									case 1:
@@ -522,7 +532,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 									case 2:
 										resolvingPile[positionInOrder, 5] = 0
-										scr_choose_field_zones(true, false, false, true, false, 5)
+										scr_choose_field_zones([player], false, true, false, 5)
 										NextStep
 									break;
 									case 4:
@@ -542,7 +552,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				break;
 				case 6://Classic Wheel v1.0 //TODO: Complete
 					switch(effectNum){
-						case 1:
+						case 0:
 							if(!effectSilenced){
 								switch(resolutionStep){
 									case 1:
@@ -566,7 +576,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								resolvingPile[positionInOrder,2] = 99
 							}
 						break;
-						case 2:
+						case 1:
 							if(!effectSilenced){
 								switch(resolutionStep){
 									case 1:
@@ -582,11 +592,11 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								FinishResolving
 							}
 							if(resolutionStep = 98){
-								//TODO Wheel Opt
+								wheel_opt[effectNum] = true
 								resolvingPile[positionInOrder,2] = 99
 							}
 						break;
-						case 3:
+						case 2:
 							if(!effectSilenced){
 								switch(resolutionStep){
 									case 1:
@@ -608,7 +618,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								resolvingPile[positionInOrder,2] = 99
 							}
 						break;
-						case 4:
+						case 3:
 							if(!effectSilenced){
 								switch(resolutionStep){
 									case 1:
@@ -634,9 +644,9 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						break;
 					}
 				break;
-				case 7://X-Makine Heat Meter //TODO
+				case 7://X-Makine Heat Meter
 					switch(effectNum){
-						case 1:
+						case 0:
 							if(!effectSilenced && momentum = 3){
 								switch(resolutionStep){
 									case 1:
@@ -659,7 +669,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								resolvingPile[positionInOrder,2] = 99
 							}
 						break;
-						case 2:
+						case 1:
 							if(!effectSilenced){
 								switch(resolutionStep){
 									case 1:
@@ -678,7 +688,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								resolvingPile[positionInOrder,2] = 99
 							}
 						break;
-						case 3:
+						case 2:
 							if(!effectSilenced){
 								switch(resolutionStep){
 									case 1:
@@ -700,7 +710,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								resolvingPile[positionInOrder,2] = 99
 							}
 						break;
-						case 4:
+						case 3:
 							if(!effectSilenced){
 								switch(resolutionStep){
 									case 1:
@@ -748,7 +758,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							break;
 							case 3:
 								resolvingPile[positionInOrder,6] = -1
-								scr_choose_field_zones(true, false, false, true, false, 6);
+								scr_choose_field_zones([player], false, true, false, 6);
 								NextStep
 							break;
 							case 5:
@@ -782,7 +792,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,5] = 0
-								scr_choose_field_zones(true, false, false, true, false, 5);
+								scr_choose_field_zones([player], false, true, false, 5);
 								NextStep
 							break;
 							case 3:
@@ -815,7 +825,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				case 0:
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){
 						for(var i=0; i < player.field_zone_count; i++){
-							if(scr_check_archetype(field[i, CardNumber], ArcMotorbiker)){
+							if(scr_check_archetype(field[i, 0], ArcMotorbiker)){
 									scr_buff_card(player, i, 0, 1, 0, 0, 0, 0, 0);
 							}
 						}
@@ -829,8 +839,8 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				case 0:
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){
 						for(var i = 0; i < 5; i++){
-							if(field[i, CardNumber]> 0){
-								if(scr_check_archetype(field[i, CardNumber], ArcMotorbiker)){
+							if(field[i, 0]> 0){
+								if(scr_check_archetype(field[i, 0], ArcMotorbiker)){
 									scr_buff_card(player, i, 0, 0, 1, 1, 0, 0, 0);
 								}
 							}
@@ -859,7 +869,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				case 0:
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){
 						for(var i = 0; i < player.field_zone_count; i++){
-							if(scr_check_archetype(field[i, CardNumber], ArcMotorbiker)){
+							if(scr_check_archetype(field[i, 0], ArcMotorbiker)){
 								scr_buff_card(player, i, 0, 0, 0, 0, 1, 0, 0);
 							}
 						}
@@ -913,7 +923,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							break;
 							case 4:
 								resolvingPile[positionInOrder,7] = 0
-								scr_choose_field_zones(true, false, false, false, true, 7);
+								scr_choose_field_zones([player], false, false, true, 7);
 								NextStep
 							break;
 							case 6:
@@ -954,7 +964,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							break;
 							case 3:
 								resolvingPile[positionInOrder, 6] = 0
-								scr_choose_field_zones(true, false, false, true, false, 6);
+								scr_choose_field_zones([player], false, true, false, 6);
 								NextStep
 							break;
 							case 5:
@@ -1029,7 +1039,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					}
 					if(resolutionStep = 98){
 						resolvingPile[positionInOrder,2] = 99
-						player.fieldCard[position].opt_used = true
+						//TODO: scr_decrease_used_effect
 					}							
 				break;
 			}
@@ -1114,18 +1124,14 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							break;
 							case 2:
 								resolvingPile[positionInOrder, 8] = 0
-								scr_choose_field_zones(true, false, false, true, true, 8);
+								scr_choose_field_zones([player], false, true, true, 8);
 								NextStep
 							break;
 							case 4:
-								with(scr_summon(resolvingPile[positionInOrder,5], resolvingPile[positionInOrder, 7], player, "effect", "opponentInfirmaryToField", resolvingPile[positionInOrder, 8])){
+								with(scr_summon([resolvingPile[positionInOrder,5], resolvingPile[positionInOrder, 7]], player, "effect", "opponentInfirmaryToField", resolvingPile[positionInOrder, 8])){
 									scr_silence(player, self.position);
-									cardStatus[StatusParalyzed] = true;
-									if(player == obj_player){
-										scr_message_field_card_stats(position);
-									}else if(player == obj_opponent){
-										scr_message_opponent_field_card_stats(position);
-									}
+									scr_paralyze(player, self.position);
+									scr_decide_field_card_stats(player, self.position);
 								}
 								FinishResolving
 							break;
@@ -1214,7 +1220,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				case 0:
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){
 						for(var i=0; i < 5; i++){
-							if (opponent.field[i, CardNumber] > 0){
+							if (opponent.field[i, 0] > 0){
 								scr_damage_card(opponent, i, 1);
 							}
 						}
@@ -1238,7 +1244,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							break;
 							case 3:
 								resolvingPile[positionInOrder, 6] = 0
-								scr_choose_field_zones(true, false, false, false, true, 6);
+								scr_choose_field_zones([player], false, false, true, 6);
 								NextStep
 							break;
 							case 5:
@@ -1270,7 +1276,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							break;
 							case 3:
 								resolvingPile[positionInOrder, 6] = 0
-								scr_choose_field_zones(true, false, false, true, false, 6);
+								scr_choose_field_zones([player], false, true, false, 6);
 								NextStep							
 							break;
 							case 5:
@@ -1356,12 +1362,12 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						scr_burn(obj_player,2,cardNum);
 						scr_burn(obj_opponent,2,cardNum);
 						for(var i = 0; i < 5; i++){
-							if(obj_player.field[i, CardNumber] > 0){
+							if(obj_player.field[i, 0] > 0){
 								scr_damage_card(obj_player, i, 2)
 							}
 						}
 						for(var i = 0; i < 5; i++){
-							if(obj_opponent.field[i, CardNumber] > 0){
+							if(obj_opponent.field[i, 0] > 0){
 								scr_damage_card(obj_opponent, i, 2)
 							}
 						}					
@@ -1385,7 +1391,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				case 0:
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){
 						for(var i = 0; i < 5; i++){
-							if(obj_opponent.field[i, CardNumber] > 0){
+							if(obj_opponent.field[i, 0] > 0){
 								if(!obj_opponent.fieldCard[i].cardStatus[StatusImmune]){
 									obj_opponent.fieldCard[i].cardStatus[StatusUnarmed] = true;
 									scr_message_opponent_field_card_stats(i);
@@ -1425,7 +1431,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,5] = -1
-								scr_choose_field_zones(true, false, false, true, false, 5);
+								scr_choose_field_zones([player], false, true, false, 5);
 								NextStep
 							break;
 							case 3:
@@ -1725,7 +1731,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							break;
 							case 3:
 								resolvingPile[positionInOrder, 6] = 0
-								scr_choose_field_zones(true, false, false, true, false, 6);
+								scr_choose_field_zones([player], false, true, false, 6);
 								NextStep
 							break;
 							case 5:
@@ -1764,7 +1770,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,5] = 0
-								scr_choose_field_zones(true, false, false, true, false, 5);
+								scr_choose_field_zones([player], false, true, false, 5);
 								NextStep
 							break;
 							case 3:
@@ -1773,7 +1779,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							break;
 							case 4:
 								resolvingPile[positionInOrder,6] = 0
-								scr_choose_field_zones(true, false, false, true, false, 6);
+								scr_choose_field_zones([player], false, true, false, 6);
 								NextStep
 							break;
 							case 6:
@@ -1831,7 +1837,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							break;
 							case 3:
 								resolvingPile[positionInOrder, 6] = 0
-								scr_choose_field_zones(true, false, false, true, false, 6)
+								scr_choose_field_zones([player], false, true, false, 6)
 								NextStep
 							break;
 							case 5:
@@ -1962,7 +1968,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,5] = 0
-								scr_choose_field_zones(true, false, false, true, false, 5)
+								scr_choose_field_zones([player], false, true, false, 5)
 								NextStep
 							break;
 							case 3:
@@ -1992,7 +1998,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							case 3:
 								scr_discard(player, resolvingPile[positionInOrder,5])
 								resolvingPile[positionInOrder,6] = 0;
-								scr_choose_field_zones(true, false, false, true, false, 6)
+								scr_choose_field_zones([player], false, true, false, 6)
 								NextStep
 							break;
 							case 5:
@@ -2014,7 +2020,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				case 0://Summon
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){				
 						for (var i=0;i<5;i++){
-							if(player.field[i, CardNumber]==60){
+							if(player.field[i, 0]==60){
 								player.fieldCard[i].cardStatus[StatusIndestructable] = true;
 								scr_message_field_card_stats(i);
 							}
@@ -2026,7 +2032,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					if(!effectSilenced){				
 						if(!scr_if_you_control(61)){
 							for (var i=0;i<5;i++){
-								if(player.field[i, CardNumber]==60){
+								if(player.field[i, 0]==60){
 									player.fieldCard[i].cardStatus[StatusIndestructable] = false;
 									scr_message_field_card_stats(i);
 								}
@@ -2044,7 +2050,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,5] = 0
-								scr_choose_field_zones(true, false, false, true, false, 5)
+								scr_choose_field_zones([player], false, true, false, 5)
 								NextStep
 							break;
 							case 3:
@@ -2066,7 +2072,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				case 0://Summon
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){				
 						for (var i=0;i<5;i++){
-							if(player.field[i, CardNumber]==62){
+							if(player.field[i, 0]==62){
 								scr_buff_card(player, i, 0, 0, 3, 3, 0, 0, 0)
 								scr_message_field_card_stats(i);
 							}
@@ -2077,7 +2083,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				case 1://Destruction
 					if(!effectSilenced){				
 						for (var i=0;i<5;i++){
-							if(player.field[i, CardNumber]==62){
+							if(player.field[i, 0]==62){
 								scr_buff_card(player, i, 0, 3, 0, 0, 0, 0, 0)
 								scr_message_field_card_stats(i);
 							}
@@ -2319,7 +2325,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							break;
 							case 3:
 								resolvingPile[positionInOrder,6] = 0
-								scr_choose_field_zones(true, false, false, true, false, 6)
+								scr_choose_field_zones([player], false, true, false, 6)
 								NextStep
 							break;
 							case 5:
@@ -2373,7 +2379,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					if(!effectSilenced){				
 						var lowestLevel = 0;
 						for(var i = 0; i < player.field_zone_count; i++){
-							if(player.field[i, CardNumber] && scr_check_archetype(player.field[i, CardNumber], ArcSacrifice) && (lowestLevel == 0 || lowestLevel > player.fieldCard[i].cardStat[StatLevel])){
+							if(player.field[i, 0] && scr_check_archetype(player.field[i, 0], ArcSacrifice) && (lowestLevel == 0 || lowestLevel > player.fieldCard[i].cardStat[StatLevel])){
 								lowestLevel = player.fieldCard[i].cardStat[StatLevel]
 							}
 						}
@@ -2427,7 +2433,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								resolvingPile[positionInOrder,8] = reflectedMonster.cardStat[StatHP];
 								reflectedMonster.cardStatus[StatusUnarmed] = true
 								resolvingPile[positionInOrder,9] = 0;
-								scr_choose_field_zones(true, false, false, true, false, 9)
+								scr_choose_field_zones([player], false, true, false, 9)
 								NextStep
 							break;
 							case 5:
@@ -2453,7 +2459,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				case 0:
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){				
 						for(i = 0; i < player.field_zone_count; i++){
-							if(opponent.field[i, CardNumber]){
+							if(opponent.field[i, 0]){
 								scr_buff_card(opponent, i, 0, -1, -1, -1, 0, 0, 0)
 								scr_buff_card(player, position, 0, 2, 2, 2, 0, 0, 0)
 							}
@@ -2470,7 +2476,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,5] = 0
-								scr_choose_field_zones(true, false, false, true, false, 5)
+								scr_choose_field_zones([player], false, true, false, 5)
 								NextStep
 							break;
 							case 3:
@@ -2507,17 +2513,17 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 								}
 								if(randomResult < 90){
-									scr_choose_field_zones(true, false, false, true, false, 7);
+									scr_choose_field_zones([player], false, true, false, 7);
 									NextStep
 									break;
 								}
 								if(randomResult < 98){
-									scr_choose_field_zones(true, false, false, true, false, 7);
+									scr_choose_field_zones([player], false, true, false, 7);
 									resolvingPile[resolutionStep,2] = 6;
 									break;
 								}
 								resolvingPile[resolutionStep,6] = 86 //Goldfish
-								scr_choose_field_zones(true, false, false, true, false, 7);
+								scr_choose_field_zones([player], false, true, false, 7);
 								NextStep
 							break;
 							case 5:
@@ -2561,17 +2567,17 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 								}
 								if(randomResult < 60){
-									scr_choose_field_zones(true, false, false, true, false, 7);
+									scr_choose_field_zones([player], false, true, false, 7);
 									NextStep
 									break;
 								}
 								if(randomResult < 95){
-									scr_choose_field_zones(true, false, false, true, false, 7);
+									scr_choose_field_zones([player], false, true, false, 7);
 									resolvingPile[resolutionStep,2] = 6;
 									break;
 								}
 								resolvingPile[resolutionStep,6] = 86//Goldfish
-								scr_choose_field_zones(true, false, false, true, false, 7);
+								scr_choose_field_zones([player], false, true, false, 7);
 								NextStep
 							break;
 							case 5:
@@ -2614,7 +2620,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 								}
 								if(randomResult < 90){
-									scr_choose_field_zones(true, false, false, true, false, 7);
+									scr_choose_field_zones([player], false, true, false, 7);
 									NextStep
 									break;
 								}
@@ -2670,7 +2676,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								
 								if(randomResult < 10){
 									for(var i = 0; i < player.field_zone_count; i++){
-										if(scr_check_archetype(player.field[i, CardNumber], ArcFish)){
+										if(scr_check_archetype(player.field[i, 0], ArcFish)){
 											player.fieldCard[i].cardStatus[StatusUnarmed] = true
 										}
 									}									
@@ -2678,17 +2684,17 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 								}
 								if(randomResult < 30){
-									scr_choose_field_zones(true, false, false, true, false, 7);
+									scr_choose_field_zones([player], false, true, false, 7);
 									NextStep
 									break;
 								}
 								if(randomResult < 90){
-									scr_choose_field_zones(true, false, false, true, false, 7);
+									scr_choose_field_zones([player], false, true, false, 7);
 									resolvingPile[resolutionStep,2] = 6;
 									break;
 								}
 								resolvingPile[resolutionStep,6] = 86 //Goldfish
-								scr_choose_field_zones(true, false, false, true, false, 7);
+								scr_choose_field_zones([player], false, true, false, 7);
 								resolvingPile[resolutionStep,2] = 8;
 							break;
 							case 5:
@@ -2699,7 +2705,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								with(scr_recruit(resolvingPile[resolutionStep,6], 0, resolvingPile[resolutionStep,7])){
 									cardStatus[StatusUnarmed] = true;
 								}
-								scr_choose_field_zones(true, false, false, true, false, 7);
+								scr_choose_field_zones([player], false, true, false, 7);
 								NextStep
 							break;
 							case 9:
@@ -2735,7 +2741,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								resolvingPile[resolutionStep,7] = 0
 								
 								if(randomResult < 30){
-									scr_choose_field_zones(true, false, false, true, false, 7);
+									scr_choose_field_zones([player], false, true, false, 7);
 									resolvingPile[resolutionStep, 2] = 8
 									break;
 								}
@@ -2745,36 +2751,36 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 								}
 								if(randomResult < 95){
-									scr_choose_field_zones(true, false, false, true, false, 7);
+									scr_choose_field_zones([player], false, true, false, 7);
 									NextStep
 									break;								
 								}
 								resolvingPile[resolutionStep,6] = 86
-								scr_choose_field_zones(true, false, false, true, false, 7);
+								scr_choose_field_zones([player], false, true, false, 7);
 								resolvingPile[resolutionStep, 2] = 8
 							break;
 							case 5:
 								scr_recruit(resolvingPile[resolutionStep,6], 0, resolvingPile[resolutionStep,7])
-								scr_choose_field_zones(true, false, false, true, false, 7);
+								scr_choose_field_zones([player], false, true, false, 7);
 								NextStep
 							break;
 							case 7:
 								scr_recruit(resolvingPile[resolutionStep,6], 0, resolvingPile[resolutionStep,7])
-								scr_choose_field_zones(true, false, false, true, false, 7);
+								scr_choose_field_zones([player], false, true, false, 7);
 								NextStep
 							break;
 							case 9:
 								scr_recruit(resolvingPile[resolutionStep,6], 0, resolvingPile[resolutionStep,7])
-								scr_choose_field_zones(true, false, false, true, false, 7);
+								scr_choose_field_zones([player], false, true, false, 7);
 								FinishResolving
 							break;
 							case 11:
-								scr_choose_field_zones(true, false, false, true, false, 8);
+								scr_choose_field_zones([player], false, true, false, 8);
 								NextStep
 							break;
 							case 13:
 								scr_summon_from_infirmary(player, resolvingPile[resolutionStep,7], resolvingPile[resolutionStep,8])
-								scr_choose_field_zones(true, false, false, true, false, 7);
+								scr_choose_field_zones([player], false, true, false, 7);
 								resolvingPile[resolutionStep, 2] = 8							
 							break;
 						}
@@ -2818,17 +2824,17 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 								}
 								if(randomResult < 90){
-									scr_choose_field_zones(true, false, false, true, false, 7);
+									scr_choose_field_zones([player], false, true, false, 7);
 									NextStep
 									break;
 								}
 								if(randomResult < 98){
-									scr_choose_field_zones(true, false, false, true, false, 7);
+									scr_choose_field_zones([player], false, true, false, 7);
 									resolvingPile[resolutionStep,2] = 6;
 									break;
 								}
 								resolvingPile[resolutionStep,6] = 86 //Goldfish
-								scr_choose_field_zones(true, false, false, true, false, 7);
+								scr_choose_field_zones([player], false, true, false, 7);
 								NextStep
 							break;
 							case 5:
@@ -2879,12 +2885,12 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 								}
 								if(randomResult < 95){
-									scr_choose_field_zones(true, false, false, true, false, 8);
+									scr_choose_field_zones([player], false, true, false, 8);
 									NextStep
 									break;
 								}
 								resolvingPile[resolutionStep,7] = 86 //Goldfish
-								scr_choose_field_zones(true, false, false, true, false, 8);
+								scr_choose_field_zones([player], false, true, false, 8);
 								NextStep
 							break;
 							case 6:
@@ -3268,7 +3274,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							break;
 							case 3:
 								resolvingPile[positionInOrder,6] = 0
-								scr_choose_field_zones(true, false, false, true, false, 6)
+								scr_choose_field_zones([player], false, true, false, 6)
 								NextStep
 							break;
 							case 5:
@@ -3337,7 +3343,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							break;
 							case 5:
 								resolvingPile[resolutionStep,6] = 0
-								scr_choose_field_zones(true, false, false, false, true, 5)
+								scr_choose_field_zones([player], false, false, true, 5)
 								NextStep
 							break;
 							case 7:

@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Game Functions",
-    "path": "folders/Scripts/Game Functions.yy",
+    "name": "Activation Triggers",
+    "path": "folders/Scripts/Effects/Activation Triggers.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_organize_deck_list",
+  "name": "scr_start_turn_effects",
   "tags": [],
   "resourceType": "GMScript",
 }

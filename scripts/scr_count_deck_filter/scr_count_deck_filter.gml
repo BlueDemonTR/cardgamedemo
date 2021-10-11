@@ -17,7 +17,7 @@ function scr_count_deck_filter(players, typeArray, minLevel, maxLevel, archetype
 		var player = players[i]
 		
 		for(var j = 0; j < player.deckCount; j++){
-			var cardNum = player.deck[i, CardNumber],
+			var cardNum = player.deck[i, 0],
 			cardStat = macros.origStat[cardNum];
 			
 			if(macros.card_type[cardNum] != TypeSpell && (cardStat[StatLevel] > maxLevel || cardStat[StatLevel] < minLevel)){

@@ -2,7 +2,7 @@ if(victory_state != 0 && alarm[6] == -1){
 	alarm[6] = 180
 }
 if(!instance_exists(obj_opponent)){return;}
-//if(initialization_done){return;}
+//TODO: if(initialization_done){return;} 
 
 if(start_turn && turn_count==0){
 	if(!(turn_count <= 2)){playerHP=playerMaxHP;}
@@ -10,21 +10,26 @@ if(start_turn && turn_count==0){
 	if (alarm[0] == -1){alarm[0]=1;}
 	turn_count++
 }
-if(start_turn && own_turn){
-	mana = 4;
+if(start_turn && own_turn && startTurnEffectsActivated){
+	mana = 4
 	scr_message_stats();
+	
 	scr_draw(player, 1, true);
 	
-	//TODO: scr_start_turn_effects
+	scr_start_turn_effects()
 	
-	start_turn = false
-	main_phase = true;
-	end_phase_effects_resolved = false;
+	startTurnEffectsActivated = true
 }
 
-if(end_phase && !end_phase_effects_resolved){
-	scr_end_phase_effect()
+if(start_turn && startTurnEffectsActivated && open_game_state){
+	start_turn = false
+	main_phase = true
+}
+
+if(end_phase && !endTurnEffectActivated){
+	scr_end_phase_effects()
 	scr_reset_limitations()
+	endTurnEffectActivated = true
 }
 
 if(!own_turn|| !open_game_state || obj_action_list.open_list){
@@ -49,15 +54,13 @@ if(resolvingPileCount){
 	resolutionPileCount = 0
 }
 
-
-
-for(i = 0; i < obj_player.field_zone_count; i++){
-	if(field[i, CardNumber] > 0 && fieldCard[i] == noone){
-		scr_message_field(i, field[i, CardNumber], field[i, ArtNumber], "none");
+for(i = 0; i < obj_player.field_zone_count; i++){//TODO, Rewrite
+	if(field[i, 0] > 0 && fieldCard[i] == noone){
+		scr_message_field(i, field[i, 0], field[i, 1], "none");
 		fieldCard[i] = instance_create_depth(field_card_zone_x[i],field_card_zone_y[i],1,obj_field_card);
 		var 
-		cardNum = field[i, CardNumber],
-		artNum = field[i, ArtNumber],
+		cardNum = field[i, 0],
+		artNum = field[i, 1],
 		sprite = macros.sprite_array[cardNum],
 		position = i;
 		with(fieldCard[i]){
@@ -83,13 +86,11 @@ if(playerHP<=0 && victory_state==0){
 	scr_message_game_lose();
 }
 
-
-for(i = 0; i < 5; i++){
-	if(field[i, CardNumber] == 0 && fieldCard[i] != noone){
+for(i = 0; i < 5; i++){//TODO: Rewrite
+	if(field[i, 0] == 0 && fieldCard[i] != noone){
 		with(fieldCard[i]){
 			instance_destroy();
 		}
 	}
 }
-
 if(end_phase && alarm[2] == -1){alarm[2]=10};

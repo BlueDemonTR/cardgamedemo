@@ -26,11 +26,11 @@ spellCount=0;
 momentumDeckCount=0;
 
 for(i = 0; i < 61; i++){
-	deck[i, CardNumber] = 0;
-	deck[i, ArtNumber] = 0;
+	deck[i, 0] = 0;
+	deck[i, 1] = 0;
 }
 for(i = 0; i < 8; i++){
-	momentumDeck[i, CardNumber] = 0;
-	momentumDeck[i, ArtNumber] = 0;
+	momentumDeck[i, 0] = 0;
+	momentumDeck[i, 1] = 0;
 }
 alarm[1] = 2

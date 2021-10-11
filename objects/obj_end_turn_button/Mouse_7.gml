@@ -1,6 +1,4 @@
-if(!obj_player.mid_effect && obj_player.own_turn && obj_player.main_phase){
-	scr_last_action("You ended your turn");
-	scr_message_last_action("Opponent ends their turn");
+if(open_game_state && obj_player.own_turn && obj_player.main_phase){
 	obj_player.main_phase = false;
 	obj_player.end_phase =true;
 }

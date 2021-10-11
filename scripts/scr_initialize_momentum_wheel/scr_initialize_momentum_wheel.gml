@@ -32,7 +32,7 @@ function scr_initialize_momentum_wheel() {
 	//Motorbiker wheel 1
 
 	wheel_name[i] = "Motorbiker Wheel v1.0";
-	momentum_gain[i] = "Everytime you deal damage by direct attacking with a ''Motorbiker'' monster, gain momentum equal to the damage";
+	momentum_gain[i] = "After you deal damage by direct attacking with a ''Motorbiker'' monster: gain momentum equal to the damage";
 	wheel_ability[i, 0] = "Once per turn, search a ''Motorbiker'' monster";
 	wheel_cost[i, 0] = 3;
 	wheel_ability[i, 1] = "IMPACT SUMMON (Impact summon a monster from the momentum deck using monsters you control as materials)";

@@ -3,7 +3,7 @@
 function scr_if_field_full(player){
 	with(player){
 		for(var i = 0; i < 4; i++){
-			if(player.field[i, CardNumber] == 0){
+			if(player.field[i, 0] == 0){
 				return false
 			}
 		}

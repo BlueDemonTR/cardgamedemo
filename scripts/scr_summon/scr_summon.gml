@@ -1,8 +1,8 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_summon(cardArray, player, summonType, animationType, summonZone){
-	var cardNum = cardArray[CardNumber],
-	artNum = cardArray[ArtNumber]
+	var cardNum = cardArray[0],
+	artNum = cardArray[1]
 	
 	if(scr_limited_summon(cardNum)){return;}
 	

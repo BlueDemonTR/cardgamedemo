@@ -3,10 +3,10 @@ function scr_mill_from_top(player, millCount){
 	
 	with(player){
 		for (var i = 0; i < millCount; i++){
-			var cardNum = deck[deckCount-1, CardNumber];
-			var artNum = deck[deckCount-1, ArtNumber];
-			deck[deckCount-1, CardNumber] = 0;
-			deck[deckCount-1, ArtNumber] = 0;
+			var cardNum = deck[deckCount-1, 0];
+			var artNum = deck[deckCount-1, 1];
+			deck[deckCount-1, 0] = 0;
+			deck[deckCount-1, 1] = 0;
 			deckCount--;
 			with(instance_create_depth(deck_x,deck_y,-1,card_animations)){
 				angle=0

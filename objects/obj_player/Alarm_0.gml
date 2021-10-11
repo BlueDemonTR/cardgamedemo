@@ -1,5 +1,5 @@
 if (handCount < 5){
-	scr_draw(1, true);
+	scr_draw(player, 1, true);
 	alarm[0] = 10;
 	return;
 }	

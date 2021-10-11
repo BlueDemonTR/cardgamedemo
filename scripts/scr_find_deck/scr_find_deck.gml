@@ -3,10 +3,11 @@
 function scr_find_deck(cardNum){
 	with(player){
 		for(var i = 0; i < deckCount; i++){
-			if(deck[i, CardNumber] == cardNum){
+			if(deck[i, 0] == cardNum){
 				return i;
 			}
 		}
 	}
 	if(object_index == obj_player){resolutionPile[resolutionPileCount-1,2] = 97}
+	return -1;
 }

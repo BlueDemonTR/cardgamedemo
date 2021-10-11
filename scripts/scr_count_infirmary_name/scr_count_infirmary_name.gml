@@ -3,7 +3,7 @@
 function scr_count_infirmary_name(player, cardNum, sendType){
 	var cardCount = 0;
 	for(var j = 0; j < player.infirmaryCount; j++){
-		if(player.infirmary[i, CardNumber] == cardNum && (player.infirmary[i, SendType] == sendType || "any" == destructionType)){
+		if(player.infirmary[i, 0] == cardNum && (player.infirmary[i, 2] == sendType || sendType == -1)){
 			cardCount++;
 		}
 	}

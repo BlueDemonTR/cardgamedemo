@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_ignition_field(player, position){
-	var cardNum = player.field[position, CardNumber]
+	var cardNum = player.field[position, 0]
 	switch(cardNum){
 		case 29://Visclades of Bargaining Ignition Check
 		case 47://Igloo Castle Ignition Check

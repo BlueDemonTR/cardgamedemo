@@ -1,5 +1,5 @@
 function scr_spin(player, position) {
-	var cardNum = player.field[position, CardNumber],
+	var cardNum = player.field[position, 0],
 	artNum = player.field[position,1];
 	
 	if(macros.card_type[cardNum] != TypeMomentum){

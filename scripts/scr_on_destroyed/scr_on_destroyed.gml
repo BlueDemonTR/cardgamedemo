@@ -1,4 +1,4 @@
-function scr_on_destroyed(cardNum, sendType){
+function scr_on_destroyed(cardNum, destroyType){
 	if(scr_check_shared(cardNum, SharedUnderworldVisclades)){
 		obj_player.resolutionPile[obj_player.resolutionPileCount,0] = "SharedUnderworldVisclades"
 		obj_player.resolutionPile[obj_player.resolutionPileCount,1] = 0

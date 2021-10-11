@@ -18,7 +18,7 @@ function scr_target_momentum_deck(players, minLevel, maxLevel, archetypeArray, s
 		var player = players[i]
 		
 		for(var j = 0; j < player.momentumDeckCount; j++){
-			var cardNum = player.momentumDeck[i, CardNumber],
+			var cardNum = player.momentumDeck[i, 0],
 			cardStat = macros.origStat[cardNum];
 			
 			if(macros.card_type[cardNum] != TypeSpell && (cardStat[StatLevel] > maxLevel || cardStat[StatLevel] < minLevel)){
@@ -45,7 +45,7 @@ function scr_target_momentum_deck(players, minLevel, maxLevel, archetypeArray, s
 			self.player = filteredCards[i, 0];
 			position = filteredCards[i, 1];
 			self.arrayPos = arrayPos
-			self.cardNum = self.player.momentumDeck[position, CardNumber];
+			self.cardNum = self.player.momentumDeck[position, 0];
 			artNum = self.player.momentumDeck[position,1];
 			current_function = "momentumDeck";
 		}

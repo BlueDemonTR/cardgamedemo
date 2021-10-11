@@ -3,7 +3,7 @@
 function scr_count_field(player){
 	var cardCount;
 	for (var i=0; i < player.field_zone_count; i++){
-		if(player.field[i, CardNumber] != 0){cardCount++;}
+		if(player.field[i, 0] != 0){cardCount++;}
 	}
 	return cardCount;
 }

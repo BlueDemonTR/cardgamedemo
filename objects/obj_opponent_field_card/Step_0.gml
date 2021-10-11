@@ -1,17 +1,17 @@
 if(cardStat[StatHP]<0){cardStat[StatHP]=0;}
 
-if(player.field[position, CardNumber] == 0){
+if(player.field[position, 0] == 0){
 	player.fieldCard[position] = noone;
 	instance_destroy();
 }
 if(obj_opponent.field[self.position,0] > 0 && cardNum != obj_opponent.field[self.position,0]){
 	var i = self.position;
 	with(obj_opponent){	
-		scr_message_opponent_field(i, field[i, CardNumber], field[i, ArtNumber],"none");
+		scr_message_opponent_field(i, field[i, 0], field[i, 1],"none");
 		fieldCard[i] = instance_create_depth(field_card_zone_x[i],field_card_zone_y[i],1,obj_opponent_field_card);
 		var 
-		tempCardNum = field[i, CardNumber],
-		tempArtNum = field[i, ArtNumber],
+		tempCardNum = field[i, 0],
+		tempArtNum = field[i, 1],
 		sprite = macros.sprite_array[tempCardNum,tempArtNum];
 		with(fieldCard[i]){
 			player = obj_opponent;

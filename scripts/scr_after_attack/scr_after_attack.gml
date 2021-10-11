@@ -2,7 +2,7 @@ function scr_after_attack(cardNum) {
 
 	if(scr_check_archetype(cardNum, ArcMotorbiker) && macros.card_type[cardNum] != TypeMomentum){
 		for (var i = 0; i < 5; i++){
-			if (player.field[i, CardNumber] == 15){//Motorbiker Leader Ceasar Activation
+			if (player.field[i, 0] == 15){//Motorbiker Leader Ceasar Activation
 				if(!scr_legal_activation(cardNum, 0, i)){continue}
 				obj_player.resolutionPile[obj_player.resolutionPileCount,0] = cardNum
 				obj_player.resolutionPile[obj_player.resolutionPileCount,1] = 0

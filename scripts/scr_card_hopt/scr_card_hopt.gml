@@ -1,5 +1,4 @@
-function scr_card_hopt(argument0) {
-	var cardNum = argument0,
+function scr_card_hopt(cardNum, effectNum) {
 	with(obj_player){
 		for (i=0; i < hoptCount; i++){
 			if (cardNum == hardOncePerTurn[i]){
@@ -8,6 +7,4 @@ function scr_card_hopt(argument0) {
 		}
 	}
 	return true;
-
-
 }

@@ -1,11 +1,18 @@
 function scr_after_direct_attack(cardNum) {
 	
-	if (obj_player.selected_wheel = 1 && !obj_player.wheel_locked){
-		if(scr_check_archetype(cardNum, ArcMotorbiker)){
-			scr_give_player_stats(player, 0, 0, 0, resolutionPile[damageToPlayer,5]);
-		}
+	switch(obj_player.selected_wheel){
+		case 1://Motorbiker Wheel Gain Activation Trigger
+			if(!scr_check_archetype(cardNum, ArcMotorbiker)){return false}
+			if(!scr_legal_activation("WheelGain", 0, selected_wheel)){return false}
+			obj_player.resolutionPile[obj_player.resolutionPileCount,0] = "WheelGain"
+			obj_player.resolutionPile[obj_player.resolutionPileCount,1] = 0
+			obj_player.resolutionPile[obj_player.resolutionPileCount,2] = 0
+			obj_player.resolutionPile[obj_player.resolutionPileCount,3] = selected_wheel
+			obj_player.resolutionPile[obj_player.resolutionPileCount,4] = false
+			obj_player.resolutionPileCount++
+		break;
 	}
-	if(cardStatus[StatusSilenced]){return;}
+	
 	switch(cardNum){
 		case 11: //Motorbiker Leader Khan Effect Activation
 		case 12: //Motorbiker Leaden Luther Effect Activation

@@ -21,7 +21,7 @@ function scr_target_infirmary(players, typeArray, minLevel, maxLevel, archetypeA
 		var player = players[i]
 		
 		for(var j = 0; j < player.infirmaryCount; j++){
-			var cardNum = player.infirmary[i, CardNumber],
+			var cardNum = player.infirmary[i, 0],
 			cardStat = macros.origStat[cardNum];
 			
 			if(typeArray != [] && !array_includes(typeArray, macros.card_type[cardNum])){
@@ -57,7 +57,7 @@ function scr_target_infirmary(players, typeArray, minLevel, maxLevel, archetypeA
 			self.player = filteredCards[i,0]
 			position = filteredCards[i,1];
 			self.arrayPos = arrayPos
-			self.cardNum = self.player.infirmary[position, CardNumber];
+			self.cardNum = self.player.infirmary[position, 0];
 			self.artNum = self.player.infirmary[position,1];
 			current_function = "infirmary";
 		}

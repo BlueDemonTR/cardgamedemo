@@ -4,12 +4,12 @@ else{
 	momentumDeckCount=0;
 
 	for(i = 0; i < 60; i++){
-		deck[i, CardNumber] = 0;
-		deck[i, ArtNumber] = 0;
+		deck[i, 0] = 0;
+		deck[i, 1] = 0;
 	}
 	for(i = 0; i < 7; i++){
-		momentumDeck[i, CardNumber] = 0;
-		momentumDeck[i, ArtNumber] = 0;
+		momentumDeck[i, 0] = 0;
+		momentumDeck[i, 1] = 0;
 	}
 	scr_count_types_in_deck()
 }

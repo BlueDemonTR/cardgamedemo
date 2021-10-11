@@ -3,7 +3,7 @@ function scr_discard(player, position) {
 		return false;
 	}
 	
-	var cardNum = player.hand[position, CardNumber],
+	var cardNum = player.hand[position, 0],
 	artNum = player.hand[position,1],
 	removedCard = player.handCard[position];
 

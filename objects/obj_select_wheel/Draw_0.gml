@@ -8,12 +8,12 @@ if(chosen_wheel=0){
 	draw_set_font(fnt_default);
 	draw_text(x-(string_width(macros.wheel_name[chosen_wheel])-95),y,macros.wheel_name[chosen_wheel]);
 	
-	if (mouse_between(1620, 1680, 55, 120)){
+	if (mouse_between(1620, 55, 1680, 120)){
 		draw_sprite(spr_shared_effect_box,-1,mouse_x-400,mouse_y)
 		draw_text_ext(mouse_x-390,mouse_y+10,macros.momentum_gain[chosen_wheel],16,380)
 	}	
 	if(point_distance(mouse_x,mouse_y,1760,90) < 80){
-		if (mouse_x < 1760 && mouse_y < 90){
+		if (mouse_x < 1765 && mouse_y < 95){
 			draw_sprite(spr_shared_effect_box,-1,mouse_x-400,mouse_y)
 			draw_text_ext(mouse_x-390,mouse_y+10,macros.wheel_ability[chosen_wheel, 0],16,380)
 		}

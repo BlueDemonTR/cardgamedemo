@@ -5,9 +5,6 @@ test_mode=true;
 show_debug_message(GM_version)
 
 //Card Data Macros
-#macro CardNumber 0
-#macro ArtNumber 1
-#macro SendType 2
 
 //Infirmary Send Types
 #macro SendInjuries 0
