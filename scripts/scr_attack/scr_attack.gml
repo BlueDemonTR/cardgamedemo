@@ -1,6 +1,5 @@
 function scr_attack(attackingCard) {
 	//attackingCard should be an object
-	//TODO: COMPLETE REWRITE HOLY SHIT LMAOOOOO
 	var i = 0,
 	attackArray = scr_count_attack(attackingCard);
 	

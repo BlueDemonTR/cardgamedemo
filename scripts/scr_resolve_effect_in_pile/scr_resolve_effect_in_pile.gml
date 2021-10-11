@@ -598,7 +598,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						break;
 					}
 				break;
-				case 6://Classic Wheel v1.0 //TODO: Complete
+				case 6://Classic Wheel v1.0
 					switch(effectNum){
 						case 0:
 							if(!effectSilenced){
@@ -820,8 +820,15 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					if(resolutionStep = 98){
 						resolvingPile[positionInOrder,2] = 99
 					}
-				break;			
+				break;
+				case SharedIgloo://TODO Change
+				break;
+				case SharedSacrifice://TODO Finish
+				break;
+				case SharedXMakine://TODO Finish
+				break;
 			}
+			
 		break;
 		case 1://Motorbiker Showman Effect
 			switch(effectNum){
@@ -2290,7 +2297,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				break;
 			}
 		break;
-		case 73://Baby Phoenix Effect TODO: Infirmary Effect Activation Function
+		case 73://Baby Phoenix Effect
 			switch(effectNum){
 				case 0:
 					if(!effectSilenced){

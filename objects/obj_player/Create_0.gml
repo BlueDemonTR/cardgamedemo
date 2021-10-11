@@ -6,8 +6,6 @@ randomize()
 //don't set it to true in online
 test_mode = macros.test_mode;
 
-face_up = 0;
-
 //hand location
 hand_x = 550;
 hand_y = 1000;
@@ -74,15 +72,6 @@ for (j = 0; j < field_zone_count; j++){
  	field[j] = [0, 0];
 	fieldCard[j] = noone;
 }
-
-
-
-//expanded deck coords (TODO: Remove)
-expandx = 0;
-expandy = deck_y;
-deck_x_2 = deck_x;
-
-
 //Phases and Turn Related Stuff
 own_turn = false;
 
