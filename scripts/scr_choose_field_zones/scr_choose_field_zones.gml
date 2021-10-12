@@ -13,8 +13,8 @@ function scr_choose_field_zones(players, selectFilled, selectNMZ, selectMMZ, arr
 					position = i;
 					self.current_function = "chooseZone";
 					self.arrayPos = arrayPos
-					x = player.field_card_zone_x[field_location];
-					y = player.field_card_zone_y[field_location];
+					x = player.field_card_zone_x[position];
+					y = player.field_card_zone_y[position];
 				}
 			}
 		}

@@ -1,4 +1,4 @@
-function scr_start_turn_effects(){//TODO Complete Rewamp
+function scr_start_turn_effects(){
 	switch(obj_player.selected_wheel){
 		case 6://Classic Wheel Gain Activation Trigger
 			if(!scr_legal_activation("WheelGain", 0, obj_player.selected_wheel)){return false}

@@ -1,4 +1,4 @@
-function scr_end_phase_effects(){//TODO Complete Rewamp
+function scr_end_phase_effects(){
 	switch(obj_player.selected_wheel){
 		case 7://XMakine Wheel Gain Activation Trigger
 			if(!scr_legal_activation("WheelGain", 0, obj_player.selected_wheel)){return false}

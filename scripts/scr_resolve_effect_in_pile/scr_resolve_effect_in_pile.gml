@@ -33,7 +33,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				scr_on_pierce(attacker, attacked, damage)
 			}
 			
-			scr_after_attack(attacker, damage)
+			scr_after_attack(attacker.cardNum, attacker, damage)
 			resolvingPile[positionInOrder,2] = 99
 		break;
 		case "DirectAttack":
@@ -46,7 +46,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 			
 			scr_give_player_stats(opponent, 0, -damage, 0, 0)
 			
-			scr_after_attack(attacker, damage)
+			scr_after_attack(cardNum, attacker, damage)
 			scr_after_direct_attack(attacker, damage)
 			
 			resolvingPile[positionInOrder,2] = 99
@@ -120,7 +120,6 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							}
 							if(resolutionStep = 98){
 								wheel_opt[effectNum] = true
-								//TODO: Wheel Once per turn
 								resolvingPile[positionInOrder,2] = 99
 							}
 						break;
@@ -788,7 +787,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 		break;
 		case "SharedEffects":
 			switch(effectNum){
-				case SharedVisclades:
+				case SharedVisclades://Visclades Shared Effect
 					if(!effectSilenced){
 						scr_give_player_stats(player, 0, 0, 1, 0)
 						scr_lock_wheel(player)
@@ -796,7 +795,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					scr_discard(player, position);
 					resolvingPile[positionInOrder,2] = 99
 				break;
-				case SharedUnderworldVisclades:
+				case SharedUnderworldVisclades://Underworld Visclades Shared Effect
 					if(!effectSilenced){
 						switch(resolutionStep){
 							case 1:
@@ -821,11 +820,48 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						resolvingPile[positionInOrder,2] = 99
 					}
 				break;
-				case SharedIgloo://TODO Change
+				case SharedIgloo://Igloo Shared Effect
+					if(!effectSilenced && !fieldCard[position].cardStatus[StatusSilenced]){
+						for(var i = 0; i < player.field_zone_count; i++){
+							if(i = position){continue;}
+							if(scr_check_archetype(player.field[i, 0], ArcIgloo)){
+								scr_bounce(player, i)
+							}
+						}
+					}
+					resolvingPile[positionInOrder,2] = 99
 				break;
-				case SharedSacrifice://TODO Finish
+				case SharedSacrifice://Sacrifice Shared Effect
+					if(!effectSilenced){
+						switch(resolutionStep){
+							case 1:
+								resolvingPile[positionInOrder,5] = 0
+								scr_choose_field_zones([player], false, true, false, 5);
+								NextStep
+							break;
+							case 3:
+								scr_recruit(74, 0, resolvingPile[positionInOrder,5])//Useless Sacrifice
+								
+								resolvingPile[positionInOrder,5] = 0
+								scr_choose_field_zones([player], false, true, false, 6);
+								break;
+							case 5:
+								scr_recruit(74, 0, resolvingPile[positionInOrder,6])//Useless Sacrifice
+								FinishResolving
+							break;
+						}
+					}else{
+						FinishResolving
+					}
+					if(resolutionStep = 98){
+						resolvingPile[positionInOrder,2] = 99
+					}				
 				break;
-				case SharedXMakine://TODO Finish
+				case SharedXMakine://XMakine Shared Effect
+					if(!effectSilenced && !fieldCard[position].cardStatus[StatusSilenced]){
+						scr_give_player_stats(player, 0, 0, 0, -3)
+					}
+					resolvingPile[positionInOrder,2] = 99					
 				break;
 			}
 			
@@ -1094,7 +1130,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					}
 					if(resolutionStep = 98){
 						resolvingPile[positionInOrder,2] = 99
-						//TODO: scr_decrease_used_effect
+						scr_decrease_use_effect(player, position)
 					}							
 				break;
 			}
@@ -1700,19 +1736,20 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							case 1:
 								resolvingPile[positionInOrder,5] = 0
 								resolvingPile[positionInOrder,6] = 0
+								resolvingPile[positionInOrder,7] = 0 //Discarded Card
 								scr_target_hand([player], [], 1, 12, [], [], false, position, 2, 5)
 								NextStep
 							break;
 							case 3:
-								var discardLevel = macros.origStat[player.hand[resolvingPile[positionInOrder,5]], StatLevel]
+								var discardLevel = macros.origStat[[resolvingPile[positionInOrder, 7]], StatLevel]
 								scr_discard(player, resolvingPile[positionInOrder, 5])
-								resolvingPile[positionInOrder,7] = 0
 								resolvingPile[positionInOrder,8] = 0
-								scr_target_field([opponent], [], [1, discardLevel], [0, infinity], [0, infinity], [], [], -1, -1, 7)
+								resolvingPile[positionInOrder,9] = 0
+								scr_target_field([opponent], [], [1, discardLevel], [0, infinity], [0, infinity], [], [], -1, -1, 8)
 								NextStep
 							break;
 							case 5:
-								scr_silence(resolvingPile[positionInOrder,8], resolvingPile[positionInOrder,7])
+								scr_silence(resolvingPile[positionInOrder,9], resolvingPile[positionInOrder,8])
 								FinishResolving
 							break;
 						}
@@ -1798,7 +1835,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						FinishResolving
 					}
 					if(resolutionStep = 98){
-						if(fieldCard[position] != noone){fieldCard[position].opt_used = true}
+						scr_decrease_use_effect(player, position)
 						resolvingPile[positionInOrder,2] = 99
 					}
 				break;
@@ -1847,7 +1884,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						FinishResolving
 					}
 					if(resolutionStep = 98){
-						if(fieldCard[position] != noone){fieldCard[position].opt_used = true}
+						scr_decrease_use_effect(player, position)
 						resolvingPile[positionInOrder,2] = 99
 					}
 				break;
@@ -2117,6 +2154,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						FinishResolving
 					}
 					if(resolutionStep = 98){
+						scr_decrease_use_effect(player, position)
 						resolvingPile[positionInOrder,2] = 99
 					}
 				break;
@@ -2543,6 +2581,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						FinishResolving
 					}
 					if(resolutionStep = 98){
+						scr_decrease_use_effect(player, position)
 						resolvingPile[positionInOrder,2] = 99
 					}
 				break;
@@ -2595,7 +2634,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						FinishResolving
 					}
 					if(resolutionStep = 98){
-						player.fieldCard[position].opt_used = true
+						scr_decrease_use_effect(player, position)
 						resolvingPile[positionInOrder,2] = 99
 					}
 				break;
@@ -2696,7 +2735,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						FinishResolving
 					}
 					if(resolutionStep = 98){
-						player.fieldCard[position].opt_used = true
+						scr_decrease_use_effect(player, position)
 						resolvingPile[positionInOrder,2] = 99
 					}
 				break;
@@ -2774,7 +2813,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						FinishResolving
 					}
 					if(resolutionStep = 98){
-						player.fieldCard[position].opt_used = true
+						scr_decrease_use_effect(player, position)
 						resolvingPile[positionInOrder,2] = 99
 					}
 				break;
@@ -2843,6 +2882,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						FinishResolving
 					}
 					if(resolutionStep = 98){
+						scr_decrease_use_effect(player, position)
 						resolvingPile[positionInOrder,2] = 99
 					}
 				break;
@@ -3096,7 +3136,6 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,5] = 0
-								resolvingPile[positionInOrder,6] = 0
 								scr_target_hand([player], [TypeMonster], 1, 12, [], [], false, position, -1, 5)
 								NextStep
 							break;
@@ -3123,7 +3162,6 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,5] = 0
-								resolvingPile[positionInOrder,6] = 
 								scr_target_hand([player], [], 1, 12, [], [], false, position, -1, 5)
 								NextStep
 							break;
@@ -3168,7 +3206,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					}
 					if(resolutionStep = 98){
 						resolvingPile[positionInOrder,2] = 99
-						player.fieldCard[position].opt_used = true
+						scr_decrease_use_effect(player, position)
 					}
 				break;
 			}		
@@ -3200,7 +3238,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					}
 					if(resolutionStep = 98){
 						resolvingPile[positionInOrder,2] = 99
-						player.fieldCard[position].opt_used = true
+						scr_decrease_use_effect(player, position)
 					}
 				break;
 			}		
@@ -3226,7 +3264,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					}
 					if(resolutionStep = 98){
 						resolvingPile[positionInOrder,2] = 99
-						player.fieldCard[position].opt_used = true
+						scr_decrease_use_effect(player, position)
 					}
 				break;
 			}
@@ -3252,7 +3290,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					}
 					if(resolutionStep = 98){
 						resolvingPile[positionInOrder,2] = 99
-						player.fieldCard[position].opt_used = true
+						scr_decrease_use_effect(player, position)
 					}
 				break;
 			}
@@ -3280,7 +3318,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					}
 					if(resolutionStep = 98){
 						resolvingPile[positionInOrder,2] = 99
-						player.fieldCard[position].opt_used = true
+						scr_decrease_use_effect(player, position)
 					}
 				break;
 			}
@@ -3312,6 +3350,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					}
 					if(resolutionStep = 98){
 						resolvingPile[positionInOrder,2] = 99
+						scr_decrease_use_effect(player, position)
 					}
 				break;
 			}

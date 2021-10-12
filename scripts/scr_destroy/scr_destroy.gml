@@ -1,7 +1,7 @@
 function scr_destroy(player, position, destroyType) {
 	//Destroys player.fieldCard[position]
 	//destroyType is either 0 (Injuries) or 1 (Effect)
-	if(!player.field[position, 0]){ return  }
+	if(!player.field[position, 0]){return}
 	
 	var
 	affectedCard = player.fieldCard[position],
@@ -12,7 +12,7 @@ function scr_destroy(player, position, destroyType) {
 		return;
 	}
 
-	scr_send_infirmary(player, [cardNum, artNum], destroyType)
+	var infirmaryPos = scr_send_infirmary(player, [cardNum, artNum], destroyType)
 	
 	with(player.fieldCard[position]){
 		animationType = "destroy"
@@ -20,7 +20,7 @@ function scr_destroy(player, position, destroyType) {
 	}	
 	scr_decide_field(player, position, cardNum, artNum, "destroy")
 	
-	scr_on_destroyed(cardNum, 2);
+	scr_on_destroyed(cardNum, infirmaryPos, destroyType);
 	return;
 
 

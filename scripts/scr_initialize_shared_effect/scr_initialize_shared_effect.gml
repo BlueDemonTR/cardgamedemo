@@ -25,12 +25,12 @@ function scr_initialize_shared_effects() {
 	i++;
 
 	shared_effect_name[i] ="Underworld Visclades";
-	shared_effect[i]="Destroyed: Effect Summon a non-Momentum ''Genocider'' monster from your Infirmary";
+	shared_effect[i]="Destroyed: Effect Summon a non-Momentum ''Visclades'' monster from your Infirmary";
 	shared_effect_symbol[i] = spr_underground_visclades_symbol;
 	i++;
 
 	shared_effect_name[i] ="Igloo";
-	shared_effect[i]="If you control 2 or more ''Igloo'' monsters, bounce them except the one with the highest Max HP";
+	shared_effect[i]="Summoned: Bounce all other igloo monsters";
 	shared_effect_symbol[i] = spr_igloo_symbol;
 	i++;
 	

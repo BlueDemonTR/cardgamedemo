@@ -27,7 +27,7 @@ function scr_legal_activation(cardNum, effectNum, position){
 							return true;							
 						break;
 						case 1:
-							//TODO: Check Materials
+							if(!scr_count_impact(player)){return false}
 							return true;
 						break;
 						case 2:
@@ -51,7 +51,7 @@ function scr_legal_activation(cardNum, effectNum, position){
 							return true;
 						break;
 						case 2:
-							//TODO: Check Materials
+							if(!scr_count_impact(player)){return false}
 							return true;
 						break;
 						case 3:
@@ -71,7 +71,7 @@ function scr_legal_activation(cardNum, effectNum, position){
 							return true;
 						break;
 						case 2:
-							//TODO: Check Materials
+							if(!scr_count_impact(player)){return false}
 							return true;
 						break;
 						case 3:
@@ -91,7 +91,7 @@ function scr_legal_activation(cardNum, effectNum, position){
 							return true;
 						break;
 						case 2:
-							//TODO: Check Materials
+							if(!scr_count_impact(player)){return false}
 							return true;
 						break;
 						case 3:
@@ -111,7 +111,7 @@ function scr_legal_activation(cardNum, effectNum, position){
 							return true;
 						break;
 						case 2:
-							//TODO: Check Materials
+							if(!scr_count_impact(player)){return false}
 							return true;
 						break;
 						case 3:
@@ -130,7 +130,7 @@ function scr_legal_activation(cardNum, effectNum, position){
 							return true;
 						break;
 						case 2:
-							//TODO: Check Materials
+							if(!scr_count_impact(player)){return false}
 							return true;
 						break;
 						case 3:
@@ -151,7 +151,7 @@ function scr_legal_activation(cardNum, effectNum, position){
 							return true;
 						break;
 						case 2:
-							//TODO: Check Materials
+							if(!scr_count_impact(player)){return false}
 							return true;
 						break;
 						case 3:
@@ -362,7 +362,7 @@ function scr_legal_activation(cardNum, effectNum, position){
 		
 		case 35://Pole Clan Mage Legal Activation
 			if (cardStatus[StatusSilenced]){return false;}
-			if(scr_card_hopt(cardNum)){return false;}
+			if(scr_card_hopt(cardNum, 0)){return false;}
 			if(!scr_count_field_filter([player], [], [1, 12], [0, infinity], [0, infinity], [ArcIgloo], [], -1, -1)){return false}
 			if(scr_count_deck_filter([player], [TypeSpell], 1, 12, [ArcBlizzard], [], false, -1)){return false}
 			return true;

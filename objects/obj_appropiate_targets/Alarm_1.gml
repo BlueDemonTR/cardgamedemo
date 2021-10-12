@@ -14,16 +14,17 @@ if(current_function == "impact"){
 	obj_player.cardToSummon = cardToSummon;
 	if(obj_player.field[4,0] > 0){
 		if(obj_player.momentum_deck[cardToSummon,0] == 16){
-			if(scr_check_archetype(obj_player.field[field_location,0], ArcMotorbikerLeader)){obj_player.leader = true;}
-			if(scr_check_archetype(obj_player.field[field_location,0], ArcMotorbiker)){obj_player.motorbikers++;}
+			if(scr_check_archetype(obj_player.field[position,0], ArcMotorbikerLeader)){obj_player.leader = true;}
+			if(scr_check_archetype(obj_player.field[position,0], ArcMotorbiker)){obj_player.motorbikers++;}
 			
 		}
+		scr_target_field()
 		obj_player.currentLevel += obj_player.fieldCard[4].cardStat[StatLevel]; 
 	}
-	if(scr_check_archetype(obj_player.momentum_deck[cardToSummon,0], ArcIgloo) && scr_check_archetype(obj_player.field[field_location,0], ArcIgloo)){
+	if(scr_check_archetype(obj_player.momentum_deck[cardToSummon,0], ArcIgloo) && scr_check_archetype(obj_player.field[position,0], ArcIgloo)){
 		force_select= true;
 		obj_player.igloo = true;
-		if(field_location != 4){obj_player.currentLevel += obj_player.fieldCard[field_location].cardStat[StatLevel]; }
+		if(position != 4){obj_player.currentLevel += obj_player.fieldCard[position].cardStat[StatLevel]; }
 	}
 }
 

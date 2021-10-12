@@ -1,10 +1,6 @@
-function scr_limit_summoning_card(argument0) {
-	var cardNum = argument0;
-
+function scr_limit_summoning_card(cardNum) {
 	with(player){
 		limitationExists = true;
 		limitSummoningCard[limitSummoningCardCount++] = cardNum;
 	}
-
-
 }

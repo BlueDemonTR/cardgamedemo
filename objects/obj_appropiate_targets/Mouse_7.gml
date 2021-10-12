@@ -58,10 +58,10 @@ switch (current_function){
 		if (!force_select){
 			if(selected){
 				selected = false;
-				obj_player.currentLevel -= obj_player.fieldCard[self.field_location].cardStat[StatLevel];
+				obj_player.currentLevel -= obj_player.fieldCard[self.position].cardStat[StatLevel];
 				if (obj_player.momentum_deck[cardToSummon,0] > 10 && obj_player.momentum_deck[cardToSummon,0] < 17){
 					obj_player.motorbikers--;
-					if(obj_player.momentum_deck[cardToSummon,0] == 16 && scr_check_archetype(player.field[self.field_location,0], 2)){
+					if(obj_player.momentum_deck[cardToSummon,0] == 16 && scr_check_archetype(player.field[self.position,0], 2)){
 						obj_player.leader = false;
 					}
 				}
@@ -76,7 +76,7 @@ switch (current_function){
 				}
 				if (obj_player.momentum_deck[cardToSummon,0] == 90){
 					obj_player.fishes--;
-					if(scr_check_archetype(player.field[self.field_location,0], 9)){
+					if(scr_check_archetype(player.field[self.position,0], 9)){
 						obj_player.fisherman= false;
 					}
 				}
@@ -86,10 +86,10 @@ switch (current_function){
 			}
 			else if(!selected){
 				selected = true;
-				obj_player.currentLevel += obj_player.fieldCard[self.field_location].cardStat[StatLevel];
+				obj_player.currentLevel += obj_player.fieldCard[self.position].cardStat[StatLevel];
 				if (obj_player.momentum_deck[cardToSummon,0] > 10 && obj_player.momentum_deck[cardToSummon,0] < 17){
 					obj_player.motorbikers++;
-					if(obj_player.momentum_deck[cardToSummon,0] == 16 && scr_check_archetype(player.field[self.field_location,0], 2)){
+					if(obj_player.momentum_deck[cardToSummon,0] == 16 && scr_check_archetype(player.field[self.position,0], 2)){
 						obj_player.leader = true;
 						obj_player.motorbikers++;
 		
@@ -106,7 +106,7 @@ switch (current_function){
 				}
 				else if (obj_player.momentum_deck[cardToSummon,0] == 90){
 					obj_player.fishes++;
-					if(scr_check_archetype(player.field[self.field_location,0], 9)){
+					if(scr_check_archetype(player.field[self.position,0], 9)){
 						obj_player.fisherman= true;
 					}
 				}
@@ -121,10 +121,10 @@ switch (current_function){
 
 	
 	case  "discard":
-		discardedCard = player.hand[position];
-		//TODO: Fix problems this will create with player saving discard functions
+		discardedCard = player.hand[position, 0];
 		obj_player.resolutionPile[obj_player.resolutionPileCount-1,arrayPos] = position;
-		obj_player.resolutionPile[obj_player.resolutionPileCount-1,arrayPos+1] = discardedCard;
+		obj_player.resolutionPile[obj_player.resolutionPileCount-1,arrayPos+1] = player;
+		obj_player.resolutionPile[obj_player.resolutionPileCount-1,arrayPos+2] = discardedCard;
 		obj_player.resolutionPile[obj_player.resolutionPileCount-1,2]++
 		with(obj_appropiate_targets){
 			if(function_check == current_function){

@@ -27,14 +27,8 @@ function scr_spell_effects(cardNum) {
 		case 113://Emergency Call Activation Trigger
 		case 114://Mighty Changing Fire Blades Activation Trigger
 		case 115://X-Makines Form Together! Activation Trigger
-			if(scr_legal_activation(cardNum, 0, hand_position)){
-				obj_player.resolutionPile[obj_player.resolutionPileCount,0] = cardNum
-				obj_player.resolutionPile[obj_player.resolutionPileCount,1] = 0
-				obj_player.resolutionPile[obj_player.resolutionPileCount,2] = 0
-				obj_player.resolutionPile[obj_player.resolutionPileCount,3] = hand_position
-				obj_player.resolutionPile[obj_player.resolutionPileCount,4] = false
-				obj_player.resolutionPileCount++
-			}
+			if(!scr_legal_activation(cardNum, 0, hand_position)){break;}
+			scr_add_to_resolution_pile([cardNum, 0, 0, hand_position, false])
 		break;
 	}
 }

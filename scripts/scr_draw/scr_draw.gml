@@ -28,9 +28,7 @@ function scr_draw(player, cardsToDraw, actualDrawing) {
 		scr_add_to_hand(player, player.deck[--player.deckCount])
 		scr_remove_from_deck(player, player.deckCount)
 		if(actualDrawing){
-			for(var i = 0; i < player.field_zone_count; i++){
-				scr_card_is_drawn(i, player.hand[player.handCount, 0])
-			}		
+				scr_card_is_drawn(player.hand[player.handCount, 0])
 		}
 		
 	}

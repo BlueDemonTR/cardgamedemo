@@ -13,7 +13,7 @@ function scr_ignition_effect_number(cardNum, effectActivationLocation){
 				case 87://Lucky Fisherman Ignition Effect Number
 				case 88://Strong Fisherman Ignition Effect Number
 				case 89://Naive Fisherman Ignition Effect Number
-				case 90://Fisherman of the Oceans Ignition Effect Number TODO: Check
+				case 90://Fisherman of the Oceans Ignition Effect Number
 				case 107://Casey XMakine Ignition Effect Number
 				case 108://Theo XMakine Ignition Effect Number
 				case 109://Lily XMakine Ignition Effect Number

@@ -1,12 +1,12 @@
 function scr_on_summon(cardNum){
-	if(scr_check_shared(cardNum, SharedMotorbikerLeader)){//TODO This is not a triggered effect
+	if(scr_check_shared(cardNum, SharedMotorbikerLeader)){
 		if(scr_legal_activation("SharedEffect", SharedMotorbikerLeader, position)){
-		obj_player.resolutionPile[obj_player.resolutionPileCount,0] = cardNum
-		obj_player.resolutionPile[obj_player.resolutionPileCount,1] = 0
-		obj_player.resolutionPile[obj_player.resolutionPileCount,2] = 0
-		obj_player.resolutionPile[obj_player.resolutionPileCount,3] = position
-		obj_player.resolutionPile[obj_player.resolutionPileCount,4] = false
-		obj_player.resolutionPileCount++
+			scr_limit_summoning_card(cardNum)
+		}
+	}
+	if(scr_check_shared(cardNum, SharedIgloo)){
+		if(scr_legal_activation("SharedEffect", SharedIgloo, position)){
+			scr_add_to_resolution_pile(["SharedEffects", SharedIgloo, 0, position, false])
 		}
 	}
 	
@@ -14,35 +14,18 @@ function scr_on_summon(cardNum){
 		case 5://Fisherman Wheel Gain Activation Trigger
 			if(!scr_legal_activation("WheelGain", 0, obj_player.selected_wheel)){return false}
 			if(!scr_check_archetype(cardNum, ArcFish) || scr_check_archetype(cardNum, ArcFisherman)){return false}
-				obj_player.resolutionPile[obj_player.resolutionPileCount,0] = "WheelGain"
-				obj_player.resolutionPile[obj_player.resolutionPileCount,1] = 0
-				obj_player.resolutionPile[obj_player.resolutionPileCount,2] = 0
-				obj_player.resolutionPile[obj_player.resolutionPileCount,3] = obj_player.selected_wheel
-				obj_player.resolutionPile[obj_player.resolutionPileCount,4] = false
-				obj_player.resolutionPile[obj_player.resolutionPileCount,5] = macros.origStat(cardNum, StatLevel)
-				obj_player.resolutionPileCount++		
+			scr_add_to_resolution_pile([cardNum, 0, 0, position, false, player.fieldCard[position].cardStat[StatLevel]])
 		break;
 	}
 	
 	if(scr_check_archetype(cardNum, ArcFish) && !scr_check_archetype(cardNum, ArcFisherman)){
-		for(var i = 0; i < 5; i++){
-			if(obj_player.field[i, 0] == 90){
-				if(!scr_legal_activation(90, 0, i)){continue;}
-				obj_player.resolutionPile[obj_player.resolutionPileCount,0] = cardNum
-				obj_player.resolutionPile[obj_player.resolutionPileCount,1] = 0
-				obj_player.resolutionPile[obj_player.resolutionPileCount,2] = 0
-				obj_player.resolutionPile[obj_player.resolutionPileCount,3] = position
-				obj_player.resolutionPile[obj_player.resolutionPileCount,4] = false
-				obj_player.resolutionPileCount++
-			}
-			if(obj_player.field[i, 0] == 88){
-				if(!scr_legal_activation(88, 0, i)){continue;}
-				obj_player.resolutionPile[obj_player.resolutionPileCount,0] = cardNum
-				obj_player.resolutionPile[obj_player.resolutionPileCount,1] = 0
-				obj_player.resolutionPile[obj_player.resolutionPileCount,2] = 0
-				obj_player.resolutionPile[obj_player.resolutionPileCount,3] = position
-				obj_player.resolutionPile[obj_player.resolutionPileCount,4] = false
-				obj_player.resolutionPileCount++
+		for(var i = 0; i < 5; i++){/
+			switch(player.field[i, 0]){
+				case 88://Strong Fisherman Stat Gain Activation Trigger
+				case 90://Fisherman of the Oceans Stat Gain Activation Trigger
+					if(!scr_legal_activation(90, 1, i)){continue;}
+					scr_add_to_resolution_pile([cardNum, 1, 0, position, false])
+				break;
 			}
 		}
 	}
@@ -72,12 +55,7 @@ function scr_on_summon(cardNum){
 		case 99://Single Shot Master Activation Trigger
 		case 101://Rogue Soldier Activation Trigger
 			if(!scr_legal_activation(cardNum, 0, position)){break;}
-			obj_player.resolutionPile[obj_player.resolutionPileCount,0] = cardNum
-			obj_player.resolutionPile[obj_player.resolutionPileCount,1] = 0
-			obj_player.resolutionPile[obj_player.resolutionPileCount,2] = 0
-			obj_player.resolutionPile[obj_player.resolutionPileCount,3] = position
-			obj_player.resolutionPile[obj_player.resolutionPileCount,4] = false
-			obj_player.resolutionPileCount++
+			scr_add_to_resolution_pile([cardNum, 0, 0, position, false])
 		break;
 	}
 
