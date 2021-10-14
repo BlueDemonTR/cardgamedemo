@@ -22,6 +22,4 @@ function scr_destroy(player, position, destroyType) {
 	
 	scr_on_destroyed(cardNum, infirmaryPos, destroyType);
 	return;
-
-
 }

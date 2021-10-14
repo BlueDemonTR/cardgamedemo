@@ -55,6 +55,7 @@ function scr_target_field(players, typeArray, level, atk, hp, archetypeArray, sp
 			self.player = filteredCards[i,0]
 			position = filteredCards[i,1];
 			self.arrayPos = arrayPos
+			current_function = "target"
 			self.cardNum = self.player.field[position, 0];
 			self.artNum = self.player.field[position, 1];
 			x = player.field_card_zone_x[position];

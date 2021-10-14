@@ -95,7 +95,8 @@ function scr_resolve_effect_in_pile(positionInOrder){
 			}			
 		break;
 		case "WheelEffect":
-			switch(position){
+			var wheelNum = position;
+			switch(wheelNum){
 				case 1://Motorbiker Wheel
 					switch(effectNum){
 						case 0:
@@ -131,10 +132,25 @@ function scr_resolve_effect_in_pile(positionInOrder){
 										NextStep
 									break;
 									case 2:
-										//TODO: Impact Summon
+										resolvingPile[positionInOrder, 5] = 0
+										scr_target_momentum_deck_impact(player, wheelNum, 5)
 										NextStep
 									break;
 									case 4:
+										resolvingPile[positionInOrder, 6] = []
+										scr_select_materials(player, resolvingPile[positionInOrder, 5], 6)
+										NextStep
+									break;
+									case 6:
+										for(var i = 0; i < array_length(resolvingPile[positionInOrder, 6]); i++){
+											scr_send_material(player, resolvingPile[positionInOrder, 6][i], resolvingPile[positionInOrder, 5])
+										}
+										resolvingPile[positionInOrder, 7] = 0
+										scr_choose_field_zones([player], false, false, true, 7)
+										NextStep
+									break;
+									case 8:
+										scr_summon_momentum_deck(player, resolvingPile[positionInOrder, 5], resolvingPile[positionInOrder, 7])
 										FinishResolving
 									break;
 								}
@@ -246,10 +262,25 @@ function scr_resolve_effect_in_pile(positionInOrder){
 										NextStep
 									break;
 									case 2:
-										//TODO: Impact Summon
+										resolvingPile[positionInOrder, 5] = 0
+										scr_target_momentum_deck_impact(player, wheelNum, 5)
 										NextStep
 									break;
 									case 4:
+										resolvingPile[positionInOrder, 6] = []
+										scr_select_materials(player, resolvingPile[positionInOrder, 5], 6)
+										NextStep
+									break;
+									case 6:
+										for(var i = 0; i < array_length(resolvingPile[positionInOrder, 6]); i++){
+											scr_send_material(player, resolvingPile[positionInOrder, 6][i], resolvingPile[positionInOrder, 5])
+										}
+										resolvingPile[positionInOrder, 7] = 0
+										scr_choose_field_zones([player], false, false, true, 7)
+										NextStep
+									break;
+									case 8:
+										scr_summon_momentum_deck(player, resolvingPile[positionInOrder, 5], resolvingPile[positionInOrder, 7])
 										FinishResolving
 									break;
 								}
@@ -367,10 +398,25 @@ function scr_resolve_effect_in_pile(positionInOrder){
 										NextStep
 									break;
 									case 2:
-										//TODO: Impact Summon
+										resolvingPile[positionInOrder, 5] = 0
+										scr_target_momentum_deck_impact(player, wheelNum, 5)
 										NextStep
 									break;
 									case 4:
+										resolvingPile[positionInOrder, 6] = []
+										scr_select_materials(player, resolvingPile[positionInOrder, 5], 6)
+										NextStep
+									break;
+									case 6:
+										for(var i = 0; i < array_length(resolvingPile[positionInOrder, 6]); i++){
+											scr_send_material(player, resolvingPile[positionInOrder, 6][i], resolvingPile[positionInOrder, 5])
+										}
+										resolvingPile[positionInOrder, 7] = 0
+										scr_choose_field_zones([player], false, false, true, 7)
+										NextStep
+									break;
+									case 8:
+										scr_summon_momentum_deck(player, resolvingPile[positionInOrder, 5], resolvingPile[positionInOrder, 7])
 										FinishResolving
 									break;
 								}
@@ -467,10 +513,25 @@ function scr_resolve_effect_in_pile(positionInOrder){
 										NextStep
 									break;
 									case 2:
-										//TODO: Impact Summon
+										resolvingPile[positionInOrder, 5] = 0
+										scr_target_momentum_deck_impact(player, wheelNum, 5)
 										NextStep
 									break;
 									case 4:
+										resolvingPile[positionInOrder, 6] = []
+										scr_select_materials(player, resolvingPile[positionInOrder, 5], 6)
+										NextStep
+									break;
+									case 6:
+										for(var i = 0; i < array_length(resolvingPile[positionInOrder, 6]); i++){
+											scr_send_material(player, resolvingPile[positionInOrder, 6][i], resolvingPile[positionInOrder, 5])
+										}
+										resolvingPile[positionInOrder, 7] = 0
+										scr_choose_field_zones([player], false, false, true, 7)
+										NextStep
+									break;
+									case 8:
+										scr_summon_momentum_deck(player, resolvingPile[positionInOrder, 5], resolvingPile[positionInOrder, 7])
 										FinishResolving
 									break;
 								}
@@ -556,10 +617,25 @@ function scr_resolve_effect_in_pile(positionInOrder){
 										NextStep
 									break;
 									case 2:
-										//TODO: Impact Summon
+										resolvingPile[positionInOrder, 5] = 0
+										scr_target_momentum_deck_impact(player, wheelNum, 5)
 										NextStep
 									break;
 									case 4:
+										resolvingPile[positionInOrder, 6] = []
+										scr_select_materials(player, resolvingPile[positionInOrder, 5], 6)
+										NextStep
+									break;
+									case 6:
+										for(var i = 0; i < array_length(resolvingPile[positionInOrder, 6]); i++){
+											scr_send_material(player, resolvingPile[positionInOrder, 6][i], resolvingPile[positionInOrder, 5])
+										}
+										resolvingPile[positionInOrder, 7] = 0
+										scr_choose_field_zones([player], false, false, true, 7)
+										NextStep
+									break;
+									case 8:
+										scr_summon_momentum_deck(player, resolvingPile[positionInOrder, 5], resolvingPile[positionInOrder, 7])
 										FinishResolving
 									break;
 								}
@@ -651,10 +727,25 @@ function scr_resolve_effect_in_pile(positionInOrder){
 										NextStep
 									break;
 									case 2:
-										//TODO: Impact Summon
+										resolvingPile[positionInOrder, 5] = 0
+										scr_target_momentum_deck_impact(player, wheelNum, 5)
 										NextStep
 									break;
 									case 4:
+										resolvingPile[positionInOrder, 6] = []
+										scr_select_materials(player, resolvingPile[positionInOrder, 5], 6)
+										NextStep
+									break;
+									case 6:
+										for(var i = 0; i < array_length(resolvingPile[positionInOrder, 6]); i++){
+											scr_send_material(player, resolvingPile[positionInOrder, 6][i], resolvingPile[positionInOrder, 5])
+										}
+										resolvingPile[positionInOrder, 7] = 0
+										scr_choose_field_zones([player], false, false, true, 7)
+										NextStep
+									break;
+									case 8:
+										scr_summon_momentum_deck(player, resolvingPile[positionInOrder, 5], resolvingPile[positionInOrder, 7])
 										FinishResolving
 									break;
 								}
@@ -743,10 +834,25 @@ function scr_resolve_effect_in_pile(positionInOrder){
 										NextStep
 									break;
 									case 2:
-										//TODO: Impact Summon
+										resolvingPile[positionInOrder, 5] = 0
+										scr_target_momentum_deck_impact(player, wheelNum, 5)
 										NextStep
 									break;
 									case 4:
+										resolvingPile[positionInOrder, 6] = []
+										scr_select_materials(player, resolvingPile[positionInOrder, 5], 6)
+										NextStep
+									break;
+									case 6:
+										for(var i = 0; i < array_length(resolvingPile[positionInOrder, 6]); i++){
+											scr_send_material(player, resolvingPile[positionInOrder, 6][i], resolvingPile[positionInOrder, 5])
+										}
+										resolvingPile[positionInOrder, 7] = 0
+										scr_choose_field_zones([player], false, false, true, 7)
+										NextStep
+									break;
+									case 8:
+										scr_summon_momentum_deck(player, resolvingPile[positionInOrder, 5], resolvingPile[positionInOrder, 7])
 										FinishResolving
 									break;
 								}

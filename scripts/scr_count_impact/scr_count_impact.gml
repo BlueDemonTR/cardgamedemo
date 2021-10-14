@@ -16,8 +16,8 @@ function scr_count_impact(player){
 	*/
 	var summonableMonsters = [];
 	
-	for(var i = 0; i < player.momentumDeckCount; i++){
-		var cardNum = player.momentumDeck[i, 0],
+	for(var momentumDeckPos = 0; momentumDeckPos < player.momentumDeckCount; momentumDeckPos++){
+		var cardNum = player.momentumDeck[momentumDeckPos, 0],
 		levelRequired = macros.origStat[cardNum, StatLevel],
 		mainMaterial = -1,
 		mainMaterialRequired = 0,
@@ -174,7 +174,7 @@ function scr_count_impact(player){
 				}
 			break;
 		}
-		array_push(summonableMonsters, cardNum)
+		array_push(summonableMonsters, momentumDeckPos)
 	}
 	return summonableMonsters;
 }

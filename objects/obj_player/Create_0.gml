@@ -143,12 +143,10 @@ wheel_locked=false;
 //Summon Limitations Initialization
 scr_reset_limitations()
 
-//Impact Summon Stuff (TODO: Remove please)
-obj_player.currentLevel = 0;
-obj_player.leader = false;
-obj_player.visclades = 0;
-obj_player.impactSummoning = false;
-obj_player.cardToSummon = 0;
+//Impact Summon Stuff
+impactSummoning = false;
+materialDisplay[0] = [0,0] 
+// [Requirement Name, Requirement Number] = [Requirement(String), Required, Have]
 
 //Game State
 //Win 1
