@@ -19,7 +19,7 @@ function scr_on_summon(cardNum){
 	}
 	
 	if(scr_check_archetype(cardNum, ArcFish) && !scr_check_archetype(cardNum, ArcFisherman)){
-		for(var i = 0; i < 5; i++){/
+		for(var i = 0; i < 5; i++){
 			switch(player.field[i, 0]){
 				case 88://Strong Fisherman Stat Gain Activation Trigger
 				case 90://Fisherman of the Oceans Stat Gain Activation Trigger

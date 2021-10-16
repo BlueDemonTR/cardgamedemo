@@ -1,4 +1,4 @@
-function scr_after_attack(cardNum, attacker, damage) {
+function scr_after_attack(cardNumber, attacker, damage) {//TODO Fix
 	var cardNum = attacker.cardNum,
 	position = attacker.position;
 	if(scr_check_archetype(cardNum, ArcMotorbiker) && macros.card_type[cardNum] != TypeMomentum){
