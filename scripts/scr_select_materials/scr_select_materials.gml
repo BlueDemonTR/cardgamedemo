@@ -1,5 +1,4 @@
 function scr_select_materials(player, momentumDeckPos, arrayPos){
-//TODO Make this
 	//The way this will work is if there is no initially selected monsters it will 
 	//create a obj_appropiate_targets around the card, then everytime a monster is selected OR deselected
 	//all appropiate_target objects except the selected one will be destroyed and this function will be

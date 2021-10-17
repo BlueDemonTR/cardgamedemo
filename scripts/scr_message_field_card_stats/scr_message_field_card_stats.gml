@@ -24,7 +24,6 @@ function scr_message_field_card_stats(position) {
 			buffer_write(obj_client.send_buffer, buffer_bool, false);
 		}
 	}
-	//TODO: Change Bool to u8
 	buffer_write(obj_client.send_buffer, buffer_bool, obj_player.fieldCard[position].attacksLeft);
 	
 	network_send_raw(obj_client.socket, obj_client.send_buffer, buffer_tell(obj_client.send_buffer));

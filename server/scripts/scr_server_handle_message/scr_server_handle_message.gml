@@ -139,7 +139,7 @@ function scr_server_handle_message(argument0, argument1) {
 				//	buffer_write(send_buffer, buffer_u16, buffer_read(buffer, buffer_u16));
 				//}
 				
-				buffer_write(send_buffer, buffer_bool, buffer_read(buffer, buffer_bool));//Can it Attack?
+				buffer_write(send_buffer, buffer_u8, buffer_read(buffer, buffer_u8));//Attacks Left
 			
 				network_send_raw(temp2, send_buffer, buffer_tell(send_buffer));
 			break;

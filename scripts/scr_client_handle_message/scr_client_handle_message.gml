@@ -93,7 +93,6 @@ function scr_client_handle_message(argument0) {
 					for(var i = 0; i < macros.status_count/*buffer_read(buffer, buffer_u8)*/; i++){//Statuses
 						fieldCard[field_location].cardStatus[i] = buffer_read(buffer, buffer_bool)
 					}
-					//TODO: Change Bool to u8 in the server
 					fieldCard[field_location].attacksLeft = buffer_read(buffer, buffer_bool );//Can it attack?
 				}
 			break;
