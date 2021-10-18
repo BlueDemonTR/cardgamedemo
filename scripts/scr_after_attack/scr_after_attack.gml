@@ -1,4 +1,4 @@
-function scr_after_attack(cardNumber, attacker, damage) {//TODO Fix
+function scr_after_attack(cardNumber, attacker, damage) {
 	var cardNum = attacker.cardNum,
 	position = attacker.position;
 	if(scr_check_archetype(cardNum, ArcMotorbiker) && macros.card_type[cardNum] != TypeMomentum){
@@ -14,7 +14,7 @@ function scr_after_attack(cardNumber, attacker, damage) {//TODO Fix
 		case 1://Motorbiker Showman Effect Activation
 		case 23://Visclades Gloria Effect Activation
 			if(!scr_legal_activation(cardNum, 0, position)){break;}
-			scr_add_to_resolution_pile([cardNum, 0, 0, position])
+			scr_add_to_resolution_pile([cardNum, 0, 0, position, 0])
 		break;
 	}
 

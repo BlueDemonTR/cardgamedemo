@@ -4,5 +4,6 @@ function scr_remove_from_infirmary(player, infirmaryPos) {
 		infirmary[i] = infirmary[i+1];
 	}
 	infirmaryCount--;
+	scr_update_infirmary();
 	scr_decide_infirmary(player);
 }

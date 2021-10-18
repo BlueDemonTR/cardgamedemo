@@ -7,7 +7,7 @@ function scr_spin(player, position) {
 		
 		scr_shuffle_deck(player);
 	}else{
-		player.momentum_deck[player.momentumDeckCount++] = [cardNum, artNum];
+		player.momentumDeck[player.momentumDeckCount++] = [cardNum, artNum];
 		scr_decide_momentum_deck(player);
 	}
 	

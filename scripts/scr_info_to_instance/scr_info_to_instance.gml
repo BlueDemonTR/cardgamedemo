@@ -2,15 +2,24 @@ function scr_info_to_instance(cardNum) {
 	
 	for(var i = 0; i < macros.stat_count; i++){
 		if(variable_array_exists(macros.origStat,cardNum,i)){
-			cardStat[i] = macros.origStat[cardNum,i]
+			switch(i){
+				case StatXPerTurn:
+					effectUsesLeft = macros.origStat[cardNum,i]
+				break;
+				default:
+					cardStat[i] = macros.origStat[cardNum,i]
+				break;
+			}			
 		}else{
-			cardStat[i] = 0;
 			switch(i){
 				case StatHP:
 					cardStat[i] = cardStat[StatMaxHP];
 				break;
 				case StatXPerTurn:
 					cardStat[i] = 1;
+				break;
+				default:
+					cardStat[i] = 0;				
 				break;
 			}
 		}

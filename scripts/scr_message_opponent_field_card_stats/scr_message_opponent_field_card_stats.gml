@@ -1,5 +1,6 @@
 function scr_message_opponent_field_card_stats(position) {
-	if (!instance_exists(obj_client)){return;}
+	if(!instance_exists(obj_client)){return;}
+	if(!instance_exists(obj_opponent.fieldCard[position])){return}
 	
 	buffer_seek(obj_client.send_buffer, buffer_seek_start, 0);
 	buffer_write(obj_client.send_buffer, buffer_u8, MESSAGE_OPPONENT_FIELD_CARD_STATS);

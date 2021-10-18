@@ -32,8 +32,9 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				scr_give_player_stats(opponent, 0, -excessDamage, 0, 0)
 				scr_on_pierce(attacker, attacked, damage)
 			}
-			
-			scr_after_attack(attacker.cardNum, attacker, damage)
+			with(attacker){
+				scr_after_attack(attacker.cardNum, attacker, damage)
+			}
 			resolvingPile[positionInOrder,2] = 99
 		break;
 		case "DirectAttack":
@@ -46,9 +47,10 @@ function scr_resolve_effect_in_pile(positionInOrder){
 			
 			scr_give_player_stats(opponent, 0, -damage, 0, 0)
 			
-			scr_after_attack(cardNum, attacker, damage)
-			scr_after_direct_attack(attacker, damage)
-			
+			with(attacker){
+				scr_after_attack(attacker.cardNum, attacker, damage)
+				scr_after_direct_attack(attacker, damage)
+			}
 			resolvingPile[positionInOrder,2] = 99
 		break;
 		case "SelfDestruct"://Status Self Destruct Effect
@@ -145,6 +147,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 										for(var i = 0; i < array_length(resolvingPile[positionInOrder, 6]); i++){
 											scr_send_material(player, resolvingPile[positionInOrder, 6][i], resolvingPile[positionInOrder, 5])
 										}
+										instance_destroy(obj_appropiate_targets)
 										resolvingPile[positionInOrder, 7] = 0
 										scr_choose_field_zones([player], false, false, true, 7)
 										NextStep
@@ -990,6 +993,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							case 1:
 								resolvingPile[positionInOrder,5] = 0
 								scr_choose_field_zones([player], false, true, false, 5);
+								
 								NextStep
 							break;
 							case 3:
@@ -1089,7 +1093,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								scr_search(player, resolvingPile[positionInOrder,5])
 								scr_give_player_stats(player, 0, 0, 0, 3)
 								scr_lock_wheel(player)
-								NextStep
+								FinishResolving
 							break;
 						}
 					}else{

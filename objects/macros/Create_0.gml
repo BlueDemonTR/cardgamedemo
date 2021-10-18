@@ -15,6 +15,11 @@ show_debug_message(GM_version)
 #macro SendMill 5
 #macro SendInvalid 99
 
+temp1 = bool(array_length([0]))
+
+if(temp1){
+
+}
 
 //Sprite Properties
 #macro card_width 140
@@ -108,5 +113,5 @@ scr_initialize_statuses();
 #macro TextChant 3
 
 //Shortcuts
-#macro NextStep resolutionPile[positionInOrder,2]++
-#macro FinishResolving resolutionPile[positionInOrder,2] = 98
+#macro NextStep resolvingPile[positionInOrder,2]++
+#macro FinishResolving resolvingPile[positionInOrder,2] = 98

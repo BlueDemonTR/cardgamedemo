@@ -1,6 +1,8 @@
 function scr_sacrifice(player, position) {
 	
-	if(player.field[position]){return;}
+	if(!player.field[position, 0]){
+		return;
+	}
 	
 	var affectedCard = player.fieldCard[position],
 	cardNum = affectedCard.cardNum,

@@ -25,10 +25,10 @@ function scr_draw(player, cardsToDraw, actualDrawing) {
 
 	for (i = 0; i< cardsToDraw; i++){
 
-		scr_add_to_hand(player, player.deck[--player.deckCount])
+		scr_add_to_hand(player, player.deck[player.deckCount - 1])
 		scr_remove_from_deck(player, player.deckCount)
 		if(actualDrawing){
-				scr_card_is_drawn(player.hand[player.handCount, 0])
+				scr_card_is_drawn(player.hand[player.handCount - 1, 0])
 		}
 		
 	}

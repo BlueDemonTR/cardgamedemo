@@ -1,7 +1,7 @@
 function scr_summon_momentum_deck(player, momentumDeckPos, summonZone) {
 	var
-	cardNum = momentum_deck[momentumDeckPos, 0],
-	artNum = momentum_deck[momentumDeckPos, 1];
+	cardNum = momentumDeck[momentumDeckPos, 0],
+	artNum = momentumDeck[momentumDeckPos, 1];
 	
 	if(!scr_summon([cardNum, artNum], player, "impact", "playerMomentumDeckToField", summonZone)){
 		resolutionPile[obj_player.resolutionPileCount-1,2] = 97;

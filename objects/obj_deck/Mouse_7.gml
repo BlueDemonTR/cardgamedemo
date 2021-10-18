@@ -1,3 +1,5 @@
 if (obj_player.test_mode) {
-	scr_draw(player, 1, true);
+	with(player){
+		scr_draw(player, 1, true);
+	}
 }

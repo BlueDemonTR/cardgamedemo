@@ -6,6 +6,9 @@ randomize()
 //don't set it to true in online
 test_mode = macros.test_mode;
 
+//TODO: Remove
+mid_effect = false
+
 //hand location
 hand_x = 550;
 hand_y = 1000;
@@ -44,8 +47,8 @@ for(i = 0; i < 65; i++){
 }
 momentumDeckCount = 0;
 for(i = 0; i < 8; i++){
-	momentum_deck[i, 0] = 0;
-	momentum_deck[i, 1] = 0;
+	momentumDeck[i, 0] = 0;
+	momentumDeck[i, 1] = 0;
 }
 selected_wheel = 0;
 
@@ -54,6 +57,11 @@ scr_construct_global_deck();
 scr_shuffle_deck(player);
 
 //Stacking the deck for debug purposes here
+deck[deckCount++] = [1,0]
+deck[deckCount++] = [2,0]
+deck[deckCount++] = [3,0]
+deck[deckCount++] = [4,0]
+deck[deckCount++] = [8,0]
 
 //Field Card Zone Locations and initializations
 i = 0;
@@ -80,8 +88,10 @@ turn_count = 0;
 initialization_done = false;
 
 start_turn = true;
+startTurnEffectsActivated = false;
 main_phase = false;
 end_phase = false;
+endTurnEffectActivated = false;
 
 //Game State and Response
 open_game_state = true;
@@ -135,10 +145,10 @@ instance_create_layer(infirmary_x,infirmary_y,"Instances",obj_infirmary);
 mana = 0;
 maxMana = 8;
 momentum = 0;
-maxMomentum =12;
+maxMomentum = 12;
 playerMaxHP = 60;
 playerHP = playerMaxHP;
-wheel_locked=false;
+wheel_locked = false;
 
 //Summon Limitations Initialization
 scr_reset_limitations()

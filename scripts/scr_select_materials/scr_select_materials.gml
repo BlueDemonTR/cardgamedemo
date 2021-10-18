@@ -9,7 +9,7 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 	mainMaterial = -1,
 	mainMaterialRequired = 0,
 	keyMonster = 0,
-	selectedCards = resolutionPile[resolutionPileCount-1, arrayPos];
+	selectedCards = resolvingPile[resolvingPileCount-1, arrayPos];
 	
 	impactSummoning = true;
 	
@@ -106,9 +106,13 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 			materialDisplay[1, 1] = mainMaterialCount
 			
 			if(mmzOccupied || levelCount < levelRequired || mainMaterialCount < mainMaterialRequired){
+				var selectableTargets = [];
 				for(var position = 0; position < player.field_zone_count - 1; position++){
-					var selectableTargets = []
-					if(mmzOccupied){
+					var FieldCard = player.fieldCard[position];
+					
+					if(array_includes(selectedCards, position)){continue}
+					
+					if(mmzOccupied && !array_includes(selectableTargets, 4)){
 						array_push(selectableTargets, 4);
 						break;
 					}
@@ -119,12 +123,12 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 				for (var i = 0; i < array_length(selectableTargets); i++){
 					with(instance_create_layer(x,y,"UpperInstances",obj_appropiate_targets)){
 						self.player = player
-						position = selectableTargets[i];
+						self.position = selectableTargets[i];
 						self.arrayPos = arrayPos
-						self.cardNum = self.player.field[position, 0];
-						self.artNum = self.player.field[position, 1];
-						x = player.field_card_zone_x[position];
-						y = player.field_card_zone_y[position];
+						self.cardNum = self.player.field[self.position, 0];
+						self.artNum = self.player.field[self.position, 1];
+						x = player.field_card_zone_x[self.position];
+						y = player.field_card_zone_y[self.position];
 						current_function = "impact"
 					}		
 				}
@@ -156,8 +160,9 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 			materialDisplay[2, 1] = keyMonsterHere
 			
 			if(mmzOccupied || levelCount < levelRequired || mainMaterialCount < mainMaterialRequired || !keyMonsterHere){
+				var selectableTargets = [];
 				for(var position = 0; position < player.field_zone_count - 1; position++){
-					var selectableTargets = []
+					var FieldCard = player.fieldCard[position];
 					if(mmzOccupied){
 						array_push(selectableTargets, 4);
 						break;
@@ -210,7 +215,8 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 			
 			if(mmzOccupied || levelCount < levelRequired || mainMaterialCount < mainMaterialRequired || !keyMonsterHere){
 				for(var position = 0; position < player.field_zone_count - 1; position++){
-					var selectableTargets = []
+					var selectableTargets = [],
+					FieldCard = player.fieldCard[position];
 					if(mmzOccupied){
 						array_push(selectableTargets, 4);
 						break;
@@ -257,7 +263,8 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 
 			if(mmzOccupied || levelCount < levelRequired || mainMaterialCount < mainMaterialRequired || keyMonsterHere){
 				for(var position = 0; position < player.field_zone_count - 1; position++){
-					var selectableTargets = []
+					var selectableTargets = [],
+					FieldCard = player.fieldCard[position];
 					if(mmzOccupied){
 						array_push(selectableTargets, 4);
 						break;
@@ -284,5 +291,5 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 	}
 	//Success
 	impactSummoning = false;
-	obj_player.resolutionPile[obj_player.resolutionPileCount-1,2]++
+	obj_player.resolvingPile[obj_player.resolvingPileCount-1,2]++
 }

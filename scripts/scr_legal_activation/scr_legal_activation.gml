@@ -19,6 +19,7 @@ function scr_legal_activation(cardNum, effectNum, position){
 			}
 		break;
 		case "WheelEffect":
+			if(player.momentum < macros.wheel_cost[position, effectNum]){return false}
 			switch(position){
 				case 1://Motorbiker Wheel Effects Legal Activation
 					switch(effectNum){
@@ -27,7 +28,7 @@ function scr_legal_activation(cardNum, effectNum, position){
 							return true;							
 						break;
 						case 1:
-							if(!scr_count_impact(player)){return false}
+							if(!array_length(scr_count_impact(player))){return false}
 							return true;
 						break;
 						case 2:
@@ -51,7 +52,7 @@ function scr_legal_activation(cardNum, effectNum, position){
 							return true;
 						break;
 						case 2:
-							if(!scr_count_impact(player)){return false}
+							if(!array_length(scr_count_impact(player))){return false}
 							return true;
 						break;
 						case 3:
@@ -71,7 +72,7 @@ function scr_legal_activation(cardNum, effectNum, position){
 							return true;
 						break;
 						case 2:
-							if(!scr_count_impact(player)){return false}
+							if(!array_length(scr_count_impact(player))){return false}
 							return true;
 						break;
 						case 3:
@@ -91,7 +92,7 @@ function scr_legal_activation(cardNum, effectNum, position){
 							return true;
 						break;
 						case 2:
-							if(!scr_count_impact(player)){return false}
+							if(!array_length(scr_count_impact(player))){return false}
 							return true;
 						break;
 						case 3:
@@ -111,7 +112,7 @@ function scr_legal_activation(cardNum, effectNum, position){
 							return true;
 						break;
 						case 2:
-							if(!scr_count_impact(player)){return false}
+							if(!array_length(scr_count_impact(player))){return false}
 							return true;
 						break;
 						case 3:
@@ -130,7 +131,7 @@ function scr_legal_activation(cardNum, effectNum, position){
 							return true;
 						break;
 						case 2:
-							if(!scr_count_impact(player)){return false}
+							if(!array_length(scr_count_impact(player))){return false}
 							return true;
 						break;
 						case 3:
@@ -151,7 +152,7 @@ function scr_legal_activation(cardNum, effectNum, position){
 							return true;
 						break;
 						case 2:
-							if(!scr_count_impact(player)){return false}
+							if(!array_length(scr_count_impact(player))){return false}
 							return true;
 						break;
 						case 3:
@@ -444,7 +445,6 @@ function scr_legal_activation(cardNum, effectNum, position){
 		break;
 		
 		case 53://Healing Lullaby Legal Activation
-			if (cardStatus[StatusSilenced]){return false;}
 			if(player.playerHP == player.playerMaxHP || !(player.momentum)){return false;}
 			return true
 		break;

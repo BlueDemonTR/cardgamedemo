@@ -61,12 +61,12 @@ function scr_client_handle_message(argument0) {
 				with(opponentObject){
 					momentumDeckCount = buffer_read(buffer,buffer_u8);
 					for(var i = 0; i < momentumDeckCount; i++){
-						momentum_deck[i, 0] = buffer_read(buffer, buffer_u32);
-						momentum_deck[i, 1] = buffer_read(buffer, buffer_u8);
+						momentumDeck[i, 0] = buffer_read(buffer, buffer_u32);
+						momentumDeck[i, 1] = buffer_read(buffer, buffer_u8);
 					}
 					for(var i = momentumDeckCount; i < 15; i++){
-						momentum_deck[i, 0] = 0;
-						momentum_deck[i, 1] = 0;
+						momentumDeck[i, 0] = 0;
+						momentumDeck[i, 1] = 0;
 					}
 				}
 			break;		
@@ -135,7 +135,6 @@ function scr_client_handle_message(argument0) {
 					for(var i = 0; i < buffer_read(buffer, buffer_u8); i++){//Shared Effects
 						fieldCard[field_location].cardSharedEffects[i] = buffer_read(buffer, buffer_u16)
 					}
-					//TODO: Change Bool to u8
 					fieldCard[field_location].attacksLeft = buffer_read(buffer, buffer_bool );//Can it attack?
 				}
 			break;
@@ -192,12 +191,12 @@ function scr_client_handle_message(argument0) {
 				with(obj_player){
 					momentumDeckCount = buffer_read(buffer,buffer_u8);
 					for(var i = 0; i < momentumDeckCount; i++){
-						momentum_deck[i, 0] = buffer_read(buffer, buffer_u32);
-						momentum_deck[i, 1] = buffer_read(buffer, buffer_u8);
+						momentumDeck[i, 0] = buffer_read(buffer, buffer_u32);
+						momentumDeck[i, 1] = buffer_read(buffer, buffer_u8);
 					}
 					for(var i = momentumDeckCount; i < 15; i++){
-						momentum_deck[i, 0] = 0;
-						momentum_deck[i, 1] = 0;
+						momentumDeck[i, 0] = 0;
+						momentumDeck[i, 1] = 0;
 					}
 				}
 			break;

@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_buff_card(controller, position, levelBuff, atkBuff, maxHpBuff, hpBuff, armorBuff, regenerationBuff, dodgeBuff){
-	if(!controller.field[position]){return;}
+	if(!controller.field[position, 0]){return;}
 	var affectedCard = controller.fieldCard[position];
 	
 	if(affectedCard.cardStatus[StatusImmune]){return}

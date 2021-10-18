@@ -28,7 +28,8 @@ field_card_zone_x[i] = 1105;
 field_card_zone_y[i++] = 330;
 field_card_zone_x[i] = 890;
 field_card_zone_y[i++] = 536;
-for (j=0; j < obj_player.field_zone_count; j++){
+field_zone_count = i;
+for (j=0; j < field_zone_count; j++){
  	field[j,0] = 0;
  	field[j,1] = 0;
 	fieldCard[j] = noone;
@@ -49,8 +50,8 @@ momentum_deck_x = 1385;
 momentum_deck_y = 320;
 momentumDeckCount = 0;
 for(i = 0; i < 8; i++){
-	momentum_deck[i, 0] = 0;
-	momentum_deck[i, 1] = 0;
+	momentumDeck[i, 0] = 0;
+	momentumDeck[i, 1] = 0;
 }
 
 //player stats

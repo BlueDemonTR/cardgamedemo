@@ -8,33 +8,29 @@ if(obj_player.wheel_locked){
 }
 
 if(obj_player.momentum <= 12 && obj_player.momentum >= 0){
-	draw_sprite_ext(wheelSprite[obj_player.momentum],-1,x,y,1,1,0,lockColor,1);
+	draw_sprite_ext(macros.wheelSprite[obj_player.momentum],-1,x,y,1,1,0,lockColor,1);
 }
 
 if(instance_exists(obj_opponent)){	
 	if(obj_opponent.momentum <= 12){
-		draw_sprite_ext(wheelSprite[obj_opponent.momentum],-1,1300,400,1,1,180,c_white,1)
+		draw_sprite_ext(macros.wheelSprite[obj_opponent.momentum],-1,1300,400,1,1,180,c_white,1)
 	}
 }
 if(obj_player.selected_wheel > 0){
 	if(mouse_between(613, 673, 676, 850)){
 		depth=-5
 		if (mouse_between(630, 673, 676, 717)){
-			draw_text(mouse_x+20,mouse_y,wheel_ability[obj_player.selected_wheel, 3])
-			if(mouse_check_button_released(mb_left)){scr_wheel_effects(obj_player.selected_wheel,4)}
+			draw_text(mouse_x+20,mouse_y,macros.wheel_ability[obj_player.selected_wheel, 3])
 		}
 		else if (mouse_between(630, 717, 676, 760)){
-			draw_text(mouse_x+20,mouse_y,wheel_ability[obj_player.selected_wheel, 2])
-			if(mouse_check_button_released(mb_left)){scr_wheel_effects(obj_player.selected_wheel,3)}
+			draw_text(mouse_x+20,mouse_y,macros.wheel_ability[obj_player.selected_wheel, 2])
 		}
 		else if (mouse_between(630, 760, 676, 804)){
-			draw_text(mouse_x+20,mouse_y,wheel_ability[obj_player.selected_wheel, 1])
-			if(mouse_check_button_released(mb_left)){scr_wheel_effects(obj_player.selected_wheel,2)}
+			draw_text(mouse_x+20,mouse_y,macros.wheel_ability[obj_player.selected_wheel, 1])
 		}
 		else if (mouse_between(630, 804, 676, 850)){
-			draw_text(mouse_x+20,mouse_y,wheel_ability[obj_player.selected_wheel, 0])
-			if(mouse_check_button_released(mb_left)){scr_wheel_effects(obj_player.selected_wheel,1)}
+			draw_text(mouse_x+20,mouse_y,macros.wheel_ability[obj_player.selected_wheel, 0])
 		}
-		draw_text(mouse_x+20,mouse_y+20,momentum_gain[obj_player.selected_wheel])
+		draw_text(mouse_x+20,mouse_y+20,macros.momentum_gain[obj_player.selected_wheel])
 	}
 }else{depth=2}

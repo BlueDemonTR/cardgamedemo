@@ -22,16 +22,16 @@ function scr_count_infirmary_filter(players, typeArray, minLevel, maxLevel, arch
 			var cardNum = player.infirmary[i,0],
 			cardStat = macros.origStat[cardNum];
 			
-			if(typeArray != [] && !array_includes(typeArray, macros.card_type[cardNum])){
+			if(array_length(typeArray) && !array_includes(typeArray, macros.card_type[cardNum])){
 				continue;
 			}
 			if(cardStat[StatLevel] > maxLevel || cardStat[StatLevel] < minLevel){
 				continue;
 			}
-			if(archetypeArray != [] && !array_includes_array(archetypeArray, macros.origArchetype[cardNum])){
+			if(array_length(archetypeArray) && !array_includes_array(archetypeArray, macros.origArchetype[cardNum])){
 				continue;
 			}
-			if(spiritArray != [] && !array_includes(spiritArray, cardStat[StatSpirit])){
+			if(array_length(spiritArray) && !array_includes(spiritArray, cardStat[StatSpirit])){
 				continue;
 			}
 			if(checkSummonable && !scr_limited_summon(cardNum)){
@@ -43,7 +43,7 @@ function scr_count_infirmary_filter(players, typeArray, minLevel, maxLevel, arch
 			if(j == ignoreTarget){
 				continue;
 			}
-			if(!scr_check_filter(cardNum, filterNum)){
+			if(!scr_check_filter(cardNum, j,filterNum)){
 				continue;
 			}
 			filteredCardCount++

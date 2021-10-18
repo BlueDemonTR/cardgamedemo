@@ -4,7 +4,7 @@ function scr_summon(cardArray, player, summonType, animationType, summonZone){
 	var cardNum = cardArray[0],
 	artNum = cardArray[1]
 	
-	if(scr_limited_summon(cardNum)){return;}
+	if(!scr_limited_summon(cardNum)){return false;}
 	
 	with(player){
 		if(!field[summonZone,0]){
@@ -23,12 +23,23 @@ function scr_summon(cardArray, player, summonType, animationType, summonZone){
 				scr_info_to_instance(cardNum);
 				sacrificable = false
 				attacksLeft = 1
-				effectUsesLeft = cardStat[StatXPerTurn];
 				
 				recruit=false;				
 			}
 			scr_decide_field(player, summonZone, cardNum, artNum,"none");
-			field[summonZone]= [cardNum, artNum];
+			field[summonZone] = [cardNum, artNum];
+			
+			with(fieldCard[summonZone]){
+				scr_on_summon(cardNum);
+				switch(summoning_method){
+					case "mana":
+						scr_on_mana_summon(cardNum);
+					break;
+					case "impact":
+						scr_on_impact_summon(cardNum)
+					break;
+				}				
+			}
 			return fieldCard[summonZone];
 		}
 	}

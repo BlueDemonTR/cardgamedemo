@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_check_filter(cardNum, filterNum){
+function scr_check_filter(cardNum, position, filterNum){
 	switch(int64(filterNum)){
 		case -1: //any
 			return true
@@ -29,8 +29,8 @@ function scr_check_filter(cardNum, filterNum){
 				}
 			}
 		break;
-		case 3: //Monster With Taunt
-			return cardStatus[StatusTAUNT]
+		case 3: //Opponent's Monster With Taunt
+			return obj_opponent.fieldCard[position].cardStatus[StatusTAUNT]
 		break;
 	}
 	return false;

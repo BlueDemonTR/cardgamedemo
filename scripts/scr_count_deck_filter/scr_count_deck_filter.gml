@@ -23,19 +23,19 @@ function scr_count_deck_filter(players, typeArray, minLevel, maxLevel, archetype
 			if(macros.card_type[cardNum] != TypeSpell && (cardStat[StatLevel] > maxLevel || cardStat[StatLevel] < minLevel)){
 				continue;
 			}
-			if(typeArray != [] && !array_includes(typeArray, macros.card_type[cardNum])){
+			if(array_length(typeArray) && !array_includes(typeArray, macros.card_type[cardNum])){
 				continue;
 			}
-			if(archetypeArray != [] && !array_includes_array(archetypeArray, macros.origArchetype[cardNum])){
+			if(array_length(archetypeArray) && !array_includes_array(archetypeArray, macros.origArchetype[cardNum])){
 				continue;
 			}
-			if(spiritArray != [] && !array_includes(spiritArray, cardStat[StatSpirit])){
+			if(array_length(spiritArray) && !array_includes(spiritArray, cardStat[StatSpirit])){
 				continue;
 			}
 			if(checkSummonable && !scr_limited_summon(cardNum)){
 				continue;
 			}
-			if(!scr_check_filter(cardNum, filterNum)){
+			if(!scr_check_filter(cardNum, j,filterNum)){
 				continue;
 			}
 			filteredCardCount++

@@ -13,7 +13,12 @@ function scr_end_phase_effects(){
 		
 		scr_change_card_status(player, position, StatusParalyzed, false); //Unparalyze Card
 		affectedCard.sacrificable = true;//Make card Sacrificable
-		affectedCard.effectUsesLeft = macros.origStat[cardNum, StatXPerTurn]
+		
+		if(variable_array_exists(macros.origStat,cardNum,i)){
+			affectedCard.effectUsesLeft = macros.origStat[cardNum, StatXPerTurn]
+		}else{
+			affectedCard.effectUsesLeft = 1
+		}
 		
 		if(affectedCard.cardStatus[StatusSelfDestruct]){//Status Self Destruct Activation Trigger
 			if(!scr_legal_activation("SelfDestruct", 0, position)){return false;}			

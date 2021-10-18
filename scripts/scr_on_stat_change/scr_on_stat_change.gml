@@ -1,9 +1,10 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_on_stat_change(cardObject){
-	
-	if(cardObject.cardStat[StatHP] == SendInjuries){//Destruction by Injury
-		scr_destroy(cardObject, position, SendInjuries)
+	var position = cardObject.position,
+	player = cardObject.player;
+	if(cardObject.cardStat[StatHP] == 0){//Destruction by Injury
+		scr_destroy(player, position, SendInjuries)
 	}
 	switch(cardObject.cardNum){
 		case 65://Homesick Soldier Effect Activation Trigger

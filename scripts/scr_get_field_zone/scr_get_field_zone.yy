@@ -6,7 +6,7 @@
     "path": "folders/Scripts/Game Functions.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_impact_summon_materials",
+  "name": "scr_get_field_zone",
   "tags": [],
   "resourceType": "GMScript",
 }

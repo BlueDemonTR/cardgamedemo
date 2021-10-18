@@ -18,25 +18,25 @@ function scr_target_momentum_deck(players, minLevel, maxLevel, archetypeArray, s
 		var player = players[i]
 		
 		for(var j = 0; j < player.momentumDeckCount; j++){
-			var cardNum = player.momentumDeck[i, 0],
+			var cardNum = player.momentumDeck[j, 0],
 			cardStat = macros.origStat[cardNum];
 			
 			if(macros.card_type[cardNum] != TypeSpell && (cardStat[StatLevel] > maxLevel || cardStat[StatLevel] < minLevel)){
 				continue;
 			}
-			if(archetypeArray != [] && !array_includes_array(archetypeArray, macros.origArchetype[cardNum])){
+			if(array_length(archetypeArray) && !array_includes_array(archetypeArray, macros.origArchetype[cardNum])){
 				continue;
 			}
-			if(spiritArray != [] && !array_includes(spiritArray, cardStat[StatSpirit])){
+			if(array_length(spiritArray) && !array_includes(spiritArray, cardStat[StatSpirit])){
 				continue;
 			}
 			if(checkSummonable && !scr_limited_summon(cardNum)){
 				continue;
 			}
-			if(!scr_check_filter(cardNum, filterNum)){
+			if(!scr_check_filter(cardNum, j,filterNum)){
 				continue;
 			}
-			filteredCards[filteredCardCount++] = [player, i]
+			filteredCards[filteredCardCount++] = [player, j]
 		}
 	}
 	

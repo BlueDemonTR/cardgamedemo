@@ -1,5 +1,5 @@
 function scr_discard(player, position) {
-	if(!player.hand[position]){
+	if(!player.hand[position, 0]){
 		return false;
 	}
 	

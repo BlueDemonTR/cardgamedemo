@@ -8,9 +8,9 @@ function scr_add_to_hand(player, cardArray){
 		handCard[handCount] = instance_create_depth(player.deck_x, player.deck_y, -(player.handCount)-2, obj_card);
 		with(handCard[handCount]){
 			card_drawn = true;
-			hand_position = player.handCount;
-			cardNum = player.hand[hand_position,0];
-			artNum = player.hand[hand_position,1];
+			position = player.handCount;
+			cardNum = player.hand[position,0];
+			artNum = player.hand[position,1];
 		}
 	}
 	handCount++

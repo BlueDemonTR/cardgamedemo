@@ -12,8 +12,8 @@ function scr_on_summon(cardNum){
 	
 	switch(obj_player.selected_wheel){
 		case 5://Fisherman Wheel Gain Activation Trigger
-			if(!scr_legal_activation("WheelGain", 0, obj_player.selected_wheel)){return false}
-			if(!scr_check_archetype(cardNum, ArcFish) || scr_check_archetype(cardNum, ArcFisherman)){return false}
+			if(!scr_legal_activation("WheelGain", 0, obj_player.selected_wheel)){break;}
+			if(!scr_check_archetype(cardNum, ArcFish) || scr_check_archetype(cardNum, ArcFisherman)){break;}
 			scr_add_to_resolution_pile([cardNum, 0, 0, position, false, player.fieldCard[position].cardStat[StatLevel]])
 		break;
 	}
@@ -54,7 +54,9 @@ function scr_on_summon(cardNum){
 		case 96://Medical General Activation Trigger
 		case 99://Single Shot Master Activation Trigger
 		case 101://Rogue Soldier Activation Trigger
-			if(!scr_legal_activation(cardNum, 0, position)){break;}
+			if(!scr_legal_activation(cardNum, 0, position)){
+				break;
+			}
 			scr_add_to_resolution_pile([cardNum, 0, 0, position, false])
 		break;
 	}

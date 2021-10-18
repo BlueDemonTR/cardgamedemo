@@ -1,6 +1,6 @@
 function scr_shuffle_deck(player) {
 	var numShuffle = random_range(80,120);
-
+	if(macros.test_mode){return}
 	//if no cards in deck
 	with(player){
 		if (deckCount == 0){return}

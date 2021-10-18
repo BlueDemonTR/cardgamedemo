@@ -7,10 +7,10 @@ if(!instance_exists(obj_opponent)){return;}
 if(start_turn && turn_count==0){
 	if(!(turn_count <= 2)){playerHP=playerMaxHP;}
 	scr_message_stats();	
-	if (alarm[0] == -1){alarm[0]=1;}
+	if (alarm[0] == -1){alarm[0] = 1;}
 	turn_count++
 }
-if(start_turn && own_turn && startTurnEffectsActivated){
+if(start_turn && own_turn && !startTurnEffectsActivated){
 	mana = 4
 	scr_message_stats();
 	
@@ -24,6 +24,7 @@ if(start_turn && own_turn && startTurnEffectsActivated){
 if(start_turn && startTurnEffectsActivated && open_game_state){
 	start_turn = false
 	main_phase = true
+	startTurnEffectsActivated = false
 }
 
 if(end_phase && !endTurnEffectActivated){
@@ -48,10 +49,14 @@ if(resolvingPileCount){
 		open_game_state = true
 		resolvingPileCount--
 	}	
-}else if(resolutionPileCount > 0 && open_game_state  && !opponent_response_left && !player_response_left){
+}else if(resolutionPileCount > 0 && open_game_state && !opponent_response_left && !player_response_left){
 	resolvingPile = resolutionPile;
-	resolvingPileCount = resolvingPileCount;
+	resolvingPileCount = resolutionPileCount;
 	resolutionPileCount = 0
+	
+	//DEBUG
+	player_response_left = false
+	opponent_response_left = false
 }
 
 for(i = 0; i < obj_player.field_zone_count; i++){//TODO, Rewrite

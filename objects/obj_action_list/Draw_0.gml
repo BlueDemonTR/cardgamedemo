@@ -1,3 +1,6 @@
+//TODO: Redo Action List
+return
+
 draw_set_font(fnt_default)
 draw_sprite(sprite_index,-1,x,originY)
 if(!open_list){

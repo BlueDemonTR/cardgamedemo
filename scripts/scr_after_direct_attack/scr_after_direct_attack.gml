@@ -4,8 +4,8 @@ function scr_after_direct_attack(attacker, damage) {
 		case 1://Motorbiker Wheel Gain Activation Trigger
 			if(!scr_check_archetype(cardNum, ArcMotorbiker)){break;}
 			if(!scr_legal_activation("WheelGain", 0, player.selected_wheel)){break;}
+			
 			scr_add_to_resolution_pile(["WheelGain", 0, 0, player.selected_wheel, false, damage])
-			obj_player.resolutionPileCount++
 		break;
 	}
 	

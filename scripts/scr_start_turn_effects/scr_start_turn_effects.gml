@@ -11,7 +11,7 @@ function scr_start_turn_effects(){
 		var affectedCard = fieldCard[position],
 		cardNum = field[position, 0];
 		
-		affectedCard.attacksLeft++
+		affectedCard.attacksLeft = 1//Card Can Attack Again
 
 		switch(field[position, 0]){
 			case 31://Visclades of Acceptance Indestructable Loss Effect Activation Trigger	

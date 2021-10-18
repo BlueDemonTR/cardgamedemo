@@ -14,7 +14,7 @@ function scr_send_material(player, position, summonedCard){
 		animationType = "material"
 		instance_destroy();
 	}	
-	scr_decide_field(player, position, cardNum, artNum, "material")
+	scr_decide_field(player, position, 0, 0, "material")
 	
 	//scr_on_material
 	return;

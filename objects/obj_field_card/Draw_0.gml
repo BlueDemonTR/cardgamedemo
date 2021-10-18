@@ -76,4 +76,3 @@ for(j=0; j < i; j++){
 	draw_text((x-46)+(j*30),y+20,stateList[j,1])
 }
 draw_set_color(c_gray)
-draw_text(x,y,cardStat)

@@ -2,7 +2,8 @@ function scr_on_attack(attacker, attacked) {
 	var cardNum = attacker.cardNum,
 	position = attacker.position;
 
-	if(cardStatus[StatusSilenced]){return;}
+
+	if(attacker.cardStatus[StatusSilenced]){return;}
 	switch(cardNum){
 		case 13://Motorbiker Leader Toku Activation Trigger
 		case 72://Torch Carrier Activation Trigger

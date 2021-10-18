@@ -9,5 +9,4 @@ depth = 0;
 
 //impact stuff
 selected = false;
-force_select = false;//TODO Remove
 alarm[1] = 1;

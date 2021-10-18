@@ -3,9 +3,10 @@ activation_mode = self.activation_mode;
 switch(activation_mode){
 	case "Attack":
 		scr_attack(player.fieldCard[position]);
+		player.open_game_state = false;
 	break;
 	case "Sacrifice":
-		scr_sacrifice(position);	
+		scr_sacrifice(player, position);	
 	break;
 	case "Effect":
 		switch(obj_player.field[position,0]){
@@ -56,7 +57,7 @@ switch(activation_mode){
 	break;	
 }
 with(obj_activation_box){
-	if(self.activation_mode = activation_mode){
+	if(self.activation_mode == activation_mode || self.position == position){
 		instance_destroy();
 	}
 }
