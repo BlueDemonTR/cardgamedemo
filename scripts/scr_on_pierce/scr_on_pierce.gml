@@ -1,5 +1,6 @@
 function scr_on_pierce(attacker, attacked, damage) {
-	var cardNum = attacker.cardNum;
+	var cardNum = attacker.cardNum,
+	position = attacker.position;
 	switch(cardNum){
 		case 6: //Violent Wheeler Activation
 		case 17: //Visclades Lentus Vio Activation

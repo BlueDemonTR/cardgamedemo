@@ -18,7 +18,7 @@ function scr_check_filter(cardNum, position, filterNum){
 			if(variable_array_exists(macros.origStat, cardNum, StatLevel)){
 				if (scr_check_archetype(cardNum, ArcMotorbikerLeader)){
 					var levelTemp = macros.origStat[cardNum, StatLevel];
-					return (macros.origStat[obj_player.infirmary[obj_player.resolutionPile[obj_player.resolutionPileCount-1,5],0],StatLevel] == levelTemp)
+					return (macros.origStat[obj_player.infirmary[obj_player.resolvingPile[obj_player.resolvingPileCount-1,5],0],StatLevel] == levelTemp)
 				}
 			}		
 		break;

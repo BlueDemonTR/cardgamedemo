@@ -19,8 +19,11 @@ function scr_target_field(players, typeArray, level, atk, hp, archetypeArray, sp
 		
 		for(var j = 0; j < player.field_zone_count; j++){
 			var cardNum = player.field[j, 0],
-			card = player.fieldCard[j],
-			cardStat = card.cardStat;
+			card = player.fieldCard[j];
+			
+			if(!instance_exists(card)){continue;}
+			
+			var cardStat = card.cardStat;
 			
 			if(macros.card_type[cardNum] != TypeSpell && (cardStat[StatLevel] < level[0] || cardStat[StatLevel] > level[1])){
 				continue;

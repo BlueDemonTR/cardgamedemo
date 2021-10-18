@@ -9,7 +9,7 @@ function scr_heal_card(controller, position, hpBuff){
 	
 	if(affectedCard.cardStatus[StatusImmune]){return}
 	
-	scr_buff_card(controller, position, 0, 0, 0, hpBuff, 0, 0, 0)
+	scr_buff_card(controller, position, StatHP, hpBuff)
 	
 	scr_decide_field_card_stats(controller, position)
 }
