@@ -118,26 +118,13 @@ function scr_server_handle_message(argument0, argument1) {
 				buffer_write(send_buffer, buffer_u8, buffer_read(buffer, buffer_u8));//Position
 				
 				var statCount = buffer_read(buffer, buffer_u8)
-				//buffer_write(send_buffer, buffer_u8, statCount)
 				for(var i = 0; i < statCount; i++){//Stats
-					buffer_write(send_buffer, buffer_u16, buffer_read(buffer, buffer_s16));
+					buffer_write(send_buffer, buffer_u16, buffer_read(buffer, buffer_u16));
 				}
 				var statusCount = buffer_read(buffer, buffer_u8)
-				//buffer_write(send_buffer, buffer_u8, statusCount)
 				for(var i = 0; i < statusCount; i++){//Statuses
 					buffer_write(send_buffer, buffer_bool, buffer_read(buffer, buffer_bool));
 				}
-				//var archetypeCount = buffer_read(buffer, buffer_u8)
-				//buffer_write(send_buffer, buffer_u8, archetypeCount)
-				//for(var i = 0; i < archetypeCount; i++){//Archetypes
-				//	buffer_write(send_buffer, buffer_u16, buffer_read(buffer, buffer_u16));
-				//}
-				
-				//var sharedEffectCount = buffer_read(buffer, buffer_u8)
-				//buffer_write(send_buffer, buffer_u8, sharedEffectCount)
-				//for(var i = 0; i < sharedEffectCount; i++){//Shared Effects
-				//	buffer_write(send_buffer, buffer_u16, buffer_read(buffer, buffer_u16));
-				//}
 				
 				buffer_write(send_buffer, buffer_u8, buffer_read(buffer, buffer_u8));//Attacks Left
 			
