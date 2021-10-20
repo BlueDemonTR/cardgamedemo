@@ -244,7 +244,7 @@ function scr_legal_activation(cardNum, effectNum, position){
 		break;
 		
 		case 9://Leader Takeover Legal Activation
-			if(!scr_count_infirmary_filter([player], [TypeMomentum], 1, 12, [ArcMotorbiker], [], false, 1, -1, 0)){return false;}
+			if(!scr_count_infirmary_filter([player], [TypeMomentum], 1, 12, [ArcMotorbiker], [], false, SendInjuries, -1, 0)){return false;}
 			if(player.field[4,0] != 0){return false;}
 			return true;
 		break;

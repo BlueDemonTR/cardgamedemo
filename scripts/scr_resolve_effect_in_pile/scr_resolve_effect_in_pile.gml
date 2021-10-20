@@ -888,7 +888,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 										NextStep
 									break;
 									case 4:
-										scr_destroy(resolvingPile[positionInOrder, 6], resolvingPile[positionInOrder, 5], SendDestroy)
+										scr_destroy(resolvingPile[positionInOrder, 6], resolvingPile[positionInOrder, 5], SendEffect)
 										FinishResolving
 									break;				
 								}
@@ -1302,7 +1302,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					if(!effectSilenced){
 						switch(resolutionStep){
 							case 1:
-								scr_destroy(player, position, SendDestroy)
+								scr_destroy(player, position, SendEffect)
 								resolvingPile[positionInOrder,5] = 0
 								scr_target_momentum_deck([player], 1, 12, [ArcMotorbikerLeader], [], true, -1, 5);
 								NextStep

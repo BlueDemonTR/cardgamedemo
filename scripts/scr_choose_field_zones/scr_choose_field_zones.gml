@@ -20,6 +20,6 @@ function scr_choose_field_zones(players, selectFilled, selectNMZ, selectMMZ, arr
 		}
 	}
 	if(!effectSuccessful){
-		resolutionPile[obj_player.resolutionPileCount-1,2] = 97;
+		resolvingPile[obj_player.resolvingPileCount-1,2] = 97;
 	}
 }

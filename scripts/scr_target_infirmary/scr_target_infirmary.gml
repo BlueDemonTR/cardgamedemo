@@ -39,7 +39,7 @@ function scr_target_infirmary(players, typeArray, minLevel, maxLevel, archetypeA
 			if(checkSummonable && !scr_limited_summon(cardNum)){
 				continue;
 			}
-			if(sendType != -1 && player.infirmary[i,2] == sendType){
+			if(sendType != -1 && player.infirmary[j,2] != sendType){
 				continue;
 			}
 			if(j == ignoreTarget){
@@ -63,6 +63,6 @@ function scr_target_infirmary(players, typeArray, minLevel, maxLevel, archetypeA
 		}
 	}
 	if(filteredCardCount == 0){
-		resolutionPile[obj_player.resolutionPileCount-1,2] = 97
+		resolvingPile[obj_player.resolvingPileCount-1,2] = 97
 	}
 }

@@ -14,6 +14,6 @@ function scr_target_momentum_deck_impact(player, wheelNum, arrayPos){
 		}
 	}
 	if(summonableMonsters == []){
-		resolutionPile[obj_player.resolutionPileCount-1,2] = 97
+		resolvingPile[obj_player.resolvingPileCount-1,2] = 97
 	}
 }

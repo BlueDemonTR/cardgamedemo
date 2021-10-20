@@ -63,6 +63,6 @@ function scr_target_hand(players, typeArray, minLevel, maxLevel, archetypeArray,
 	}
 
 	if(filteredCardCount == 0){
-		resolutionPile[obj_player.resolutionPileCount-1,2] = 97
+		resolvingPile[obj_player.resolvingPileCount-1,2] = 97
 	}
 }

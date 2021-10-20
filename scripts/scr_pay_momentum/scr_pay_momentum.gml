@@ -5,7 +5,7 @@ function scr_pay_momentum(player, amount){
 	//amount: int
 	
 	if(player.momentum < amount){
-		resolutionPile[obj_player.resolutionPileCount-1,2] = 97
+		resolvingPile[obj_player.resolvingPileCount-1,2] = 97
 		return false;
 	}
 	

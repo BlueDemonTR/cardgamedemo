@@ -4,7 +4,7 @@ function scr_summon_from_infirmary(player, infirmaryPos, summonZone) {
 		
 		
 	if(!scr_summon([cardNum, artNum], player, "effect", "playerInfirmaryToField", summonZone)){
-		resolutionPile[obj_player.resolutionPileCount-1,2] = 97;
+		resolvingPile[obj_player.resolvingPileCount-1,2] = 97;
 		return;
 	}
 

@@ -19,7 +19,7 @@ function scr_count_infirmary_filter(players, typeArray, minLevel, maxLevel, arch
 		var player = players[i]
 		
 		for(var j = 0; j < player.infirmaryCount; j++){
-			var cardNum = player.infirmary[i,0],
+			var cardNum = player.infirmary[j,0],
 			cardStat = macros.origStat[cardNum];
 			
 			if(array_length(typeArray) && !array_includes(typeArray, macros.card_type[cardNum])){
@@ -37,7 +37,7 @@ function scr_count_infirmary_filter(players, typeArray, minLevel, maxLevel, arch
 			if(checkSummonable && !scr_limited_summon(cardNum)){
 				continue;
 			}
-			if(sendType != -1 && player.infirmary[i,2] == sendType){
+			if(sendType != -1 && player.infirmary[j,2] != sendType){
 				continue;
 			}
 			if(j == ignoreTarget){

@@ -8,7 +8,7 @@ show_debug_message(GM_version)
 
 //Infirmary Send Types
 #macro SendInjuries 0
-#macro SendDestroy 1
+#macro SendEffect 1
 #macro SendSacrifice 2
 #macro SendMaterial 3
 #macro SendDiscard 4

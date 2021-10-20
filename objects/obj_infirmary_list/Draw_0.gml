@@ -1,1 +1,2 @@
 draw_sprite_stretched(macros.sprite_array[cardNum, artNum] , -1, x-card_width/2,y-card_height/2,card_width,card_height);
+draw_text(x,y, destroyType)

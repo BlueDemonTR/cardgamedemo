@@ -22,6 +22,6 @@ function scr_target_infirmary_name(player, cardNum, arrayPos){
 		}
 	}
 	if(filtered_card_count == 0){
-		resolutionPile[obj_player.resolutionPileCount-1,2] = 97
+		resolvingPile[obj_player.resolvingPileCount-1,2] = 97
 	}
 }

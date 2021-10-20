@@ -51,6 +51,6 @@ function scr_target_momentum_deck(players, minLevel, maxLevel, archetypeArray, s
 		}
 	}
 	if(filteredCardCount == 0){
-		resolutionPile[obj_player.resolutionPileCount-1,2] = 97
+		resolvingPile[obj_player.resolvingPileCount-1,2] = 97
 	}
 }
