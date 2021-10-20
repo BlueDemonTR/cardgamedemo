@@ -2,6 +2,7 @@ function scr_ignition_effect_number(cardNum, effectActivationLocation){
 	switch(effectActivationLocation){
 		case "Field":
 			switch(cardNum){
+				case 14://Cleo Motorbiker Leader Ignition Effect Number
 				case 29://Visclades of Bargaining Ignition Effect Number
 				case 35://Pole Clan Mage Ignition Effect Number
 				case 47://Igloo Castle Ignition Effect Number

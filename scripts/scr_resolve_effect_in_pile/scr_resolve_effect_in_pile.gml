@@ -175,7 +175,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 										resolvingPile[positionInOrder, 5] = scr_target_deck_name(player, 9)
 										NextStep
 									break;
-									case 4:
+									case 3:
 										scr_search(player, resolvingPile[positionInOrder, 5])
 										FinishResolving
 									break;

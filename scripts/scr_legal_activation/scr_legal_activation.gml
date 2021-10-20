@@ -271,7 +271,7 @@ function scr_legal_activation(cardNum, effectNum, position){
 		
 		case 14://Motorbiker Leader Cleo Legal Activation
 			if(obj_player.fieldCard[position].cardStatus[StatusSilenced]){return false;}
-			if(!effectUsesLeft){return false}
+			if(!(obj_player.fieldCard[position].effectUsesLeft)){return false}
 			if(!scr_count_field_filter([opponent], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1)){return false;}
 			return true;
 		break;

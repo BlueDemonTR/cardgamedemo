@@ -8,7 +8,7 @@ function scr_message_opponent_field_card_stats(position) {
 
 	buffer_write(obj_client.send_buffer, buffer_u8, macros.stat_count);
 	for(var i = 0; i < macros.stat_count; i++){
-		if(array_length(obj_player.fieldCard[position].cardStat) > i){
+		if(array_length(obj_opponent.fieldCard[position].cardStat) > i){
 			buffer_write(obj_client.send_buffer, buffer_u16, obj_opponent.fieldCard[position].cardStat[i]);
 		}else{
 			buffer_write(obj_client.send_buffer, buffer_u16, 0);
@@ -16,7 +16,7 @@ function scr_message_opponent_field_card_stats(position) {
 	}
 	buffer_write(obj_client.send_buffer, buffer_u8, macros.status_count);
 	for(var i = 0; i < macros.status_count; i++){
-		if(array_length(obj_player.fieldCard[position].cardStatus) > i){
+		if(array_length(obj_opponent.fieldCard[position].cardStatus) > i){
 			buffer_write(obj_client.send_buffer, buffer_bool, obj_opponent.fieldCard[position].cardStatus[i]);
 		}else{
 			buffer_write(obj_client.send_buffer, buffer_bool, false);

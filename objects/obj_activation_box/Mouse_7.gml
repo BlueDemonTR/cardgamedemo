@@ -29,7 +29,7 @@ switch(activation_mode){
 			case 110://Robert XMakine Activation Trigger
 			case 111://Dom XMakine Activation Trigger
 			case 112://Jason DXMakine Activation Trigger			
-				if(scr_legal_activation(obj_player.field[position,0], 0, position)){return false}
+				if(!scr_legal_activation(obj_player.field[position,0], 0, position)){return false}
 				scr_add_to_resolution_pile([obj_player.field[position,0], 0, 0, position, false])
 			break;
 		}

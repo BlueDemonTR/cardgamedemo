@@ -158,13 +158,7 @@ function scr_client_handle_message(argument0) {
 						infirmary[i,1] = 0;
 						infirmary[i,2] = 0;
 					}
-					if(infirmaryCount != 0){
-						obj_infirmary.cardOnTop = infirmary[infirmaryCount-1,0]
-						obj_infirmary.artOnTop = infirmary[infirmaryCount-1,1]
-					}else{
-						obj_infirmary.cardOnTop = 0
-						obj_infirmary.artOnTop = 0
-					}
+					scr_update_infirmary()
 				}
 			break;
 			case MESSAGE_OPPONENT_FIELD:

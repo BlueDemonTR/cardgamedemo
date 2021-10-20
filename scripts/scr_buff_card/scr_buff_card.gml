@@ -14,7 +14,6 @@ function scr_buff_card(controller, position, changeStat, increase){
 	if(changeStat == StatMaxHP && affectedCard.cardStat[StatMaxHP] < affectedCard.cardStat[StatHP]){
 		affectedCard.cardStat[StatHP] = affectedCard.cardStat[StatMaxHP]
 	}
-	
 	scr_on_stat_change(affectedCard)
 	
 	scr_decide_field_card_stats(controller, position)

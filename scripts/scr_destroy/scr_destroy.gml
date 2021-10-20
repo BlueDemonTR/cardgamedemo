@@ -18,7 +18,7 @@ function scr_destroy(player, position, destroyType) {
 		animationType = "destroy"
 		instance_destroy();
 	}	
-	scr_decide_field(player, position, cardNum, artNum, "destroy")
+	scr_decide_field(player, position, 0, 0, "destroy")
 	
 	scr_on_destroyed(cardNum, infirmaryPos, destroyType);
 	return;
