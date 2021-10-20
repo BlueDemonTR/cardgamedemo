@@ -5,7 +5,7 @@ function scr_summon_from_deck(deckPos, summonZone){
 	
 	scr_shuffle_deck(player)
 	
-	if(!scr_summon([cardNum, artNum], player, "effect", "playerDeckToField", summonZone)){
+	if(!scr_summon([cardNum, artNum], player, SummonEffect, "playerDeckToField", summonZone)){
 		resolvingPile[obj_player.resolvingPileCount-1,2] = 97;
 		return;
 	}

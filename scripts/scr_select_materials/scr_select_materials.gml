@@ -129,7 +129,7 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 						self.artNum = self.player.field[self.position, 1];
 						x = player.field_card_zone_x[self.position];
 						y = player.field_card_zone_y[self.position];
-						current_function = "impact"
+						current_function = TargetImpact
 					}		
 				}
 				return;
@@ -185,7 +185,7 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 						self.artNum = self.player.field[self.position, 1];
 						x = player.field_card_zone_x[self.position];
 						y = player.field_card_zone_y[self.position];
-						current_function = "impact"
+						current_function = TargetImpact
 					}		
 				}
 				return;
@@ -242,7 +242,7 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 						self.artNum = self.player.field[self.position, 1];
 						x = player.field_card_zone_x[self.position];
 						y = player.field_card_zone_y[self.position];
-						current_function = "impact"
+						current_function = TargetImpact
 					}		
 				}
 				return;
@@ -288,7 +288,7 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 						self.artNum = self.player.field[self.position, 1];
 						x = player.field_card_zone_x[self.position];
 						y = player.field_card_zone_y[self.position];
-						current_function = "impact"
+						current_function = TargetImpact
 					}		
 				}
 				return;

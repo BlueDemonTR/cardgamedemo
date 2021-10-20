@@ -10,7 +10,7 @@ function scr_target_momentum_deck_impact(player, wheelNum, arrayPos){
 			self.arrayPos = arrayPos
 			cardNum = self.player.momentumDeck[position, 0];
 			artNum = self.player.momentumDeck[position,1];
-			current_function = "momentumDeck";
+			current_function = SelectMomentum;
 		}
 	}
 	if(summonableMonsters == []){

@@ -1,7 +1,7 @@
 
 effectBelongsTo = 0;
 position = 0;
-current_function= "target";
+current_function= TargetMonster;
 
 sprite_index = spr_select_target_unselected;
 

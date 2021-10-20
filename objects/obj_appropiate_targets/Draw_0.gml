@@ -1,8 +1,8 @@
 switch(current_function){
-	case "DirectAttack":
+	case TargetDirect:
 		draw_sprite(sprite_index,-1,x,y);
 	break;
-	case "impact":
+	case TargetImpact:
 		if(selected){
 			sprite_index = spr_select_target_selected
 		}else{

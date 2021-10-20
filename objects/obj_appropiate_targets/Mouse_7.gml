@@ -1,8 +1,8 @@
 var function_check = current_function,
 arrayPos = self.arrayPos;
 switch (current_function){
-	case "target":
-	case "chooseZone":
+	case TargetMonster:
+	case TargetZone:
 		obj_player.resolvingPile[obj_player.resolvingPileCount-1,arrayPos] = position;
 		obj_player.resolvingPile[obj_player.resolvingPileCount-1,arrayPos+1] = player;
 		obj_player.resolvingPile[obj_player.resolvingPileCount-1,2]++
@@ -12,7 +12,7 @@ switch (current_function){
 			}
 		}
 	break;
-	case "impact":
+	case TargetImpact:
 		if(selected){
 			for(var i = 0; i < array_length(obj_player.resolvingPile[obj_player.resolvingPileCount-1,arrayPos]); i++){
 				if(obj_player.resolvingPile[obj_player.resolvingPileCount-1,arrayPos][i] == position){
@@ -34,7 +34,7 @@ switch (current_function){
 			scr_select_materials(player, obj_player.resolvingPile[obj_player.resolvingPileCount-1,arrayPos-1], arrayPos)
 		}		
 	break;
-	case "Attack":
+	case TargetAttack:
 		var attackingCard = self.attackingCard,
 		attackedCard = obj_opponent.fieldCard[position];
 
@@ -48,14 +48,14 @@ switch (current_function){
 		scr_card_on_attacked(attackedCard, attackingCard)
 
 		with(obj_appropiate_targets){
-			if(function_check == current_function || current_function == "DirectAttack"){
+			if(function_check == current_function || current_function == TargetDirect){
 				instance_destroy();
 			}
 		}
 		obj_player.open_game_state = true;
 	break;
 
-	case "DirectAttack":
+	case TargetDirect:
 		var attackingCard = self.attackingCard;
 		
 		attackingCard.attacksLeft--
@@ -67,14 +67,14 @@ switch (current_function){
 		scr_on_direct_attack(attackingCard)
 		
 		with(obj_appropiate_targets){
-			if(function_check == current_function || current_function == "Attack"){
+			if(function_check == current_function || current_function == TargetAttack){
 				instance_destroy();
 			}
 		}
 		obj_player.open_game_state = true;
 	break;
 
-	case  "discard":
+	case  TargetDiscard:
 		discardedCard = player.hand[position, 0];
 		obj_player.resolvingPile[obj_player.resolvingPileCount-1,arrayPos] = position;
 		obj_player.resolvingPile[obj_player.resolvingPileCount-1,arrayPos+1] = player;

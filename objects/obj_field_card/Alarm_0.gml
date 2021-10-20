@@ -4,7 +4,7 @@ if(self.player.open_game_state && self.player.main_phase){
 	i=0;
 	if(attacksLeft && !cardStatus[StatusUnarmed] && !cardStatus[StatusParalyzed] && player.turn_count != 1 && array_length(scr_count_attack(self))){
 		with(instance_create_depth(x,y,depth-1,obj_activation_box)){
-			activation_mode = "Attack";
+			activation_mode = FunctionAttack;
 			self.position = position;
 			self.player = player;
 			opponent = player.opponent;
@@ -15,7 +15,7 @@ if(self.player.open_game_state && self.player.main_phase){
 	}
 	if(scr_legal_activation(cardNum, scr_ignition_effect_number(cardNum, "Field"), position)){
 		with(instance_create_depth(x,y,depth-1,obj_activation_box)){
-			activation_mode = "Effect";
+			activation_mode = FunctionFieldEffect;
 			self.position = position;
 			self.player = player;
 			opponent = player.opponent;
@@ -26,7 +26,7 @@ if(self.player.open_game_state && self.player.main_phase){
 	}
 	if(sacrificable){
 		with(instance_create_depth(x,y,depth-1,obj_activation_box)){
-			activation_mode = "Sacrifice";
+			activation_mode = FunctionSacrifice;
 			self.position = position;
 			self.player = player;
 			opponent = player.opponent;

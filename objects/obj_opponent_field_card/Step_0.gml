@@ -20,7 +20,7 @@ if(obj_opponent.field[self.position,0] > 0 && cardNum != obj_opponent.field[self
 			self.artNum = tempArtNum;
 			self.position = i;
 			scr_info_to_instance(cardNum);
-			summoning_method = "effect"
+			summoning_method = SummonEffect
 			field_x = player.field_card_zone_x[self.position];
 			field_y = player.field_card_zone_y[self.position];
 			sprite_index = sprite;

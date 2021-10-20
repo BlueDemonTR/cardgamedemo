@@ -7,7 +7,7 @@ function scr_attack(attackingCard) {
 		with(instance_create_layer(x,y,"UpperInstances",obj_appropiate_targets)){
 			player = obj_opponent
 			opponent = player.opponent
-			current_function = "DirectAttack";
+			current_function = TargetDirect;
 			x = 520;
 			y = 325;
 			self.attackingCard = attackingCard;	
@@ -21,7 +21,7 @@ function scr_attack(attackingCard) {
 			player = obj_opponent
 			opponent = player.opponent
 			position = attackArray[i];
-			current_function = "Attack";
+			current_function = TargetAttack;
 			x = player.field_card_zone_x[position];
 			y = player.field_card_zone_y[position];
 			self.attackingCard = attackingCard;

@@ -51,7 +51,7 @@ function scr_target_deck(players, typeArray, minLevel, maxLevel, archetypeArray,
 			self.arrayPos = arrayPos
 			self.cardNum = player.deck[position, 0];
 			self.artNum = player.deck[position, 1];
-			current_function = "deck";
+			current_function = SelectDeck;
 		}
 	}
 	if(filteredCardCount == 0){

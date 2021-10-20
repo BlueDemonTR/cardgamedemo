@@ -1,14 +1,14 @@
 var position = self.position,
 activation_mode = self.activation_mode;
 switch(activation_mode){
-	case "Attack":
+	case FunctionAttack:
 		scr_attack(player.fieldCard[position]);
 		player.open_game_state = false;
 	break;
-	case "Sacrifice":
+	case FunctionSacrifice:
 		scr_sacrifice(player, position);	
 	break;
-	case "Effect":
+	case FunctionFieldEffect:
 		switch(obj_player.field[position,0]){
 			case 14://Motorbiker Leader Cleo Activation Trigger
 			case 29://Visclades of Denial Activation Trigger
@@ -33,13 +33,13 @@ switch(activation_mode){
 				scr_add_to_resolution_pile([obj_player.field[position,0], 0, 0, position, false])
 			break;
 		}
-	case "Hand Effect":
+	case FunctionHandEffect:
 		if(scr_check_shared(obj_player.hand[position,0], ArcVisclades)){//Visclades Shared Effect Activation Trigger
 			if(scr_legal_activation("SharedEffects", ArcVisclades, position)){return false}
 			scr_add_to_resolution_pile(["SharedEffects", ArcVisclades, 0, position, false])
 		}
 	break;
-	case "Infirmary Effect":
+	case FunctionInfirmaryEffect:
 		switch(obj_player.infirmary[position,0]){
 			case 21://Luvies Ing Visclades Healing Activation Trigger
 				if(scr_legal_activation(obj_player.infirmary[position,0], 1, position)){return false}
@@ -51,7 +51,7 @@ switch(activation_mode){
 			break;
 		}	
 	break;
-	case "Multiple Choices":
+	case FunctionChoices:
 		obj_player.resolutionPile[obj_player.resolutionPileCount-1,arrayPos] = choiceNum;
 		obj_player.resolutionPile[obj_player.resolutionPileCount-1,2]++
 	break;	

@@ -11,7 +11,7 @@ function scr_choose_field_zones(players, selectFilled, selectNMZ, selectMMZ, arr
 				with(instance_create_layer(x,y,"UpperInstances",obj_appropiate_targets)){
 					self.player = player;
 					position = i;
-					current_function = "chooseZone";
+					current_function = TargetZone;
 					self.arrayPos = arrayPos
 					x = player.field_card_zone_x[position];
 					y = player.field_card_zone_y[position];

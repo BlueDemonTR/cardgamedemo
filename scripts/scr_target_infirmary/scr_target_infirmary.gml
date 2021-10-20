@@ -59,7 +59,7 @@ function scr_target_infirmary(players, typeArray, minLevel, maxLevel, archetypeA
 			self.arrayPos = arrayPos
 			self.cardNum = self.player.infirmary[position, 0];
 			self.artNum = self.player.infirmary[position,1];
-			current_function = "infirmary";
+			current_function = SelectInfirmary;
 		}
 	}
 	if(filteredCardCount == 0){

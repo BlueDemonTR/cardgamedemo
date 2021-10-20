@@ -1132,12 +1132,12 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								scr_voidfy_infirmary(obj_player, resolvingPile[positionInOrder,5]);
 								NextStep
 							break;
-							case 4:
+							case 5:
 								resolvingPile[positionInOrder,7] = 0
 								scr_choose_field_zones([player], false, false, true, 7);
 								NextStep
 							break;
-							case 6:
+							case 7:
 								scr_summon_momentum_deck(player, resolvingPile[positionInOrder,6], resolvingPile[positionInOrder,7]);
 								FinishResolving
 							break;
@@ -1366,7 +1366,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								NextStep
 							break;
 							case 4:
-								with(scr_summon([resolvingPile[positionInOrder,5], resolvingPile[positionInOrder, 7]], player, "effect", "opponentInfirmaryToField", resolvingPile[positionInOrder, 8])){
+								with(scr_summon([resolvingPile[positionInOrder,5], resolvingPile[positionInOrder, 7]], player, SummonEffect, "opponentInfirmaryToField", resolvingPile[positionInOrder, 8])){
 									scr_silence(player, self.position);
 									scr_paralyze(player, self.position);
 									scr_decide_field_card_stats(player, self.position);

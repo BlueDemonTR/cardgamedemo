@@ -15,12 +15,6 @@ show_debug_message(GM_version)
 #macro SendMill 5
 #macro SendInvalid 99
 
-temp1 = bool(array_length([0]))
-
-if(temp1){
-
-}
-
 //Sprite Properties
 #macro card_width 140
 #macro card_height 205
@@ -111,6 +105,33 @@ scr_initialize_statuses();
 #macro TextFlavor 1
 #macro TextMaterials 2
 #macro TextChant 3
+
+//Summon Types
+#macro SummonMana 0
+#macro SummonEffect 1
+#macro SummonImpact 2
+#macro SummonInvalid 99
+
+//Card Object Selection
+#macro TargetMonster 0
+#macro TargetZone 1
+#macro TargetAttack 2
+#macro TargetDirect 3
+#macro TargetImpact 4
+#macro TargetDiscard 5
+
+//Card Data Selection
+#macro SelectDeck 0
+#macro SelectInfirmary 1
+#macro SelectMomentum 2
+
+//Activation Box Functions
+#macro FunctionAttack 0
+#macro FunctionSacrifice 1
+#macro FunctionFieldEffect 2
+#macro FunctionHandEffect 3
+#macro FunctionInfirmaryEffect 4
+#macro FunctionChoices 5
 
 //Shortcuts
 #macro NextStep resolvingPile[positionInOrder,2]++
