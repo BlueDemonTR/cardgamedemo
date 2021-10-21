@@ -22,10 +22,10 @@ function scr_target_deck(players, typeArray, minLevel, maxLevel, archetypeArray,
 			var cardNum = player.deck[j, 0],
 			cardStat = macros.origStat[cardNum];
 			
-			if(macros.card_type[cardNum] != TypeSpell && (cardStat[StatLevel] > maxLevel || cardStat[StatLevel] < minLevel)){
-				continue;
-			}
 			if(array_length(typeArray) && !array_includes(typeArray, macros.card_type[cardNum])){
+				continue;
+			}			
+			if(macros.card_type[cardNum] != TypeSpell && (cardStat[StatLevel] > maxLevel || cardStat[StatLevel] < minLevel)){
 				continue;
 			}
 			if(array_length(archetypeArray) && !array_includes_array(archetypeArray, macros.origArchetype[cardNum])){

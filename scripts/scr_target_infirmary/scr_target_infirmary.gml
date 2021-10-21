@@ -27,7 +27,7 @@ function scr_target_infirmary(players, typeArray, minLevel, maxLevel, archetypeA
 			if(array_length(typeArray) && !array_includes(typeArray, macros.card_type[cardNum])){
 				continue;
 			}
-			if(cardStat[StatLevel] > maxLevel || cardStat[StatLevel] < minLevel){
+			if(macros.card_type[cardNum] != TypeSpell && (cardStat[StatLevel] > maxLevel || cardStat[StatLevel] < minLevel)){
 				continue;
 			}
 			if(array_length(archetypeArray) && !array_includes_array(archetypeArray, macros.origArchetype[cardNum])){
