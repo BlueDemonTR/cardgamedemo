@@ -3,7 +3,7 @@
 function scr_on_stat_change(cardObject){
 	var position = cardObject.position,
 	player = cardObject.player;
-	if(cardObject.cardStat[StatHP] == 0){//Destruction by Injury
+	if(cardObject.cardStat[StatHP] <= 0){//Destruction by Injury
 		scr_destroy(player, position, SendInjuries)
 	}
 	switch(cardObject.cardNum){

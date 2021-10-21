@@ -5,7 +5,9 @@ function scr_summon_momentum_deck(player, momentumDeckPos, summonZone) {
 	
 	if(!scr_summon([cardNum, artNum], player, SummonImpact, "playerMomentumDeckToField", summonZone)){
 		resolvingPile[obj_player.resolvingPileCount-1,2] = 97;
-		return;
+		return false;
 	}	
 	scr_remove_from_momentum_deck(player, momentumDeckPos);
+	
+	return player.fieldCard[summonZone];
 }

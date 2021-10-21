@@ -49,8 +49,8 @@ function scr_target_deck(players, typeArray, minLevel, maxLevel, archetypeArray,
 			self.player = filteredCards[i,0]
 			position = filteredCards[i,1];
 			self.arrayPos = arrayPos
-			self.cardNum = player.deck[position, 0];
-			self.artNum = player.deck[position, 1];
+			self.cardNum = self.player.deck[position, 0];
+			self.artNum = self.player.deck[position, 1];
 			current_function = SelectDeck;
 		}
 	}

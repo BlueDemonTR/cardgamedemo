@@ -56,8 +56,8 @@ function scr_target_hand(players, typeArray, minLevel, maxLevel, archetypeArray,
 			self.cardNum = self.player.deck[position, 0];
 			self.artNum = self.player.deck[position, 1];
 			current_function = "hand";
-			x = player.handCard[i].x
-			y = player.handCard[i].y
+			x = self.player.handCard[i].x
+			y = self.player.handCard[i].y
 		}
 		
 	}

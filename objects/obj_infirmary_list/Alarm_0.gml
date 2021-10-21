@@ -1,4 +1,4 @@
-if(player.open_game_state && player.main_phase){
+if(self.player.open_game_state && self.player.main_phase){
 	var position = self.position,
 	player = self.player,
 	i = 0;

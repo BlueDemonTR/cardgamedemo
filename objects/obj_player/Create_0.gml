@@ -57,11 +57,13 @@ scr_construct_global_deck();
 scr_shuffle_deck(player);
 
 //Stacking the deck for debug purposes here
-deck[deckCount++] = [17,0]
 deck[deckCount++] = [18,0]
+deck[deckCount++] = [19,0]
 deck[deckCount++] = [24,0]
-deck[deckCount++] = [25,0]
-deck[deckCount++] = [26,0]
+deck[deckCount++] = [20,0]
+deck[deckCount++] = [21,0]
+deck[deckCount++] = [22,0]
+deck[deckCount++] = [23,0]
 
 //Field Card Zone Locations and initializations
 i = 0;
@@ -97,6 +99,8 @@ endTurnEffectActivated = false;
 open_game_state = true;
 player_response_left = false
 opponent_response_left = false
+response_delay = 30
+
 
 //Effect Resolution Initialization
 /*
@@ -138,8 +142,7 @@ for (i = 0; i < 10; i++){
 infirmaryCount = 0;
 infirmary_x=deck_x;
 infirmary_y=deck_y-(card_height+5);
-instance_create_layer(infirmary_x,infirmary_y,"Instances",obj_infirmary);
-
+instance_create_layer(infirmary_x,infirmary_y,"Instances",obj_infirmary)
 
 //Player Stats Initialization
 mana = 0;

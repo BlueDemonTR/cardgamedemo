@@ -8,5 +8,5 @@ function scr_find_infirmary(player ,cardNum){
 			}
 		}
 	}
-	if(object_index == obj_player){resolutionPile[resolutionPileCount-1,2] = 97}
+	if(object_index == obj_player){resolvingPile[resolvingPileCount-1,2] = 97}//TODO: Delay between resolving and resolution for debug purposes
 }

@@ -50,11 +50,6 @@ function scr_client_handle_message(argument0) {
 						infirmary[i,1] = buffer_read(buffer, buffer_u8);
 						infirmary[i,2] = buffer_read(buffer, buffer_u8);
 					}
-					for(var i = infirmaryCount; i < 999; i++){
-						infirmary[i,0] = 0;
-						infirmary[i,1] = 0;
-						infirmary[i,2] = 0;
-					}
 				}
 			break;
 			case MESSAGE_MOMENTUM_DECK:
@@ -152,11 +147,6 @@ function scr_client_handle_message(argument0) {
 						infirmary[i,0] = buffer_read(buffer, buffer_u32);
 						infirmary[i,1] = buffer_read(buffer, buffer_u8);
 						infirmary[i,2] = buffer_read(buffer, buffer_u8);
-					}
-					for(var i = infirmaryCount; i < 999; i++){
-						infirmary[i,0] = 0;
-						infirmary[i,1] = 0;
-						infirmary[i,2] = 0;
 					}
 					scr_update_infirmary()
 				}

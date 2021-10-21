@@ -1,11 +1,11 @@
 function scr_on_summon(cardNum){
 	if(scr_check_shared(cardNum, SharedMotorbikerLeader)){
-		if(scr_legal_activation("SharedEffect", SharedMotorbikerLeader, position)){
+		if(scr_legal_activation("SharedEffects", SharedMotorbikerLeader, position)){
 			scr_limit_summoning_card(cardNum)
 		}
 	}
 	if(scr_check_shared(cardNum, SharedIgloo)){
-		if(scr_legal_activation("SharedEffect", SharedIgloo, position)){
+		if(scr_legal_activation("SharedEffects", SharedIgloo, position)){
 			scr_add_to_resolution_pile(["SharedEffects", SharedIgloo, 0, position, false])
 		}
 	}

@@ -38,8 +38,7 @@ switch(animationType){
 	break;	
 	
 }
-obj_opponent.fieldCard[position]=noone;
-obj_opponent.field[position, 0]=0;
-obj_opponent.field[position,1]=0;
+obj_opponent.fieldCard[position] = noone;
+obj_opponent.field[position] = [0, 0];
 
 

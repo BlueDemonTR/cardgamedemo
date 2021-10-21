@@ -8,7 +8,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 	
 	switch(cardNum){
 		case "Attack":
-			var attacker = position,
+			var attacker = player.fieldCard[position],
 			attacked = resolvingPile[positionInOrder,5];
 			if(!(instance_exists(attacker) && instance_exists(attacked))){
 				resolvingPile[positionInOrder,2] = 99
@@ -24,9 +24,13 @@ function scr_resolve_effect_in_pile(positionInOrder){
 			counterAttack = attacked.cardStat[StatATK] - attacker.cardStat[StatArmor];
 			
 			scr_damage_card(attacked.player, attacked.position, damage)
-			
+
 			if(!attacked.cardStatus[StatusRanged]){
 				scr_damage_card(attacker.player, attacker.position, counterAttack)
+			}
+			
+			if(!instance_exists(attacked)){
+				scr_destroys_by_battle(attacker, attacked.cardNum)	
 			}
 			
 			if(attacker.cardStatus[StatusPierce] && excessDamage > 0){
@@ -39,7 +43,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 			resolvingPile[positionInOrder,2] = 99
 		break;
 		case "DirectAttack":
-			var attacker = position;
+			var attacker = player.fieldCard[position];
 			if(!instance_exists(attacker)){
 				resolvingPile[positionInOrder,2] = 99
 				break;
@@ -57,14 +61,17 @@ function scr_resolve_effect_in_pile(positionInOrder){
 		case "SelfDestruct"://Status Self Destruct Effect
 			if(effectSilenced){break;}
 			scr_destroy(player, position, 1);
+			resolvingPile[positionInOrder,2] = 99
 		break;
 		case "Regeneration"://Stat Regeneration Effect
 			if(effectSilenced){break;}
 			scr_heal_card(player, position, 3);
+			resolvingPile[positionInOrder,2] = 99
 		break;
 		case "Poison"://Status Poison Effect
 			if(effectSilenced){break;}
 			scr_damage_card(player, position, 1);
+			resolvingPile[positionInOrder,2] = 99
 		break;
 		case "WheelGain":
 			switch(position){
@@ -1357,21 +1364,23 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder, 6] = scr_find_infirmary(opponent, resolvingPile[positionInOrder,5])
-								resolvingPile[positionInOrder, 7] = opponent.infirmary[resolvingPile[positionInOrder,6],1]
-								scr_remove_from_infirmary(opponent, resolvingPile[positionInOrder,6]);
+								//TODO why the FUCK is it not getting the right infirmaryPos but sending the cardNum instead. Add a 3D layer to the infirmary array
+								//maybe based on getting targeted for certain effects?
+								resolvingPile[positionInOrder, 7] = opponent.infirmary[resolvingPile[positionInOrder,6],1]//Card's ArtNum
 								NextStep
 							break;
 							case 2:
 								resolvingPile[positionInOrder, 8] = 0
-								scr_choose_field_zones([player], false, true, true, 8);
+								scr_choose_field_zones([player], false, true, false, 8);
 								NextStep
 							break;
 							case 4:
-								with(scr_summon([resolvingPile[positionInOrder,5], resolvingPile[positionInOrder, 7]], player, SummonEffect, "opponentInfirmaryToField", resolvingPile[positionInOrder, 8])){
+								with(scr_summon([resolvingPile[positionInOrder,5], resolvingPile[positionInOrder, 7]], player, SummonEffect, -1, resolvingPile[positionInOrder, 8])){
 									scr_silence(player, self.position);
 									scr_paralyze(player, self.position);
 									scr_decide_field_card_stats(player, self.position);
 								}
+								scr_remove_from_infirmary(opponent, resolvingPile[positionInOrder,6]);
 								FinishResolving
 							break;
 						}
@@ -1381,7 +1390,6 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					if(resolutionStep = 98){
 						resolvingPile[positionInOrder,2] = 99
 					}
-					resolvingPile[positionInOrder,2] = 99
 				break;
 			}		
 		break;
@@ -1399,9 +1407,9 @@ function scr_resolve_effect_in_pile(positionInOrder){
 			switch(effectNum){
 				case 0:
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){
-						player.fieldCard[position].cardis_sacrificable = true;
+						player.fieldCard[position].sacrificable = true
 						scr_buff_card(player,position, StatLevel, 4)
-						scr_limit_summon_to(3, 0);
+						scr_lock_wheel(player)
 					}
 					resolvingPile[positionInOrder,2] = 99
 				break;
@@ -1442,7 +1450,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								NextStep
 							break;
 							case 3:
-								scr_copy_stats(resolvingPile[positionInOrder,6], fieldCard[resolvingPile[positionInOrder,5]], [StatATK, StatMaxHP, StatHP])
+								scr_copy_stats(resolvingPile[positionInOrder,6].fieldCard[resolvingPile[positionInOrder,5]], player.fieldCard[position], [StatATK, StatMaxHP, StatHP])
 								FinishResolving
 							break;
 						}

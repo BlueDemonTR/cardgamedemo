@@ -5,5 +5,4 @@ infirmaryShownCount = 0;
 infirmaryListOpened = false;
 infirmaryListy = 150;
 infirmaryListyOriginal = infirmaryListy;
-cardOnTop = 0
-artOnTop = 0
+player = obj_player;

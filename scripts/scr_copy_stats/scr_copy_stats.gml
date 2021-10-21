@@ -4,7 +4,7 @@ function scr_copy_stats(copyMonster, pasteMonster, copiedStats){
 	//copyMonster and pasteMonster: has to be a field_card object
 	//copiedStats: array with Stat numbers
 
-	if(!instance_exists(copyMonster) || instance_exists(pasteMonster)){ return }
+	if(!(instance_exists(copyMonster) && instance_exists(pasteMonster))){return;}
 	
 	for(var i = 0; i < array_length(copiedStats); i++){
 		pasteMonster.cardStat[copiedStats[i]] = copyMonster.cardStat[copiedStats[i]]

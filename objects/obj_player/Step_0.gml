@@ -49,14 +49,20 @@ if(resolvingPileCount){
 		open_game_state = true
 		resolvingPileCount--
 	}	
-}else if(resolutionPileCount > 0 && open_game_state && !opponent_response_left && !player_response_left){
-	resolvingPile = resolutionPile;
-	resolvingPileCount = resolutionPileCount;
-	resolutionPileCount = 0
-	
-	//DEBUG
-	player_response_left = false
-	opponent_response_left = false
+}else if(resolutionPileCount > 0 && open_game_state){
+	if(!opponent_response_left && !player_response_left && !response_delay){
+		resolvingPile = resolutionPile;
+		resolvingPileCount = resolutionPileCount;
+		resolutionPileCount = 0
+
+		//DEBUG
+		player_response_left = false
+		opponent_response_left = false
+		response_delay = 10
+	}else{
+		response_delay--
+	}
+
 }
 
 for(i = 0; i < obj_player.field_zone_count; i++){//TODO, Rewrite

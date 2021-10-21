@@ -1,12 +1,12 @@
 function scr_on_destroyed(cardNum, position, destroyType){
 	if(scr_check_shared(cardNum, SharedUnderworldVisclades)){
-		if(scr_legal_activation("SharedEffect", 0, SharedUnderworldVisclades)){
-			scr_add_to_resolution_pile(["SharedEffects", 0, 0, SharedUnderworldVisclades, false])
+		if(scr_legal_activation("SharedEffects", SharedUnderworldVisclades, position)){
+			scr_add_to_resolution_pile(["SharedEffects", SharedUnderworldVisclades, 0, position, false])
 		}
 	}
 	if(scr_check_shared(cardNum, SharedSacrifice)){
-		if(scr_legal_activation("SharedEffect", 0, SharedSacrifice)){
-			scr_add_to_resolution_pile(["SharedEffects", 0, 0, SharedSacrifice, false])
+		if(scr_legal_activation("SharedEffects", SharedSacrifice, 0)){
+			scr_add_to_resolution_pile(["SharedEffects", SharedSacrifice, 0, position, false])
 		}
 	}
 	switch(cardNum){

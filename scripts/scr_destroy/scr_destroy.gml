@@ -8,7 +8,7 @@ function scr_destroy(player, position, destroyType) {
 	cardNum = affectedCard.cardNum,
 	artNum = affectedCard.artNum;
 
-	if(player.fieldCard[position].cardStat[StatHP] > 0 && player.fieldCard[position].cardStatus[StatusIndestructable]){
+	if(affectedCard.cardStat[StatHP] > 0 && affectedCard.cardStatus[StatusIndestructable]){
 		return;
 	}
 

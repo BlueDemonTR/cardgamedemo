@@ -1,6 +1,10 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_legal_activation(cardNum, effectNum, position){
+function scr_legal_activation(){
+	var cardNum = argument[0],
+	effectNum = argument[1],
+	position = argument[2];
+	
 	if(effectNum == -1){return false}
 	
 	switch(cardNum){
@@ -189,7 +193,11 @@ function scr_legal_activation(cardNum, effectNum, position){
 				break;
 			}
 		break;
-		case 1: //Motorbiker Showman Legal Activation
+		
+		case "SelfDestruct": //Destroy During EP Legal Activation
+		case "Poison"://Poison Legal Activation
+		case "Regeneration"://Regeneration Legal Activation
+		case 1://Motorbiker Showman Legal Activation
 		case 6://Motorbiker Violent Wheeler Legal Activation
 		case 13://Motorbiker Leader Toku Legal Activation
 		case 15://Motorbiker Leader Ceasar Legal Activation
@@ -292,7 +300,7 @@ function scr_legal_activation(cardNum, effectNum, position){
 		
 		case 19://Visclades Idine Lib Legal Activation
 			if(obj_player.fieldCard[position].cardStatus[StatusSilenced]){return false;}
-			if(!scr_limited_summon(destroyedMonster)){return false;}
+			if(!scr_limited_summon(argument[3])){return false;}
 			return true;
 		break;
 		
@@ -317,7 +325,7 @@ function scr_legal_activation(cardNum, effectNum, position){
 		case 24://Cries from the Underworld Legal Activation
 			if(!scr_count_momentum_deck_filter([player], 1, 12, [ArcVisclades], [], true, -1)){return false}
 			if(scr_if_field_full(player)){return false;}
-			if(!scr_count_infirmary_filter([player], [], 1, 12, [ArcVisclades], [], false, -1, -1, -1) < 4){return false}
+			if(scr_count_infirmary_filter([player], [], 1, 12, [ArcVisclades], [], false, -1, -1, -1) < 4){return false}
 			return true
 		break;
 		

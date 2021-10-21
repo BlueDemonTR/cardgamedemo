@@ -7,7 +7,8 @@ function scr_count_attack(attacker){
 	
 	tauntExists = bool(scr_count_field_filter([opponent], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, 3));
 	
-	if(!tauntExists || scr_check_shared(attacker.cardNum, ArcMotorbiker)){
+	if(!attacker.cardStatus[StatusCantAttackDirect] && 
+		(!tauntExists || scr_check_shared(attacker.cardNum, ArcMotorbiker))){
 		array_push(attackArray, "opponent")
 	}
 	
@@ -17,5 +18,5 @@ function scr_count_attack(attacker){
 			array_push(attackArray, i);
 		}
 	}
-	return attackArray
+	return attackArray;
 }

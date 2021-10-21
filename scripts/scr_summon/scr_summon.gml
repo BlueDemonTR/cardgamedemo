@@ -17,8 +17,8 @@ function scr_summon(cardArray, player, summonType, animationType, summonZone){
 				self.cardNum = cardNum;
 				self.artNum = artNum;
 				self.position = summonZone;
-				field_x = player.field_card_zone_x[self.position];
-				field_y = player.field_card_zone_y[self.position];
+				field_x = self.player.field_card_zone_x[self.position];
+				field_y = self.player.field_card_zone_y[self.position];
 				
 				scr_info_to_instance(cardNum);
 				effectUsesLeft = cardStat[StatXPerTurn]

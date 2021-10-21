@@ -49,7 +49,8 @@ switch(activation_mode){
 				if(!scr_legal_activation(obj_player.infirmary[position,0], 0, position)){return false}
 				scr_add_to_resolution_pile([obj_player.infirmary[position,0], 0, 0, position, false])
 			break;
-		}	
+		}
+		obj_infirmary.alarm[1] = 3;
 	break;
 	case FunctionChoices:
 		obj_player.resolutionPile[obj_player.resolutionPileCount-1,arrayPos] = choiceNum;
