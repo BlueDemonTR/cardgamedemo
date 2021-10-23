@@ -264,7 +264,6 @@
     {"id":{"name":"spr_foolishmayor","path":"sprites/spr_foolishmayor/spr_foolishmayor.yy",},"order":28,},
     {"id":{"name":"scr_count_field_filter","path":"scripts/scr_count_field_filter/scr_count_field_filter.yy",},"order":2,},
     {"id":{"name":"obj_deckselect","path":"objects/obj_deckselect/obj_deckselect.yy",},"order":1,},
-    {"id":{"name":"scr_check_materials","path":"scripts/scr_check_materials/scr_check_materials.yy",},"order":24,},
     {"id":{"name":"array_includes","path":"scripts/array_includes/array_includes.yy",},"order":54,},
     {"id":{"name":"scr_if_field_full","path":"scripts/scr_if_field_full/scr_if_field_full.yy",},"order":33,},
     {"id":{"name":"scr_impact_summon_from_extra_deck","path":"scripts/scr_impact_summon_from_extra_deck/scr_impact_summon_from_extra_deck.yy",},"order":25,},

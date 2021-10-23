@@ -1,7 +1,6 @@
 
 obj_player.legal_targets_open = true;
 effectBelongsTo = 0;
-effectBelongsToLocation = -1;
 x_og = x;
 slide=0;
 depth =-200

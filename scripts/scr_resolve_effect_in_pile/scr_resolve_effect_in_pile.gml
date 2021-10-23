@@ -2854,7 +2854,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						FinishResolving
 					}
 					if(resolutionStep = 98){
-						player.fieldCard[position].opt_used = true
+						scr_use_once_per_turn(player, position);
 						resolvingPile[positionInOrder,2] = 99
 					}
 				break;

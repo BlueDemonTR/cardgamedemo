@@ -127,8 +127,8 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 						self.arrayPos = arrayPos
 						self.cardNum = self.player.field[self.position, 0];
 						self.artNum = self.player.field[self.position, 1];
-						x = self.player.field_card_zone_xone_x[self.position];
-						y = self.player.field_card_zone_zone_y[self.position];
+						x = self.player.field_card_zone_x[self.position];
+						y = self.player.field_card_zone_y[self.position];
 						current_function = TargetImpact
 					}		
 				}
@@ -183,8 +183,8 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 						self.arrayPos = arrayPos
 						self.cardNum = self.player.field[self.position, 0];
 						self.artNum = self.player.field[self.position, 1];
-						x = self.player.field_card_zone_zone_x[self.position];
-						y = self.player.field_card_zone_zone_y[self.position];
+						x = self.player.field_card_zone_x[self.position];
+						y = self.player.field_card_zone_y[self.position];
 						current_function = TargetImpact
 					}		
 				}
@@ -240,8 +240,8 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 						self.arrayPos = arrayPos
 						self.cardNum = self.player.field[self.position, 0];
 						self.artNum = self.player.field[self.position, 1];
-						x = self.player.field_card_zone_zone_x[self.position];
-						y = self.player.field_card_zone_zone_y[self.position];
+						x = self.player.field_card_zone_x[self.position];
+						y = self.player.field_card_zone_y[self.position];
 						current_function = TargetImpact
 					}		
 				}
@@ -286,8 +286,8 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 						self.arrayPos = arrayPos
 						self.cardNum = self.player.field[self.position, 0];
 						self.artNum = self.player.field[self.position, 1];
-						x = self.player.field_card_zone_zone_x[self.position];
-						y = self.player.field_card_zone_zone_y[self.position];
+						x = self.player.field_card_zone_x[self.position];
+						y = self.player.field_card_zone_y[self.position];
 						current_function = TargetImpact
 					}		
 				}

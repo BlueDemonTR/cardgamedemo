@@ -9,9 +9,6 @@ if (!speedSetupDone){
 if(point_distance(x,y,targetX,targetY)<cardSpeed*1.5){
 	switch(activation_mode){
 		case "fieldToPlayerInfirmary":
-			test()
-			obj_infirmary.cardOnTop = cardNum;
-			obj_infirmary.artOnTop = artNum;
 		break;
 		case "playerInfirmaryToField":
 		case "playerDeckToField":
