@@ -18,7 +18,7 @@ function scr_count_hand_filter(players, typeArray, minLevel, maxLevel, archetype
 		var player = players[i]
 		
 		for(var j = 0; j < player.handCount; j++){
-			var cardNum = player.hand[i,0],
+			var cardNum = player.hand[j,0],
 			cardStat = macros.origStat[cardNum];
 			
 			if(macros.card_type[cardNum] != TypeSpell && (cardStat[StatLevel] > maxLevel || cardStat[StatLevel] < minLevel)){

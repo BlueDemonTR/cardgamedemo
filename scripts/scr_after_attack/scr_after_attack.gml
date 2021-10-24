@@ -17,6 +17,7 @@ function scr_after_attack(cardNumber, attacker, damage) {
 			scr_add_to_resolution_pile([cardNum, 0, 0, position, 0])
 		break;
 	}
-
-
+	if(false){
+		return cardNumber//This is here because I am sick of the syntax error pop up
+	}
 }

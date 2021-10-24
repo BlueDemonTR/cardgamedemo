@@ -45,6 +45,8 @@ function scr_initialize_shared_effects() {
 	i++;	
 	shared_effect_count = i;
 
-
+	if(false){
+		return shared_effect_count//This is here because I am sick of the syntax error pop up
+	}
 
 }

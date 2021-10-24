@@ -1136,7 +1136,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Groups
 		//In the case that a card doesn't have that feature the value is -1
-		origSharedEffects[i,j++] = SharedSacrifice;
+		origSharedEffects[i,j++] = SharedIgloo;
 		origSharedEffectsCount[i] = j;
 		j=0
 		origArchetype[i,j++] = ArcIgloo;
@@ -1623,7 +1623,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Groups
 		//In the case that a card doesn't have that feature the value is -1
-		origSharedEffects[i,j++] = SharedSacrifice;
+		origSharedEffects[i,j++] = SharedIgloo;
 		origSharedEffectsCount[i] = j;
 		j=0
 		origArchetype[i,j++] = ArcIgloo;
@@ -1654,12 +1654,12 @@ function scr_initialize_cards(){
 		//Cards where that stat is default/invalid don't need have the status initialized
 		origStat[i,StatLevel] = 8; //Level
 		origStat[i,StatATK] = 0; //ATK
-		origStat[i,StatMaxHP] = 20; //Max HP
+		origStat[i,StatMaxHP] = 15; //Max HP
 		origStat[i,StatSpirit] = SpiritPassive//Spirit
 		j=0
 		//Card Groups
 		//In the case that a card doesn't have that feature the value is -1
-		origSharedEffects[i,j++] = SharedSacrifice;
+		origSharedEffects[i,j++] = SharedIgloo;
 		origSharedEffectsCount[i] = j;
 		j=0
 		origArchetype[i,j++] = ArcIgloo;
@@ -1691,13 +1691,13 @@ function scr_initialize_cards(){
 		//Cards where that stat is default/invalid don't need have the status initialized
 		origStat[i,StatLevel] = 12; //Level
 		origStat[i,StatATK] = 0; //ATK
-		origStat[i,StatMaxHP] = 30; //Max HP
-		origStat[i,4] = 3; //Armor
+		origStat[i,StatMaxHP] = 20; //Max HP
+		origStat[i,StatArmor] = 3; //Armor
 		origStat[i,StatSpirit] = SpiritPassive//Spirit
 		j=0
 		//Card Groups
 		//In the case that a card doesn't have that feature the value is -1
-		origSharedEffects[i,j++] = SharedSacrifice;
+		origSharedEffects[i,j++] = SharedIgloo;
 		origSharedEffectsCount[i] = j;
 		j=0
 		origArchetype[i,j++] = ArcIgloo;

@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Advanced Functions",
-    "path": "folders/Scripts/Effects/Advanced Functions.yy",
+    "name": "Activation Triggers",
+    "path": "folders/Scripts/Effects/Activation Triggers.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_impact_summon",
+  "name": "scr_on_material",
   "tags": [],
   "resourceType": "GMScript",
 }

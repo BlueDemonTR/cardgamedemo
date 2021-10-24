@@ -949,7 +949,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				case SharedIgloo://Igloo Shared Effect
 					if(!effectSilenced && !fieldCard[position].cardStatus[StatusSilenced]){
 						for(var i = 0; i < player.field_zone_count; i++){
-							if(i = position){continue;}
+							if(i == position){continue;}
 							if(scr_check_archetype(player.field[i, 0], ArcIgloo)){
 								scr_bounce(player, i)
 							}
@@ -1712,7 +1712,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 			switch(effectNum){
 				case 0:
 							
-					if(scr_if_you_control_filter(6) && !fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){
+					if(scr_count_field_filter([player], [], [1, 12], [0, infinity], [0, infinity], [ArcIgloo], [], -1, -1) && !fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,5] = 0
@@ -1741,6 +1741,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				case 0:
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){				
 						for(i = 0; i < 5; i++){
+							if(!scr_check_archetype(player.field[i, 0], ArcIgloo)){continue;}
 							scr_buff_card(player, i, StatDodge, 1)
 						}
 					}
@@ -1749,6 +1750,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				case 1:
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){				
 						for(i = 0; i < 5; i++){
+							if(!scr_check_archetype(player.field[i, 0], ArcIgloo)){continue;}
 							scr_heal_card(player, i, 1)
 						}					
 					}
@@ -1825,7 +1827,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								NextStep
 							break;
 							case 4:
-								scr_burn(obj_opponent, resolvingPile[positionInOrder,6].fieldCard[resolvingPile[positionInOrder,5]].cardStat[StatATK], cardNum)
+								scr_burn(obj_opponent, resolvingPile[positionInOrder,6].fieldCard[resolvingPile[positionInOrder,5]].cardStat[StatHP], cardNum)
 								FinishResolving
 							break;
 						}
@@ -1876,7 +1878,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								NextStep
 							break;
 							case 3:
-								resolvingPile[positionInOrder,6].resolvingPile[positionInOrder,5].cardStatus[StatusParalyzed] = true
+								scr_paralyze(resolvingPile[positionInOrder,6], resolvingPile[positionInOrder,5])
 								FinishResolving
 							break;
 						}
@@ -1893,7 +1895,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 		case 43://Blizzard Lockdown Effect
 			switch(effectNum){
 				case 0:
-					if(!effectSilenced && player.momentum >= 3){
+					if(!effectSilenced){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,5] = 0
@@ -1903,7 +1905,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								NextStep
 							break;
 							case 3:
-								var discardLevel = macros.origStat[[resolvingPile[positionInOrder, 7]], StatLevel]
+								var discardLevel = macros.origStat[resolvingPile[positionInOrder, 7], StatLevel]
 								scr_discard(player, resolvingPile[positionInOrder, 5])
 								resolvingPile[positionInOrder,8] = 0
 								resolvingPile[positionInOrder,9] = 0
@@ -1934,17 +1936,17 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								scr_pay_momentum(player, 3)
 								NextStep
 							break;
-							case 3:
+							case 2:
 								var choiceArray = []
 								if(scr_count_field(opponent) != 0){
-									array_push(choiceArray, [0, "To Player"])
+									array_push(choiceArray, [0, "To Monster"])
 								}
 								array_push(choiceArray, [1, "To Opponent"])
 								resolvingPile[positionInOrder, 5] = 0
 								scr_give_choice(5, choiceArray)
 								NextStep
 							break;
-							case 5:
+							case 4:
 								switch(resolvingPile[positionInOrder, 5]){
 									case 0:
 										resolvingPile[positionInOrder, 6] = 0
@@ -1953,12 +1955,12 @@ function scr_resolve_effect_in_pile(positionInOrder){
 										NextStep
 									break;
 									case 1:
-										scr_burn(obj_opponent, 5, cardNum);
+										scr_burn(obj_opponent, 4, cardNum);
 										FinishResolving
 									break;
 								}
 							break;
-							case 7:
+							case 6:
 								scr_damage_card(resolvingPile[positionInOrder,7], resolvingPile[positionInOrder,6], 7)
 								FinishResolving
 							break;

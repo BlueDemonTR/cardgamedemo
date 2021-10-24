@@ -43,11 +43,14 @@ function scr_end_phase_effects(){
 			break;
 			
 			case 34://Pole Clan Archer Activation Trigger
-			case 36://Pole Clan Defender Activation Trigger
 			case 38://Pole Clan Torch Activation Trigger
 			case 72://Torch Carrier Activation Trigger
 				if(!scr_legal_activation(cardNum, 0, position)){break}
 				scr_add_to_resolution_pile([cardNum, 0, 0, position, false])
+			break;
+			case 36://Pole Clan Defender Activation Trigger
+				if(!scr_legal_activation(cardNum, 1, position)){break}
+				scr_add_to_resolution_pile([cardNum, 1, 0, position, false])
 			break;
 		}	
 	}

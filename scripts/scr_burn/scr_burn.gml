@@ -1,4 +1,5 @@
-function scr_burn(target, damage, cardNum) {
+function scr_burn(target, origDamage, cardNum) {
+	var damage = origDamage;
 
 	if(scr_check_archetype(cardNum, ArcPoleClan)){
 		for (var i=0;i < 5;i++){
@@ -10,15 +11,9 @@ function scr_burn(target, damage, cardNum) {
 	
 	switch(obj_player.selected_wheel){
 		case 3://Pole Clan Wheel Gain Activation Trigger
-			if(target != obj_opponent){return false}
-			if(!scr_legal_activation("WheelGain", 0, obj_player.selected_wheel)){return false}
-			obj_player.resolutionPile[obj_player.resolutionPileCount,0] = "WheelGain"
-			obj_player.resolutionPile[obj_player.resolutionPileCount,1] = 0
-			obj_player.resolutionPile[obj_player.resolutionPileCount,2] = 0
-			obj_player.resolutionPile[obj_player.resolutionPileCount,3] = obj_player.selected_wheel
-			obj_player.resolutionPile[obj_player.resolutionPileCount,4] = false
-			obj_player.resolutionPile[obj_player.resolutionPileCount,5] = damage
-			obj_player.resolutionPileCount++		
+			if(target != obj_opponent){break;}
+			if(!scr_legal_activation("WheelGain", 0, obj_player.selected_wheel)){break;}
+			scr_add_to_resolution_pile(["WheelGain", 0, 0, obj_player.selected_wheel, false, damage])
 		break;
 	}	
 

@@ -366,14 +366,15 @@ function scr_legal_activation(){
 		
 		case 33://Pole Clan Builder Legal Activation
 			if(obj_player.fieldCard[position].cardStatus[StatusSilenced]){return false;}
-			if(scr_count_deck_filter([player], [], 1, 12, [ArcIgloo], [], true, -1))
+			if(!scr_count_deck_filter([player], [], 1, 12, [ArcIgloo], [], true, -1)){return false;}
+			return true;
 		break;
 		
 		case 35://Pole Clan Mage Legal Activation
 			if(obj_player.fieldCard[position].cardStatus[StatusSilenced]){return false;}
-			if(scr_card_hopt(cardNum, 0)){return false;}
+			if(!scr_card_hopt(cardNum, 0)){return false;}
 			if(!scr_count_field_filter([player], [], [1, 12], [0, infinity], [0, infinity], [ArcIgloo], [], -1, -1)){return false}
-			if(scr_count_deck_filter([player], [TypeSpell], 1, 12, [ArcBlizzard], [], false, -1)){return false}
+			if(!scr_count_deck_filter([player], [TypeSpell], 1, 12, [ArcBlizzard], [], false, -1)){return false}
 			return true;
 		break;
 		
@@ -411,7 +412,7 @@ function scr_legal_activation(){
 		break;
 		
 		case 43://Blizzard Lockdown Legal Activation
-			if(!scr_count_hand_filter([player], [TypeMonster], 1, 12, [], [], false, position, -1)){return false}
+			if(!scr_count_hand_filter([player], [TypeMonster], 1, 12, [], [], false, position, 2)){return false}
 			return true;
 		break;
 		
@@ -424,7 +425,7 @@ function scr_legal_activation(){
 		case 47://Igloo Castle Legal Activation
 			if(obj_player.fieldCard[position].cardStatus[StatusSilenced]){return false;}
 			if(scr_if_field_full(player)){return false;}
-			if(!effectUsesLeft){return false}
+			if(!obj_player.fieldCard[position].effectUsesLeft){return false}
 			if(!scr_count_infirmary_filter([player], [], 1, 12, [ArcPoleClan], [], true, -1, -1, -1)){return false;}
 			return true
 		break;
@@ -437,7 +438,7 @@ function scr_legal_activation(){
 		
 		case 49://Igloo Kingdom Legal Activation
 			if(obj_player.fieldCard[position].cardStatus[StatusSilenced]){return false;}
-			if(!effectUsesLeft){return false}
+			if(!obj_player.fieldCard[position].effectUsesLeft){return false}
 			if(scr_if_field_full(player) && !scr_limited_summon(34)){return false}
 			return true;
 		break;

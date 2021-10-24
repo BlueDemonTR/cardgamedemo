@@ -41,4 +41,8 @@ function scr_info_to_instance(cardNum) {
 		cardArchetype[i] = macros.origArchetype[cardNum,i]
 	}
 	cardArchetypeCount = i
+	
+	if(false){
+		cardSharedEffectsCount = cardArchetypeCount//This is here because I am sick of the syntax error pop up
+	}	
 }

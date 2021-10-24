@@ -3,7 +3,7 @@ for (i=0; i< deckCount; i++){
 draw_sprite_ext(spr_cardback,-1,(deck_x-deck_buffer_x*i),(deck_y-deck_buffer_x*i),sprite_to_small,card_height/800,180,c_white,1);
 
 }
-for (i=0; i< handCount; i++){
+for (i = 0; i < handCount; i++){
 	card_sprite=spr_cardback;
 	card_x =room_width/2 -handCount/2*(card_width+3) + 7*card_width/8+i*(card_width+3);
 	draw_sprite_stretched(card_sprite, -1, card_x-card_width/2, 0,card_width, card_height);

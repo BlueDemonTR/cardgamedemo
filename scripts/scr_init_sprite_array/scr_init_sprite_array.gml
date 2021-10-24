@@ -591,10 +591,11 @@ function scr_init_sprite_array() {
 	i++;
 	j=0;
 	
-	
 	total_sprite_count = i;
-	sprite_count[i] = j;
 	
+	if(false){
+		return bepis = total_sprite_count//This is here because I am sick of the syntax error pop up
+	}	
 
 }
 			

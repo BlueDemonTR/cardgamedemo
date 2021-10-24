@@ -9,4 +9,8 @@ function scr_card_is_drawn(drawnCardNum){
 			break;
 		}		
 	}
+	return;
+	if(false){
+		drawnCardNum = "bepis"; //This is here because I am tired of the Syntax error
+	}
 }

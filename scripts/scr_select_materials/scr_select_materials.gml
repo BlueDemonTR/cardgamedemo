@@ -98,10 +98,10 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 					mainMaterialCount++
 				}
 				levelCount += levelIncrease
-				if(position == 4 && !levelCount){
-					mmzOccupied = true;
-				}
 			}
+			if(player.field[4,0] && !array_includes(selectedCards, 4)){
+				mmzOccupied = true;
+			}			
 			materialDisplay[0, 1] = levelCount
 			materialDisplay[1, 1] = mainMaterialCount
 			
@@ -166,11 +166,11 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 					
 					if(array_includes(selectedCards, position)){continue}
 					
-					if(mmzOccupied){
+					if(mmzOccupied && !array_includes(selectableTargets, 4)){
 						array_push(selectableTargets, 4);
 						break;
 					}
-					if(!keyMonsterHere && scr_check_archetype(player.field[position, 0], keyMonster) && player.fieldCard[i].cardStat[StatLevel] < levelRequired){
+					if(!keyMonsterHere && scr_check_archetype(player.field[position, 0], keyMonster) && FieldCard.cardStat[StatLevel] < levelRequired){
 						array_push(selectableTargets,position)
 					}else if(scr_check_archetype(player.field[position, 0], mainMaterial) && FieldCard.cardStat[StatLevel] < levelRequired){
 						array_push(selectableTargets,position)
@@ -198,7 +198,7 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 				var position = selectedCards[i],
 				FieldCard = player.fieldCard[position],
 				levelIncrease = 0;
-					
+
 				if(scr_check_archetype(player.field[position, 0], mainMaterial) && FieldCard.cardStat[StatLevel] < levelRequired){
 					levelIncrease = FieldCard.cardStat[StatLevel]
 					mainMaterialCount++
@@ -208,10 +208,10 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 					keyMonsterHere = true;
 				}
 				levelCount += levelIncrease
-				if(position == 4 && !levelCount){
-					mmzOccupied = true;
-				}
 			}
+			if(player.field[4,0] && !array_includes(selectedCards, 4)){
+				mmzOccupied = true;
+			}			
 			materialDisplay[0, 1] = levelCount
 			materialDisplay[1, 1] = mainMaterialCount
 			materialDisplay[2, 1] = keyMonsterHere
@@ -223,7 +223,7 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 					
 					if(array_includes(selectedCards, position)){continue}
 					
-					if(mmzOccupied){
+					if(mmzOccupied && !array_includes(selectableTargets, 4)){
 						array_push(selectableTargets, 4);
 						break;
 					}
@@ -261,17 +261,18 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 				}
 					
 				levelCount += levelIncrease
-				if(position == 4 && !levelCount){
-					mmzOccupied = true;
-				}
 			}
+			if(player.field[4,0] && !array_includes(selectedCards, 4)){
+				mmzOccupied = true;
+			}			
 			materialDisplay[0, 1] = levelCount
 
 			if(mmzOccupied || levelCount < levelRequired || mainMaterialCount < mainMaterialRequired || keyMonsterHere){
 				var selectableTargets = [];
 				for(var position = 0; position < player.field_zone_count - 1; position++){
 					var FieldCard = player.fieldCard[position];
-					if(mmzOccupied){
+					
+					if(mmzOccupied && !array_includes(selectableTargets, 4)){
 						array_push(selectableTargets, 4);
 						break;
 					}

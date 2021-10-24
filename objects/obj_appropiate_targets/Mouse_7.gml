@@ -74,7 +74,7 @@ switch (current_function){
 		obj_player.open_game_state = true;
 	break;
 
-	case  TargetDiscard:
+	case TargetDiscard:
 		discardedCard = player.hand[position, 0];
 		obj_player.resolvingPile[obj_player.resolvingPileCount-1,arrayPos] = position;
 		obj_player.resolvingPile[obj_player.resolvingPileCount-1,arrayPos+1] = player;
@@ -82,7 +82,7 @@ switch (current_function){
 		obj_player.resolvingPile[obj_player.resolvingPileCount-1,2]++
 		with(obj_appropiate_targets){
 			if(function_check == current_function){
-				alarm[0] = 1;
+				instance_destroy();
 			}
 		}
 	break;

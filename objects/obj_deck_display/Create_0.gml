@@ -7,3 +7,6 @@ cardNum = 0
 artNum = 0
 deckPos = 0
 
+if(false){
+	return lineNum//This is here because I am sick of the syntax error pop up
+}

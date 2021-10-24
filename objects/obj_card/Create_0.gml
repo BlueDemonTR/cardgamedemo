@@ -2,6 +2,7 @@ card_drawn = false;
 card_in_hand = false;
 
 player = obj_player;
+opponent = player.opponent;
 cardNum = 0;
 position = 0;
 

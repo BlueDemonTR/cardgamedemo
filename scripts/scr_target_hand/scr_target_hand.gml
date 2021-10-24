@@ -48,16 +48,16 @@ function scr_target_hand(players, typeArray, minLevel, maxLevel, archetypeArray,
 		}
 	}
 
-	for (var i=0; i < filteredCardCount; i++){
+	for (var i = 0; i < filteredCardCount; i++){
 		with(instance_create_layer(x,y,"UpperInstances",obj_appropiate_targets)){
 			self.player = filteredCards[i,0]
 			position = filteredCards[i,1];
 			self.arrayPos = arrayPos
 			self.cardNum = self.player.deck[position, 0];
 			self.artNum = self.player.deck[position, 1];
-			current_function = "hand";
-			x = self.player.handCard[i].x
-			y = self.player.handCard[i].y
+			current_function = TargetDiscard;
+			x = self.player.handCard[position].x
+			y = self.player.handCard[position].y
 		}
 		
 	}

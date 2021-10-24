@@ -208,7 +208,7 @@ function scr_client_handle_message(argument0) {
 			case MESSAGE_LEAVE:
 				if(obj_player.victory_state = 0){
 					obj_player.own_turn = false;
-					obj_player.victory_state=1;
+					obj_player.victory_state = 1;
 				}
 			break;
 			case MESSAGE_END_TURN:
@@ -226,7 +226,11 @@ function scr_client_handle_message(argument0) {
 		}
 		var temptell = buffer_tell(buffer),
 		var tempsize = buffer_get_size(buffer);
-		
+
+		if(false){
+			temptell = tempsize//This is here because I am sick of the syntax error pop up
+		}
+
 		if(buffer_tell(buffer) == buffer_get_size(buffer)){
 			break;
 		}

@@ -1,4 +1,4 @@
-function scr_give_choice(arrayNum, choicesArray){
+function scr_give_choice(arrayPos, choicesArray){
 	//Choice Array Must Be 2D
 	//[choiceNum, choiceText]
 
@@ -9,7 +9,7 @@ function scr_give_choice(arrayNum, choicesArray){
 			activation_mode = FunctionChoices;
 			choiceNum = choicesArray[i,0];
 			choiceText = choicesArray[i,1];
-			self.arrayNum = arrayNum;
+			self.arrayPos = arrayPos;
 			bar_number = i;
 		}
 	}

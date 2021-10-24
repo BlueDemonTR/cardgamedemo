@@ -136,3 +136,10 @@ scr_initialize_statuses();
 //Shortcuts
 #macro NextStep resolvingPile[positionInOrder,2]++
 #macro FinishResolving resolvingPile[positionInOrder,2] = 98
+
+
+if(false){
+	bepis = sprite_to_big//This is here because I am sick of the syntax error pop up
+	bepis = SendInvalid
+	bepis = SummonInvalid
+}

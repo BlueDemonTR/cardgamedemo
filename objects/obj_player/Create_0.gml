@@ -13,6 +13,10 @@ mid_effect = false
 hand_x = 550;
 hand_y = 1000;
 
+if(false){
+	hand_x = hand_y //This is here because I am sick of the syntax error pop up
+}
+
 handCount = 0;
 for(i=0;i < 7; i++){
 	hand[i,0]=0;
@@ -57,13 +61,11 @@ scr_construct_global_deck();
 scr_shuffle_deck(player);
 
 //Stacking the deck for debug purposes here
-deck[deckCount++] = [18,0]
-deck[deckCount++] = [19,0]
-deck[deckCount++] = [24,0]
-deck[deckCount++] = [20,0]
-deck[deckCount++] = [21,0]
-deck[deckCount++] = [22,0]
-deck[deckCount++] = [23,0]
+deck[deckCount++] = [32,0]
+deck[deckCount++] = [41,0]
+deck[deckCount++] = [41,0]
+deck[deckCount++] = [41,0]
+deck[deckCount++] = [41,0]
 
 //Field Card Zone Locations and initializations
 i = 0;
@@ -87,12 +89,13 @@ own_turn = false;
 
 turn_count = 0;
 
-initialization_done = false;
+initialization_done = true;//TODO make this false after the initialization is done
 
 start_turn = true;
 startTurnEffectsActivated = false;
 main_phase = false;
 end_phase = false;
+endTurnTimer = 10;
 endTurnEffectActivated = false;
 
 //Game State and Response

@@ -6,6 +6,8 @@ function scr_spell_effects(cardNum) {
 		case 24://Cries of the Underworld Activation Trigger
 		case 25://Second Coming Activation Trigger
 		case 26://Bloody Sacrifice Activation Trigger
+		case 39://Icewall Activation Trigger
+		case 40://Icicle Storm Activation Trigger
 		case 41://Recruitment Activation Trigger
 		case 42://Hibernation Activation Trigger
 		case 43://Lockdown Activation Trigger

@@ -16,6 +16,6 @@ function scr_send_material(player, position, summonedCard){
 	}	
 	scr_decide_field(player, position, 0, 0, "material")
 	
-	//scr_on_material
-	return;
+	scr_on_material(cardNum, summonedCard)
+	return infirmaryPos;
 }

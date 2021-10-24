@@ -1,5 +1,5 @@
 function scr_grouplists() {
-	var i = 0
+	/*var i = 0
 
 	group_id[i] = i;
 	//starts_with[i] =1;
@@ -30,6 +30,5 @@ function scr_grouplists() {
 	group_name[i++] = "Pole Clans (Chapter 1)";
 
 	number_of_groups = i;
-
-
+	*/
 }

@@ -125,7 +125,7 @@ function scr_count_impact(player){
 						mmzOccupied = true;
 					}
 				}
-				if(mmzOccupied || levelCount < levelRequired || mainMaterialCount < mainMaterialRequired || keyMonsterHere){
+				if(mmzOccupied || levelCount < levelRequired || mainMaterialCount < mainMaterialRequired || !keyMonsterHere){
 					continue;
 				}
 			break;
@@ -149,7 +149,7 @@ function scr_count_impact(player){
 						mmzOccupied = true;
 					}
 				}
-				if(mmzOccupied || levelCount < levelRequired || mainMaterialCount < mainMaterialRequired || keyMonsterHere){
+				if(mmzOccupied || levelCount < levelRequired || mainMaterialCount < mainMaterialRequired || !keyMonsterHere){
 					continue;
 				}
 			break;
@@ -169,7 +169,7 @@ function scr_count_impact(player){
 						mmzOccupied = true;
 					}
 				}
-				if(mmzOccupied || levelCount < levelRequired || mainMaterialCount < mainMaterialRequired || keyMonsterHere){
+				if(mmzOccupied || levelCount < levelRequired || mainMaterialCount < mainMaterialRequired){
 					continue;
 				}
 			break;

@@ -2,17 +2,15 @@ if(victory_state != 0 && alarm[6] == -1){
 	alarm[6] = 180
 }
 if(!instance_exists(obj_opponent)){return;}
-//TODO: if(initialization_done){return;} 
+if(!initialization_done){return;} 
 
 if(start_turn && turn_count==0){
-	if(!(turn_count <= 2)){playerHP=playerMaxHP;}
-	scr_message_stats();	
 	if (alarm[0] == -1){alarm[0] = 1;}
 	turn_count++
 }
 if(start_turn && own_turn && !startTurnEffectsActivated){
 	mana = 4
-	scr_message_stats();
+	scr_decide_stats(player);
 	
 	scr_draw(player, 1, true);
 	
