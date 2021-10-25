@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Essential Functions",
-    "path": "folders/Scripts/Effects/Essential Functions.yy",
+    "name": "Set",
+    "path": "folders/Scripts/Effects/Essential Functions/Set.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_give_player_stats",
+  "name": "scr_set_status_player",
   "tags": [],
   "resourceType": "GMScript",
 }

@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Essential Functions",
-    "path": "folders/Scripts/Effects/Essential Functions.yy",
+    "name": "Initialization",
+    "path": "folders/Scripts/Initialization.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_decrease_use_effect",
+  "name": "scr_default_stats_player",
   "tags": [],
   "resourceType": "GMScript",
 }

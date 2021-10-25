@@ -1,5 +1,4 @@
-function scr_client_handle_message(argument0) {
-	var buffer = argument0
+function scr_client_handle_message(buffer) {
 	while(true){
 		var message_id = buffer_read(buffer, buffer_u8);
 		show_debug_message(message_id)

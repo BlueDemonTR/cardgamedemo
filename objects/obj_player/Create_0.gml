@@ -148,13 +148,24 @@ infirmary[infirmaryCount++] = [73, 0, 0]
 scr_update_infirmary()
 
 //Player Stats Initialization
-mana = 0;
-maxMana = 8;
-momentum = 0;
-maxMomentum = 12;
-playerMaxHP = 60;
-playerHP = playerMaxHP;
-wheel_locked = false;
+playerStat = macros.defaultStatPlayer
+getStat = function(stat){
+	if(array_length(playerStat) >= stat){
+		return playerStat[stat]
+	}else{
+		return macros.defaultStatPlayer[stat]
+	}	
+}
+
+//Player Statuses Initialization
+playerStatus = macros.defaultStatusPlayer
+getStatus = function(status){
+	if(array_length(playerStatus) >= status){
+		return playerStatus[status]
+	}else{
+		return macros.defaultStatusPlayer[status]
+	}	
+}
 
 //Summon Limitations Initialization
 scr_reset_limitations()

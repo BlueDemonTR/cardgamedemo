@@ -13,10 +13,10 @@ function scr_draw(player, cardsToDraw, actualDrawing) {
 	if(player.handCount >= handSizeLimit){
 		
 		if(macros.card_type[player.deck[player.deckCount-1, 0]] == TypeSpell){
-			scr_give_player_stats(player, 0, 0, 0, 2)
+			scr_increase_stat_player(player, 0, 0, 0, 2)
 		}
 		else{
-			scr_give_player_stats(player, 0, 0, macros.origStat[player.deck[player.deckCount-1, 0], StatLevel], 2)
+			scr_increase_stat_player(player, 0, 0, macros.origStat[player.deck[player.deckCount-1, 0], StatLevel], 2)
 		}
 		scr_decide_stats(player);
 		scr_mill_from_top(player, cardsToDraw);

@@ -15,7 +15,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				break;
 			}
 			if(attacked.cardStat[StatDodge] > 0){
-				scr_buff_card(attacked.player, attacked.position, StatDodge, -1);
+				scr_increase_stat_card(attacked.player, attacked.position, StatDodge, -1);
 				resolvingPile[positionInOrder,2] = 99
 				break;
 			}
@@ -34,7 +34,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 			}
 			
 			if(attacker.cardStatus[StatusPierce] && excessDamage > 0){
-				scr_give_player_stats(opponent, 0, -excessDamage, 0, 0)
+				scr_increase_stat_player(opponent, 0, -excessDamage, 0, 0)
 				scr_on_pierce(attacker, attacked, damage)
 			}
 			with(attacker){
@@ -50,7 +50,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 			}
 			var damage = attacker.cardStat[StatATK];
 			
-			scr_give_player_stats(opponent, 0, -damage, 0, 0)
+			scr_increase_stat_player(opponent, 0, -damage, 0, 0)
 			
 			with(attacker){
 				scr_after_attack(attacker.cardNum, attacker, damage)
@@ -80,25 +80,25 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				case 3://Pole Clan Wheel Gain Effect
 				case 4://Sacrifice Wheel Gain Effect
 					if(!effectSilenced){
-						scr_give_player_stats(player, 0, 0, 0, resolvingPile[positionInOrder,5])
+						scr_increase_stat_player(player, 0, 0, 0, resolvingPile[positionInOrder,5])
 					}
 					resolvingPile[positionInOrder,2] = 99;
 				break;				
 				case 5://Fisherman Wheel Gain Effect
 					if(!effectSilenced){
-						scr_give_player_stats(player, 0, 0, 0, macros.origStat[resolvingPile[positionInOrder,5], StatLevel])
+						scr_increase_stat_player(player, 0, 0, 0, macros.origStat[resolvingPile[positionInOrder,5], StatLevel])
 					}
 					resolvingPile[positionInOrder,2] = 99;
 				break;
 				case 6://Classic Wheel v1.0 Gain Effect
 					if(!effectSilenced){
-						scr_give_player_stats(player, 0, 0, 0, 3)
+						scr_increase_stat_player(player, 0, 0, 0, 3)
 					}
 					resolvingPile[positionInOrder,2] = 99;
 				break;			
 				case 7://X-Makine Heat Meter !Gain Effect
 					if(!effectSilenced){
-						scr_give_player_stats(player, 0, 0, 0, -2)
+						scr_increase_stat_player(player, 0, 0, 0, -2)
 					}
 					resolvingPile[positionInOrder,2] = 99;
 				break;
@@ -231,7 +231,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 										NextStep
 									break;
 									case 2:
-										scr_give_player_stats(player, 0, 0, 2, 0)
+										scr_increase_stat_player(player, 0, 0, 2, 0)
 										FinishResolving
 									break;
 								}
@@ -455,8 +455,8 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									case 4:
 										var affectedCard = resolvingPile[positionInOrder, 6].fieldCard[resolvingPile[positionInOrder, 5]]
 										scr_heal_card(affectedCard.player, affectedCard.position, affectedCard.cardStat[StatMaxHP])
-										scr_buff_card(affectedCard.player, affectedCard.position, StatMaxHP, 6)
-										scr_buff_card(affectedCard.player, affectedCard.position, StatHP, 6)
+										scr_increase_stat_card(affectedCard.player, affectedCard.position, StatMaxHP, 6)
+										scr_increase_stat_card(affectedCard.player, affectedCard.position, StatHP, 6)
 										FinishResolving
 									break;
 								}
@@ -565,7 +565,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 										NextStep
 									break;
 									case 2:
-										scr_give_player_stats(player, 0, 0, maxMana, 0)
+										scr_increase_stat_player(player, 0, 0, maxMana, 0)
 										FinishResolving
 									break;
 									
@@ -704,7 +704,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 										NextStep
 									break;
 									case 4:
-										scr_buff_card(resolvingPile[positionInOrder, 6], resolvingPile[positionInOrder, 5], StatATK, 2)
+										scr_increase_stat_card(resolvingPile[positionInOrder, 6], resolvingPile[positionInOrder, 5], StatATK, 2)
 										FinishResolving
 									break;
 								}
@@ -811,9 +811,9 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									case 2:
 										for(var i = 0; i < player.field_zone_count; i++){
 											if(scr_check_archetype(player.field[i], ArcXMakine)){
-												scr_buff_card(player, i, StatATK, 1)
-												scr_buff_card(player, i, StatMaxHP, 1)
-												scr_buff_card(player, i, StatHP, 1)
+												scr_increase_stat_card(player, i, StatATK, 1)
+												scr_increase_stat_card(player, i, StatMaxHP, 1)
+												scr_increase_stat_card(player, i, StatHP, 1)
 											}
 										}
 										FinishResolving
@@ -834,7 +834,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 										NextStep
 									break;
 									case 2:
-										scr_give_player_stats(player, 0, 6, 0, 0)
+										scr_increase_stat_player(player, 0, 6, 0, 0)
 										FinishResolving
 									break;
 								}
@@ -915,7 +915,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 			switch(effectNum){
 				case SharedVisclades://Visclades Shared Effect
 					if(!effectSilenced){
-						scr_give_player_stats(player, 0, 0, 1, 0)
+						scr_increase_stat_player(player, 0, 0, 1, 0)
 						scr_lock_wheel(player)
 					}
 					resolvingPile[positionInOrder,2] = 99
@@ -984,7 +984,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				break;
 				case SharedXMakine://XMakine Shared Effect
 					if(!effectSilenced && !fieldCard[position].cardStatus[StatusSilenced]){
-						scr_give_player_stats(player, 0, 0, 0, -3)
+						scr_increase_stat_player(player, 0, 0, 0, -3)
 					}
 					resolvingPile[positionInOrder,2] = 99					
 				break;
@@ -995,7 +995,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 			switch(effectNum){
 				case 0:
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){
-						scr_give_player_stats(obj_player, 0, 0, 0, 1);
+						scr_increase_stat_player(obj_player, 0, 0, 0, 1);
 					}
 					resolvingPile[positionInOrder,2] = 99
 				break;
@@ -1031,7 +1031,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				case 0:
 					if(!effectSilenced){
 						scr_burn(opponent,2,cardNum)
-						scr_give_player_stats(player, 0, 0, 0, 1)
+						scr_increase_stat_player(player, 0, 0, 0, 1)
 					}
 					resolvingPile[positionInOrder,2] = 99
 				break;
@@ -1043,7 +1043,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){
 						for(var i=0; i < player.field_zone_count; i++){
 							if(scr_check_archetype(field[i, 0], ArcMotorbiker)){
-									scr_buff_card(player, i, StatATK, 1)
+									scr_increase_stat_card(player, i, StatATK, 1)
 							}
 						}
 					}
@@ -1058,8 +1058,8 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						for(var i = 0; i < 5; i++){
 							if(field[i, 0]> 0){
 								if(scr_check_archetype(field[i, 0], ArcMotorbiker)){
-									scr_buff_card(player, i, StatMaxHP, 1)
-									scr_buff_card(player, i, StatHP, 1)
+									scr_increase_stat_card(player, i, StatMaxHP, 1)
+									scr_increase_stat_card(player, i, StatHP, 1)
 								}
 							}
 						}
@@ -1073,7 +1073,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 			switch(effectNum){
 				case 0:
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){
-						if(scr_change_card_status(player, position, StatusCantAttackDirect, true)){
+						if(scr_set_status_card(player, position, StatusCantAttackDirect, true)){
 							player.fieldCard[position].attacksLeft++;
 						}
 					}
@@ -1088,7 +1088,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){
 						for(var i = 0; i < player.field_zone_count; i++){
 							if(scr_check_archetype(field[i, 0], ArcMotorbiker)){
-								scr_buff_card(player, i, StatArmor, 1)
+								scr_increase_stat_card(player, i, StatArmor, 1)
 							}
 						}
 					}
@@ -1108,7 +1108,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							break;
 							case 3:
 								scr_search(player, resolvingPile[positionInOrder,5])
-								scr_give_player_stats(player, 0, 0, 0, 3)
+								scr_increase_stat_player(player, 0, 0, 0, 3)
 								scr_lock_wheel(player)
 								FinishResolving
 							break;
@@ -1228,8 +1228,8 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				case 0:
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){
 						with(player.fieldCard[position]){
-							scr_buff_card(player, position, -floor(cardStat[StatHP]/2), 1)
-							scr_buff_card(player, position, StatATK, 4);					
+							scr_increase_stat_card(player, position, -floor(cardStat[StatHP]/2), 1)
+							scr_increase_stat_card(player, position, StatATK, 4);					
 						}
 					}
 				break;
@@ -1247,7 +1247,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								NextStep
 							break;
 							case 3:
-								scr_buff_card(resolvingPile[positionInOrder,6], resolvingPile[positionInOrder,5], StatATK, -2)
+								scr_increase_stat_card(resolvingPile[positionInOrder,6], resolvingPile[positionInOrder,5], StatATK, -2)
 								FinishResolving
 							break;
 						}
@@ -1256,7 +1256,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					}
 					if(resolutionStep = 98){
 						resolvingPile[positionInOrder,2] = 99
-						scr_decrease_use_effect(player, position)
+						scr_decrease_effect_uses(player, position)
 					}							
 				break;
 			}
@@ -1293,7 +1293,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									scr_on_stat_change(self)
 									scr_message_opponent_field_card_stats(self.position)
 								}
-								scr_buff_card(player, position, StatATK, absorbCount)
+								scr_increase_stat_card(player, position, StatATK, absorbCount)
 								FinishResolving
 							break;
 						}
@@ -1337,8 +1337,8 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				case 0:
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){
 						fieldCard[position].attacksLeft++;
-						scr_buff_card(player, position, StatATK, 1);
-						scr_buff_card(player, position, StatHP, -1);
+						scr_increase_stat_card(player, position, StatATK, 1);
+						scr_increase_stat_card(player, position, StatHP, -1);
 					}
 					scr_message_field_card_stats(position)	
 					resolvingPile[positionInOrder,2] = 99
@@ -1406,7 +1406,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				case 0:
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){
 						player.fieldCard[position].sacrificable = true
-						scr_buff_card(player,position, StatLevel, 4)
+						scr_increase_stat_card(player,position, StatLevel, 4)
 						scr_lock_wheel(player)
 					}
 					resolvingPile[positionInOrder,2] = 99
@@ -1422,8 +1422,8 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								NextStep
 							break;
 							case 3:
-								scr_buff_card(resolvingPile[positionInOrder,6], resolvingPile[positionInOrder,5], StatMaxHP, 2)
-								scr_buff_card(resolvingPile[positionInOrder,6], resolvingPile[positionInOrder,5], StatHP, 2)
+								scr_increase_stat_card(resolvingPile[positionInOrder,6], resolvingPile[positionInOrder,5], StatMaxHP, 2)
+								scr_increase_stat_card(resolvingPile[positionInOrder,6], resolvingPile[positionInOrder,5], StatHP, 2)
 								FinishResolving
 							break;
 						}
@@ -1561,7 +1561,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								NextStep
 							break;
 							case 6:
-								scr_buff_card(resolvingPile[positionInOrder,7], resolvingPile[positionInOrder,6], StatATK, 2)
+								scr_increase_stat_card(resolvingPile[positionInOrder,7], resolvingPile[positionInOrder,6], StatATK, 2)
 								FinishResolving
 							break;
 						}
@@ -1626,7 +1626,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 			switch(effectNum){
 				case 0:
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){
-						scr_give_player_stats(player, 0, mana*3, -mana, 0)
+						scr_increase_stat_player(player, 0, mana*3, -mana, 0)
 					}
 					resolvingPile[positionInOrder,2] = 99
 				break;
@@ -1658,9 +1658,9 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								visclades++
 							}
 						}
-						scr_buff_card(player, position, StatATK, visclades);
-						scr_buff_card(player, position, StatMaxHP, visclades);
-						scr_buff_card(player, position, StatHP, visclades);
+						scr_increase_stat_card(player, position, StatATK, visclades);
+						scr_increase_stat_card(player, position, StatMaxHP, visclades);
+						scr_increase_stat_card(player, position, StatHP, visclades);
 					}
 					resolvingPile[positionInOrder,2] = 99
 				break;
@@ -1740,7 +1740,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){				
 						for(i = 0; i < 5; i++){
 							if(!scr_check_archetype(player.field[i, 0], ArcIgloo)){continue;}
-							scr_buff_card(player, i, StatDodge, 1)
+							scr_increase_stat_card(player, i, StatDodge, 1)
 						}
 					}
 					resolvingPile[positionInOrder,2] = 99
@@ -1760,9 +1760,9 @@ function scr_resolve_effect_in_pile(positionInOrder){
 			switch(effectNum){
 				case 0:
 					if(scr_count_field_filter([player], [], [1, 12], [0, infinity], [0, infinity], [ArcIgloo], [], -1, -1) && !fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){				
-						scr_buff_card(player, position, StatATK, 3)
-						scr_buff_card(player, position, StatMaxHP, 2)
-						scr_buff_card(player, position, StatHP, 2)
+						scr_increase_stat_card(player, position, StatATK, 3)
+						scr_increase_stat_card(player, position, StatMaxHP, 2)
+						scr_increase_stat_card(player, position, StatHP, 2)
 					}
 					resolvingPile[positionInOrder,2] = 99
 				break;
@@ -1794,8 +1794,8 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								NextStep
 							break;
 							case 4:
-								scr_buff_card(resolvingPile[positionInOrder,6], resolvingPile[positionInOrder,5], StatMaxHP, 5)
-								scr_buff_card(resolvingPile[positionInOrder,6], resolvingPile[positionInOrder,5], StatHP, 5)
+								scr_increase_stat_card(resolvingPile[positionInOrder,6], resolvingPile[positionInOrder,5], StatMaxHP, 5)
+								scr_increase_stat_card(resolvingPile[positionInOrder,6], resolvingPile[positionInOrder,5], StatHP, 5)
 								FinishResolving
 							break;
 						}
@@ -1997,7 +1997,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						FinishResolving
 					}
 					if(resolutionStep = 98){
-						scr_decrease_use_effect(player, position)
+						scr_decrease_effect_uses(player, position)
 						resolvingPile[positionInOrder,2] = 99
 					}
 				break;
@@ -2046,7 +2046,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						FinishResolving
 					}
 					if(resolutionStep = 98){
-						scr_decrease_use_effect(player, position)
+						scr_decrease_effect_uses(player, position)
 						resolvingPile[positionInOrder,2] = 99
 					}
 				break;
@@ -2084,7 +2084,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								NextStep
 							break;
 							case 4:
-								scr_give_player_stats(player, 0, 0, 0, resolvingPile[positionInOrder,5])
+								scr_increase_stat_player(player, 0, 0, 0, resolvingPile[positionInOrder,5])
 								FinishResolving
 							break;
 							case 50:
@@ -2119,7 +2119,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								NextStep
 							break;
 							case 5:
-								scr_give_player_stats(player, 0, 0, 0, -macros.origStat[obj_player.infirmary[resolvingPile[positionInOrder, 5],0], StatLevel])
+								scr_increase_stat_player(player, 0, 0, 0, -macros.origStat[obj_player.infirmary[resolvingPile[positionInOrder, 5],0], StatLevel])
 								scr_summon_from_infirmary(player, resolvingPile[positionInOrder, 5], resolvingPile[positionInOrder, 6])
 								FinishResolving
 							break;
@@ -2138,7 +2138,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 			switch(effectNum){
 				case 0:
 					if(!effectSilenced){				
-						scr_give_player_stats(player, 0, momentum*2, 0, -momentum);
+						scr_increase_stat_player(player, 0, momentum*2, 0, -momentum);
 					}
 					
 					resolvingPile[positionInOrder,2] = 99
@@ -2173,7 +2173,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 			switch(effectNum){
 				case 0:
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){				
-						scr_buff_card(player, position, StatATK, 1);
+						scr_increase_stat_card(player, position, StatATK, 1);
 					}
 					resolvingPile[positionInOrder,2] = 99
 				break;
@@ -2186,11 +2186,11 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						for(var i = 0; i < 5; i++){
 							if(instance_exists(obj_player.fieldCard[i])){
 								scr_bounce(obj_player, i);
-								scr_give_player_stats(obj_player, 0, 0, 0, 3)
+								scr_increase_stat_player(obj_player, 0, 0, 0, 3)
 							}
 							if(instance_exists(obj_opponent.fieldCard[i])){
 								scr_bounce(obj_opponent, i);
-								scr_give_player_stats(obj_opponent, 0, 0, 0, 3)								
+								scr_increase_stat_player(obj_opponent, 0, 0, 0, 3)								
 							}
 						}
 					}
@@ -2340,7 +2340,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						FinishResolving
 					}
 					if(resolutionStep = 98){
-						scr_decrease_use_effect(player, position)
+						scr_decrease_effect_uses(player, position)
 						resolvingPile[positionInOrder,2] = 99
 					}
 				break;
@@ -2352,8 +2352,8 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){				
 						for (var i = 0; i < 5; i++){
 							if(player.field[i, 0] == 62){
-								scr_buff_card(player, i, StatMaxHP, 3)
-								scr_buff_card(player, i, StatHP, 3)
+								scr_increase_stat_card(player, i, StatMaxHP, 3)
+								scr_increase_stat_card(player, i, StatHP, 3)
 							}
 						}						
 					}
@@ -2363,7 +2363,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					if(!effectSilenced){				
 						for (var i=0;i<5;i++){
 							if(player.field[i, 0]==62){
-								scr_buff_card(player, i, StatATK, 3)
+								scr_increase_stat_card(player, i, StatATK, 3)
 								scr_message_field_card_stats(i);
 							}
 						}
@@ -2409,7 +2409,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								NextStep
 							break;
 							case 4:
-								scr_buff_card(resolvingPile[positionInOrder,6], resolvingPile[positionInOrder,5], StatATK, 4)
+								scr_increase_stat_card(resolvingPile[positionInOrder,6], resolvingPile[positionInOrder,5], StatATK, 4)
 								FinishResolving
 							break;
 						}
@@ -2427,7 +2427,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 			switch(effectNum){
 				case 0:
 					if(!effectSilenced){				
-						scr_give_player_stats(player, 0, 3, 0, 0);
+						scr_increase_stat_player(player, 0, 3, 0, 0);
 					}
 					resolvingPile[positionInOrder,2] = 99
 				break;
@@ -2467,7 +2467,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				break;
 				case 1://Momentum Gain
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){				
-						scr_give_player_stats(player, 0, 0, 0, resolvingPile[positionInOrder,5])
+						scr_increase_stat_player(player, 0, 0, 0, resolvingPile[positionInOrder,5])
 					}
 					resolvingPile[positionInOrder,2] = 99
 				break;
@@ -2508,7 +2508,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								NextStep
 							break;
 							case 2:
-								scr_buff_card(player, position, StatATK, 1);
+								scr_increase_stat_card(player, position, StatATK, 1);
 								FinishResolving
 							break;
 						}
@@ -2534,7 +2534,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								NextStep
 							break;
 							case 2:
-								scr_give_player_stats(player, 0, 0, -2, 0);
+								scr_increase_stat_player(player, 0, 0, -2, 0);
 								FinishResolving
 							break;
 						}
@@ -2662,7 +2662,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								lowestLevel = player.fieldCard[i].cardStat[StatLevel]
 							}
 						}
-						scr_give_player_stats(player, 0, 0, lowestLevel, 0);
+						scr_increase_stat_player(player, 0, 0, lowestLevel, 0);
 					}
 					
 					resolvingPile[positionInOrder,2] = 99
@@ -2739,12 +2739,12 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){				
 						for(i = 0; i < player.field_zone_count; i++){
 							if(opponent.field[i, 0]){
-								scr_buff_card(opponent, i, StatATK, -1)
-								scr_buff_card(opponent, i, StatMaxHP, -1)
-								scr_buff_card(opponent, i, StatHP, -1)
-								scr_buff_card(player, position, StatATK, 2)
-								scr_buff_card(player, position, StatMaxHP, 2)
-								scr_buff_card(player, position, StatHP, 2)
+								scr_increase_stat_card(opponent, i, StatATK, -1)
+								scr_increase_stat_card(opponent, i, StatMaxHP, -1)
+								scr_increase_stat_card(opponent, i, StatHP, -1)
+								scr_increase_stat_card(player, position, StatATK, 2)
+								scr_increase_stat_card(player, position, StatMaxHP, 2)
+								scr_increase_stat_card(player, position, StatHP, 2)
 							}
 						}
 					}
@@ -2771,7 +2771,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						FinishResolving
 					}
 					if(resolutionStep = 98){
-						scr_decrease_use_effect(player, position)
+						scr_decrease_effect_uses(player, position)
 						resolvingPile[positionInOrder,2] = 99
 					}
 				break;
@@ -2824,7 +2824,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						FinishResolving
 					}
 					if(resolutionStep = 98){
-						scr_decrease_use_effect(player, position)
+						scr_decrease_effect_uses(player, position)
 						resolvingPile[positionInOrder,2] = 99
 					}
 				break;
@@ -2878,7 +2878,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						FinishResolving
 					}
 					if(resolutionStep = 98){
-						scr_use_once_per_turn(player, position);
+						scr_decrease_effect_uses(player, position);
 						resolvingPile[positionInOrder,2] = 99
 					}
 				break;
@@ -2925,13 +2925,13 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						FinishResolving
 					}
 					if(resolutionStep = 98){
-						scr_decrease_use_effect(player, position)
+						scr_decrease_effect_uses(player, position)
 						resolvingPile[positionInOrder,2] = 99
 					}
 				break;
 				case 1://ATK Gain
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){
-						scr_buff_card(player, position, StatATK, 1)
+						scr_increase_stat_card(player, position, StatATK, 1)
 						FinishResolving
 					}else{
 						FinishResolving
@@ -3003,7 +3003,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						FinishResolving
 					}
 					if(resolutionStep = 98){
-						scr_decrease_use_effect(player, position)
+						scr_decrease_effect_uses(player, position)
 						resolvingPile[positionInOrder,2] = 99
 					}
 				break;
@@ -3072,16 +3072,16 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						FinishResolving
 					}
 					if(resolutionStep = 98){
-						scr_decrease_use_effect(player, position)
+						scr_decrease_effect_uses(player, position)
 						resolvingPile[positionInOrder,2] = 99
 					}
 				break;
 				case 1://Stat Gain
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){
 						var foishi = resolvingPile[resolutionStep, 5]
-						scr_buff_card(player, position, StatATK, macros.origStat[foishi, StatATK]);
-						scr_buff_card(player, position, StatMaxHP, macros.origStat[foishi, StatMaxHP]);
-						scr_buff_card(player, position, StatHP, macros.origStat[foishi, StatHP]);
+						scr_increase_stat_card(player, position, StatATK, macros.origStat[foishi, StatATK]);
+						scr_increase_stat_card(player, position, StatMaxHP, macros.origStat[foishi, StatMaxHP]);
+						scr_increase_stat_card(player, position, StatHP, macros.origStat[foishi, StatHP]);
 					}else{
 						FinishResolving
 					}
@@ -3239,7 +3239,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								resolvingPile[positionInOrder, 2] = 3
 							break;
 							case 6:
-								scr_give_player_stats(player, 0, 0, 3, 0);
+								scr_increase_stat_player(player, 0, 0, 3, 0);
 								scr_draw(player, 1, true);
 								FinishResolving
 							break;
@@ -3290,7 +3290,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 			switch(effectNum){
 				case 0:
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){				
-						scr_give_player_stats(player, 0, 6, 0, 0)
+						scr_increase_stat_player(player, 0, 6, 0, 0)
 					}
 					resolvingPile[positionInOrder,2] = 99
 				break;
@@ -3333,7 +3333,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							break;
 							case 3:
 								scr_discard(player, resolvingPile[positionInOrder, 5])
-								scr_give_player_stats(player, 0, 0, 0, 3);
+								scr_increase_stat_player(player, 0, 0, 0, 3);
 								FinishResolving
 							break;
 						}
@@ -3379,7 +3379,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							case 1:
 								for(var i = 0; i < player.field_zone_count; i++){
 									if(i != position && scr_check_archetype(player.field[i], ArcXMakine)){
-										scr_buff_card(player, i, StatATK, 1);
+										scr_increase_stat_card(player, i, StatATK, 1);
 										resolvingPile[positionInOrder,2] = 2
 									}
 								}
@@ -3389,7 +3389,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								FinishResolving
 							break;
 							case 3:
-								scr_give_player_stats(player, 0, 0, 0, 4);
+								scr_increase_stat_player(player, 0, 0, 0, 4);
 								FinishResolving
 							break;
 						}
@@ -3398,7 +3398,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					}
 					if(resolutionStep = 98){
 						resolvingPile[positionInOrder,2] = 99
-						scr_decrease_use_effect(player, position)
+						scr_decrease_effect_uses(player, position)
 					}
 				break;
 			}		
@@ -3411,8 +3411,8 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							case 1:
 								for(var i = 0; i < player.field_zone_count; i++){
 									if(i != position && scr_check_archetype(player.field[i], ArcXMakine)){
-										scr_buff_card(player, i, StatMaxHP, 1);
-										scr_buff_card(player, i, StatHP, 1);
+										scr_increase_stat_card(player, i, StatMaxHP, 1);
+										scr_increase_stat_card(player, i, StatHP, 1);
 										resolvingPile[positionInOrder,2] = 2
 									}
 								}
@@ -3422,7 +3422,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								FinishResolving
 							break;
 							case 3:
-								scr_give_player_stats(player, 0, 0, 0, 4);
+								scr_increase_stat_player(player, 0, 0, 0, 4);
 								FinishResolving
 							break;
 						}
@@ -3431,7 +3431,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					}
 					if(resolutionStep = 98){
 						resolvingPile[positionInOrder,2] = 99
-						scr_decrease_use_effect(player, position)
+						scr_decrease_effect_uses(player, position)
 					}
 				break;
 			}		
@@ -3448,7 +3448,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							break;
 							case 3:
 								scr_search(player, resolvingPile[positionInOrder]);
-								scr_give_player_stats(player, 0, 0, 0, 4);
+								scr_increase_stat_player(player, 0, 0, 0, 4);
 								FinishResolving
 							break;
 						}
@@ -3457,7 +3457,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					}
 					if(resolutionStep = 98){
 						resolvingPile[positionInOrder,2] = 99
-						scr_decrease_use_effect(player, position)
+						scr_decrease_effect_uses(player, position)
 					}
 				break;
 			}
@@ -3474,7 +3474,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							break;
 							case 3:
 								scr_recover_infirmary(player, resolvingPile[positionInOrder]);
-								scr_give_player_stats(player, 0, 0, 0, 4);
+								scr_increase_stat_player(player, 0, 0, 0, 4);
 								FinishResolving
 							break;
 						}
@@ -3483,7 +3483,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					}
 					if(resolutionStep = 98){
 						resolvingPile[positionInOrder,2] = 99
-						scr_decrease_use_effect(player, position)
+						scr_decrease_effect_uses(player, position)
 					}
 				break;
 			}
@@ -3500,9 +3500,9 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								NextStep
 							break;
 							case 3:
-								scr_buff_card(resolvingPile[positionInOrder,6], resolvingPile[positionInOrder,5], StatLevel, 1)
+								scr_increase_stat_card(resolvingPile[positionInOrder,6], resolvingPile[positionInOrder,5], StatLevel, 1)
 								scr_draw(player, 1, true)
-								scr_give_player_stats(player, 0, 0, 0, 4)
+								scr_increase_stat_player(player, 0, 0, 0, 4)
 								FinishResolving
 							break;
 						}
@@ -3511,7 +3511,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					}
 					if(resolutionStep = 98){
 						resolvingPile[positionInOrder,2] = 99
-						scr_decrease_use_effect(player, position)
+						scr_decrease_effect_uses(player, position)
 					}
 				break;
 			}
@@ -3530,10 +3530,10 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							case 3:
 								if(player.momentum <= 6){
 									scr_silence(resolvingPile[positionInOrder,6],resolvingPile[positionInOrder,5])
-									scr_give_player_stats(player, 0, 0, 0, 6)
+									scr_increase_stat_player(player, 0, 0, 0, 6)
 								}else{
 									scr_damage_card(resolvingPile[positionInOrder,6],resolvingPile[positionInOrder,5], 8)
-									scr_give_player_stats(player, 0, 0, 0, -6)
+									scr_increase_stat_player(player, 0, 0, 0, -6)
 								}
 								FinishResolving
 							break;
@@ -3543,7 +3543,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					}
 					if(resolutionStep = 98){
 						resolvingPile[positionInOrder,2] = 99
-						scr_decrease_use_effect(player, position)
+						scr_decrease_effect_uses(player, position)
 					}
 				break;
 			}
@@ -3596,7 +3596,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							break;
 							case 5:
 								if(resolvingPile[resolutionStep,5]){
-									scr_buff_card(resolvingPile[resolutionStep,7], resolvingPile[resolutionStep,6], StatATK, resolvingPile[resolutionStep,5])
+									scr_increase_stat_card(resolvingPile[resolutionStep,7], resolvingPile[resolutionStep,6], StatATK, resolvingPile[resolutionStep,5])
 								}else{
 									resolvingPile[resolutionStep,6].fieldCard[resolvingPile[resolutionStep,7]].cardStatus[StatusTAUNT] = true;
 								}

@@ -1,7 +1,7 @@
 draw_set_font(fnt_default)
 draw_set_color(c_black)
 
-if(obj_player.wheel_locked){
+if(obj_player.getStatus(PlayerLockWheel)){
 	lockColor = c_gray
 }else{
 	lockColor = c_white

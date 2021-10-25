@@ -6,5 +6,5 @@ function scr_paralyze(player, position) {
 	//Why does this exist?: Some cards may have effects that trigger when a card is paralyzed,
 	//Basically future proofing
 	
-	scr_change_card_status(player, position, StatusParalyzed, true)
+	scr_set_status_card(player, position, StatusParalyzed, true)
 }

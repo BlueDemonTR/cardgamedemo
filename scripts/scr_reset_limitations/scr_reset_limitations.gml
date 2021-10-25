@@ -5,7 +5,7 @@ function scr_reset_limitations() {
 	limitSummoningCardCount = 0;
 	hoptCount = 0
 
-	wheel_locked = false;
+	scr_set_status_player(player, PlayerLockWheel, false)
 
 	wheel_opt[1] = false;
 	wheel_opt[2] = false;

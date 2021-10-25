@@ -4,7 +4,18 @@ persistent = true;
 test_mode=true;
 show_debug_message(GM_version)
 
-//Card Data Macros
+//Player Stats
+#macro PlayerMana 0
+#macro PlayerMaxMana 1
+#macro PlayerMomentum 2
+#macro PlayerMaxMomentum 3
+#macro PlayerMaxHP 4
+#macro PlayerHP 5
+scr_default_stats_player()
+
+//Player Statuses
+#macro PlayerLockWheel 0
+scr_default_statuses_player()
 
 //Infirmary Send Types
 #macro SendInjuries 0
@@ -50,6 +61,7 @@ scr_illegal_cards();
 #macro StatDodge 6
 #macro StatSpirit 7
 #macro StatXPerTurn 8
+scr_default_stats()
 
 //Archetype Properties
 #macro ArcMotorbiker 1
@@ -91,8 +103,10 @@ scr_initialize_shared_effects();
 #macro StatusCantAttackDirect 12
 #macro StatusSelfDestruct 13
 scr_initialize_statuses();
+scr_default_statuses()
 
 //Spirit Properties
+#macro SpiritBlank 0
 #macro SpiritAggressive 1
 #macro SpiritPassive 2
 #macro SpiritNoble 3

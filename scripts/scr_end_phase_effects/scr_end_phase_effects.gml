@@ -11,7 +11,7 @@ function scr_end_phase_effects(){
 		var affectedCard = fieldCard[position],
 		cardNum = field[position, 0];
 		
-		scr_change_card_status(player, position, StatusParalyzed, false); //Unparalyze Card
+		scr_set_status_card(player, position, StatusParalyzed, false); //Unparalyze Card
 		affectedCard.sacrificable = true;//Make card Sacrificable
 		
 		if(variable_array_exists(macros.origStat,cardNum,i)){

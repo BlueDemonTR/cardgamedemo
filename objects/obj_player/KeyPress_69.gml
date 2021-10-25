@@ -1,3 +1,3 @@
 if (test_mode){
-	scr_give_player_stats(player, 0, 3, 0, 0)	
+	scr_increase_stat_player(player, 0, 3, 0, 0)	
 }

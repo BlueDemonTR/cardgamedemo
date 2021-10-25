@@ -9,6 +9,6 @@ function scr_pay_momentum(player, amount){
 		return false;
 	}
 	
-	scr_give_player_stats(player, 0, 0, 0, -amount)
+	scr_increase_stat_player(player, 0, 0, 0, -amount)
 	return amount;
 }

@@ -19,7 +19,7 @@ function scr_silence(player, position) {
 			cardStatus[i] = false;
 		}
 		
-		scr_change_card_status(player, position, StatusSilenced, true)
+		scr_set_status_card(player, position, StatusSilenced, true)
 	}
 	
 	scr_decide_field_card_stats(player, position);

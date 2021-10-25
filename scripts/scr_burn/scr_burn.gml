@@ -7,7 +7,7 @@ function scr_burn(target, origDamage, cardNum) {
 		}
 	}
 
-	scr_give_player_stats(target, 0, -damage, 0, 0)
+	scr_increase_stat_player(target, 0, -damage, 0, 0)
 	
 	switch(obj_player.selected_wheel){
 		case 3://Pole Clan Wheel Gain Activation Trigger

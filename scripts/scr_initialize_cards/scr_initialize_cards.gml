@@ -6,7 +6,7 @@ function scr_initialize_cards(){
 	typeName[TypeMomentum] = "Momentum"
 	typeName[TypeSpell] = "Spell"
 	
-	spiritName[0] = "Blank"
+	spiritName[SpiritBlank] = "Blank"
 	spiritName[SpiritAggressive] = "Aggressive"
 	spiritName[SpiritPassive] = "Passive"
 	spiritName[SpiritNoble] = "Noble"
@@ -14,8 +14,8 @@ function scr_initialize_cards(){
 	spiritName[SpiritKind] = "Kind"
 	spiritName[SpiritPassionate] = "Passionate"
 	
-	var i=-1;
-	var j=0;
+	var i = -1
+	var j = 0
 	
 	name[++i] ="None";
 		//write -1 = invalid, 0 = monster, 1 = momentum or 2 = spell

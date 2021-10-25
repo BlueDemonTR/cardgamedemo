@@ -54,13 +54,25 @@ for(i = 0; i < 8; i++){
 	momentumDeck[i, 1] = 0;
 }
 
-//player stats
-mana = 0;
-maxMana = 8;
-momentum = 0;
-maxMomentum =12;
-playerMaxHP= 60;
-playerHP = 60;
+//Player Stats Initialization
+playerStat = macros.defaultStatPlayer
+getStat = function(stat){
+	if(array_length(playerStat) >= stat){
+		return playerStat[stat]
+	}else{
+		return macros.defaultStatPlayer[stat]
+	}	
+}
+
+//Player Statuses Initialization
+playerStatus = macros.defaultStatusPlayer
+getStatus = function(status){
+	if(array_length(playerStatus) >= status){
+		return playerStatus[status]
+	}else{
+		return macros.defaultStatusPlayer[status]
+	}	
+}
 
 scr_reset_limitations()
 

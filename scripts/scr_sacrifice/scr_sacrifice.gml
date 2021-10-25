@@ -9,7 +9,7 @@ function scr_sacrifice(player, position) {
 	artNum = affectedCard.artNum,
 	manaGain = affectedCard.cardStat[StatLevel];
 	
-	scr_give_player_stats(player, 0, 0, manaGain, 0);
+	scr_increase_stat_player(player, 0, 0, manaGain, 0);
 	scr_send_infirmary(player, [cardNum, artNum], SendSacrifice);
 	scr_on_sacrificed(cardNum, manaGain);
 	
