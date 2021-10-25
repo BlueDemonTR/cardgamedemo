@@ -6,11 +6,11 @@ if (player.main_phase && player.open_game_state && player.own_turn){
 			var fieldZone = scr_get_field_zone(x, y, player);
 			if(fieldZone == -1){break;}
 			if(!scr_limited_summon(self.cardNum)){break;}
-			if(macros.origStat[self.cardNum,StatLevel] > player.mana){
+			if(macros.origStat[self.cardNum,StatLevel] > player.getStat(PlayerMana)){
 				break;
 			}
 			if(scr_summon([cardNum, artNum], player, SummonMana, "none", fieldZone)){
-				scr_increase_stat_player(player, 0, 0, -macros.origStat[self.cardNum,StatLevel], 0)
+				scr_increase_stat_player(player, PlayerMana, -macros.origStat[self.cardNum,StatLevel])
 				scr_remove_from_hand(player, position)
 			}
 		break;

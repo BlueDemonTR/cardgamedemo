@@ -34,7 +34,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 			}
 			
 			if(attacker.cardStatus[StatusPierce] && excessDamage > 0){
-				scr_increase_stat_player(opponent, 0, -excessDamage, 0, 0)
+				scr_increase_stat_player(opponent, PlayerHP, -excessDamage)
 				scr_on_pierce(attacker, attacked, damage)
 			}
 			with(attacker){
@@ -50,7 +50,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 			}
 			var damage = attacker.cardStat[StatATK];
 			
-			scr_increase_stat_player(opponent, 0, -damage, 0, 0)
+			scr_increase_stat_player(opponent, PlayerHP, -damage)
 			
 			with(attacker){
 				scr_after_attack(attacker.cardNum, attacker, damage)
@@ -80,25 +80,25 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				case 3://Pole Clan Wheel Gain Effect
 				case 4://Sacrifice Wheel Gain Effect
 					if(!effectSilenced){
-						scr_increase_stat_player(player, 0, 0, 0, resolvingPile[positionInOrder,5])
+						scr_increase_stat_player(player, PlayerMomentum, resolvingPile[positionInOrder,5])
 					}
 					resolvingPile[positionInOrder,2] = 99;
 				break;				
 				case 5://Fisherman Wheel Gain Effect
 					if(!effectSilenced){
-						scr_increase_stat_player(player, 0, 0, 0, macros.origStat[resolvingPile[positionInOrder,5], StatLevel])
+						scr_increase_stat_player(player, PlayerMomentum, macros.origStat[resolvingPile[positionInOrder,5], StatLevel])
 					}
 					resolvingPile[positionInOrder,2] = 99;
 				break;
 				case 6://Classic Wheel v1.0 Gain Effect
 					if(!effectSilenced){
-						scr_increase_stat_player(player, 0, 0, 0, 3)
+						scr_increase_stat_player(player, PlayerMomentum, 3)
 					}
 					resolvingPile[positionInOrder,2] = 99;
 				break;			
 				case 7://X-Makine Heat Meter !Gain Effect
 					if(!effectSilenced){
-						scr_increase_stat_player(player, 0, 0, 0, -2)
+						scr_increase_stat_player(player, PlayerMomentum, -2)
 					}
 					resolvingPile[positionInOrder,2] = 99;
 				break;
@@ -231,7 +231,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 										NextStep
 									break;
 									case 2:
-										scr_increase_stat_player(player, 0, 0, 2, 0)
+										scr_increase_stat_player(player, PlayerMana, 2)
 										FinishResolving
 									break;
 								}
@@ -565,7 +565,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 										NextStep
 									break;
 									case 2:
-										scr_increase_stat_player(player, 0, 0, maxMana, 0)
+										scr_set_stat_player(player, PlayerMana, getStat(PlayerMaxMana))
 										FinishResolving
 									break;
 									
@@ -802,7 +802,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				case 7://X-Makine Heat Meter
 					switch(effectNum){
 						case 0:
-							if(!effectSilenced && momentum = 3){
+							if(!effectSilenced && getStat(PlayerMomentum) == 3){
 								switch(resolutionStep){
 									case 1:
 										scr_pay_momentum(player, 3)
@@ -834,7 +834,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 										NextStep
 									break;
 									case 2:
-										scr_increase_stat_player(player, 0, 6, 0, 0)
+										scr_increase_stat_player(player, PlayerHP, 6)
 										FinishResolving
 									break;
 								}
@@ -915,7 +915,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 			switch(effectNum){
 				case SharedVisclades://Visclades Shared Effect
 					if(!effectSilenced){
-						scr_increase_stat_player(player, 0, 0, 1, 0)
+						scr_increase_stat_player(player, PlayerMana, 1)
 						scr_lock_wheel(player)
 					}
 					resolvingPile[positionInOrder,2] = 99
@@ -984,7 +984,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				break;
 				case SharedXMakine://XMakine Shared Effect
 					if(!effectSilenced && !fieldCard[position].cardStatus[StatusSilenced]){
-						scr_increase_stat_player(player, 0, 0, 0, -3)
+						scr_increase_stat_player(player, PlayerMomentum, -3)
 					}
 					resolvingPile[positionInOrder,2] = 99					
 				break;
@@ -995,7 +995,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 			switch(effectNum){
 				case 0:
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){
-						scr_increase_stat_player(obj_player, 0, 0, 0, 1);
+						scr_increase_stat_player(player, PlayerMomentum, 1);
 					}
 					resolvingPile[positionInOrder,2] = 99
 				break;
@@ -1031,7 +1031,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				case 0:
 					if(!effectSilenced){
 						scr_burn(opponent,2,cardNum)
-						scr_increase_stat_player(player, 0, 0, 0, 1)
+						scr_increase_stat_player(player, PlayerMomentum, 1)
 					}
 					resolvingPile[positionInOrder,2] = 99
 				break;
@@ -1108,7 +1108,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							break;
 							case 3:
 								scr_search(player, resolvingPile[positionInOrder,5])
-								scr_increase_stat_player(player, 0, 0, 0, 3)
+								scr_increase_stat_player(player, PlayerMomentum, 3)
 								scr_lock_wheel(player)
 								FinishResolving
 							break;
@@ -1626,7 +1626,8 @@ function scr_resolve_effect_in_pile(positionInOrder){
 			switch(effectNum){
 				case 0:
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){
-						scr_increase_stat_player(player, 0, mana*3, -mana, 0)
+						scr_increase_stat_player(player, PlayerHP, getStat(PlayerMana)*3)
+						scr_increase_stat_player(player, PlayerMana, -getStat(PlayerMana))
 					}
 					resolvingPile[positionInOrder,2] = 99
 				break;
@@ -1867,7 +1868,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 		case 42://Blizzard Hibernation Effect
 			switch(effectNum){
 				case 0:
-					if(!effectSilenced && player.momentum >= 3){
+					if(!effectSilenced && player.getStat(PlayerMomentum) >= 3){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,5] = 0
@@ -2084,7 +2085,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								NextStep
 							break;
 							case 4:
-								scr_increase_stat_player(player, 0, 0, 0, resolvingPile[positionInOrder,5])
+								scr_increase_stat_player(player, PlayerMomentum, resolvingPile[positionInOrder,5])
 								FinishResolving
 							break;
 							case 50:
@@ -2110,7 +2111,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder, 5] = 0
-								scr_target_infirmary([player], [TypeMonster, TypeMomentum], 1, player.momentum, [], [], true, -1, -1, -1, 5)
+								scr_target_infirmary([player], [TypeMonster, TypeMomentum], 1, player.getStat(PlayerMomentum), [], [], true, -1, -1, -1, 5)
 								NextStep
 							break;
 							case 3:
@@ -2119,7 +2120,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								NextStep
 							break;
 							case 5:
-								scr_increase_stat_player(player, 0, 0, 0, -macros.origStat[obj_player.infirmary[resolvingPile[positionInOrder, 5],0], StatLevel])
+								scr_increase_stat_player(player, PlayerMomentum, -macros.origStat[obj_player.infirmary[resolvingPile[positionInOrder, 5],0], StatLevel])
 								scr_summon_from_infirmary(player, resolvingPile[positionInOrder, 5], resolvingPile[positionInOrder, 6])
 								FinishResolving
 							break;
@@ -2138,7 +2139,8 @@ function scr_resolve_effect_in_pile(positionInOrder){
 			switch(effectNum){
 				case 0:
 					if(!effectSilenced){				
-						scr_increase_stat_player(player, 0, momentum*2, 0, -momentum);
+						scr_increase_stat_player(player, PlayerHP, getStat(PlayerMomentum)*2);						
+						scr_increase_stat_player(player, PlayerMomentum, -getStat(PlayerMomentum));
 					}
 					
 					resolvingPile[positionInOrder,2] = 99
@@ -2186,11 +2188,11 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						for(var i = 0; i < 5; i++){
 							if(instance_exists(obj_player.fieldCard[i])){
 								scr_bounce(obj_player, i);
-								scr_increase_stat_player(obj_player, 0, 0, 0, 3)
+								scr_increase_stat_player(obj_player, PlayerMomentum, 3)
 							}
 							if(instance_exists(obj_opponent.fieldCard[i])){
 								scr_bounce(obj_opponent, i);
-								scr_increase_stat_player(obj_opponent, 0, 0, 0, 3)								
+								scr_increase_stat_player(obj_opponent, PlayerMomentum, 3)								
 							}
 						}
 					}
@@ -2211,7 +2213,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							break;
 							case 3:
 								scr_discard(player, resolvingPile[positionInOrder,5])
-								if(obj_player.playerHP >= 5){
+								if(obj_player.getStat(PlayerHP) >= 5){
 									for(var i = 0; i < 5; i++){
 										scr_destroy(player, i, 1)
 										scr_destroy(opponent, i, 1)
@@ -2427,7 +2429,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 			switch(effectNum){
 				case 0:
 					if(!effectSilenced){				
-						scr_increase_stat_player(player, 0, 3, 0, 0);
+						scr_increase_stat_player(player, PlayerHP, 3);
 					}
 					resolvingPile[positionInOrder,2] = 99
 				break;
@@ -2467,7 +2469,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				break;
 				case 1://Momentum Gain
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){				
-						scr_increase_stat_player(player, 0, 0, 0, resolvingPile[positionInOrder,5])
+						scr_increase_stat_player(player, PlayerMomentum, resolvingPile[positionInOrder,5])
 					}
 					resolvingPile[positionInOrder,2] = 99
 				break;
@@ -2527,14 +2529,14 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					if(!effectSilenced){
 						switch(resolutionStep){
 							case 1:
-								if(player.mana < 2){
+								if(player.getStat(PlayerMana) < 2){
 									resolvingPile[positionInOrder,2] = 97
 									break;
 								}
 								NextStep
 							break;
 							case 2:
-								scr_increase_stat_player(player, 0, 0, -2, 0);
+								scr_increase_stat_player(player, PlayerMana, -2);
 								FinishResolving
 							break;
 						}
@@ -2662,7 +2664,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								lowestLevel = player.fieldCard[i].cardStat[StatLevel]
 							}
 						}
-						scr_increase_stat_player(player, 0, 0, lowestLevel, 0);
+						scr_increase_stat_player(player, PlayerMana, lowestLevel);
 					}
 					
 					resolvingPile[positionInOrder,2] = 99
@@ -3150,7 +3152,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					if(!effectSilenced){
 						switch(resolutionStep){
 							case 1:
-								resolvingPile[positionInOrder,5] = scr_pay_momentum(player, player.momentum);
+								resolvingPile[positionInOrder,5] = scr_pay_momentum(player, player.getStat(PlayerMomentum));
 								NextStep 
 							break;
 							case 2:
@@ -3239,7 +3241,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								resolvingPile[positionInOrder, 2] = 3
 							break;
 							case 6:
-								scr_increase_stat_player(player, 0, 0, 3, 0);
+								scr_increase_stat_player(player, PlayerMana, 3);
 								scr_draw(player, 1, true);
 								FinishResolving
 							break;
@@ -3290,7 +3292,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 			switch(effectNum){
 				case 0:
 					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced){				
-						scr_increase_stat_player(player, 0, 6, 0, 0)
+						scr_increase_stat_player(player, PlayerHP, 6)
 					}
 					resolvingPile[positionInOrder,2] = 99
 				break;
@@ -3333,7 +3335,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							break;
 							case 3:
 								scr_discard(player, resolvingPile[positionInOrder, 5])
-								scr_increase_stat_player(player, 0, 0, 0, 3);
+								scr_increase_stat_player(player, PlayerMomentum, 3);
 								FinishResolving
 							break;
 						}
@@ -3374,7 +3376,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 		case 107://Casey X-Makine Cannons Effect
 			switch(effectNum){
 				case 0:
-					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced && player.momentum <= 3){
+					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced && player.getStat(PlayerMomentum) <= 3){
 						switch(resolutionStep){
 							case 1:
 								for(var i = 0; i < player.field_zone_count; i++){
@@ -3389,7 +3391,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								FinishResolving
 							break;
 							case 3:
-								scr_increase_stat_player(player, 0, 0, 0, 4);
+								scr_increase_stat_player(player, PlayerMomentum, 4);
 								FinishResolving
 							break;
 						}
@@ -3406,7 +3408,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 		case 108://Theo X-Makine Cannons Effect
 			switch(effectNum){
 				case 0:
-					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced && player.momentum <= 3){
+					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced && player.getStat(PlayerMomentum) <= 3){
 						switch(resolutionStep){
 							case 1:
 								for(var i = 0; i < player.field_zone_count; i++){
@@ -3422,7 +3424,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								FinishResolving
 							break;
 							case 3:
-								scr_increase_stat_player(player, 0, 0, 0, 4);
+								scr_increase_stat_player(player, PlayerMomentum, 4);
 								FinishResolving
 							break;
 						}
@@ -3439,7 +3441,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 		case 109://Lily, X-Makine Carrier Effect
 			switch(effectNum){
 				case 0:
-					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced && player.momentum == 0){
+					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced && player.getStat(PlayerMomentum) == 0){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,5] = 0;
@@ -3448,7 +3450,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							break;
 							case 3:
 								scr_search(player, resolvingPile[positionInOrder]);
-								scr_increase_stat_player(player, 0, 0, 0, 4);
+								scr_increase_stat_player(player, PlayerMomentum, 4);
 								FinishResolving
 							break;
 						}
@@ -3465,7 +3467,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 		case 110://Robert, X-Makine Wheels Effect
 			switch(effectNum){
 				case 0:
-					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced && player.momentum <= 3){
+					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced && player.getStat(PlayerMomentum) <= 3){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,5] = 0;
@@ -3474,7 +3476,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							break;
 							case 3:
 								scr_recover_infirmary(player, resolvingPile[positionInOrder]);
-								scr_increase_stat_player(player, 0, 0, 0, 4);
+								scr_increase_stat_player(player, PlayerMomentum, 4);
 								FinishResolving
 							break;
 						}
@@ -3491,7 +3493,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 		case 111://Dom X-Makine Airforce Effect
 			switch(effectNum){
 				case 0:
-					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced && player.momentum <= 3){
+					if(!fieldCard[position].cardStatus[StatusSilenced] && !effectSilenced && player.getStat(PlayerMomentum) <= 3){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,5] = 0
@@ -3502,7 +3504,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							case 3:
 								scr_increase_stat_card(resolvingPile[positionInOrder,6], resolvingPile[positionInOrder,5], StatLevel, 1)
 								scr_draw(player, 1, true)
-								scr_increase_stat_player(player, 0, 0, 0, 4)
+								scr_increase_stat_player(player, PlayerMomentum, 4)
 								FinishResolving
 							break;
 						}
@@ -3528,12 +3530,12 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								NextStep
 							break;
 							case 3:
-								if(player.momentum <= 6){
+								if(player.getStat(PlayerMomentum) <= 6){
 									scr_silence(resolvingPile[positionInOrder,6],resolvingPile[positionInOrder,5])
-									scr_increase_stat_player(player, 0, 0, 0, 6)
+									scr_increase_stat_player(player, PlayerMomentum, 6)
 								}else{
 									scr_damage_card(resolvingPile[positionInOrder,6],resolvingPile[positionInOrder,5], 8)
-									scr_increase_stat_player(player, 0, 0, 0, -6)
+									scr_increase_stat_player(player, PlayerMomentum, -6)
 								}
 								FinishResolving
 							break;
@@ -3585,7 +3587,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					if(!effectSilenced){
 						switch(resolutionStep){
 							case 1:
-								resolvingPile[resolutionStep,5] = scr_pay_momentum(player, momentum);
+								resolvingPile[resolutionStep,5] = scr_pay_momentum(player, getStat(PlayerMomentum));
 								NextStep
 							break;
 							case 3:

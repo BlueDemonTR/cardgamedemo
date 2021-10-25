@@ -14,6 +14,7 @@ function scr_end_phase_effects(){
 		scr_set_status_card(player, position, StatusParalyzed, false); //Unparalyze Card
 		affectedCard.sacrificable = true;//Make card Sacrificable
 		
+		
 		if(variable_array_exists(macros.origStat,cardNum,i)){
 			affectedCard.effectUsesLeft = max(affectedCard.cardStat[StatXPerTurn], 1)
 		}else{

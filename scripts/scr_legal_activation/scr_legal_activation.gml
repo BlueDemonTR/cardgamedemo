@@ -17,7 +17,7 @@ function scr_legal_activation(){
 				case 5://Fisherman Wheel Gain Legal Activation
 				case 6://Classic Wheel Gain Legal Activation
 				case 7://XMakine Wheel Gain Legal Activation
-					if(obj_player.wheel_locked){return false};
+					if(obj_player.getStatus(PlayerLockWheel)){return false};
 					return true;
 				break;
 			}
@@ -48,7 +48,7 @@ function scr_legal_activation(){
 				case 2://Visclades Wheel Effects Legal Activation
 					switch(effectNum){
 						case 0:
-							if(player.mana == maxMana){return false}
+							if(player.getStat(PlayerMana) == player.getStat(PlayerMaxMana)){return false}
 							return true;							
 						break;
 						case 1:
@@ -100,7 +100,7 @@ function scr_legal_activation(){
 							return true;
 						break;
 						case 3:
-							if(player.mana == player.maxMana){return false}
+							if(player.getStat(PlayerMana) == player.getStat(PlayerMaxMana)){return false}
 							return true;
 						break;
 					}				
@@ -147,12 +147,12 @@ function scr_legal_activation(){
 				case 7://XMakine Wheel Wheel Effects Legal Activation
 					switch(effectNum){
 						case 0:
-							if(player.momentum != 3){return false}
+							if(player.getStat(PlayerMomentum) != 3){return false}
 							if(!scr_count_field_filter([player], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1)){return false}
 							return true;
 						break;
 						case 1:
-							if(player.playerHP == player.playerMaxHP){return false}
+							if(player.getStat(PlayerHP) == player.getStat(PlayerMaxHP)){return false}
 							return true;
 						break;
 						case 2:
@@ -180,7 +180,7 @@ function scr_legal_activation(){
 				break;
 				case SharedXMakine:
 					if(obj_player.fieldCard[position].cardStatus[StatusSilenced]){return false;}
-					if(obj_player.momentum == 0){return false}
+					if(obj_player.getStat(PlayerMomentum) == 0){return false}
 					return true;
 				break;
 				case SharedUnderworldVisclades:
@@ -348,7 +348,7 @@ function scr_legal_activation(){
 		
 		case 29://Bargaining Visclades Legal Activation
 			if(obj_player.fieldCard[position].cardStatus[StatusSilenced]){return false;}		
-			if(!(obj_player.mana > 0 && obj_player.playerHP != obj_player.playerMaxHP)){return false;}		
+			if(!(obj_player.getStat(PlayerMana) > 0 && obj_player.getStat(PlayerHP) != obj_player.getStat(PlayerMaxHP))){return false;}		
 			return true;
 		break;
 		
@@ -390,13 +390,13 @@ function scr_legal_activation(){
 			}
 		
 		case 39://Blizzard Icewall Legal Activation
-			if(player.momentum < 1){return false}
+			if(player.getStat(PlayerMomentum) < 1){return false}
 			if(!scr_count_field_filter([player, opponent], [], [1, 12], [0, infinity], [0, infinity], [ArcIgloo], [], -1, -1)){return false}
 			return true;
 		break;
 		
 		case 40://Blizzard Icicle Storm Legal Activation
-			if(player.momentum < 3){return false}
+			if(player.getStat(PlayerMomentum) < 3){return false}
 			if(!scr_count_field_filter([player, opponent], [], [1, 12], [0, infinity], [0, infinity], [ArcIgloo], [], -1, -1)){return false}
 			return true;
 		break;
@@ -407,7 +407,7 @@ function scr_legal_activation(){
 		break;
 		
 		case 42://Blizzard Hibernation Legal Activation
-			if(player.momentum < 3){return false}
+			if(player.getStat(PlayerMomentum) < 3){return false}
 			return true;
 		break;
 		
@@ -417,7 +417,7 @@ function scr_legal_activation(){
 		break;
 		
 		case 44://Blizzard Frost Beam Legal Activation
-			if(player.momentum < 3){return false}
+			if(player.getStat(PlayerMomentum) < 3){return false}
 			if(!scr_count_field_filter([player], [], [1, 12], [0, infinity], [0, infinity], [ArcIgloo], [], -1, -1)){return false}
 			return true;
 		break;
@@ -449,12 +449,12 @@ function scr_legal_activation(){
 		break;
 
 		case 52://Centrifugal Reborn Legal Activation
-			if(!scr_count_infirmary_filter([player], [TypeMonster, TypeMomentum], 1, player.momentum, [], [], true, -1, -1, -1)){return false}
+			if(!scr_count_infirmary_filter([player], [TypeMonster, TypeMomentum], 1, player.getStat(PlayerMomentum), [], [], true, -1, -1, -1)){return false}
 			return true	
 		break;
 		
 		case 53://Healing Lullaby Legal Activation
-			if(player.playerHP == player.playerMaxHP || !(player.momentum)){return false;}
+			if(player.getStat(PlayerHP) == player.getStat(PlayerMaxHP) || !(player.getStat(PlayerMomentum))){return false;}
 			return true
 		break;
 		
@@ -529,7 +529,7 @@ function scr_legal_activation(){
 		case 96://Fullteam Medics Legal Activation
 			if(obj_player.fieldCard[position].cardStatus[StatusSilenced]){return false;}
 		case 67://Pan Soldier Legal Activation
-			if(player.playerHP == player.playerMaxHP){return false;}
+			if(player.getStat(PlayerHP) == player.getStat(PlayerMaxHP)){return false;}
 			return true
 		break;
 		
@@ -553,7 +553,7 @@ function scr_legal_activation(){
 		
 		case 73://Baby Phoenix Legal Activation
 			if(scr_if_field_full(player)){return false;}
-			if(player.mana < 2){return false;}
+			if(player.getStat(PlayerMana) < 2){return false;}
 			return true
 		break;
 		
@@ -617,7 +617,7 @@ function scr_legal_activation(){
 		break;
 		
 		case 92://Cursed Reel Legal Activation
-			if(player.momentum < 1){return false}
+			if(player.getStat(PlayerMomentum) < 1){return false}
 			return true
 		break;
 		
@@ -647,7 +647,7 @@ function scr_legal_activation(){
 		case 108://X-Makine Theo Legal Activation
 			if(!effectUsesLeft){return false}
 			if(obj_player.fieldCard[position].cardStatus[StatusSilenced]){return false;}
-			if(obj_player.momentum > 3){return false}
+			if(obj_player.getStat(PlayerMomentum) > 3){return false}
 			if(!scr_count_field_filter([player], [], [1, 12], [0, infinity], [0, infinity], [ArcXMakine], [], position, -1)){return false}
 			return true;		
 		break;
@@ -655,7 +655,7 @@ function scr_legal_activation(){
 		case 109://X-Makine Lily Legal Activation
 			if(!effectUsesLeft){return false}
 			if(obj_player.fieldCard[position].cardStatus[StatusSilenced]){return false;}
-			if(obj_player.momentum > 0){return false}
+			if(obj_player.getStat(PlayerMomentum) > 0){return false}
 			if(!scr_count_deck_filter([player], [TypeMonster], 1, 12, [ArcXMakine], [], false, -1)){return false}
 			return true;
 		break;
@@ -663,7 +663,7 @@ function scr_legal_activation(){
 		case 110://X-Makine Robert Legal Activation
 			if(!effectUsesLeft){return false}
 			if(obj_player.fieldCard[position].cardStatus[StatusSilenced]){return false;}
-			if(obj_player.momentum > 3){return false}
+			if(obj_player.getStat(PlayerMomentum) > 3){return false}
 			if(!scr_count_infirmary_filter([player], [TypeMonster, TypeMomentum], 1, 12, [ArcXMakine], [], false, -1, -1, -1)){return false}
 			return true;
 		break;
@@ -671,7 +671,7 @@ function scr_legal_activation(){
 		case 111://X-Makine Dom Legal Activation
 			if(!effectUsesLeft){return false}
 			if(obj_player.fieldCard[position].cardStatus[StatusSilenced]){return false;}
-			if(obj_player.momentum > 3){return false}
+			if(obj_player.getStat(PlayerMomentum) > 3){return false}
 			if(!scr_count_field_filter([player], [], [1, 11], [0, infinity], [0, infinity], [ArcXMakine], [], position, -1)){return false}
 			return true;
 		break;

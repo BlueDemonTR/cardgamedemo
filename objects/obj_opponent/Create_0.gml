@@ -1,3 +1,5 @@
+player = obj_opponent;
+opponent = obj_player;
 
 handCount = 0;
 for(i=0;i < 7; i++){
@@ -75,6 +77,3 @@ getStatus = function(status){
 }
 
 scr_reset_limitations()
-
-player = obj_opponent;
-opponent = obj_player;

@@ -19,8 +19,8 @@ for(i=0;i<momentumDeckCount; i++){
 	draw_sprite_ext(spr_cardback,-1,(momentum_deck_x-deck_buffer_x*i),(momentum_deck_y-deck_buffer_x*i),sprite_to_small,card_height/800,180,c_white,1);
 }
 
-draw_text_transformed_color(395,440,string(mana),5,5,0,c_purple,c_purple,c_fuchsia,c_fuchsia,1);
+draw_text_transformed_color(395,440,string(getStat(PlayerMana)),5,5,0,c_purple,c_purple,c_fuchsia,c_fuchsia,1);
 draw_set_color(c_black);
-draw_text(525, 325,string(playerHP)+"/"+string(playerMaxHP));
+draw_text(525, 325,string(getStat(PlayerHP))+"/"+string(getStat(PlayerMaxHP)));
 
 

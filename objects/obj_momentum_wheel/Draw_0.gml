@@ -7,13 +7,13 @@ if(obj_player.getStatus(PlayerLockWheel)){
 	lockColor = c_white
 }
 
-if(obj_player.momentum <= 12 && obj_player.momentum >= 0){
-	draw_sprite_ext(macros.wheelSprite[obj_player.momentum],-1,x,y,1,1,0,lockColor,1);
+if(obj_player.getStat(PlayerMomentum) <= 12 && obj_player.getStat(PlayerMomentum) >= 0){
+	draw_sprite_ext(macros.wheelSprite[obj_player.getStat(PlayerMomentum)],-1,x,y,1,1,0,lockColor,1);
 }
 
 if(instance_exists(obj_opponent)){	
-	if(obj_opponent.momentum <= 12){
-		draw_sprite_ext(macros.wheelSprite[obj_opponent.momentum],-1,1300,400,1,1,180,c_white,1)
+	if(obj_opponent.getStat(PlayerMomentum) <= 12){
+		draw_sprite_ext(macros.wheelSprite[obj_opponent.getStat(PlayerMomentum)],-1,1300,400,1,1,180,c_white,1)
 	}
 }
 if(obj_player.selected_wheel > 0){

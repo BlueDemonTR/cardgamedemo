@@ -9,8 +9,7 @@ if(start_turn && turn_count==0){
 	turn_count++
 }
 if(start_turn && own_turn && !startTurnEffectsActivated){
-	mana = 4
-	scr_decide_stats(player);
+	scr_set_stat_player(player, PlayerMana, 4)
 	
 	scr_draw(player, 1, true);
 	
@@ -89,9 +88,8 @@ for(i = 0; i < obj_player.field_zone_count; i++){//TODO, Rewrite
 	
 }
 
-if(playerHP<=0 && victory_state==0){
-	playerHP = 0;
-	scr_message_stats();
+if(getStat(PlayerHP) <= 0 && victory_state==0){
+	scr_set_stat_player(obj_player, PlayerHP, 0)
 	scr_message_game_lose();
 }
 

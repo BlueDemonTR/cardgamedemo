@@ -4,11 +4,11 @@ function scr_pay_momentum(player, amount){
 	//player: either obj_player or obj_opponent, decides which player's card is affected
 	//amount: int
 	
-	if(player.momentum < amount){
+	if(player.getStat(PlayerMomentum) < amount){
 		resolvingPile[obj_player.resolvingPileCount-1,2] = 97
 		return false;
 	}
 	
-	scr_increase_stat_player(player, 0, 0, 0, -amount)
+	scr_increase_stat_player(player, PlayerMomentum, -amount)
 	return amount;
 }
