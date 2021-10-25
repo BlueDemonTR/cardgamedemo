@@ -14,9 +14,9 @@ function scr_discard(player, position) {
 		targetX = player.infirmary_x
 		targetY = player.infirmary_y
 		activation_mode = "fieldToPlayerInfirmary"
-		self.cardNum =cardNum;
-		self.artNum =artNum;
+		self.cardNum = cardNum;
+		self.artNum = artNum;
 	}
 
-	scr_send_infirmary(player, [cardNum, artNum], SendDiscard)
+	return scr_send_infirmary(player, [cardNum, artNum], SendDiscard)
 }

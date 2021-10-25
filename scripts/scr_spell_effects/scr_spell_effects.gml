@@ -14,7 +14,7 @@ function scr_spell_effects(cardNum) {
 		case 44://Frost Beam Activation Trigger
 		case 51://At long last Activation Trigger
 		case 52://Centrifugal Reborn Activation Trigger
-		case 53: //Healing Lullaby Activation Trigger
+		case 53://Healing Lullaby Activation Trigger
 		case 56://Earthquake Activation Trigger
 		case 57://Power Discharge Activation Trigger
 		case 66://Bloodthirst Activation Trigger
@@ -30,9 +30,7 @@ function scr_spell_effects(cardNum) {
 		case 114://Mighty Changing Fire Blades Activation Trigger
 		case 115://X-Makines Form Together! Activation Trigger
 			if(!scr_legal_activation(cardNum, 0, position)){break;}
-			//Send handCard here instead since position's can change while an effect is
-			//resolving.
-			scr_add_to_resolution_pile([cardNum, 0, 0, obj_player.handCard[position], false])
+			scr_add_to_resolution_pile([cardNum, 0, 0, scr_discard(player, position), false])
 		break;
 	}
 }

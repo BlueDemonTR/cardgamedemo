@@ -61,11 +61,7 @@ scr_construct_global_deck();
 scr_shuffle_deck(player);
 
 //Stacking the deck for debug purposes here
-deck[deckCount++] = [32,0]
-deck[deckCount++] = [41,0]
-deck[deckCount++] = [41,0]
-deck[deckCount++] = [41,0]
-deck[deckCount++] = [41,0]
+deck[deckCount++] = [51,0]
 
 //Field Card Zone Locations and initializations
 i = 0;
@@ -146,6 +142,10 @@ infirmaryCount = 0;
 infirmary_x=deck_x;
 infirmary_y=deck_y-(card_height+5);
 instance_create_layer(infirmary_x,infirmary_y,"Instances",obj_infirmary)
+//Stack Infirmary here for debug purposes
+infirmary[infirmaryCount++] = [73, 0, 0]
+
+scr_update_infirmary()
 
 //Player Stats Initialization
 mana = 0;

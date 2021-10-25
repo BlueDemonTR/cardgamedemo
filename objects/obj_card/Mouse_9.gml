@@ -1,2 +1,4 @@
 //DEBUG
-scr_remove_from_hand(player, position)
+if(macros.test_mode){
+	scr_discard(player, position)
+}

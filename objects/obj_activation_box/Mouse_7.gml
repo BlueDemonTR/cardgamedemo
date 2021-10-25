@@ -36,7 +36,7 @@ switch(activation_mode){
 	case FunctionHandEffect:
 		if(scr_check_shared(obj_player.hand[position,0], ArcVisclades)){//Visclades Shared Effect Activation Trigger
 			if(!scr_legal_activation("SharedEffects", ArcVisclades, position)){return false}
-			scr_add_to_resolution_pile(["SharedEffects", ArcVisclades, 0, position, false])
+			scr_add_to_resolution_pile(["SharedEffects", ArcVisclades, 0, scr_discard(player, position), false])
 		}
 	break;
 	case FunctionInfirmaryEffect:

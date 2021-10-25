@@ -460,12 +460,12 @@ function scr_legal_activation(){
 		
 		case 54://Battle Medic Legal Activation
 			if(obj_player.fieldCard[position].cardStatus[StatusSilenced]){return false;}
-			if(scr_count_infirmary_filter([player], [TypeMonster, TypeMomentum], 1, 2, [], [], false, -1, -1, -1)){return false;}
+			if(!scr_count_infirmary_filter([player], [TypeMonster, TypeMomentum], 1, 2, [], [], false, -1, -1, -1)){return false;}
 			return true
 		break;
 
 		case 56://Earthquake Legal Activation
-			if(scr_count_field(player) <= scr_count_field(opponent)){return false}
+			if(scr_count_field(player) > scr_count_field(opponent)){return false}
 			return true
 		break;
 		
