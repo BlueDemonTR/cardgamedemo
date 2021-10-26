@@ -14,7 +14,7 @@ function scr_server_handle_message(argument0, argument1) {
 				
 
 				network_send_raw(temp2, send_buffer,buffer_tell(send_buffer));
-			
+				
 			
 				buffer_seek(send_buffer, buffer_seek_start, 0);
 				buffer_write(send_buffer, buffer_u8, MESSAGE_TURN);
