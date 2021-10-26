@@ -14,11 +14,7 @@ function scr_destroy(player, position, destroyType) {
 
 	var infirmaryPos = scr_send_infirmary(player, [cardNum, artNum], destroyType)
 	
-	with(player.fieldCard[position]){
-		animationType = "destroy"
-		instance_destroy();
-	}	
-	scr_decide_field(player, position, 0, 0, "destroy")
+	scr_remove_from_field(player, position, "destroy")
 	
 	scr_on_destroyed(cardNum, infirmaryPos, destroyType);
 	return;

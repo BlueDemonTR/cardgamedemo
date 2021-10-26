@@ -10,11 +10,7 @@ function scr_send_material(player, position, summonedCard){
 
 	var infirmaryPos = scr_send_infirmary(player, [cardNum, artNum], SendMaterial)
 	
-	with(player.fieldCard[position]){
-		animationType = "material"
-		instance_destroy();
-	}	
-	scr_decide_field(player, position, 0, 0, "material")
+	scr_remove_from_field(player, position, "destroy")
 	
 	scr_on_material(cardNum, summonedCard)
 	return infirmaryPos;

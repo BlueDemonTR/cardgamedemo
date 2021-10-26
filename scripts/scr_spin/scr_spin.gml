@@ -11,9 +11,5 @@ function scr_spin(player, position) {
 		scr_decide_momentum_deck(player);
 	}
 	
-	with(player.fieldCard[position]){
-		instance_destroy();
-	}
-	scr_decide_field(player, position, 0, 0, "spin")
-
+	scr_remove_from_field(player, position, "destroy")
 }

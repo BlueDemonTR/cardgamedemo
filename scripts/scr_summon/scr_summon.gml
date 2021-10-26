@@ -39,7 +39,7 @@ function scr_summon(cardArray, player, summonType, animationType, summonZone){
 					case SummonImpact:
 						scr_on_impact_summon(cardNum)
 					break;
-				}				
+				}
 			}
 			return fieldCard[summonZone];
 		}

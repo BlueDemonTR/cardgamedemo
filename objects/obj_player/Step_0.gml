@@ -62,42 +62,9 @@ if(resolvingPileCount){
 
 }
 
-for(i = 0; i < obj_player.field_zone_count; i++){//TODO, Rewrite
-	if(field[i, 0] > 0 && fieldCard[i] == noone){
-		scr_message_field(i, field[i, 0], field[i, 1], "none");
-		fieldCard[i] = instance_create_depth(field_card_zone_x[i],field_card_zone_y[i],1,obj_field_card);
-		var 
-		cardNum = field[i, 0],
-		artNum = field[i, 1],
-		sprite = macros.sprite_array[cardNum],
-		position = i;
-		with(fieldCard[i]){
-			player = obj_player;
-			opponent = obj_opponent;
-			self.cardNum = cardNum;
-			self.artNum = artNum;
-			self.position = position;
-			scr_info_to_instance(cardNum);
-			summoning_method = SummonEffect
-			field_x = player.field_card_zone_x[self.position];
-			field_y = player.field_card_zone_y[self.position];
-			sprite_index = sprite;
-		}
-	
-	}
-	
-}
-
 if(getStat(PlayerHP) <= 0 && victory_state==0){
 	scr_set_stat_player(obj_player, PlayerHP, 0)
 	scr_message_game_lose();
 }
 
-for(i = 0; i < 5; i++){//TODO: Rewrite
-	if(field[i, 0] == 0 && fieldCard[i] != noone){
-		with(fieldCard[i]){
-			instance_destroy();
-		}
-	}
-}
 if(end_phase && alarm[2] == -1){alarm[2]=10};

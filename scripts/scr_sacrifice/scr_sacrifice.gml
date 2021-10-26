@@ -13,8 +13,5 @@ function scr_sacrifice(player, position) {
 	scr_send_infirmary(player, [cardNum, artNum], SendSacrifice);
 	scr_on_sacrificed(cardNum, manaGain);
 	
-	with(affectedCard){
-		instance_destroy();
-	}
-	scr_message_field(position, 0, 0, "Sacrifice");
+	scr_remove_from_field(player, position, "destroy")
 }
