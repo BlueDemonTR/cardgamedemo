@@ -12,7 +12,7 @@ if(getStatus(StatusSilenced)){
 	draw_sprite_stretched(spr_silenced,-1,x-card_width/2,y-card_height/2,card_width,card_height);
 }
 
-if(attacksLeft && !getStatus(StatusUnarmed) && !getStatus(StatusParalyzed) && player.turn_count != 1){
+if(attacksLeft && !getStatus(StatusUnarmed) && !getStatus(StatusParalyzed) && obj_player.turn_count != 1){
 	draw_sprite_stretched(spr_attack,-1,x-card_width/2,y-card_height/2,card_width,card_height);
 }
 i=0

@@ -68,9 +68,9 @@ if(getStat(StatRegeneration) > 0){
 	stateList[i++,1] = getStat(StatRegeneration)
 	
 }
-if(getStat(StatATK) > 0){
+if(getStat(StatArmor) > 0){
 	stateList[i,0] = spr_armor
-	stateList[i++,1] = getStat(StatATK)
+	stateList[i++,1] = getStat(StatArmor)
 }
 draw_set_color(c_blue)
 for(j=0; j < i; j++){

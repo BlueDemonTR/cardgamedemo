@@ -1,20 +1,22 @@
 function scr_end_phase_effects(){
+	
 	switch(obj_player.selected_wheel){
 		case 7://XMakine Wheel Gain Activation Trigger
 			if(!scr_legal_activation("WheelGain", 0, obj_player.selected_wheel)){return false}
 			scr_add_to_resolution_pile(["WheelGain", 0, 0, obj_player.selected_wheel, false])	
 		break;
 	}
+	
 	for(var position = 0; position < player.field_zone_count ; position++){
 		if(!field[position, 0]){continue;}
-
+		
 		var affectedCard = fieldCard[position],
 		cardNum = field[position, 0];
 		
 		scr_set_status_card(player, position, StatusParalyzed, false); //Unparalyze Card
 		affectedCard.sacrificable = true;//Make card Sacrificable
-		
-			affectedCard.effectUsesLeft = affectedCard.getStat(StatEffectUsesPerTurn)
+		return;
+		affectedCard.effectUsesLeft = affectedCard.getStat(StatEffectUsesPerTurn)
 			
 		if(affectedCard.getStatus(StatusSelfDestruct)){//Status Self Destruct Activation Trigger
 			if(!scr_legal_activation("SelfDestruct", 0, position)){return false;}			

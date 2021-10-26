@@ -7,8 +7,8 @@ function scr_summon(cardArray, player, summonType, animationType, summonZone){
 	if(!scr_limited_summon(cardNum)){return false;}
 	
 	with(player){
-		if(!field[summonZone,0]){
-			fieldCard[summonZone] = instance_create_depth(field_card_zone_x[summonZone],field_card_zone_y[summonZone], 1, obj_field_card);
+		if(!instance_exists(fieldCard[summonZone])){
+			fieldCard[summonZone] = instance_create_depth(field_card_zone_x[summonZone],field_card_zone_y[summonZone], 1, player == obj_player ? obj_field_card : obj_opponent_field_card);
 			with(fieldCard[summonZone]){
 				summoning_method = summonType
 				self.player = player;
