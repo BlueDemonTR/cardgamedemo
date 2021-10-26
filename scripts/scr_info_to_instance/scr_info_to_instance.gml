@@ -1,26 +1,14 @@
 function scr_info_to_instance(cardNum) {
 	
 	for(var i = 0; i < macros.stat_count; i++){
-		if(variable_array_exists(macros.origStat,cardNum,i) && macros.origStat[cardNum,i] != 0){
-			scr_set_stat_card(player, position, i, macros.origStat[cardNum,i])
-		}else{
-			switch(i){
-				case StatHP:
-					scr_set_stat_card(player, position, i, getStat(StatMaxHP))
-				break;
-				default:
-					scr_set_stat_card(player, position, i, macros.defaultStat[i])
-				break;
-			}
-		}
+		scr_set_stat_card(player, position, i, scr_get_stat_orig(cardNum, i))
+	}
+	if(getStat(StatHP) == 0){
+		scr_set_stat_card(player, position, StatHP, getStat(StatMaxHP))
 	}
 	
 	for(var i = 0; i < macros.status_count; i++){
-		if(variable_array_exists(macros.origStatus,cardNum,i)){
-			cardStatus[i] = macros.origStatus[cardNum,i]
-		}else{
-			cardStatus[i] = macros.defaultStatus[i];
-		}
+		scr_set_status_card(player, position, i, scr_get_status_orig(cardNum, i))
 	}
 	
 	for(var i = 0; i < macros.origSharedEffectsCount[cardNum]; i++){

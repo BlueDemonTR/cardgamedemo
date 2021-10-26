@@ -7,14 +7,14 @@ function scr_count_attack(attacker){
 	
 	tauntExists = bool(scr_count_field_filter([opponent], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, 3));
 	
-	if(!attacker.cardStatus[StatusCantAttackDirect] && 
+	if(!attacker.getStatus(StatusCantAttackDirect) && 
 		(!tauntExists || scr_check_shared(attacker.cardNum, ArcMotorbiker))){
 		array_push(attackArray, "opponent")
 	}
 	
 	for(var i = 0; i < 5; i++){
 		if(!opponent.field[i, 0]){continue;}
-		if(!opponent.fieldCard[i].cardStatus[StatusSneaky] && (!tauntExists || !opponent.fieldCard[i].cardStatus[StatusTAUNT])){
+		if(!opponent.fieldCard[i].getStatus(StatusSneaky) && (!tauntExists || !opponent.fieldCard[i].getStatus(StatusTAUNT))){
 			array_push(attackArray, i);
 		}
 	}

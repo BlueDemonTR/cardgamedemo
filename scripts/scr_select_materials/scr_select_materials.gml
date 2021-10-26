@@ -93,8 +93,8 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 				FieldCard = player.fieldCard[position],
 				levelIncrease = 0;
 					
-				if(scr_check_archetype(player.field[position, 0], mainMaterial) && FieldCard.cardStat[StatLevel] < levelRequired){
-					levelIncrease = FieldCard.cardStat[StatLevel]
+				if(scr_check_archetype(player.field[position, 0], mainMaterial) && FieldCard.getStat(StatLevel) < levelRequired){
+					levelIncrease = FieldCard.getStat(StatLevel)
 					mainMaterialCount++
 				}
 				levelCount += levelIncrease
@@ -116,7 +116,7 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 						array_push(selectableTargets, 4);
 						break;
 					}
-					if(scr_check_archetype(player.field[position, 0], mainMaterial) && FieldCard.cardStat[StatLevel] < levelRequired){
+					if(scr_check_archetype(player.field[position, 0], mainMaterial) && FieldCard.getStat(StatLevel) < levelRequired){
 						array_push(selectableTargets,position)
 					}
 				}
@@ -142,12 +142,12 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 				FieldCard = player.fieldCard[position],
 				levelIncrease = 0;
 					
-				if(scr_check_archetype(player.field[position, 0], mainMaterial) && FieldCard.cardStat[StatLevel] < levelRequired){
-					levelIncrease = FieldCard.cardStat[StatLevel]
+				if(scr_check_archetype(player.field[position, 0], mainMaterial) && FieldCard.getStat(StatLevel) < levelRequired){
+					levelIncrease = FieldCard.getStat(StatLevel)
 					mainMaterialCount++
 				}
-				if(scr_check_archetype(player.field[position, 0], keyMonster) && FieldCard.cardStat[StatLevel] < levelRequired){
-					levelIncrease = FieldCard.cardStat[StatLevel]
+				if(scr_check_archetype(player.field[position, 0], keyMonster) && FieldCard.getStat(StatLevel) < levelRequired){
+					levelIncrease = FieldCard.getStat(StatLevel)
 					keyMonsterHere = true;
 				}
 				levelCount += levelIncrease
@@ -170,9 +170,9 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 						array_push(selectableTargets, 4);
 						break;
 					}
-					if(!keyMonsterHere && scr_check_archetype(player.field[position, 0], keyMonster) && FieldCard.cardStat[StatLevel] < levelRequired){
+					if(!keyMonsterHere && scr_check_archetype(player.field[position, 0], keyMonster) && FieldCard.getStat(StatLevel) < levelRequired){
 						array_push(selectableTargets,position)
-					}else if(scr_check_archetype(player.field[position, 0], mainMaterial) && FieldCard.cardStat[StatLevel] < levelRequired){
+					}else if(scr_check_archetype(player.field[position, 0], mainMaterial) && FieldCard.getStat(StatLevel) < levelRequired){
 						array_push(selectableTargets,position)
 					}
 				}
@@ -199,12 +199,12 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 				FieldCard = player.fieldCard[position],
 				levelIncrease = 0;
 
-				if(scr_check_archetype(player.field[position, 0], mainMaterial) && FieldCard.cardStat[StatLevel] < levelRequired){
-					levelIncrease = FieldCard.cardStat[StatLevel]
+				if(scr_check_archetype(player.field[position, 0], mainMaterial) && FieldCard.getStat(StatLevel) < levelRequired){
+					levelIncrease = FieldCard.getStat(StatLevel)
 					mainMaterialCount++
 				}
-				if(player.field[position, 0] == keyMonster && FieldCard.cardStat[StatLevel] < levelRequired){
-					levelIncrease = FieldCard.cardStat[StatLevel]
+				if(player.field[position, 0] == keyMonster && FieldCard.getStat(StatLevel) < levelRequired){
+					levelIncrease = FieldCard.getStat(StatLevel)
 					keyMonsterHere = true;
 				}
 				levelCount += levelIncrease
@@ -227,9 +227,9 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 						array_push(selectableTargets, 4);
 						break;
 					}
-					if(!keyMonsterHere && player.field[position, 0] == keyMonster && FieldCard.cardStat[StatLevel] < levelRequired){
+					if(!keyMonsterHere && player.field[position, 0] == keyMonster && FieldCard.getStat(StatLevel) < levelRequired){
 						array_push(selectableTargets,position)
-					}else if(scr_check_archetype(player.field[position, 0], mainMaterial) && FieldCard.cardStat[StatLevel] < levelRequired){
+					}else if(scr_check_archetype(player.field[position, 0], mainMaterial) && FieldCard.getStat(StatLevel) < levelRequired){
 						array_push(selectableTargets,position)
 					}
 				}
@@ -255,8 +255,8 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 				FieldCard = player.fieldCard[position],
 				levelIncrease = 0;
 					
-				if(FieldCard.cardStat[StatLevel] < levelRequired){
-					levelIncrease = FieldCard.cardStat[StatLevel]
+				if(FieldCard.getStat(StatLevel) < levelRequired){
+					levelIncrease = FieldCard.getStat(StatLevel)
 					mainMaterialCount++
 				}
 					
@@ -276,7 +276,7 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 						array_push(selectableTargets, 4);
 						break;
 					}
-					if(FieldCard.cardStat[StatLevel] < levelRequired){
+					if(FieldCard.getStat(StatLevel) < levelRequired){
 						array_push(selectableTargets,position)
 					}
 				}

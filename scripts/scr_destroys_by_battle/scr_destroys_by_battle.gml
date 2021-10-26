@@ -1,6 +1,6 @@
 function scr_destroys_by_battle(attacker, destroyedMonster) {
 	if(!instance_exists(attacker)){return;}
-	if(attacker.cardStatus[StatusSilenced]){return;}
+	if(attacker.getStatus(StatusSilenced)){return;}
 	
 	var cardNum = attacker.cardNum,
 	position = attacker.position;

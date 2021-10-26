@@ -21,15 +21,15 @@ function scr_count_field_filter(players, typeArray, level, atk, hp, archetypeArr
 			
 			var cardNum = player.field[i, 0],
 			card = player.fieldCard[j],
-			cardStat = card.cardStat;
+			cardStat = card.getStat;
 			
-			if(macros.card_type[cardNum] != TypeSpell && (cardStat[StatLevel] < level[0] || cardStat[StatLevel] > level[1])){
+			if(macros.card_type[cardNum] != TypeSpell && (cardStat(StatLevel) < level[0] || cardStat(StatLevel) > level[1])){
 				continue;
 			}
-			if(cardStat[StatATK] < atk[0] || cardStat[StatATK] > atk[1]){
+			if(cardStat(StatATK) < atk[0] || cardStat(StatATK) > atk[1]){
 				continue;
 			}
-			if(cardStat[StatHP] < hp[0] || cardStat[StatHP] > hp[1]){
+			if(cardStat(StatHP) < hp[0] || cardStat(StatHP) > hp[1]){
 				continue;
 			}
 			if(array_length(typeArray) && !array_includes(typeArray, macros.card_type[cardNum])){
@@ -38,7 +38,7 @@ function scr_count_field_filter(players, typeArray, level, atk, hp, archetypeArr
 			if(array_length(archetypeArray) && !array_includes_array(archetypeArray, card.cardArchetype)){
 				continue;
 			}
-			if(array_length(spiritArray) && !array_includes(spiritArray, cardStat[StatSpirit])){
+			if(array_length(spiritArray) && !array_includes(spiritArray, cardStat(StatSpirit))){
 				continue;
 			}
 			if(ignoreTarget == [player, j]){

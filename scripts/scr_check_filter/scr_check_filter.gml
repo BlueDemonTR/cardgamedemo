@@ -25,19 +25,19 @@ function scr_check_filter(cardNum, position, filterNum){
 		case 2: //Monster That Has A Level Higher Than The Monster With The Lowest Level On The Field That is also targetable
 			for(i = 0; i < 5; i++){
 				if(instance_exists(obj_player.fieldCard[i])){
-					if(!obj_player.fieldCard[i].cardStatus[StatusSneaky] && obj_player.fieldCard[i].cardStat[StatLevel] < macros.origStat[cardNum, StatLevel]){
+					if(!obj_player.fieldCard[i].getStatus(StatusSneaky) && obj_player.fieldCard[i].getStat(StatLevel) < macros.origStat[cardNum, StatLevel]){
 						return true
 					}
 				}
 				if(instance_exists(obj_opponent.fieldCard[i])){
-					if(!obj_opponent.fieldCard[i].cardStatus[StatusSneaky] && obj_opponent.fieldCard[i].cardStat[StatLevel] < macros.origStat[cardNum, StatLevel]){
+					if(!obj_opponent.fieldCard[i].getStatus(StatusSneaky) && obj_opponent.fieldCard[i].getStat(StatLevel) < macros.origStat[cardNum, StatLevel]){
 						return true
 					}
 				}
 			}
 		break;
 		case 3: //Opponent's Monster With Taunt
-			return obj_opponent.fieldCard[position].cardStatus[StatusTAUNT]
+			return obj_opponent.fieldCard[position].getStatus(StatusTAUNT)
 		break;
 	}
 	return false;

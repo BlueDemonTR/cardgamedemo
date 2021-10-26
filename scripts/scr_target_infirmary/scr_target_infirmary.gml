@@ -22,18 +22,18 @@ function scr_target_infirmary(players, typeArray, minLevel, maxLevel, archetypeA
 		
 		for(var j = 0; j < player.infirmaryCount; j++){
 			var cardNum = player.infirmary[j, 0],
-			cardStat = macros.origStat[cardNum];
+			cardStat = scr_get_stat_orig;
 			
 			if(array_length(typeArray) && !array_includes(typeArray, macros.card_type[cardNum])){
 				continue;
 			}
-			if(macros.card_type[cardNum] != TypeSpell && (cardStat[StatLevel] > maxLevel || cardStat[StatLevel] < minLevel)){
+			if(macros.card_type[cardNum] != TypeSpell && (cardStat(cardNum, StatLevel) > maxLevel || cardStat(cardNum, StatLevel) < minLevel)){
 				continue;
 			}
 			if(array_length(archetypeArray) && !array_includes_array(archetypeArray, macros.origArchetype[cardNum])){
 				continue;
 			}
-			if(array_length(spiritArray) && !array_includes(spiritArray, cardStat[StatSpirit])){
+			if(array_length(spiritArray) && !array_includes(spiritArray, cardStat(cardNum, StatSpirit))){
 				continue;
 			}
 			if(checkSummonable && !scr_limited_summon(cardNum)){

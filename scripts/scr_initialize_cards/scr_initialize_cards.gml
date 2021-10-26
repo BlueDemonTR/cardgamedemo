@@ -3034,7 +3034,7 @@ function scr_initialize_cards(){
 		origStat[i,StatATK] = 5; //ATK
 		origStat[i,StatMaxHP] = 5; //Max HP
 		origStat[i,StatSpirit] = SpiritKind//Spirit
-		origStat[i,StatXPerTurn] = 3;
+		origStat[i,StatEffectUsesPerTurn] = 3;
 		
 		j=0
 		//Card Groups

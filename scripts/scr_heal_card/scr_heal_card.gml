@@ -7,7 +7,7 @@ function scr_heal_card(controller, position, hpBuff){
 	
 	var affectedCard = controller.fieldCard[position];
 	
-	if(affectedCard.cardStatus[StatusImmune]){return}
+	if(affectedCard.getStatus(StatusImmune)){return}
 	
 	scr_increase_stat_card(controller, position, StatHP, hpBuff)
 	

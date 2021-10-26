@@ -7,7 +7,7 @@ function scr_sacrifice(player, position) {
 	var affectedCard = player.fieldCard[position],
 	cardNum = affectedCard.cardNum,
 	artNum = affectedCard.artNum,
-	manaGain = affectedCard.cardStat[StatLevel];
+	manaGain = affectedCard.getStat(StatLevel);
 	
 	scr_increase_stat_player(player, PlayerMana, manaGain);
 	scr_send_infirmary(player, [cardNum, artNum], SendSacrifice);

@@ -93,8 +93,8 @@ function scr_count_impact(player){
 					var FieldCard = player.fieldCard[j],
 					levelIncrease = 0;
 					
-					if(scr_check_archetype(player.field[j, 0], mainMaterial) && FieldCard.cardStat[StatLevel] < levelRequired){
-						levelIncrease = FieldCard.cardStat[StatLevel]
+					if(scr_check_archetype(player.field[j, 0], mainMaterial) && FieldCard.getStat(StatLevel) < levelRequired){
+						levelIncrease = FieldCard.getStat(StatLevel)
 						mainMaterialCount++
 					}
 					levelCount += levelIncrease
@@ -112,12 +112,12 @@ function scr_count_impact(player){
 					var FieldCard = player.fieldCard[j],
 					levelIncrease = 0;
 					
-					if(scr_check_archetype(player.field[j, 0], mainMaterial) && FieldCard.cardStat[StatLevel] < levelRequired){
-						levelIncrease = FieldCard.cardStat[StatLevel]
+					if(scr_check_archetype(player.field[j, 0], mainMaterial) && FieldCard.getStat(StatLevel) < levelRequired){
+						levelIncrease = FieldCard.getStat(StatLevel)
 						mainMaterialCount++
 					}
-					if(scr_check_archetype(player.field[j, 0], keyMonster) && player.fieldCard[j].cardStat[StatLevel] > levelRequired){
-						levelIncrease = FieldCard.cardStat[StatLevel]
+					if(scr_check_archetype(player.field[j, 0], keyMonster) && player.fieldCard[j].getStat(StatLevel) > levelRequired){
+						levelIncrease = FieldCard.getStat(StatLevel)
 						keyMonsterHere = true;
 					}
 					levelCount += levelIncrease
@@ -136,12 +136,12 @@ function scr_count_impact(player){
 					var FieldCard = player.fieldCard[j],
 					levelIncrease = 0;
 					
-					if(scr_check_archetype(player.field[j, 0], mainMaterial) && FieldCard.cardStat[StatLevel] < levelRequired){
-						levelIncrease = FieldCard.cardStat[StatLevel]
+					if(scr_check_archetype(player.field[j, 0], mainMaterial) && FieldCard.getStat(StatLevel) < levelRequired){
+						levelIncrease = FieldCard.getStat(StatLevel)
 						mainMaterialCount++
 					}
-					if(player.field[j, 0] == keyMonster && FieldCard.cardStat[StatLevel] < levelRequired){
-						levelIncrease = FieldCard.cardStat[StatLevel]
+					if(player.field[j, 0] == keyMonster && FieldCard.getStat(StatLevel) < levelRequired){
+						levelIncrease = FieldCard.getStat(StatLevel)
 						keyMonsterHere = true;
 					}
 					levelCount += levelIncrease
@@ -159,8 +159,8 @@ function scr_count_impact(player){
 					var FieldCard = player.fieldCard[j],
 					levelIncrease = 0;
 					
-					if(FieldCard.cardStat[StatLevel] < levelRequired){
-						levelIncrease = FieldCard.cardStat[StatLevel]
+					if(FieldCard.getStat(StatLevel) < levelRequired){
+						levelIncrease = FieldCard.getStat(StatLevel)
 						mainMaterialCount++
 					}
 					

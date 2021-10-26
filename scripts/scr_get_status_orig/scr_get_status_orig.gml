@@ -4,7 +4,6 @@ function scr_get_status_orig(cardNum, status){
 	}
 	if(variable_array_exists(macros.origStatus, cardNum, status)){
 		return macros.origStatus[cardNum, status]
-	}else{
-		return macros.defaultStatus[status]
 	}
+	return macros.defaultStatus[status]
 }

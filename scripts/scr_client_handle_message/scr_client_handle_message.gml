@@ -37,8 +37,9 @@ function scr_client_handle_message(buffer) {
 					if(fieldCard[position] != noone){
 						fieldCard[position].animationType = animationType
 					}					
-					field[position, 0] = cardNum;
+					field[position,0] = cardNum;
 					field[position,1] = artNum;
+					//TODO: FieldCard handle here
 				}
 			break;
 			case MESSAGE_INFIRMARY:
@@ -67,27 +68,27 @@ function scr_client_handle_message(buffer) {
 			case MESSAGE_STATS:
 				opponentObject = scr_opponent_get_object(client);
 				with(opponentObject){
-					playerHP = buffer_read(buffer, buffer_u8);
-					mana = buffer_read(buffer, buffer_u8);
-					momentum = buffer_read(buffer, buffer_u8);
+					scr_set_stat_player(self, PlayerHP, buffer_read(buffer, buffer_u8))
+					scr_set_stat_player(self, PlayerMana, buffer_read(buffer, buffer_u8))
+					scr_set_stat_player(self, PlayerMomentum, buffer_read(buffer, buffer_u8))
 				}
 			
 			break;
 			case MESSAGE_FIELD_CARD_STATS:
 				with(opponentObject){
 					
-					var field_location = buffer_read(buffer, buffer_u8);
+					var position = buffer_read(buffer, buffer_u8);
 					
-					if(fieldCard[field_location] == noone){
+					if(fieldCard[position] == noone){
 						break;
 					}	
 					for(var i = 0; i < macros.stat_count; i++){//Stats
-						fieldCard[field_location].cardStat[i] = buffer_read(buffer, buffer_u16)
+						scr_set_stat_card(self, position, i, buffer_read(buffer, buffer_u16))
 					}
 					for(var i = 0; i < macros.status_count; i++){//Statuses
-						fieldCard[field_location].cardStatus[i] = buffer_read(buffer, buffer_bool)
+						scr_set_status_card(self, position, i, buffer_read(buffer, buffer_bool))
 					}
-					fieldCard[field_location].attacksLeft = buffer_read(buffer, buffer_u8);//Can it attack?
+					fieldCard[position].attacksLeft = buffer_read(buffer, buffer_u8);//Can it attack?
 				}
 			break;
 			case MESSAGE_DECK_CHANGE:
@@ -105,25 +106,26 @@ function scr_client_handle_message(buffer) {
 			break;
 			case MESSAGE_OPPONENT_STATS:
 				with(obj_player){
-					playerHP = buffer_read(buffer, buffer_u8);
-					mana = buffer_read(buffer, buffer_u8);
-					momentum = buffer_read(buffer, buffer_u8);
+					scr_set_stat_player(self, PlayerHP, buffer_read(buffer, buffer_u8))
+					scr_set_stat_player(self, PlayerMana, buffer_read(buffer, buffer_u8))
+					scr_set_stat_player(self, PlayerMomentum, buffer_read(buffer, buffer_u8))
 				}
 			break;
 			case MESSAGE_OPPONENT_FIELD_CARD_STATS:
 				with(obj_player){
-					var field_location = buffer_read(buffer, buffer_u8);
 					
-					if(fieldCard[field_location] == noone){
+					var position = buffer_read(buffer, buffer_u8);
+					
+					if(fieldCard[position] == noone){
 						break;
-					}
+					}	
 					for(var i = 0; i < macros.stat_count; i++){//Stats
-						fieldCard[field_location].cardStat[i] = buffer_read(buffer, buffer_u16)
+						scr_set_stat_card(self, position, i, buffer_read(buffer, buffer_u16))
 					}
 					for(var i = 0; i < macros.status_count; i++){//Statuses
-						fieldCard[field_location].cardStatus[i] = buffer_read(buffer, buffer_bool)
+						scr_set_status_card(self, position, i, buffer_read(buffer, buffer_bool))
 					}
-					fieldCard[field_location].attacksLeft = buffer_read(buffer, buffer_u8 );//Can it attack?
+					fieldCard[position].attacksLeft = buffer_read(buffer, buffer_u8);//Can it attack?
 				}
 			break;
 			case MESSAGE_OPPONENT_DECK_CHANGE:
@@ -162,6 +164,7 @@ function scr_client_handle_message(buffer) {
 					}					
 					field[position, 0] = cardNum;
 					field[position,1] = artNum;
+					//TODO Field handle
 				}
 			break;
 			case MESSAGE_OPPONENT_MOMENTUM_DECK:
@@ -188,6 +191,7 @@ function scr_client_handle_message(buffer) {
 						hand[i,0] = 0;
 						hand[i,1] = 0;
 					}
+					//TODO Handle hand change/creation/removal
 				}
 			break;
 			case MESSAGE_TURN:

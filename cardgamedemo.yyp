@@ -73,6 +73,7 @@
     {"id":{"name":"obj_finish_deck","path":"objects/obj_finish_deck/obj_finish_deck.yy",},"order":3,},
     {"id":{"name":"spr_hopelessdad","path":"sprites/spr_hopelessdad/spr_hopelessdad.yy",},"order":27,},
     {"id":{"name":"spr_blizzardfrostbite","path":"sprites/spr_blizzardfrostbite/spr_blizzardfrostbite.yy",},"order":3,},
+    {"id":{"name":"scr_on_stat_change_player","path":"scripts/scr_on_stat_change_player/scr_on_stat_change_player.yy",},"order":22,},
     {"id":{"name":"spr_blizzardavalance","path":"sprites/spr_blizzardavalance/spr_blizzardavalance.yy",},"order":0,},
     {"id":{"name":"spr_nightmare_beast_symbol","path":"sprites/spr_nightmare_beast_symbol/spr_nightmare_beast_symbol.yy",},"order":9,},
     {"id":{"name":"spr_igloocastle","path":"sprites/spr_igloocastle/spr_igloocastle.yy",},"order":15,},

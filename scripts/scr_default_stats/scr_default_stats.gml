@@ -9,5 +9,5 @@ function scr_default_stats(){
 	defaultStat[StatRegeneration] = 0; //Regerenation 5
 	defaultStat[StatDodge] = 0; //Dodge 6
 	defaultStat[StatSpirit] = SpiritBlank; //Spirit 7
-	defaultStat[StatXPerTurn] = 1; //Multiple Times Per Turn
+	defaultStat[StatEffectUsesPerTurn] = 1; //Multiple Times Per Turn
 }

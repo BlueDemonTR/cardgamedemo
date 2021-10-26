@@ -60,7 +60,7 @@ scr_illegal_cards();
 #macro StatRegeneration 5
 #macro StatDodge 6
 #macro StatSpirit 7
-#macro StatXPerTurn 8
+#macro StatEffectUsesPerTurn 8
 scr_default_stats()
 
 //Archetype Properties

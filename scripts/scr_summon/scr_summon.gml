@@ -21,7 +21,7 @@ function scr_summon(cardArray, player, summonType, animationType, summonZone){
 				field_y = self.player.field_card_zone_y[self.position];
 				
 				scr_info_to_instance(cardNum);
-				effectUsesLeft = cardStat[StatXPerTurn]
+				effectUsesLeft = getStat(StatEffectUsesPerTurn)
 				sacrificable = false
 				attacksLeft = 1
 				

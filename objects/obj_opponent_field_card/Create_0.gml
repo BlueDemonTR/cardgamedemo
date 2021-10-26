@@ -6,17 +6,20 @@ player = obj_opponent
 opponent = obj_player
 animationType = "none"
 
+cardStat = []
 getStat = function(stat){
-	if(array_length(cardStat) >= stat){
+	if(array_length(cardStat) > stat){
 		return cardStat[stat]
-	}else{
-		return macros.defaultStat[stat]
-	}	
+	}
+	return macros.defaultStat[stat]	
 }
+
+cardStatus = []
 getStatus = function(status){
-	if(array_length(cardStatus) >= status){
+	if(array_length(cardStatus) > status){
 		return cardStatus[status]
-	}else{
-		return macros.defaultStatus[status]
-	}	
+	}
+	return macros.defaultStatus[status]	
 }
+
+attacksLeft = 0

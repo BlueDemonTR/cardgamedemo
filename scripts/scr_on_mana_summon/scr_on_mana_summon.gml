@@ -3,7 +3,7 @@ function scr_on_mana_summon(cardNum) {
 		case 2://Visclades Wheel Gain Activation Trigger
 			if(!scr_check_archetype(cardNum, ArcVisclades)){return false}
 			if(!scr_legal_activation("WheelGain", 0, obj_player.selected_wheel)){return false}
-			scr_add_to_resolution_pile([cardNum, 0, 0, obj_player.selected_wheel, false, cardStat[StatLevel]])
+			scr_add_to_resolution_pile([cardNum, 0, 0, obj_player.selected_wheel, false, getStat(StatLevel)])
 		break;
 	}
 	switch(cardNum){

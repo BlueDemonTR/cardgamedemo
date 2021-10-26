@@ -1,5 +1,3 @@
-if(cardStat[StatHP]<0){cardStat[StatHP]=0;}
-
 if(player.field[position, 0] == 0){
 	player.fieldCard[position] = noone;
 	instance_destroy();

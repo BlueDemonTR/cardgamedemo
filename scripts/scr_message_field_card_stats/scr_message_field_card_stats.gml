@@ -1,6 +1,6 @@
 function scr_message_field_card_stats(position) {
 	if (!instance_exists(obj_client)){return;}
-	if (!instance_exists(obj_player.fieldCard[position])){return;}
+	if (!obj_player.field[position,0]){return;}
 
 	buffer_seek(obj_client.send_buffer, buffer_seek_start, 0);
 	buffer_write(obj_client.send_buffer, buffer_u8, MESSAGE_FIELD_CARD_STATS);
@@ -8,27 +8,14 @@ function scr_message_field_card_stats(position) {
 	
 	buffer_write(obj_client.send_buffer, buffer_u8, macros.stat_count);
 	for(var i = 0; i < macros.stat_count; i++){
-		if(array_length(obj_player.fieldCard[position].cardStat) > i){
-			buffer_write(obj_client.send_buffer, buffer_u16, obj_player.fieldCard[position].cardStat[i]);
-		}else{
-			buffer_write(obj_client.send_buffer, buffer_u16, 0);
-		}
+		buffer_write(obj_client.send_buffer, buffer_u16, obj_player.fieldCard[position].getStat(i));
 	}
 	
 	buffer_write(obj_client.send_buffer, buffer_u8, macros.status_count);
 	for(var i = 0; i < macros.status_count; i++){
-		if(array_length(obj_player.fieldCard[position].cardStatus) > i){
-			buffer_write(obj_client.send_buffer, buffer_bool, obj_player.fieldCard[position].cardStatus[i]);
-		}else{
-			buffer_write(obj_client.send_buffer, buffer_bool, false);
-		}
+		buffer_write(obj_client.send_buffer, buffer_bool, obj_player.fieldCard[position].getStatus(i));
 	}
 	buffer_write(obj_client.send_buffer, buffer_u8, obj_player.fieldCard[position].attacksLeft);
 	
 	network_send_raw(obj_client.socket, obj_client.send_buffer, buffer_tell(obj_client.send_buffer));
-
-
-
-
-
 }

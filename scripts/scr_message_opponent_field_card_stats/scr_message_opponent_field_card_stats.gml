@@ -8,20 +8,14 @@ function scr_message_opponent_field_card_stats(position) {
 
 	buffer_write(obj_client.send_buffer, buffer_u8, macros.stat_count);
 	for(var i = 0; i < macros.stat_count; i++){
-		if(array_length(obj_opponent.fieldCard[position].cardStat) > i){
-			buffer_write(obj_client.send_buffer, buffer_u16, obj_opponent.fieldCard[position].cardStat[i]);
-		}else{
-			buffer_write(obj_client.send_buffer, buffer_u16, 0);
-		}
+		buffer_write(obj_client.send_buffer, buffer_u16, obj_opponent.fieldCard[position].getStat(i));
 	}
 	buffer_write(obj_client.send_buffer, buffer_u8, macros.status_count);
+	
 	for(var i = 0; i < macros.status_count; i++){
-		if(array_length(obj_opponent.fieldCard[position].cardStatus) > i){
-			buffer_write(obj_client.send_buffer, buffer_bool, obj_opponent.fieldCard[position].cardStatus[i]);
-		}else{
-			buffer_write(obj_client.send_buffer, buffer_bool, false);
-		}
+		buffer_write(obj_client.send_buffer, buffer_bool, obj_opponent.fieldCard[position].getStatus(i));
 	}
+	
 	buffer_write(obj_client.send_buffer, buffer_u8, obj_opponent.fieldCard[position].attacksLeft);
 	
 	network_send_raw(obj_client.socket, obj_client.send_buffer, buffer_tell(obj_client.send_buffer));

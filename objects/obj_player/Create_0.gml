@@ -61,7 +61,7 @@ scr_construct_global_deck();
 scr_shuffle_deck(player);
 
 //Stacking the deck for debug purposes here
-deck[deckCount++] = [51,0]
+deck[deckCount++] = [41,0]
 
 //Field Card Zone Locations and initializations
 i = 0;

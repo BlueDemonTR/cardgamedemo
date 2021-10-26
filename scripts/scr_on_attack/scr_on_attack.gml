@@ -3,7 +3,7 @@ function scr_on_attack(attacker, attacked) {
 	position = attacker.position;
 
 
-	if(attacker.cardStatus[StatusSilenced]){return;}
+	if(attacker.getStatus(StatusSilenced)){return;}
 	switch(cardNum){
 		case 13://Motorbiker Leader Toku Activation Trigger
 		case 72://Torch Carrier Activation Trigger
@@ -14,7 +14,7 @@ function scr_on_attack(attacker, attacked) {
 	
 		case 70://Vengeful Cyborg Activation Trigger
 			if(!scr_legal_activation(cardNum, 1, attacker.position)){break;}
-			scr_add_to_resolution_pile([cardNum, 0, 0, position, false, attacker.cardStat[StatATK]])
+			scr_add_to_resolution_pile([cardNum, 0, 0, position, false, attacker.getStat(StatATK)])
 		break;
 	}
 }

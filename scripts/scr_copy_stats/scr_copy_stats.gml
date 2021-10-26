@@ -7,7 +7,7 @@ function scr_copy_stats(copyMonster, pasteMonster, copiedStats){
 	if(!(instance_exists(copyMonster) && instance_exists(pasteMonster))){return;}
 	
 	for(var i = 0; i < array_length(copiedStats); i++){
-		pasteMonster.cardStat[copiedStats[i]] = copyMonster.cardStat[copiedStats[i]]
+		scr_set_stat_card(pasteMonster.player, pasteMonster.position, copiedStats[i], copyMonster.getStat(copiedStats[i]))
 	}
 	scr_decide_field_card_stats(pasteMonster.player, pasteMonster.position);	
 }
