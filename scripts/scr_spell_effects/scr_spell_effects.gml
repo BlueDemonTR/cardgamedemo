@@ -29,8 +29,8 @@ function scr_spell_effects(cardNum) {
 		case 113://Emergency Call Activation Trigger
 		case 114://Mighty Changing Fire Blades Activation Trigger
 		case 115://X-Makines Form Together! Activation Trigger
-			if(!scr_legal_activation(cardNum, 0, position)){break;}
-			scr_add_to_resolution_pile([cardNum, 0, 0, scr_discard(player, position), false])
+			if(!scr_legal_activation(cardNum, 0, player, position)){break;}
+			scr_add_to_resolution_pile(cardNum, 0, 0, player, scr_discard(player, position), false)
 		break;
 	}
 }

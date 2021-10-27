@@ -29,25 +29,25 @@ switch(activation_mode){
 			case 110://Robert XMakine Activation Trigger
 			case 111://Dom XMakine Activation Trigger
 			case 112://Jason DXMakine Activation Trigger			
-				if(!scr_legal_activation(obj_player.field[position,0], 0, position)){return false}
-				scr_add_to_resolution_pile([obj_player.field[position,0], 0, 0, position, false])
+				if(!scr_legal_activation(obj_player.field[position,0], 0, player, position)){return false}
+				scr_add_to_resolution_pile(obj_player.field[position,0], 0, 0, player, position, false)
 			break;
 		}
 	case FunctionHandEffect:
 		if(scr_check_shared(obj_player.hand[position,0], ArcVisclades)){//Visclades Shared Effect Activation Trigger
-			if(!scr_legal_activation("SharedEffects", ArcVisclades, position)){return false}
-			scr_add_to_resolution_pile(["SharedEffects", ArcVisclades, 0, scr_discard(player, position), false])
+			if(!scr_legal_activation("SharedEffects", ArcVisclades, player, position)){return false}
+			scr_add_to_resolution_pile("SharedEffects", ArcVisclades, 0, player, scr_discard(player, position), false)
 		}
 	break;
 	case FunctionInfirmaryEffect:
 		switch(obj_player.infirmary[position,0]){
 			case 21://Luvies Ing Visclades Healing Activation Trigger
-				if(!scr_legal_activation(obj_player.infirmary[position,0], 1, position)){return false}
-				scr_add_to_resolution_pile([obj_player.infirmary[position,0], 1, 0, position, false])
+				if(!scr_legal_activation(obj_player.infirmary[position,0], 1, player, position)){return false}
+				scr_add_to_resolution_pile(obj_player.infirmary[position,0], 1, 0, player, position, false)
 			break;
 			case 73://Baby Phoenix Activation Trigger
-				if(!scr_legal_activation(obj_player.infirmary[position,0], 0, position)){return false}
-				scr_add_to_resolution_pile([obj_player.infirmary[position,0], 0, 0, position, false])
+				if(!scr_legal_activation(obj_player.infirmary[position,0], 0, player, position)){return false}
+				scr_add_to_resolution_pile(obj_player.infirmary[position,0], 0, 0, player, position, false)
 			break;
 		}
 		obj_infirmary.alarm[1] = 3;

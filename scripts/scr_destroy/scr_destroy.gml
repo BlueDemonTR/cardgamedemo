@@ -16,6 +16,6 @@ function scr_destroy(player, position, destroyType) {
 	
 	scr_remove_from_field(player, position, "destroy")
 	
-	scr_on_destroyed(cardNum, infirmaryPos, destroyType);
+	scr_on_destroyed(cardNum, player, infirmaryPos, destroyType);
 	return;
 }

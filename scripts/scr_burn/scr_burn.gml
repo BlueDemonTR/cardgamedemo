@@ -14,8 +14,8 @@ function scr_burn(target, origDamage, cardNum) {
 	switch(obj_player.selected_wheel){
 		case 3://Pole Clan Wheel Gain Activation Trigger
 			if(target != obj_opponent){break;}
-			if(!scr_legal_activation("WheelGain", 0, obj_player.selected_wheel)){break;}
-			scr_add_to_resolution_pile(["WheelGain", 0, 0, obj_player.selected_wheel, false, damage])
+			if(!scr_legal_activation("WheelGain", 0, player, obj_player.selected_wheel)){break;}
+			scr_add_to_resolution_pile("WheelGain", 0, 0, player, obj_player.selected_wheel, false, damage)
 		break;
 	}	
 

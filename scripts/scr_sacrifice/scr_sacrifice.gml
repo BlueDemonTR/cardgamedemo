@@ -13,5 +13,5 @@ function scr_sacrifice(player, position) {
 	
 	scr_increase_stat_player(player, PlayerMana, manaGain);
 	scr_send_infirmary(player, [cardNum, artNum], SendSacrifice);
-	scr_on_sacrificed(cardNum, manaGain);
+	scr_on_sacrificed(cardNum, player, manaGain);
 }

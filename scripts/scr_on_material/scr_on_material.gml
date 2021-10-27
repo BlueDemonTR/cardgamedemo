@@ -1,3 +1,3 @@
-function scr_on_material(cardNum, summonedCard){
+function scr_on_material(cardNum, player, summonedCard){
 	
 }

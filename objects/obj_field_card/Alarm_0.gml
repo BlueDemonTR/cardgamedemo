@@ -15,7 +15,7 @@ if(self.player.open_game_state && self.player.main_phase){
 		}
 		i++
 	}
-	if(scr_legal_activation(cardNum, scr_ignition_effect_number(cardNum, "Field"), position)){
+	if(scr_legal_activation(cardNum, scr_ignition_effect_number(cardNum, "Field"), player, position)){
 		with(instance_create_depth(x,y,depth-1,obj_activation_box)){
 			activation_mode = FunctionFieldEffect;
 			self.position = position;

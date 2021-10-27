@@ -41,7 +41,7 @@ switch (current_function){
 		attackingCard.attacksLeft--
 		attackingCard.sacrificable = false;
 		
-		scr_add_to_resolution_pile(["Attack", 0, 0, attackingCard, false, attackedCard])
+		scr_add_to_resolution_pile("Attack", 0, 0, attackingCard.player, attackingCard.position, -1, attackedCard)
 		
 		scr_on_attack(attackingCard, attackedCard)
 		
@@ -61,7 +61,7 @@ switch (current_function){
 		attackingCard.attacksLeft--
 		attackingCard.sacrificable = false;
 		
-		scr_add_to_resolution_pile(["DirectAttack", 0, 0, attackingCard, -1])
+		scr_add_to_resolution_pile("DirectAttack", 0, 0, attackingCard.player, attackingCard.position, -1)
 		
 		scr_on_attack(attackingCard, player)
 		scr_on_direct_attack(attackingCard)

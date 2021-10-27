@@ -150,6 +150,7 @@ scr_default_statuses()
 //Shortcuts
 #macro NextStep resolvingPile[positionInOrder,2]++
 #macro FinishResolving resolvingPile[positionInOrder,2] = 98
+#macro NextEffect resolvingPile[positionInOrder,2] = 99
 
 
 if(false){

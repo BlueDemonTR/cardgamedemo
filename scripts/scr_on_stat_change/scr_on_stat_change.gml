@@ -3,13 +3,15 @@
 function scr_on_stat_change(cardObject){
 	var position = cardObject.position,
 	player = cardObject.player;
+	
 	if(cardObject.getStat(StatHP) <= 0){//Destruction by Injury
 		scr_destroy(player, position, SendInjuries)
 	}
+	
 	switch(cardObject.cardNum){
 		case 65://Homesick Soldier Effect Activation Trigger
-			if(!scr_legal_activation(cardObject.cardNum, 0, cardObject.position)){break}
-			scr_add_to_resolution_pile([cardObject.cardNum, 0, 0, cardObject.position, false])
+			if(!scr_legal_activation(cardObject.cardNum, 0, player, position)){break}
+			scr_add_to_resolution_pile(cardObject.cardNum, 0, 0, player, position, false)
 		break;
 	}
 }

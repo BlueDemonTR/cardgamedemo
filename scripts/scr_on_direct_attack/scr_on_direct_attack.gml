@@ -1,7 +1,9 @@
-function scr_on_direct_attack(attackingCard){
-	var cardNum = attackingCard.cardNum
+function scr_on_direct_attack(attacker){
+	var cardNum = attacker.cardNum,
+	player = attacker.player;
+	
 	switch(cardNum){
-		case true:
+		default:
 		break;
 	}
 }
