@@ -29,16 +29,17 @@ function scr_summon(cardArray, player, summonType, animationType, summonZone){
 			}
 			scr_decide_field(player, summonZone, cardNum, artNum,"none");
 			field[summonZone] = [cardNum, artNum];
-			
-			with(fieldCard[summonZone]){
-				scr_on_summon(cardNum);
-				switch(summoning_method){
-					case SummonMana:
-						scr_on_mana_summon(cardNum);
-					break;
-					case SummonImpact:
-						scr_on_impact_summon(cardNum)
-					break;
+			if(summonType != SummonInvalid){
+				with(fieldCard[summonZone]){
+					scr_on_summon(cardNum);
+					switch(summoning_method){
+						case SummonMana:
+							scr_on_mana_summon(cardNum);
+						break;
+						case SummonImpact:
+							scr_on_impact_summon(cardNum)
+						break;
+					}
 				}
 			}
 			return fieldCard[summonZone];

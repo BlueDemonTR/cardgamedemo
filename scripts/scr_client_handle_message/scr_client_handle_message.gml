@@ -204,9 +204,11 @@ function scr_client_handle_message(buffer) {
 						}
 						break;//Card has turned into another card without ever leaving the field (THIS SHOULDN'T HAPPEN(I think))
 					}
-					with(scr_summon([cardNum, artNum], player, SummonInvalid, "", position)){
-						summoning_method = animationType
-						break;//New card is summoned
+					if(cardNum != 0){
+						with(scr_summon([cardNum, artNum], player, SummonInvalid, "", position)){
+							summoning_method = animationType
+							break;//New card is summoned
+						}
 					}
 				}
 			break;
@@ -237,12 +239,13 @@ function scr_client_handle_message(buffer) {
 					for(var i = 0; i < handSizeLimit; i++){
 						if(hand[i,0] != 0){
 							if(instance_exists(handCard[i])){
-								if([handCard[i].cardNum, handCard[i].artNum] == hand[i]){
+								if(handCard[i].cardNum == hand[i,0] && handCard[i].artNum == hand[i,1]){
 									continue;//Everything is fine
 								}
 								scr_remove_from_hand(player, i--)
 								continue;//A card is removed from the middle of the hand
 							}
+							handCount--
 							scr_add_to_hand(player, hand[i])//A card is sent to the hand
 							continue
 						}
