@@ -21,5 +21,3 @@ getStatus = function(status){
 	}
 	return macros.defaultStatus[status]	
 }
-
-attacksLeft = 0

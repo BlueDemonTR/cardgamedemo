@@ -1,7 +1,8 @@
 if(self.player.open_game_state && self.player.main_phase){
 	var position = self.position,
 	player = self.player,
-	i=0;
+	i=0,
+	ownerObject = self;
 	if(attacksLeft && !getStatus(StatusUnarmed) && !getStatus(StatusParalyzed) && player.turn_count != 1 && array_length(scr_count_attack(self))){
 		with(instance_create_depth(x,y,depth-1,obj_activation_box)){
 			activation_mode = FunctionAttack;
@@ -10,6 +11,7 @@ if(self.player.open_game_state && self.player.main_phase){
 			opponent = player.opponent;
 			bar_number = i;
 			y -= (bar_number * 40)
+			self.ownerObject = ownerObject;
 		}
 		i++
 	}
@@ -21,6 +23,7 @@ if(self.player.open_game_state && self.player.main_phase){
 			opponent = player.opponent;
 			bar_number = i;
 			y -= (bar_number * 40);
+			self.ownerObject = ownerObject;
 		}
 		i++
 	}
@@ -32,6 +35,7 @@ if(self.player.open_game_state && self.player.main_phase){
 			opponent = player.opponent;
 			bar_number = i;
 			y += (bar_number * 40);
+			self.ownerObject = ownerObject;
 		}
 		i++
 	}

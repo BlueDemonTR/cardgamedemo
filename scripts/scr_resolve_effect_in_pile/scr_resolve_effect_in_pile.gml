@@ -2529,6 +2529,13 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							break;
 							case 2:
 								scr_increase_stat_player(player, PlayerMana, -2);
+							case 3:
+								resolvingPile[positionInOrder,5] = 0;
+								scr_choose_field_zones([player], false, true, false, 5)
+								NextStep
+							break;
+							case 5:
+								scr_summon_from_infirmary(player, position, resolvingPile[positionInOrder,5])
 								FinishResolving
 							break;
 						}

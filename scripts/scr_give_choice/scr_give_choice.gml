@@ -11,6 +11,7 @@ function scr_give_choice(arrayPos, choicesArray){
 			choiceText = choicesArray[i,1];
 			self.arrayPos = arrayPos;
 			bar_number = i;
+			ownerObject = obj_player
 		}
 	}
 }
