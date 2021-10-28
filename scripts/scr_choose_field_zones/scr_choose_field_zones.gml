@@ -1,7 +1,12 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_choose_field_zones(players, selectFilled, selectNMZ, selectMMZ, arrayPos){
+function scr_choose_field_zones(activator, players, selectFilled, selectNMZ, selectMMZ, arrayPos){
 	var effectSuccessful = false;
+	
+	if(activator == obj_opponent){
+		scr_message_ask_response(RESPONSE_CHOOSE_FIELD_ZONE, players, selectFilled, selectNMZ, selectMMZ, arrayPos)
+		return;
+	}
 	
 	for(var j = 0; j < array_length(players); j++){
 		var player = players[j];
@@ -20,6 +25,10 @@ function scr_choose_field_zones(players, selectFilled, selectNMZ, selectMMZ, arr
 		}
 	}
 	if(!effectSuccessful){
-		resolvingPile[obj_player.resolvingPileCount-1,2] = 97;
+		if(obj_player.own_turn){
+			resolvingPile[obj_player.resolvingPileCount-1,2] = 97;
+			return;
+		}
+		scr_message_handle_fail()
 	}
 }

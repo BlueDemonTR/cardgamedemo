@@ -3,9 +3,13 @@ arrayPos = self.arrayPos;
 switch (current_function){
 	case TargetMonster:
 	case TargetZone:
-		obj_player.resolvingPile[obj_player.resolvingPileCount-1,arrayPos] = position;
-		obj_player.resolvingPile[obj_player.resolvingPileCount-1,arrayPos+1] = player;
-		obj_player.resolvingPile[obj_player.resolvingPileCount-1,2]++
+		if(obj_player.own_turn){
+			obj_player.resolvingPile[obj_player.resolvingPileCount-1,arrayPos] = position;
+			obj_player.resolvingPile[obj_player.resolvingPileCount-1,arrayPos+1] = player;
+			obj_player.resolvingPile[obj_player.resolvingPileCount-1,2]++
+		}else{
+			scr_message_handle_response(arrayPos, position, string(player))
+		}
 		with(obj_appropiate_targets){
 			if(function_check == current_function){
 				instance_destroy();
@@ -75,11 +79,15 @@ switch (current_function){
 	break;
 
 	case TargetDiscard:
-		discardedCard = player.hand[position, 0];
-		obj_player.resolvingPile[obj_player.resolvingPileCount-1,arrayPos] = position;
-		obj_player.resolvingPile[obj_player.resolvingPileCount-1,arrayPos+1] = player;
-		obj_player.resolvingPile[obj_player.resolvingPileCount-1,arrayPos+2] = discardedCard;
-		obj_player.resolvingPile[obj_player.resolvingPileCount-1,2]++
+		selectedCard = player.hand[position, 0];
+		if(obj_player.own_turn){
+			obj_player.resolvingPile[obj_player.resolvingPileCount-1,arrayPos] = position;
+			obj_player.resolvingPile[obj_player.resolvingPileCount-1,arrayPos + 1] = player;
+			obj_player.resolvingPile[obj_player.resolvingPileCount-1,arrayPos + 2] = selectedCard;
+			obj_player.resolvingPile[obj_player.resolvingPileCount-1,2]++
+		}else{
+			scr_message_handle_response(arrayPos, position, player, selectedCard)
+		}
 		with(obj_appropiate_targets){
 			if(function_check == current_function){
 				instance_destroy();

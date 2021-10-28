@@ -287,8 +287,159 @@ function scr_client_handle_message(buffer) {
 			case MESSAGE_OUTDATED:
 				alarm[1] = 120
 			break;
+			
+			case MESSAGE_ASK_RESPONSE:
+				var response_id = buffer_read(buffer, buffer_u8);
+				with(obj_player){
+					switch(response_id){
+						case RESPONSE_CHOOSE_FIELD_ZONE:
+							var players = []
+							if(buffer_read(buffer, buffer_bool)){
+								array_push(players, obj_player)
+							}
+							if(buffer_read(buffer, buffer_bool)){
+								array_push(players, obj_opponent)
+							}
+							var selectFilled = buffer_read(buffer, buffer_bool),
+							selectNMZ = buffer_read(buffer, buffer_bool),
+							selectMMZ = buffer_read(buffer, buffer_bool),
+							arrayPos = buffer_read(buffer, buffer_u8);
+							
+							scr_choose_field_zones(obj_player, players, selectFilled, selectNMZ, selectMMZ, arrayPos)
+						break;
+		
+						case RESPONSE_TARGET_DECK:						
+							var players = []
+							if(buffer_read(buffer, buffer_bool)){
+								array_push(players, obj_player)
+							}
+							if(buffer_read(buffer, buffer_bool)){
+								array_push(players, obj_opponent)
+							}
+							var typeArray = json_parse(buffer_read(buffer, buffer_string)),
+							minLevel = buffer_read(buffer, buffer_u8),
+							maxLevel = buffer_read(buffer, buffer_u8),
+							archetypeArray = json_parse(buffer_read(buffer, buffer_string)),
+							spiritArray = json_parse(buffer_read(buffer, buffer_string)),
+							checkSummonable = buffer_read(buffer, buffer_bool),
+							filterNum = buffer_read(buffer, buffer_s8),
+							arrayPos = buffer_read(buffer, buffer_u8);
+							
+							scr_target_deck(obj_player, players, typeArray, minLevel, maxLevel, archetypeArray, spiritArray, checkSummonable, filterNum, arrayPos)
+						break;
+		
+						case RESPONSE_TARGET_FIELD:
+							var players = []
+							if(buffer_read(buffer, buffer_bool)){
+								array_push(players, obj_player)
+							}
+							if(buffer_read(buffer, buffer_bool)){
+								array_push(players, obj_opponent)
+							}
+							var typeArray = json_parse(buffer_read(buffer, buffer_string)),
+							level = json_parse(buffer_read(buffer, buffer_string)),
+							atk = json_parse(buffer_read(buffer, buffer_string)),
+							hp = json_parse(buffer_read(buffer, buffer_string)),
+							archetypeArray = json_parse(buffer_read(buffer, buffer_string)),
+							spiritArray = json_parse(buffer_read(buffer, buffer_string)),
+							ignoreTarget = buffer_read(buffer, buffer_s8),
+							filterNum = buffer_read(buffer, buffer_s8),
+							arrayPos = buffer_read(buffer, buffer_u8);
+							
+							scr_target_field(obj_player, players, typeArray, level, atk, hp, archetypeArray, spiritArray, ignoreTarget, filterNum, arrayPos)
+						break;
+		
+						case RESPONSE_TARGET_HAND:
+							var players = []
+							if(buffer_read(buffer, buffer_bool)){
+								array_push(players, obj_player)
+							}
+							if(buffer_read(buffer, buffer_bool)){
+								array_push(players, obj_opponent)
+							}
+							var typeArray = json_parse(buffer_read(buffer, buffer_string)),
+							minLevel = buffer_read(buffer, buffer_u8),
+							maxLevel = buffer_read(buffer, buffer_u8),
+							archetypeArray = json_parse(buffer_read(buffer, buffer_string)),
+							spiritArray = json_parse(buffer_read(buffer, buffer_string)),
+							checkSummonable = buffer_read(buffer, buffer_bool),
+							ignoreTarget = buffer_read(buffer, buffer_s8),
+							filterNum = buffer_read(buffer, buffer_s8),
+							arrayPos = buffer_read(buffer, buffer_u8);
+							
+							scr_target_hand(obj_player, players, typeArray, minLevel, maxLevel, archetypeArray, spiritArray, checkSummonable, ignoreTarget, filterNum, arrayPos)
 
+						break;
+		
+						case RESPONSE_TARGET_INFIRMARY:
+							var players = []
+							if(buffer_read(buffer, buffer_bool)){
+								array_push(players, obj_player)
+							}
+							if(buffer_read(buffer, buffer_bool)){
+								array_push(players, obj_opponent)
+							}
+							var typeArray = json_parse(buffer_read(buffer, buffer_string)),
+							minLevel = buffer_read(buffer, buffer_u8),
+							maxLevel = buffer_read(buffer, buffer_u8),
+							archetypeArray = json_parse(buffer_read(buffer, buffer_string)),
+							spiritArray = json_parse(buffer_read(buffer, buffer_string)),
+							checkSummonable = buffer_read(buffer, buffer_bool),
+							sendType = buffer_read(buffer, buffer_s8),
+							ignoreTarget = buffer_read(buffer, buffer_s8),
+							filterNum = buffer_read(buffer, buffer_s8),
+							arrayPos = buffer_read(buffer, buffer_u8);
+							
+							scr_target_infirmary(obj_player, players, typeArray, minLevel, maxLevel, archetypeArray, spiritArray, checkSummonable, sendType, ignoreTarget, filterNum, arrayPos)
+						break;
+		
+						case RESPONSE_TARGET_INFIRMARY_NAME:
+							//TODO: scr_target_infirmary_name()
+						break;		
+		
+						case RESPONSE_TARGET_MOMENTUM_DECK:
+							var players = []
+							if(buffer_read(buffer, buffer_bool)){
+								array_push(players, obj_player)
+							}
+							if(buffer_read(buffer, buffer_bool)){
+								array_push(players, obj_opponent)
+							}
+							var minLevel = buffer_read(buffer, buffer_u8),
+							maxLevel = buffer_read(buffer, buffer_u8),
+							archetypeArray = json_parse(buffer_read(buffer, buffer_string)),
+							spiritArray = json_parse(buffer_read(buffer, buffer_string)),
+							checkSummonable = buffer_read(buffer, buffer_bool),
+							filterNum = buffer_read(buffer, buffer_s8),
+							arrayPos = buffer_read(buffer, buffer_u8);
+							
+							scr_target_momentum_deck(obj_player, players, minLevel, maxLevel, archetypeArray, spiritArray, checkSummonable, filterNum, arrayPos)
+						break;
+		
+						case RESPONSE_CHOICE:
+							var arrayPos = buffer_read(buffer, buffer_u8),
+							choicesArray = json_parse(buffer_read(buffer, buffer_string));
+							
+							scr_give_choice(arrayPos, choicesArray)
+						break;
+					}
+				}
+			break;
 
+			case MESSAGE_HANDLE_RESPONSE:
+				var arrayPos = buffer_read(buffer, buffer_u8),
+				arguments = json_parse(buffer_read(buffer, buffer_string));
+				
+				for(var i = 0; i < array_length(arguments); i++){
+					obj_player.resolvingPile[obj_player.resolvingPileCount - 1, arrayPos + i] = arguments[i]
+				}
+				
+				obj_player.resolvingPile[obj_player.resolvingPileCount - 1, 2]++
+			break;
+
+			case MESSAGE_HANDLE_FAIL:
+				obj_player.resolvingPile[obj_player.resolvingPileCount - 1, 2] = 97
+			break;
 		}
 		var temptell = buffer_tell(buffer),
 		var tempsize = buffer_get_size(buffer);

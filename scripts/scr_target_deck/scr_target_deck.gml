@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_target_deck(players, typeArray, minLevel, maxLevel, archetypeArray, spiritArray, checkSummonable, filterNum, arrayPos){
+function scr_target_deck(activator, players, typeArray, minLevel, maxLevel, archetypeArray, spiritArray, checkSummonable, filterNum, arrayPos){
 	/*
 	players (enter all player objects that are affected in an array)
 	typeArray
@@ -12,6 +12,12 @@ function scr_target_deck(players, typeArray, minLevel, maxLevel, archetypeArray,
 	filterNum
 	arrayPos
 	*/
+
+	if(activator == obj_opponent){
+		scr_message_ask_response(RESPONSE_TARGET_DECK, players, typeArray, minLevel, maxLevel, archetypeArray , spiritArray, checkSummonable, filterNum, arrayPos)
+		return;
+	}
+
 	var filteredCards,
 	filteredCardCount = 0;
 
@@ -55,6 +61,10 @@ function scr_target_deck(players, typeArray, minLevel, maxLevel, archetypeArray,
 		}
 	}
 	if(filteredCardCount == 0){
-		resolvingPile[obj_player.resolvingPileCount-1,2] = 97
+		if(obj_player.own_turn){
+			resolvingPile[obj_player.resolvingPileCount-1,2] = 97;
+			return;
+		}
+		scr_message_handle_fail()
 	}
 }

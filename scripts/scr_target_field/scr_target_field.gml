@@ -1,4 +1,4 @@
-function scr_target_field(players, typeArray, level, atk, hp, archetypeArray, spiritArray, ignoreTarget, filterNum, arrayPos) {
+function scr_target_field(activator, players, typeArray, level, atk, hp, archetypeArray, spiritArray, ignoreTarget, filterNum, arrayPos) {
 	/*
 	players (enter all player objects that are affected in an array)
 	typeArray
@@ -11,6 +11,12 @@ function scr_target_field(players, typeArray, level, atk, hp, archetypeArray, sp
 	filterNum
 	arrayPos
 	*/
+	
+	if(activator == obj_opponent){
+		scr_message_ask_response(RESPONSE_TARGET_FIELD, players, typeArray, level, atk, hp, archetypeArray , spiritArray, ignoreTarget, filterNum, arrayPos)
+		return;
+	}
+	
 	var filteredCards,
 	filteredCardCount = 0;
 
@@ -66,8 +72,12 @@ function scr_target_field(players, typeArray, level, atk, hp, archetypeArray, sp
 		}		
 	}
 	if(!filteredCardCount){
-		resolvingPile[obj_player.resolvingPileCount-1,2] = 97
-		return false
+		if(obj_player.own_turn){
+			resolvingPile[obj_player.resolvingPileCount-1,2] = 97;
+			return false;
+		}
+		scr_message_handle_fail()
+		return false;
 	}
-	return true
+	return true;
 }

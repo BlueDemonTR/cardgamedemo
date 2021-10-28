@@ -162,14 +162,126 @@ function scr_server_handle_message(argument0, argument1) {
 			
 				network_send_raw(temp2, send_buffer, buffer_tell(send_buffer));
 			break;
+			
+			case MESSAGE_ASK_RESPONSE:
+				buffer_seek(send_buffer, buffer_seek_start, 0);
+				buffer_write(send_buffer, buffer_u8, message_id);
+				buffer_write(send_buffer, buffer_u16, socket_id);
+				
+				var response_id = buffer_read(buffer, buffer_u8);
+				
+				buffer_write(send_buffer, buffer_u8, response_id);
+				switch(response_id){
+					case RESPONSE_CHOOSE_FIELD_ZONE:
+						buffer_write(send_buffer, buffer_bool, buffer_read(buffer, buffer_bool))//Can choose own
+						buffer_write(send_buffer, buffer_bool, buffer_read(buffer, buffer_bool))//Can choose opponent
+						buffer_write(send_buffer, buffer_bool, buffer_read(buffer, buffer_bool))//Select Filled
+						buffer_write(send_buffer, buffer_bool, buffer_read(buffer, buffer_bool))//Select NMZ
+						buffer_write(send_buffer, buffer_bool, buffer_read(buffer, buffer_bool))//Select MMZ
+						buffer_write(send_buffer, buffer_u8, buffer_read(buffer, buffer_u8))//arrayPos
+					break;
 		
-		}
+					case RESPONSE_TARGET_DECK:
+						buffer_write(send_buffer, buffer_bool, buffer_read(buffer, buffer_bool))//Can choose own
+						buffer_write(send_buffer, buffer_bool, buffer_read(buffer, buffer_bool))//Can choose opponent		
+						buffer_write(send_buffer, buffer_string, buffer_read(buffer, buffer_string))//Type Array
+						buffer_write(send_buffer, buffer_u8, buffer_read(buffer, buffer_u8))//Min Level
+						buffer_write(send_buffer, buffer_u8, buffer_read(buffer, buffer_u8))//Max Level
+						buffer_write(send_buffer, buffer_string, buffer_read(buffer, buffer_string))//Archetype Array
+						buffer_write(send_buffer, buffer_string, buffer_read(buffer, buffer_string))//Spirit Array
+						buffer_write(send_buffer, buffer_bool, buffer_read(buffer, buffer_bool))//Check Summonable
+						buffer_write(send_buffer, buffer_s8, buffer_read(buffer, buffer_s8))//Filter Number
+						buffer_write(send_buffer, buffer_u8, buffer_read(buffer, buffer_u8))//arrayPos
+					break;
 		
-		if(buffer_tell(buffer)) == buffer_get_size(buffer){
+					case RESPONSE_TARGET_FIELD:
+						buffer_write(send_buffer, buffer_bool, buffer_read(buffer, buffer_bool))//Can choose own
+						buffer_write(send_buffer, buffer_bool, buffer_read(buffer, buffer_bool))//Can choose opponent		
+						buffer_write(send_buffer, buffer_string, buffer_read(buffer, buffer_string))//Type Array
+						buffer_write(send_buffer, buffer_string, buffer_read(buffer, buffer_string))//Level
+						buffer_write(send_buffer, buffer_string, buffer_read(buffer, buffer_string))//ATK
+						buffer_write(send_buffer, buffer_string, buffer_read(buffer, buffer_string))//HP
+						buffer_write(send_buffer, buffer_string, buffer_read(buffer, buffer_string))//Archetype Array
+						buffer_write(send_buffer, buffer_string, buffer_read(buffer, buffer_string))//Spirit Array
+						buffer_write(send_buffer, buffer_s8, buffer_read(buffer, buffer_s8))//Ignore Target
+						buffer_write(send_buffer, buffer_s8, buffer_read(buffer, buffer_s8))//Filter Number
+						buffer_write(send_buffer, buffer_u8, buffer_read(buffer, buffer_u8))//arrayPos
+					break;
+		
+					case RESPONSE_TARGET_HAND:
+						buffer_write(send_buffer, buffer_bool, buffer_read(buffer, buffer_bool))//Can choose own
+						buffer_write(send_buffer, buffer_bool, buffer_read(buffer, buffer_bool))//Can choose opponent		
+						buffer_write(send_buffer, buffer_string, buffer_read(buffer, buffer_string))//Type Array
+						buffer_write(send_buffer, buffer_u8, buffer_read(buffer, buffer_u8))//Min Level
+						buffer_write(send_buffer, buffer_u8, buffer_read(buffer, buffer_u8))//Max Level
+						buffer_write(send_buffer, buffer_string, buffer_read(buffer, buffer_string))//Archetype Array
+						buffer_write(send_buffer, buffer_string, buffer_read(buffer, buffer_string))//Spirit Array
+						buffer_write(send_buffer, buffer_bool, buffer_read(buffer, buffer_bool))//Check Summonable
+						buffer_write(send_buffer, buffer_s8, buffer_read(buffer, buffer_s8))//Ignore Target
+						buffer_write(send_buffer, buffer_s8, buffer_read(buffer, buffer_s8))//Filter Number
+						buffer_write(send_buffer, buffer_u8, buffer_read(buffer, buffer_u8))//arrayPos
+					break;
+		
+					case RESPONSE_TARGET_INFIRMARY:
+						buffer_write(send_buffer, buffer_bool, buffer_read(buffer, buffer_bool))//Can choose own
+						buffer_write(send_buffer, buffer_bool, buffer_read(buffer, buffer_bool))//Can choose opponent		
+						buffer_write(send_buffer, buffer_string, buffer_read(buffer, buffer_string))//Type Array
+						buffer_write(send_buffer, buffer_u8, buffer_read(buffer, buffer_u8))//Min Level
+						buffer_write(send_buffer, buffer_u8, buffer_read(buffer, buffer_u8))//Max Level
+						buffer_write(send_buffer, buffer_string, buffer_read(buffer, buffer_string))//Archetype Array
+						buffer_write(send_buffer, buffer_string, buffer_read(buffer, buffer_string))//Spirit Array
+						buffer_write(send_buffer, buffer_bool, buffer_read(buffer, buffer_bool))//Check Summonable
+						buffer_write(send_buffer, buffer_s8, buffer_read(buffer, buffer_s8))//Send Type
+						buffer_write(send_buffer, buffer_s8, buffer_read(buffer, buffer_s8))//Ignore Target
+						buffer_write(send_buffer, buffer_s8, buffer_read(buffer, buffer_s8))//Filter Number
+						buffer_write(send_buffer, buffer_u8, buffer_read(buffer, buffer_u8))//arrayPos
+					break;
+		
+					case RESPONSE_TARGET_INFIRMARY_NAME:
+						//TODO: scr_target_infirmary_name()
+					break;		
+		
+					case RESPONSE_TARGET_MOMENTUM_DECK:
+						buffer_write(send_buffer, buffer_bool, buffer_read(buffer, buffer_bool))//Can choose own
+						buffer_write(send_buffer, buffer_bool, buffer_read(buffer, buffer_bool))//Can choose opponent		
+						buffer_write(send_buffer, buffer_u8, buffer_read(buffer, buffer_u8))//Min Level
+						buffer_write(send_buffer, buffer_u8, buffer_read(buffer, buffer_u8))//Max Level
+						buffer_write(send_buffer, buffer_string, buffer_read(buffer, buffer_string))//Archetype Array
+						buffer_write(send_buffer, buffer_string, buffer_read(buffer, buffer_string))//Spirit Array
+						buffer_write(send_buffer, buffer_bool, buffer_read(buffer, buffer_bool))//Check Summonable
+						buffer_write(send_buffer, buffer_s8, buffer_read(buffer, buffer_s8))//Filter Number
+						buffer_write(send_buffer, buffer_u8, buffer_read(buffer, buffer_u8))//arrayPos
+					break;
+		
+					case RESPONSE_CHOICE:
+						buffer_write(send_buffer, buffer_u8, buffer_read(buffer, buffer_u8))//arrayPos
+						buffer_write(send_buffer, buffer_string, buffer_read(buffer, buffer_string))//Choices Array
+					break;
+				}
+				network_send_raw(temp2, send_buffer, buffer_tell(send_buffer));
+			break;
+		
+			case MESSAGE_HANDLE_RESPONSE:
+				buffer_seek(send_buffer, buffer_seek_start, 0);
+				buffer_write(send_buffer, buffer_u8, message_id);
+				buffer_write(send_buffer, buffer_u16, socket_id);
+				
+				buffer_write(send_buffer, buffer_u8, buffer_read(buffer, buffer_u8))//arrayPos
+				buffer_write(send_buffer, buffer_string, buffer_read(buffer, buffer_string))//arguments
+				
+				network_send_raw(temp2, send_buffer, buffer_tell(send_buffer));
+			break;
+			
+			case MESSAGE_HANDLE_FAIL:
+				buffer_seek(send_buffer, buffer_seek_start, 0);
+				buffer_write(send_buffer, buffer_u8, message_id);
+				buffer_write(send_buffer, buffer_u16, socket_id);
+				
+				network_send_raw(temp2, send_buffer, buffer_tell(send_buffer));
 			break;
 		}
-		
+		if(buffer_tell(buffer)) == buffer_get_size(buffer){
+			break;
+		}	
 	}
-
-
 }

@@ -1,4 +1,4 @@
-function scr_recruit(cardNum, artNum, summonZone){
+function scr_recruit(cardNum, artNum, player, summonZone){
 	//Summons a monster out of nowhere
 	//Syntax:
 	//cardNum: int, summoned card's number

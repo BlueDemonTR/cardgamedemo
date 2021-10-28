@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_target_momentum_deck(players, minLevel, maxLevel, archetypeArray, spiritArray, checkSummonable, filterNum, arrayPos){
+function scr_target_momentum_deck(activator, players, minLevel, maxLevel, archetypeArray, spiritArray, checkSummonable, filterNum, arrayPos){
 	/*
 	players (enter all player objects that are affected in an array)
 	Max Level (between 1-12)
@@ -51,6 +51,10 @@ function scr_target_momentum_deck(players, minLevel, maxLevel, archetypeArray, s
 		}
 	}
 	if(filteredCardCount == 0){
-		resolvingPile[obj_player.resolvingPileCount-1,2] = 97
+		if(obj_player.own_turn){
+			resolvingPile[obj_player.resolvingPileCount-1,2] = 97;
+			return;
+		}
+		scr_message_handle_fail()
 	}
 }

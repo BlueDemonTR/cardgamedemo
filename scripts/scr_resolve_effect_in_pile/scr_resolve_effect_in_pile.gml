@@ -125,7 +125,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									case 2:
 										resolvingPile[positionInOrder,6] = 0 //deckPos
 										resolvingPile[positionInOrder,7] = 0 //player
-										scr_target_deck([player], [TypeMonster], 1, 12, [ArcMotorbiker], [], false, -1, 6)
+										scr_target_deck(player, [player], [TypeMonster], 1, 12, [ArcMotorbiker], [], false, -1, 6)
 										NextStep
 									break;
 									case 4:
@@ -164,7 +164,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 										}
 										instance_destroy(obj_appropiate_targets)
 										resolvingPile[positionInOrder, 8] = 0 //summonZone
-										scr_choose_field_zones([player], false, false, true, 8)
+										scr_choose_field_zones(player, [player], false, false, true, 8)
 										NextStep
 									break;
 									case 8:
@@ -295,7 +295,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 										}
 										instance_destroy(obj_appropiate_targets)
 										resolvingPile[positionInOrder, 8] = 0 //summonZone
-										scr_choose_field_zones([player], false, false, true, 8)
+										scr_choose_field_zones(player, [player], false, false, true, 8)
 										NextStep
 									break;
 									case 8:
@@ -320,11 +320,11 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									case 2:
 										resolvingPile[positionInOrder,6] = 0 //infirmaryPos
 										resolvingPile[positionInOrder,7] = 0 //player
-										scr_target_infirmary([player], [TypeMonster, TypeMomentum], 1, 12, [ArcVisclades], [], true, -1, -1, -1, 6)
+										scr_target_infirmary(player, [player], [TypeMonster, TypeMomentum], 1, 12, [ArcVisclades], [], true, -1, -1, -1, 6)
 									break;
 									case 4:
 										resolvingPile[positionInOrder,8] = 0 //summonZone
-										scr_choose_field_zones([player], false, true, false, 8)
+										scr_choose_field_zones(player, [player], false, true, false, 8)
 									break;
 									case 6:
 										scr_summon_from_infirmary(resolvingPile[positionInOrder,7], resolvingPile[positionInOrder,6], resolvingPile[positionInOrder,8])
@@ -352,7 +352,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									case 2:
 										resolvingPile[positionInOrder,6] = 0 //position
 										resolvingPile[positionInOrder,7] = 0 //player
-										if(scr_target_field([player, opponent], [], [1, 12], [0, infinity], [0, infinity], [ArcIgloo], [], -1, -1, 6)){
+										if(scr_target_field(player, [player, opponent], [], [1, 12], [0, infinity], [0, infinity], [ArcIgloo], [], -1, -1, 6)){
 											NextStep
 											break;
 										}
@@ -364,7 +364,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 									case 5:
 										resolvingPile[positionInOrder,8] = 0 //summonZone
-										scr_choose_field_zones([player], false, true, false, 8)
+										scr_choose_field_zones(player, [player], false, true, false, 8)
 										NextStep
 									break;
 									case 7:
@@ -396,7 +396,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 									case 4:
 										resolvingPile[positionInOrder,7] = 0
-										scr_choose_field_zones([player], false, true, false, 7)
+										scr_choose_field_zones(player, [player], false, true, false, 7)
 										NextStep
 									break;
 									case 6:
@@ -434,7 +434,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 										}
 										instance_destroy(obj_appropiate_targets)
 										resolvingPile[positionInOrder,8] = 0 //summonZone
-										scr_choose_field_zones([player], false, false, true, 8)
+										scr_choose_field_zones(player, [player], false, false, true, 8)
 										NextStep
 									break;
 									case 8:
@@ -458,7 +458,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 									case 2:
 										resolvingPile[positionInOrder,6] = 0
-										scr_target_field([player, player.opponent], [], [1, 12], [0, infinity], [0, infinity], [ArcIgloo], [], -1, -1, 6)
+										scr_target_field(player, [player, player.opponent], [], [1, 12], [0, infinity], [0, infinity], [ArcIgloo], [], -1, -1, 6)
 										NextStep
 									break;
 									case 4:
@@ -489,7 +489,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 									case 2:
 										resolvingPile[positionInOrder,6] = 0
-										scr_target_field([player, player.opponent], [], [1, 12], [0, infinity], [0, infinity], [ArcSacrifice], [], -1, -1, 6)
+										scr_target_field(player, [player, player.opponent], [], [1, 12], [0, infinity], [0, infinity], [ArcSacrifice], [], -1, -1, 6)
 										NextStep
 									break;
 									case 4:
@@ -513,7 +513,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 									case 2:
 										resolvingPile[positionInOrder,6] = 0
-										scr_target_deck([player], [TypeMonster], 1, 12, [ArcNightmareBeast], [], false, -1, 6)
+										scr_target_deck(player, [player], [TypeMonster], 1, 12, [ArcNightmareBeast], [], false, -1, 6)
 										NextStep
 									break;
 									case 4:
@@ -551,7 +551,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 										}
 										instance_destroy(obj_appropiate_targets)
 										resolvingPile[positionInOrder,8] = 0
-										scr_choose_field_zones([player], false, false, true,8)
+										scr_choose_field_zones(player, [player], false, false, true,8)
 										NextStep
 									break;
 									case 8:
@@ -599,7 +599,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 									case 2:
 										resolvingPile[positionInOrder,6] = 0
-										scr_target_deck([player, player.opponent], [TypeMonster], 1, 12, [ArcFisherman], [], -1, -1, 6)
+										scr_target_deck(player, [player, player.opponent], [TypeMonster], 1, 12, [ArcFisherman], [], -1, -1, 6)
 										NextStep
 									break;
 									case 4:
@@ -656,7 +656,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 										}
 										instance_destroy(obj_appropiate_targets)
 										resolvingPile[positionInOrder,8] = 0
-										scr_choose_field_zones([player], false, false, true, 7)
+										scr_choose_field_zones(player, [player], false, false, true, 7)
 										NextStep
 									break;
 									case 8:
@@ -680,11 +680,11 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 									case 2:
 										resolvingPile[positionInOrder,6] = 0
-										scr_choose_field_zones([player], false, true, false, 6)
+										scr_choose_field_zones(player, [player], false, true, false, 6)
 										NextStep
 									break;
 									case 4:
-										scr_recruit(86, 0, resolvingPile[positionInOrder,6])
+										scr_recruit(86, 0, player, resolvingPile[positionInOrder,6])
 										scr_draw(player, 1, true)
 										FinishResolving
 									break;
@@ -709,7 +709,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 									case 2:
 										resolvingPile[positionInOrder,6] = 0
-										scr_target_field([player], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1, 6)
+										scr_target_field(player, [player], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1, 6)
 										NextStep
 									break;
 									case 4:
@@ -767,7 +767,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 										}
 										instance_destroy(obj_appropiate_targets)
 										resolvingPile[positionInOrder,8] = 0
-										scr_choose_field_zones([player], false, false, true, 8)
+										scr_choose_field_zones(player, [player], false, false, true, 8)
 										NextStep
 									break;
 									case 8:
@@ -791,7 +791,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 									case 2:
 										resolvingPile[positionInOrder,6] = 0
-										scr_target_deck([player], [TypeSpell], 1, 12, [], [], false, -1, 5)
+										scr_target_deck(player, [player], [TypeSpell], 1, 12, [], [], false, -1, 5)
 										NextStep
 									break;
 									case 4:
@@ -877,7 +877,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 										}
 										instance_destroy(obj_appropiate_targets)
 										resolvingPile[positionInOrder,8] = 0
-										scr_choose_field_zones([player], false, false, true, 8)
+										scr_choose_field_zones(player, [player], false, false, true, 8)
 										NextStep
 									break;
 									case 8:
@@ -901,7 +901,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 									case 2:
 										resolvingPile[positionInOrder,6] = 0;
-										scr_target_field([player, player.opponent], [TypeMonster, TypeMomentum], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1, 6)
+										scr_target_field(player, [player, player.opponent], [TypeMonster, TypeMomentum], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1, 6)
 										NextStep
 									break;
 									case 4:
@@ -934,12 +934,12 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0
-								scr_target_infirmary([player], [TypeMonster], 1, 12, [ArcVisclades], [], true, -1, -1, -1, 6);
+								scr_target_infirmary(player, [player], [TypeMonster], 1, 12, [ArcVisclades], [], true, -1, -1, -1, 6);
 								NextStep
 							break;
 							case 3:
 								resolvingPile[positionInOrder,8] = 0
-								scr_choose_field_zones([player], false, true, false, 8);
+								scr_choose_field_zones(player, [player], false, true, false, 8);
 								NextStep
 							break;
 							case 5:
@@ -970,17 +970,17 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0
-								scr_choose_field_zones([player], false, true, false, 6);
+								scr_choose_field_zones(player, [player], false, true, false, 6);
 								NextStep
 							break;
 							case 3:
-								scr_recruit(74, 0, resolvingPile[positionInOrder,6])//Useless Sacrifice
+								scr_recruit(74, 0, player, resolvingPile[positionInOrder,6])//Useless Sacrifice
 								
 								resolvingPile[positionInOrder,7] = 0
-								scr_choose_field_zones([player], false, true, false, 7);
+								scr_choose_field_zones(player, [player], false, true, false, 7);
 								break;
 							case 5:
-								scr_recruit(74, 0, resolvingPile[positionInOrder,7])//Useless Sacrifice
+								scr_recruit(74, 0, player, resolvingPile[positionInOrder,7])//Useless Sacrifice
 								FinishResolving
 							break;
 						}
@@ -1017,7 +1017,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0
-								scr_choose_field_zones([player], false, true, false, 6);
+								scr_choose_field_zones(player, [player], false, true, false, 6);
 								
 								NextStep
 							break;
@@ -1113,7 +1113,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0;
-								scr_target_deck([player], [TypeMonster], 1, 12, [ArcMotorbiker], [], false, -1, 6);
+								scr_target_deck(player, [player], [TypeMonster], 1, 12, [ArcMotorbiker], [], false, -1, 6);
 								NextStep
 							break;
 							case 3:
@@ -1140,18 +1140,18 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0
-								scr_target_infirmary([player], [TypeMomentum], 1, 12, [ArcMotorbikerLeader], [], true, 0, -1, 0, 6);
+								scr_target_infirmary(player, [player], [TypeMomentum], 1, 12, [ArcMotorbikerLeader], [], true, 0, -1, 0, 6);
 								NextStep
 							break;
 							case 3:
 								resolvingPile[positionInOrder,7] = 0
-								scr_target_momentum_deck([player], 1, 12, [ArcMotorbikerLeader], [], true, 1, 7);
+								scr_target_momentum_deck(player, [player], 1, 12, [ArcMotorbikerLeader], [], true, 1, 7);
 								scr_voidfy_infirmary(obj_player, resolvingPile[positionInOrder,6]);
 								NextStep
 							break;
 							case 5:
 								resolvingPile[positionInOrder,8] = 0
-								scr_choose_field_zones([player], false, false, true, 8);
+								scr_choose_field_zones(player, [player], false, false, true, 8);
 								NextStep
 							break;
 							case 7:
@@ -1188,12 +1188,12 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0
-								scr_target_deck([player], [TypeMonster], 1, 2, [ArcMotorbiker], [], true, -1, 6);
+								scr_target_deck(player, [player], [TypeMonster], 1, 2, [ArcMotorbiker], [], true, -1, 6);
 								NextStep
 							break;
 							case 3:
 								resolvingPile[positionInOrder,7] = 0
-								scr_choose_field_zones([player], false, true, false, 7);
+								scr_choose_field_zones(player, [player], false, true, false, 7);
 								NextStep
 							break;
 							case 5:
@@ -1219,7 +1219,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0;
 								resolvingPile[positionInOrder,7] = 0; //player
-								scr_target_field([player.opponent], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1, 6)
+								scr_target_field(player, [player.opponent], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1, 6)
 								NextStep
 							break;
 							case 3:
@@ -1258,7 +1258,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0;
 								resolvingPile[positionInOrder,7] = 0; //player
-								scr_target_field([player.opponent], [], [1, 12], [1, infinity], [0, infinity], [], [], -1, -1, 6)
+								scr_target_field(player, [player.opponent], [], [1, 12], [1, infinity], [0, infinity], [], [], -1, -1, 6)
 								NextStep
 							break;
 							case 3:
@@ -1295,7 +1295,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0;
 								resolvingPile[positionInOrder,7] = 0; //player
-								scr_target_field([player.opponent], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1, 6)
+								scr_target_field(player, [player.opponent], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1, 6)
 								NextStep
 							break;
 							case 3:
@@ -1324,12 +1324,12 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							case 1:
 								scr_destroy(player, position, SendEffect)
 								resolvingPile[positionInOrder,6] = 0
-								scr_target_momentum_deck([player], 1, 12, [ArcMotorbikerLeader], [], true, -1, 6);
+								scr_target_momentum_deck(player, [player], 1, 12, [ArcMotorbikerLeader], [], true, -1, 6);
 								NextStep
 							break;
 							case 3:
 								resolvingPile[positionInOrder,7] = 0
-								scr_choose_field_zones([player], false, false, true, 7);
+								scr_choose_field_zones(player, [player], false, false, true, 7);
 								NextStep
 							break;
 							case 5:
@@ -1386,7 +1386,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							break;
 							case 2:
 								resolvingPile[positionInOrder,9] = 0
-								scr_choose_field_zones([player], false, true, false, 9);
+								scr_choose_field_zones(player, [player], false, true, false, 9);
 								NextStep
 							break;
 							case 4:
@@ -1435,7 +1435,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								resolvingPile[positionInOrder,6] = 0
 								resolvingPile[positionInOrder,7] = 0
 								scr_voidfy_infirmary(player, position)
-								scr_target_field([player], [], [1, 12], [0, infinity], [0, infinity], [ArcVisclades], [], -1, -1, 6)
+								scr_target_field(player, [player], [], [1, 12], [0, infinity], [0, infinity], [ArcVisclades], [], -1, -1, 6)
 								NextStep
 							break;
 							case 3:
@@ -1461,7 +1461,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0;
 								resolvingPile[positionInOrder,7] = 0; //player
-								scr_target_field([player, player.opponent], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1, 6)
+								scr_target_field(player, [player, player.opponent], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1, 6)
 								NextStep
 							break;
 							case 3:
@@ -1502,12 +1502,12 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0
-								scr_target_momentum_deck([player], 1, 12, [ArcVisclades], [], true, -1, 6);
+								scr_target_momentum_deck(player, [player], 1, 12, [ArcVisclades], [], true, -1, 6);
 								NextStep
 							break;
 							case 3:
 								resolvingPile[positionInOrder, 7] = 0
-								scr_choose_field_zones([player], false, false, true, 7);
+								scr_choose_field_zones(player, [player], false, false, true, 7);
 								NextStep
 							break;
 							case 5:
@@ -1533,12 +1533,12 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0
-								scr_target_infirmary([player], [TypeMonster], 1, 12, [ArcVisclades], [], true, -1, -1, -1, 6)
+								scr_target_infirmary(player, [player], [TypeMonster], 1, 12, [ArcVisclades], [], true, -1, -1, -1, 6)
 								NextStep
 							break;
 							case 3:
 								resolvingPile[positionInOrder,7] = 0
-								scr_choose_field_zones([player], false, true, false, 7);
+								scr_choose_field_zones(player, [player], false, true, false, 7);
 								NextStep							
 							break;
 							case 5:
@@ -1563,7 +1563,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0
-								scr_target_deck([player], [TypeMonster], 1, 12, [ArcVisclades], [], false, -1, 6)
+								scr_target_deck(player, [player], [TypeMonster], 1, 12, [ArcVisclades], [], false, -1, 6)
 								NextStep
 							break;
 							case 3:
@@ -1573,7 +1573,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							case 4:
 								resolvingPile[positionInOrder,7] = 0
 								resolvingPile[positionInOrder,8] = 0
-								scr_target_field([player], [], [1, 12], [0, infinity], [0, infinity], [ArcVisclades], [], -1, -1, 7)
+								scr_target_field(player, [player], [], [1, 12], [0, infinity], [0, infinity], [ArcVisclades], [], -1, -1, 7)
 								NextStep
 							break;
 							case 6:
@@ -1599,7 +1599,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0
 								resolvingPile[positionInOrder,7] = 0
-								scr_target_field([player.opponent], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1, 6)
+								scr_target_field(player, [player.opponent], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1, 6)
 								NextStep
 							break;
 							case 3:
@@ -1693,7 +1693,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0
-								scr_choose_field_zones([player], false, true, false, 6);
+								scr_choose_field_zones(player, [player], false, true, false, 6);
 								NextStep
 							break;
 							case 3:
@@ -1728,7 +1728,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0
-								scr_target_deck([player], [TypeSpell], 0, 0, [ArcBlizzard], [], false, -1, 6)
+								scr_target_deck(player, [player], [TypeSpell], 0, 0, [ArcBlizzard], [], false, -1, 6)
 								NextStep
 							break;
 							case 3:
@@ -1804,7 +1804,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							case 2:
 								resolvingPile[positionInOrder,6] = 0
 								resolvingPile[positionInOrder,7] = 0 //player
-								scr_target_field([player, player.opponent], [], [1, 12], [0, infinity], [0, infinity], [ArcIgloo], [], -1, -1, 6)
+								scr_target_field(player, [player, player.opponent], [], [1, 12], [0, infinity], [0, infinity], [ArcIgloo], [], -1, -1, 6)
 								NextStep
 							break;
 							case 4:
@@ -1834,7 +1834,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							case 2:
 								resolvingPile[positionInOrder,6] = 0
 								resolvingPile[positionInOrder,7] = 0 //player
-								scr_target_field([player, player.opponent], [], [1, 12], [0, infinity], [0, infinity], [ArcIgloo], [], -1, -1, 6)
+								scr_target_field(player, [player, player.opponent], [], [1, 12], [0, infinity], [0, infinity], [ArcIgloo], [], -1, -1, 6)
 								NextStep
 							break;
 							case 4:
@@ -1859,7 +1859,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0
-								scr_target_deck([player], [TypeMonster], 1, 12, [ArcPoleClan], [], false, -1, 6)
+								scr_target_deck(player, [player], [TypeMonster], 1, 12, [ArcPoleClan], [], false, -1, 6)
 								NextStep
 							break;
 							case 3:
@@ -1884,7 +1884,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0
 								resolvingPile[positionInOrder,7] = 0
-								scr_target_field([player.opponent], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1, 6)
+								scr_target_field(player, [player.opponent], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1, 6)
 								NextStep
 							break;
 							case 3:
@@ -1911,7 +1911,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								resolvingPile[positionInOrder,6] = 0
 								resolvingPile[positionInOrder,7] = 0
 								resolvingPile[positionInOrder,8] = 0 //Discarded Card
-								scr_target_hand([player], [TypeMonster], 1, 12, [], [], false, position, 2, 6)
+								scr_target_hand(player, [player], [TypeMonster], 1, 12, [], [], false, position, 2, 6)
 								NextStep
 							break;
 							case 3:
@@ -1919,7 +1919,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								scr_discard(player, resolvingPile[positionInOrder,6])
 								resolvingPile[positionInOrder,9] = 0
 								resolvingPile[positionInOrder,10] = 0
-								scr_target_field([opponent], [], [1, discardLevel], [0, infinity], [0, infinity], [], [], -1, -1, 9)
+								scr_target_field(player, [opponent], [], [1, discardLevel], [0, infinity], [0, infinity], [], [], -1, -1, 9)
 								NextStep
 							break;
 							case 5:
@@ -1960,7 +1960,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									case 0:
 										resolvingPile[positionInOrder,7] = 0
 										resolvingPile[positionInOrder,8] = 0
-										scr_target_field([player, player.opponent], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1, 7)
+										scr_target_field(player, [player, player.opponent], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1, 7)
 										NextStep
 									break;
 									case 1:
@@ -1990,12 +1990,12 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0
-								scr_target_infirmary([player], [TypeMonster, TypeMomentum], 1, 12, [ArcPoleClan], [], true, -1, -1, -1, 6)
+								scr_target_infirmary(player, [player], [TypeMonster, TypeMomentum], 1, 12, [ArcPoleClan], [], true, -1, -1, -1, 6)
 								NextStep
 							break;
 							case 3:
 								resolvingPile[positionInOrder, 7] = 0
-								scr_choose_field_zones([player], false, true, false, 7);
+								scr_choose_field_zones(player, [player], false, true, false, 7);
 								NextStep
 							break;
 							case 5:
@@ -2034,20 +2034,20 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0
-								scr_choose_field_zones([player], false, true, false, 6);
+								scr_choose_field_zones(player, [player], false, true, false, 6);
 								NextStep
 							break;
 							case 3:
-								scr_recruit(34, 0, resolvingPile[positionInOrder,6]);
+								scr_recruit(34, 0, player, resolvingPile[positionInOrder,6]);
 								NextStep
 							break;
 							case 4:
 								resolvingPile[positionInOrder,7] = 0
-								scr_choose_field_zones([player], false, true, false, 7);
+								scr_choose_field_zones(player, [player], false, true, false, 7);
 								NextStep
 							break;
 							case 6:
-								scr_recruit(34, 0, resolvingPile[positionInOrder,7]);
+								scr_recruit(34, 0, player, resolvingPile[positionInOrder,7]);
 								NextStep
 							break;
 
@@ -2120,12 +2120,12 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0
-								scr_target_infirmary([player], [TypeMonster, TypeMomentum], 1, player.getStat(PlayerMomentum), [], [], true, -1, -1, -1, 6)
+								scr_target_infirmary(player, [player], [TypeMonster, TypeMomentum], 1, player.getStat(PlayerMomentum), [], [], true, -1, -1, -1, 6)
 								NextStep
 							break;
 							case 3:
 								resolvingPile[positionInOrder,7] = 0
-								scr_choose_field_zones([player], false, true, false, 7)
+								scr_choose_field_zones(player, [player], false, true, false, 7)
 								NextStep
 							break;
 							case 5:
@@ -2162,7 +2162,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0
-								scr_target_infirmary([player], [TypeMonster], 1, 2, [], [], false, -1, -1, -1, 6);
+								scr_target_infirmary(player, [player], [TypeMonster], 1, 2, [], [], false, -1, -1, -1, 6);
 								NextStep
 							break;
 							case 3:
@@ -2216,7 +2216,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0
-								scr_target_hand([player], [], 1, 12, [], [], true, position, -1, 6);
+								scr_target_hand(player, [player], [], 1, 12, [], [], true, position, -1, 6);
 								NextStep
 							break;
 							case 3:
@@ -2231,7 +2231,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								}
 								resolvingPile[positionInOrder,7] = 0
 								resolvingPile[positionInOrder,8] = 0
-								scr_target_field([player, player.opponent], [], [1, 4], [0, infinity], [0, infinity], [], [], -1, -1, 7)
+								scr_target_field(player, [player, player.opponent], [], [1, 4], [0, infinity], [0, infinity], [], [], -1, -1, 7)
 								NextStep
 							break;
 							case 5:
@@ -2251,15 +2251,15 @@ function scr_resolve_effect_in_pile(positionInOrder){
 		case 58://Man with A Shield Effect 
 			switch(effectNum){
 				case 0:
-					if(!player.fieldCard[position].getStatus(StatusSilenced) && !effectSilenced){
+					if(!effectSilenced){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0
-								scr_choose_field_zones([player], false, true, false, 6)
+								scr_choose_field_zones(player, [player], false, true, false, 6)
 								NextStep
 							break;
 							case 3:
-								scr_recruit(59, 0, resolvingPile[positionInOrder,6])
+								scr_recruit(59, 0, player, resolvingPile[positionInOrder,6])
 								FinishResolving
 							break;
 						}
@@ -2279,17 +2279,17 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0
-								scr_target_hand([player], [], 1, 12, [], [], true, position, -1, 6);
+								scr_target_hand(player, [player], [], 1, 12, [], [], true, position, -1, 6);
 								NextStep
 							break;
 							case 3:
 								scr_discard(player, resolvingPile[positionInOrder,6])
 								resolvingPile[positionInOrder,7] = 0;
-								scr_choose_field_zones([player], false, true, false, 7)
+								scr_choose_field_zones(player, [player], false, true, false, 7)
 								NextStep
 							break;
 							case 5:
-								scr_recruit(61, 0, resolvingPile[positionInOrder,7])
+								scr_recruit(61, 0, player, resolvingPile[positionInOrder,7])
 								FinishResolving
 							break;
 						}
@@ -2334,11 +2334,11 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0
-								scr_choose_field_zones([player], false, true, false, 6)
+								scr_choose_field_zones(player, [player], false, true, false, 6)
 								NextStep
 							break;
 							case 3:
-								scr_recruit(63, 0, resolvingPile[positionInOrder,6])
+								scr_recruit(63, 0, player, resolvingPile[positionInOrder,6])
 								FinishResolving
 							break;
 						}
@@ -2413,7 +2413,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							case 2:
 								resolvingPile[positionInOrder,6] = 0
 								resolvingPile[positionInOrder,7] = 0
-								scr_target_field([player, player.opponent], [], [1, 12], [0, infinity], [0, infinity], [], [SpiritAggressive, SpiritMalicious], -1, -1, 6)
+								scr_target_field(player, [player, player.opponent], [], [1, 12], [0, infinity], [0, infinity], [], [SpiritAggressive, SpiritMalicious], -1, -1, 6)
 								NextStep
 							break;
 							case 4:
@@ -2446,7 +2446,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				case 0:
 					if(!player.fieldCard[position].getStatus(StatusSilenced) && !effectSilenced){
 						for(var i = 0; i < player.field_zone_count; i++){
-							if(player.opponent.field[i]){
+							if(player.opponent.field[i,0]){
 								scr_damage_card(player.opponent, i, 1);
 							}
 						}
@@ -2489,7 +2489,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0
 								resolvingPile[positionInOrder,7] = 0
-								scr_target_field([player, player.opponent], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1, 6)
+								scr_target_field(player, [player, player.opponent], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1, 6)
 								NextStep
 							break;
 							case 3:
@@ -2545,7 +2545,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								scr_increase_stat_player(player, PlayerMana, -2);
 							case 3:
 								resolvingPile[positionInOrder,6] = 0;
-								scr_choose_field_zones([player], false, true, false, 6)
+								scr_choose_field_zones(player, [player], false, true, false, 6)
 								NextStep
 							break;
 							case 5:
@@ -2590,7 +2590,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0
 								resolvingPile[positionInOrder,7] = 0
-								scr_target_field([player.opponent], [], [1, 4], [0, infinity], [0, infinity], [], [], -1, -1, 6)
+								scr_target_field(player, [player.opponent], [], [1, 4], [0, infinity], [0, infinity], [], [], -1, -1, 6)
 								NextStep
 							break;
 							case 3:
@@ -2614,12 +2614,12 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0
-								scr_target_infirmary([player], [TypeMonster, TypeMomentum], 1, 12, [ArcNightmareBeast], [], true, -1, -1, -1, 7);
+								scr_target_infirmary(player, [player], [TypeMonster, TypeMomentum], 1, 12, [ArcNightmareBeast], [], true, -1, -1, -1, 7);
 								NextStep
 							break;
 							case 3:
 								resolvingPile[positionInOrder,7] = 0
-								scr_choose_field_zones([player], false, true, false, 7)
+								scr_choose_field_zones(player, [player], false, true, false, 7)
 								NextStep
 							break;
 							case 5:
@@ -2649,7 +2649,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							break;
 							case 2:
 								resolvingPile[positionInOrder,6] = 0;
-								scr_target_deck([player], [TypeMonster], 0, 12, [ArcSacrifice], [], false, -1, 6)
+								scr_target_deck(player, [player], [TypeMonster], 0, 12, [ArcSacrifice], [], false, -1, 6)
 								NextStep
 							break;
 							case 4:
@@ -2692,7 +2692,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0
 								resolvingPile[positionInOrder,7] = 0
-								scr_target_field([player], [], [1, 12], [0, infinity], [0, infinity], [ArcSacrifice], [], -1, -1, 6)
+								scr_target_field(player, [player], [], [1, 12], [0, infinity], [0, infinity], [ArcSacrifice], [], -1, -1, 6)
 								NextStep
 							break;
 							case 3:
@@ -2718,7 +2718,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0;
 								resolvingPile[positionInOrder,7] = 0;
-								scr_target_field([player.opponent], [], [1, 4], [0, infinity], [0, infinity], [], [], -1, -1, 6)
+								scr_target_field(player, [player.opponent], [], [1, 4], [0, infinity], [0, infinity], [], [], -1, -1, 6)
 								NextStep
 							break;
 							case 3:
@@ -2727,11 +2727,11 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								resolvingPile[positionInOrder,7] = reflectedMonster.getStat(StatHP);
 								scr_set_stat_card(resolvingPile[positionInOrder,7], resolvingPile[positionInOrder,6], StatusUnarmed, true);
 								resolvingPile[positionInOrder,10] = 0;
-								scr_choose_field_zones([player], false, true, false, 10)
+								scr_choose_field_zones(player, [player], false, true, false, 10)
 								NextStep
 							break;
 							case 5:
-								with(scr_recruit(116, 0, resolvingPile[positionInOrder,10])){
+								with(scr_recruit(116, 0, player, resolvingPile[positionInOrder,10])){
 									scr_set_stat_card(self.player, self.position, StatMaxHP, resolvingPile[positionInOrder,9])
 									scr_set_stat_card(self.player, self.position, StatATK, resolvingPile[positionInOrder,8])
 									scr_set_stat_card(self.player, self.position, StatHP, resolvingPile[positionInOrder,9])
@@ -2774,11 +2774,11 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0
-								scr_choose_field_zones([player], false, true, false, 6)
+								scr_choose_field_zones(player, [player], false, true, false, 6)
 								NextStep
 							break;
 							case 3:
-								scr_recruit(84, 0, resolvingPile[positionInOrder,6])
+								scr_recruit(84, 0, player, resolvingPile[positionInOrder,6])
 								FinishResolving
 							break;
 						}
@@ -2812,25 +2812,25 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 								}
 								if(randomResult < 90){
-									scr_choose_field_zones([player], false, true, false, 8);
+									scr_choose_field_zones(player, [player], false, true, false, 8);
 									NextStep
 									break;
 								}
 								if(randomResult < 98){
-									scr_choose_field_zones([player], false, true, false, 8);
+									scr_choose_field_zones(player, [player], false, true, false, 8);
 									resolvingPile[positionInOrder,2] = 6;
 									break;
 								}
 								resolvingPile[positionInOrder,7] = 86 //Goldfish
-								scr_choose_field_zones([player], false, true, false, 8);
+								scr_choose_field_zones(player, [player], false, true, false, 8);
 								NextStep
 							break;
 							case 5:
-								scr_recruit(resolvingPile[positionInOrder,7], 0, resolvingPile[positionInOrder,8])
+								scr_recruit(resolvingPile[positionInOrder,7], 0, player, resolvingPile[positionInOrder,8])
 								FinishResolving
 							break;
 							case 7:
-								scr_recruit(resolvingPile[positionInOrder,7], 0, resolvingPile[positionInOrder,8])
+								scr_recruit(resolvingPile[positionInOrder,7], 0, player, resolvingPile[positionInOrder,8])
 								resolvingPile[positionInOrder,6] = 10
 								resolvingPile[positionInOrder,2] = 3
 							break;
@@ -2866,25 +2866,25 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 								}
 								if(randomResult < 60){
-									scr_choose_field_zones([player], false, true, false, 8);
+									scr_choose_field_zones(player, [player], false, true, false, 8);
 									NextStep
 									break;
 								}
 								if(randomResult < 95){
-									scr_choose_field_zones([player], false, true, false, 8);
+									scr_choose_field_zones(player, [player], false, true, false, 8);
 									resolvingPile[positionInOrder,2] = 6;
 									break;
 								}
 								resolvingPile[positionInOrder,7] = 86//Goldfish
-								scr_choose_field_zones([player], false, true, false, 8);
+								scr_choose_field_zones(player, [player], false, true, false, 8);
 								NextStep
 							break;
 							case 5:
-								scr_recruit(resolvingPile[positionInOrder,7], 0, resolvingPile[positionInOrder,8])
+								scr_recruit(resolvingPile[positionInOrder,7], 0, player, resolvingPile[positionInOrder,8])
 								FinishResolving
 							break;
 							case 7:
-								scr_recruit(resolvingPile[positionInOrder,7], 0, resolvingPile[positionInOrder,8])
+								scr_recruit(resolvingPile[positionInOrder,7], 0, player, resolvingPile[positionInOrder,8])
 								resolvingPile[positionInOrder,6] = 40
 								resolvingPile[positionInOrder,2] = 3
 							break;
@@ -2919,19 +2919,19 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 								}
 								if(randomResult < 90){
-									scr_choose_field_zones([player], false, true, false, 9);
+									scr_choose_field_zones(player, [player], false, true, false, 9);
 									NextStep
 									break;
 								}
-								scr_target_field([player.opponent], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1, 9)
+								scr_target_field(player, [player.opponent], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1, 9)
 								resolvingPile[positionInOrder,2] = 6
 							break;
 							case 5:
-								scr_recruit(resolvingPile[positionInOrder,8], 0, resolvingPile[positionInOrder,9])
+								scr_recruit(resolvingPile[positionInOrder,8], 0, player, resolvingPile[positionInOrder,9])
 								FinishResolving
 							break;
 							case 7:
-								scr_destroy(resolvingPile[positionInOrder,10], resolvingPile[positionInOrder,9], SendEffect)
+								scr_destroy(resolvingPile[positionInOrder,10], player, resolvingPile[positionInOrder,9], SendEffect)
 								resolvingPile[positionInOrder,7] = 10
 								resolvingPile[positionInOrder,2] = 3
 							break;
@@ -2982,32 +2982,32 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 								}
 								if(randomResult < 30){
-									scr_choose_field_zones([player], false, true, false, 8);
+									scr_choose_field_zones(player, [player], false, true, false, 8);
 									NextStep
 									break;
 								}
 								if(randomResult < 90){
-									scr_choose_field_zones([player], false, true, false, 8);
+									scr_choose_field_zones(player, [player], false, true, false, 8);
 									resolvingPile[positionInOrder,2] = 6;
 									break;
 								}
 								resolvingPile[positionInOrder,7] = 86 //Goldfish
-								scr_choose_field_zones([player], false, true, false, 8);
+								scr_choose_field_zones(player, [player], false, true, false, 8);
 								resolvingPile[positionInOrder,2] = 8;
 							break;
 							case 5:
-								scr_recruit(resolvingPile[positionInOrder,7], 0, resolvingPile[positionInOrder,8])
+								scr_recruit(resolvingPile[positionInOrder,7], 0, player, resolvingPile[positionInOrder,8])
 								FinishResolving
 							break;
 							case 7:
-								with(scr_recruit(resolvingPile[positionInOrder,7], 0, resolvingPile[positionInOrder,8])){
+								with(scr_recruit(resolvingPile[positionInOrder,7], 0, player, resolvingPile[positionInOrder,8])){
 									scr_set_status_card(self.player, self.position, StatusUnarmed, true)
 								}
-								scr_choose_field_zones([player], false, true, false, 8);
+								scr_choose_field_zones(player, [player], false, true, false, 8);
 								NextStep
 							break;
 							case 9:
-								with(scr_recruit(resolvingPile[positionInOrder,7], 0, resolvingPile[positionInOrder,8])){
+								with(scr_recruit(resolvingPile[positionInOrder,7], 0, player, resolvingPile[positionInOrder,8])){
 									scr_set_status_card(self.player, self.position, StatusUnarmed, true)
 								}
 								FinishResolving
@@ -3039,46 +3039,46 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								resolvingPile[positionInOrder,8] = 0
 								
 								if(randomResult < 30){
-									scr_choose_field_zones([player], false, true, false, 8);
+									scr_choose_field_zones(player, [player], false, true, false, 8);
 									resolvingPile[positionInOrder, 2] = 8
 									break;
 								}
 								if(randomResult < 80){
-									scr_target_infirmary([player], [TypeMonster, TypeMomentum], 1, 12, [ArcFisherman], [], true, -1, -1, -1, 8)
+									scr_target_infirmary(player, [player], [TypeMonster, TypeMomentum], 1, 12, [ArcFisherman], [], true, -1, -1, -1, 8)
 									resolvingPile[positionInOrder, 2] = 10
 									break;
 								}
 								if(randomResult < 95){
-									scr_choose_field_zones([player], false, true, false, 8);
+									scr_choose_field_zones(player, [player], false, true, false, 8);
 									NextStep
 									break;								
 								}
 								resolvingPile[positionInOrder,7] = 86
-								scr_choose_field_zones([player], false, true, false, 8);
+								scr_choose_field_zones(player, [player], false, true, false, 8);
 								resolvingPile[positionInOrder,2] = 8
 							break;
 							case 5:
-								scr_recruit(resolvingPile[positionInOrder,7], 0, resolvingPile[positionInOrder,8])
-								scr_choose_field_zones([player], false, true, false, 8);
+								scr_recruit(resolvingPile[positionInOrder,7], 0, player, resolvingPile[positionInOrder,8])
+								scr_choose_field_zones(player, [player], false, true, false, 8);
 								NextStep
 							break;
 							case 7:
-								scr_recruit(resolvingPile[positionInOrder,7], 0, resolvingPile[positionInOrder,8])
-								scr_choose_field_zones([player], false, true, false, 8);
+								scr_recruit(resolvingPile[positionInOrder,7], 0, player, resolvingPile[positionInOrder,8])
+								scr_choose_field_zones(player, [player], false, true, false, 8);
 								NextStep
 							break;
 							case 9:
-								scr_recruit(resolvingPile[positionInOrder,7], 0, resolvingPile[positionInOrder,8])
-								scr_choose_field_zones([player], false, true, false, 7);
+								scr_recruit(resolvingPile[positionInOrder,7], 0, player, resolvingPile[positionInOrder,8])
+								scr_choose_field_zones(player, [player], false, true, false, 7);
 								FinishResolving
 							break;
 							case 11:
-								scr_choose_field_zones([player], false, true, false, 9);
+								scr_choose_field_zones(player, [player], false, true, false, 9);
 								NextStep
 							break;
 							case 13:
 								scr_summon_from_infirmary(player, resolvingPile[positionInOrder,8], resolvingPile[positionInOrder,9])
-								scr_choose_field_zones([player], false, true, false, 8);
+								scr_choose_field_zones(player, [player], false, true, false, 8);
 								resolvingPile[positionInOrder, 2] = 8
 							break;
 						}
@@ -3125,25 +3125,25 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 								}
 								if(randomResult < 90){
-									scr_choose_field_zones([player], false, true, false, 8);
+									scr_choose_field_zones(player, [player], false, true, false, 8);
 									NextStep
 									break;
 								}
 								if(randomResult < 98){
-									scr_choose_field_zones([player], false, true, false, 8);
+									scr_choose_field_zones(player, [player], false, true, false, 8);
 									resolvingPile[positionInOrder,2] = 6;
 									break;
 								}
 								resolvingPile[positionInOrder,7] = 86 //Goldfish
-								scr_choose_field_zones([player], false, true, false, 8);
+								scr_choose_field_zones(player, [player], false, true, false, 8);
 								NextStep
 							break;
 							case 5:
-								scr_recruit(resolvingPile[positionInOrder,7], 0, resolvingPile[positionInOrder,8])
+								scr_recruit(resolvingPile[positionInOrder,7], 0, player, resolvingPile[positionInOrder,8])
 								FinishResolving
 							break;
 							case 7:
-								scr_recruit(resolvingPile[positionInOrder,7], 0, resolvingPile[positionInOrder,8])
+								scr_recruit(resolvingPile[positionInOrder,7], 0, player, resolvingPile[positionInOrder,8])
 								resolvingPile[positionInOrder,6] = 10
 								resolvingPile[positionInOrder,2] = 3
 							break;
@@ -3185,16 +3185,16 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 								}
 								if(randomResult < 95){
-									scr_choose_field_zones([player], false, true, false, 9);
+									scr_choose_field_zones(player, [player], false, true, false, 9);
 									NextStep
 									break;
 								}
 								resolvingPile[positionInOrder,8] = 86 //Goldfish
-								scr_choose_field_zones([player], false, true, false, 9);
+								scr_choose_field_zones(player, [player], false, true, false, 9);
 								NextStep
 							break;
 							case 6:
-								scr_recruit(resolvingPile[positionInOrder,8], 0, resolvingPile[positionInOrder,9])
+								scr_recruit(resolvingPile[positionInOrder,8], 0, player, resolvingPile[positionInOrder,9])
 								resolvingPile[positionInOrder,2] = 2
 							break;
 						}
@@ -3281,7 +3281,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								scr_voidfy_infirmary(player, resolvingPile[positionInOrder,6]);
 								scr_draw(player, 2, true);
 								resolvingPile[positionInOrder,7] = 0
-								scr_target_deck([player], [TypeMonster], 1, 12, [ArcFisherman], [], false, -1, 7);
+								scr_target_deck(player, [player], [TypeMonster], 1, 12, [ArcFisherman], [], false, -1, 7);
 								NextStep
 							break;
 							case 5:
@@ -3317,7 +3317,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0
 								resolvingPile[positionInOrder,7] = 0
-								scr_target_field([player, player.opponent], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1, 6)
+								scr_target_field(player, [player, player.opponent], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1, 6)
 								NextStep
 							break;
 							case 3:
@@ -3341,7 +3341,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0
-								scr_target_hand([player], [TypeMonster], 1, 12, [], [], false, position, -1, 6)
+								scr_target_hand(player, [player], [TypeMonster], 1, 12, [], [], false, position, -1, 6)
 								NextStep
 							break;
 							case 3:
@@ -3366,7 +3366,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0
-								scr_target_hand([player], [], 1, 12, [], [], false, position, -1, 6)
+								scr_target_hand(player, [player], [], 1, 12, [], [], false, position, -1, 6)
 								NextStep
 							break;
 							case 3:
@@ -3455,7 +3455,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0;
-								scr_target_deck([player], [TypeMonster], 1, 12, [ArcXMakine], [], false, -1, 6)
+								scr_target_deck(player, [player], [TypeMonster], 1, 12, [ArcXMakine], [], false, -1, 6)
 								NextStep
 							break;
 							case 3:
@@ -3481,7 +3481,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0;
-								scr_target_infirmary([player], [TypeMonster], 1, 12, [ArcXMakine], [], false, -1, -1, -1, 6)
+								scr_target_infirmary(player, [player], [TypeMonster], 1, 12, [ArcXMakine], [], false, -1, -1, -1, 6)
 								NextStep
 							break;
 							case 3:
@@ -3508,7 +3508,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0
 								resolvingPile[positionInOrder,7] = 0
-								scr_target_field([player, player.opponent], [], [1, 11], [0, infinity], [0, infinity], [ArcXMakine], [], position, -1, 6)
+								scr_target_field(player, [player, player.opponent], [], [1, 11], [0, infinity], [0, infinity], [ArcXMakine], [], position, -1, 6)
 								NextStep
 							break;
 							case 3:
@@ -3536,7 +3536,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0
 								resolvingPile[positionInOrder,7] = 0
-								scr_target_field([player.opponent], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1, 6)
+								scr_target_field(player, [player.opponent], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1, 6)
 								NextStep
 							break;
 							case 3:
@@ -3568,12 +3568,12 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0
 								
-								scr_target_deck([player], [TypeMonster], 1, 12, [ArcXMakine], [], true, -1, 6)
+								scr_target_deck(player, [player], [TypeMonster], 1, 12, [ArcXMakine], [], true, -1, 6)
 								NextStep
 							break;
 							case 3:
 								resolvingPile[positionInOrder,7] = 0
-								scr_choose_field_zones([player], false, true, false, 7)
+								scr_choose_field_zones(player, [player], false, true, false, 7)
 								NextStep
 							break;
 							case 5:
@@ -3603,7 +3603,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							case 3:
 								resolvingPile[positionInOrder,7] = 0;
 								resolvingPile[positionInOrder,8] = 0;
-								scr_target_field([player], [], [1, 12], [0, infinity], [0, infinity], [ArcXMakine], [], -1, -1, 6)
+								scr_target_field(player, [player], [], [1, 12], [0, infinity], [0, infinity], [ArcXMakine], [], -1, -1, 6)
 								NextStep
 							break;
 							case 5:
@@ -3639,11 +3639,11 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							break;
 							case 3:
 								resolvingPile[positionInOrder,6] = 0
-								scr_target_momentum_deck([player], 1, 12, [ArcXMakine], [], true, -1, 6)
+								scr_target_momentum_deck(player, [player], 1, 12, [ArcXMakine], [], true, -1, 6)
 							break;
 							case 5:
 								resolvingPile[positionInOrder,7] = 0
-								scr_choose_field_zones([player], false, false, true, 7)
+								scr_choose_field_zones(player, [player], false, false, true, 7)
 								NextStep
 							break;
 							case 7:

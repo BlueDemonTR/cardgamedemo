@@ -8,7 +8,7 @@ function scr_summon(cardArray, player, summonType, animationType, summonZone){
 	
 	with(player){
 		if(!instance_exists(fieldCard[summonZone])){
-			fieldCard[summonZone] = instance_create_depth(field_card_zone_x[summonZone],field_card_zone_y[summonZone], 1, player == obj_player ? obj_field_card : obj_opponent_field_card);
+			fieldCard[summonZone] = instance_create_depth(x,y, 1, player == obj_player ? obj_field_card : obj_opponent_field_card);
 			with(fieldCard[summonZone]){
 				summoning_method = summonType
 				self.player = player;
@@ -17,8 +17,8 @@ function scr_summon(cardArray, player, summonType, animationType, summonZone){
 				self.cardNum = cardNum;
 				self.artNum = artNum;
 				self.position = summonZone;
-				field_x = self.player.field_card_zone_x[self.position];
-				field_y = self.player.field_card_zone_y[self.position];
+				x = self.player.field_card_zone_x[self.position];
+				y = self.player.field_card_zone_y[self.position];
 				
 				scr_info_to_instance(cardNum);
 				effectUsesLeft = getStat(StatEffectUsesPerTurn)

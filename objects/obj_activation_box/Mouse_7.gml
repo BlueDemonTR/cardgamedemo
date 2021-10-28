@@ -53,8 +53,12 @@ switch(activation_mode){
 		obj_infirmary.alarm[1] = 3;
 	break;
 	case FunctionChoices:
-		obj_player.resolvingPile[obj_player.resolvingPileCount-1,arrayPos] = choiceNum;
-		obj_player.resolvingPile[obj_player.resolvingPileCount-1,2]++
+		if(obj_player.own_turn){
+			obj_player.resolvingPile[obj_player.resolvingPileCount-1,arrayPos] = choiceNum;
+			obj_player.resolvingPile[obj_player.resolvingPileCount-1,2]++
+		}else{
+			scr_message_handle_response(arrayPos, choiceNum)
+		}
 	break;	
 }
 with(obj_activation_box){

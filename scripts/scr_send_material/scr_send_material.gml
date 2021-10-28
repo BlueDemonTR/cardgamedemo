@@ -12,6 +12,6 @@ function scr_send_material(player, position, summonedCard){
 	
 	scr_remove_from_field(player, position, "destroy")
 	
-	scr_on_material(cardNum, summonedCard)
+	scr_on_material(cardNum, player, summonedCard)
 	return infirmaryPos;
 }
