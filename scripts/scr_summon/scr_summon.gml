@@ -27,7 +27,7 @@ function scr_summon(cardArray, player, summonType, animationType, summonZone){
 				
 				recruit=false;				
 			}
-			scr_decide_field(player, summonZone, cardNum, artNum,"none");
+			scr_decide_field(player, summonZone, cardNum, artNum, summonType);
 			field[summonZone] = [cardNum, artNum];
 			if(summonType != SummonInvalid){
 				with(fieldCard[summonZone]){

@@ -14,7 +14,7 @@ function scr_destroy(player, position, destroyType) {
 
 	var infirmaryPos = scr_send_infirmary(player, [cardNum, artNum], destroyType)
 	
-	scr_remove_from_field(player, position, "destroy")
+	scr_remove_from_field(player, position, 0)
 	
 	scr_on_destroyed(cardNum, player, infirmaryPos, destroyType);
 	return;

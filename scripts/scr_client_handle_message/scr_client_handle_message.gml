@@ -30,7 +30,7 @@ function scr_client_handle_message(buffer) {
 				var position = buffer_read(buffer, buffer_u8),
 				cardNum = buffer_read(buffer, buffer_u32),
 				artNum = buffer_read(buffer, buffer_u8),
-				animationType = buffer_read(buffer, buffer_string);
+				animationType = buffer_read(buffer, buffer_u8);
 
 				with(opponentObject){
 					field[position,0] = cardNum;
@@ -57,7 +57,7 @@ function scr_client_handle_message(buffer) {
 						}
 						break;//Card has turned into another card without ever leaving the field (THIS SHOULDN'T HAPPEN(I think))
 					}
-					with(scr_summon([cardNum, artNum], player, SummonInvalid, "", position)){
+					with(scr_summon([cardNum, artNum], player, SummonInvalid, 0, position)){
 						summoning_method = animationType
 						break;//Summon a new card
 					}
@@ -177,7 +177,7 @@ function scr_client_handle_message(buffer) {
 				var position = buffer_read(buffer, buffer_u8),
 				cardNum = buffer_read(buffer, buffer_u32),
 				artNum = buffer_read(buffer, buffer_u8),
-				animationType = buffer_read(buffer, buffer_string);//This is leaveType or summonType
+				animationType = buffer_read(buffer, buffer_u8);//This is leaveType or summonType
 
 				with(obj_player){
 					field[position,0] = cardNum;
@@ -193,7 +193,7 @@ function scr_client_handle_message(buffer) {
 						with(fieldCard[position]){
 							self.cardNum = cardNum
 							self.artNum = artNum
-							summoning_method = SummonInvalid
+							summoning_method = animationType
 
 							scr_info_to_instance(cardNum);
 							effectUsesLeft = getStat(StatEffectUsesPerTurn)
@@ -205,7 +205,7 @@ function scr_client_handle_message(buffer) {
 						break;//Card has turned into another card without ever leaving the field (THIS SHOULDN'T HAPPEN(I think))
 					}
 					if(cardNum != 0){
-						with(scr_summon([cardNum, artNum], player, SummonInvalid, "", position)){
+						with(scr_summon([cardNum, artNum], player, SummonInvalid, 0, position)){
 							summoning_method = animationType
 							break;//New card is summoned
 						}

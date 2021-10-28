@@ -9,7 +9,7 @@ function scr_sacrifice(player, position) {
 	artNum = affectedCard.artNum,
 	manaGain = affectedCard.getStat(StatLevel);
 	
-	scr_remove_from_field(player, position, "destroy")
+	scr_remove_from_field(player, position, 0)
 	
 	scr_increase_stat_player(player, PlayerMana, manaGain);
 	scr_send_infirmary(player, [cardNum, artNum], SendSacrifice);

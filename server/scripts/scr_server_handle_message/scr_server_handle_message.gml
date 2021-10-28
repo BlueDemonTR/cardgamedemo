@@ -51,7 +51,7 @@ function scr_server_handle_message(argument0, argument1) {
 				position = buffer_read(buffer, buffer_u8),
 				cardNum = buffer_read(buffer, buffer_u32),
 				artNum = buffer_read(buffer, buffer_u8),
-				leaveType = buffer_read(buffer, buffer_string);
+				leaveType = buffer_read(buffer, buffer_u8);
 			
 				buffer_seek(send_buffer, buffer_seek_start, 0);
 				buffer_write(send_buffer, buffer_u8, message_id);
@@ -59,7 +59,7 @@ function scr_server_handle_message(argument0, argument1) {
 				buffer_write(send_buffer, buffer_u8, position);
 				buffer_write(send_buffer, buffer_u32, cardNum);
 				buffer_write(send_buffer, buffer_u8, artNum);
-				buffer_write(send_buffer, buffer_string, leaveType);
+				buffer_write(send_buffer, buffer_u8, leaveType);
 
 				network_send_raw(temp2, send_buffer, buffer_tell(send_buffer));
 			break;

@@ -3,7 +3,7 @@ function scr_summon_from_infirmary(player, infirmaryPos, summonZone) {
 	artNum = player.infirmary[infirmaryPos,1];
 		
 		
-	if(!scr_summon([cardNum, artNum], player, SummonEffect, "playerInfirmaryToField", summonZone)){
+	if(!scr_summon([cardNum, artNum], player, SummonEffect, 0, summonZone)){
 		resolvingPile[obj_player.resolvingPileCount-1,2] = 97;
 		return;
 	}

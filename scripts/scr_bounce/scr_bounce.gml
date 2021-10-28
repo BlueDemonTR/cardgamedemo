@@ -14,7 +14,7 @@ function scr_bounce(player, position) {
 	if(macros.card_type[cardNum] != TypeMomentum && handCount <= handSizeLimit){
 		scr_add_to_hand(player, [cardNum, artNum])
 		
-		scr_remove_from_field(player, position, "destroy")
+		scr_remove_from_field(player, position, 0)
 	}else{
 		scr_spin(player, position)
 	}

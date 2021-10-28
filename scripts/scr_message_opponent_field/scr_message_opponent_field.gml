@@ -5,7 +5,7 @@ function scr_message_opponent_field(position, cardNum, artNum, animationType) {
 	buffer_write(obj_client.send_buffer, buffer_u8, position);
 	buffer_write(obj_client.send_buffer, buffer_u32, cardNum);
 	buffer_write(obj_client.send_buffer, buffer_u8, artNum);
-	buffer_write(obj_client.send_buffer, buffer_string, animationType);
+	buffer_write(obj_client.send_buffer, buffer_u8, animationType);
 
 	network_send_raw(obj_client.socket, obj_client.send_buffer, buffer_tell(obj_client.send_buffer));
 

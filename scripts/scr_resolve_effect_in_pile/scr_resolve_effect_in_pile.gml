@@ -2632,7 +2632,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0
-								scr_target_infirmary(player, [player], [TypeMonster, TypeMomentum], 1, 12, [ArcNightmareBeast], [], true, -1, -1, -1, 7);
+								scr_target_infirmary(player, [player], [TypeMonster, TypeMomentum], 5, 12, [], [], true, -1, -1, -1, 6);
 								NextStep
 							break;
 							case 3:
