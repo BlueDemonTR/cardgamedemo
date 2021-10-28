@@ -15,7 +15,7 @@ function scr_grouplists() {
 	group_id[i] = i;
 	//starts_with[i] =;
 	//ends_with[i]=;
-	group_name[i++] = "Genociders (Chapter 1)";
+	group_name[i++] = "Viscladess (Chapter 1)";
 
 
 	group_id[i] = i;

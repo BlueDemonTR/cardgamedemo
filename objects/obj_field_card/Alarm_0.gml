@@ -3,7 +3,7 @@ if(self.player.open_game_state && self.player.main_phase){
 	player = self.player,
 	i=0,
 	ownerObject = self;
-	if(attacksLeft && !getStatus(StatusUnarmed) && !getStatus(StatusParalyzed) && player.turn_count != 1 && array_length(scr_count_attack(self))){
+	if(attacksLeft && !getStatus(StatusUnarmed) && !getStatus(StatusParalyzed)	&& player.turn_count != 1 && array_length(scr_count_attack(self))){
 		with(instance_create_depth(x,y,depth-1,obj_activation_box)){
 			activation_mode = FunctionAttack;
 			self.position = position;

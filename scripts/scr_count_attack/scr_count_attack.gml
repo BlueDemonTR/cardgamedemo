@@ -14,9 +14,9 @@ function scr_count_attack(attacker){
 	
 	for(var i = 0; i < 5; i++){
 		if(!opponent.field[i, 0]){continue;}
-		if(!opponent.fieldCard[i].getStatus(StatusSneaky) && (!tauntExists || !opponent.fieldCard[i].getStatus(StatusTAUNT))){
-			array_push(attackArray, i);
-		}
+		if(opponent.fieldCard[i].getStatus(StatusSneaky)){continue;} 
+		if(tauntExists && !opponent.fieldCard[i].getStatus(StatusTAUNT)){continue}
+		array_push(attackArray, i);
 	}
 	return attackArray;
 }

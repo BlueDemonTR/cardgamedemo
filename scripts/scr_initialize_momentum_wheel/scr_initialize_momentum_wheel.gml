@@ -43,12 +43,12 @@ function scr_initialize_momentum_wheel() {
 	wheel_cost[i, 3] = 12;
 	i++;
 
-	//Genocider Wheel
+	//Visclades Wheel
 
 
 
 	wheel_name[i] = "Lentus' leftover wheel";
-	momentum_gain[i] = "When you mana summon a ''Genocider'' monster, gain momentum equal to its level";
+	momentum_gain[i] = "When you mana summon a ''Visclades'' monster, gain momentum equal to its level";
 	wheel_ability[i, 0] = "Gain 2 mana";	
 	wheel_cost[i, 0] = 3;
 	wheel_ability[i, 1] = "Search ''Cries of the Underworld''";

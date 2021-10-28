@@ -30,12 +30,12 @@ function scr_initialize_shared_effects() {
 	i++;
 
 	shared_effect_name[i] ="Igloo";
-	shared_effect[i]="Summoned: Bounce all other igloo monsters";
+	shared_effect[i]="Summoned: Bounce all other ''Igloo'' monsters";
 	shared_effect_symbol[i] = spr_igloo_symbol;
 	i++;
 	
 	shared_effect_name[i] ="Sacrifice";
-	shared_effect[i]="Destroyed: Recruit 3 ''Useless Sacrifice''s";
+	shared_effect[i]="Destroyed: Recruit 2 ''Useless Sacrifice''s";
 	shared_effect_symbol[i] = spr_sacrifice_symbol;
 	i++;
 

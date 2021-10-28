@@ -9,7 +9,7 @@ if (player.main_phase && player.open_game_state && player.own_turn){
 			if(macros.origStat[self.cardNum,StatLevel] > player.getStat(PlayerMana)){
 				break;
 			}
-			if(scr_summon([cardNum, artNum], player, SummonMana, "none", fieldZone)){
+			if(scr_summon([cardNum, artNum], player, SummonMana, 0, fieldZone)){
 				scr_increase_stat_player(player, PlayerMana, -macros.origStat[self.cardNum,StatLevel])
 				scr_remove_from_hand(player, position)
 			}

@@ -6,9 +6,6 @@ randomize()
 //don't set it to true in online
 test_mode = macros.test_mode;
 
-//TODO: Remove
-mid_effect = false
-
 //hand location
 hand_x = 550;
 hand_y = 1000;
@@ -51,8 +48,8 @@ for(i = 0; i < 65; i++){
 }
 momentumDeckCount = 0;
 for(i = 0; i < 8; i++){
-	momentumDeck[i, 0] = 0;
-	momentumDeck[i, 1] = 0;
+	momentumDeck[i,0] = 0;
+	momentumDeck[i,1] = 0;
 }
 selected_wheel = 0;
 
@@ -61,6 +58,7 @@ scr_construct_global_deck();
 scr_shuffle_deck(player);
 
 //Stacking the deck for debug purposes here
+deck[deckCount++] = [72,0]
 
 //Field Card Zone Locations and initializations
 i = 0;

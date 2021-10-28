@@ -33,11 +33,11 @@ function scr_on_summon(cardNum){
 		case 4://Motorbiker V-Rider Activation Trigger
 		case 5://Motorbiker D-Rider Activation Trigger
 		case 7://Motorbiker Protector Activation Trigger
-		case 22://Envious Genocider Tia Invaden	Activation Trigger	
-		case 27://Genocider of Rejection Activation Trigger
-		case 28://Genocider of Anger Activation Trigger
-		case 30://Genocider of Depression Activation Trigger
-		case 31://Genocider of Acceptance Activation Trigger
+		case 22://Envious Visclades Tia Invaden	Activation Trigger	
+		case 27://Visclades of Rejection Activation Trigger
+		case 28://Visclades of Anger Activation Trigger
+		case 30://Visclades of Depression Activation Trigger
+		case 31://Visclades of Acceptance Activation Trigger
 		case 33://Pole Clan Builder Activation Trigger
 		case 36://Pole Clan Defender Activation Trigger
 		case 37://Pole Clan Beast Activation Trigger

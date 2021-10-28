@@ -1,6 +1,6 @@
 //Tries to end the turn every 30 frames if the game state is open
 
-if(!mid_effect && open_game_state){
+if(open_game_state){
 	if(endTurnTimer-- > 0){
 		alarm[2] = 1;
 	}else{

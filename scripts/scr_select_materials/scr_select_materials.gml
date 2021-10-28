@@ -170,8 +170,10 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 						array_push(selectableTargets, 4);
 						break;
 					}
-					if(!keyMonsterHere && scr_check_archetype(player.field[position, 0], keyMonster) && FieldCard.getStat(StatLevel) < levelRequired){
-						array_push(selectableTargets,position)
+					if(!keyMonsterHere){
+						if(scr_check_archetype(player.field[position, 0], keyMonster) && FieldCard.getStat(StatLevel) < levelRequired){
+							array_push(selectableTargets,position)
+						}
 					}else if(scr_check_archetype(player.field[position, 0], mainMaterial) && FieldCard.getStat(StatLevel) < levelRequired){
 						array_push(selectableTargets,position)
 					}
@@ -227,8 +229,10 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 						array_push(selectableTargets, 4);
 						break;
 					}
-					if(!keyMonsterHere && player.field[position, 0] == keyMonster && FieldCard.getStat(StatLevel) < levelRequired){
-						array_push(selectableTargets,position)
+					if(!keyMonsterHere){
+						if(player.field[position, 0] == keyMonster && FieldCard.getStat(StatLevel) < levelRequired){
+							array_push(selectableTargets,position)
+						}
 					}else if(scr_check_archetype(player.field[position, 0], mainMaterial) && FieldCard.getStat(StatLevel) < levelRequired){
 						array_push(selectableTargets,position)
 					}

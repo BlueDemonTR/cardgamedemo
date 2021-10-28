@@ -30,11 +30,6 @@ if(end_phase && !endTurnEffectActivated){
 	endTurnEffectActivated = true
 }
 
-if(!own_turn|| !open_game_state || obj_action_list.open_list){
-	mid_effect = true;
-}
-else{mid_effect = false;}
-
 if(resolvingPileCount){
 	if(resolvingPile[resolvingPileCount-1,2] != 99){
 		if(resolvingPile[resolvingPileCount-1,2] = 0){
