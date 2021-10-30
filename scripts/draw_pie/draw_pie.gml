@@ -16,7 +16,7 @@ function draw_pie(x ,y ,value, max, colour, radius, transparency){
         draw_vertex(x, y);
         for(i=0; i<=val; i++) {
 			
-            len = (i*sizeofsection)+90; // the 90 here is the starting angle
+            len = (i*sizeofsection) + 90; // the 90 here is the starting angle
             tx = lengthdir_x(radius, len);
             ty = lengthdir_y(radius, len);
             draw_vertex(x+tx, y+ty);

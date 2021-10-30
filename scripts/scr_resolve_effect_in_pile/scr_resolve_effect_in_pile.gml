@@ -3140,9 +3140,9 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					if(!effectSilenced){
 						switch(resolutionStep){
 							case 1:
-								resolvingPile[positionInOrder,6] = irandom(100)
-								resolvingPile[positionInOrder,6] = 0
-								scr_run_animation(3,resolvingPile[positionInOrder,6] + 1, 10,c_red, 80,c_blue, 8,c_green, 2,c_yellow)
+								resolvingPile[positionInOrder,6] = irandom(99)
+								resolvingPile[positionInOrder,6] = 99
+								scr_run_animation(3,resolvingPile[positionInOrder,6] - .8, 10,c_red, 80,c_blue, 8,c_green, 2,c_yellow)
 								NextStep
 								//NextStep//Delete this one after the animation is added
 							break;
