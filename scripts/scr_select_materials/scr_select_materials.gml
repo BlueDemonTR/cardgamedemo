@@ -259,6 +259,8 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 				FieldCard = player.fieldCard[position],
 				levelIncrease = 0;
 					
+				if(!instance_exists(FieldCard)){continue}
+				
 				if(FieldCard.getStat(StatLevel) < levelRequired){
 					levelIncrease = FieldCard.getStat(StatLevel)
 					mainMaterialCount++
@@ -275,6 +277,8 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 				var selectableTargets = [];
 				for(var position = 0; position < player.field_zone_count - 1; position++){
 					var FieldCard = player.fieldCard[position];
+					
+					if(!instance_exists(FieldCard)){continue}
 					
 					if(mmzOccupied && !array_includes(selectableTargets, 4)){
 						array_push(selectableTargets, 4);

@@ -656,7 +656,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 										}
 										instance_destroy(obj_appropiate_targets)
 										resolvingPile[positionInOrder,8] = 0
-										scr_choose_field_zones(player, [player], false, false, true, 7)
+										scr_choose_field_zones(player, [player], false, false, true, 8)
 										NextStep
 									break;
 									case 8:
@@ -2811,9 +2811,9 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					if(!(instance_exists(player.fieldCard[position]) && player.fieldCard[position].getStatus(StatusSilenced)) && !effectSilenced){
 						switch(resolutionStep){
 							case 1:
-								resolvingPile[positionInOrder,6] = irandom(100)
+								resolvingPile[positionInOrder,6] = irandom(99)
 								NextStep
-								NextStep//Delete this one after the animation is added
+								scr_run_animation(3, resolvingPile[positionInOrder,6], [10,c_grey], [80,c_blue], [8,c_green], [2,c_yellow])
 							break;
 							case 3:
 								var randomResult = resolvingPile[positionInOrder,6]
@@ -2880,9 +2880,9 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					if(!(instance_exists(player.fieldCard[position]) && player.fieldCard[position].getStatus(StatusSilenced)) && !effectSilenced){
 						switch(resolutionStep){
 							case 1:
-								resolvingPile[positionInOrder,6] = irandom(100)
+								resolvingPile[positionInOrder,6] = irandom(99)
 								NextStep
-								NextStep//Delete this one after the animation is added
+								scr_run_animation(3, resolvingPile[positionInOrder,6], [40,c_red], [20,c_blue], [35,c_green], [5,c_yellow])
 							break;
 							case 3:
 								var randomResult = resolvingPile[positionInOrder,6]
@@ -2934,9 +2934,9 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					if(!(instance_exists(player.fieldCard[position]) && player.fieldCard[position].getStatus(StatusSilenced)) && !effectSilenced){
 						switch(resolutionStep){
 							case 1:
-								resolvingPile[positionInOrder,6] = irandom(100)
+								resolvingPile[positionInOrder,6] = irandom(99)
 								NextStep
-								NextStep//Delete this one after the animation is added
+								scr_run_animation(3, resolvingPile[positionInOrder,6], [10,c_red], [80,c_blue], [8,c_orange])
 							break;
 							case 3:
 								var randomResult = resolvingPile[positionInOrder,6]
@@ -2948,20 +2948,20 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 								}
 								if(randomResult < 90){
-									scr_choose_field_zones(player, [player], false, true, false, 9);
+									scr_choose_field_zones(player, [player], false, true, false, 8);
 									NextStep
 									break;
 								}
 								scr_target_field(player, [player.opponent], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1, 9)
-								resolvingPile[positionInOrder,2] = 6
+								resolvingPile[positionInOrder,2] = resolvingPile[positionInOrder,2] == 97 ? 98 : 6
 							break;
 							case 5:
-								scr_recruit(resolvingPile[positionInOrder,8], 0, player, resolvingPile[positionInOrder,9])
+								scr_recruit(resolvingPile[positionInOrder,7], 0, player, resolvingPile[positionInOrder,8])
 								FinishResolving
 							break;
 							case 7:
 								scr_destroy(resolvingPile[positionInOrder,10], resolvingPile[positionInOrder,9], SendEffect)
-								resolvingPile[positionInOrder,7] = 10
+								resolvingPile[positionInOrder,6] = 10
 								resolvingPile[positionInOrder,2] = 3
 							break;
 						}
@@ -2976,13 +2976,8 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				case 1://ATK Gain
 					if(!(instance_exists(player.fieldCard[position]) && player.fieldCard[position].getStatus(StatusSilenced)) && !effectSilenced){
 						scr_increase_stat_card(player, position, StatATK, 1)
-						FinishResolving
-					}else{
-						FinishResolving
 					}
-					if(resolutionStep = 98){
-						NextEffect
-					}
+					NextEffect
 				break;
 			}
 		break;
@@ -2992,9 +2987,9 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					if(!(instance_exists(player.fieldCard[position]) && player.fieldCard[position].getStatus(StatusSilenced)) && !effectSilenced){
 						switch(resolutionStep){
 							case 1:
-								resolvingPile[positionInOrder,6] = irandom(100)
-								NextStep
-								NextStep//Delete this one after the animation is added
+								resolvingPile[positionInOrder,6] = irandom(99)
+							NextStep
+								scr_run_animation(3, resolvingPile[positionInOrder,6], [10,c_grey], [20,c_blue], [60,c_green], [10,c_yellow])
 							break;
 							case 3:
 								var randomResult = resolvingPile[positionInOrder,6]
@@ -3004,7 +2999,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								if(randomResult < 10){
 									for(var i = 0; i < player.field_zone_count; i++){
 										if(scr_check_archetype(player.field[i, 0], ArcFish)){
-											scr_set_stat_card(player, i, StatusUnarmed, true)
+											scr_set_status_card(player, i, StatusUnarmed, true)
 										}
 									}									
 									FinishResolving
@@ -3012,30 +3007,26 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								}
 								if(randomResult < 30){
 									scr_choose_field_zones(player, [player], false, true, false, 8);
-									NextStep
+									resolvingPile[positionInOrder,2] = 6;
 									break;
 								}
 								if(randomResult < 90){
 									scr_choose_field_zones(player, [player], false, true, false, 8);
-									resolvingPile[positionInOrder,2] = 6;
+									NextStep
 									break;
 								}
 								resolvingPile[positionInOrder,7] = 86 //Goldfish
 								scr_choose_field_zones(player, [player], false, true, false, 8);
-								resolvingPile[positionInOrder,2] = 8;
+								resolvingPile[positionInOrder,2] = 6;
 							break;
 							case 5:
-								scr_recruit(resolvingPile[positionInOrder,7], 0, player, resolvingPile[positionInOrder,8])
-								FinishResolving
-							break;
-							case 7:
 								with(scr_recruit(resolvingPile[positionInOrder,7], 0, player, resolvingPile[positionInOrder,8])){
 									scr_set_status_card(self.player, self.position, StatusUnarmed, true)
 								}
 								scr_choose_field_zones(player, [player], false, true, false, 8);
 								NextStep
 							break;
-							case 9:
+							case 7:
 								with(scr_recruit(resolvingPile[positionInOrder,7], 0, player, resolvingPile[positionInOrder,8])){
 									scr_set_status_card(self.player, self.position, StatusUnarmed, true)
 								}
@@ -3058,9 +3049,9 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					if(!(instance_exists(player.fieldCard[position]) && player.fieldCard[position].getStatus(StatusSilenced)) && !effectSilenced){
 						switch(resolutionStep){
 							case 1:
-								resolvingPile[positionInOrder,6] = irandom(100)
+								resolvingPile[positionInOrder,6] = irandom(99)
 								NextStep
-								NextStep//Delete this one after the animation is added
+								scr_run_animation(3, resolvingPile[positionInOrder,6], [30,c_blue], [50,c_fuchsia], [8,c_green], [2,c_yellow])
 							break;
 							case 3:
 								var randomResult = resolvingPile[positionInOrder,6]
@@ -3074,7 +3065,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								}
 								if(randomResult < 80){
 									scr_target_infirmary(player, [player], [TypeMonster, TypeMomentum], 1, 12, [ArcFisherman], [], true, -1, -1, -1, 8)
-									resolvingPile[positionInOrder, 2] = 10
+									resolvingPile[positionInOrder,2] = resolvingPile[positionInOrder,2] == 97 ? 98 : 10
 									break;
 								}
 								if(randomResult < 95){
@@ -3098,7 +3089,6 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							break;
 							case 9:
 								scr_recruit(resolvingPile[positionInOrder,7], 0, player, resolvingPile[positionInOrder,8])
-								scr_choose_field_zones(player, [player], false, true, false, 7);
 								FinishResolving
 							break;
 							case 11:
@@ -3121,14 +3111,10 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				break;
 				case 1://Stat Gain
 					if(!(instance_exists(player.fieldCard[position]) && player.fieldCard[position].getStatus(StatusSilenced)) && !effectSilenced){
-						var foishi = resolvingPile[positionInOrder,6]
-						scr_increase_stat_card(player, position, StatATK, macros.origStat[foishi, StatATK]);
-						scr_increase_stat_card(player, position, StatMaxHP, macros.origStat[foishi, StatMaxHP]);
-						scr_increase_stat_card(player, position, StatHP, macros.origStat[foishi, StatHP]);
-					}else{
-						FinishResolving
-					}
-					if(resolutionStep = 98){
+						var foishi = player.fieldCard[resolvingPile[positionInOrder,6]]
+						scr_increase_stat_card(player, position, StatATK, foishi.getStat(StatATK));
+						scr_increase_stat_card(player, position, StatMaxHP, foishi.getStat(StatHP));
+						scr_increase_stat_card(player, position, StatHP, foishi.getStat(StatHP));
 						NextEffect
 					}
 				break;
@@ -3140,9 +3126,8 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					if(!effectSilenced){
 						switch(resolutionStep){
 							case 1:
-								resolvingPile[positionInOrder,6] = irandom(100)
-								resolvingPile[positionInOrder,6] = 0
-								scr_run_animation(3,resolvingPile[positionInOrder,6] + 1, 10,c_red, 80,c_blue, 8,c_green, 2,c_yellow)
+								resolvingPile[positionInOrder,6] = irandom(99)
+								scr_run_animation(3, resolvingPile[positionInOrder,6], [10,c_red], [80,c_blue], [8,c_green], [2,c_yellow])
 								NextStep
 								//NextStep//Delete this one after the animation is added
 							break;
@@ -3194,25 +3179,27 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					if(!effectSilenced){
 						switch(resolutionStep){
 							case 1:
-								resolvingPile[positionInOrder,6] = scr_pay_momentum(player, player.getStat(PlayerMomentum));
-								NextStep 
+								resolvingPile[positionInOrder,6] = player.getStat(PlayerMomentum);
+								NextStep
 							break;
 							case 2:
-								if(!resolvingPile[positionInOrder,6]){
+								if(!resolvingPile[positionInOrder,6]--){
 									FinishResolving
 									break;
 								}
-								resolvingPile[positionInOrder,7] = irandom(100)
+								scr_pay_momentum(player, 1)
+								resolvingPile[positionInOrder,7] = irandom(99)
 								NextStep
-								NextStep//Add this to the animation
+								scr_run_animation(3.1, resolvingPile[positionInOrder,7], [80,c_grey], [15,c_blue], [5,c_yellow])
 							break;
 							case 4:
+								
 								var randomResult = resolvingPile[positionInOrder,7]
 								resolvingPile[positionInOrder,8] = 84 //Fish to Summon
 								resolvingPile[positionInOrder,9] = 0
 																
 								if(randomResult < 80){
-									FinishResolving
+									resolvingPile[positionInOrder,2] = 2
 									break;
 								}
 								if(randomResult < 95){
@@ -3246,10 +3233,10 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								var choiceArray = []
-								if(scr_count_infirmary_name(84, cardNum, -1) >= 5){
+								if(scr_count_infirmary_name(player, 84, -1) >= 5){
 									array_push(choiceArray, [0, "Voidfy Fishes"])
 								}
-								if(scr_count_infirmary_name(86, cardNum, -1) != 0){
+								if(scr_count_infirmary_name(player, 86, -1) != 0){
 									array_push(choiceArray, [1, "Voidfy Goldfish"])
 								}
 								resolvingPile[positionInOrder, 6] = 0
@@ -3257,13 +3244,16 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								NextStep
 							break;
 							case 3:
-								var choice = resolvingPile[positionInOrder, 6];
 								resolvingPile[positionInOrder, 7] = 0; //Voidfy Count
+								NextStep
+							break;
+							case 4:
+								var choice = resolvingPile[positionInOrder, 6];
 								resolvingPile[positionInOrder, 8] = 0;
 								
 								if(choice){
 									if(resolvingPile[positionInOrder, 7]){
-										resolvingPile[positionInOrder, 2] = 6
+										resolvingPile[positionInOrder, 2] = 7
 										break;
 									}
 									scr_target_infirmary_name(player, 86, 8)
@@ -3271,18 +3261,18 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 								}
 								if(resolvingPile[positionInOrder,7] == 5){
-									resolvingPile[positionInOrder,2] = 6									
+									resolvingPile[positionInOrder,2] = 7									
 									break;	
 								}
 								scr_target_infirmary_name(player, 84, 8)
 								NextStep
 							break;
-							case 5:
+							case 6:
 								scr_voidfy_infirmary(player, resolvingPile[positionInOrder,8])
 								resolvingPile[positionInOrder,7]++
-								resolvingPile[positionInOrder,2] = 3
+								resolvingPile[positionInOrder,2] = 4
 							break;
-							case 6:
+							case 7:
 								scr_increase_stat_player(player, PlayerMana, 3);
 								scr_draw(player, 1, true);
 								FinishResolving

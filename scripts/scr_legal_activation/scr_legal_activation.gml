@@ -597,7 +597,7 @@ function scr_legal_activation(cardNum, effectNum, player, position){
 		
 		case 86://Goldfish Legal Activation
 			if((instance_exists(player.fieldCard[position]) && player.fieldCard[position].getStatus(StatusSilenced))){return false;}
-			if(scr_count_field_filter([player], [], [1,12], [0, infinity], [0, infinity], [ArcFisherman], [], -1, -1)){return false}
+			if(!scr_count_field_filter([player], [], [1,12], [0, infinity], [0, infinity], [ArcFisherman], [], -1, -1)){return false}
 			return true
 		break;
 		

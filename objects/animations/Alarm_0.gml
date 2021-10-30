@@ -1,4 +1,4 @@
-switch(animationInfo[0]){
+switch(int64(animationInfo[0])){
 	case 1:
 		{
 			for(var i = 0; i < 2; i++){
@@ -61,16 +61,16 @@ switch(animationInfo[0]){
 		}
 	break;
 	case 3:
-		chanceOutcome = (animationInfo[1]/100)*360;
+		chanceOutcome = abs((animationInfo[1]/100)*360 - 360);
 		slowdownStart = chanceOutcome + irandom(2)*360
 		reelAngle = slowdownStart + random_range(2,5)*360
-		reelSpeed = 7
+		reelSpeed = 5
 		chanceCount = 0;
-		for(var i = 0; i < animationCount-3; i = i + 2){
-			chanceInfo[chanceCount,0] = animationInfo[i+2]
-			chanceInfo[chanceCount++,1] = animationInfo[i+3]
+		for(var i = 2; i < animationCount; i++){
+			chanceInfo[chanceCount,0] = animationInfo[i,0]
+			chanceInfo[chanceCount++,1] = animationInfo[i,1]
 		}
 		runAnimation = true
-		timer = 90;
+		timer = 45 - ((animationInfo[0] - 3)*400);
 	break;
 }

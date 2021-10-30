@@ -58,17 +58,15 @@ scr_construct_global_deck();
 scr_shuffle_deck(player);
 
 //Stacking the deck for debug purposes here
+deck[deckCount++] = [94,0]
+deck[deckCount++] = [93,0]
+deck[deckCount++] = [92,0]
 deck[deckCount++] = [91,0]
-deck[deckCount++] = [91,0]
-deck[deckCount++] = [91,0]
-deck[deckCount++] = [91,0]
-deck[deckCount++] = [91,0]
-deck[deckCount++] = [91,0]
-deck[deckCount++] = [91,0]
-deck[deckCount++] = [91,0]
-deck[deckCount++] = [91,0]
-deck[deckCount++] = [91,0]
-deck[deckCount++] = [91,0]
+deck[deckCount++] = [89,0]
+deck[deckCount++] = [88,0]
+deck[deckCount++] = [87,0]
+deck[deckCount++] = [85,0]
+deck[deckCount++] = [83,0]
 
 //Field Card Zone Locations and initializations
 i = 0;
