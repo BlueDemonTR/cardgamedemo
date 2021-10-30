@@ -13,7 +13,7 @@ function scr_target_hand(activator, players, typeArray, minLevel, maxLevel, arch
 	filterNum
 	arrayPos
 	*/	
-	if(activator == obj_opponent){
+	if(activator.object_index == obj_opponent){
 		scr_message_ask_response(RESPONSE_TARGET_HAND, players, typeArray, minLevel, maxLevel, archetypeArray, spiritArray, checkSummonable, ignoreTarget, filterNum, arrayPos)
 		return;
 	}

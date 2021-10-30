@@ -19,26 +19,26 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				NextEffect
 				break;
 			}
-			var damage = attacker.getStat(StatATK) - attacked.getStat(StatATK),
+			var damage = attacker.getStat(StatATK) - attacked.getStat(StatArmor),
 			excessDamage = damage - attacked.getStat(StatHP),
-			counterAttack = attacked.getStat(StatATK) - attacker.getStat(StatATK);
+			counterAttack = attacked.getStat(StatATK) - attacker.getStat(StatArmor);
 			
 			scr_damage_card(attacked.player, attacked.position, damage)
-
-			if(!attacked.getStatus(StatusRanged)){
-				scr_damage_card(attacker.player, attacker.position, counterAttack)
-			}
-			
-			if(!instance_exists(attacked)){
-				scr_destroys_by_battle(attacker, attacked.cardNum)	
-			}
 			
 			if(attacker.getStatus(StatusPierce) && excessDamage > 0){
 				scr_increase_stat_player(opponent, PlayerHP, -excessDamage)
 				scr_on_pierce(attacker, attacked, damage)
 			}
+			
+			if(!attacked.getStatus(StatusRanged)){
+				scr_damage_card(attacker.player, attacker.position, counterAttack)
+			}
+			
 			with(attacker){
 				scr_after_attack(attacker, damage)
+				if(!instance_exists(attacked)){
+					scr_destroys_by_battle(attacker, attacked.cardNum)	
+				}			
 			}
 			NextEffect
 		break;
@@ -974,11 +974,12 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								NextStep
 							break;
 							case 3:
-								scr_recruit(74, 0, player, resolvingPile[positionInOrder,6])//Useless Sacrifice
+							scr_recruit(74, 0, player, resolvingPile[positionInOrder,6])//Useless Sacrifice
 								
 								resolvingPile[positionInOrder,7] = 0
 								scr_choose_field_zones(player, [player], false, true, false, 7);
-								break;
+								NextStep
+							break;
 							case 5:
 								scr_recruit(74, 0, player, resolvingPile[positionInOrder,7])//Useless Sacrifice
 								FinishResolving
@@ -2583,7 +2584,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 		case 74://Useless Sacrifice Effect
 			switch(effectNum){
 				case 0:
-					if(!(instance_exists(player.fieldCard[position]) && player.fieldCard[position].getStatus(StatusSilenced)) && !effectSilenced){				
+					if(!(instance_exists(player.fieldCard[position]) && player.fieldCard[position].getStatus(StatusSilenced)) && !effectSilenced){
 						player.fieldCard[position].sacrificable = true;
 					}
 					NextEffect
@@ -3233,10 +3234,10 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								var choiceArray = []
-								if(scr_count_infirmary_name(84, cardNum, "any") >= 5){
+								if(scr_count_infirmary_name(84, cardNum, -1) >= 5){
 									array_push(choiceArray, [0, "Voidfy Fishes"])
 								}
-								if(scr_count_infirmary_name(86, cardNum, "any") != 0){
+								if(scr_count_infirmary_name(86, cardNum, -1) != 0){
 									array_push(choiceArray, [1, "Voidfy Goldfish"])
 								}
 								resolvingPile[positionInOrder, 6] = 0

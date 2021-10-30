@@ -185,7 +185,7 @@ function scr_legal_activation(cardNum, effectNum, player, position){
 					return true;
 				break;
 				case SharedSacrifice:
-					if(scr_if_field_full(player) && !scr_limited_summon(74)){return false}
+					if(!scr_if_field_full(player) && !scr_limited_summon(74)){return false}
 					return true;
 				break;
 			}

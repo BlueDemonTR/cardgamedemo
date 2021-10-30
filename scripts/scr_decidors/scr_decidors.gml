@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_decide_deck_change(player){
-	switch(player){
+	switch(player.object_index){
 		case obj_player:
 			scr_message_deck_change()
 		break;
@@ -11,7 +11,7 @@ function scr_decide_deck_change(player){
 	}
 }
 function scr_decide_field(player, position, cardNum, artNum, animationType){
-	switch(player){
+	switch(player.object_index){
 		case obj_player:
 			scr_message_field(position, cardNum, artNum, animationType)
 		break;
@@ -21,7 +21,7 @@ function scr_decide_field(player, position, cardNum, artNum, animationType){
 	}
 }
 function scr_decide_field_card_stats(player, position){
-	switch(player){
+	switch(player.object_index){
 		case obj_player:
 			scr_message_field_card_stats(position)
 		break;
@@ -31,7 +31,7 @@ function scr_decide_field_card_stats(player, position){
 	}
 }
 function scr_decide_hand_change(player){
-	switch(player){
+	switch(player.object_index){
 		case obj_player:
 			scr_message_hand_change()
 		break;
@@ -41,7 +41,7 @@ function scr_decide_hand_change(player){
 	}
 }
 function scr_decide_infirmary(player){
-	switch(player){
+	switch(player.object_index){
 		case obj_player:
 			scr_message_infirmary()
 		break;
@@ -51,7 +51,7 @@ function scr_decide_infirmary(player){
 	}
 }
 function scr_decide_momentum_deck(player){
-	switch(player){
+	switch(player.object_index){
 		case obj_player:
 			scr_message_momentum_deck()
 		break;
@@ -61,7 +61,7 @@ function scr_decide_momentum_deck(player){
 	}
 }
 function scr_decide_stats(player){
-	switch(player){
+	switch(player.object_index){
 		case obj_player:
 			scr_message_stats()
 		break;

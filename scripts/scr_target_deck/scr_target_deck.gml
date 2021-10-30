@@ -13,7 +13,7 @@ function scr_target_deck(activator, players, typeArray, minLevel, maxLevel, arch
 	arrayPos
 	*/
 
-	if(activator == obj_opponent){
+	if(activator.object_index == obj_opponent){
 		scr_message_ask_response(RESPONSE_TARGET_DECK, players, typeArray, minLevel, maxLevel, archetypeArray , spiritArray, checkSummonable, filterNum, arrayPos)
 		return;
 	}

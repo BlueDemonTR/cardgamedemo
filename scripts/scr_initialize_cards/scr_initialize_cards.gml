@@ -2619,7 +2619,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Groups
 		//In the case that a card doesn't have that feature the value is -1
-		origSharedEffects[i,j++] = SharedXMakine;
+		origSharedEffects[i,j++] = SharedSacrifice;
 		origSharedEffectsCount[i] = j;
 		j=0
 		origArchetype[i,j++] = ArcSacrifice;

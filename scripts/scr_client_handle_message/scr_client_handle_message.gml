@@ -32,35 +32,34 @@ function scr_client_handle_message(buffer) {
 				artNum = buffer_read(buffer, buffer_u8),
 				animationType = buffer_read(buffer, buffer_u8);
 
-				with(opponentObject){
-					field[position,0] = cardNum;
-					field[position,1] = artNum;
-					if(instance_exists(fieldCard[position])){
-						if(fieldCard[position].cardNum == cardNum){
-							break;//Everything is fine
-						}
-						if(cardNum == 0){
-							scr_remove_from_field(player, position, animationType)
-							break;//Card has left the field
-						}
-						with(fieldCard[position]){
-							self.cardNum = cardNum
-							self.artNum = artNum
-							summoning_method = SummonInvalid
-
-							scr_info_to_instance(cardNum);
-							effectUsesLeft = getStat(StatEffectUsesPerTurn)
-							sacrificable = false
-							attacksLeft = 1
-
-							recruit=false;
-						}
-						break;//Card has turned into another card without ever leaving the field (THIS SHOULDN'T HAPPEN(I think))
+				opponentObject.field[position,0] = cardNum;
+				opponentObject.field[position,1] = artNum;
+				if(instance_exists(opponentObject.fieldCard[position])){
+					if(opponentObject.fieldCard[position].cardNum == cardNum){
+						break;//Everything is fine
 					}
-					with(scr_summon([cardNum, artNum], player, SummonInvalid, 0, position)){
+					if(cardNum == 0){
+						scr_remove_from_field(opponentObject, position, animationType)
+						break;//Card has left the field
+					}
+					with(opponentObject.fieldCard[position]){
+						self.cardNum = cardNum
+						self.artNum = artNum
+						summoning_method = SummonInvalid
+
+						scr_info_to_instance(cardNum);
 						summoning_method = animationType
-						break;//Summon a new card
+						effectUsesLeft = getStat(StatEffectUsesPerTurn)
+						sacrificable = false
+						attacksLeft = 1
+
+						recruit = false;
 					}
+					break;//Card has turned into another card without ever leaving the field (THIS SHOULDN'T HAPPEN(I think))
+				}
+				with(scr_summon([cardNum, artNum], opponentObject, SummonInvalid, 0, position)){
+					summoning_method = animationType
+					break;//Summon a new card
 				}
 			break;
 			case MESSAGE_INFIRMARY:
@@ -87,30 +86,23 @@ function scr_client_handle_message(buffer) {
 				}
 			break;
 			case MESSAGE_STATS:
-				opponentObject = scr_opponent_get_object(client);
-				with(opponentObject){
-					scr_set_stat_player(self, PlayerHP, buffer_read(buffer, buffer_u8))
-					scr_set_stat_player(self, PlayerMana, buffer_read(buffer, buffer_u8))
-					scr_set_stat_player(self, PlayerMomentum, buffer_read(buffer, buffer_u8))
-				}
-
+				scr_set_stat_player(opponentObject, PlayerHP, buffer_read(buffer, buffer_u8))
+				scr_set_stat_player(opponentObject, PlayerMana, buffer_read(buffer, buffer_u8))
+				scr_set_stat_player(opponentObject, PlayerMomentum, buffer_read(buffer, buffer_u8))
 			break;
 			case MESSAGE_FIELD_CARD_STATS:
-				with(opponentObject){
+				var position = buffer_read(buffer, buffer_u8);
 
-					var position = buffer_read(buffer, buffer_u8);
-
-					if(fieldCard[position] == noone){
-						break;
-					}
-					for(var i = 0; i < macros.stat_count; i++){//Stats
-						scr_set_stat_card(self, position, i, buffer_read(buffer, buffer_u16))
-					}
-					for(var i = 0; i < macros.status_count; i++){//Statuses
-						scr_set_status_card(self, position, i, buffer_read(buffer, buffer_bool))
-					}
-					fieldCard[position].attacksLeft = buffer_read(buffer, buffer_u8);//Can it attack?
+				if(opponentObject.fieldCard[position] == noone){
+					break;
 				}
+				for(var i = 0; i < macros.stat_count; i++){//Stats
+					scr_set_stat_card(opponentObject, position, i, buffer_read(buffer, buffer_u16))
+				}
+				for(var i = 0; i < macros.status_count; i++){//Statuses
+					scr_set_status_card(opponentObject, position, i, buffer_read(buffer, buffer_bool))
+				}
+				opponentObject.fieldCard[position].attacksLeft = buffer_read(buffer, buffer_u8);//Can it attack?
 			break;
 			case MESSAGE_DECK_CHANGE:
 				with(opponentObject){
@@ -126,28 +118,23 @@ function scr_client_handle_message(buffer) {
 				}
 			break;
 			case MESSAGE_OPPONENT_STATS:
-				with(obj_player){
-					scr_set_stat_player(self, PlayerHP, buffer_read(buffer, buffer_u8))
-					scr_set_stat_player(self, PlayerMana, buffer_read(buffer, buffer_u8))
-					scr_set_stat_player(self, PlayerMomentum, buffer_read(buffer, buffer_u8))
-				}
+				scr_set_stat_player(obj_player, PlayerHP, buffer_read(buffer, buffer_u8))
+				scr_set_stat_player(obj_player, PlayerMana, buffer_read(buffer, buffer_u8))
+				scr_set_stat_player(obj_player, PlayerMomentum, buffer_read(buffer, buffer_u8))
 			break;
 			case MESSAGE_OPPONENT_FIELD_CARD_STATS:
-				with(obj_player){
+				var position = buffer_read(buffer, buffer_u8);
 
-					var position = buffer_read(buffer, buffer_u8);
-
-					if(fieldCard[position] == noone){
-						break;
-					}
-					for(var i = 0; i < macros.stat_count; i++){//Stats
-						scr_set_stat_card(self, position, i, buffer_read(buffer, buffer_u16))
-					}
-					for(var i = 0; i < macros.status_count; i++){//Statuses
-						scr_set_status_card(self, position, i, buffer_read(buffer, buffer_bool))
-					}
-					fieldCard[position].attacksLeft = buffer_read(buffer, buffer_u8);//Can it attack?
+				if(obj_player.fieldCard[position] == noone){
+					break;
 				}
+				for(var i = 0; i < macros.stat_count; i++){//Stats
+					scr_set_stat_card(obj_player, position, i, buffer_read(buffer, buffer_u16))
+				}
+				for(var i = 0; i < macros.status_count; i++){//Statuses
+					scr_set_status_card(obj_player, position, i, buffer_read(buffer, buffer_bool))
+				}
+				obj_player.fieldCard[position].attacksLeft = buffer_read(buffer, buffer_u8);//Can it attack?	
 			break;
 			case MESSAGE_OPPONENT_DECK_CHANGE:
 				with(obj_player){
@@ -179,36 +166,36 @@ function scr_client_handle_message(buffer) {
 				artNum = buffer_read(buffer, buffer_u8),
 				animationType = buffer_read(buffer, buffer_u8);//This is leaveType or summonType
 
-				with(obj_player){
-					field[position,0] = cardNum;
-					field[position,1] = artNum;
-					if(instance_exists(fieldCard[position])){
-						if(fieldCard[position].cardNum == cardNum){
-							break;//Everything is fine
-						}
-						if(cardNum == 0){
-							scr_remove_from_field(player, position, animationType)
-							break;//Card has left the field
-						}
-						with(fieldCard[position]){
-							self.cardNum = cardNum
-							self.artNum = artNum
-							summoning_method = animationType
-
-							scr_info_to_instance(cardNum);
-							effectUsesLeft = getStat(StatEffectUsesPerTurn)
-							sacrificable = false
-							attacksLeft = 1
-
-							recruit=false;
-						}
-						break;//Card has turned into another card without ever leaving the field (THIS SHOULDN'T HAPPEN(I think))
+				obj_player.field[position,0] = cardNum;
+				obj_player.field[position,1] = artNum;
+				if(instance_exists(obj_player.fieldCard[position])){
+					if(obj_player.fieldCard[position].cardNum == cardNum){
+						break;//Everything is fine
 					}
-					if(cardNum != 0){
-						with(scr_summon([cardNum, artNum], player, SummonInvalid, 0, position)){
-							summoning_method = animationType
-							break;//New card is summoned
-						}
+					if(cardNum == 0){
+						scr_remove_from_field(obj_player, position, animationType)
+						break;//Card has left the field
+					}
+					with(obj_player.fieldCard[position]){
+						self.cardNum = cardNum
+						self.artNum = artNum
+						summoning_method = SummonInvalid
+
+						scr_info_to_instance(cardNum);
+						summoning_method = animationType
+						
+						effectUsesLeft = getStat(StatEffectUsesPerTurn)
+						sacrificable = false
+						attacksLeft = 1
+
+						recruit=false;
+					}
+					break;//Card has turned into another card without ever leaving the field (THIS SHOULDN'T HAPPEN(I think))
+				}
+				if(cardNum != 0){
+					with(scr_summon([cardNum, artNum], obj_player, SummonInvalid, 0, position)){
+						summoning_method = animationType
+						break;//New card is summoned
 					}
 				}
 			break;
@@ -298,7 +285,7 @@ function scr_client_handle_message(buffer) {
 								array_push(players, obj_player)
 							}
 							if(buffer_read(buffer, buffer_bool)){
-								array_push(players, obj_opponent)
+							array_push(players, obj_opponent)
 							}
 							var selectFilled = buffer_read(buffer, buffer_bool),
 							selectNMZ = buffer_read(buffer, buffer_bool),
@@ -438,17 +425,13 @@ function scr_client_handle_message(buffer) {
 			break;
 
 			case MESSAGE_HANDLE_FAIL:
-				obj_player.resolvingPile[obj_player.resolvingPileCount - 1, 2] = 97
+				obj_player.resolvingPile[obj_player.resolvingPileCount - 1, 2] = 98
 			break;
 		}
 		var temptell = buffer_tell(buffer),
 		var tempsize = buffer_get_size(buffer);
 
-		if(false){
-			temptell = tempsize//This is here because I am sick of the syntax error pop up
-		}
-
-		if(buffer_tell(buffer) == buffer_get_size(buffer)){
+		if(temptell == tempsize){
 			break;
 		}
 	}

@@ -274,6 +274,7 @@
     {"id":{"name":"scr_count_field_filter","path":"scripts/scr_count_field_filter/scr_count_field_filter.yy",},"order":2,},
     {"id":{"name":"obj_deckselect","path":"objects/obj_deckselect/obj_deckselect.yy",},"order":1,},
     {"id":{"name":"array_includes","path":"scripts/array_includes/array_includes.yy",},"order":54,},
+    {"id":{"name":"indexify","path":"scripts/indexify/indexify.yy",},"order":60,},
     {"id":{"name":"scr_if_field_full","path":"scripts/scr_if_field_full/scr_if_field_full.yy",},"order":33,},
     {"id":{"name":"scr_impact_summon_from_extra_deck","path":"scripts/scr_impact_summon_from_extra_deck/scr_impact_summon_from_extra_deck.yy",},"order":25,},
     {"id":{"name":"spr_hexabase","path":"sprites/spr_hexabase/spr_hexabase.yy",},"order":8,},

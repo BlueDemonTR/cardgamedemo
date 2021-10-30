@@ -14,7 +14,7 @@ function scr_target_infirmary(activator, players, typeArray, minLevel, maxLevel,
 	filterNum
 	arrayPos
 	*/
-	if(activator == obj_opponent){
+	if(activator.object_index == obj_opponent){
 		scr_message_ask_response(RESPONSE_TARGET_INFIRMARY, players, typeArray, minLevel, maxLevel, archetypeArray, spiritArray, checkSummonable, sendType, ignoreTarget, filterNum, arrayPos)
 		return;
 	}

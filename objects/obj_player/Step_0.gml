@@ -43,7 +43,7 @@ if(resolvingPileCount){
 	}	
 }else if(resolutionPileCount > 0 && open_game_state){
 	if(!opponent_response_left && !player_response_left && !response_delay){
-		resolvingPile = resolutionPile;
+		resolvingPile = json_parse(json_stringify(resolutionPile))
 		resolvingPileCount = resolutionPileCount;
 		resolutionPileCount = 0
 

@@ -4,7 +4,9 @@ function scr_summon(cardArray, player, summonType, animationType, summonZone){
 	var cardNum = cardArray[0],
 	artNum = cardArray[1]
 	
-	if(!scr_limited_summon(cardNum)){return false;}
+	with(player){
+		if(!scr_limited_summon(cardNum)){return false;}
+	}
 	
 	with(player){
 		if(!instance_exists(fieldCard[summonZone])){

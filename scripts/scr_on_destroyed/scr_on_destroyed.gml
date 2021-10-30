@@ -1,11 +1,11 @@
 function scr_on_destroyed(cardNum, player, position, destroyType){
-	if(scr_check_shared(cardNum, SharedUnderworldVisclades)){
+	if(scr_check_shared(cardNum, SharedUnderworldVisclades)){//Shared Underworld Visclades Effect Trigger
 		if(scr_legal_activation("SharedEffects", SharedUnderworldVisclades, player, position)){
 			scr_add_to_resolution_pile("SharedEffects", SharedUnderworldVisclades, 0, player, position, false)
 		}
 	}
-	if(scr_check_shared(cardNum, SharedSacrifice)){
-		if(scr_legal_activation("SharedEffects", player, SharedSacrifice, 0)){
+	if(scr_check_shared(cardNum, SharedSacrifice)){//Shared Sacrifice Effect Trigger
+		if(scr_legal_activation("SharedEffects", SharedSacrifice, player, 0)){
 			scr_add_to_resolution_pile("SharedEffects", SharedSacrifice, 0, player, position, false)
 		}
 	}

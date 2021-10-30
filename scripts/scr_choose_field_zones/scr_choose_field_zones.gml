@@ -3,7 +3,7 @@
 function scr_choose_field_zones(activator, players, selectFilled, selectNMZ, selectMMZ, arrayPos){
 	var effectSuccessful = false;
 	
-	if(activator == obj_opponent){
+	if(activator.object_index == obj_opponent){
 		scr_message_ask_response(RESPONSE_CHOOSE_FIELD_ZONE, players, selectFilled, selectNMZ, selectMMZ, arrayPos)
 		return;
 	}

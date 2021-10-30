@@ -1,0 +1,1 @@
+if macros.test_mode scr_destroy(player, position, 0)

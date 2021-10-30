@@ -12,7 +12,7 @@ function scr_target_field(activator, players, typeArray, level, atk, hp, archety
 	arrayPos
 	*/
 	
-	if(activator == obj_opponent){
+	if(activator.object_index == obj_opponent){
 		scr_message_ask_response(RESPONSE_TARGET_FIELD, players, typeArray, level, atk, hp, archetypeArray , spiritArray, ignoreTarget, filterNum, arrayPos)
 		return;
 	}

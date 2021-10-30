@@ -8,6 +8,7 @@ function scr_set_status_card(controller, position, status, value){
 	
 	affectedCard.cardStatus[status] = value
 	
-	scr_decide_field_card_stats(controller, position)
-
+	if(self.object_index != obj_client && affectedCard.summoning_method != SummonInvalid){
+		scr_decide_field_card_stats(controller, position)
+	}
 }
