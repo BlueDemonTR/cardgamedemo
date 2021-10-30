@@ -14,7 +14,7 @@ function scr_on_summon(cardNum){
 		case 5://Fisherman Wheel Gain Activation Trigger
 			if(!scr_legal_activation("WheelGain", 0, player, obj_player.selected_wheel)){break;}
 			if(!scr_check_archetype(cardNum, ArcFish) || scr_check_archetype(cardNum, ArcFisherman)){break;}
-			scr_add_to_resolution_pile(cardNum, 0, 0, player, position, false, player.fieldCard[position].getStat(StatLevel))
+			scr_add_to_resolution_pile("WheelGain", 0, 0, player, obj_player.selected_wheel, false, player.fieldCard[position].getStat(StatLevel))
 		break;
 	}
 	

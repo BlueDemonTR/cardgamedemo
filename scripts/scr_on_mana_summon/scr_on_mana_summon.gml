@@ -11,8 +11,10 @@ function scr_on_mana_summon(cardNum) {
 	switch(cardNum){
 		case 2://Motorbiker Doppelganger Activation Trigger
 		case 21://Luvies Ing Field Effect Activation Trigger
+		case 81://Nightmare Beast Crystal Echo Activation Trigger
+		case 82://Nightmare Beast Conductrons Activation Trigger
 			if(!scr_legal_activation(cardNum, 0, player, position)){break;}
-			scr_add_to_resolution_pile(cardNum, 0, 0, position, false)
+			scr_add_to_resolution_pile(cardNum, 0, 0, player, position, false)
 		break;
 	}
 

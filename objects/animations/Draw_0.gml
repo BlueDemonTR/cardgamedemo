@@ -54,17 +54,17 @@ switch(animationInfo[0]){
 		}
 		draw_sprite_ext(spr_reel,-1,room_width/2, room_height/2,1,1, reelAngle,c_white,1)
 		if(reelLeft < 2){
-			draw_text(room_width/2, room_height/2, "POYOPOYOPOYOPOYO")
+			timer--
 		}else{		
 			reelAngle -= reelSpeed*.01*reelLeft
 			if(reelAngle < slowdownStart){
-				
 				reelSpeed = min(reelSpeed - .01, 4)
 			}
 		}
-
-
-		obj_test_button.test_mode = string(reelLeft) + " " + string(reelSpeed) + " " + string(reelAngle) + " " + string(slowdownStart)
+		if(timer == 0){
+			obj_player.resolvingPile[obj_player.resolvingPileCount-1,2]++
+			instance_destroy()
+		}
 	break;
 }
 

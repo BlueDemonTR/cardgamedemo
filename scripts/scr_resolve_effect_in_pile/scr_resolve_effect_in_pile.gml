@@ -2658,20 +2658,14 @@ function scr_resolve_effect_in_pile(positionInOrder){
 		case 78://Genesis Notebook Effect
 			switch(effectNum){
 				case 0:
-					if(!effectSilenced){
+					if(!effectSilenced && scr_count_field_filter([player], [], [1, 12], [0, infinity], [0, infinity], [ArcSacrifice], [], -1, -1)){
 						switch(resolutionStep){
 							case 1:
-								if(!scr_if_you_control_filter(17)) {
-									resolvingPile[positionInOrder,2] = 97
-								}
-								NextStep
-							break;
-							case 2:
 								resolvingPile[positionInOrder,6] = 0;
-								scr_target_deck(player, [player], [TypeMonster], 0, 12, [ArcSacrifice], [], false, -1, 6)
+								scr_target_deck(player, [player], [TypeMonster], 5, 12, [], [], false, -1, 6)
 								NextStep
 							break;
-							case 4:
+							case 3:
 								scr_search(player, resolvingPile[positionInOrder,6]);
 								FinishResolving
 							break;
@@ -2715,7 +2709,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								NextStep
 							break;
 							case 3:
-								scr_set_stat_card(resolvingPile[positionInOrder,7], resolvingPile[positionInOrder,6], StatusTAUNT, true);
+								scr_set_status_card(resolvingPile[positionInOrder,7], resolvingPile[positionInOrder,6], StatusTAUNT, true);
 								FinishResolving
 							break;
 						}
@@ -2737,23 +2731,23 @@ function scr_resolve_effect_in_pile(positionInOrder){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0;
 								resolvingPile[positionInOrder,7] = 0;
-								scr_target_field(player, [player.opponent], [], [1, 4], [0, infinity], [0, infinity], [], [], -1, -1, 6)
+								scr_target_field(player, [player.opponent], [], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1, 6)
 								NextStep
 							break;
 							case 3:
 								var reflectedMonster = resolvingPile[positionInOrder,7].fieldCard[resolvingPile[positionInOrder,6]];
 								resolvingPile[positionInOrder,8] = reflectedMonster.getStat(StatATK);
-								resolvingPile[positionInOrder,7] = reflectedMonster.getStat(StatHP);
-								scr_set_stat_card(resolvingPile[positionInOrder,7], resolvingPile[positionInOrder,6], StatusUnarmed, true);
+								resolvingPile[positionInOrder,9] = reflectedMonster.getStat(StatHP);
+								scr_set_status_card(resolvingPile[positionInOrder,7], resolvingPile[positionInOrder,6], StatusUnarmed, true);
 								resolvingPile[positionInOrder,10] = 0;
 								scr_choose_field_zones(player, [player], false, true, false, 10)
 								NextStep
 							break;
 							case 5:
 								with(scr_recruit(116, 0, player, resolvingPile[positionInOrder,10])){
-									scr_set_stat_card(self.player, self.position, StatMaxHP, resolvingPile[positionInOrder,9])
-									scr_set_stat_card(self.player, self.position, StatATK, resolvingPile[positionInOrder,8])
-									scr_set_stat_card(self.player, self.position, StatHP, resolvingPile[positionInOrder,9])
+									scr_set_stat_card(self.player, self.position, StatMaxHP, obj_player.resolvingPile[positionInOrder,9])
+									scr_set_stat_card(self.player, self.position, StatATK, obj_player.resolvingPile[positionInOrder,8])
+									scr_set_stat_card(self.player, self.position, StatHP, obj_player.resolvingPile[positionInOrder,9])
 								}
 								FinishResolving
 							break;
@@ -2863,6 +2857,22 @@ function scr_resolve_effect_in_pile(positionInOrder){
 					}
 				break;
 			}
+		break;
+		case 86://Goldfish Effect
+			switch(effectNum){
+				case 0:
+					if(!(instance_exists(player.fieldCard[position]) && player.fieldCard[position].getStatus(StatusSilenced)) && !effectSilenced){				
+						for(var i = 0; i < player.field_zone_count; i++){
+							if(scr_check_archetype(field[i, 0], ArcFisherman)){
+									scr_increase_stat_card(player, i, StatATK, 2)
+									scr_increase_stat_card(player, i, StatMaxHP, 2)
+									scr_increase_stat_card(player, i, StatHP, 2)
+							}
+						}						
+					}
+					NextEffect
+				break;
+			}			
 		break;
 		case 87://Lucky Fisherman Effect 
 			switch(effectNum){
@@ -3131,8 +3141,10 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,6] = irandom(100)
+								resolvingPile[positionInOrder,6] = 0
+								scr_run_animation(3,resolvingPile[positionInOrder,6] + 1, 10,c_red, 80,c_blue, 8,c_green, 2,c_yellow)
 								NextStep
-								NextStep//Delete this one after the animation is added
+								//NextStep//Delete this one after the animation is added
 							break;
 							case 3:
 								var randomResult = resolvingPile[positionInOrder,6]

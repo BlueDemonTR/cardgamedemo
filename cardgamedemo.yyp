@@ -59,6 +59,7 @@
     {"id":{"name":"spr_card_display_overlay","path":"sprites/spr_card_display_overlay/spr_card_display_overlay.yy",},"order":36,},
     {"id":{"name":"scr_find_infirmary","path":"scripts/scr_find_infirmary/scr_find_infirmary.yy",},"order":7,},
     {"id":{"name":"spr_poleclandefender","path":"sprites/spr_poleclandefender/spr_poleclandefender.yy",},"order":11,},
+    {"id":{"name":"animations","path":"objects/animations/animations.yy",},"order":19,},
     {"id":{"name":"array_count_variable","path":"scripts/array_count_variable/array_count_variable.yy",},"order":49,},
     {"id":{"name":"spr_poleclanbeast","path":"sprites/spr_poleclanbeast/spr_poleclanbeast.yy",},"order":9,},
     {"id":{"name":"spr_poleclantorch","path":"sprites/spr_poleclantorch/spr_poleclantorch.yy",},"order":13,},

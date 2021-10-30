@@ -20,7 +20,7 @@ function scr_legal_activation(cardNum, effectNum, player, position){
 			}
 		break;
 		case "WheelEffect":
-			if(player.getStat[PlayerMomentum] < macros.wheel_cost[position, effectNum]){return false}
+			if(player.getStat(PlayerMomentum) < macros.wheel_cost[position, effectNum]){return false}
 			switch(position){
 				case 1://Motorbiker Wheel Effects Legal Activation
 					switch(effectNum){

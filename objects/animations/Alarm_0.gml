@@ -70,7 +70,7 @@ switch(animationInfo[0]){
 			chanceInfo[chanceCount,0] = animationInfo[i+2]
 			chanceInfo[chanceCount++,1] = animationInfo[i+3]
 		}
-		obj_test_button.test_mode = string(chanceInfo)
 		runAnimation = true
+		timer = 90;
 	break;
 }
