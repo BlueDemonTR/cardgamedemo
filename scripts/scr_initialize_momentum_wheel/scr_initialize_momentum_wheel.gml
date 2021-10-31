@@ -70,7 +70,7 @@ function scr_initialize_momentum_wheel() {
 	wheel_cost[i, 1] = 6;
 	wheel_ability[i, 2] = "IMPACT SUMMON (Impact summon a monster from the momentum deck using monsters you control as materials)";
 	wheel_cost[i, 2] = 9;
-	wheel_ability[i, 3] = "Once per game, Fully heal an ''Igloo'' monster then give it +6 HP";
+	wheel_ability[i, 3] = "Fully heal an ''Igloo'' monster";
 	wheel_cost[i, 3] = 12;
 	i++;
 

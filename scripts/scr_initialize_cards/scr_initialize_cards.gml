@@ -444,7 +444,7 @@ function scr_initialize_cards(){
 		origStat[i,StatLevel] = 4; //Level
 		origStat[i,StatATK] = 3; //ATK
 		origStat[i,StatMaxHP] = 3; //Max HP
-		origStat[i,StatSpirit] = SpiritKind//Spirit
+		origStat[i,StatSpirit] = SpiritPassionate//Spirit
 		j=0
 		//Card Groups
 		//In the case that a card doesn't have that feature the value is -1
@@ -519,7 +519,7 @@ function scr_initialize_cards(){
 		origStat[i,StatLevel] = 4; //Level
 		origStat[i,StatATK] = 4; //ATK
 		origStat[i,StatMaxHP] = 2; //Max HP
-		origStat[i,StatSpirit] = SpiritPassionate//Spirit
+		origStat[i,StatSpirit] = SpiritKind//Spirit
 		j=0
 		//Card Groups
 		//In the case that a card doesn't have that feature the value is -1
@@ -608,7 +608,7 @@ function scr_initialize_cards(){
 		origText[i,TextEffect] = "Impact Summoned: Target an enemy monster, Reduce that targets' stats to 1/1 then this card gain ATK equal to the stats lost by this effect. End of Turn: Send this card to your Infirmary and Sudden Impact Summon a Level 4 ''Motorbiker Leader''";
 		origText[i,TextFlavor] = "''It felt extraordinary, my mind became one with my body and I had full control over everything. It wasn't me in the driver seat, it was purely my instincts''";
 		origText[i,TextMaterials] = "1 ''Motorbiker Leader'' + 1+ ''Motorbiker'' Monsters";
-		origText[i,TextChant] = "Speed, Matter, Radiance, Purity. Dethrone the Beast and Abolish Destiny. Evolution Access! Embodiment of Speed!";		
+		origText[i,TextChant] = "Speed, Matter, Radiance, Purity. Dethrone the Beast and Abolish Destiny. Evolution Access! Embodiment of Speed!";
 		j=0
 		//Card Status'
 		//0 = Taunt, 1 = Pierce, 2 = Rebellious, 3 = Immune, 4 = Indestructable, 5 = Lifesteal, 6 = Sneaky
@@ -2778,7 +2778,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,TextEffect] = "Give all enemy monsters -1/-1, then this monster gains +2/+2 for each monster affected by this effect";
+		origText[i,TextEffect] = "Summoned: Give all enemy monsters -1/-1, then this monster gains +2/+2 for each monster affected by this effect";
 		origText[i,TextFlavor] = "";
 		j=0
 		//Card Status'
@@ -3757,7 +3757,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,TextEffect] = "Once per Turn: If you have 6 Momentum or less; Silence an enemy monster, then gain 6 Momentum. If you have more than 6 Momentum; Deal 8 damage to any enemy monster, then lose 6 Momentum.";
+		origText[i,TextEffect] = "Once per Turn: If you have Less than 6 Momentum; Silence an enemy monster, then gain 6 Momentum. If you have 6 Momentum or more; Deal 8 damage to any enemy monster, then lose 6 Momentum.";
 		origText[i,TextFlavor] = "All the X-Makines have combined to create a powerful mech! It can use its excess heat to shoot out of its cannons.";
 		origText[i,TextMaterials] = "2+ ''X-Makine'' Monsters"
 		j=0
@@ -3787,7 +3787,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,TextEffect] = "If you control at least exactly one ''X-Makine'' monster and your opponent controls at least one monster; Effect Summon a ''X-Makine'' monster from your deck then gain 5 Momentum.";
+		origText[i,TextEffect] = "If you control exactly one ''X-Makine'' monster and your opponent controls at least one monster; Effect Summon a ''X-Makine'' monster from your deck then gain 5 Momentum.";
 		j=0
 		//Card Status'
 		//0 = Taunt, 1 = Pierce, 2 = Rebellious, 3 = Immune, 4 = Indestructable, 5 = Lifesteal, 6 = Sneaky
@@ -3843,7 +3843,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,TextEffect] = "If you control at least 2 ''X-Makine'' monsters and your opponent controls a Momentum Monster; Send all cards you control the Infirmary and Sudden Impact Summon a ''X-Makine'' monster.";
+		origText[i,TextEffect] = "If you control at least 2 ''X-Makine'' monsters and your opponent controls a Momentum Monster; Destroy cards you control the Infirmary and Sudden Impact Summon a ''X-Makine'' monster.";
 		j=0
 		//Card Status'
 		//0 = Taunt, 1 = Pierce, 2 = Rebellious, 3 = Immune, 4 = Indestructable, 5 = Lifesteal, 6 = Sneaky

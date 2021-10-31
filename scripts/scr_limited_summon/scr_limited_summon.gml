@@ -21,6 +21,4 @@ function scr_limited_summon(cardNum) {
 		}
 	}
 	return true;
-
-
 }

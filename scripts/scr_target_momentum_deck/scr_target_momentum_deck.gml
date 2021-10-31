@@ -21,7 +21,7 @@ function scr_target_momentum_deck(activator, players, minLevel, maxLevel, archet
 			var cardNum = player.momentumDeck[j, 0],
 			cardStat = scr_get_stat_orig;
 			
-			if(macros.card_type[cardNum] != TypeSpell && (cardStat(cardNum, StatLevel) > maxLevel || cardStat(cardNum, StatLevel) < minLevel)){
+			if(cardStat(cardNum, StatLevel) > maxLevel || cardStat(cardNum, StatLevel) < minLevel){
 				continue;
 			}
 			if(array_length(archetypeArray) && !array_includes_array(archetypeArray, macros.origArchetype[cardNum])){

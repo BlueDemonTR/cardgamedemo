@@ -15,8 +15,9 @@ function scr_target_infirmary_name(player, cardNum, arrayPos){
 		legal_targets[i] = instance_create_layer(525+((card_width+30)*i), room_height/2, "UpperInstances",obj_legal_targets);
 		with(legal_targets[i]){
 			position = filtered_cards[i];
+			self.player = player
 			self.arrayPos = arrayPos
-			cardNum = obj_player.infirmary[position, 0];
+			self.cardNum = obj_player.infirmary[position, 0];
 			artNum = obj_player.infirmary[position,1];
 			current_function = SelectInfirmary;
 		}

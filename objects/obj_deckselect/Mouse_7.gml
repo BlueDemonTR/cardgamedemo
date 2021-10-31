@@ -1,4 +1,3 @@
-
 if(mouse_x < x+365){
 	if(selectorCap-1 <= selector){selector = 0}
 	else{selector++}
@@ -9,5 +8,5 @@ if(mouse_x < x+365){
 		obj_deck_builder.alarm[1] = 2		
 	}	
 }else if(selectorCap > 1){
-	list_open= !(list_open)
+	list_open = !(list_open)
 }

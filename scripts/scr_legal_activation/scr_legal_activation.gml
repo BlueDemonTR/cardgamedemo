@@ -25,6 +25,7 @@ function scr_legal_activation(cardNum, effectNum, player, position){
 				case 1://Motorbiker Wheel Effects Legal Activation
 					switch(effectNum){
 						case 0:
+							if(obj_player.wheel_opt[effectNum]){return false}
 							if(!scr_count_deck_filter([player], [TypeMonster], 1, 12, [ArcMotorbiker], [], false, -1)){return false;}
 							return true;							
 						break;
@@ -57,7 +58,8 @@ function scr_legal_activation(cardNum, effectNum, player, position){
 							return true;
 						break;
 						case 3:
-							if(!scr_count_field_filter([player.opponent], [], [1, 4], [0, infinity], [0, infinity], [], [], -1, -1)){return false}
+							if(!scr_count_infirmary_filter([player], [], 1, 12, [ArcVisclades], [], true, -1, -1, -1)){return false}
+							if(scr_count_field(player) >= 4){return false}
 							return true;
 						break;
 					}				
@@ -65,11 +67,13 @@ function scr_legal_activation(cardNum, effectNum, player, position){
 				case 3://Pole Clan Wheel Effects Legal Activation
 					switch(effectNum){
 						case 0:
-							if(scr_count_field_filter([player, player.opponent], [], [1, 12], [0, infinity], [0, infinity], [ArcIgloo], [], -1, -1) || !(scr_if_field_full(player) && scr_limited_summon(32) && scr_find_deck(32))){return false}
+							if(!scr_count_field_filter([player, player.opponent], [], [1, 12], [0, infinity], [0, infinity], [ArcIgloo], [], -1, -1) && (!(!scr_if_field_full(player) || scr_limited_summon(32) || scr_find_deck(32)))){return false}
 							return true;							
 						break;
 						case 1:
-							if(!(scr_if_field_full(player) && scr_limited_summon(32) && scr_find_deck(32))){return false}
+							if(scr_if_field_full(player)){return false}
+							if(!scr_limited_summon(35)){return false}
+							if(scr_find_deck(35) == -1){return false}
 							return true;
 						break;
 						case 2:
@@ -89,7 +93,7 @@ function scr_legal_activation(cardNum, effectNum, player, position){
 							return true;
 						break;
 						case 1:
-							if(scr_count_deck_filter([player], [], 1, 12, [ArcNightmareBeast], [], false, -1)){return false}
+							if(!scr_count_deck_filter([player], [], 1, 12, [ArcNightmareBeast], [], false, -1)){return false}
 							return true;
 						break;
 						case 2:
@@ -109,7 +113,7 @@ function scr_legal_activation(cardNum, effectNum, player, position){
 							return true;
 						break;
 						case 1:
-							if(player.handCount < 5){return false}
+							if(player.handCount > 5){return false}
 							return true;
 						break;
 						case 2:
@@ -244,6 +248,7 @@ function scr_legal_activation(cardNum, effectNum, player, position){
 		break;
 
 		case 8://Rev up the Engines Legal Activation
+			if(scr_count_field(player)){return false}
 			if(!scr_count_deck_filter([player], [TypeMonster], 1, 12, [ArcMotorbiker], [], false, -1)){return false;}
 			return true;
 		break;
@@ -597,7 +602,7 @@ function scr_legal_activation(cardNum, effectNum, player, position){
 		
 		case 86://Goldfish Legal Activation
 			if((instance_exists(player.fieldCard[position]) && player.fieldCard[position].getStatus(StatusSilenced))){return false;}
-			if(scr_count_field_filter([player], [], [1,12], [0, infinity], [0, infinity], [ArcFisherman], [], -1, -1)){return false}
+			if(!scr_count_field_filter([player], [], [1,12], [0, infinity], [0, infinity], [ArcFisherman], [], -1, -1)){return false}
 			return true
 		break;
 		
@@ -696,7 +701,7 @@ function scr_legal_activation(cardNum, effectNum, player, position){
 		case 115://X-Makines Form Together Legal Activation
 			if(scr_count_field_filter([player], [], [1, 12], [0, infinity], [0, infinity], [ArcXMakine], [], -1, -1) < 2){return false}
 			if(!scr_count_field_filter([player.opponent], [TypeMomentum], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1)){return false}
-			if(scr_count_momentum_deck_filter([player], 1, 12, [ArcXMakine], [], true, -1)){return false}
+			if(!scr_count_momentum_deck_filter([player], 1, 12, [ArcXMakine], [], true, -1)){return false}
 			return true;
 		break;
 	}

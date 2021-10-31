@@ -23,8 +23,8 @@ function scr_on_summon(cardNum){
 			switch(player.field[i, 0]){
 				case 88://Strong Fisherman Stat Gain Activation Trigger
 				case 90://Fisherman of the Oceans Stat Gain Activation Trigger
-					if(!scr_legal_activation(90, 1, player, i)){continue;}
-					scr_add_to_resolution_pile(cardNum, 1, 0, player, position, false)
+					if(!scr_legal_activation(player.field[i, 0], 1, player, i)){continue;}
+					scr_add_to_resolution_pile(player.field[i, 0], 1, 0, player, i, false, position)
 				break;
 			}
 		}

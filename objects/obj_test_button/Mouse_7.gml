@@ -1,1 +1,1 @@
-scr_run_animation(3,irandom(100),10,c_red,80,c_blue,8,c_green,2,c_yellow)
+scr_run_animation(3,irandom(99),10,c_red,80,c_blue,8,c_green,2,c_yellow)

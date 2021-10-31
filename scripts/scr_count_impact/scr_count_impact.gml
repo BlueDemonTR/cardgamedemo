@@ -93,6 +93,8 @@ function scr_count_impact(player){
 					var FieldCard = player.fieldCard[j],
 					levelIncrease = 0;
 					
+					if(!instance_exists(FieldCard)){continue}
+					
 					if(scr_check_archetype(player.field[j, 0], mainMaterial) && FieldCard.getStat(StatLevel) < levelRequired){
 						levelIncrease = FieldCard.getStat(StatLevel)
 						mainMaterialCount++
@@ -112,11 +114,13 @@ function scr_count_impact(player){
 					var FieldCard = player.fieldCard[j],
 					levelIncrease = 0;
 					
+					if(!instance_exists(FieldCard)){continue}
+					
 					if(scr_check_archetype(player.field[j, 0], mainMaterial) && FieldCard.getStat(StatLevel) < levelRequired){
 						levelIncrease = FieldCard.getStat(StatLevel)
 						mainMaterialCount++
 					}
-					if(scr_check_archetype(player.field[j, 0], keyMonster) && player.fieldCard[j].getStat(StatLevel) > levelRequired){
+					if(scr_check_archetype(player.field[j, 0], keyMonster) && FieldCard.getStat(StatLevel) < levelRequired){
 						levelIncrease = FieldCard.getStat(StatLevel)
 						keyMonsterHere = true;
 					}
@@ -135,6 +139,8 @@ function scr_count_impact(player){
 				for(var j = 0; j < player.field_zone_count; j++){
 					var FieldCard = player.fieldCard[j],
 					levelIncrease = 0;
+					
+					if(!instance_exists(FieldCard)){continue}
 					
 					if(scr_check_archetype(player.field[j, 0], mainMaterial) && FieldCard.getStat(StatLevel) < levelRequired){
 						levelIncrease = FieldCard.getStat(StatLevel)
@@ -158,6 +164,8 @@ function scr_count_impact(player){
 				for(var j = 0; j < player.field_zone_count; j++){
 					var FieldCard = player.fieldCard[j],
 					levelIncrease = 0;
+					
+					if(!instance_exists(FieldCard)){continue}
 					
 					if(FieldCard.getStat(StatLevel) < levelRequired){
 						levelIncrease = FieldCard.getStat(StatLevel)

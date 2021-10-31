@@ -1,5 +1,5 @@
 if(!runAnimation){return}
-switch(animationInfo[0]){
+switch(int64(animationInfo[0])){
 	case 1:
 		draw_sprite_ext(macros.sprite_array[cardNum,artNum],-1,x,y,card_width/550,card_height/800,cardAngle,c_white,1)
 		draw_sprite_ext(spr_test_x,-1,locationInfo[1,0],locationInfo[1,1],1,1,0,c_white,1)
@@ -52,13 +52,18 @@ switch(animationInfo[0]){
 			draw_pie(room_width/2, room_height/2, chanceLeft, 100, chanceInfo[i,1], 300, 1)	
 			chanceLeft -= chanceInfo[i,0]
 		}
+		
 		draw_sprite_ext(spr_reel,-1,room_width/2, room_height/2,1,1, reelAngle,c_white,1)
 		if(reelLeft < 2){
-			timer--
+			if(!reelLeft){
+				timer--
+			}else{
+				reelAngle = reelAngle - (reelLeft*.1)
+			}
 		}else{		
-			reelAngle -= reelSpeed*.01*reelLeft
+			reelAngle -= int64(reelSpeed*reelLeft)*.01
 			if(reelAngle < slowdownStart){
-				reelSpeed = min(reelSpeed - .01, 4)
+				reelSpeed = max(reelSpeed - .01, 4)
 			}
 		}
 		if(timer == 0){
