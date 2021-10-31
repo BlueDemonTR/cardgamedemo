@@ -3411,7 +3411,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								for(var i = 0; i < player.field_zone_count; i++){
-									if(i != position && scr_check_archetype(player.field[i], ArcXMakine)){
+									if(i != position && scr_check_archetype(player.field[i,0], ArcXMakine)){
 										scr_increase_stat_card(player, i, StatATK, 1);
 										resolvingPile[positionInOrder,2] = 2
 									}
@@ -3443,7 +3443,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 						switch(resolutionStep){
 							case 1:
 								for(var i = 0; i < player.field_zone_count; i++){
-									if(i != position && scr_check_archetype(player.field[i], ArcXMakine)){
+									if(i != position && scr_check_archetype(player.field[i,0], ArcXMakine)){
 										scr_increase_stat_card(player, i, StatMaxHP, 1);
 										scr_increase_stat_card(player, i, StatHP, 1);
 										resolvingPile[positionInOrder,2] = 2
@@ -3561,7 +3561,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								NextStep
 							break;
 							case 3:
-								if(player.getStat(PlayerMomentum) <= 6){
+								if(player.getStat(PlayerMomentum) < 6){
 									scr_silence(resolvingPile[positionInOrder,7],resolvingPile[positionInOrder,6])
 									scr_increase_stat_player(player, PlayerMomentum, 6)
 								}else{
@@ -3612,7 +3612,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				break;
 			}
 		break;
-		case 114://Mighty Changing Fire Blades
+		case 114://Mighty Changing Fire Blades Effect
 			switch(effectNum){
 				case 0:
 					if(!effectSilenced){
@@ -3621,17 +3621,17 @@ function scr_resolve_effect_in_pile(positionInOrder){
 								resolvingPile[positionInOrder,6] = scr_pay_momentum(player, getStat(PlayerMomentum));
 								NextStep
 							break;
-							case 3:
+							case 2:
 								resolvingPile[positionInOrder,7] = 0;
 								resolvingPile[positionInOrder,8] = 0;
-								scr_target_field(player, [player], [], [1, 12], [0, infinity], [0, infinity], [ArcXMakine], [], -1, -1, 6)
+								scr_target_field(player, [player], [], [1, 12], [0, infinity], [0, infinity], [ArcXMakine], [], -1, -1, 7)
 								NextStep
 							break;
-							case 5:
+							case 4:
 								if(resolvingPile[positionInOrder,6]){
 									scr_increase_stat_card(resolvingPile[positionInOrder,8], resolvingPile[positionInOrder,7], StatATK, resolvingPile[positionInOrder,6])
 								}else{
-									scr_set_stat_card(resolvingPile[positionInOrder,7], resolvingPile[positionInOrder,6], StatusTAUNT, true);
+									scr_set_status_card(resolvingPile[positionInOrder,8], resolvingPile[positionInOrder,7], StatusTAUNT, true);
 								}
 								FinishResolving
 							break;
@@ -3650,24 +3650,31 @@ function scr_resolve_effect_in_pile(positionInOrder){
 		case 115://X-Makines Form Together! Effect
 			switch(effectNum){
 				case 0:
-					if(!effectSilenced && scr_count_field_filter([player], [], [1, 12], [0, infinity], [0, infinity], [ArcXMakine], [], -1, -1) >= 2 && scr_count_field_filter([player], [TypeMomentum], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1)){
+					if(!effectSilenced){
 						switch(resolutionStep){
 							case 1:
-								for(var i = 0; i < player.field_zone_count; i++){
-									scr_destroy(player, i, SendEffect);
+								if(scr_count_field_filter([player], [], [1, 12], [0, infinity], [0, infinity], [ArcXMakine], [], -1, -1) < 2){
+									FinishResolving
+								}
+								if(!scr_count_field_filter([player.opponent], [TypeMomentum], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1)){
+									FinishResolving
 								}
 								NextStep
 							break;
-							case 3:
+							case 2:
+								for(var i = 0; i < player.field_zone_count; i++){
+									scr_destroy(player, i, SendEffect);
+								}							
 								resolvingPile[positionInOrder,6] = 0
 								scr_target_momentum_deck(player, [player], 1, 12, [ArcXMakine], [], true, -1, 6)
+								NextStep
 							break;
-							case 5:
+							case 4:
 								resolvingPile[positionInOrder,7] = 0
 								scr_choose_field_zones(player, [player], false, false, true, 7)
 								NextStep
 							break;
-							case 7:
+							case 6:
 								scr_summon_momentum_deck(player, resolvingPile[positionInOrder,6], resolvingPile[positionInOrder,7])
 								FinishResolving
 							break;

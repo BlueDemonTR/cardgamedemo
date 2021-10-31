@@ -696,7 +696,7 @@ function scr_legal_activation(cardNum, effectNum, player, position){
 		case 115://X-Makines Form Together Legal Activation
 			if(scr_count_field_filter([player], [], [1, 12], [0, infinity], [0, infinity], [ArcXMakine], [], -1, -1) < 2){return false}
 			if(!scr_count_field_filter([player.opponent], [TypeMomentum], [1, 12], [0, infinity], [0, infinity], [], [], -1, -1)){return false}
-			if(scr_count_momentum_deck_filter([player], 1, 12, [ArcXMakine], [], true, -1)){return false}
+			if(!scr_count_momentum_deck_filter([player], 1, 12, [ArcXMakine], [], true, -1)){return false}
 			return true;
 		break;
 	}
