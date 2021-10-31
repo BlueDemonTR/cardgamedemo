@@ -44,4 +44,7 @@ if(macros.test_mode){
 	if(keyboard_check(vk_enter) && keyboard_check_released(vk_backspace)){
 		room_goto(room_animation_test)
 	}
+	if(keyboard_check(vk_enter) && keyboard_check_released(vk_control)){
+		room_goto(room_sprite_generator)
+	}
 }

@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"578d2acd-e61b-4679-a6ec-7fbd5d32b885","path":"sprites/spr_motorwildrider/spr_motorwildrider.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"578d2acd-e61b-4679-a6ec-7fbd5d32b885","path":"sprites/spr_motorwildrider/spr_motorwildrider.yy",},"LayerId":{"name":"ae028f76-5086-4f2b-9f5e-35037d37cd94","path":"sprites/spr_motorwildrider/spr_motorwildrider.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_motorwildrider","path":"sprites/spr_motorwildrider/spr_motorwildrider.yy",},"resourceVersion":"1.0","name":"578d2acd-e61b-4679-a6ec-7fbd5d32b885","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"a1506681-ed65-4696-b9f9-0cd8a98b5c9b","path":"sprites/spr_motorwildrider/spr_motorwildrider.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"a1506681-ed65-4696-b9f9-0cd8a98b5c9b","path":"sprites/spr_motorwildrider/spr_motorwildrider.yy",},"LayerId":{"name":"12b2b29f-16d8-4117-bde7-b56b72d82aee","path":"sprites/spr_motorwildrider/spr_motorwildrider.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_motorwildrider","path":"sprites/spr_motorwildrider/spr_motorwildrider.yy",},"resourceVersion":"1.0","name":"a1506681-ed65-4696-b9f9-0cd8a98b5c9b","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_motorwildrider","path":"sprites/spr_motorwildrider/spr_motorwildrider.yy",},
@@ -41,8 +41,8 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"ebc7be89-c883-43e1-b875-008c0e7a36d9","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"578d2acd-e61b-4679-a6ec-7fbd5d32b885","path":"sprites/spr_motorwildrider/spr_motorwildrider.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+            {"id":"3effa10e-4c68-429c-b4e9-72a026d947f0","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"a1506681-ed65-4696-b9f9-0cd8a98b5c9b","path":"sprites/spr_motorwildrider/spr_motorwildrider.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": true,
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"ae028f76-5086-4f2b-9f5e-35037d37cd94","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"12b2b29f-16d8-4117-bde7-b56b72d82aee","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {

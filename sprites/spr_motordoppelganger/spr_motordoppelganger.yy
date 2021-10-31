@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"dd86fa77-370c-4748-8768-82f1fbfd4470","path":"sprites/spr_motordoppelganger/spr_motordoppelganger.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"dd86fa77-370c-4748-8768-82f1fbfd4470","path":"sprites/spr_motordoppelganger/spr_motordoppelganger.yy",},"LayerId":{"name":"7a65aca9-5766-4457-8406-9273722520fa","path":"sprites/spr_motordoppelganger/spr_motordoppelganger.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_motordoppelganger","path":"sprites/spr_motordoppelganger/spr_motordoppelganger.yy",},"resourceVersion":"1.0","name":"dd86fa77-370c-4748-8768-82f1fbfd4470","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"3cd84bd4-b4fc-46fa-bd54-5397f493ff80","path":"sprites/spr_motordoppelganger/spr_motordoppelganger.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"3cd84bd4-b4fc-46fa-bd54-5397f493ff80","path":"sprites/spr_motordoppelganger/spr_motordoppelganger.yy",},"LayerId":{"name":"ac5edd36-52f1-43c2-a62c-f6269817c540","path":"sprites/spr_motordoppelganger/spr_motordoppelganger.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_motordoppelganger","path":"sprites/spr_motordoppelganger/spr_motordoppelganger.yy",},"resourceVersion":"1.0","name":"3cd84bd4-b4fc-46fa-bd54-5397f493ff80","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_motordoppelganger","path":"sprites/spr_motordoppelganger/spr_motordoppelganger.yy",},
@@ -41,8 +41,8 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"a8fa6200-48f7-437e-9e61-bf7c09350db9","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"dd86fa77-370c-4748-8768-82f1fbfd4470","path":"sprites/spr_motordoppelganger/spr_motordoppelganger.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+            {"id":"3e39209a-e74c-459f-9fd6-0d4fee5282d3","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"3cd84bd4-b4fc-46fa-bd54-5397f493ff80","path":"sprites/spr_motordoppelganger/spr_motordoppelganger.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": true,
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"7a65aca9-5766-4457-8406-9273722520fa","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"ac5edd36-52f1-43c2-a62c-f6269817c540","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
