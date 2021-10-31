@@ -211,8 +211,8 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 									case 2:
 										for(var i = 0; i < player.field_zone_count; i++){
-											if(player.field[i]){
-												player.fieldCard[i].attacksLeft++
+											if(instance_exists(player.fieldCard[i])){
+												player.fieldCard[i].attacksLeft = max(player.fieldCard[i].attacksLeft, 1)
 											}
 										}
 										FinishResolving
@@ -260,7 +260,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 										resolvingPile[positionInOrder,6] = scr_target_deck_name(player, 24)
 										NextStep
 									break;
-									case 4:
+									case 3:
 										scr_search(player, resolvingPile[positionInOrder,6])
 										FinishResolving
 									break;
@@ -321,10 +321,12 @@ function scr_resolve_effect_in_pile(positionInOrder){
 										resolvingPile[positionInOrder,6] = 0 //infirmaryPos
 										resolvingPile[positionInOrder,7] = 0 //player
 										scr_target_infirmary(player, [player], [TypeMonster, TypeMomentum], 1, 12, [ArcVisclades], [], true, -1, -1, -1, 6)
+										NextStep
 									break;
 									case 4:
 										resolvingPile[positionInOrder,8] = 0 //summonZone
 										scr_choose_field_zones(player, [player], false, true, false, 8)
+										NextStep
 									break;
 									case 6:
 										scr_summon_from_infirmary(resolvingPile[positionInOrder,7], resolvingPile[positionInOrder,6], resolvingPile[positionInOrder,8])
@@ -394,12 +396,12 @@ function scr_resolve_effect_in_pile(positionInOrder){
 										resolvingPile[positionInOrder,6] = scr_target_deck_name(player, 35)
 										NextStep
 									break;
-									case 4:
+									case 3:
 										resolvingPile[positionInOrder,7] = 0
 										scr_choose_field_zones(player, [player], false, true, false, 7)
 										NextStep
 									break;
-									case 6:
+									case 5:
 										scr_summon_from_deck(resolvingPile[positionInOrder, 6], resolvingPile[positionInOrder, 7])
 										FinishResolving
 									break;
@@ -464,8 +466,6 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									case 4:
 										var affectedCard = resolvingPile[positionInOrder,7].fieldCard[resolvingPile[positionInOrder,6]]
 										scr_heal_card(affectedCard.player, affectedCard.position, affectedCard.getStat(StatMaxHP))
-										scr_increase_stat_card(affectedCard.player, affectedCard.position, StatMaxHP, 6)
-										scr_increase_stat_card(affectedCard.player, affectedCard.position, StatHP, 6)
 										FinishResolving
 									break;
 								}
@@ -791,7 +791,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 									case 2:
 										resolvingPile[positionInOrder,6] = 0
-										scr_target_deck(player, [player], [TypeSpell], 1, 12, [], [], false, -1, 5)
+										scr_target_deck(player, [player], [TypeSpell], 1, 12, [], [], false, -1, 6)
 										NextStep
 									break;
 									case 4:
@@ -1110,7 +1110,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 		case 8://Rev Up the Engines Effect
 			switch(effectNum){
 				case 0:
-					if(!effectSilenced){
+					if(!effectSilenced && !scr_count_field(player)){
 						switch(resolutionStep){
 							case 1:
 								resolvingPile[positionInOrder,6] = 0;
