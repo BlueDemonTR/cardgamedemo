@@ -149,15 +149,16 @@ scr_default_statuses()
 scr_initialize_activation_box_functions()
 
 //Material Info
-#macro InfoLevel 0
-#macro InfoMainMonsterCount 1
-#macro InfoKeyMonster 2
+#macro InfoLevel "infoLevel"
+#macro InfoMainMonsterCount "infoMainMonsterCount" 
+#macro InfoKeyMonster "infoKeyMonster"
 
 
 //Shortcuts
 #macro NextStep resolvingPile[positionInOrder,2]++
 #macro FinishResolving resolvingPile[positionInOrder,2] = 98
 #macro NextEffect resolvingPile[positionInOrder,2] = 99
+#macro color draw_get_color()
 
 
 if(false){

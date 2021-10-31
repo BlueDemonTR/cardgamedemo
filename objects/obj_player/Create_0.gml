@@ -166,7 +166,11 @@ scr_reset_limitations()
 
 //Impact Summon Stuff
 impactSummoning = false;
-materialDisplay[0] = [0,0] 
+materialDisplay =
+{
+};
+impact_bar_y_origin = 490;
+impact_bar_y = impact_bar_y_origin;
 // [Requirement Name, Requirement Number] = [Requirement(String), Required, Have]
 
 //Game State

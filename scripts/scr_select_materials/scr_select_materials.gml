@@ -11,15 +11,18 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 	keyMonster = 0,
 	selectedCards = resolvingPile[resolvingPileCount-1, arrayPos];
 	
-	impactSummoning = true;
+	obj_player.impactSummoning = true;
 	
-	obj_player.materialDisplay = []
+	obj_player.materialDisplay = 
+	{
+		
+	};
 	
-	array_push(obj_player.materialDisplay, [InfoLevel, 0, levelRequired])
+	variable_struct_set(obj_player.materialDisplay, InfoLevel, [0, levelRequired])
 	switch(cardNum){//Additional Variables for the Summonable Check are also Set Here			
 		case 16://Motorbiker EoS Summoning Condition
 			keyMonster = ArcMotorbikerLeader
-			array_push(obj_player.materialDisplay, [InfoKeyMonster, 0, 1])
+			variable_struct_set(obj_player.materialDisplay, InfoKeyMonster, [0, 1])
 		case 11://Motorbiker Leader Khan Summoning Condition
 		case 12://Motorbiker Leader Luther Summoning Condition
 		case 13://Motorbiker Leader Toku Summoning Condition
@@ -27,7 +30,7 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 		case 15://Motorbiker Leader Ceasar Summoning Condition
 			mainMaterial = ArcMotorbiker;
 			mainMaterialRequired = 2;
-			array_push(obj_player.materialDisplay, [InfoMainMonsterCount, 0, mainMaterialRequired])
+			variable_struct_set(obj_player.materialDisplay, InfoMainMonsterCount, [0, mainMaterialRequired])
 		break;
 			
 		case 27://Visclades of Denial Summoning Condition
@@ -37,7 +40,7 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 		case 31://Visclades of Acceptance Summoning Condition
 			mainMaterial = ArcVisclades;
 			mainMaterialRequired = 2;
-			array_push(obj_player.materialDisplay, [InfoMainMonsterCount, 0, mainMaterialRequired])
+			variable_struct_set(obj_player.materialDisplay, InfoMainMonsterCount, [0, mainMaterialRequired])
 		break;
 			
 		case 47://Igloo Castle Summoning Condition
@@ -47,27 +50,27 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 			if (!keyMonster) keyMonster = cardNum - 1; //Get the lower form
 			mainMaterial = ArcPoleClan;
 			mainMaterialRequired = 1;
-			array_push(obj_player.materialDisplay, [InfoMainMonsterCount, 0, mainMaterialRequired])
-			array_push(obj_player.materialDisplay, [InfoKeyMonster, 0, 1])
+			variable_struct_set(obj_player.materialDisplay, InfoMainMonsterCount, [0, mainMaterialRequired])
+			variable_struct_set(obj_player.materialDisplay, InfoKeyMonster, [0, 1])
 		break;
 			
 		case 70://Vengeful Cyborg Summoning Condition
 			mainMaterialRequired = 2;
-			array_push(obj_player.materialDisplay, [InfoMainMonsterCount, 0, mainMaterialRequired])
+			variable_struct_set(obj_player.materialDisplay, InfoMainMonsterCount, [0, mainMaterialRequired])
 		break;
 			
 		case 90://Fisherman of the Oceans Summoning Condition
 			keyMonster = ArcFisherman;
 			mainMaterial = ArcFish;
 			mainMaterialRequired = 2;
-			array_push(obj_player.materialDisplay, [InfoMainMonsterCount, 0, mainMaterialRequired])
-			array_push(obj_player.materialDisplay, [InfoKeyMonster, 0, 1])
+			variable_struct_set(obj_player.materialDisplay, InfoMainMonsterCount, [0, mainMaterialRequired])
+			variable_struct_set(obj_player.materialDisplay, InfoKeyMonster, [0, 1])
 		break;
 			
 		case 112://Jason, DX-Makine Thunderdragon Summoning Condition
 			mainMaterial = ArcXMakine;
 			mainMaterialRequired = 2;
-			array_push(obj_player.materialDisplay, [InfoMainMonsterCount, 0, mainMaterialRequired])
+			variable_struct_set(obj_player.materialDisplay, InfoMainMonsterCount, [0, mainMaterialRequired])
 		break;
 	}
 		
@@ -103,8 +106,8 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 			if(player.field[4,0] && !array_includes(selectedCards, 4)){
 				mmzOccupied = true;
 			}			
-			materialDisplay[0, 1] = levelCount
-			materialDisplay[1, 1] = mainMaterialCount
+			materialDisplay.infoLevel[0] = levelCount
+			materialDisplay.infoMainMonsterCount[0] = mainMaterialCount
 			
 			if(mmzOccupied || levelCount < levelRequired || mainMaterialCount < mainMaterialRequired){
 				var selectableTargets = [];
@@ -156,9 +159,9 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 			if(player.field[4,0] && !array_includes(selectedCards, 4)){
 				mmzOccupied = true;
 			}			
-			materialDisplay[0, 1] = levelCount
-			materialDisplay[1, 1] = mainMaterialCount
-			materialDisplay[2, 1] = keyMonsterHere
+			materialDisplay.infoLevel[0] = levelCount
+			materialDisplay.infoMainMonsterCount[0] = mainMaterialCount
+			materialDisplay.infoKeyMonster[0] = keyMonsterHere
 			
 			if(mmzOccupied || levelCount < levelRequired || mainMaterialCount < mainMaterialRequired || !keyMonsterHere){
 				var selectableTargets = [];
@@ -215,9 +218,9 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 			if(player.field[4,0] && !array_includes(selectedCards, 4)){
 				mmzOccupied = true;
 			}			
-			materialDisplay[0, 1] = levelCount
-			materialDisplay[1, 1] = mainMaterialCount
-			materialDisplay[2, 1] = keyMonsterHere
+			materialDisplay.infoLevel[0] = levelCount
+			materialDisplay.infoMainMonsterCount[0] = mainMaterialCount
+			materialDisplay.infoKeyMonster[0] = keyMonsterHere
 			
 			if(mmzOccupied || levelCount < levelRequired || mainMaterialCount < mainMaterialRequired || !keyMonsterHere){
 				var selectableTargets = [];
@@ -272,7 +275,7 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 			if(player.field[4,0] && !array_includes(selectedCards, 4)){
 				mmzOccupied = true;
 			}			
-			materialDisplay[0, 1] = levelCount
+			materialDisplay.infoLevel[0] = levelCount
 
 			if(mmzOccupied || levelCount < levelRequired || mainMaterialCount < mainMaterialRequired || keyMonsterHere){
 				var selectableTargets = [];
@@ -306,6 +309,6 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 		break;
 	}
 	//Success
-	impactSummoning = false;
+	obj_player.impactSummoning = false;
 	obj_player.resolvingPile[obj_player.resolvingPileCount-1,2]++
 }

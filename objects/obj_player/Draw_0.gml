@@ -38,6 +38,40 @@ if(victory_state == -1){
 	draw_text(x-string_width("YOU LOST"),room_height/2-15,"YOU LOST")
 }
 
+if(impactSummoning){
+	draw_set_color($182a47)
+	draw_set_font(fnt_upheaval_s18)
+	draw_sprite_ext(spr_impact_info_display_bg, -1, 68, impact_bar_y, 1, 1, 0, c_white, 1)
+	var margin = 30
+	//TODO: Do this better for the future
+	if(variable_struct_exists(materialDisplay, InfoLevel)){
+		draw_text_ext_color(10, impact_bar_y + margin, "Level Required", 15, 110, color, color, color, color, 1)
+		margin += string_height_ext("Level Required", 15, 110)
+		draw_text_color(10, impact_bar_y + margin, string(materialDisplay.infoLevel[0]) + "/" + string(materialDisplay.infoLevel[1]),color, color, color, color, 1)
+		margin += 60
+	}
+	if(variable_struct_exists(materialDisplay, InfoKeyMonster)){
+		draw_text_ext_color(10, impact_bar_y + margin, "Key Monster Count", 15, 110, color, color, color, color, 1)
+		margin += string_height_ext("Key Monster Count", 15, 110)
+		draw_text_color(10, impact_bar_y + margin, string(materialDisplay.infoKeyMonster[0]) + "/" + string(materialDisplay.infoKeyMonster[1]),color, color, color, color, 1)
+		margin += 60
+	}
+	if(variable_struct_exists(materialDisplay, InfoMainMonsterCount)){
+		draw_text_ext_color(10, impact_bar_y + margin, "Main Material Count", 15, 110, color, color, color, color, 1)
+		margin += string_height_ext("Main Material Count", 15, 110)
+		draw_text_color(10, impact_bar_y + margin, string(materialDisplay.infoMainMonsterCount[0]) + "/" + string(materialDisplay.infoMainMonsterCount[1]),color, color, color, color, 1)
+		margin += 60
+	}
+	if(impact_bar_y > 0){
+		impact_bar_y -= (impact_bar_y_origin)/10
+	}else{
+		
+	}
+}else if(impact_bar_y != impact_bar_y_origin){
+	impact_bar_y += (impact_bar_y_origin - impact_bar_y)/20
+}
+
+
 if(test_mode){
 	draw_set_color(c_purple)
 	if(instance_exists(obj_opponent)){
@@ -46,7 +80,9 @@ if(test_mode){
 		draw_text(100,280,"Start Turn:" + string(start_turn))
 		draw_text(100,200,hand)
 		draw_text(100,170,handCount)
-		draw_text(100,230,handCard)
+		if(impactSummoning){
+			draw_text(100,230,materialDisplay)
+		}
 		draw_text(1500,120,resolutionPile)
 		draw_text(1500,140,resolutionPileCount)
 		draw_text(1500,160,resolvingPile)
