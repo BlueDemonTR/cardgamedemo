@@ -50,7 +50,7 @@ if(getStatus(StatusPoison)){
 	stateList[i++] = spr_poison;
 }
 
-for(j=0;j < i; j++){
+for(j = 0; j < i; j++){
 	temp1 = int64(j/3)
 	temp2 = j mod 3
 	draw_sprite_ext(stateList[j],-1,x-65+(30*temp2),(y-70)+(temp1*30),sprite_to_small,sprite_to_small,0,c_white,1);
