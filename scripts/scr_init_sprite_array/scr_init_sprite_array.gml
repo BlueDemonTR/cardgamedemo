@@ -89,37 +89,37 @@ function scr_init_sprite_array() {
 		
 	i++;
 	j=0;
-	sprite_array[i,j++] = spr_genociderlentus;//17
+	sprite_array[i,j++] = spr_viscladeslentus;//17
 	sprite_count[i] = j;
 		
 	i++;
 	j=0;
-	sprite_array[i,j++] = spr_genociderriti;
+	sprite_array[i,j++] = spr_viscladesriti;
 	sprite_count[i] = j;
 		
 	i++;
 	j=0;
-	sprite_array[i,j++] = spr_genocideridine;
+	sprite_array[i,j++] = spr_viscladesidine;
 	sprite_count[i] = j;
 		
 	i++;
 	j=0;
-	sprite_array[i,j++] = spr_genocidersatio;//20
+	sprite_array[i,j++] = spr_viscladessatio;//20
 	sprite_count[i] = j;
 		
 	i++;
 	j=0;
-	sprite_array[i,j++] = spr_genociderluvies;
+	sprite_array[i,j++] = spr_viscladesluvies;
 	sprite_count[i] = j;
 		
 	i++;
 	j=0;
-	sprite_array[i,j++] = spr_genocidertia;
+	sprite_array[i,j++] = spr_viscladestia;
 	sprite_count[i] = j;
 		
 	i++;
 	j=0;
-	sprite_array[i,j++] = spr_genocidergloria;
+	sprite_array[i,j++] = spr_viscladesgloria;
 	sprite_count[i] = j;
 		
 	i++;
@@ -140,27 +140,27 @@ function scr_init_sprite_array() {
 		
 	i++;
 	j=0;
-	sprite_array[i,j++] = spr_ugenociderrejection;
+	sprite_array[i,j++] = spr_uviscladesrejection;
 	sprite_count[i] = j;
 		
 	i++;
 	j=0;
-	sprite_array[i,j++] = spr_ugenocideranger;
+	sprite_array[i,j++] = spr_uviscladesanger;
 	sprite_count[i] = j;
 		
 	i++;
 	j=0;
-	sprite_array[i,j++] = spr_ugenociderbargaining;
+	sprite_array[i,j++] = spr_uviscladesbargaining;
 	sprite_count[i] = j;
 		
 	i++;
 	j=0;
-	sprite_array[i,j++] = spr_ugenociderdepression;
+	sprite_array[i,j++] = spr_uviscladesdepression;
 	sprite_count[i] = j;
 		
 	i++;
 	j=0;
-	sprite_array[i,j++] = spr_ugenocideracceptance;//31
+	sprite_array[i,j++] = spr_uviscladesacceptance;//31
 	sprite_count[i] = j;
 		
 	i++;

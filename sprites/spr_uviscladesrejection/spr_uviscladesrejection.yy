@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"bf157fca-8efb-49c2-8057-db76cccc4960","path":"sprites/spr_secondcoming/spr_secondcoming.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"bf157fca-8efb-49c2-8057-db76cccc4960","path":"sprites/spr_secondcoming/spr_secondcoming.yy",},"LayerId":{"name":"25bf2a0c-fec2-48dc-b2dd-9cda8bd62eb8","path":"sprites/spr_secondcoming/spr_secondcoming.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_secondcoming","path":"sprites/spr_secondcoming/spr_secondcoming.yy",},"resourceVersion":"1.0","name":"bf157fca-8efb-49c2-8057-db76cccc4960","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"d122f2d2-5c56-4e5b-8c95-623ed65bc007","path":"sprites/spr_uviscladesrejection/spr_uviscladesrejection.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"d122f2d2-5c56-4e5b-8c95-623ed65bc007","path":"sprites/spr_uviscladesrejection/spr_uviscladesrejection.yy",},"LayerId":{"name":"4c20f3f7-86eb-41dc-857a-2cbb3f71ffce","path":"sprites/spr_uviscladesrejection/spr_uviscladesrejection.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_uviscladesrejection","path":"sprites/spr_uviscladesrejection/spr_uviscladesrejection.yy",},"resourceVersion":"1.0","name":"d122f2d2-5c56-4e5b-8c95-623ed65bc007","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_secondcoming","path":"sprites/spr_secondcoming/spr_secondcoming.yy",},
+    "spriteId": {"name":"spr_uviscladesrejection","path":"sprites/spr_uviscladesrejection/spr_uviscladesrejection.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 15.0,
@@ -41,10 +41,10 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"9c31157a-791b-4be2-bb0b-167afe4f0b50","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"bf157fca-8efb-49c2-8057-db76cccc4960","path":"sprites/spr_secondcoming/spr_secondcoming.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"0d9506f1-57b1-4862-99c7-3e3597ab3d96","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"d122f2d2-5c56-4e5b-8c95-623ed65bc007","path":"sprites/spr_uviscladesrejection/spr_uviscladesrejection.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
-    "visibleRange": {"x":0.0,"y":0.0,},
+    "visibleRange": null,
     "lockOrigin": true,
     "showBackdrop": true,
     "showBackdropImage": false,
@@ -58,14 +58,14 @@
     "yorigin": 400,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_secondcoming","path":"sprites/spr_secondcoming/spr_secondcoming.yy",},
+    "parent": {"name":"spr_uviscladesrejection","path":"sprites/spr_uviscladesrejection/spr_uviscladesrejection.yy",},
     "resourceVersion": "1.3",
-    "name": "",
+    "name": "spr_uviscladesrejection",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"25bf2a0c-fec2-48dc-b2dd-9cda8bd62eb8","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"4c20f3f7-86eb-41dc-857a-2cbb3f71ffce","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
@@ -73,7 +73,7 @@
     "path": "folders/Sprites/Card Sprites/Story Mode Chapter 1/Visclades.yy",
   },
   "resourceVersion": "1.0",
-  "name": "spr_secondcoming",
+  "name": "spr_uviscladesrejection",
   "tags": [],
   "resourceType": "GMSprite",
 }

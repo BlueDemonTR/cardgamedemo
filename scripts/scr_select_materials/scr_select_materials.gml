@@ -13,12 +13,13 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 	
 	impactSummoning = true;
 	
-	materialDisplay[0] = ["Level Requirement", 0, levelRequired]
+	obj_player.materialDisplay = []
 	
+	array_push(obj_player.materialDisplay, [InfoLevel, 0, levelRequired])
 	switch(cardNum){//Additional Variables for the Summonable Check are also Set Here			
 		case 16://Motorbiker EoS Summoning Condition
 			keyMonster = ArcMotorbikerLeader
-			materialDisplay[2] = ["Motorbiker Leader", 0, 1]
+			array_push(obj_player.materialDisplay, [InfoKeyMonster, 0, 1])
 		case 11://Motorbiker Leader Khan Summoning Condition
 		case 12://Motorbiker Leader Luther Summoning Condition
 		case 13://Motorbiker Leader Toku Summoning Condition
@@ -26,7 +27,7 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 		case 15://Motorbiker Leader Ceasar Summoning Condition
 			mainMaterial = ArcMotorbiker;
 			mainMaterialRequired = 2;
-			materialDisplay[1] = ["Motorbiker Count", 0, mainMaterialRequired]
+			array_push(obj_player.materialDisplay, [InfoMainMonsterCount, 0, mainMaterialRequired])
 		break;
 			
 		case 27://Visclades of Denial Summoning Condition
@@ -36,7 +37,7 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 		case 31://Visclades of Acceptance Summoning Condition
 			mainMaterial = ArcVisclades;
 			mainMaterialRequired = 2;
-			materialDisplay[1] = ["Visclades Count", 0, mainMaterialRequired]
+			array_push(obj_player.materialDisplay, [InfoMainMonsterCount, 0, mainMaterialRequired])
 		break;
 			
 		case 47://Igloo Castle Summoning Condition
@@ -46,27 +47,27 @@ function scr_select_materials(player, momentumDeckPos, arrayPos){
 			if (!keyMonster) keyMonster = cardNum - 1; //Get the lower form
 			mainMaterial = ArcPoleClan;
 			mainMaterialRequired = 1;
-			materialDisplay[1] = ["Pole Clan Count", 0, mainMaterialRequired]
-			materialDisplay[2] = [macros.name[keyMonster], 0, 1]
+			array_push(obj_player.materialDisplay, [InfoMainMonsterCount, 0, mainMaterialRequired])
+			array_push(obj_player.materialDisplay, [InfoKeyMonster, 0, 1])
 		break;
 			
 		case 70://Vengeful Cyborg Summoning Condition
 			mainMaterialRequired = 2;
-			materialDisplay[1] = ["Monster Count", 0, mainMaterialRequired]
+			array_push(obj_player.materialDisplay, [InfoMainMonsterCount, 0, mainMaterialRequired])
 		break;
 			
 		case 90://Fisherman of the Oceans Summoning Condition
 			keyMonster = ArcFisherman;
 			mainMaterial = ArcFish;
 			mainMaterialRequired = 2;
-			materialDisplay[1] = ["Fish Count", 0, mainMaterialRequired]
-			materialDisplay[2] = ["Fisherman Count", 0, 1]
+			array_push(obj_player.materialDisplay, [InfoMainMonsterCount, 0, mainMaterialRequired])
+			array_push(obj_player.materialDisplay, [InfoKeyMonster, 0, 1])
 		break;
 			
 		case 112://Jason, DX-Makine Thunderdragon Summoning Condition
 			mainMaterial = ArcXMakine;
 			mainMaterialRequired = 2;
-			materialDisplay[1] = ["X-Makine Count", 0, mainMaterialRequired]
+			array_push(obj_player.materialDisplay, [InfoMainMonsterCount, 0, mainMaterialRequired])
 		break;
 	}
 		

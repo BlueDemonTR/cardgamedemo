@@ -6,6 +6,6 @@ if(activation_mode == FunctionHandEffect){
 }else if(activation_mode == FunctionChoices){
 	draw_text(x-55,y-30,choiceText);
 }else{
-	draw_text(x-35,y-30,activation_mode);
+	draw_text(x-35,y-30,macros.activationBoxText[activation_mode]);
 }
 

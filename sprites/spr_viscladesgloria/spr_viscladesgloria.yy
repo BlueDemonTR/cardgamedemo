@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"bf157fca-8efb-49c2-8057-db76cccc4960","path":"sprites/spr_secondcoming/spr_secondcoming.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"bf157fca-8efb-49c2-8057-db76cccc4960","path":"sprites/spr_secondcoming/spr_secondcoming.yy",},"LayerId":{"name":"25bf2a0c-fec2-48dc-b2dd-9cda8bd62eb8","path":"sprites/spr_secondcoming/spr_secondcoming.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_secondcoming","path":"sprites/spr_secondcoming/spr_secondcoming.yy",},"resourceVersion":"1.0","name":"bf157fca-8efb-49c2-8057-db76cccc4960","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"28dd3e36-d29d-4e01-afaf-9b19648b9b5e","path":"sprites/spr_viscladesgloria/spr_viscladesgloria.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"28dd3e36-d29d-4e01-afaf-9b19648b9b5e","path":"sprites/spr_viscladesgloria/spr_viscladesgloria.yy",},"LayerId":{"name":"e225fb7f-0dbf-43d6-90c0-9b441f30c419","path":"sprites/spr_viscladesgloria/spr_viscladesgloria.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_viscladesgloria","path":"sprites/spr_viscladesgloria/spr_viscladesgloria.yy",},"resourceVersion":"1.0","name":"28dd3e36-d29d-4e01-afaf-9b19648b9b5e","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_secondcoming","path":"sprites/spr_secondcoming/spr_secondcoming.yy",},
+    "spriteId": {"name":"spr_viscladesgloria","path":"sprites/spr_viscladesgloria/spr_viscladesgloria.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 15.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"9c31157a-791b-4be2-bb0b-167afe4f0b50","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"bf157fca-8efb-49c2-8057-db76cccc4960","path":"sprites/spr_secondcoming/spr_secondcoming.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"ea54b3cf-5b71-4db4-bb75-86836c4d9b8d","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"28dd3e36-d29d-4e01-afaf-9b19648b9b5e","path":"sprites/spr_viscladesgloria/spr_viscladesgloria.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": {"x":0.0,"y":0.0,},
@@ -58,14 +58,14 @@
     "yorigin": 400,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_secondcoming","path":"sprites/spr_secondcoming/spr_secondcoming.yy",},
+    "parent": {"name":"spr_viscladesgloria","path":"sprites/spr_viscladesgloria/spr_viscladesgloria.yy",},
     "resourceVersion": "1.3",
-    "name": "",
+    "name": "spr_viscladesgloria",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"25bf2a0c-fec2-48dc-b2dd-9cda8bd62eb8","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"e225fb7f-0dbf-43d6-90c0-9b441f30c419","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
@@ -73,7 +73,7 @@
     "path": "folders/Sprites/Card Sprites/Story Mode Chapter 1/Visclades.yy",
   },
   "resourceVersion": "1.0",
-  "name": "spr_secondcoming",
+  "name": "spr_viscladesgloria",
   "tags": [],
   "resourceType": "GMSprite",
 }

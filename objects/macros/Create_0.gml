@@ -146,6 +146,13 @@ scr_default_statuses()
 #macro FunctionHandEffect 3
 #macro FunctionInfirmaryEffect 4
 #macro FunctionChoices 5
+scr_initialize_activation_box_functions()
+
+//Material Info
+#macro InfoLevel 0
+#macro InfoMainMonsterCount 1
+#macro InfoKeyMonster 2
+
 
 //Shortcuts
 #macro NextStep resolvingPile[positionInOrder,2]++
