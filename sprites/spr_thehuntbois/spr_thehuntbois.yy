@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"5254e015-d2ea-48c7-bd44-16c0e465b3b0","path":"sprites/spr_thehuntbois/spr_thehuntbois.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"5254e015-d2ea-48c7-bd44-16c0e465b3b0","path":"sprites/spr_thehuntbois/spr_thehuntbois.yy",},"LayerId":{"name":"aa351485-dc63-4287-8d5f-d5966d984af1","path":"sprites/spr_thehuntbois/spr_thehuntbois.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_thehuntbois","path":"sprites/spr_thehuntbois/spr_thehuntbois.yy",},"resourceVersion":"1.0","name":"5254e015-d2ea-48c7-bd44-16c0e465b3b0","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"362a0970-322e-4d7f-9d28-5c7d068333bb","path":"sprites/spr_thehuntbois/spr_thehuntbois.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"362a0970-322e-4d7f-9d28-5c7d068333bb","path":"sprites/spr_thehuntbois/spr_thehuntbois.yy",},"LayerId":{"name":"b250b238-02d0-4cff-87b6-9379c9e55fa3","path":"sprites/spr_thehuntbois/spr_thehuntbois.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_thehuntbois","path":"sprites/spr_thehuntbois/spr_thehuntbois.yy",},"resourceVersion":"1.0","name":"362a0970-322e-4d7f-9d28-5c7d068333bb","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_thehuntbois","path":"sprites/spr_thehuntbois/spr_thehuntbois.yy",},
@@ -41,8 +41,8 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"759f2bcc-d39c-4f1e-a1eb-98b4705bfd0f","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"5254e015-d2ea-48c7-bd44-16c0e465b3b0","path":"sprites/spr_thehuntbois/spr_thehuntbois.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+            {"id":"f182f1ea-9d80-4ef4-9bd1-0f7fd24aa626","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"362a0970-322e-4d7f-9d28-5c7d068333bb","path":"sprites/spr_thehuntbois/spr_thehuntbois.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": true,
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"aa351485-dc63-4287-8d5f-d5966d984af1","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"b250b238-02d0-4cff-87b6-9379c9e55fa3","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {

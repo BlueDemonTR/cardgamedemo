@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"cbae5b08-7ef7-47b7-b6e3-1e6b2cf31332","path":"sprites/spr_motorvrider/spr_motorvrider.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"cbae5b08-7ef7-47b7-b6e3-1e6b2cf31332","path":"sprites/spr_motorvrider/spr_motorvrider.yy",},"LayerId":{"name":"04657ecb-95b2-410a-ac01-c54ad61d8f0d","path":"sprites/spr_motorvrider/spr_motorvrider.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_motorvrider","path":"sprites/spr_motorvrider/spr_motorvrider.yy",},"resourceVersion":"1.0","name":"cbae5b08-7ef7-47b7-b6e3-1e6b2cf31332","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"8d93db7f-6adb-4908-a14b-86dd38e46f90","path":"sprites/spr_motorvrider/spr_motorvrider.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"8d93db7f-6adb-4908-a14b-86dd38e46f90","path":"sprites/spr_motorvrider/spr_motorvrider.yy",},"LayerId":{"name":"e25b1291-4e95-4e41-a8ca-b754e68d5f08","path":"sprites/spr_motorvrider/spr_motorvrider.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_motorvrider","path":"sprites/spr_motorvrider/spr_motorvrider.yy",},"resourceVersion":"1.0","name":"8d93db7f-6adb-4908-a14b-86dd38e46f90","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_motorvrider","path":"sprites/spr_motorvrider/spr_motorvrider.yy",},
@@ -41,8 +41,8 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"793bea28-8c42-4090-aa50-56c9db8f23ee","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"cbae5b08-7ef7-47b7-b6e3-1e6b2cf31332","path":"sprites/spr_motorvrider/spr_motorvrider.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+            {"id":"17122e54-fc00-4745-8b57-4916bacfc753","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"8d93db7f-6adb-4908-a14b-86dd38e46f90","path":"sprites/spr_motorvrider/spr_motorvrider.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": true,
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"04657ecb-95b2-410a-ac01-c54ad61d8f0d","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"e25b1291-4e95-4e41-a8ca-b754e68d5f08","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {

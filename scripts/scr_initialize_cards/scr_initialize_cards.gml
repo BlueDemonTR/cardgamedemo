@@ -228,7 +228,7 @@ function scr_initialize_cards(){
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements
 		origText[i,TextEffect] = "Summoned: all ally ''Motorbikers'' gain +1 Max HP";
-		origText[i,TextFlavor] = "The only person able to endure V-Rider, his anger can't go through their skin.";
+		origText[i,TextFlavor] = "The only person able to endure V-Rider, his stupidity can't go through their skin.";
 
 		j=0
 		//Card Status'
@@ -346,13 +346,12 @@ function scr_initialize_cards(){
 		j=0
 		//Card Groups
 		//In the case that a card doesn't have that feature the value is -1
-
 		origSharedEffectsCount[i] = j;
 		j=0
 
 		origArchetypeCount[i] = j;
-		
 		j=0
+		
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements
 		origText[i,TextEffect] = "Voidfy a ''Motorbiker Leader'' from your Infirmary that was destroyed by injuries, Sudden Impact Summon a ''Motorbiker Leader'' with the same level.";

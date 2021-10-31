@@ -1,6 +1,10 @@
+if(sprite_exists(spr_newcard)){
+	draw_sprite(spr_newcard, -1, 500, 20)
+}
+
 draw_sprite(spr_base, -1, 0, 0)
 draw_sprite(spr_artwork_bg, -1, 0, 0)
-draw_sprite_stretched(artwork, -1, 0, 0, 400, 400)
+draw_sprite_ext(artwork, -1, x, y, size, size, angle, c_white, 1)
 draw_sprite(spr_effect_box, -1, 0, 0)
 
 draw_sprite_ext(spr_effect_band_base, -1, 0, 0, 1, 1, 0, spiritColorArr[scr_get_stat_orig(cardNum, StatSpirit)], 1)
