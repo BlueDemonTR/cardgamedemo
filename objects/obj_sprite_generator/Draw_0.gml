@@ -1,6 +1,11 @@
 if(sprite_exists(spr_newcard)){
-	draw_sprite(spr_newcard, -1, 500, 20)
+	draw_rectangle_color(0, 0, room_width, 0, c_white, c_white, c_white, c_white, false)
+	draw_sprite(spr_newcard, -1, room_width/2, room_height/2)
 }
+if(!surface_exists(surface)){
+	surface = surface_create(1024, 1024);
+}
+surface_set_target(surface);
 
 draw_sprite(spr_base, -1, 0, 0)
 draw_sprite(spr_artwork_bg, -1, 0, 0)
@@ -63,3 +68,7 @@ if(cardLevel >= 12){
 }
 
 draw_sprite(spr_border, -1, 0, 0)
+
+surface_reset_target()
+
+draw_surface(surface, 0, 0)
