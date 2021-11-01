@@ -51,7 +51,8 @@ function scr_target_deck(activator, players, typeArray, minLevel, maxLevel, arch
 	}
 	
 	for (i = 0; i < filteredCardCount; i++){
-		with(instance_create_layer(525+((card_width+30)*i), room_height/2, "UpperInstances",obj_legal_targets)){
+		//with(instance_create_layer(525+((card_width+30)*i), room_height/2, "UpperInstances", obj_legal_targets)){
+		with(instance_create_layer((card_width + (card_width+30)*i), card_height/2, "UpperInstances", obj_legal_targets)){
 			self.player = filteredCards[i,0]
 			position = filteredCards[i,1];
 			self.arrayPos = arrayPos

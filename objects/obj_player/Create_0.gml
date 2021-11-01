@@ -1,6 +1,6 @@
 
 draw_set_font(fnt_default);
-depth=0;
+depth = 0;
 randomize()
 
 //don't set it to true in online
@@ -15,9 +15,9 @@ if(false){
 }
 
 handCount = 0;
-for(i=0;i < 7; i++){
-	hand[i,0]=0;
-	hand[i,1]=0;
+for(i = 0;i < 7; i++){
+	hand[i,0] = 0;
+	hand[i,1] = 0;
 	handCard[i] = noone;
 }
 
@@ -89,6 +89,10 @@ main_phase = false;
 end_phase = false;
 endTurnTimer = 10;
 endTurnEffectActivated = false;
+
+//Surfaces
+targetSurface = noone
+
 
 //Game State and Response
 open_game_state = true;

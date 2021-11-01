@@ -12,3 +12,6 @@ switch(current_function){
 		obj_legal_targets.alarm[0] = 1
 	break;
 }
+if(surface_exists(obj_player.targetSurface)){
+	obj_player.targetSurface = noone;
+}

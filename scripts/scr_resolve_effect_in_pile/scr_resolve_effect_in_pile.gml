@@ -3521,6 +3521,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				break;
 			}
 		break;
+		
 		case 111://Dom X-Makine Airforce Effect
 			switch(effectNum){
 				case 0:
@@ -3549,6 +3550,7 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				break;
 			}
 		break;
+		
 		case 112://Jason, DX-Makine Thundermech Effect
 			switch(effectNum){
 				case 0:

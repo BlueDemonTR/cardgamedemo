@@ -18,6 +18,10 @@ if(!instance_exists(obj_opponent)){
 	draw_text(room_width/2 - 100, 100, "Waiting for an opponent...");
 }
 
+if(surface_exists(targetSurface)){
+	draw_surface(targetSurface, room_width/2 - surface_get_width(targetSurface)/2, room_height/2 - surface_get_height(targetSurface)/2)
+}
+
 if(obj_infirmary.infirmaryListOpened){
 	depth = -50
 	draw_sprite_ext(spr_infirmaryListBG,-1,room_width/2,room_height/2,1,1,0,c_white,0.8)
