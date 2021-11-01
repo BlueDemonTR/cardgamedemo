@@ -9,9 +9,9 @@ switch(current_function){
 		}else{
 			scr_message_handle_response(arrayPos, position, string(player))
 		}
-		obj_legal_targets.alarm[0] = 1
+		if(!obj_player.surfaceClean){
+			obj_player.surfaceClean = true
+		}
+		instance_destroy(obj_legal_targets)
 	break;
-}
-if(surface_exists(obj_player.targetSurface)){
-	obj_player.targetSurface = noone;
 }
