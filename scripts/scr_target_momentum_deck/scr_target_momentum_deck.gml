@@ -41,7 +41,9 @@ function scr_target_momentum_deck(activator, players, minLevel, maxLevel, archet
 	}
 	
 	for (i = 0; i < filteredCardCount; i++){
-		with(instance_create_layer(525+((card_width+30)*i), room_height/2, "UpperInstances",obj_legal_targets)){
+		var card_x = room_width/2 - sprite_get_width(spr_base_white)/2 + card_width + (card_width+30)*i, 
+		card_y = room_height/2 - sprite_get_height(spr_base_white)/2 + card_height/2 + 20;
+		with(instance_create_layer(card_x, card_y, "UpperInstances", obj_legal_targets)){
 			self.player = filteredCards[i, 0];
 			position = filteredCards[i, 1];
 			self.arrayPos = arrayPos

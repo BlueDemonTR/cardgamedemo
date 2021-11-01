@@ -407,6 +407,7 @@
     {"id":{"name":"scr_message_game_lose","path":"scripts/scr_message_game_lose/scr_message_game_lose.yy",},"order":1,},
     {"id":{"name":"scr_message_end_turn","path":"scripts/scr_message_end_turn/scr_message_end_turn.yy",},"order":0,},
     {"id":{"name":"scr_client_connect","path":"scripts/scr_client_connect/scr_client_connect.yy",},"order":0,},
+    {"id":{"name":"spr_level_pillar","path":"sprites/spr_level_pillar/spr_level_pillar.yy",},"order":57,},
     {"id":{"name":"scr_info_to_instance","path":"scripts/scr_info_to_instance/scr_info_to_instance.yy",},"order":40,},
     {"id":{"name":"scr_opponent_get_object","path":"scripts/scr_opponent_get_object/scr_opponent_get_object.yy",},"order":2,},
     {"id":{"name":"fnt_upheaval_big","path":"fonts/fnt_upheaval_big/fnt_upheaval_big.yy",},"order":5,},

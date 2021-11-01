@@ -12,8 +12,9 @@ function scr_target_infirmary_name(player, cardNum, arrayPos){
 	}
 	var filtered_card_count = j;	
 	for (i = 0; i < filtered_card_count; i++){
-		legal_targets[i] = instance_create_layer(525+((card_width+30)*i), room_height/2, "UpperInstances",obj_legal_targets);
-		with(legal_targets[i]){
+		var card_x = room_width/2 - sprite_get_width(spr_base_white)/2 + card_width + (card_width+30)*i, 
+		card_y = room_height/2 - sprite_get_height(spr_base_white)/2 + card_height/2 + 20;
+		with(instance_create_layer(card_x, card_y, "UpperInstances", obj_legal_targets)){
 			position = filtered_cards[i];
 			self.player = player
 			self.arrayPos = arrayPos
