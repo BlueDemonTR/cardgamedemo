@@ -24,12 +24,12 @@ if(surface_exists(targetSurface)){
 		draw_sprite(spr_legal_overlay, -1, 0, 0);
 		if(surfaceClean){
 			draw_clear_alpha(c_black, 0)
-			surfaceClean = false
 		}
 	surface_reset_target()
 	draw_surface(targetSurface, room_width/2 - surface_get_width(targetSurface)/2, room_height/2 - surface_get_height(targetSurface)/2)
 	if(surfaceClean){
 		targetSurface = noone
+		surfaceClean = false
 	}	
 }
 

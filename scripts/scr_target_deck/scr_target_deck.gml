@@ -60,6 +60,7 @@ function scr_target_deck(activator, players, typeArray, minLevel, maxLevel, arch
 			self.cardNum = self.player.deck[position, 0];
 			self.artNum = self.player.deck[position, 1];
 			current_function = SelectDeck;
+			length = filteredCardCount;
 		}
 	}
 	if(filteredCardCount == 0){

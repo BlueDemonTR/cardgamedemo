@@ -21,6 +21,7 @@ function scr_target_infirmary_name(player, cardNum, arrayPos){
 			self.cardNum = obj_player.infirmary[position, 0];
 			artNum = obj_player.infirmary[position,1];
 			current_function = SelectInfirmary;
+			length = filtered_card_count;
 		}
 	}
 	if(filtered_card_count == 0){

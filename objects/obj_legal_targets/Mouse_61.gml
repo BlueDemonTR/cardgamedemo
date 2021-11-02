@@ -1,3 +1,3 @@
-slide= slide - (card_height + 10);
-x = x+ slide;
-slide = 0;
+if(x_og - x < (card_width+30)*(length - 5)){
+	x -= (card_height + 10);
+}

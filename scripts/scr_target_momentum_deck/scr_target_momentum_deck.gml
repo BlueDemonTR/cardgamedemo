@@ -50,6 +50,7 @@ function scr_target_momentum_deck(activator, players, minLevel, maxLevel, archet
 			self.cardNum = self.player.momentumDeck[position, 0];
 			artNum = self.player.momentumDeck[position,1];
 			current_function = SelectMomentum;
+			length = filteredCardCount;
 		}
 	}
 	if(filteredCardCount == 0){
