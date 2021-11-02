@@ -1,7 +1,7 @@
 var position = self.position
 instance_exists(obj_activation_box){
 	with(obj_activation_box){
-		if(activation_mode == FunctionInfirmaryEffect && position = self.position){
+		if(activation_mode == FunctionInfirmaryEffect && position == self.position){
 			return;
 		}
 	}

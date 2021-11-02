@@ -93,6 +93,7 @@ endTurnEffectActivated = false;
 //Surfaces
 targetSurface = noone
 surfaceClean = false
+surfaceType = -1;
 
 //Game State and Response
 open_game_state = true;

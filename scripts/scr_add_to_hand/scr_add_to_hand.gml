@@ -5,7 +5,7 @@ function scr_add_to_hand(player, cardArray){
 	
 	player.hand[player.handCount] = cardArray;
 	if(player == obj_player){
-		player.handCard[player.handCount] = instance_create_depth(player.deck_x, player.deck_y, -(player.handCount)-2, obj_card);
+		player.handCard[player.handCount] = instance_create_layer(player.deck_x, player.deck_y, "Instances", obj_card);
 		with(player.handCard[player.handCount]){
 			card_drawn = true;
 			position = player.handCount;

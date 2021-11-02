@@ -20,22 +20,27 @@ if(!instance_exists(obj_opponent)){
 
 if(surface_exists(targetSurface)){
 	surface_set_target(targetSurface)
-		draw_sprite_ext(spr_base_white, -1, -850, 0, 1, 1, 0, $e43b93, 1)
-		draw_sprite(spr_legal_overlay, -1, 0, 0);
+		switch(surfaceType){
+			case SurfaceLegal:
+				draw_sprite_ext(spr_base_white, -1, -850, 0, 1, 1, 0, $e43b93, 1)
+				draw_sprite(spr_legal_overlay, -1, 0, 0);
+			break;
+			case SurfaceInfirmary:
+			
+			break;
+		}	
 		if(surfaceClean){
 			draw_clear_alpha(c_black, 0)
 		}
 	surface_reset_target()
+	depth = -700
 	draw_surface(targetSurface, room_width/2 - surface_get_width(targetSurface)/2, room_height/2 - surface_get_height(targetSurface)/2)
 	if(surfaceClean){
 		targetSurface = noone
 		surfaceClean = false
 	}	
-}
-
-if(obj_infirmary.infirmaryListOpened){
-	depth = -50
-	draw_sprite_ext(spr_infirmaryListBG,-1,room_width/2,room_height/2,1,1,0,c_white,0.8)
+}else{
+	depth = 0;
 }
 
 draw_set_font(fnt_big)

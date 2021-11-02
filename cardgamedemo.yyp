@@ -5,6 +5,7 @@
     {"id":{"name":"spr_spell_default","path":"sprites/spr_spell_default/spr_spell_default.yy",},"order":1,},
     {"id":{"name":"spr_momentum_default","path":"sprites/spr_momentum_default/spr_momentum_default.yy",},"order":2,},
     {"id":{"name":"spr_search_box","path":"sprites/spr_search_box/spr_search_box.yy",},"order":47,},
+    {"id":{"name":"scr_initialize_send_types","path":"scripts/scr_initialize_send_types/scr_initialize_send_types.yy",},"order":15,},
     {"id":{"name":"spr_motorshowman","path":"sprites/spr_motorshowman/spr_motorshowman.yy",},"order":10,},
     {"id":{"name":"spr_level_6","path":"sprites/spr_level_6/spr_level_6.yy",},"order":12,},
     {"id":{"name":"spr_motordoppelganger","path":"sprites/spr_motordoppelganger/spr_motordoppelganger.yy",},"order":1,},

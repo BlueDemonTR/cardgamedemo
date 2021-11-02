@@ -1,7 +1,7 @@
 //Game Properties
 randomize();
 persistent = true;
-test_mode=true;
+test_mode = debug_mode || true;
 show_debug_message(GM_version)
 
 //Player Stats
@@ -25,6 +25,7 @@ scr_default_statuses_player()
 #macro SendDiscard 4
 #macro SendMill 5
 #macro SendInvalid 99
+scr_initialize_send_types()
 
 //Sprite Properties
 #macro card_width 140
@@ -153,13 +154,15 @@ scr_initialize_activation_box_functions()
 #macro InfoMainMonsterCount "infoMainMonsterCount" 
 #macro InfoKeyMonster "infoKeyMonster"
 
+//Surface Types
+#macro SurfaceLegal 0
+#macro SurfaceInfirmary 1
 
 //Shortcuts
 #macro NextStep resolvingPile[positionInOrder,2]++
 #macro FinishResolving resolvingPile[positionInOrder,2] = 98
 #macro NextEffect resolvingPile[positionInOrder,2] = 99
 #macro color draw_get_color()
-
 
 if(false){
 	bepis = sprite_to_big//This is here because I am sick of the syntax error pop up

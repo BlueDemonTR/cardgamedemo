@@ -1,13 +1,24 @@
 draw_sprite_stretched(macros.sprite_array[cardNum,artNum],-1,x-card_width/2,y-card_height/2,card_width,card_height);
 
+draw_set_color(c_red)
+draw_text(x - 62, y - 76, string(getStat(StatATK)));
+
+draw_set_color(getStat(StatHP) < getStat(StatMaxHP) ? c_yellow : c_green)
+draw_text(x + 50, y - 76,string(getStat(StatHP)));
+
 draw_set_color(c_black)
-if(getStat(StatHP) < getStat(StatMaxHP)){
-	draw_text_color(x+50,y+14,string(getStat(StatHP)),c_yellow,c_yellow,c_yellow,c_yellow,1);
-}else{
-	draw_text_color(x+50,y+14,string(getStat(StatHP)),c_green,c_green,c_green,c_green,1);
+draw_text(x + 45,y - 100,string(getStat(StatLevel)));
+
+for(var i = getStat(StatLevel) - scr_get_stat_orig(cardNum, StatLevel); i != 0; i -= i/abs(i)){
+	draw_set_color(i < 0 ? c_red : c_green)
+	var affectedLevel = i + scr_get_stat_orig(cardNum, StatLevel) + + ((i < 0) ? 0 : -1);
+	draw_sprite_ext(spr_level_pillar, -1, x + level1MarginX + affectedLevel*distanceLevel, y + level1MarginY, card_width/550, card_height/800, 0, color, 1)
 }
-draw_text_color(x-60,y+14,string(getStat(StatATK)),c_red,c_red,c_red,c_red,1);
-draw_text(x+45,y-100,string(getStat(StatLevel)));
+
+
+//draw_sprite_ext(spr_level_pillar, -1, x - 34, y - 82.5, card_width/550, card_height/800, 0, c_green, 1)
+
+
 if(getStatus(StatusSilenced)){
 	draw_sprite_stretched(spr_silenced,-1,x-card_width/2,y-card_height/2,card_width,card_height);
 }

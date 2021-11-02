@@ -1,3 +1,3 @@
 if(obj_player.test_mode){
-	scr_message_field_card_stats(position)
+	scr_increase_stat_card(player, position, StatLevel, -1)
 }

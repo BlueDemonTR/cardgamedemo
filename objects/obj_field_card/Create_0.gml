@@ -8,6 +8,11 @@ artNum = 0;
 
 recruit = false;
 
+level1MarginX = -41
+level1MarginY = -82.5
+
+distanceLevel = 7
+
 player = obj_player
 opponent = obj_opponent
 

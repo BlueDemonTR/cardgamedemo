@@ -22,11 +22,11 @@ if (selected_card[0] != 0 && !(selected_card[0] ==45 || selected_card[0] == 46))
 	start += string_height_ext(string_upper(macros.typeName[macros.card_type[cardNum]])+" CARD",16,widthCap)-5
 	
 	if (macros.card_type[cardNum] != TypeSpell){
-		
-		draw_text(305-(string_length(string(macros.origStat[cardNum,StatLevel]))*5) ,509,string(macros.origStat[cardNum,StatLevel]));
 		draw_set_font(fnt_big)
-		draw_text(110 - string_length(string(macros.origStat[cardNum,StatATK]))*10,710,string(macros.origStat[cardNum,StatATK]));
-		draw_text(314- string_length(string(macros.origStat[cardNum,StatMaxHP]))*10,710,string(macros.origStat[cardNum,StatMaxHP]));
+		draw_set_color(c_red)
+		draw_text(110 - string_length(string(macros.origStat[cardNum,StatATK]))*10,540,string(macros.origStat[cardNum,StatATK]));
+		draw_set_color(c_green)
+		draw_text(314- string_length(string(macros.origStat[cardNum,StatMaxHP]))*10,540,string(macros.origStat[cardNum,StatMaxHP]));
 		draw_set_font(fnt_default)
 	}
 	if (macros.origArchetypeCount[cardNum] > 0){
