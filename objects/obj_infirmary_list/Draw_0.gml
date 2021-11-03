@@ -6,8 +6,7 @@ if(!surface_exists(obj_player.targetSurface) && !obj_player.surfaceClean){
 }
 surface_set_target(obj_player.targetSurface)
 	if(surface_first_layer){
-		draw_set_color(c_dkgrey)
-		draw_rectangle(0, 0, 900, 880, 0)
+		draw_sprite_ext(spr_base_big_white, -1, 0, 0, 1, 1, 0, $c49d35, 1)
 	}
 	var surface_margin_x = 900/2 - room_width/2, 
 	surface_margin_y = 880/2 - room_height/2;

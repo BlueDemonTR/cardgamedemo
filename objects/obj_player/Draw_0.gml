@@ -26,7 +26,7 @@ if(surface_exists(targetSurface)){
 				draw_sprite(spr_legal_overlay, -1, 0, 0);
 			break;
 			case SurfaceInfirmary:
-			
+				draw_sprite(spr_infirmary_overlay, -1, 0, 0);
 			break;
 		}	
 		if(surfaceClean){
