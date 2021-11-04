@@ -1617,7 +1617,7 @@ function scr_initialize_cards(){
 		origStat[i,StatLevel] = 4; //Level
 		origStat[i,StatATK] = 0; //ATK
 		origStat[i,StatMaxHP] = 10; //Max HP
-		origStat[i,6] = 1; //Dodge
+		origStat[i,StatDodge] = 1; //Dodge
 		origStat[i,StatSpirit] = SpiritPassive//Spirit
 		j=0
 		//Card Groups

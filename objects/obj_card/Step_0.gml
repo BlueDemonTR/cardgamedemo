@@ -16,8 +16,7 @@ if(mouse_check_button_released(mb_left)){
 	selected = false;	
 }
 if (selected){
-	obj_card_info_writer.selected_card[0] = self.cardNum;
-	obj_card_info_writer.selected_card[1] = self.artNum;
+	scr_change_displayed_card(cardNum, artNum, false)
 }
 
 if(alarm[0] > -1){

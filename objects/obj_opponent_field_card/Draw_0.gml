@@ -4,7 +4,7 @@ draw_sprite_ext(macros.sprite_array[cardNum,artNum],-1,x,y,sprite_to_small,card_
 if(getStat(StatHP) < getStat(StatMaxHP)){
 	draw_text_color(x-60,y-44,string(getStat(StatHP)),c_yellow,c_yellow,c_yellow,c_yellow,1);
 }else{
-	draw_text_color(x-60,y-44,string(getStat(StatHP)),c_green,c_green,c_green,c_green,1);
+	draw_text_color(x-60,y-44,string(getStat(StatHP)),$18742d,$18742d,$18742d,$18742d,1);
 }
 draw_text_color(x+50,y-44,string(getStat(StatATK)),c_red,c_red,c_red,c_red,1);
 draw_text(x-60,y+75,string(getStat(StatLevel)));

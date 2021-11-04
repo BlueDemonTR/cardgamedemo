@@ -3,6 +3,7 @@
 function scr_initialize_statuses(){
 	//0 = Taunt, 1 = Pierce, 2 = Rebellious, 3 = Immune, 4 = Indestructable, 5 = Lifesteal, 6 = Sneaky
 	//7 = Unarmed, 8 = Ranged, 9 = Paralyzed, 10 = Poisoned, 11 = Silenced, 12 = Can't Attack Directly
+	//13 = Self Destruct
 	var i = 0;
 	
 	statusName[i] = "TAUNT"

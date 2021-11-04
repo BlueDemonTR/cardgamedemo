@@ -63,6 +63,7 @@ scr_illegal_cards();
 #macro StatSpirit 7
 #macro StatEffectUsesPerTurn 8
 scr_default_stats()
+scr_initialize_stats()
 
 //Archetype Properties
 #macro ArcMotorbiker 1

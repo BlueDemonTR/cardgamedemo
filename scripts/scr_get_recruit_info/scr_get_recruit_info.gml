@@ -23,5 +23,5 @@ function scr_get_recruit_info(cardNum){
 		break;
 		
 	}
-	return false;
+	return "";
 }

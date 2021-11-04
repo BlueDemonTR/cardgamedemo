@@ -3,7 +3,7 @@ draw_sprite_stretched(macros.sprite_array[cardNum,artNum],-1,x-card_width/2,y-ca
 draw_set_color(c_red)
 draw_text(x - 62, y - 76, string(getStat(StatATK)));
 
-draw_set_color(getStat(StatHP) < getStat(StatMaxHP) ? c_yellow : c_green)
+draw_set_color(getStat(StatHP) < getStat(StatMaxHP) ? c_yellow : (macros.card_type == TypeMonster ? $18742d : $0c3f18))
 draw_text(x + 50, y - 76,string(getStat(StatHP)));
 
 draw_set_color(c_black)
