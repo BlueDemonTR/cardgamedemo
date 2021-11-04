@@ -1,3 +1,3 @@
-for (i = 1; i <= 4; i++){
+for (var i = 1; i <= 4; i++){
 	wheel_opt[i] = false;
 }

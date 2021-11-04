@@ -1,6 +1,8 @@
 draw_set_font(fnt_default);
 draw_set_color(c_black)
+
 draw_text_transformed_color(1450,525,string(getStat(PlayerMana)),5,5,0,c_purple,c_purple,c_fuchsia,c_fuchsia,1);
+
 draw_text(1335, 735,string(getStat(PlayerHP))+"/"+string(getStat(PlayerMaxHP)));
 if(obj_player.own_turn){
 	if(!open_game_state){

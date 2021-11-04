@@ -13,7 +13,12 @@ if(obj_player.getStat(PlayerMomentum) <= 12 && obj_player.getStat(PlayerMomentum
 
 if(instance_exists(obj_opponent)){	
 	if(obj_opponent.getStat(PlayerMomentum) <= 12){
-		draw_sprite_ext(macros.wheelSprite[obj_opponent.getStat(PlayerMomentum)],-1,1300,400,1,1,180,c_white,1)
+		draw_sprite_ext(
+			macros.wheelSprite[obj_opponent.getStat(PlayerMomentum)], -1,
+			1300, 400,
+			1, 1, 
+			180, c_white, 1
+		)
 	}
 }
 if(obj_player.selected_wheel > 0 && mouse_between(613, 673, 676, 850)){
