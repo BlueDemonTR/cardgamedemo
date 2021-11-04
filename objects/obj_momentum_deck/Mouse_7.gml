@@ -3,6 +3,6 @@ if(momentumDeckPoint != -1){
 		player.momentumDeck[momentumDeckPoint,0],
 		player.momentumDeck[momentumDeckPoint,1], 
 		false
-	)
+	);
 }
 	

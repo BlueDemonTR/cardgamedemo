@@ -18,7 +18,11 @@ switch (current_function){
 	break;
 	case TargetImpact:
 		if(selected){
-			for(var i = 0; i < array_length(obj_player.resolvingPile[obj_player.resolvingPileCount-1,arrayPos]); i++){
+			for(
+				var i = 0; 
+				i < array_length(obj_player.resolvingPile[obj_player.resolvingPileCount-1,arrayPos]); 
+				i++
+			){
 				if(obj_player.resolvingPile[obj_player.resolvingPileCount-1,arrayPos][i] == position){
 					array_delete(obj_player.resolvingPile[obj_player.resolvingPileCount-1,arrayPos],i,1)
 					break;
@@ -35,7 +39,11 @@ switch (current_function){
 			}
 		}
 		with(obj_player){
-			scr_select_materials(player, obj_player.resolvingPile[obj_player.resolvingPileCount-1,arrayPos-1], arrayPos)
+			scr_select_materials(
+				player, 
+				obj_player.resolvingPile[obj_player.resolvingPileCount-1,arrayPos-1], 
+				arrayPos
+			)
 		}		
 	break;
 	case TargetAttack:

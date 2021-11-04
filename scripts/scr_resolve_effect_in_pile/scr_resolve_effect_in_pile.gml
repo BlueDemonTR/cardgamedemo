@@ -85,13 +85,19 @@ function scr_resolve_effect_in_pile(positionInOrder){
 				case 3://Pole Clan Wheel Gain Effect
 				case 4://Sacrifice Wheel Gain Effect
 					if(!effectSilenced){
-						scr_increase_stat_player(player, PlayerMomentum, resolvingPile[positionInOrder,6])
+						scr_increase_stat_player(
+							player, PlayerMomentum, 
+							resolvingPile[positionInOrder,6]
+						);
 					}
 					NextEffect;
 				break;
 				case 5://Fisherman Wheel Gain Effect
 					if(!effectSilenced){
-						scr_increase_stat_player(player, PlayerMomentum, macros.origStat[resolvingPile[positionInOrder,6], StatLevel])
+						scr_increase_stat_player(
+							player, PlayerMomentum, 
+							macros.origStat[resolvingPile[positionInOrder,6], StatLevel]
+						);
 					}
 					NextEffect;
 				break;
@@ -125,7 +131,11 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									case 2:
 										resolvingPile[positionInOrder,6] = 0 //deckPos
 										resolvingPile[positionInOrder,7] = 0 //player
-										scr_target_deck(player, [player], [TypeMonster], 1, 12, [ArcMotorbiker], [], false, -1, 6)
+										scr_target_deck(
+											player, [player], 
+											[TypeMonster], 1, 12, 
+											[ArcMotorbiker], [], false, -1, 6
+										);
 										NextStep
 									break;
 									case 4:
@@ -155,12 +165,15 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 									case 4:
 										resolvingPile[positionInOrder, 7] = [] //selectedTargets
-										scr_select_materials(player, resolvingPile[positionInOrder, 6], 7)
+										scr_select_materials(player, resolvingPile[positionInOrder,6], 7)
 										NextStep
 									break;
 									case 6:
-										for(var i = 0; i < array_length(resolvingPile[positionInOrder, 7]); i++){
-											scr_send_material(player, resolvingPile[positionInOrder, 7][i], resolvingPile[positionInOrder, 6])
+										for(var i = 0; i < array_length(resolvingPile[positionInOrder,7]); i++){
+											scr_send_material(
+												player, resolvingPile[positionInOrder,7][i], 
+												resolvingPile[positionInOrder, 6]
+											);
 										}
 										instance_destroy(obj_appropiate_targets)
 										resolvingPile[positionInOrder, 8] = 0 //summonZone
@@ -168,7 +181,10 @@ function scr_resolve_effect_in_pile(positionInOrder){
 										NextStep
 									break;
 									case 8:
-										scr_summon_momentum_deck(player, resolvingPile[positionInOrder, 6], resolvingPile[positionInOrder, 8])
+										scr_summon_momentum_deck(
+											player, resolvingPile[positionInOrder, 6], 
+											resolvingPile[positionInOrder, 8]
+										);
 										FinishResolving
 									break;
 								}
@@ -291,7 +307,10 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 									case 6:
 										for(var i = 0; i < array_length(resolvingPile[positionInOrder,7]); i++){
-											scr_send_material(player, resolvingPile[positionInOrder,7][i], resolvingPile[positionInOrder,6])
+											scr_send_material(
+												player, resolvingPile[positionInOrder,7][i], 
+												resolvingPile[positionInOrder,6]
+											);
 										}
 										instance_destroy(obj_appropiate_targets)
 										resolvingPile[positionInOrder, 8] = 0 //summonZone
@@ -299,7 +318,10 @@ function scr_resolve_effect_in_pile(positionInOrder){
 										NextStep
 									break;
 									case 8:
-										scr_summon_momentum_deck(player, resolvingPile[positionInOrder,6], resolvingPile[positionInOrder,8])
+										scr_summon_momentum_deck(
+												player, resolvingPile[positionInOrder,6], 
+												resolvingPile[positionInOrder,8]
+											);
 										FinishResolving
 									break;
 								}
@@ -320,7 +342,11 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									case 2:
 										resolvingPile[positionInOrder,6] = 0 //infirmaryPos
 										resolvingPile[positionInOrder,7] = 0 //player
-										scr_target_infirmary(player, [player], [TypeMonster, TypeMomentum], 1, 12, [ArcVisclades], [], true, -1, -1, -1, 6)
+										scr_target_infirmary(
+											player, [player], 
+											[TypeMonster, TypeMomentum], 1, 12, 
+											[ArcVisclades], [], true, -1, -1, -1, 6
+										);
 										NextStep
 									break;
 									case 4:
@@ -329,7 +355,11 @@ function scr_resolve_effect_in_pile(positionInOrder){
 										NextStep
 									break;
 									case 6:
-										scr_summon_from_infirmary(resolvingPile[positionInOrder,7], resolvingPile[positionInOrder,6], resolvingPile[positionInOrder,8])
+										scr_summon_from_infirmary(
+											resolvingPile[positionInOrder,7], 
+											resolvingPile[positionInOrder,6], 
+											resolvingPile[positionInOrder,8]
+										);
 										FinishResolving
 									break;
 								}
@@ -354,7 +384,11 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									case 2:
 										resolvingPile[positionInOrder,6] = 0 //position
 										resolvingPile[positionInOrder,7] = 0 //player
-										if(scr_target_field(player, [player, opponent], [], [1, 12], [0, infinity], [0, infinity], [ArcIgloo], [], -1, -1, 6)){
+										if(scr_target_field(
+											player, [player, opponent], 
+											[], [1, 12], [0, infinity], [0, infinity], 
+											[ArcIgloo], [], -1, -1, 6
+										)){
 											NextStep
 											break;
 										}
@@ -460,12 +494,20 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 									case 2:
 										resolvingPile[positionInOrder,6] = 0
-										scr_target_field(player, [player, player.opponent], [], [1, 12], [0, infinity], [0, infinity], [ArcIgloo], [], -1, -1, 6)
+										scr_target_field(
+											player, [player, player.opponent], [], 
+											[1, 12], [0, infinity], [0, infinity], 
+											[ArcIgloo], [], -1, -1, 6
+										);
 										NextStep
 									break;
 									case 4:
 										var affectedCard = resolvingPile[positionInOrder,7].fieldCard[resolvingPile[positionInOrder,6]]
-										scr_heal_card(affectedCard.player, affectedCard.position, affectedCard.getStat(StatMaxHP))
+										scr_heal_card(
+											affectedCard.player, 
+											affectedCard.position, 
+											affectedCard.getStat(StatMaxHP)
+										);
 										FinishResolving
 									break;
 								}
@@ -489,11 +531,17 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 									case 2:
 										resolvingPile[positionInOrder,6] = 0
-										scr_target_field(player, [player, player.opponent], [], [1, 12], [0, infinity], [0, infinity], [ArcSacrifice], [], -1, -1, 6)
+										scr_target_field(
+											player, [player, player.opponent], [], 
+											[1, 12], [0, infinity], [0, infinity], 
+											[ArcSacrifice], [], -1, -1, 6
+										);
 										NextStep
 									break;
 									case 4:
-										resolvingPile[positionInOrder,7].fieldCard[resolvingPile[positionInOrder,6]].sacrificable = true
+										resolvingPile[positionInOrder,7].
+										fieldCard[resolvingPile[positionInOrder,6]].
+										sacrificable = true
 										FinishResolving
 									break;
 								}
@@ -513,7 +561,11 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									break;
 									case 2:
 										resolvingPile[positionInOrder,6] = 0
-										scr_target_deck(player, [player], [TypeMonster], 1, 12, [ArcNightmareBeast], [], false, -1, 6)
+										scr_target_deck(
+											player, [player], [TypeMonster], 
+											1, 12, [ArcNightmareBeast], 
+											[], false, -1, 6
+										);
 										NextStep
 									break;
 									case 4:

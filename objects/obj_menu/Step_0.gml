@@ -11,7 +11,11 @@ if (mouse_x >= 785 && mouse_x <= 1230){
 else {menuselect=0;}
 
 for(var i=0; i < 4; i++){
-	if (mouse_check_button(mb_left)&& menuselect == i+1){menu_button[i] = spr_menu_button_on}else{menu_button[i] = spr_menu_button_off}
+	if (mouse_check_button(mb_left)&& menuselect == i + 1){
+		menu_button[i] = spr_menu_button_on
+	}else{
+		menu_button[i] = spr_menu_button_off
+	}
 }
 
 if (menuselect == 1){y = 320;}
