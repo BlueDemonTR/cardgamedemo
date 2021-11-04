@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Initialization",
-    "path": "folders/Scripts/Initialization.yy",
+    "name": "Default",
+    "path": "folders/Scripts/Initialization/Default.yy",
   },
   "resourceVersion": "1.0",
   "name": "scr_default_statuses_player",

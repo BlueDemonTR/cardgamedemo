@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "Game Functions",
-    "path": "folders/Scripts/Game Functions.yy",
+    "path": "folders/Scripts/Effects/Game Functions.yy",
   },
   "resourceVersion": "1.0",
   "name": "scr_add_to_resolution_pile",

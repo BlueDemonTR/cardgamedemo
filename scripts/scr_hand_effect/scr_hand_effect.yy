@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Initialization",
-    "path": "folders/Scripts/Initialization.yy",
+    "name": "Filters and Limiters",
+    "path": "folders/Scripts/Effects/Filters and Limiters.yy",
   },
   "resourceVersion": "1.0",
   "name": "scr_hand_effect",

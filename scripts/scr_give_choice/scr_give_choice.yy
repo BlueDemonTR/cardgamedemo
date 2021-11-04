@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Game Functions",
-    "path": "folders/Scripts/Game Functions.yy",
+    "name": "Target Finders",
+    "path": "folders/Scripts/Effects/Target Finders.yy",
   },
   "resourceVersion": "1.0",
   "name": "scr_give_choice",

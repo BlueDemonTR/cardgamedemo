@@ -374,7 +374,7 @@ function scr_legal_activation(cardNum, effectNum, player, position){
 		
 		case 35://Pole Clan Mage Legal Activation
 			if((instance_exists(player.fieldCard[position]) && player.fieldCard[position].getStatus(StatusSilenced))){return false;}
-			if(!scr_card_hopt(cardNum, 0)){return false;}
+			if(!scr_is_hopt_used(cardNum, 0)){return false;}
 			if(!scr_count_field_filter([player], [], [1, 12], [0, infinity], [0, infinity], [ArcIgloo], [], -1, -1)){return false}
 			if(!scr_count_deck_filter([player], [TypeSpell], 1, 12, [ArcBlizzard], [], false, -1)){return false}
 			return true;

@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Target Finders",
-    "path": "folders/Scripts/Effects/Target Finders.yy",
+    "name": "Field",
+    "path": "folders/Scripts/Effects/Target Finders/Field.yy",
   },
   "resourceVersion": "1.0",
   "name": "scr_target_field",

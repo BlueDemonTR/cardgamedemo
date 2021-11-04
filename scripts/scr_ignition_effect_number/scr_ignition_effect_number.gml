@@ -21,20 +21,20 @@ function scr_ignition_effect_number(cardNum, effectActivationLocation){
 				case 110://Robert XMakine Ignition Effect Number
 				case 111://Dom XMakine Ignition Effect Number
 				case 112://Jason DXMakine Ignition Effect Number
-					return 0
+					return 0;
 				break;
 			}
 		break;
 		case "Infirmary":
 			switch(cardNum){
 				case 21://Luvies Ing HP Increase Ignition Effect Trigger
-					return 1
+					return 1;
 				break;
 				case 73://Baby Phoenix Ignition Effect Trigger
-					return 0
+					return 0;
 				break;
 			}
 		break;
 	}
-	return -1
+	return -1;
 }

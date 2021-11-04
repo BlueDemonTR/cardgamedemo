@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Initialization",
-    "path": "folders/Scripts/Initialization.yy",
+    "name": "Checks",
+    "path": "folders/Scripts/Effects/Game Functions/Checks.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_grouplists",
+  "name": "scr_is_hopt_used",
   "tags": [],
   "resourceType": "GMScript",
 }
