@@ -27,8 +27,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Game",
-    "path": "folders/Objects/Game.yy",
+    "name": "Opponent Elements",
+    "path": "folders/Objects/Game/Opponent Elements.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_opponent",

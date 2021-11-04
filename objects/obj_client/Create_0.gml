@@ -33,8 +33,8 @@
 #macro RESPONSE_CHOICE 7
 
 if(macros.test_mode){
-	connect = scr_client_connect("127.0.0.1", 9001); //self
+	connect = scr_client_connect("127.0.0.1", 9001) //self
 }else{
-	connect = scr_client_connect("127.0.0.1", 9001); //self
+	connect = scr_client_connect("127.0.0.1", 9001) //self
 }
-persistent= true;
+persistent = true;

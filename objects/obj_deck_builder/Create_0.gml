@@ -9,7 +9,12 @@ scr_filter_words(filterText)
 maxLineCount = 0
 maxLineSize = 0
 for(var i = 0; i < 5; i++){
-	cardList[i] = instance_create_depth(room_width-220,305+(small_card_height+10)*i,-1,obj_card_selector);
+	cardList[i] = instance_create_depth(
+		room_width - 220, 305 + (small_card_height + 10)*i,
+		-1,
+		obj_card_selector
+	);
+	
 	with(cardList[i]){
 		listNum = i
 		listPos = i

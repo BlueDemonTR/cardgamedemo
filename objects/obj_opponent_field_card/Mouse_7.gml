@@ -1,1 +1,1 @@
-selected=false;
+selected = false;

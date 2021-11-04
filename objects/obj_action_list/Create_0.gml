@@ -1,4 +1,6 @@
-last_action=0;
+/// @description this object will be remade in a further patch
+
+last_action = 0;
 for(i = 0; i < 100; i++){
 	action_list[i]="Game Starts";
 }

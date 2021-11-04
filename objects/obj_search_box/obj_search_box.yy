@@ -35,8 +35,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Deck Editor",
-    "path": "folders/Objects/Deck Editor.yy",
+    "name": "Card Search",
+    "path": "folders/Objects/Deck Editor/Card Search.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_search_box",

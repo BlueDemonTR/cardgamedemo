@@ -1,6 +1,8 @@
-if(!selected){return;}
-if(delay= 0 && !keyboard_check_pressed(vk_anykey)){
+if(!selected){
+	return;
+}
+if(delay = 0 && !keyboard_check_pressed(vk_anykey)){
 	main.filterText += string(keyboard_string)
 	delay = 3
-	keyboard_string=""
+	keyboard_string = ""
 }

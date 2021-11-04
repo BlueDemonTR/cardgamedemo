@@ -1,1 +1,1 @@
-show_debug_message("Trrum trrum trak tiki tak")
+///@description Timer for the double click

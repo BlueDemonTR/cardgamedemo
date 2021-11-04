@@ -1,3 +1,3 @@
-if(delay>0){
+if(delay > 0){
 	delay--
 }

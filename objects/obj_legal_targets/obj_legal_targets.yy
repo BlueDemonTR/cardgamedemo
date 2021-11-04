@@ -31,8 +31,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Game",
-    "path": "folders/Objects/Game.yy",
+    "name": "Target Selectors",
+    "path": "folders/Objects/Game/Target Selectors.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_legal_targets",

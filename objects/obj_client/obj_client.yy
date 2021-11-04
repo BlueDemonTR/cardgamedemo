@@ -28,8 +28,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Game",
-    "path": "folders/Objects/Game.yy",
+    "name": "Misc.",
+    "path": "folders/Objects/Game/Misc..yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_client",

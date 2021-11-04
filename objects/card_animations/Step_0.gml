@@ -6,7 +6,7 @@ if (!speedSetupDone){
 	speedSetupDone = true
 }
 
-if(point_distance(x,y,targetX,targetY)<cardSpeed*1.5){
+if(point_distance(x, y, targetX, targetY) < cardSpeed*1.5){
 	switch(activation_mode){
 		case "fieldToPlayerInfirmary":
 		break;

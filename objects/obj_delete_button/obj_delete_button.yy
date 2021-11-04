@@ -28,8 +28,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Deck Editor",
-    "path": "folders/Objects/Deck Editor.yy",
+    "name": "Buttons",
+    "path": "folders/Objects/Deck Editor/Buttons.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_delete_button",

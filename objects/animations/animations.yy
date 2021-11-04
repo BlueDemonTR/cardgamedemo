@@ -25,8 +25,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Game",
-    "path": "folders/Objects/Game.yy",
+    "name": "Animations",
+    "path": "folders/Objects/Game/Animations.yy",
   },
   "resourceVersion": "1.0",
   "name": "animations",

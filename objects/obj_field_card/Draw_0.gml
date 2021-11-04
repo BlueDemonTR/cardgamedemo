@@ -1,32 +1,48 @@
-draw_sprite_stretched(macros.sprite_array[cardNum,artNum],-1,x-card_width/2,y-card_height/2,card_width,card_height);
+draw_sprite_stretched(
+	macros.sprite_array[cardNum,artNum], -1,
+	x - card_width/2, y - card_height/2,
+	card_width, card_height
+);
 
 draw_set_color(c_red)
 draw_text(x - 62, y - 76, string(getStat(StatATK)));
 
-draw_set_color(getStat(StatHP) < getStat(StatMaxHP) ? c_yellow : (macros.card_type == TypeMonster ? $18742d : $0c3f18))
+draw_set_color(
+	getStat(StatHP) < getStat(StatMaxHP) 
+	? c_yellow 
+	: (macros.card_type[cardNum] == TypeMonster ? $18742d : $0c3f18)
+)
 draw_text(x + 50, y - 76,string(getStat(StatHP)));
 
-draw_set_color(c_black)
+draw_set_color(c_black)//TODO: Remove after all sprites are replaced
 draw_text(x + 45,y - 100,string(getStat(StatLevel)));
 
 for(var i = getStat(StatLevel) - scr_get_stat_orig(cardNum, StatLevel); i != 0; i -= i/abs(i)){
 	draw_set_color(i < 0 ? c_red : c_green)
-	var affectedLevel = i + scr_get_stat_orig(cardNum, StatLevel) + + ((i < 0) ? 0 : -1);
-	draw_sprite_ext(spr_level_pillar, -1, x + level1MarginX + affectedLevel*distanceLevel, y + level1MarginY, card_width/550, card_height/800, 0, color, 1)
+	var affectedLevel = i + scr_get_stat_orig(cardNum, StatLevel) + ((i < 0) ? 0 : -1);
+	draw_sprite_ext(
+		spr_level_pillar, -1,
+		x + level1MarginX + affectedLevel*distanceLevel, y + level1MarginY, 
+		card_width/550, card_height/800, 
+		0, color, 1
+	)
 }
-
-
-//draw_sprite_ext(spr_level_pillar, -1, x - 34, y - 82.5, card_width/550, card_height/800, 0, c_green, 1)
-
 
 if(getStatus(StatusSilenced)){
 	draw_sprite_stretched(spr_silenced,-1,x-card_width/2,y-card_height/2,card_width,card_height);
 }
 
-if(attacksLeft && !getStatus(StatusUnarmed) && !getStatus(StatusParalyzed) && obj_player.turn_count != 1){
+if(
+	attacksLeft 
+	&& !getStatus(StatusUnarmed) 
+	&& !getStatus(StatusParalyzed) 
+	&& obj_player.turn_count != 1
+){
 	draw_sprite_stretched(spr_attack,-1,x-card_width/2,y-card_height/2,card_width,card_height);
 }
-i=0
+
+//TODO: Remake This after making the sprites for self destruct and can't attack directly
+i = 0
 if(getStatus(StatusTAUNT)){
 	stateList[i++] = spr_taunt;
 }

@@ -1,4 +1,4 @@
-player = obj_player;
+player = obj_player
 speedSetupDone = false
 
 targetX = room_width

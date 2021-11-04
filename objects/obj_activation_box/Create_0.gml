@@ -1,8 +1,8 @@
-activation_mode = "";
-bar_number = 0;
+activation_mode = ""
+bar_number = 0
 
 player = obj_player
 
 position = -1
 
-ownerObject = noone;
+ownerObject = noone

@@ -1,10 +1,10 @@
-player = obj_opponent;
-opponent = obj_player;
+player = obj_opponent
+opponent = obj_player
 
-handCount = 0;
-for(i=0;i < 7; i++){
-	hand[i,0]=0;
-	hand[i,1]=0;
+handCount = 0
+for(i = 0; i < 7; i++){
+	hand[i,0] = 0;
+	hand[i,1] = 0;
 	handCard[i] = noone;
 }
 
@@ -31,29 +31,29 @@ field_card_zone_y[i++] = 330;
 field_card_zone_x[i] = 890;
 field_card_zone_y[i++] = 536;
 field_zone_count = i;
-for (j=0; j < field_zone_count; j++){
+for (j = 0; j < field_zone_count; j++){
  	field[j,0] = 0;
  	field[j,1] = 0;
 	fieldCard[j] = noone;
 }
 
 //Infirmary
-for (i = 0; i<10; i++){
+for (i = 0; i < 10; i++){
 	infirmary[i,0] = 0;
 	infirmary[i,1] = 0;
 	infirmary[i,2] = 0;
 }
 infirmaryCount = 0;
-infirmary_x=deck_x;
-infirmary_y=deck_y+(card_height+5);
+infirmary_x = deck_x;
+infirmary_y = deck_y + (card_height + 5);
 
 //Momentum deck
 momentum_deck_x = 1385;
 momentum_deck_y = 320;
 momentumDeckCount = 0;
 for(i = 0; i < 8; i++){
-	momentumDeck[i, 0] = 0;
-	momentumDeck[i, 1] = 0;
+	momentumDeck[i,0] = 0;
+	momentumDeck[i,1] = 0;
 }
 
 //Player Stats Initialization

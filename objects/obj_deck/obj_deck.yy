@@ -29,8 +29,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Game",
-    "path": "folders/Objects/Game.yy",
+    "name": "Player Elements",
+    "path": "folders/Objects/Game/Player Elements.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_deck",

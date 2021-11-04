@@ -1,22 +1,43 @@
-draw_set_color(c_black)
-draw_sprite_ext(macros.sprite_array[cardNum,artNum],-1,x,y,sprite_to_small,card_height/800,180,c_white,1);
+draw_sprite_ext(
+	macros.sprite_array[cardNum,artNum], -1,
+	x, y, 
+	sprite_to_small, card_height/800,
+	180, c_white, 1
+);
 
-if(getStat(StatHP) < getStat(StatMaxHP)){
-	draw_text_color(x-60,y-44,string(getStat(StatHP)),c_yellow,c_yellow,c_yellow,c_yellow,1);
-}else{
-	draw_text_color(x-60,y-44,string(getStat(StatHP)),$18742d,$18742d,$18742d,$18742d,1);
-}
-draw_text_color(x+50,y-44,string(getStat(StatATK)),c_red,c_red,c_red,c_red,1);
+draw_set_color(c_red)
+draw_text(x + 50, y - 44, string(getStat(StatATK)));
+
+draw_set_color(
+	getStat(StatHP) < getStat(StatMaxHP) 
+	? c_yellow 
+	: (macros.card_type[cardNum] == TypeMonster ? $18742d : $0c3f18)
+)
+draw_text(x-60,y-44,string(getStat(StatHP)));
+
+
 draw_text(x-60,y+75,string(getStat(StatLevel)));
 
 if(getStatus(StatusSilenced)){
 	draw_sprite_stretched(spr_silenced,-1,x-card_width/2,y-card_height/2,card_width,card_height);
 }
 
-if(attacksLeft && !getStatus(StatusUnarmed) && !getStatus(StatusParalyzed) && obj_player.turn_count != 1){
-	draw_sprite_ext(spr_attack,-1,x+card_width/2,y+card_height/2,sprite_to_small,sprite_to_small,180,c_white,1);
+if(
+	attacksLeft && 
+	!getStatus(StatusUnarmed) && 
+	!getStatus(StatusParalyzed) && 
+	obj_player.turn_count != 1
+){
+	draw_sprite_ext(
+		spr_attack, -1, x + card_width/2,
+		y + card_height/2,
+		sprite_to_small, sprite_to_small,
+		180, c_white, 1
+	);
 }
 
+
+//Once again, remake
 var i = 0
 if(getStatus(StatusTAUNT)){
 	stateList[i++] = spr_taunt;

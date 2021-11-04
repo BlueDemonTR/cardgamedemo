@@ -1,7 +1,9 @@
+var ownerObject = self;
+
 with(obj_activation_box){
-	if(activation_mode != FunctionChoices){
+	if(self.ownerObject != ownerObject){
 		instance_destroy();
 	}
 }
-selected=false;
 
+selected = false;

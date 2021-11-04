@@ -2,18 +2,18 @@ switch(int64(animationInfo[0])){
 	case 1:
 		{
 			for(var i = 0; i < 2; i++){
-				if(animationInfo[i+1] <= 4){
-					locationInfo[i,0] = player.field_card_zone_x[animationInfo[i+1]]
-					locationInfo[i,1] = player.field_card_zone_y[animationInfo[i+1]]
-					if(i+1=1){
+				if(animationInfo[i + 1] <= 4){
+					locationInfo[i,0] = player.field_card_zone_x[animationInfo[i + 1]]
+					locationInfo[i,1] = player.field_card_zone_y[animationInfo[i + 1]]
+					if(i == 0){
 						cardAngle = 0
 						cardNum = 1
 						artNum = 0
 					}
-				}else if(animationInfo[i+1] <= 9){
-					locationInfo[i,0] = opponent.field_card_zone_x[animationInfo[i+1]-5]
-					locationInfo[i,1] = opponent.field_card_zone_y[animationInfo[i+1]-5]
-					if(i+1=1){
+				}else if(animationInfo[i + 1] <= 9){
+					locationInfo[i,0] = opponent.field_card_zone_x[animationInfo[i + 1] -5]
+					locationInfo[i,1] = opponent.field_card_zone_y[animationInfo[i + 1] -5]
+					if(i == 0){
 						cardAngle =180
 						cardNum = 1
 						artNum = 0

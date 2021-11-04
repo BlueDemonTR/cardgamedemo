@@ -1,6 +1,6 @@
-warning = "";
-deckName = "";
-enterDeckName = false;
-delay= 2;
+warning = ""
+deckName = ""
+enterDeckName = false
+delay = 2
 main = obj_deck_builder
-selected = false;
+selected = false

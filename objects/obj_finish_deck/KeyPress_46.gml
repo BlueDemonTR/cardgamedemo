@@ -1,2 +1,4 @@
-if(!selected || !enterDeckName){return;}
+if(!selected || !enterDeckName){
+	return;
+}
 deckName = ""

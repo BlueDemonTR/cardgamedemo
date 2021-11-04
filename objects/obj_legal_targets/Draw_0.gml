@@ -11,4 +11,11 @@ surface_set_target(obj_player.targetSurface)
 	var surface_margin_x = sprite_get_width(spr_base_white)/2 - room_width/2, 
 	surface_margin_y = sprite_get_height(spr_base_white)/2 - room_height/2;
 	draw_sprite_stretched(macros.sprite_array[cardNum,artNum],-1,surface_margin_x + x - card_width/2, surface_margin_y + y - card_height/2,card_width,card_height);
+	if(macros.card_type[cardNum] != TypeSpell){
+		draw_set_color(c_red)
+		draw_text(surface_margin_x + x - 62, surface_margin_y + y - 76, string(scr_get_stat_orig(cardNum, StatATK)));
+
+		draw_set_color(macros.card_type[cardNum] == TypeMonster ? $18742d : $0c3f18)
+		draw_text(surface_margin_x + x + 50, surface_margin_y + y - 76,string(scr_get_stat_orig(cardNum, StatMaxHP)));
+	}
 surface_reset_target()
