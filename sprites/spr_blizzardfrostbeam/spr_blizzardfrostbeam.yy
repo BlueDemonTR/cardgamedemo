@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"1cc1fbb8-21c6-489f-8b16-70b834f1ef73","path":"sprites/spr_blizzardfrostbeam/spr_blizzardfrostbeam.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"1cc1fbb8-21c6-489f-8b16-70b834f1ef73","path":"sprites/spr_blizzardfrostbeam/spr_blizzardfrostbeam.yy",},"LayerId":{"name":"ba208e3e-8e3d-4213-be20-30219c4cfdd5","path":"sprites/spr_blizzardfrostbeam/spr_blizzardfrostbeam.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_blizzardfrostbeam","path":"sprites/spr_blizzardfrostbeam/spr_blizzardfrostbeam.yy",},"resourceVersion":"1.0","name":"1cc1fbb8-21c6-489f-8b16-70b834f1ef73","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"b3625c11-b65a-4ad3-b1de-91e20d3c2866","path":"sprites/spr_blizzardfrostbeam/spr_blizzardfrostbeam.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"b3625c11-b65a-4ad3-b1de-91e20d3c2866","path":"sprites/spr_blizzardfrostbeam/spr_blizzardfrostbeam.yy",},"LayerId":{"name":"99c549da-4982-4062-b76b-9c9fffca63b3","path":"sprites/spr_blizzardfrostbeam/spr_blizzardfrostbeam.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_blizzardfrostbeam","path":"sprites/spr_blizzardfrostbeam/spr_blizzardfrostbeam.yy",},"resourceVersion":"1.0","name":"b3625c11-b65a-4ad3-b1de-91e20d3c2866","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_blizzardfrostbeam","path":"sprites/spr_blizzardfrostbeam/spr_blizzardfrostbeam.yy",},
@@ -41,8 +41,8 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"928bfe19-b65f-4b33-a8ff-bad0135877a1","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"1cc1fbb8-21c6-489f-8b16-70b834f1ef73","path":"sprites/spr_blizzardfrostbeam/spr_blizzardfrostbeam.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+            {"id":"24d05227-ab24-4b0c-8ed1-f3d6c0d14479","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"b3625c11-b65a-4ad3-b1de-91e20d3c2866","path":"sprites/spr_blizzardfrostbeam/spr_blizzardfrostbeam.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": true,
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"ba208e3e-8e3d-4213-be20-30219c4cfdd5","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"99c549da-4982-4062-b76b-9c9fffca63b3","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {

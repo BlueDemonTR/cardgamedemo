@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_change_displayed_card(cardNum, artNum, showOrig){
-	with(obj_card_info_writer){
+	with(obj_card_info_display){
 		selected_card = [cardNum, artNum];
 		
 		cardName = macros.name[cardNum]
@@ -9,6 +9,8 @@ function scr_change_displayed_card(cardNum, artNum, showOrig){
 		
 		cardATK = cardType != "SPELL" ? string(scr_get_stat_orig(cardNum, StatATK)) : "";
 		cardMaxHP = cardType != "SPELL" ? string(scr_get_stat_orig(cardNum, StatMaxHP)) : "";
+		cardLevel = cardType != "SPELL" ? string(scr_get_stat_orig(cardNum, StatLevel)) : "";
+		
 		cardSpirit = macros.spiritName[scr_get_stat_orig(cardNum, StatSpirit)];
 		
 		archetypeList = json_parse(json_stringify(macros.origArchetype[cardNum]));

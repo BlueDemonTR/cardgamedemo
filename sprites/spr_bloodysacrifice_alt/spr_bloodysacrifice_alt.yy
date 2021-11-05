@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"3a6f2381-b5cb-4ba2-93f9-e51f8d3ee294","path":"sprites/spr_bloodysacrifice_alt/spr_bloodysacrifice_alt.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"3a6f2381-b5cb-4ba2-93f9-e51f8d3ee294","path":"sprites/spr_bloodysacrifice_alt/spr_bloodysacrifice_alt.yy",},"LayerId":{"name":"a13d10bc-3ea8-4bec-b691-9cd6207e79d7","path":"sprites/spr_bloodysacrifice_alt/spr_bloodysacrifice_alt.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_bloodysacrifice_alt","path":"sprites/spr_bloodysacrifice_alt/spr_bloodysacrifice_alt.yy",},"resourceVersion":"1.0","name":"3a6f2381-b5cb-4ba2-93f9-e51f8d3ee294","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"983fb5a8-2013-4ec1-b1ee-5f635f31832d","path":"sprites/spr_bloodysacrifice_alt/spr_bloodysacrifice_alt.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"983fb5a8-2013-4ec1-b1ee-5f635f31832d","path":"sprites/spr_bloodysacrifice_alt/spr_bloodysacrifice_alt.yy",},"LayerId":{"name":"ee59645f-e610-4e6a-a09e-827606462aa5","path":"sprites/spr_bloodysacrifice_alt/spr_bloodysacrifice_alt.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_bloodysacrifice_alt","path":"sprites/spr_bloodysacrifice_alt/spr_bloodysacrifice_alt.yy",},"resourceVersion":"1.0","name":"983fb5a8-2013-4ec1-b1ee-5f635f31832d","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_bloodysacrifice_alt","path":"sprites/spr_bloodysacrifice_alt/spr_bloodysacrifice_alt.yy",},
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"a2d7f036-71e6-42d7-bf7d-76ab9938b4ba","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"3a6f2381-b5cb-4ba2-93f9-e51f8d3ee294","path":"sprites/spr_bloodysacrifice_alt/spr_bloodysacrifice_alt.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"3860c888-5f90-4749-80ea-34ce2b5a3ff8","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"983fb5a8-2013-4ec1-b1ee-5f635f31832d","path":"sprites/spr_bloodysacrifice_alt/spr_bloodysacrifice_alt.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"a13d10bc-3ea8-4bec-b691-9cd6207e79d7","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"ee59645f-e610-4e6a-a09e-827606462aa5","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {

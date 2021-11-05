@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"9209a611-30ac-4990-8e05-2f0cb79c9e37","path":"sprites/spr_uviscladesbargaining/spr_uviscladesbargaining.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"9209a611-30ac-4990-8e05-2f0cb79c9e37","path":"sprites/spr_uviscladesbargaining/spr_uviscladesbargaining.yy",},"LayerId":{"name":"1d1c3c95-f46a-46b5-8780-8b5f0b3da689","path":"sprites/spr_uviscladesbargaining/spr_uviscladesbargaining.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_uviscladesbargaining","path":"sprites/spr_uviscladesbargaining/spr_uviscladesbargaining.yy",},"resourceVersion":"1.0","name":"9209a611-30ac-4990-8e05-2f0cb79c9e37","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"76e31933-3fe9-486e-a31c-6521a45ce622","path":"sprites/spr_uviscladesbargaining/spr_uviscladesbargaining.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"76e31933-3fe9-486e-a31c-6521a45ce622","path":"sprites/spr_uviscladesbargaining/spr_uviscladesbargaining.yy",},"LayerId":{"name":"150e3844-3e03-4e5e-816d-a9bd1b25e9ac","path":"sprites/spr_uviscladesbargaining/spr_uviscladesbargaining.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_uviscladesbargaining","path":"sprites/spr_uviscladesbargaining/spr_uviscladesbargaining.yy",},"resourceVersion":"1.0","name":"76e31933-3fe9-486e-a31c-6521a45ce622","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_uviscladesbargaining","path":"sprites/spr_uviscladesbargaining/spr_uviscladesbargaining.yy",},
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"9868904c-2514-487c-8f75-407658252f81","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"9209a611-30ac-4990-8e05-2f0cb79c9e37","path":"sprites/spr_uviscladesbargaining/spr_uviscladesbargaining.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"61384386-5389-4191-b59b-65760aa64567","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"76e31933-3fe9-486e-a31c-6521a45ce622","path":"sprites/spr_uviscladesbargaining/spr_uviscladesbargaining.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"1d1c3c95-f46a-46b5-8780-8b5f0b3da689","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"150e3844-3e03-4e5e-816d-a9bd1b25e9ac","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {

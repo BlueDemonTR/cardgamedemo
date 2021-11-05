@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"9f14d1db-db19-4f6b-811f-76f12b068ce0","path":"sprites/spr_poleclanbeast/spr_poleclanbeast.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"9f14d1db-db19-4f6b-811f-76f12b068ce0","path":"sprites/spr_poleclanbeast/spr_poleclanbeast.yy",},"LayerId":{"name":"164b84d1-16b0-4d93-89d6-1bafa5dd67ae","path":"sprites/spr_poleclanbeast/spr_poleclanbeast.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_poleclanbeast","path":"sprites/spr_poleclanbeast/spr_poleclanbeast.yy",},"resourceVersion":"1.0","name":"9f14d1db-db19-4f6b-811f-76f12b068ce0","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"d5c0edc2-b732-475b-9690-7b06ab9579e1","path":"sprites/spr_poleclanbeast/spr_poleclanbeast.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"d5c0edc2-b732-475b-9690-7b06ab9579e1","path":"sprites/spr_poleclanbeast/spr_poleclanbeast.yy",},"LayerId":{"name":"642a789a-3ceb-43d3-bdd4-052eda067047","path":"sprites/spr_poleclanbeast/spr_poleclanbeast.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_poleclanbeast","path":"sprites/spr_poleclanbeast/spr_poleclanbeast.yy",},"resourceVersion":"1.0","name":"d5c0edc2-b732-475b-9690-7b06ab9579e1","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_poleclanbeast","path":"sprites/spr_poleclanbeast/spr_poleclanbeast.yy",},
@@ -41,8 +41,8 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"a46d820a-09aa-4bbd-a7a8-56e72d147279","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"9f14d1db-db19-4f6b-811f-76f12b068ce0","path":"sprites/spr_poleclanbeast/spr_poleclanbeast.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+            {"id":"f7d44c75-acef-49ac-a202-cd88c8f6da6e","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"d5c0edc2-b732-475b-9690-7b06ab9579e1","path":"sprites/spr_poleclanbeast/spr_poleclanbeast.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": true,
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"164b84d1-16b0-4d93-89d6-1bafa5dd67ae","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"642a789a-3ceb-43d3-bdd4-052eda067047","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {

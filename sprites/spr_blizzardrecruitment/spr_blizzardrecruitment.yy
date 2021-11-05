@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"fdd41e95-3c58-4e52-87fe-db71ef3a9068","path":"sprites/spr_blizzardrecruitment/spr_blizzardrecruitment.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"fdd41e95-3c58-4e52-87fe-db71ef3a9068","path":"sprites/spr_blizzardrecruitment/spr_blizzardrecruitment.yy",},"LayerId":{"name":"1e21582a-c944-4052-876e-724da2d878ee","path":"sprites/spr_blizzardrecruitment/spr_blizzardrecruitment.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_blizzardrecruitment","path":"sprites/spr_blizzardrecruitment/spr_blizzardrecruitment.yy",},"resourceVersion":"1.0","name":"fdd41e95-3c58-4e52-87fe-db71ef3a9068","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"eb9b88ec-070c-4671-aba2-b32d5d27bbdd","path":"sprites/spr_blizzardrecruitment/spr_blizzardrecruitment.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"eb9b88ec-070c-4671-aba2-b32d5d27bbdd","path":"sprites/spr_blizzardrecruitment/spr_blizzardrecruitment.yy",},"LayerId":{"name":"c94fedbb-e56e-4695-9935-9cf355d03e3a","path":"sprites/spr_blizzardrecruitment/spr_blizzardrecruitment.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_blizzardrecruitment","path":"sprites/spr_blizzardrecruitment/spr_blizzardrecruitment.yy",},"resourceVersion":"1.0","name":"eb9b88ec-070c-4671-aba2-b32d5d27bbdd","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_blizzardrecruitment","path":"sprites/spr_blizzardrecruitment/spr_blizzardrecruitment.yy",},
@@ -41,8 +41,8 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"cc4a1f9c-93e0-4531-863b-40f36f871d63","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"fdd41e95-3c58-4e52-87fe-db71ef3a9068","path":"sprites/spr_blizzardrecruitment/spr_blizzardrecruitment.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+            {"id":"2c8901a5-1e4b-4698-9b2f-1781be9bc4b0","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"eb9b88ec-070c-4671-aba2-b32d5d27bbdd","path":"sprites/spr_blizzardrecruitment/spr_blizzardrecruitment.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": true,
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"1e21582a-c944-4052-876e-724da2d878ee","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"c94fedbb-e56e-4695-9935-9cf355d03e3a","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {

@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"3b484472-9339-4f1e-b5d9-5ddc84f124b9","path":"sprites/spr_uviscladesdepression/spr_uviscladesdepression.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"3b484472-9339-4f1e-b5d9-5ddc84f124b9","path":"sprites/spr_uviscladesdepression/spr_uviscladesdepression.yy",},"LayerId":{"name":"f6205ef7-8b7d-4010-afe7-1a615ac46ba5","path":"sprites/spr_uviscladesdepression/spr_uviscladesdepression.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_uviscladesdepression","path":"sprites/spr_uviscladesdepression/spr_uviscladesdepression.yy",},"resourceVersion":"1.0","name":"3b484472-9339-4f1e-b5d9-5ddc84f124b9","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"2dcd2c8b-73e4-436d-9112-4ac5885cf871","path":"sprites/spr_uviscladesdepression/spr_uviscladesdepression.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"2dcd2c8b-73e4-436d-9112-4ac5885cf871","path":"sprites/spr_uviscladesdepression/spr_uviscladesdepression.yy",},"LayerId":{"name":"c72a1253-d3ec-40b3-b455-c05f2d0a9361","path":"sprites/spr_uviscladesdepression/spr_uviscladesdepression.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_uviscladesdepression","path":"sprites/spr_uviscladesdepression/spr_uviscladesdepression.yy",},"resourceVersion":"1.0","name":"2dcd2c8b-73e4-436d-9112-4ac5885cf871","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_uviscladesdepression","path":"sprites/spr_uviscladesdepression/spr_uviscladesdepression.yy",},
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"65901b40-34e8-44e6-aeec-a2fb32949c86","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"3b484472-9339-4f1e-b5d9-5ddc84f124b9","path":"sprites/spr_uviscladesdepression/spr_uviscladesdepression.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"5aa5b835-53d7-42be-aba4-fde04a587470","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"2dcd2c8b-73e4-436d-9112-4ac5885cf871","path":"sprites/spr_uviscladesdepression/spr_uviscladesdepression.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"f6205ef7-8b7d-4010-afe7-1a615ac46ba5","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"c72a1253-d3ec-40b3-b455-c05f2d0a9361","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {

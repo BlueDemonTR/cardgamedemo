@@ -663,7 +663,7 @@ function scr_initialize_cards(){
 		origStat[i,StatLevel] = 5; //Level
 		origStat[i,StatATK] = 2; //ATK
 		origStat[i,StatMaxHP] = 6; //Max HP
-		origStat[i,StatSpirit] = SpiritPassionate//Spirit
+		origStat[i,StatSpirit] = SpiritAggressive//Spirit
 		j=0
 		//Card Groups
 		//In the case that a card doesn't have that feature the value is -1
@@ -813,7 +813,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,TextEffect] = "Summoned: Target a non-Momentum monster, this card copies it's ATK and DEF.";
+		origText[i,TextEffect] = "Summoned: Target a non-Momentum monster, this card copies it's ATK and DEF";
 		origText[i,TextFlavor] = "Because of her past, she doesn't like her body very much. She finds more happiness in copying what other people look like";
 		
 		j=0
@@ -847,7 +847,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,TextEffect] = "After this card attacks: Deal 1 damage to all Enemy Monsters, then deal 4 damage to this card and yourself.";
+		origText[i,TextEffect] = "After this card attacks: Deal 1 damage to all Enemy Monsters, then deal 4 damage to this card and yourself";
 		origText[i,TextFlavor] = "A war veteran with a fallen country, she cannot admit defeat without a proper battle and all she knows is to serve";
 		
 		j=0
@@ -879,7 +879,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,TextEffect] = "If there are 4 or more ''Visclades'' monsters in your Infirmary, Sudden Impact Summon a ''Visclades''. End of This Turn: Destroy that Monster. Lock your wheel.";
+		origText[i,TextEffect] = "If there are 4 or more ''Visclades'' monsters in your Infirmary, Sudden Impact Summon a ''Visclades''. End of This Turn: Destroy that Monster. Lock your wheel";
 		origText[i,TextFlavor] = "All mighty lord of the fallen. The one that forgives but is never forgiven. Absurd, deserved, justice will be served. Hear our plea, Cries of the Underworld"
 		j=0
 		//Card Status'
@@ -907,7 +907,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,TextEffect] = "Effect Summon a non-Momentum ''Visclades'' monster from your Infirmary.";
+		origText[i,TextEffect] = "Effect Summon a non-Momentum ''Visclades'' monster from your Infirmary";
 		origText[i,TextFlavor] = "Fall, fall rise again. Balance of the universe, the rule of Zen. For every good that rises, another bad lies ahead."
 		j=0
 		//Card Status'
@@ -935,7 +935,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,TextEffect] = "Mill a ''Visclades'' Monste then, if possible, an ally monster gains +2 ATK";
+		origText[i,TextEffect] = "Mill a ''Visclades'' Monster then, if possible, an ally monster gains +2 ATK";
 		origText[i,TextFlavor] = "Evolution requires sacrifice";
 		j=0
 		//Card Status'
@@ -970,7 +970,7 @@ function scr_initialize_cards(){
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
 		origText[i,TextEffect] = "Summoned: Silence an enemy monster";
 		origText[i,TextFlavor] = "The firstborn of the Underworld, it doesn't accept its eternal torture.";
-		origText[i,TextMaterials] = "2+ Visclades";
+		origText[i,TextMaterials] = "2+ ''Visclades'' Monsters";
 		origText[i,TextChant] = "What happened haven't happened."
 		j=0
 		//Card Status'
@@ -1707,7 +1707,7 @@ function scr_initialize_cards(){
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
 		origText[i,TextEffect] = "Once Per Turn: Recruit 2 ''Pole Clan Archer''s";
 		origText[i,TextFlavor] = "The perfect military Igloo, the magic inside the walls has settled down to make walls harder than steel.";
-		origText[i,TextMaterials] = "1 ''Igloo'' + 1 + ''Pole Clan'' Monsters";
+		origText[i,TextMaterials] = "1 ''Igloo Citadel'' + 1 + ''Pole Clan'' Monsters";
 		origText[i,TextChant] = "Momentum Engines, Working. Refrigeration, Level 12. Evolution, Positive. Expand To the MAX!"
 		j=0
 		//Card Status'
@@ -2059,7 +2059,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,TextEffect] = "You can discard a card, recruit a Body Guard";
+		origText[i,TextEffect] = "You can discard a card, recruit a ''Body Guard''";
 		origText[i,TextFlavor] = "A leader so great that he can't do anything but hide behind his henchman.";
 		j=0
 		//Card Status'

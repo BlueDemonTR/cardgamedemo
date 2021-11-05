@@ -464,7 +464,7 @@
     {"id":{"name":"fnt_lato_s20","path":"fonts/fnt_lato_s20/fnt_lato_s20.yy",},"order":8,},
     {"id":{"name":"spr_guarddog","path":"sprites/spr_guarddog/spr_guarddog.yy",},"order":32,},
     {"id":{"name":"spr_sacrifice_symbol","path":"sprites/spr_sacrifice_symbol/spr_sacrifice_symbol.yy",},"order":11,},
-    {"id":{"name":"obj_card_info_writer","path":"objects/obj_card_info_writer/obj_card_info_writer.yy",},"order":2,},
+    {"id":{"name":"obj_card_info_display","path":"objects/obj_card_info_display/obj_card_info_display.yy",},"order":2,},
     {"id":{"name":"obj_back_button","path":"objects/obj_back_button/obj_back_button.yy",},"order":0,},
     {"id":{"name":"macros","path":"objects/macros/macros.yy",},"order":5,},
     {"id":{"name":"spr_save_button","path":"sprites/spr_save_button/spr_save_button.yy",},"order":45,},
