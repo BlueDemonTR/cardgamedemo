@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"b9e84ac8-315e-4067-849c-db53efee0a2d","path":"sprites/spr_earthquake/spr_earthquake.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"b9e84ac8-315e-4067-849c-db53efee0a2d","path":"sprites/spr_earthquake/spr_earthquake.yy",},"LayerId":{"name":"874dd36f-0784-41d3-b6ac-80cb22b80a93","path":"sprites/spr_earthquake/spr_earthquake.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_earthquake","path":"sprites/spr_earthquake/spr_earthquake.yy",},"resourceVersion":"1.0","name":"b9e84ac8-315e-4067-849c-db53efee0a2d","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"062b00de-bebc-43f3-b0aa-01d682b3aa68","path":"sprites/spr_earthquake/spr_earthquake.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"062b00de-bebc-43f3-b0aa-01d682b3aa68","path":"sprites/spr_earthquake/spr_earthquake.yy",},"LayerId":{"name":"cc04b78f-513a-4dd3-aa0d-d8d2ec46cc9f","path":"sprites/spr_earthquake/spr_earthquake.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_earthquake","path":"sprites/spr_earthquake/spr_earthquake.yy",},"resourceVersion":"1.0","name":"062b00de-bebc-43f3-b0aa-01d682b3aa68","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_earthquake","path":"sprites/spr_earthquake/spr_earthquake.yy",},
@@ -41,8 +41,8 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"f4cc67e8-27b0-4e88-90ae-7e8e58b67c01","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"b9e84ac8-315e-4067-849c-db53efee0a2d","path":"sprites/spr_earthquake/spr_earthquake.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+            {"id":"82492567-9298-496f-85b5-2961625a4eb6","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"062b00de-bebc-43f3-b0aa-01d682b3aa68","path":"sprites/spr_earthquake/spr_earthquake.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": true,
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"874dd36f-0784-41d3-b6ac-80cb22b80a93","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"cc04b78f-513a-4dd3-aa0d-d8d2ec46cc9f","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {

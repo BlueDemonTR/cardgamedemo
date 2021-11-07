@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"36d7ea85-ea03-4ab1-96f0-491a0edadd44","path":"sprites/spr_machinegunsoldier/spr_machinegunsoldier.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"36d7ea85-ea03-4ab1-96f0-491a0edadd44","path":"sprites/spr_machinegunsoldier/spr_machinegunsoldier.yy",},"LayerId":{"name":"071db12d-4b3f-4169-a23b-6080fc6c3d47","path":"sprites/spr_machinegunsoldier/spr_machinegunsoldier.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_machinegunsoldier","path":"sprites/spr_machinegunsoldier/spr_machinegunsoldier.yy",},"resourceVersion":"1.0","name":"36d7ea85-ea03-4ab1-96f0-491a0edadd44","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"04258f6b-bf52-4b4a-bcae-71425a947b6e","path":"sprites/spr_machinegunsoldier/spr_machinegunsoldier.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"04258f6b-bf52-4b4a-bcae-71425a947b6e","path":"sprites/spr_machinegunsoldier/spr_machinegunsoldier.yy",},"LayerId":{"name":"86bb59c3-0ad6-400f-be62-911b89e3c65a","path":"sprites/spr_machinegunsoldier/spr_machinegunsoldier.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_machinegunsoldier","path":"sprites/spr_machinegunsoldier/spr_machinegunsoldier.yy",},"resourceVersion":"1.0","name":"04258f6b-bf52-4b4a-bcae-71425a947b6e","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_machinegunsoldier","path":"sprites/spr_machinegunsoldier/spr_machinegunsoldier.yy",},
@@ -41,10 +41,10 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"d0a11368-919d-4da9-aa7c-e7ef68d81dd1","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"36d7ea85-ea03-4ab1-96f0-491a0edadd44","path":"sprites/spr_machinegunsoldier/spr_machinegunsoldier.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+            {"id":"5a5ae26c-d555-4f60-bc08-83711f46efe2","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"04258f6b-bf52-4b4a-bcae-71425a947b6e","path":"sprites/spr_machinegunsoldier/spr_machinegunsoldier.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
-    "visibleRange": {"x":0.0,"y":0.0,},
+    "visibleRange": null,
     "lockOrigin": true,
     "showBackdrop": true,
     "showBackdropImage": false,
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"071db12d-4b3f-4169-a23b-6080fc6c3d47","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"86bb59c3-0ad6-400f-be62-911b89e3c65a","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {

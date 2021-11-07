@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"199d7b14-4f07-4bbb-a196-f79c249de2d4","path":"sprites/spr_foolwithgun/spr_foolwithgun.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"199d7b14-4f07-4bbb-a196-f79c249de2d4","path":"sprites/spr_foolwithgun/spr_foolwithgun.yy",},"LayerId":{"name":"67616caf-aaa9-4b1a-9880-35934fd79e05","path":"sprites/spr_foolwithgun/spr_foolwithgun.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_foolwithgun","path":"sprites/spr_foolwithgun/spr_foolwithgun.yy",},"resourceVersion":"1.0","name":"199d7b14-4f07-4bbb-a196-f79c249de2d4","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"c6cd07d2-114f-4d15-9407-e92a48675493","path":"sprites/spr_foolwithgun/spr_foolwithgun.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"c6cd07d2-114f-4d15-9407-e92a48675493","path":"sprites/spr_foolwithgun/spr_foolwithgun.yy",},"LayerId":{"name":"eb97480c-ecde-40e1-bf8a-62e43c799a2f","path":"sprites/spr_foolwithgun/spr_foolwithgun.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_foolwithgun","path":"sprites/spr_foolwithgun/spr_foolwithgun.yy",},"resourceVersion":"1.0","name":"c6cd07d2-114f-4d15-9407-e92a48675493","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_foolwithgun","path":"sprites/spr_foolwithgun/spr_foolwithgun.yy",},
@@ -41,8 +41,8 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"6fb6d0dd-4911-4baa-8ee6-1e326a1948a2","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"199d7b14-4f07-4bbb-a196-f79c249de2d4","path":"sprites/spr_foolwithgun/spr_foolwithgun.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+            {"id":"630327f4-3771-41c9-97a1-3d96250743e0","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"c6cd07d2-114f-4d15-9407-e92a48675493","path":"sprites/spr_foolwithgun/spr_foolwithgun.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": true,
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"67616caf-aaa9-4b1a-9880-35934fd79e05","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"eb97480c-ecde-40e1-bf8a-62e43c799a2f","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {

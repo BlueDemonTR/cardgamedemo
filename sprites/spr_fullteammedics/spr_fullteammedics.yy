@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"7f731d24-aecb-42e9-8210-03d0054e5250","path":"sprites/spr_fullteammedics/spr_fullteammedics.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"7f731d24-aecb-42e9-8210-03d0054e5250","path":"sprites/spr_fullteammedics/spr_fullteammedics.yy",},"LayerId":{"name":"4645e1f7-85a4-40ca-a44d-25e3958c478c","path":"sprites/spr_fullteammedics/spr_fullteammedics.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_fullteammedics","path":"sprites/spr_fullteammedics/spr_fullteammedics.yy",},"resourceVersion":"1.0","name":"7f731d24-aecb-42e9-8210-03d0054e5250","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"6680e4e2-75f4-4122-a079-a523c2b8c9c7","path":"sprites/spr_fullteammedics/spr_fullteammedics.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"6680e4e2-75f4-4122-a079-a523c2b8c9c7","path":"sprites/spr_fullteammedics/spr_fullteammedics.yy",},"LayerId":{"name":"5d6f7511-4317-434f-9e5c-016f50ff9a70","path":"sprites/spr_fullteammedics/spr_fullteammedics.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_fullteammedics","path":"sprites/spr_fullteammedics/spr_fullteammedics.yy",},"resourceVersion":"1.0","name":"6680e4e2-75f4-4122-a079-a523c2b8c9c7","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_fullteammedics","path":"sprites/spr_fullteammedics/spr_fullteammedics.yy",},
@@ -41,8 +41,8 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"bd079ea8-eda7-43ed-b90b-bd99ca254b8c","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"7f731d24-aecb-42e9-8210-03d0054e5250","path":"sprites/spr_fullteammedics/spr_fullteammedics.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+            {"id":"6e81aaa9-38e8-4a66-90bb-ac6c31a67ad9","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"6680e4e2-75f4-4122-a079-a523c2b8c9c7","path":"sprites/spr_fullteammedics/spr_fullteammedics.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": true,
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"4645e1f7-85a4-40ca-a44d-25e3958c478c","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"5d6f7511-4317-434f-9e5c-016f50ff9a70","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {

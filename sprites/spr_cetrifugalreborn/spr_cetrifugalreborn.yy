@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"85097f0e-897e-4bd8-b30e-182c4b4e5c0f","path":"sprites/spr_cetrifugalreborn/spr_cetrifugalreborn.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"85097f0e-897e-4bd8-b30e-182c4b4e5c0f","path":"sprites/spr_cetrifugalreborn/spr_cetrifugalreborn.yy",},"LayerId":{"name":"3e8a9c6b-2fd9-4967-92db-eb4f527f66de","path":"sprites/spr_cetrifugalreborn/spr_cetrifugalreborn.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_cetrifugalreborn","path":"sprites/spr_cetrifugalreborn/spr_cetrifugalreborn.yy",},"resourceVersion":"1.0","name":"85097f0e-897e-4bd8-b30e-182c4b4e5c0f","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"bb12bda3-e10f-444f-b365-132dface324d","path":"sprites/spr_cetrifugalreborn/spr_cetrifugalreborn.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"bb12bda3-e10f-444f-b365-132dface324d","path":"sprites/spr_cetrifugalreborn/spr_cetrifugalreborn.yy",},"LayerId":{"name":"db7202bf-347c-4a96-a21c-52c7144b962a","path":"sprites/spr_cetrifugalreborn/spr_cetrifugalreborn.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_cetrifugalreborn","path":"sprites/spr_cetrifugalreborn/spr_cetrifugalreborn.yy",},"resourceVersion":"1.0","name":"bb12bda3-e10f-444f-b365-132dface324d","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_cetrifugalreborn","path":"sprites/spr_cetrifugalreborn/spr_cetrifugalreborn.yy",},
@@ -41,8 +41,8 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"affd7039-92a2-4231-bc10-d7d56600963f","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"85097f0e-897e-4bd8-b30e-182c4b4e5c0f","path":"sprites/spr_cetrifugalreborn/spr_cetrifugalreborn.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+            {"id":"825a1d02-9d19-4fe4-bf10-edaab6861ac1","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"bb12bda3-e10f-444f-b365-132dface324d","path":"sprites/spr_cetrifugalreborn/spr_cetrifugalreborn.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": true,
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"3e8a9c6b-2fd9-4967-92db-eb4f527f66de","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"db7202bf-347c-4a96-a21c-52c7144b962a","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {

@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"4f29b266-f8e7-4ac3-912e-36826870c5ed","path":"sprites/spr_battlemedic/spr_battlemedic.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"4f29b266-f8e7-4ac3-912e-36826870c5ed","path":"sprites/spr_battlemedic/spr_battlemedic.yy",},"LayerId":{"name":"2e05b481-734c-43be-900f-c08bb7f33b8f","path":"sprites/spr_battlemedic/spr_battlemedic.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_battlemedic","path":"sprites/spr_battlemedic/spr_battlemedic.yy",},"resourceVersion":"1.0","name":"4f29b266-f8e7-4ac3-912e-36826870c5ed","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"d6891a64-f342-4382-b120-e062af544ab3","path":"sprites/spr_battlemedic/spr_battlemedic.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"d6891a64-f342-4382-b120-e062af544ab3","path":"sprites/spr_battlemedic/spr_battlemedic.yy",},"LayerId":{"name":"d8aa902f-b68e-47e0-8710-e1fc0114a9fa","path":"sprites/spr_battlemedic/spr_battlemedic.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_battlemedic","path":"sprites/spr_battlemedic/spr_battlemedic.yy",},"resourceVersion":"1.0","name":"d6891a64-f342-4382-b120-e062af544ab3","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_battlemedic","path":"sprites/spr_battlemedic/spr_battlemedic.yy",},
@@ -41,8 +41,8 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"a23b5c5d-1760-45aa-b2f6-5a24203266ea","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"4f29b266-f8e7-4ac3-912e-36826870c5ed","path":"sprites/spr_battlemedic/spr_battlemedic.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+            {"id":"3e7bcb97-325e-4fa1-bcda-45ed0f00b9d7","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"d6891a64-f342-4382-b120-e062af544ab3","path":"sprites/spr_battlemedic/spr_battlemedic.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": true,
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"2e05b481-734c-43be-900f-c08bb7f33b8f","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"d8aa902f-b68e-47e0-8710-e1fc0114a9fa","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {

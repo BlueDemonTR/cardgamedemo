@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"7815c7c2-28b1-4119-8b2f-563e9eb2ed1a","path":"sprites/spr_bloodthirst/spr_bloodthirst.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"7815c7c2-28b1-4119-8b2f-563e9eb2ed1a","path":"sprites/spr_bloodthirst/spr_bloodthirst.yy",},"LayerId":{"name":"6dc2bfec-71a2-457e-a9cb-20702699b971","path":"sprites/spr_bloodthirst/spr_bloodthirst.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_bloodthirst","path":"sprites/spr_bloodthirst/spr_bloodthirst.yy",},"resourceVersion":"1.0","name":"7815c7c2-28b1-4119-8b2f-563e9eb2ed1a","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"3aa4869c-bec0-4988-a9ea-d43f8c728a00","path":"sprites/spr_bloodthirst/spr_bloodthirst.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"3aa4869c-bec0-4988-a9ea-d43f8c728a00","path":"sprites/spr_bloodthirst/spr_bloodthirst.yy",},"LayerId":{"name":"2cd5d82b-2ed9-419c-ad7e-b1992355ccf1","path":"sprites/spr_bloodthirst/spr_bloodthirst.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_bloodthirst","path":"sprites/spr_bloodthirst/spr_bloodthirst.yy",},"resourceVersion":"1.0","name":"3aa4869c-bec0-4988-a9ea-d43f8c728a00","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_bloodthirst","path":"sprites/spr_bloodthirst/spr_bloodthirst.yy",},
@@ -41,8 +41,8 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"2c053ac7-176a-40c3-8ce3-ecdb4476b41c","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"7815c7c2-28b1-4119-8b2f-563e9eb2ed1a","path":"sprites/spr_bloodthirst/spr_bloodthirst.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+            {"id":"5778f15b-6fad-4152-95a9-da9e1624807c","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"3aa4869c-bec0-4988-a9ea-d43f8c728a00","path":"sprites/spr_bloodthirst/spr_bloodthirst.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": true,
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"6dc2bfec-71a2-457e-a9cb-20702699b971","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"2cd5d82b-2ed9-419c-ad7e-b1992355ccf1","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {

@@ -1772,7 +1772,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,TextEffect] = "Discard your entire hand, draw cards and gain momentum equal to the number of cards discarded.";
+		origText[i,TextEffect] = "Discard your entire hand, draw cards and gain momentum equal to the number of cards discarded";
 		origText[i,TextFlavor] = "And there he was, with the power of future in his back, here to finish the suffering.";
 		j=0
 		//Card Status'
@@ -1832,7 +1832,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,TextEffect] = "Pay all your Momentum, recover 2 HP for each Momentum spent.";
+		origText[i,TextEffect] = "Pay all your Momentum, recover 2 HP for each Momentum spent";
 		origText[i,TextFlavor] = "With the new expansions on the healing powers of Momentum self healing units were invented that could heal people before they were decommisioned.";
 		j=0
 		//Card Status'
@@ -1958,7 +1958,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,TextEffect] = "Discard a card, Destroy a LV 4 or lower monster. If you have 5 or less HP; destroy all monsters on the field instead.";
+		origText[i,TextEffect] = "Discard a card, Destroy a LV 4 or lower monster. If you have 5 or less HP; destroy all monsters on the field instead";
 		origText[i,TextFlavor] = "On the battle of the mirror, the pure one should give into its reflection.";
 		j=0
 		//Card Status'
@@ -2227,7 +2227,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,TextEffect] = "If this card has 1 HP: Shuffle this card into the deck.";
+		origText[i,TextEffect] = "If this card has 1 HP: Shuffle this card into the deck";
 		origText[i,TextFlavor] = "Misses home, wants to return.";
 		j=0
 		//Card Status'
@@ -2257,7 +2257,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,TextEffect] = "Pay 3 Momentum, an Aggressive or Malicious monster on the field gains +4 ATK.";
+		origText[i,TextEffect] = "Pay 3 Momentum, an Aggressive or Malicious monster on the field gains +4 ATK";
 		origText[i,TextFlavor] = "Some people learnt that you can unleash you high amounts of Momentum in a certain part of the brain to make someone go crazy.";
 		j=0
 		//Card Status'
@@ -3393,7 +3393,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,TextEffect] = "Summoned: Discard a card.";
+		origText[i,TextEffect] = "Summoned: Discard a card";
 		origText[i,TextFlavor] = "A soldier that worked used to work in the military before the governments fell, now he protects citizens, for a hefty price";
 		j=0
 		//Card Status'

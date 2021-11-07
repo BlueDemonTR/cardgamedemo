@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"d33ca20b-2ea5-41b1-beb6-154a03d8921d","path":"sprites/spr_defenselessman/spr_defenselessman.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"d33ca20b-2ea5-41b1-beb6-154a03d8921d","path":"sprites/spr_defenselessman/spr_defenselessman.yy",},"LayerId":{"name":"76258148-4345-4f35-8222-9d2ede56e665","path":"sprites/spr_defenselessman/spr_defenselessman.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_defenselessman","path":"sprites/spr_defenselessman/spr_defenselessman.yy",},"resourceVersion":"1.0","name":"d33ca20b-2ea5-41b1-beb6-154a03d8921d","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"e4973433-bfaa-4f65-8568-54f4eddc5207","path":"sprites/spr_defenselessman/spr_defenselessman.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"e4973433-bfaa-4f65-8568-54f4eddc5207","path":"sprites/spr_defenselessman/spr_defenselessman.yy",},"LayerId":{"name":"728bf35e-9c7d-431d-b2b7-ac946bac89dc","path":"sprites/spr_defenselessman/spr_defenselessman.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_defenselessman","path":"sprites/spr_defenselessman/spr_defenselessman.yy",},"resourceVersion":"1.0","name":"e4973433-bfaa-4f65-8568-54f4eddc5207","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_defenselessman","path":"sprites/spr_defenselessman/spr_defenselessman.yy",},
@@ -41,8 +41,8 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"9c291241-4695-4bbc-a3ec-7c2a538c2195","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"d33ca20b-2ea5-41b1-beb6-154a03d8921d","path":"sprites/spr_defenselessman/spr_defenselessman.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+            {"id":"81a910ba-5d3c-4246-aca8-95e371c10826","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"e4973433-bfaa-4f65-8568-54f4eddc5207","path":"sprites/spr_defenselessman/spr_defenselessman.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": true,
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"76258148-4345-4f35-8222-9d2ede56e665","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"728bf35e-9c7d-431d-b2b7-ac946bac89dc","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
