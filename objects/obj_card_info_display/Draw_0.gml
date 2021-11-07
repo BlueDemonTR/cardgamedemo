@@ -40,22 +40,6 @@ if (archetypeListMax > 0){
 	draw_sprite(macros.archetype_symbol[archetypeList[archetypeListSelector]], -1, 5, 520)
 }
 
-if (sharedListMax > 0){
-	if(sharedListSelector > 0){
-		draw_sprite_ext(spr_small_arrow, -1, 35, 653, 1, 1, 0, c_white, 1)
-	}
-	if(sharedListSelector < sharedListMax - 1){
-		draw_sprite_ext(spr_small_arrow, -1, 51, 729, 1, 1, 180, c_white, 1)
-	}
-	draw_sprite(macros.shared_effect_symbol[sharedList[sharedListSelector]], -1, 5, 655)
-	
-	if(keyboard_check_direct(vk_tab) || mouse_between(5, 655, 77, 727)){
-		draw_sprite_ext(spr_shared_effect_box, -1, 5, 712, 1, 1, 0, c_white,.85)
-		draw_text_ext(15, 722, macros.shared_effect_name[sharedList[cardNum,sharedListSelector]] + ":", 18, 380)
-		draw_text_ext(15, 742, macros.shared_effect[macros.origSharedEffects[cardNum,sharedListSelector]], 18, 380)
-	}
-}
-
 draw_set_color(c_black)
 
 //Card Name
@@ -79,4 +63,20 @@ if(keyboard_check_direct(vk_lcontrol) || mouse_between(0, 760, 340, room_height)
 	start += draw_text_return_height(14,start,extendedEffectText,16,widthCap) - 5;
 }else{
 	start += draw_text_return_height(14,start,effectText,16,widthCap) - 5;
+}
+
+if (sharedListMax > 0){
+	if(sharedListSelector > 0){
+		draw_sprite_ext(spr_small_arrow, -1, 35, 653, 1, 1, 0, c_white, 1)
+	}
+	if(sharedListSelector < sharedListMax - 1){
+		draw_sprite_ext(spr_small_arrow, -1, 51, 729, 1, 1, 180, c_white, 1)
+	}
+	draw_sprite(macros.shared_effect_symbol[sharedList[sharedListSelector]], -1, 5, 655)
+	
+	if(keyboard_check_direct(vk_tab) || mouse_between(5, 655, 77, 727)){
+		draw_sprite_ext(spr_shared_effect_box, -1, 0, 712, 1, 1, 0, c_white,1)
+		draw_text_ext(15, 722, macros.shared_effect_name[sharedList[sharedListSelector]] + ":", 18, 380)
+		draw_text_ext(15, 742, macros.shared_effect[macros.origSharedEffects[cardNum,sharedListSelector]], 18, 380)
+	}
 }
