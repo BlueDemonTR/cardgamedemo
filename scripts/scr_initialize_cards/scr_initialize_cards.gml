@@ -2979,7 +2979,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,TextEffect] = "Gains +1 ATK everytime you summon a fish monster. Once per turn: %10 Do Nothing, %80 Recruit a ''Fish'', %10 Destroy an enemy monster then Recruit a ''Fish''";
+		origText[i,TextEffect] = "Gains +1 ATK everytime you summon a ''Fish'' monster. Once per turn: %10 Do Nothing, %80 Recruit a ''Fish'', %10 Destroy an enemy monster then Recruit a ''Fish''";
 		origText[i,TextFlavor] = "She came into the village from outside and started fishing with a spear while swimming. She cannot catch the Goldfish but no one can tell her anything because of her muscles.";
 		j=0
 		//Card Status'
@@ -3013,7 +3013,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,TextEffect] = "Once per turn, %10 All ''Fish'' monsters you control gain Unarmed, %20 Recruit a ''Fish'', %60 Recruit two ''Fish'' with Unarmed, %10 Recruit a ''Goldfish'' with Unarmed";
+		origText[i,TextEffect] = "Once per turn: %10 All ''Fish'' monsters you control gain Unarmed, %20 Recruit a ''Fish'', %60 Recruit two ''Fish'' with Unarmed, %10 Recruit a ''Goldfish'' with Unarmed";
 		origText[i,TextFlavor] = "He is skilless and it shows. He once tangled everyones fishing rods together while trying to reel a rock in. Somehow, he is the luckiest person with goldfishes.";
 		j=0
 		//Card Status'
@@ -3136,7 +3136,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,TextEffect] = "Voidfy 5 ''Fish'' or 1 ''Goldfish'' from your GY, Gain 3 mana and draw a card";
+		origText[i,TextEffect] = "Voidfy 5 ''Fish'' or 1 ''Goldfish'' from your Infirmary, Gain 3 mana and draw a card";
 		origText[i,TextFlavor] = "The marketplace of the fisherman is the part of the town where everyone loves to be around. It's always full of life.";
 		j=0
 		//Card Status'
@@ -3165,7 +3165,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,TextEffect] = "Voidfy a ''Goldfish'' from your GY, Draw 2 cards and Search a ''Fisherman''";
+		origText[i,TextEffect] = "Voidfy a ''Goldfish'' from your Infirmary, Draw 2 cards and Search a ''Fisherman''";
 		origText[i,TextFlavor] = "The lucky person that gets to bring the Goldfish to their family. They may lose a lot of money but its always, always worth is for the Goldfish.";
 		j=0
 		//Card Status'

@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"bc9f0d7b-ec61-4a24-9f45-3ca5aa7f505a","path":"sprites/spr_fishpog/spr_fishpog.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"bc9f0d7b-ec61-4a24-9f45-3ca5aa7f505a","path":"sprites/spr_fishpog/spr_fishpog.yy",},"LayerId":{"name":"7562b85a-3a83-4ff9-af88-4fd5039f9205","path":"sprites/spr_fishpog/spr_fishpog.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_fishpog","path":"sprites/spr_fishpog/spr_fishpog.yy",},"resourceVersion":"1.0","name":"bc9f0d7b-ec61-4a24-9f45-3ca5aa7f505a","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"fdb31f45-0793-43c2-82fe-9767ee1308fe","path":"sprites/spr_fishpog/spr_fishpog.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"fdb31f45-0793-43c2-82fe-9767ee1308fe","path":"sprites/spr_fishpog/spr_fishpog.yy",},"LayerId":{"name":"c50e0380-7c79-422d-946c-157986204685","path":"sprites/spr_fishpog/spr_fishpog.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_fishpog","path":"sprites/spr_fishpog/spr_fishpog.yy",},"resourceVersion":"1.0","name":"fdb31f45-0793-43c2-82fe-9767ee1308fe","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_fishpog","path":"sprites/spr_fishpog/spr_fishpog.yy",},
@@ -41,8 +41,8 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"e281b35a-6207-49f0-99d0-e4c9e9ca4657","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"bc9f0d7b-ec61-4a24-9f45-3ca5aa7f505a","path":"sprites/spr_fishpog/spr_fishpog.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+            {"id":"f1453e2b-95c7-4b3b-95a2-523fe99b043b","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"fdb31f45-0793-43c2-82fe-9767ee1308fe","path":"sprites/spr_fishpog/spr_fishpog.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": true,
@@ -65,12 +65,12 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"7562b85a-3a83-4ff9-af88-4fd5039f9205","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"c50e0380-7c79-422d-946c-157986204685","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Fisherman",
-    "path": "folders/Sprites/Card Sprites/Catastrophic Revolution/Fisherman.yy",
+    "path": "folders/Sprites/Card Sprites/Ignition Momentum/Fisherman.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_fishpog",

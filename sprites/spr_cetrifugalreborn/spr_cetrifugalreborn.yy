@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Generic",
-    "path": "folders/Sprites/Card Sprites/Catastrophic Revolution/Generic.yy",
+    "path": "folders/Sprites/Card Sprites/Ignition Momentum/Generic.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_cetrifugalreborn",

@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"4af7eca0-7a2c-4326-8402-a97c20cbb4e1","path":"sprites/spr_fishmarket/spr_fishmarket.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"4af7eca0-7a2c-4326-8402-a97c20cbb4e1","path":"sprites/spr_fishmarket/spr_fishmarket.yy",},"LayerId":{"name":"112750cc-5e10-4290-8aa2-76f0fde49664","path":"sprites/spr_fishmarket/spr_fishmarket.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_fishmarket","path":"sprites/spr_fishmarket/spr_fishmarket.yy",},"resourceVersion":"1.0","name":"4af7eca0-7a2c-4326-8402-a97c20cbb4e1","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"c4c9ebf8-e62d-4070-a609-1320cc0c5a3f","path":"sprites/spr_fishmarket/spr_fishmarket.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"c4c9ebf8-e62d-4070-a609-1320cc0c5a3f","path":"sprites/spr_fishmarket/spr_fishmarket.yy",},"LayerId":{"name":"73f72939-096a-4251-94ed-e1cfe99ead09","path":"sprites/spr_fishmarket/spr_fishmarket.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_fishmarket","path":"sprites/spr_fishmarket/spr_fishmarket.yy",},"resourceVersion":"1.0","name":"c4c9ebf8-e62d-4070-a609-1320cc0c5a3f","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_fishmarket","path":"sprites/spr_fishmarket/spr_fishmarket.yy",},
@@ -41,8 +41,8 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"5cfa44ed-103b-436a-9a36-4fa7dff1e838","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"4af7eca0-7a2c-4326-8402-a97c20cbb4e1","path":"sprites/spr_fishmarket/spr_fishmarket.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+            {"id":"c0a00c92-9f3c-4781-b5f5-a8c98c492067","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"c4c9ebf8-e62d-4070-a609-1320cc0c5a3f","path":"sprites/spr_fishmarket/spr_fishmarket.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": true,
@@ -65,12 +65,12 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"112750cc-5e10-4290-8aa2-76f0fde49664","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"73f72939-096a-4251-94ed-e1cfe99ead09","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Fisherman",
-    "path": "folders/Sprites/Card Sprites/Catastrophic Revolution/Fisherman.yy",
+    "path": "folders/Sprites/Card Sprites/Ignition Momentum/Fisherman.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_fishmarket",

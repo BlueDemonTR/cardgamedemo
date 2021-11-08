@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"210c78ea-2c41-4f58-adf9-5e04d600192b","path":"sprites/spr_cursedreel/spr_cursedreel.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"210c78ea-2c41-4f58-adf9-5e04d600192b","path":"sprites/spr_cursedreel/spr_cursedreel.yy",},"LayerId":{"name":"3632be53-1322-408a-a0c9-7e2f29f7de13","path":"sprites/spr_cursedreel/spr_cursedreel.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_cursedreel","path":"sprites/spr_cursedreel/spr_cursedreel.yy",},"resourceVersion":"1.0","name":"210c78ea-2c41-4f58-adf9-5e04d600192b","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"fddc078d-227f-4338-b81f-23c55402c9da","path":"sprites/spr_cursedreel/spr_cursedreel.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"fddc078d-227f-4338-b81f-23c55402c9da","path":"sprites/spr_cursedreel/spr_cursedreel.yy",},"LayerId":{"name":"617f5386-c098-458a-98af-fc5004d2931d","path":"sprites/spr_cursedreel/spr_cursedreel.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_cursedreel","path":"sprites/spr_cursedreel/spr_cursedreel.yy",},"resourceVersion":"1.0","name":"fddc078d-227f-4338-b81f-23c55402c9da","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_cursedreel","path":"sprites/spr_cursedreel/spr_cursedreel.yy",},
@@ -41,8 +41,8 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"d42742b8-c17a-4432-8357-f7dc4df54b9a","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"210c78ea-2c41-4f58-adf9-5e04d600192b","path":"sprites/spr_cursedreel/spr_cursedreel.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+            {"id":"a6b0f746-f319-4803-8ce4-9a14e78112ce","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"fddc078d-227f-4338-b81f-23c55402c9da","path":"sprites/spr_cursedreel/spr_cursedreel.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": true,
@@ -65,12 +65,12 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"3632be53-1322-408a-a0c9-7e2f29f7de13","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"617f5386-c098-458a-98af-fc5004d2931d","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Fisherman",
-    "path": "folders/Sprites/Card Sprites/Catastrophic Revolution/Fisherman.yy",
+    "path": "folders/Sprites/Card Sprites/Ignition Momentum/Fisherman.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_cursedreel",

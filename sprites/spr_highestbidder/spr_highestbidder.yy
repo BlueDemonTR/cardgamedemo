@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"222fc1fd-0de3-4771-9dfa-4de36897948e","path":"sprites/spr_highestbidder/spr_highestbidder.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"222fc1fd-0de3-4771-9dfa-4de36897948e","path":"sprites/spr_highestbidder/spr_highestbidder.yy",},"LayerId":{"name":"b6efa1c9-e1fb-47a0-a3d5-7a578b01e9ec","path":"sprites/spr_highestbidder/spr_highestbidder.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_highestbidder","path":"sprites/spr_highestbidder/spr_highestbidder.yy",},"resourceVersion":"1.0","name":"222fc1fd-0de3-4771-9dfa-4de36897948e","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"8f4f268d-8b24-4014-b926-2c6a7daebf72","path":"sprites/spr_highestbidder/spr_highestbidder.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"8f4f268d-8b24-4014-b926-2c6a7daebf72","path":"sprites/spr_highestbidder/spr_highestbidder.yy",},"LayerId":{"name":"e83da953-b8ca-4775-9eed-917c0e743355","path":"sprites/spr_highestbidder/spr_highestbidder.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_highestbidder","path":"sprites/spr_highestbidder/spr_highestbidder.yy",},"resourceVersion":"1.0","name":"8f4f268d-8b24-4014-b926-2c6a7daebf72","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_highestbidder","path":"sprites/spr_highestbidder/spr_highestbidder.yy",},
@@ -41,8 +41,8 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"435a7a91-cbbf-4e8e-988b-6afa255196cb","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"222fc1fd-0de3-4771-9dfa-4de36897948e","path":"sprites/spr_highestbidder/spr_highestbidder.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+            {"id":"7e4e6f3f-7727-4578-affb-737085caab3f","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"8f4f268d-8b24-4014-b926-2c6a7daebf72","path":"sprites/spr_highestbidder/spr_highestbidder.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": true,
@@ -65,12 +65,12 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"b6efa1c9-e1fb-47a0-a3d5-7a578b01e9ec","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"e83da953-b8ca-4775-9eed-917c0e743355","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Fisherman",
-    "path": "folders/Sprites/Card Sprites/Catastrophic Revolution/Fisherman.yy",
+    "path": "folders/Sprites/Card Sprites/Ignition Momentum/Fisherman.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_highestbidder",

@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"f7b98622-b2d5-4d90-9cbd-55b1ce8a3e16","path":"sprites/spr_fishermanwise/spr_fishermanwise.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"f7b98622-b2d5-4d90-9cbd-55b1ce8a3e16","path":"sprites/spr_fishermanwise/spr_fishermanwise.yy",},"LayerId":{"name":"ea9f5279-efde-4d12-bced-d9f405c7b33d","path":"sprites/spr_fishermanwise/spr_fishermanwise.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_fishermanwise","path":"sprites/spr_fishermanwise/spr_fishermanwise.yy",},"resourceVersion":"1.0","name":"f7b98622-b2d5-4d90-9cbd-55b1ce8a3e16","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"c7829167-98d7-40ee-be84-fd496991574a","path":"sprites/spr_fishermanwise/spr_fishermanwise.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"c7829167-98d7-40ee-be84-fd496991574a","path":"sprites/spr_fishermanwise/spr_fishermanwise.yy",},"LayerId":{"name":"e9e164a9-e3f0-4dad-8c5f-3cf60374fa35","path":"sprites/spr_fishermanwise/spr_fishermanwise.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_fishermanwise","path":"sprites/spr_fishermanwise/spr_fishermanwise.yy",},"resourceVersion":"1.0","name":"c7829167-98d7-40ee-be84-fd496991574a","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_fishermanwise","path":"sprites/spr_fishermanwise/spr_fishermanwise.yy",},
@@ -41,8 +41,8 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"367c3528-8532-4cb0-8b46-0b17896d3b28","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f7b98622-b2d5-4d90-9cbd-55b1ce8a3e16","path":"sprites/spr_fishermanwise/spr_fishermanwise.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+            {"id":"c2b4c0e6-1acb-49d4-af08-f93c56288a5e","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"c7829167-98d7-40ee-be84-fd496991574a","path":"sprites/spr_fishermanwise/spr_fishermanwise.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": true,
@@ -65,12 +65,12 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"ea9f5279-efde-4d12-bced-d9f405c7b33d","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"e9e164a9-e3f0-4dad-8c5f-3cf60374fa35","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Fisherman",
-    "path": "folders/Sprites/Card Sprites/Catastrophic Revolution/Fisherman.yy",
+    "path": "folders/Sprites/Card Sprites/Ignition Momentum/Fisherman.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_fishermanwise",
