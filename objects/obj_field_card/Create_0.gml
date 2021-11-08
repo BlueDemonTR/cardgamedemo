@@ -1,6 +1,6 @@
 depth = 1
 
-selected=false;
+selected = false;
 
 position = -1;
 cardNum = 0;

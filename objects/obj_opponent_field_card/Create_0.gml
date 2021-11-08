@@ -1,5 +1,9 @@
-selected=false;
+selected = false;
 
+level1MarginX = -37
+level1MarginY = -72.5
+
+distanceLevel = 7
 
 attacksLeft = 1;
 player = obj_opponent

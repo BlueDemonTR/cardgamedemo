@@ -6,17 +6,25 @@ draw_sprite_ext(
 );
 
 draw_set_color(c_red)
-draw_text(x + 50, y - 44, string(getStat(StatATK)));
+draw_text(x - 60, y + 54, string(getStat(StatATK)));
 
 draw_set_color(
 	getStat(StatHP) < getStat(StatMaxHP) 
 	? c_yellow 
 	: (macros.card_type[cardNum] == TypeMonster ? $18742d : $0c3f18)
 )
-draw_text(x-60,y-44,string(getStat(StatHP)));
+draw_text(x + 50,y + 54, string(getStat(StatHP)));
 
-
-draw_text(x-60,y+75,string(getStat(StatLevel)));
+for(var i = getStat(StatLevel) - scr_get_stat_orig(cardNum, StatLevel); i != 0; i -= i/abs(i)){
+	draw_set_color(i < 0 ? c_red : c_green)
+	var affectedLevel = i + scr_get_stat_orig(cardNum, StatLevel) + ((i < 0) ? 0 : -1);
+	draw_sprite_ext(
+		spr_level_pillar, -1,
+		x - level1MarginX - affectedLevel*distanceLevel, y - level1MarginY, 
+		card_width/550, card_height/800,
+		0, color, 1
+	)
+}
 
 if(getStatus(StatusSilenced)){
 	draw_sprite_stretched(spr_silenced,-1,x-card_width/2,y-card_height/2,card_width,card_height);
