@@ -2523,7 +2523,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,TextEffect] = "Summoned: Make this card sacrificable.";
+		origText[i,TextEffect] = "Summoned: Make this card sacrificable";
 		origText[i,TextFlavor] = "The Lamb with nothing but its blood to offer";
 		j=0
 		//Card Status'
@@ -3591,7 +3591,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,TextEffect] = "If you have 3 Momentum or less; Once per turn: All other ''X-Makine'' monsters you control gain +1 ATK, then gain 4 Momentum.";
+		origText[i,TextEffect] = "If you have 3 Momentum or less; Once per turn: All other ''X-Makine'' monsters you control gain +1 ATK, then gain 4 Momentum";
 		origText[i,TextFlavor] = "The head of X-Makines. His cannons can shoot bullets of fire.";
 		j=0
 		//Card Status'
@@ -3644,7 +3644,7 @@ function scr_initialize_cards(){
 		origStat[i,StatLevel] = 2; //Level
 		origStat[i,StatATK] = 1; //ATK
 		origStat[i,StatMaxHP] = 3; //Max HP
-		origStat[i,StatSpirit] = SpiritKind//Spirit
+		origStat[i,StatSpirit] = SpiritNoble//Spirit
 		j=0
 		//Card Groups
 		//In the case that a card doesn't have that feature the value is -1
@@ -3657,7 +3657,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,TextEffect] = "If you have 0 Momentum; Once per turn: Search a ''X-Makine'' monsters, then gain 4 Momentum.";
+		origText[i,TextEffect] = "If you have 0 Momentum; Once per turn: Search a ''X-Makine'' monsters, then gain 4 Momentum";
 		origText[i,TextFlavor] = "The heart of X-Makines. She can use her mech to bring any of her friends to the battlefield.";
 		j=0
 		//Card Status'
@@ -3677,7 +3677,7 @@ function scr_initialize_cards(){
 		origStat[i,StatLevel] = 2; //Level
 		origStat[i,StatATK] = 3; //ATK
 		origStat[i,StatMaxHP] = 2; //Max HP
-		origStat[i,StatSpirit] = SpiritKind//Spirit
+		origStat[i,StatSpirit] = SpiritMalicious//Spirit
 		j=0
 		//Card Groups
 		//In the case that a card doesn't have that feature the value is -1
@@ -3690,7 +3690,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,TextEffect] = "If you have 3 Momentum or less; Once per turn: Add ''X-Makine'' monsters from your Infirmary to your hand, then gain 4 Momentum.";
+		origText[i,TextEffect] = "If you have 3 Momentum or less; Once per turn: Add ''X-Makine'' monsters from your Infirmary to your hand, then gain 4 Momentum";
 		origText[i,TextFlavor] = "The legs of X-Makines. Once someone falls he is always there to save them.";
 		j=0
 		//Card Status'
@@ -3710,7 +3710,7 @@ function scr_initialize_cards(){
 		origStat[i,StatLevel] = 2; //Level
 		origStat[i,StatATK] = 2; //ATK
 		origStat[i,StatMaxHP] = 3; //Max HP
-		origStat[i,StatSpirit] = SpiritNoble//Spirit
+		origStat[i,StatSpirit] = SpiritKind//Spirit
 		j=0
 		//Card Groups
 		//In the case that a card doesn't have that feature the value is -1
@@ -3723,7 +3723,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,TextEffect] = "If you have 3 Momentum or less; Once per turn: Draw a card and increase an ''X-Makine'' monsters' Level by 1, then gain 4 Momentum.";
+		origText[i,TextEffect] = "If you have 3 Momentum or less; Once per turn: Draw a card and increase an ''X-Makine'' monsters' Level by 1, then gain 4 Momentum";
 		origText[i,TextFlavor] = "The eyes of X-Makines, He is the one that always alerts everyone else and takes them high.";
 		j=0
 		//Card Status'
@@ -3756,7 +3756,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,TextEffect] = "Once per Turn: If you have Less than 6 Momentum; Silence an enemy monster, then gain 6 Momentum. If you have 6 Momentum or more; Deal 8 damage to any enemy monster, then lose 6 Momentum.";
+		origText[i,TextEffect] = "Once per Turn: If you have Less than 6 Momentum; Silence an enemy monster, then gain 6 Momentum. If you have 6 Momentum or more; Deal 8 damage to any enemy monster, then lose 6 Momentum";
 		origText[i,TextFlavor] = "All the X-Makines have combined to create a powerful mech! It can use its excess heat to shoot out of its cannons.";
 		origText[i,TextMaterials] = "2+ ''X-Makine'' Monsters"
 		j=0
@@ -3786,7 +3786,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,TextEffect] = "If you control exactly one ''X-Makine'' monster and your opponent controls at least one monster; Effect Summon a ''X-Makine'' monster from your deck then gain 5 Momentum.";
+		origText[i,TextEffect] = "If you control exactly one ''X-Makine'' monster and your opponent controls at least one monster; Effect Summon a ''X-Makine'' monster from your deck, then gain 5 Momentum";
 		j=0
 		//Card Status'
 		//0 = Taunt, 1 = Pierce, 2 = Rebellious, 3 = Immune, 4 = Indestructable, 5 = Lifesteal, 6 = Sneaky
@@ -3814,7 +3814,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,TextEffect] = "Pay all your Momentum, an ''X-Makine'' monster gains ATK equal to the Momentum spent. If you paid 0 Momentum; Give that card TAUNT instead.";
+		origText[i,TextEffect] = "Pay all your Momentum, an ''X-Makine'' monster gains ATK equal to the Momentum spent. If you paid 0 Momentum; Give that card TAUNT instead";
 		j=0
 		//Card Status'
 		//0 = Taunt, 1 = Pierce, 2 = Rebellious, 3 = Immune, 4 = Indestructable, 5 = Lifesteal, 6 = Sneaky
@@ -3842,7 +3842,7 @@ function scr_initialize_cards(){
 		j=0
 		//Card Text
 		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
-		origText[i,TextEffect] = "If you control at least 2 ''X-Makine'' monsters and your opponent controls a Momentum Monster; Destroy cards you control the Infirmary and Sudden Impact Summon a ''X-Makine'' monster.";
+		origText[i,TextEffect] = "If you control at least 2 ''X-Makine'' monsters and your opponent controls a Momentum Monster; Destroy cards you control the Infirmary and Sudden Impact Summon a ''X-Makine'' monster";
 		j=0
 		//Card Status'
 		//0 = Taunt, 1 = Pierce, 2 = Rebellious, 3 = Immune, 4 = Indestructable, 5 = Lifesteal, 6 = Sneaky

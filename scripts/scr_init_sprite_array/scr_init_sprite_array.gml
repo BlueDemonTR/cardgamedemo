@@ -395,27 +395,27 @@ function scr_init_sprite_array() {
 		
 	i++;
 	j=0;
-	sprite_array[i,j++] = spr_ultisac;
+	sprite_array[i,j++] = spr_genesisnotebook;
 	sprite_count[i] = j;
 		
 	i++;
 	j=0;
-	sprite_array[i,j++] = spr_longfig;
+	sprite_array[i,j++] = spr_accursedgathering;
 	sprite_count[i] = j;
 		
 	i++;
 	j=0;
-	sprite_array[i,j++] = spr_drownedsoldier;
+	sprite_array[i,j++] = spr_silentcourage;
 	sprite_count[i] = j;
 		
 	i++;
 	j=0;
-	sprite_array[i,j++] = spr_bloodyblur;
+	sprite_array[i,j++] = spr_crystalecho;
 	sprite_count[i] = j;
 		
 	i++;
 	j=0;
-	sprite_array[i,j++] = spr_glowhead;
+	sprite_array[i,j++] = spr_conductrons;
 	sprite_count[i] = j;
 		
 	i++;
