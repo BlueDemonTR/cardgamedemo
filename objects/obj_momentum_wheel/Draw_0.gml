@@ -22,7 +22,7 @@ if(instance_exists(obj_opponent)){
 	}
 }
 if(obj_player.selected_wheel > 0 && mouse_between(613, 673, 676, 850)){
-	depth=-5
+	depth = 799
 	if (mouse_between(630, 673, 676, 717)){
 		draw_text(mouse_x+20,mouse_y,macros.wheel_ability[obj_player.selected_wheel, 3])
 	}
@@ -36,4 +36,4 @@ if(obj_player.selected_wheel > 0 && mouse_between(613, 673, 676, 850)){
 		draw_text(mouse_x+20,mouse_y,macros.wheel_ability[obj_player.selected_wheel, 0])
 	}
 	draw_text(mouse_x+20,mouse_y+20,macros.momentum_gain[obj_player.selected_wheel])
-}else{depth = 2}
+}

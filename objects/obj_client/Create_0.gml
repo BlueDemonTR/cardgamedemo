@@ -1,3 +1,5 @@
+depth = 1000
+
 #macro MESSAGE_JOIN 1
 #macro MESSAGE_HAND_CHANGE 2
 #macro MESSAGE_FIELD 3

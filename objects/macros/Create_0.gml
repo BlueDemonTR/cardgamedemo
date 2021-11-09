@@ -165,6 +165,35 @@ scr_initialize_activation_box_functions()
 #macro NextEffect resolvingPile[positionInOrder,2] = 99
 #macro color draw_get_color()
 
+//Depth = 1000 {
+//	Board Itself, 
+//	Background objects
+//}
+//Depth = 999 - 800 {
+//	Deck, 
+//	Infirmary, 
+//	Momentum Deck
+//}
+//Depth = 799 - 600 {
+//	Momentum Wheel
+//}
+//Depth = 599 - 400 {
+//	Field Card
+//}
+//Depth = 399 - 200 {
+//	Hand Card (In hand)
+//}
+//Depth = 199 - 100 {
+//	Hand Card (Picked Up)
+//}
+//Depth = 99 - 1 {
+//	Shown Lists
+//}
+//Depth = 0 - -99{
+//	Animations
+//}
+
+
 if(false){
 	bepis = sprite_to_big//This is here because I am sick of the syntax error pop up
 	bepis = SendInvalid

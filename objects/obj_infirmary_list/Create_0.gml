@@ -1,4 +1,4 @@
 slide = 0;
 y_og = y;
-depth = -2000
+depth = 99
 surface_first_layer = false

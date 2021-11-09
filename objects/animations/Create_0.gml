@@ -1,5 +1,6 @@
 alarm[0] = 1
 runAnimation = false;
+depth = 0;
 /*
 Animation Formats
 	1- Attack

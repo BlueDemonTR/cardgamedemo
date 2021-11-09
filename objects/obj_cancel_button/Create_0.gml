@@ -1,2 +1,2 @@
-depth = -300
+depth = 1000
 player = obj_player
