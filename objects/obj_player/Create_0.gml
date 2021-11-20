@@ -99,7 +99,7 @@ surfaceType = -1;
 open_game_state = true;
 player_response_left = false
 opponent_response_left = false
-response_delay = 30
+response_delay = 10
 
 
 //Effect Resolution Initialization

@@ -1,7 +1,7 @@
 //Game Properties
 randomize();
 persistent = true;
-test_mode = debug_mode || true;
+test_mode = debug_mode || false;
 show_debug_message(GM_version)
 
 //Player Stats
@@ -197,5 +197,4 @@ scr_initialize_activation_box_functions()
 if(false){
 	bepis = sprite_to_big//This is here because I am sick of the syntax error pop up
 	bepis = SendInvalid
-	bepis = SummonInvalid
 }

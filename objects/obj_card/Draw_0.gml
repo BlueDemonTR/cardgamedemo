@@ -5,6 +5,7 @@ draw_sprite_stretched(
 );
 
 if(macros.card_type[cardNum] != TypeSpell){
+	draw_set_font(fnt_default)
 	draw_set_color(c_red)
 	draw_text(x - 62, y - 76, string(scr_get_stat_orig(cardNum, StatATK)));
 

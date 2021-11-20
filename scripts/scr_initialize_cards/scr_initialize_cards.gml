@@ -1151,6 +1151,7 @@ function scr_initialize_cards(){
 		//0 = Taunt, 1 = Pierce, 2 = Rebellious, 3 = Immune, 4 = Indestructable, 5 = Lifesteal, 6 = Sneaky
 		//7 = Unarmed, 8 = Ranged, 9 = Paralyzed, 10 = Poisoned, 11 = Silenced, 12 = Can Attack Directly
 		//Cards where that stat is empty don't need to be have the stat initialized
+		origStatus[i,StatusTAUNT] = true;
 
 	name[++i] ="Pole Clan Builder";
 		//write -1 = invalid, 0 = monster, 1 = momentum or 2 = spell

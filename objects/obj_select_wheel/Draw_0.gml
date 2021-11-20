@@ -2,6 +2,7 @@ draw_set_font(fnt_default)
 if(chosen_wheel == 0){
 	draw_sprite_ext(sprite_index, -1, x, y, .45, .45, 0, c_gray, 1);
 	draw_text(x - (string_width("No Wheel") - 95), y, "No Wheel");
+	return;
 }
 
 draw_self();

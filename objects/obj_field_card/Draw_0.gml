@@ -14,9 +14,6 @@ draw_set_color(
 )
 draw_text(x + 50, y - 76,string(getStat(StatHP)));
 
-draw_set_color(c_black)//TODO: Remove after all sprites are replaced
-draw_text(x + 45,y - 100,string(getStat(StatLevel)));
-
 for(var i = getStat(StatLevel) - scr_get_stat_orig(cardNum, StatLevel); i != 0; i -= i/abs(i)){
 	draw_set_color(i < 0 ? c_red : c_green)
 	var affectedLevel = i + scr_get_stat_orig(cardNum, StatLevel) + ((i < 0) ? 0 : -1);

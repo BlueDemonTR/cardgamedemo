@@ -15,7 +15,7 @@ if (card_in_hand==true) {
 if(mouse_check_button_released(mb_left)){
 	selected = false;	
 }
-if (selected){
+if(selected){
 	scr_change_displayed_card(cardNum, artNum, false)
 }
 

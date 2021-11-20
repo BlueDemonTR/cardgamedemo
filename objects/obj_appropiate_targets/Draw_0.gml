@@ -15,7 +15,4 @@ switch(current_function){
 	break;
 }
 
-//DEBUG
-draw_text(x,y,position)
-
 

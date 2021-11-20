@@ -1,4 +1,4 @@
-depth = 1000
+depth = 900
 
 #macro MESSAGE_JOIN 1
 #macro MESSAGE_HAND_CHANGE 2

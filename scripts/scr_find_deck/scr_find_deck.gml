@@ -8,6 +8,6 @@ function scr_find_deck(cardNum){
 			}
 		}
 	}
-	if(object_index == obj_player){resolutionPile[resolutionPileCount-1,2] = 97}
+	if(object_index == obj_player){resolvingPile[resolvingPileCount-1,2] = 97}
 	return -1;
 }

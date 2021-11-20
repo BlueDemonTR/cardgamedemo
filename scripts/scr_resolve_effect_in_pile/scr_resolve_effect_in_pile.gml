@@ -1356,9 +1356,9 @@ function scr_resolve_effect_in_pile(positionInOrder){
 									var absorbCount = 0;
 									absorbCount += getStat(StatATK) - 1;
 									absorbCount += getStat(StatHP) - 1;
-									scr_set_stat_card(player, self.position, StatATK, 1);
-									scr_set_stat_card(player, self.position, StatHP, 1);
-									scr_set_stat_card(player, self.position, StatMaxHP, 1);
+									scr_set_stat_card(self.player, self.position, StatATK, 1);
+									scr_set_stat_card(self.player, self.position, StatHP, 1);
+									scr_set_stat_card(self.player, self.position, StatMaxHP, 1);
 								}
 								scr_increase_stat_card(player, position, StatATK, absorbCount)
 								FinishResolving
