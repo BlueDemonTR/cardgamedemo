@@ -3882,7 +3882,61 @@ function scr_initialize_cards(){
 		//0 = Taunt, 1 = Pierce, 2 = Rebellious, 3 = Immune, 4 = Indestructable, 5 = Lifesteal, 6 = Sneaky
 		//7 = Unarmed, 8 = Ranged, 9 = Paralyzed, 10 = Poisoned, 11 = Silenced, 12 = Can Attack Directly
 		//Cards where that stat is empty don't need to be have the stat initialized
+		
+	//TODO: ADD DRONE CRAFTING DRONES HERE
+	/*
+		-*Drone Crafting Drones: LV 3 2/2 Aggressive Monster
+		Effect: "Start of Turn: Recruit a ''Drone Crafting Drones''"	
+	*/
+		
+	name[++i] ="Sunlust, Doomed by the Nightsky";
+		//write -1 = invalid, 0 = monster, 1 = momentum or 2 = spell
+		card_type[i] = TypeMonster;
 
+		j=0;
+		//Card Stats
+		//0 = Level, 1 = ATK, 2 = Max HP, 3 = HP, 4 = Armor, 5 = Regerenation, 6 = Dodge
+		//Cards where that stat is default/invalid don't need have the status initialized
+		origStat[i,StatLevel] = 4; //Level
+		origStat[i,StatATK] = 1; //ATK
+		origStat[i,StatMaxHP] = 1; //Max HP
+		origStat[i,StatSpirit] = SpiritPassionate
+		stat_count = j;
+		
+		j=0
+		//Card Groups
+		//In the case that a card doesn't have that feature the value is not initialized
+		//Motorbiker = 1, Motorbiker Leader = 2, Visclades = 3, Underworld Visclades = 4
+		//Sacrifice = 5, Igloo = 6, X-Makine = 7
+		origSharedEffectsCount[i] = j;
+		j=0
+		origArchetypeCount[i] = j;
+		
+		j=0
+		//Card Text
+		//0 = Effect Text, 1 = Flavour Text, 2 = Summoning Requirements, 3 = Summoning Chant
+		origText[i,TextEffect] = "Summoned: This card gains +1/+1 for each LV 1 Monster in your Infirmary. If this card is in the Infirmary; you can pay 4 Mana, Summon this card from your Infirmary.";
+		origText[i,TextFlavor] = "An strange creature that came from another dimension. For some reason she is really obsessed with a certain shooter game.";
+		j=0
+		//Card Status'
+		//0 = Taunt, 1 = Pierce, 2 = Rebellious, 3 = Immune, 4 = Indestructable, 5 = Lifesteal, 6 = Sneaky
+		//7 = Unarmed, 8 = Ranged, 9 = Paralyzed, 10 = Poisoned, 11 = Silenced, 12 = Can't Attack Directly
+		//Cards where that stat is empty don't need to be have the stat initialized
+
+		//Your Tasks:
+		//Initialize Drone Crafting Drones with the card number 117, Sunlust should be 118
+		//Add the Activation Triggers, Legal Activations and the Effect for both Drone Crafting Drones and Sunlust
+		//Bind their sprites to them in scr_init_sprite_array
+		//The sprites are called spr_dronecraftingdrones and spr_sunlustnightsky
+		
+		//HINTS: (Delete these later)
+		//For "Start of Turn:" Activation Trigger, you can look at Lunar Tank
+		//For "Recruit" Effect and Legal Activation, you can look at Awoken Civillian
+		//For Ignition Effects that activate in Infirmary, you can look at Baby Phoenix
+		//For counting the amount of a type of monsters in the infirmary, you can look at Cries of the Underworld (may be called CotU in the files)
+		//Ask me if you're stuck or lost
+		
+		
 	total_cards=++i
 		
 	name[++i] ="Void 2, Poyraz Messes Up Once Again";
