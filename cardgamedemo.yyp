@@ -165,6 +165,7 @@
     {"id":{"name":"spr_level_11","path":"sprites/spr_level_11/spr_level_11.yy",},"order":13,},
     {"id":{"name":"spr_xmakine_symbol","path":"sprites/spr_xmakine_symbol/spr_xmakine_symbol.yy",},"order":8,},
     {"id":{"name":"scr_on_stat_change","path":"scripts/scr_on_stat_change/scr_on_stat_change.yy",},"order":20,},
+    {"id":{"name":"scr_initialize_card_database","path":"scripts/scr_initialize_card_database/scr_initialize_card_database.yy",},"order":18,},
     {"id":{"name":"spr_highestbidder","path":"sprites/spr_highestbidder/spr_highestbidder.yy",},"order":10,},
     {"id":{"name":"spr_at_long_last","path":"sprites/spr_at_long_last/spr_at_long_last.yy",},"order":1,},
     {"id":{"name":"obj_deck_builder","path":"objects/obj_deck_builder/obj_deck_builder.yy",},"order":0,},

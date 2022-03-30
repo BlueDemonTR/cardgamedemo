@@ -4,6 +4,10 @@ persistent = true;
 test_mode = debug_mode || false;
 show_debug_message(GM_version)
 
+//Card Types
+enum cardMainType {Monster, Spell, Invalid}
+enum cardSuperType {NormalMonster, NormalSpell, Momentum, Invalid}
+
 //Player Stats
 #macro PlayerMana 0
 #macro PlayerMaxMana 1
@@ -121,6 +125,7 @@ scr_default_statuses()
 #macro TextFlavor 1
 #macro TextMaterials 2
 #macro TextChant 3
+text_count = 4
 
 //Summon Types
 #macro SummonMana 0
@@ -165,6 +170,68 @@ scr_initialize_activation_box_functions()
 #macro NextEffect resolvingPile[positionInOrder,2] = 99
 #macro color draw_get_color()
 
+database = []
+for(var i = 1; i < total_cards; i++){
+	var cardObject = {}
+	cardObject.cardName = name[i]
+	switch(card_type[i]){
+		case TypeMonster:
+			cardObject.cardMainType = cardMainType.Monster
+			cardObject.cardSuperType = cardSuperType.NormalMonster
+		break;
+		case TypeMomentum:
+			cardObject.cardMainType = cardMainType.Monster
+			cardObject.cardSuperType = cardSuperType.Momentum
+		break;
+		case TypeSpell:
+			cardObject.cardMainType = cardMainType.Spell
+			cardObject.cardSuperType = cardSuperType.NormalSpell
+		break;
+		default:
+			cardObject.cardMainType = cardMainType.Invalid
+			cardObject.cardSuperType = cardSuperType.Invalid
+		break;
+	}
+	
+	for(var j = 0; j < stat_count; j++){
+		if(origStat[i, j] == defaultStat[i, j]){continue;}
+		variable_struct_set(cardObject, statName[j], scr_get_stat_orig(i,j))
+	}
+	
+	cardObject.sharedEffectCount = origSharedEffectsCount[i]
+	for(var j = 0; j < origSharedEffectsCount[i]; j++){
+		cardObject.SharedEffects = origArchetype[i]
+	}
+	
+	cardObject.archetypeCount = origArchetypeCount[i]
+	for(var j = 0; j < origArchetypeCount[i]; j++){
+		cardObject.Archetypes= origSharedEffects[i]
+	}
+	
+	if(variable_array_exists(origText, i, TextEffect)){
+		cardObject.EffectText = origText[i,TextEffect]
+	}
+	
+	if(variable_array_exists(origText, i, TextFlavor)){
+		cardObject.EffectText = origText[i,TextFlavor]
+	}
+	
+	if(variable_array_exists(origText, i, TextEffect)){
+		cardObject.EffectText = origText[i,TextEffect]
+	}
+	
+	if(variable_array_exists(origText, i, TextEffect)){
+		cardObject.EffectText = origText[i,TextEffect]
+	}
+	
+	for(var j = 0; j < status_count; j++){
+		if(origStatus[i, j] == defaultStatus[i, j]){continue;}
+		variable_struct_set(cardObject, statusName[j], scr_get_status_orig(i,j))
+	}
+	
+	array_push(database, cardObject)
+}
+
 //Depth = 1000 {
 //	Board Itself, 
 //	Background objects
@@ -198,3 +265,5 @@ if(false){
 	bepis = sprite_to_big//This is here because I am sick of the syntax error pop up
 	bepis = SendInvalid
 }
+
+
