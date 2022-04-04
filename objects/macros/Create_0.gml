@@ -4,9 +4,11 @@ persistent = true;
 test_mode = debug_mode || false;
 show_debug_message(GM_version)
 
+
+
 //Card Types
 enum cardMainType {Monster, Spell, Invalid}
-enum cardSuperType {NormalMonster, NormalSpell, Momentum, Invalid}
+enum cardSuperType {NormalMonster, NormalSpell, MomentumMonster, Invalid}
 
 //Player Stats
 #macro PlayerMana 0
@@ -50,6 +52,8 @@ scr_initialize_cards();
 scr_initialize_momentum_wheel();
 scr_illegal_cards();
 
+scr_database_to_json(1)
+return;
 //Type Properties
 #macro TypeInvalid -1
 #macro TypeMonster 0
@@ -81,6 +85,20 @@ scr_initialize_stats()
 #macro ArcFisherman 9
 #macro ArcFish 10
 #macro ArcXMakine 11
+enum ArchetypesList {
+	Motorbiker,
+	MotorbikerLeader,
+	Visclades,
+	PoleClan,
+	Igloo,
+	Blizzard,
+	Sacrifice,
+	NightmareBeast,
+	Fisherman,
+	Fish,
+	XMakine
+}
+
 scr_initialize_archetypes();
 
 //Shared Effect Properties
@@ -91,7 +109,29 @@ scr_initialize_archetypes();
 #macro SharedIgloo 5
 #macro SharedSacrifice 6
 #macro SharedXMakine 7
+enum SharedEffectsList {
+	Motorbiker,
+	MotorbikerLeader,
+	Visclades,
+	UnderworldVisclades,
+	Igloo,
+	Sacrifice,
+	XMakine
+}
 scr_initialize_shared_effects();
+
+//Rarity
+enum RarityList {
+	Common,
+	Rare,
+	Legendary
+}
+
+//Activation Triggers
+enum ActivationTriggerList {
+	AfterAttack,
+	AfterDirectAttack
+}
 
 //Status Properties
 #macro StatusTAUNT 0
@@ -170,7 +210,7 @@ scr_initialize_activation_box_functions()
 #macro NextEffect resolvingPile[positionInOrder,2] = 99
 #macro color draw_get_color()
 
-database = []
+/*database = []
 for(var i = 1; i < total_cards; i++){
 	var cardObject = {}
 	cardObject.cardName = name[i]
@@ -230,7 +270,7 @@ for(var i = 1; i < total_cards; i++){
 	}
 	
 	array_push(database, cardObject)
-}
+}*/
 
 //Depth = 1000 {
 //	Board Itself, 
