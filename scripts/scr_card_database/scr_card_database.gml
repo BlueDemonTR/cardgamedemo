@@ -1,4 +1,4 @@
-function OriginalCard(cardNum) constructor{
+function convertOldCardToNewCard(cardNum) constructor{
 	cardName = macros.name[cardNum];
 	cardType = macros.cardType == TypeSpell ? cardMainType.Spell : cardMainType.Monster;
 	superType = macros.cardType == TypeMomentum ? cardSuperType.MomentumMonster : (cardType = cardMainType.Monster ? cardSuperType.NormalMonster : cardSuperType.NormalSpell);
@@ -30,12 +30,76 @@ function OriginalCard(cardNum) constructor{
 		Stats.Dodge = scr_get_stat_orig(cardNum, StatDodge);
 	}
 
-	Statuses = {
-	};
+	Statuses = [
+	];
+	
+	for(var i = 0; i < status_count; i++){
+		if(scr_get_status_orig(cardNum, i)){
+			array_push(Statuses,i)
+		}
+	}
+	
+	Rarity = get_integer("Enter the rarity Common: " + RarityList.Common + " Rare:" + RarityList.Rare + " Legendary:" + RarityList.Legendary, RarityList.Common)
+
+	Archetypes = json_parse(json_stringify(macros.origArchetype[cardNum]));
+	
+	SharedEffects = json_parse(json_stringify(macros.origSharedEffects[cardNum]))
+	
+	Effects = [
+		"This part can't be automated"
+	]
+	
+	Texts = {
+	}
+	
+	Spirits = [
+		macros.origStat[cardNum, StatSpirit]
+	]
+	
+	Texts.EffectText = macros.origText[cardNum, TextEffect];
+	Texts.CardLore = macros.origText[cardNum, TextFlavor];
+	if(variable_array_exists(macros.origText, cardNum, TextMaterials)){
+		Texts.Materials = macros.origText[cardNum, TextMaterials];
+	}
+	if(variable_array_exists(macros.origText, cardNum, TextChant)){
+		Texts.Chant = macros.origText[cardNum, TextChant];
+	}
 }
 
-function OriginalCard(name, SuperType) constructor{
+function getCardFunction(originalCardObject){
+	var str = "array_push(cardDatabase, new OriginalCard(" 
+	+ originalCardObject.cardName + ", " 
+	+ (originalCardObject.cardType == cardMainType.Spell ? "cardMainType.Spell" : "cardMainType.Monster") + ", "
+	+ (originalCardObject.cardType == cardSuperType.MomentumMonster ? "cardSuperType.MomentumMonster" : (originalCardObject.cardType = cardMainType.Monster ? "cardSuperType.NormalMonster" : "cardSuperType.NormalSpell")) + ", "
+	
+	
+	clipboard_set_text(str)
+}
+
+/*
+	Up next, make a function to turn a card object into the parameters for the function below
+
+
+
+*/
+
+function OriginalCard(
+	name = "Void", 
+	cardType = cardMainType.Monster,
+	superType = cardSuperType.NormalMonster,
+	stats = {},
+	statuses = [],
+	archetypes = [],
+	sharedEffects = [],
+	rarity = RarityList.Common,
+	effects = [],
+	sprites = [spr_monster_default],
+	texts = {
+		EffectText: ""
+	}
+) constructor {
 	cardName = name;
+	
 }
 
 function scr_card_database(){
@@ -51,14 +115,18 @@ function scr_card_database(){
 				MaxHP: macros.origStat[cardNum, StatMaxHP]
 			},
 		
-			Statuses: {},
+			Statuses: [],
 		
+			Spirits = [
+				Spirit.Passionate
+			],
+			
 			Archetypes: [
-				ArchetypesList.Motorbiker
+				Archetype.Motorbiker
 			],
 		
 			SharedEffects: [
-				SharedEffectsList.Motorbiker
+				SharedEffect.Motorbiker
 			],
 		
 			Rarity: RarityList.Common,
@@ -89,7 +157,7 @@ function scr_card_database(){
 		
 			Texts: {
 				EffectText: macros.origText[cardNum,  TextEffect],
-				FlavorText: macros.origText[cardNum,  TextFlavor]
+				CardLore: macros.origText[cardNum,  TextFlavor]
 			},
 		}
 	]

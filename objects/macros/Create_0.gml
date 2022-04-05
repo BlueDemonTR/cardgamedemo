@@ -85,7 +85,7 @@ scr_initialize_stats()
 #macro ArcFisherman 9
 #macro ArcFish 10
 #macro ArcXMakine 11
-enum ArchetypesList {
+enum Archetype {
 	Motorbiker,
 	MotorbikerLeader,
 	Visclades,
@@ -109,7 +109,7 @@ scr_initialize_archetypes();
 #macro SharedIgloo 5
 #macro SharedSacrifice 6
 #macro SharedXMakine 7
-enum SharedEffectsList {
+enum SharedEffect {
 	Motorbiker,
 	MotorbikerLeader,
 	Visclades,
@@ -122,9 +122,9 @@ scr_initialize_shared_effects();
 
 //Rarity
 enum RarityList {
-	Common,
-	Rare,
-	Legendary
+	Common = 10,
+	Rare = 50,
+	Legendary = 98
 }
 
 //Activation Triggers
@@ -134,6 +134,22 @@ enum ActivationTriggerList {
 }
 
 //Status Properties
+enum Status {
+	Taunt,
+	Pierce,
+	Rebellious,
+	Immune,
+	Indestructable,
+	Lifesteal,
+	Sneaky,
+	Unarmed,
+	Ranged,
+	Paralyzed,
+	Poison,
+	Silenced,
+	CantAttackDirect,
+	SelfDestruct
+}
 #macro StatusTAUNT 0
 #macro StatusPierce 1
 #macro StatusRebellious 2
@@ -152,6 +168,15 @@ scr_initialize_statuses();
 scr_default_statuses()
 
 //Spirit Properties
+enum Spirit {
+	Blank,
+	Aggressive,
+	Passive,
+	Noble,
+	Malicious,
+	Kind,
+	Passionate
+}
 #macro SpiritBlank 0
 #macro SpiritAggressive 1
 #macro SpiritPassive 2
