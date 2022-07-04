@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_effect_band_base","path":"sprites/spr_effect_band_base/spr_effect_band_base.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_effect_band_base",
     "tags": [],
     "resourceType": "GMSequence",

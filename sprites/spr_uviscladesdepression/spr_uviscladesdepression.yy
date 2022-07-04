@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_uviscladesdepression","path":"sprites/spr_uviscladesdepression/spr_uviscladesdepression.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_uviscladesdepression",
     "tags": [],
     "resourceType": "GMSequence",

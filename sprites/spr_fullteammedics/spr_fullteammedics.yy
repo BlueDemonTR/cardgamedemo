@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_fullteammedics","path":"sprites/spr_fullteammedics/spr_fullteammedics.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_fullteammedics",
     "tags": [],
     "resourceType": "GMSequence",

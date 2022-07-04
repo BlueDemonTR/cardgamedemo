@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_roguesoldier","path":"sprites/spr_roguesoldier/spr_roguesoldier.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_roguesoldier",
     "tags": [],
     "resourceType": "GMSequence",

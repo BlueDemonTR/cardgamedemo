@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_shared_effects_box","path":"sprites/spr_shared_effects_box/spr_shared_effects_box.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_shared_effects_box",
     "tags": [],
     "resourceType": "GMSequence",

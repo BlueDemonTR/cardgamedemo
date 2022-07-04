@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_uviscladesbargaining","path":"sprites/spr_uviscladesbargaining/spr_uviscladesbargaining.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_uviscladesbargaining",
     "tags": [],
     "resourceType": "GMSequence",

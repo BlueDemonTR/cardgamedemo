@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_poleclantorch","path":"sprites/spr_poleclantorch/spr_poleclantorch.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_poleclantorch",
     "tags": [],
     "resourceType": "GMSequence",

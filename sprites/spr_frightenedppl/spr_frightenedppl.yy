@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_frightenedppl","path":"sprites/spr_frightenedppl/spr_frightenedppl.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_frightenedppl",
     "tags": [],
     "resourceType": "GMSequence",

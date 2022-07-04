@@ -4,13 +4,23 @@ persistent = true;
 test_mode = debug_mode || false;
 show_debug_message(GM_version)
 
-
-
 //Card Types
+#macro TypeInvalid -1
+#macro TypeMonster 0
+#macro TypeMomentum 1
+#macro TypeSpell 2
 enum cardMainType {Monster, Spell, Invalid}
 enum cardSuperType {NormalMonster, NormalSpell, MomentumMonster, Invalid}
 
 //Player Stats
+enum playerStat {
+	Mana,
+	MaxMana,
+	Momentum,
+	MaxMomentum,
+	MaxHP,
+	HP
+}
 #macro PlayerMana 0
 #macro PlayerMaxMana 1
 #macro PlayerMomentum 2
@@ -20,10 +30,22 @@ enum cardSuperType {NormalMonster, NormalSpell, MomentumMonster, Invalid}
 scr_default_stats_player()
 
 //Player Statuses
+enum playerStatus {
+	LockWheel
+}
 #macro PlayerLockWheel 0
 scr_default_statuses_player()
 
 //Infirmary Send Types
+enum sendType {
+	Injury,
+	Effect,
+	Sacrifice,
+	Material,
+	Discard,
+	Mill,
+	Invalid = 99
+}
 #macro SendInjuries 0
 #macro SendEffect 1
 #macro SendSacrifice 2
@@ -52,24 +74,9 @@ scr_initialize_cards();
 scr_initialize_momentum_wheel();
 scr_illegal_cards();
 
-scr_database_to_json(1)
-return;
-//Type Properties
-#macro TypeInvalid -1
-#macro TypeMonster 0
-#macro TypeMomentum 1
-#macro TypeSpell 2
+
 
 //Stat Properties
-#macro StatLevel 0
-#macro StatATK 1
-#macro StatMaxHP 2
-#macro StatHP 3
-#macro StatArmor 4
-#macro StatRegeneration 5
-#macro StatDodge 6
-#macro StatSpirit 7
-#macro StatEffectUsesPerTurn 8
 scr_default_stats()
 scr_initialize_stats()
 
@@ -86,17 +93,17 @@ scr_initialize_stats()
 #macro ArcFish 10
 #macro ArcXMakine 11
 enum Archetype {
-	Motorbiker,
-	MotorbikerLeader,
-	Visclades,
-	PoleClan,
-	Igloo,
-	Blizzard,
-	Sacrifice,
-	NightmareBeast,
-	Fisherman,
-	Fish,
-	XMakine
+	Motorbiker = ArcMotorbiker,
+	MotorbikerLeader = ArcMotorbikerLeader,
+	Visclades = ArcVisclades,
+	PoleClan = ArcPoleClan,
+	Igloo = ArcIgloo,
+	Blizzard = ArcBlizzard,
+	Sacrifice = ArcSacrifice,
+	NightmareBeast = ArcNightmareBeast,
+	Fisherman = ArcFisherman,
+	Fish = ArcFish,
+	XMakine = ArcXMakine
 }
 
 scr_initialize_archetypes();
@@ -110,13 +117,13 @@ scr_initialize_archetypes();
 #macro SharedSacrifice 6
 #macro SharedXMakine 7
 enum SharedEffect {
-	Motorbiker,
-	MotorbikerLeader,
-	Visclades,
-	UnderworldVisclades,
-	Igloo,
-	Sacrifice,
-	XMakine
+	Motorbiker = SharedMotorbiker,
+	MotorbikerLeader = SharedMotorbikerLeader,
+	Visclades = SharedVisclades,
+	UnderworldVisclades = SharedUnderworldVisclades,
+	Igloo = SharedIgloo,
+	Sacrifice = SharedSacrifice,
+	XMakine = SharedXMakine
 }
 scr_initialize_shared_effects();
 
@@ -134,21 +141,21 @@ enum ActivationTriggerList {
 }
 
 //Status Properties
-enum Status {
-	Taunt,
-	Pierce,
-	Rebellious,
-	Immune,
-	Indestructable,
-	Lifesteal,
-	Sneaky,
-	Unarmed,
-	Ranged,
-	Paralyzed,
-	Poison,
-	Silenced,
-	CantAttackDirect,
-	SelfDestruct
+enum cardStatus {
+	Taunt = StatusTAUNT,
+	Pierce = StatusPierce,
+	Rebellious = StatusRebellious,
+	Immune = StatusImmune,
+	Indestructable = StatusIndestructable,
+	Lifesteal = StatusLifesteal,
+	Sneaky = StatusSneaky,
+	Unarmed = StatusUnarmed,
+	Ranged = StatusRanged,
+	Paralyzed = StatusParalyzed,
+	Poison = StatusPoison,
+	Silenced = StatusSilenced,
+	CantAttackDirect = StatusCantAttackDirect,
+	SelfDestruct  = StatusSelfDestruct
 }
 #macro StatusTAUNT 0
 #macro StatusPierce 1
@@ -168,14 +175,14 @@ scr_initialize_statuses();
 scr_default_statuses()
 
 //Spirit Properties
-enum Spirit {
-	Blank,
-	Aggressive,
-	Passive,
-	Noble,
-	Malicious,
-	Kind,
-	Passionate
+enum SpiritList {
+	Blank = 0,
+	Aggressive = 1,
+	Passive = 2,
+	Noble= 3,
+	Malicious = 4,
+	Kind = 5,
+	Passionate = 6
 }
 #macro SpiritBlank 0
 #macro SpiritAggressive 1
@@ -184,6 +191,7 @@ enum Spirit {
 #macro SpiritMalicious 4
 #macro SpiritKind 5
 #macro SpiritPassionate 6
+SpiritNames = ["Blank","Aggressive", "Passive", "Noble", "Malicious","Kind","Passionate"]
 
 //Text Properties
 #macro TextEffect 0
@@ -235,67 +243,12 @@ scr_initialize_activation_box_functions()
 #macro NextEffect resolvingPile[positionInOrder,2] = 99
 #macro color draw_get_color()
 
-/*database = []
+str = ""
 for(var i = 1; i < total_cards; i++){
-	var cardObject = {}
-	cardObject.cardName = name[i]
-	switch(card_type[i]){
-		case TypeMonster:
-			cardObject.cardMainType = cardMainType.Monster
-			cardObject.cardSuperType = cardSuperType.NormalMonster
-		break;
-		case TypeMomentum:
-			cardObject.cardMainType = cardMainType.Monster
-			cardObject.cardSuperType = cardSuperType.Momentum
-		break;
-		case TypeSpell:
-			cardObject.cardMainType = cardMainType.Spell
-			cardObject.cardSuperType = cardSuperType.NormalSpell
-		break;
-		default:
-			cardObject.cardMainType = cardMainType.Invalid
-			cardObject.cardSuperType = cardSuperType.Invalid
-		break;
-	}
-	
-	for(var j = 0; j < stat_count; j++){
-		if(origStat[i, j] == defaultStat[i, j]){continue;}
-		variable_struct_set(cardObject, statName[j], scr_get_stat_orig(i,j))
-	}
-	
-	cardObject.sharedEffectCount = origSharedEffectsCount[i]
-	for(var j = 0; j < origSharedEffectsCount[i]; j++){
-		cardObject.SharedEffects = origArchetype[i]
-	}
-	
-	cardObject.archetypeCount = origArchetypeCount[i]
-	for(var j = 0; j < origArchetypeCount[i]; j++){
-		cardObject.Archetypes= origSharedEffects[i]
-	}
-	
-	if(variable_array_exists(origText, i, TextEffect)){
-		cardObject.EffectText = origText[i,TextEffect]
-	}
-	
-	if(variable_array_exists(origText, i, TextFlavor)){
-		cardObject.EffectText = origText[i,TextFlavor]
-	}
-	
-	if(variable_array_exists(origText, i, TextEffect)){
-		cardObject.EffectText = origText[i,TextEffect]
-	}
-	
-	if(variable_array_exists(origText, i, TextEffect)){
-		cardObject.EffectText = origText[i,TextEffect]
-	}
-	
-	for(var j = 0; j < status_count; j++){
-		if(origStatus[i, j] == defaultStatus[i, j]){continue;}
-		variable_struct_set(cardObject, statusName[j], scr_get_status_orig(i,j))
-	}
-	
-	array_push(database, cardObject)
-}*/
+	str += getCardFunction(new convertOldCardToNewCard(i)) + "\n\n"
+}
+
+clipboard_set_text(str)
 
 //Depth = 1000 {
 //	Board Itself, 
@@ -330,5 +283,7 @@ if(false){
 	bepis = sprite_to_big//This is here because I am sick of the syntax error pop up
 	bepis = SendInvalid
 }
+
+
 
 

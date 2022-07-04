@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_motorleaderluther","path":"sprites/spr_motorleaderluther/spr_motorleaderluther.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_motorleaderluther",
     "tags": [],
     "resourceType": "GMSequence",

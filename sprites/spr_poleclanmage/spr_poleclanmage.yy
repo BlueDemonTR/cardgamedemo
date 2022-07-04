@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_poleclanmage","path":"sprites/spr_poleclanmage/spr_poleclanmage.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_poleclanmage",
     "tags": [],
     "resourceType": "GMSequence",

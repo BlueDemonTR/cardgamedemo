@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_level_pillar","path":"sprites/spr_level_pillar/spr_level_pillar.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_level_pillar",
     "tags": [],
     "resourceType": "GMSequence",

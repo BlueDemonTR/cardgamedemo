@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_guarddog","path":"sprites/spr_guarddog/spr_guarddog.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_guarddog",
     "tags": [],
     "resourceType": "GMSequence",

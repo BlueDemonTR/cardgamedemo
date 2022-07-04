@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_infirmary_overlay","path":"sprites/spr_infirmary_overlay/spr_infirmary_overlay.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_infirmary_overlay",
     "tags": [],
     "resourceType": "GMSequence",

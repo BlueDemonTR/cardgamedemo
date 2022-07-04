@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_xmakinedom","path":"sprites/spr_xmakinedom/spr_xmakinedom.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_xmakinedom",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_mightyfireblades","path":"sprites/spr_mightyfireblades/spr_mightyfireblades.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_mightyfireblades",
     "tags": [],
     "resourceType": "GMSequence",

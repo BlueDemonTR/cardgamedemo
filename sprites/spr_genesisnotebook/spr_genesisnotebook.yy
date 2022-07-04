@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_genesisnotebook","path":"sprites/spr_genesisnotebook/spr_genesisnotebook.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_genesisnotebook",
     "tags": [],
     "resourceType": "GMSequence",

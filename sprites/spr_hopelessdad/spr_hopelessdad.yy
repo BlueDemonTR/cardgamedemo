@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_hopelessdad","path":"sprites/spr_hopelessdad/spr_hopelessdad.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_hopelessdad",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_bloodysacrifice_alt","path":"sprites/spr_bloodysacrifice_alt/spr_bloodysacrifice_alt.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_bloodysacrifice_alt",
     "tags": [],
     "resourceType": "GMSequence",

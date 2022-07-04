@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_effect_band_top","path":"sprites/spr_effect_band_top/spr_effect_band_top.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_effect_band_top",
     "tags": [],
     "resourceType": "GMSequence",

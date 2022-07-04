@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_viscladestia","path":"sprites/spr_viscladestia/spr_viscladestia.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_viscladestia",
     "tags": [],
     "resourceType": "GMSequence",

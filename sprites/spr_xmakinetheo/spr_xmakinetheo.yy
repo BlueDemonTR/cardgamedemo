@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_xmakinetheo","path":"sprites/spr_xmakinetheo/spr_xmakinetheo.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_xmakinetheo",
     "tags": [],
     "resourceType": "GMSequence",

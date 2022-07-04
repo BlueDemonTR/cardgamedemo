@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_reliablesheriff","path":"sprites/spr_reliablesheriff/spr_reliablesheriff.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_reliablesheriff",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_atk","path":"sprites/spr_atk/spr_atk.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_atk",
     "tags": [],
     "resourceType": "GMSequence",

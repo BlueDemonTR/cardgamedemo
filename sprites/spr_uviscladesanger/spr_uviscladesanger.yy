@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_uviscladesanger","path":"sprites/spr_uviscladesanger/spr_uviscladesanger.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_uviscladesanger",
     "tags": [],
     "resourceType": "GMSequence",

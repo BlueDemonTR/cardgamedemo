@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_base_white","path":"sprites/spr_base_white/spr_base_white.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_base_white",
     "tags": [],
     "resourceType": "GMSequence",

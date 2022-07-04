@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_impact_info_display_bg","path":"sprites/spr_impact_info_display_bg/spr_impact_info_display_bg.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_impact_info_display_bg",
     "tags": [],
     "resourceType": "GMSequence",

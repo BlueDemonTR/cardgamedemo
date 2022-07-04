@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_straycatto","path":"sprites/spr_straycatto/spr_straycatto.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_straycatto",
     "tags": [],
     "resourceType": "GMSequence",

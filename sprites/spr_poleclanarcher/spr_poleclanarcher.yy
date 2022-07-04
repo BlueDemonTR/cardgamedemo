@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_poleclanarcher","path":"sprites/spr_poleclanarcher/spr_poleclanarcher.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_poleclanarcher",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_emergcall","path":"sprites/spr_emergcall/spr_emergcall.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_emergcall",
     "tags": [],
     "resourceType": "GMSequence",

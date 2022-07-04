@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_singleshotmaster","path":"sprites/spr_singleshotmaster/spr_singleshotmaster.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_singleshotmaster",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_crystalecho","path":"sprites/spr_crystalecho/spr_crystalecho.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_crystalecho",
     "tags": [],
     "resourceType": "GMSequence",

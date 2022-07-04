@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_swornsoldier","path":"sprites/spr_swornsoldier/spr_swornsoldier.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_swornsoldier",
     "tags": [],
     "resourceType": "GMSequence",

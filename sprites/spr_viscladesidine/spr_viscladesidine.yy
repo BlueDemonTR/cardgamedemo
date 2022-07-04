@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_viscladesidine","path":"sprites/spr_viscladesidine/spr_viscladesidine.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_viscladesidine",
     "tags": [],
     "resourceType": "GMSequence",

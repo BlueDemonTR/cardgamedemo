@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_silentcourage","path":"sprites/spr_silentcourage/spr_silentcourage.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_silentcourage",
     "tags": [],
     "resourceType": "GMSequence",

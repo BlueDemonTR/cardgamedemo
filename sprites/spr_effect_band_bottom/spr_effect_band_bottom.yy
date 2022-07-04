@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_effect_band_bottom","path":"sprites/spr_effect_band_bottom/spr_effect_band_bottom.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_effect_band_bottom",
     "tags": [],
     "resourceType": "GMSequence",

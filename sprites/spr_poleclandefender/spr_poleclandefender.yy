@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_poleclandefender","path":"sprites/spr_poleclandefender/spr_poleclandefender.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_poleclandefender",
     "tags": [],
     "resourceType": "GMSequence",

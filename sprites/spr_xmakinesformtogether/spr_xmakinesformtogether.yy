@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_xmakinesformtogether","path":"sprites/spr_xmakinesformtogether/spr_xmakinesformtogether.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_xmakinesformtogether",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_viscladeslentus","path":"sprites/spr_viscladeslentus/spr_viscladeslentus.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_viscladeslentus",
     "tags": [],
     "resourceType": "GMSequence",

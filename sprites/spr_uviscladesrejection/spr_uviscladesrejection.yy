@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_uviscladesrejection","path":"sprites/spr_uviscladesrejection/spr_uviscladesrejection.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_uviscladesrejection",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_xmakinecasey","path":"sprites/spr_xmakinecasey/spr_xmakinecasey.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_xmakinecasey",
     "tags": [],
     "resourceType": "GMSequence",

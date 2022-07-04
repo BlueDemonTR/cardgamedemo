@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_viscladesriti","path":"sprites/spr_viscladesriti/spr_viscladesriti.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_viscladesriti",
     "tags": [],
     "resourceType": "GMSequence",

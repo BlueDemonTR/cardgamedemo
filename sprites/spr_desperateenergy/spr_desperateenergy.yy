@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_desperateenergy","path":"sprites/spr_desperateenergy/spr_desperateenergy.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_desperateenergy",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_small_collision_box","path":"sprites/spr_small_collision_box/spr_small_collision_box.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_small_collision_box",
     "tags": [],
     "resourceType": "GMSequence",

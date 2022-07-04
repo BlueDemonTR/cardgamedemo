@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_conductrons","path":"sprites/spr_conductrons/spr_conductrons.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_conductrons",
     "tags": [],
     "resourceType": "GMSequence",

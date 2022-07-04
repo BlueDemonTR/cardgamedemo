@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_xmakinelily","path":"sprites/spr_xmakinelily/spr_xmakinelily.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_xmakinelily",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_townhero","path":"sprites/spr_townhero/spr_townhero.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_townhero",
     "tags": [],
     "resourceType": "GMSequence",

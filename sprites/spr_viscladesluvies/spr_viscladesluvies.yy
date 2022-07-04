@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_viscladesluvies","path":"sprites/spr_viscladesluvies/spr_viscladesluvies.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_viscladesluvies",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_viscladesgloria","path":"sprites/spr_viscladesgloria/spr_viscladesgloria.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_viscladesgloria",
     "tags": [],
     "resourceType": "GMSequence",

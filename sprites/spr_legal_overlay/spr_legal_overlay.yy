@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_legal_overlay","path":"sprites/spr_legal_overlay/spr_legal_overlay.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_legal_overlay",
     "tags": [],
     "resourceType": "GMSequence",

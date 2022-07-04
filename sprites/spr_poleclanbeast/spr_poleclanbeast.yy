@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_poleclanbeast","path":"sprites/spr_poleclanbeast/spr_poleclanbeast.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_poleclanbeast",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_accursedgathering","path":"sprites/spr_accursedgathering/spr_accursedgathering.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_accursedgathering",
     "tags": [],
     "resourceType": "GMSequence",
