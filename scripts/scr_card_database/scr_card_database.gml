@@ -4,6 +4,7 @@ function OriginalCard(
 	superType = cardSuperType.NormalMonster,
 	Stats = {},
 	Statuses = [],
+	Spirits = [],
 	Archetypes = [],
 	SharedEffects = [],
 	Rarity = RarityList.Common,
@@ -21,7 +22,8 @@ function OriginalCard(
 	self.Archetypes = Archetypes;
 	self.SharedEffects = SharedEffects;
 	self.Rarity = Rarity;
-	self.Effects = Effects;//TODO: Effects will be translated into the database in a later update
+	self.Spirits = Spirits;
+	self.Effects = Effects;
 	self.Texts = Texts;
 	
 	for(var i = 0; i < 0; i++){

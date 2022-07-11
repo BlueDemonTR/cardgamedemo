@@ -73,8 +73,7 @@ scr_init_sprite_array();
 scr_initialize_cards();
 scr_initialize_momentum_wheel();
 scr_illegal_cards();
-
-
+scr_initialize_card_database();
 
 //Stat Properties
 scr_default_stats()
